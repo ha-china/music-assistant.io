@@ -4,14 +4,14 @@ title: "SiriusXM"
 
 # SiriusXM <img src="/assets/icons/siriusxm-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming live radio stations from SiriusXM. Contributed and maintained by <a href="https://github.com/btoconnor" target="_blank" rel="noopener noreferrer">btoconnor</a>
+Music Assistant 支持流式播放 SiriusXM 的直播电台。由 <a href="https://github.com/btoconnor" target="_blank" rel="noopener noreferrer">btoconnor</a> 贡献并维护
 
-SiriusXM is a subscription radio service in the United States and Canada, best known from car dashboards. It carries hundreds of channels of music, talk, news and sport, most of them presented live.
+SiriusXM 是美国和加拿大的一项订阅制广播服务，因车载系统而广为人知。它提供数百个音乐、谈话、新闻和体育频道，其中大部分为直播节目。
 
-This source signs Music Assistant in to your subscription and adds those channels as radio stations.
+此音乐来源会让 Music Assistant 登录到您的订阅账户，并将这些频道添加为电台。
 
 > [!NOTE]
-> - A paid subscription is required to add this music source.
+> - 添加此音乐来源需要付费订阅。
     
 ## Features
 
@@ -33,16 +33,24 @@ This source signs Music Assistant in to your subscription and adds those channel
 
 - Supports streaming live radio from SiriusXM
 
-## Configuration
+### Other
 
-Add the account username, password and region (United States or Canada) into the respective fields.
+- Supports streaming live radio from SiriusXM
 
-## Known Issues / Notes
+### 其他
 
-- Radio stations favorited on SiriusXM are not reflected in Music Assistant. The stations need to be favorited manually via the MA UI to have them show up in the Radio view
-- Problems have been reported logging in with an e-mail address. If this occurs obtain a username
+- 支持流式播放 SiriusXM 的直播电台
 
-## Not Yet Supported
+## 配置
 
-- On Demand Content
-- XTRA Channels
+将账户的用户名、密码和地区（美国或加拿大）填写到相应的字段中。
+
+## 已知问题 / 说明
+
+- 在 SiriusXM 上收藏的电台不会同步反映到 Music Assistant 中。需要通过 MA 界面手动收藏这些电台，它们才会显示在电台视图中
+- 据报告，使用电子邮箱地址登录时会出现问题。如果遇到这种情况，请获取一个用户名
+
+## 尚不支持
+
+- 点播内容（On Demand Content）
+- XTRA 频道

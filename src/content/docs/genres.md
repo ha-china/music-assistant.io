@@ -1,196 +1,196 @@
 ---
-title: Genres
-description: A Walkthrough of the Music Assistant Genre Functionality
+title: 流派
+description: Music Assistant 流派功能详解
 ---
 
-# Genres
+# 流派
 
-Music Assistant includes a genre system that automatically categorises your library. Genres are split into three categories: **Music**, **Podcasts**, and **Audiobooks**. Genres from each stay separate, even when two categories share a name (like "Comedy" or "History"). Genres are used to organise and discover content across all your providers, making it easy to browse by style, find similar content, and keep your library well-structured.
+Music Assistant 包含一个流派系统，可自动对您的媒体库进行分类。流派分为三个类别：**音乐**、**播客**和**有声书**。每个类别的流派保持独立，即使两个类别共享相同的名称（如“喜剧”或“历史”）。流派用于组织和发现所有提供商中的内容，使您能够轻松地按风格浏览、查找相似内容并保持媒体库结构良好。
 
-## The Genre Library
+## 流派库
 
-The genre library is accessible from the main navigation and displays your genres as three collapsible sections: Music, Podcasts, and Audiobooks. By default, only genres that have media items linked to them are shown.
+流派库可通过主导航访问，并将您的流派显示为三个可折叠的部分：音乐、播客和有声书。默认情况下，仅显示已链接媒体项目的流派。
 
 ![image](/assets/screenshots/genres/genre-library.png)
 
-Each section loads a batch of genres at a time. Select **Load more items** at the bottom of a section to load more.
+每个部分一次加载一批流派。选择部分底部的**加载更多项目**以加载更多内容。
 
-### Sorting
+### 排序
 
-Each section has its own toolbar, so Music, Podcasts, and Audiobooks can be sorted, filtered, and searched independently. Genres can be sorted using the sort option in the toolbar:
+每个部分都有自己的工具栏，因此音乐、播客和有声书可以独立进行排序、筛选和搜索。可以使用工具栏中的排序选项对流派进行排序：
 
-- **Name** (ascending/descending)
-- **Sort Name** (ascending/descending)
-- **Date Added** (ascending/descending)
-- **Play Count** (ascending/descending)
+- **名称**（升序/降序）
+- **排序名称**（升序/降序）
+- **添加日期**（升序/降序）
+- **播放次数**（升序/降序）
 
-### Filtering
+### 筛选
 
-The toolbar provides several filter options:
+工具栏提供多个筛选选项：
 
-- **Favorites Only**: Show only genres marked as favorites
-- **Hide Empty Genres**: Cycles through three views each time you select it:
-  - **Hide empty genres**: Default. Hides genres with no linked media items
-  - **Show only default genres**: Hides any custom genres you've added, showing only the built-in ones
-  - **Show all genres**: Shows every genre, including empty and custom ones
+- **仅收藏**：仅显示标记为收藏的流派
+- **隐藏空流派**：每次选择时会在三个视图之间循环切换：
+  - **隐藏空流派**：默认。隐藏没有链接媒体项目的流派
+  - **仅显示默认流派**：隐藏您添加的任何自定义流派，仅显示内置流派
+  - **显示所有流派**：显示每个流派，包括空流派和自定义流派
 
 ![image](/assets/screenshots/genres/genre-toolbar.png)
 
-### Search
+### 搜索
 
-Use the search button in the toolbar to find genres by name. Genre names are matched against both the original name and any translated display names.
+使用工具栏中的搜索按钮按名称查找流派。流派名称会同时匹配原始名称和任何翻译后的显示名称。
 
-### Adding a Genre
+### 添加流派
 
-Administrators can add new genres manually using the **Add Genre** option in the toolbar menu. This opens a dialog where you can provide:
+管理员可以使用工具栏菜单中的**添加流派**选项手动添加新流派。这将打开一个对话框，您可以在其中提供：
 
-- **Genre name** (required)
-- **Sort name** (optional, used for custom sort ordering)
-- **Media type**: which category the genre belongs to (Music, Podcasts, or Audiobooks). Defaults to Music
-- **Description** (optional)
+- **流派名称**（必填）
+- **排序名称**（可选，用于自定义排序顺序）
+- **媒体类型**：流派所属的类别（音乐、播客或有声书）。默认为音乐
+- **描述**（可选）
 
 ![image](/assets/screenshots/genres/add-new.png)
 
-## Genre Detail Page
+## 流派详情页
 
-Selecting a genre from the library opens its detail page. This page provides an overview of the genre and all media associated with it.
+从流派库中选择一个流派将打开其详情页。此页面提供该流派及与其关联的所有媒体的概述。
 
 ![image](/assets/screenshots/genres/genre-overview.png)
 
-### Genre Header
+### 流派页眉
 
-The header displays:
+页眉显示：
 
-- **Genre name**: Translated to the user's language for built-in genres
-- **Description**: Sourced from built-in genre descriptions or custom metadata. Clicking the description expands it to full length
-- **Favorite toggle**: Mark or unmark the genre as a favorite
-- **Provider icon**: Indicates where the genre is stored
+- **流派名称**：对于内置流派，会翻译为用户的语言
+- **描述**：来源于内置流派描述或自定义元数据。点击描述可将其展开为完整长度
+- **收藏切换**：将流派标记或取消标记为收藏
+- **提供商图标**：指示流派的存储位置
 
-### Admin Actions
+### 管理员操作
 
-Administrators see additional action buttons in the header:
+管理员在页眉中会看到额外的操作按钮：
 
-- **Merge**: Merge this genre into another genre (see [Merging Genres](#merging-genres))
-- **Delete**: Delete this genre from the library (see [Deleting Genres](#deleting-genres))
+- **合并**：将此流派合并到另一个流派中（请参阅[合并流派](#merging-genres)）
+- **删除**：从库中删除此流派（请参阅[删除流派](#deleting-genres)）
 
-These actions are also available in the three-dot overflow menu.
+这些操作也可在三点溢出菜单中使用。
 
 ![image](/assets/screenshots/genres/info-header.png)
 
-### Overview Rows
+### 概述行
 
-Below the header, the detail page displays media items associated with the genre, grouped by type:
+在页眉下方，详情页显示与该流派关联的媒体项目，按类型分组：
 
-- Artists
-- Albums
-- Tracks
-- Playlists
-- Radio Stations
+- 艺术家
+- 专辑
+- 曲目
+- 播放列表
+- 电台
 
-Each row can be expanded to browse the linked items.
+可以展开每一行以浏览链接的项目。
 
-### Genre Aliases
+### 流派别名
 
-Administrators can manage genre aliases from the detail page. Aliases allow multiple names to resolve to the same genre, which is useful when different providers use different names for the same style of music.
+管理员可以从详情页管理流派别名。别名允许多个名称解析为同一流派，当不同的提供商对同一种音乐风格使用不同的名称时，这非常有用。
 
 ![image](/assets/screenshots/genres/alias-mappings.png)
 
-The alias manager supports:
+别名管理器支持：
 
-- **Add Alias**: Create a new alias for this genre
-- **Link Alias**: Search for and link an existing alias from another genre
-- **Promote Alias**: Convert an alias into its own standalone genre
-- **Remove Alias**: Unlink an alias from this genre
+- **添加别名**：为此流派创建新别名
+- **链接别名**：搜索并链接来自另一个流派的现有别名
+- **提升别名**：将别名转换为其独立的流派
+- **移除别名**：取消链接此流派的别名
 
-A promoted alias always stays in the same category (Music, Podcasts, or Audiobooks) as the genre it came from.
+提升后的别名始终与其来源流派保持在同一类别（音乐、播客或有声书）中。
 
-## Genre Actions
+## 流派操作
 
-### Merging Genres
+### 合并流派
 
-Merging allows you to combine two or more genres into one. All aliases and media mappings from the source genres are transferred to the target genre, and the source genres are deleted.
+合并允许您将两个或多个流派合并为一个。源流派中的所有别名和媒体映射都将转移到目标流派，并且源流派将被删除。
 
-To merge genres:
+要合并流派：
 
-1. Select one or more genres in the library (or open a genre's detail page)
-2. Choose **Merge into existing genre** from the context menu or the header action
-3. In the dialog, search for and select the target genre
-4. Confirm the merge
+1. 在库中选择一个或多个流派（或打开流派的详情页）
+2. 从上下文菜单或页眉操作中选择**合并到现有流派**
+3. 在对话框中搜索并选择目标流派
+4. 确认合并
 
 ![image](/assets/screenshots/genres/genre-merge.png)
 
-NOTE: Merging is a destructive action. The source genres will be permanently deleted. All their aliases and media mappings are transferred to the target.
+注意：合并是一项破坏性操作。源流派将被永久删除。它们的所有别名和媒体映射都将转移到目标流派。
 
-NOTE: Genres can only be merged within the same category. The target picker only shows genres from the same category as the one(s) you're merging, and the **Merge into existing genre** option won't appear at all if your selection spans more than one category.
+注意：流派只能在同一类别内合并。目标选择器仅显示与您正在合并的流派属于同一类别的流派，如果您的选择跨越多个类别，则**合并到现有流派**选项根本不会出现。
 
-### Deleting Genres
+### 删除流派
 
-Administrators can delete genres from the library. Deleting a genre removes it and all its associated aliases and media mappings.
+管理员可以从库中删除流派。删除流派会将其及其所有关联的别名和媒体映射一并移除。
 
-To delete genres:
+要删除流派：
 
-1. Select one or more genres in the library, or open a genre's detail page
-2. Choose **Delete genre** from the context menu or the header action
-3. Confirm the deletion in the two-step confirmation dialog
+1. 在库中选择一个或多个流派，或打开流派的详情页
+2. 从上下文菜单或页眉操作中选择**删除流派**
+3. 在两步确认对话框中确认删除
 
 ![image](/assets/screenshots/genres/delete-genre.png)
 
 ![image](/assets/screenshots/genres/delete-genre-sure.png)
 
-CAUTION: Deleting a genre is permanent and cannot be undone.
+警告：删除流派是永久性的，无法撤消。
 
-### Linking Media Items to a Genre
+### 将媒体项目链接到流派
 
-You can manually link library media items (artists, albums, tracks, playlists, radio stations) to a genre. This is useful when automatic genre detection has not assigned the correct genres, or when you want to create custom genre groupings.
+您可以手动将库中的媒体项目（艺术家、专辑、曲目、播放列表、电台）链接到流派。当自动流派检测未分配正确的流派，或者您想创建自定义流派分组时，这非常有用。
 
-To link items to a genre:
+要将项目链接到流派：
 
-1. Right-click a media item (or select multiple items and open the actions menu)
-2. Choose **Link to genre**
-3. In the dialog, search for and select the target genre
-4. Confirm the link
+1. 右键点击媒体项目（或选择多个项目并打开操作菜单）
+2. 选择**链接到流派**
+3. 在对话框中搜索并选择目标流派
+4. 确认链接
 
 ![image](/assets/screenshots/genres/genre-link-media.png)
 
-NOTE: The link to genre option is only available for items that are in your library. Items from external providers that have not been added to the library cannot be linked.
+注意：链接到流派选项仅适用于您库中的项目。尚未添加到库中的外部提供商的项目无法链接。
 
-## Managing Genres
+## 管理流派
 
-Administrators can manage genres in bulk from [**Settings → System → Genre Management**](/settings/core/#genre-management).
+管理员可以通过[**设置 → 系统 → 流派管理**](/settings/core/#genre-management)批量管理流派。
 
-### Genre Library Administration
+### 流派库管理
 
-This table lists every genre in your library across all three categories, and supports:
+此表格列出了您库中所有三个类别的每个流派，并支持：
 
-- **Search**: Find a genre by name
-- **Media type filter**: Narrow the table to Music, Podcasts, or Audiobooks, or view **All** categories at once. When viewing All, a media-type icon next to each genre shows which category it belongs to
-- **Show all genres**: Toggle between all genres, non-empty genres only, or default genres only
-- **View**: Choose which columns are shown
+- **搜索**：按名称查找流派
+- **媒体类型筛选**：将表格缩小到音乐、播客或有声书，或一次查看**所有**类别。查看“所有”时，每个流派旁边的媒体类型图标会显示其所属类别
+- **显示所有流派**：在所有流派、仅非空流派或仅默认流派之间切换
+- **视图**：选择显示哪些列
 
 ![image](/assets/screenshots/genres/genre-management-mediatype-filter.png)
 
-Selecting one or more genres in this table gives you the same actions available from the genre library: merge, delete, and restore excluded genres.
+在此表格中选择一个或多个流派将为您提供与流派库中相同的操作：合并、删除和恢复排除的流派。
 
-Excluded (globally hidden) genres are listed below the active ones, greyed out, with an option to restore them.
+排除（全局隐藏）的流派列在活动流派下方，显示为灰色，并提供恢复它们的选项。
 
-### Restoring Default Genres
+### 恢复默认流派
 
-Two options are available if you want to bring back genres that were removed or excluded:
+如果您想恢复已移除或排除的流派，有两个选项可用：
 
-- **[Restore Missing Defaults](/settings/core/#restore-missing-defaults)**: Adds back any missing default genre, without touching your existing genres or custom mappings. Choose to restore All categories at once, or just Music, Podcasts, or Audiobooks.
+- **[恢复缺失的默认值](/settings/core/#restore-missing-defaults)**：添加回任何缺失的默认流派，而不影响您现有的流派或自定义映射。选择一次恢复所有类别，或仅恢复音乐、播客或有声书。
 
 ![image](/assets/screenshots/genres/restore-missing-defaults.png)
 
-- **[Full Restore (Reset All)](/settings/core/#full-restore)**: Deletes every genre and alias, recreates only the defaults, and remaps all existing media items to the new genres. All custom genres, alias mappings, and media associations are lost. This always restores every category. There's no option to limit it to just one.
+- **[完全恢复（重置所有）](/settings/core/#full-restore)**：删除每个流派和别名，仅重新创建默认值，并将所有现有媒体项目重新映射到新流派。所有自定义流派、别名映射和媒体关联都将丢失。这始终会恢复每个类别。没有将其限制为仅一个类别的选项。
 
 ![image](/assets/screenshots/genres/full-restore.png)
 
-CAUTION: Full Restore is permanent and cannot be undone. You'll be asked to confirm twice before it runs.
+警告：完全恢复是永久性的，无法撤消。在运行之前，系统会要求您确认两次。
 
 ![image](/assets/screenshots/genres/full-restore-sure.png)
 
-## Genres on Media Items
+## 媒体项目上的流派
 
-When viewing an artist, album, or track detail page, the genres associated with that item are displayed as clickable chips below the description. Clicking a genre chip navigates to that genre's detail page.
+查看艺术家、专辑或曲目详情页时，与该项目关联的流派将作为可点击的标签显示在描述下方。点击流派标签将导航到该流派的详情页。
 
 ![image](/assets/screenshots/genres/mediaitem-infoheader-chips.png)

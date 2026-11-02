@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/base";
 import { team } from "../../data/marketing";
 import Button from "../marketing/ui/Button.astro";
 import Cover from "../marketing/ui/Cover.astro";
@@ -8,7 +9,7 @@ import Section from "../marketing/ui/Section.astro";
 <Section id="community" tone="inverse" labelledby="community-title">
   <div class="container layout">
     <div class="intro" data-reveal>
-      <h2 id="community-title">Built in the open.</h2>
+      <h2 id="community-title">公开透明地构建。</h2>
       <p>
         Music Assistant is built by a large community of maintainers and
         contributors, including the core team pictured here.
@@ -27,14 +28,14 @@ import Section from "../marketing/ui/Section.astro";
         >
           View on GitHub
         </Button>
-        <Button href="/help/" variant="secondary">
+        <Button href={withBase("/help/")} variant="secondary">
           Help or donate
         </Button>
       </div>
     </div>
 
     <div class="band">
-      <p>Brought to you by</p>
+      <p>由以下团队出品</p>
       <!-- Black-and-white band photos; colour comes back on hover. -->
       <ul>
         {team.map((person) => (
@@ -47,7 +48,7 @@ import Section from "../marketing/ui/Section.astro";
               <div class="portrait">
                 {person.image ? (
                   <img
-                    src={`/assets/team/${person.image}.png`}
+                    src={withBase(`/assets/team/${person.image}.png`)}
                     alt=""
                     width="200"
                     height="200"

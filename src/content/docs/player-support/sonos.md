@@ -4,55 +4,55 @@ title: "Sonos"
 
 # Sonos <img src="/assets/icons/sonos-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for Sonos devices. There are two providers available: "Sonos" for modern (S2) devices and "Sonos S1" for the older S1 generation. If your speakers use the current Sonos app they are S2.
+Music Assistant 支持 Sonos 设备。有两个可用的提供程序（provider）："Sonos" 适用于现代（S2）设备，"Sonos S1" 适用于较旧的 S1 一代。如果您的音箱使用当前的 Sonos 应用，那么它们就是 S2。
 
-## Features
+## 功能
 
-- Sonos devices are auto detected by Music Assistant
-- Sonos devices from the same series (S1 or S2) will play in sync when grouped
-- Sonos devices can optionally be grouped with AirPlay devices
+- Music Assistant 会自动检测 Sonos 设备
+- 同一系列（S1 或 S2）的 Sonos 设备在分组后将同步播放
+- Sonos 设备可以选择与 AirPlay 设备分组
 
-### AirPlay Functionality
+### AirPlay 功能
 
-Many Sonos devices support the AirPlay 1 <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> protocol and this enables very useful functionality within Music Assistant. <a href="https://support.sonos.com/en-au/article/stream-airplay-audio-to-sonos" target="_blank" rel="noopener noreferrer">Sonos's AirPlay guide</a> lists which devices are AirPlay capable.
+许多 Sonos 设备支持 AirPlay 1 的 <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> 协议，这在 Music Assistant 中启用了非常实用的功能。<a href="https://support.sonos.com/en-au/article/stream-airplay-audio-to-sonos" target="_blank" rel="noopener noreferrer">Sonos 的 AirPlay 指南</a>列出了哪些设备支持 AirPlay。
 
-If the Sonos device is grouped with an AirPlay device, or if the default [output protocol](/settings/individual-player/#output-protocols) is changed to `AirPlay`, then the AirPlay protocol will be used for playback. Other Sonos players can be synced with this player (even if they themselves do not have AirPlay, as the native Sonos protocol will be used for that connection). This means it is possible to play the same audio in perfect sync to a combination of AirPlay and Sonos speakers.
+如果 Sonos 设备与 AirPlay 设备分组，或者默认的[输出协议](/settings/individual-player/#output-protocols)被更改为 `AirPlay`，那么将使用 AirPlay 协议进行播放。其他 Sonos 播放器可以与此播放器同步（即使它们本身不支持 AirPlay，因为该连接将使用原生 Sonos 协议）。这意味着可以将相同的音频完美同步地播放到 AirPlay 和 Sonos 音箱的组合上。
 
 > [!NOTE]
-> If, as a result of grouping, a switch is required to the AirPlay protocol then a small silence due to the stream restart is to be expected.
+> 如果由于分组而需要切换到 AirPlay 协议，那么由于流重新启动，预计会出现短暂的静音。
 
-## Configuration
+## 配置
 
-1. In Music Assistant, go to **Settings → Player Providers** and check whether `Sonos` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `Sonos`.
-2. If you have devices from the older S1 generation, the `Sonos S1` provider is never added automatically. Click **Add a player provider** and select `Sonos S1`.
-3. Your Sonos devices will be discovered automatically and will appear in the player list, usually within a minute.
+1. 在 Music Assistant 中，前往 **设置 → 播放器提供程序**，检查 `Sonos` 是否已在列表中；新安装时会自动添加它。如果缺失，请点击 **添加播放器提供程序** 并选择 `Sonos`。
+2. 如果您有较旧的 S1 一代设备，`Sonos S1` 提供程序永远不会被自动添加。请点击 **添加播放器提供程序** 并选择 `Sonos S1`。
+3. 您的 Sonos 设备将被自动发现并出现在播放器列表中，通常在一分钟之内。
 
-If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+如果设备没有出现，请按照[发现检查清单](/faq/networking/#checklist-my-players-are-not-being-discovered)进行排查。
 
-## Settings
+## 设置
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+除了[播放器提供程序设置](/settings/player-provider/)之外，在设置此提供程序时还可以使用以下设置：
 
-- <b>Manual IP addresses for discovery.</b> In normal circumstances Music Assistant will automatically discover all players on the network using multicast discovery (mDNS/UPnP, [explained here](/faq/networking/)). In the case of special network setups, or when issues are encountered with one or more players not being discovered, IP addresses can be manually added here. This setting is not recommended for normal use. Also, if players are not on the same subnet as the Music Assistant server, issues may be experienced with streaming; in that case ensure the players can reach the server on the network and double check the base URL configuration of the [Stream server in the settings](/settings/core/#streams)
+- <b>用于发现的手动 IP 地址。</b>在正常情况下，Music Assistant 会使用多播发现（mDNS/UPnP，[在此处说明](/faq/networking/)）自动发现网络上的所有播放器。在特殊网络设置的情况下，或者当遇到一个或多个播放器无法被发现的问题时，可以在此处手动添加 IP 地址。不建议在正常使用中使用此设置。此外，如果播放器与 Music Assistant 服务器不在同一子网中，流式传输可能会出现问题；在这种情况下，请确保播放器可以在网络上访问服务器，并仔细检查[设置中流服务器的 base URL 配置](/settings/core/#streams)
 
-The Sonos S1 provider has two further settings:
+Sonos S1 提供程序还有两个额外的设置：
 
-- <b>Enable network scan for discovery.</b> Off by default. Scans the network for players instead of waiting for them to announce themselves. Try it if some of your S1 players are not found automatically, though it should not normally be needed
-- <b>Household ID.</b> The ID of your Sonos S1 system. It is detected automatically when left empty, so only fill it in if you have a reason to
+- <b>启用网络扫描以进行发现。</b>默认关闭。扫描网络以查找播放器，而不是等待它们自行公告。如果您的某些 S1 播放器未被自动发现，可以尝试此选项，不过通常应该不需要
+- <b>家庭 ID（Household ID）。</b>您的 Sonos S1 系统的 ID。留空时会自动检测，因此除非有充分理由，否则无需填写
 
-In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the Sonos players have the following settings:
+除了[单个播放器设置](/settings/individual-player/)和[大多数协议共享的设置](/settings/individual-player/#settings-shared-by-most-protocols)之外，Sonos 播放器还有以下设置：
 
-- <b>[Prefer low-latency WAV for live sources](/settings/individual-player/#prefer-low-latency-wav-for-live-sources).</b> On by default for Sonos and Sonos S1. Turn it off if the speaker cannot play continuous WAV streams
-- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. It applies while flow mode is off, so it is greyed out once flow mode is enabled
+- <b>[对于实时源优先使用低延迟 WAV](/settings/individual-player/#prefer-low-latency-wav-for-live-sources)。</b>对于 Sonos 和 Sonos S1 默认开启。如果音箱无法播放连续的 WAV 流，请将其关闭
+- <b>允许在不同采样率的曲目之间进行淡入淡出（crossfade）。</b>如果在曲目切换期间出现音频故障，应将其禁用。它仅在流模式（flow mode）关闭时生效，因此一旦启用流模式，该项就会变灰
 
-There is no sample rates setting for Sonos players, as each speaker's capability is known already. Current Sonos models take 44.1kHz and 48kHz at 16 or 24 bits, while older models are limited to 16 bits. Sonos S1 players are 44.1kHz and 48kHz at 16 bits.
+Sonos 播放器没有采样率设置，因为每个音箱的能力都是已知的。当前的 Sonos 型号支持 16 或 24 位的 44.1kHz 和 48kHz，而较旧的型号仅限于 16 位。Sonos S1 播放器支持 16 位的 44.1kHz 和 48kHz。
 
-A Sonos speaker that Music Assistant can also reach another way, over AirPlay for example, shows a section for each protocol under Output Protocol(s). The settings above are the ones in the Sonos section, and the other protocol carries its own separate set, which is why the available settings can look different from one speaker to the next.
+如果 Music Assistant 还可以通过其他方式（例如通过 AirPlay）访问某个 Sonos 音箱，那么该音箱会在输出协议下为每个协议显示一个部分。上面的设置是 Sonos 部分中的设置，而其他协议有自己单独的一套设置，这就是为什么可用设置在不同音箱之间可能看起来不同的原因。
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- Issues have been reported with the Sonos Arc and Unifi networking equipment. If you have problems, ensure `Multicast DNS` and `IGMP snooping` are turned ON in your UniFi network settings. These are router settings that control the announcement messages speakers use to be discovered; see [Networking Basics](/faq/networking/) for an explanation and a full checklist
-- Issues have been reported with playback not starting on the `Sonos Connect Amp` and `Play:1`. If this is encountered then set `Enable Queue Flow Mode` to ON in the [individual player settings](/settings/individual-player/)
-- S1 and S2 devices cannot be grouped together in the same Sync Group. S1 and S2 devices can be grouped via a Universal Group but will not play in sync
-- Using the Sonos HA Integration at the same time as the MA Sonos S1 player provider may cause problems. It is not possible to run the HA provider and Sonos S1 provider on the same host and additionally these speakers do not like too many requests from too many sources. It is therefore recommended to only use the MA Sonos S1 player provider
-- Sonos firmware changes has resulted in crossfade not working when the output codec is lossless (i.e. FLAC or WAV). Users can either disable crossfade, switch to the MP3 codec or use AirPlay mode
+- Sonos Arc 与 Unifi 网络设备之间已有问题报告。如果您遇到问题，请确保在 UniFi 网络设置中 `Multicast DNS` 和 `IGMP snooping` 已开启。这些是控制音箱用于被发现的通知消息的路由器设置；有关说明和完整检查清单，请参见[网络基础](/faq/networking/)
+- 已有关于 `Sonos Connect Amp` 和 `Play:1` 上播放无法开始的问题报告。如果遇到这种情况，请在[单个播放器设置](/settings/individual-player/)中将 `Enable Queue Flow Mode` 设置为开启
+- S1 和 S2 设备无法在同一个同步组（Sync Group）中分组。S1 和 S2 设备可以通过通用组（Universal Group）分组，但无法同步播放
+- 同时使用 Sonos HA 集成（integration）和 MA Sonos S1 播放器提供程序可能会导致问题。HA 提供程序和 Sonos S1 提供程序无法在同一主机上运行，而且这些音箱不喜欢来自太多源的过多请求。因此建议仅使用 MA Sonos S1 播放器提供程序
+- Sonos 固件的更改导致在输出编解码器为无损格式（即 FLAC 或 WAV）时淡入淡出无法工作。用户可以禁用淡入淡出、切换到 MP3 编解码器或使用 AirPlay 模式

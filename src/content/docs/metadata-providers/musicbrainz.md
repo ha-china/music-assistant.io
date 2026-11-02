@@ -1,43 +1,43 @@
 ---
-title: MusicBrainz Metadata Provider
-description: Features and Notes for the MusicBrainz Metadata Provider
+title: MusicBrainz 元数据提供者
+description: MusicBrainz 元数据提供者的功能与注意事项
 ---
 
-# MusicBrainz Metadata Provider <img src="/assets/icons/musicbrainz-icon.svg" alt="MusicBrainz logo" style="width: 70px; float: right;"  loading="lazy" />
+# MusicBrainz 元数据提供者 <img src="/assets/icons/musicbrainz-icon.svg" alt="MusicBrainz logo" style="width: 70px; float: right;"  loading="lazy" />
 
-MusicBrainz is an open music encyclopedia that helps Music Assistant match the same artist, album, or track across your different music services. It's a built-in provider that's always enabled.
+MusicBrainz 是一个开放的音乐百科全书，它帮助 Music Assistant 在不同的音乐服务中匹配相同的艺术家、专辑或曲目。它是一个始终启用的内置提供者。
 
-## Features
+## 功能
 
-Music Assistant can show an **Artist Events** recommendation row with important dates: artist birthdays, memorials (death anniversaries), band founding dates, and disbanded dates. When enabled, this recommendation row appears on your Discover page.
+Music Assistant 可以显示一个包含重要日期的**艺术家活动**推荐行：艺术家生日、纪念日（逝世周年）、乐队成立日期和解散日期。启用后，此推荐行将出现在您的“发现”页面上。
 
 <img width="2160" height="1188" alt="Artist Events recommendation showing timeline of events" src="/assets/screenshots/musicbrainz/timeline.png" loading="lazy" />
 
-Events are grouped by type:
+活动按类型分组：
 
-- **Birthdays** — Artists whose birthdays fall within the configured day window
-- **In Memoriam** — Artists whose passing dates (death anniversaries) fall within the configured day window
-- **Founded** — Bands/groups that were founded on dates within the window
-- **Disbanded** — Bands/groups that disbanded on dates within the window
+- **生日** — 生日在配置的天数窗口内的艺术家
+- **纪念日** — 逝世日期（逝世周年）在配置的天数窗口内的艺术家
+- **成立** — 在窗口内日期成立的乐队/团体
+- **解散** — 在窗口内日期解散的乐队/团体
 
-## Configuration
+## 配置
 
-The provider has one configurable setting:
+该提供者有一个可配置的设置：
 
 <img width="4512" height="1380" alt="Advanced configuration settings" src="/assets/screenshots/musicbrainz/config.png" loading="lazy" />
 
-- **Recommendation Days** (default: 3, range: 1-15) — How many days before and after today to include in the artist events recommendation row. For example, 3 days shows events from 3 days ago through 3 days ahead (7 days total window).
+- **推荐天数**（默认：3，范围：1-15）— 在艺术家活动推荐行中包含今天之前和之后的天数。例如，3 天会显示从 3 天前到 3 天后的活动（总共 7 天的窗口）。
 
-### Choosing a window
+### 选择窗口
 
-The default 3 days is a reasonable balance:
+默认的 3 天是一个合理的平衡：
 
-**Short windows (1–2 days):**
-- More focused view, only showing immediate past and upcoming events
-- Reduces clutter if you have a large library with many artists
-- Good for daily check-ins
+**短窗口（1-2 天）：**
+- 更集中的视图，仅显示刚刚过去和即将到来的活动
+- 如果您的媒体库很大且包含许多艺术家，可减少杂乱感
+- 适合每日查看
 
-**Long windows (7–15 days):**
-- Broader time range, more artist events visible
-- Useful if you have a smaller library or prefer to see the full week/fortnight ahead
-- May result in a long horizontal scroll if your library has many artists with events throughout the year
+**长窗口（7-15 天）：**
+- 更宽的时间范围，可见更多艺术家活动
+- 如果您的媒体库较小，或者更喜欢查看未来一整周/两周的活动，这会很有用
+- 如果您的媒体库中有许多艺术家在全年都有活动，可能会导致较长的水平滚动

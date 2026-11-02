@@ -1,170 +1,170 @@
 ---
-title: Party Plugin
-description: Let guests queue songs from their phones by scanning a QR code, with no account and no access to your system.
+title: 派对插件
+description: 宾客扫描二维码即可用手机点播歌曲加入队列，无需账号，且无法访问您的系统。
 pluginGroup: shared
 ---
 
-# Party Plugin
+# 派对插件
 
-The Party plugin lets your guests add their favorite songs to the queue just by scanning a QR code, no logins or accounts needed! Just display the party dashboard on a TV or device of your choice. Guests have a dedicated UI page with no access to your system controls. With optional rate limits you can keep things fair.
+派对（Party）插件让您的宾客只需扫描二维码，即可将喜欢的歌曲添加到队列中，无需登录或账号！只需在电视或您选择的设备上显示派对仪表盘即可。宾客拥有专属的界面页面，无法访问您的系统控制。通过可选的速率限制，您可以确保人人公平。
 
 ![Party Dashboard](../../../assets/screenshots/party/party-dashboard.png)
 
-## Features
+## 功能特性
 
-- **Guest Access via QR Code** - Generate a shareable QR code that guests scan to access the song request interface
-- **Mobile-Optimized Guest View** - Clean, touch-friendly interface designed for phones
-- **Search & Request Songs** - Guests can search your music library and streaming services
-- **Duplicate Prevention** - Tracks already in the queue are shown as "Already in queue" and cannot be re-added
-- **Configurable Rate Limiting** - Give each guest a set number of requests so nobody can take over the queue
-- **Party Dashboard** - Display the queue and QR code on a TV, monitor, or tablet
-- **Karaoke Mode** - Show synchronized lyrics front-and-center on the dashboard for a sing-along
-- **Silent Disco** - Let every guest listen on their own phone instead of playing out loud on a speaker
-- **Remote Access Support** - Works with Music Assistant's remote access so guests don't even need to be connected to your local network or wifi
+- **通过二维码进行宾客访问** - 生成可分享的二维码，宾客扫描后即可访问点歌界面
+- **针对手机优化的宾客视图** - 专为手机设计的简洁、触控友好的界面
+- **搜索并点播歌曲** - 宾客可以搜索您的音乐库和流媒体服务
+- **防止重复** - 队列中已有的曲目会显示为“已在队列中”（Already in queue），无法重复添加
+- **可配置的速率限制** - 为每位宾客设定固定的点播次数，防止有人霸占队列
+- **派对仪表盘** - 在电视、显示器或平板电脑上显示队列和二维码
+- **卡拉OK模式** - 在仪表盘正中最醒目的位置显示同步歌词，方便跟唱
+- **无声迪斯科** - 让每位宾客用自己的手机收听，而不是通过扬声器外放
+- **远程访问支持** - 与 Music Assistant 的远程访问配合使用，宾客甚至无需连接到您的本地网络或 Wi-Fi
 
-## How It Works
+## 工作原理
 
-### For the Host
+### 对于主持人
 
-1. Enable the Party plugin via **Settings → Plugins → Add a plugin**
-2. Choose whether the music plays on a speaker or on each guest's phone, and in Venue mode which player will be used for party (or leave on Auto to use the last active player)
-3. Open the Party dashboard on the screen of your choice to display the live queue and guest join QR code
+1. 通过**设置 → 插件 → 添加插件**启用派对插件
+2. 选择音乐是在扬声器上播放还是在每位宾客的手机上播放；如果是场地（Venue）模式，还需选择派对使用的播放器（或保持“自动”以使用最近活跃的播放器）
+3. 在您选择的屏幕上打开派对仪表盘，以显示实时队列和宾客加入二维码
 
-### For Guests
+### 对于宾客
 
-1. Scan the QR code with a phone camera
-2. The guest view opens automatically in a browser
-3. Search for songs by name or artist
-4. Pick a song from the search results, then tap "Request" to add it to the queue or "Boost" to play it sooner
-5. Songs already in the queue are marked as "Already in queue" and successfully requested songs show "Added"
-6. Tap an upcoming song in the queue, then tap "Boost" to move it higher
-7. View the current queue and see when their songs will play
+1. 用手机相机扫描二维码
+2. 宾客视图会自动在浏览器中打开
+3. 按名称或艺术家搜索歌曲
+4. 从搜索结果中选择一首歌曲，然后点按“点播”（Request）将其添加到队列，或点按“置顶”（Boost）使其更早播放
+5. 队列中已有的歌曲会标记为“已在队列中”（Already in queue），成功点播的歌曲会显示“已添加”（Added）
+6. 点按队列中即将播放的歌曲，然后点按“置顶”（Boost）使其排名提前
+7. 查看当前队列，了解自己的歌曲何时播放
 
 ![Guest View - Queue](../../../assets/screenshots/party/party-guest-view-queue.png)
 
-## Configuration
+## 配置
 
-### Basic Settings
+### 基本设置
 
-| Setting | Description |
+| 设置 | 说明 |
 |---------|-------------|
-| **Party Mode** | How the party is heard. **Venue** plays the music out loud on one of your players for everyone in the room. **Remote** makes it a silent disco, where every guest listens on their own phone by tapping **Tap to listen** on the guest page. Venue by default. |
-| **Party Player** | Select which player/queue receives guest requests. Set to "Auto" to automatically use the last active player. Only shown in Venue mode. |
-| **Party Name** | Custom name/title displayed on the party dashboard. Leave blank to hide. |
-| **Party Duration (hours)** | How long the QR code and join link stay valid, from 1 to 168 hours. 8 hours by default. A change only applies to QR codes created after it, so it does not extend the one already on screen. |
-| **Enable Guest Access via QR Code** | Master toggle for the entire feature. When disabled, all active guest sessions are immediately destroyed and guests will need to re-scan the QR code when re-enabled. |
-| **QR Code Text** | Custom text displayed alongside the QR code on the dashboard. Leave blank to hide. |
-| **Hide Back Button in Fullscreen Mode** | Hides navigation elements in fullscreen mode. You will need to use browser controls (e.g. Alt+Left) to navigate back. |
-| **Show Progress Bar for the current playing song** | Display a progress bar on the currently playing song in the track list. |
-| **Karaoke Mode** | Shows synchronized lyrics prominently in the center of the screen, with the track list minimized to the current and next song at the bottom. When synced (LRC) lyrics are available, they scroll in time with the music. The QR code moves to the top-left corner. On mobile, the QR code is hidden and lyrics fill the screen with only the current song shown at the bottom. |
-| **Highlight Lyrics Ahead of Time** | When enabled (requires Karaoke Mode), the lyric line highlight transition finishes exactly when the line's timestamp arrives, giving a smooth anticipation effect. When disabled, the transition starts at the timestamp instead. Enabled by default. |
-| **Enable Anti Burn-in** | Periodically swaps the position of UI elements every 10 minutes to prevent burn-in on OLED or plasma displays. In normal mode, the QR code and track list sides are swapped. In karaoke mode, the QR code alternates between the top-left and top-right corners. Enabled by default. |
+| **派对模式** | 派对音乐的播放方式。**场地（Venue）** 模式通过您的其中一个播放器外放音乐，供房间里的所有人收听。**远程（Remote）** 模式则是无声迪斯科，每位宾客在宾客页面上点按 **“点按收听”（Tap to listen）**，用自己的手机收听。默认为场地模式。 |
+| **派对播放器** | 选择由哪个播放器/队列接收宾客的点播请求。设置为“自动”（Auto）可自动使用最近活跃的播放器。仅在场地模式下显示。 |
+| **派对名称** | 显示在派对仪表盘上的自定义名称/标题。留空则不显示。 |
+| **派对时长（小时）** | 二维码和加入链接的有效时长，范围为 1 到 168 小时。默认为 8 小时。更改仅对此后创建的二维码生效，因此不会延长屏幕上已显示的二维码的有效期。 |
+| **通过二维码启用宾客访问** | 整个功能的主开关。禁用后，所有活跃的宾客会话都会立即销毁，重新启用后宾客需要重新扫描二维码。 |
+| **二维码文字** | 显示在仪表盘上二维码旁边的自定义文字。留空则不显示。 |
+| **在全屏模式下隐藏返回按钮** | 在全屏模式下隐藏导航元素。您需要使用浏览器控制（例如 Alt+Left）进行返回。 |
+| **显示当前播放歌曲的进度条** | 在曲目列表中当前播放的歌曲上显示进度条。 |
+| **卡拉OK模式** | 在屏幕中央醒目地显示同步歌词，曲目列表最小化为底部的当前歌曲和下一首歌曲。当有同步（LRC）歌词时，歌词会随音乐同步滚动。二维码会移到左上角。在手机上，二维码会隐藏，歌词充满整个屏幕，底部仅显示当前歌曲。 |
+| **提前高亮歌词** | 启用后（需要卡拉OK模式），歌词行高亮的过渡动画会在该行时间点到达时恰好结束，带来流畅的预示效果。禁用时，过渡动画则从该时间点开始。默认启用。 |
+| **启用防烧屏** | 每 10 分钟定期交换界面元素的位置，以防止 OLED 或等离子显示器烧屏。在普通模式下，二维码和曲目列表的位置会互换。在卡拉OK模式下，二维码会在左上角和右上角之间交替。默认启用。 |
 
-### Rate Limiting (Advanced)
+### 速率限制（高级）
 
-Each guest gets an allowance of goes, and they earn another one back every so often. Once a guest has used them all up they have to wait for one to come back before they can do that again. Adding songs, boosting and skipping each have their own allowance, so running out of skips does not stop someone adding a song.
+每位宾客都会获得一定次数的配额，并且会每隔一段时间恢复一次。一旦宾客用完了所有配额，就必须等待配额恢复后才能再次执行相应操作。添加歌曲、置顶和跳过各有独立的配额，因此跳过次数用完并不会影响添加歌曲。
 
-The **Token Limit** is how many goes a guest starts with, and how many they can save up. The **Refill Rate** is how long it takes to earn one back.
+**令牌上限**（Token Limit）是宾客初始拥有的次数，也是他们可以累积的最多次数。**恢复速率**（Refill Rate）是恢复一次所需的时间。
 
-:::tip[Disabling Rate Limiting]
-Set "Enable Rate Limiting" to off to give guests unlimited requests. Individual features (Add, Boost, Skip) can still be disabled separately.
+:::tip[禁用速率限制]
+将“启用速率限制”设置为关闭，即可让宾客无限次点播。各个功能（添加、置顶、跳过）仍可单独禁用。
 :::
 
-#### Add to Queue
+#### 添加到队列
 
-| Setting | Default | Description |
+| 设置 | 默认值 | 说明 |
 |---------|---------|-------------|
-| **Allow Add to Queue** | On | Let guests add songs to the queue (prioritized before normally added songs, but after any "Boost" songs) |
-| **Prevent Duplicate Tracks** | On | Prevent guests from adding a track that is already in the queue. Tracks already queued are shown as "Already in queue" in the guest view. |
-| **Add to Queue Token Limit** | 10 | How many songs a guest can add before having to wait, from 1 to 50 |
-| **Add to Queue Refill Rate (minutes)** | 2 min | How long until they earn another go, from 1 to 60 minutes |
+| **允许添加到队列** | 开 | 允许宾客将歌曲添加到队列（优先于正常添加的歌曲，但排在所有“置顶”歌曲之后） |
+| **防止重复曲目** | 开 | 防止宾客添加队列中已有的曲目。已排队的曲目会在宾客视图中显示为“已在队列中”（Already in queue）。 |
+| **添加到队列令牌上限** | 10 | 宾客需要等待前可以添加的歌曲数量，范围为 1 到 50 |
+| **添加到队列恢复速率（分钟）** | 2 分钟 | 恢复一次所需的时间，范围为 1 到 60 分钟 |
 
-#### Boost
+#### 置顶
 
-| Setting | Default | Description |
+| 设置 | 默认值 | 说明 |
 |---------|---------|-------------|
-| **Allow Boost** | On | Let guests boost songs to play next (queue jumping). Guests can boost from search results or tap an upcoming queue item to boost it higher. |
-| **Boost Token Limit** | 1 | How many boosts a guest can use before having to wait, from 1 to 10 |
-| **Boost Refill Rate (minutes)** | 20 min | How long until they earn another go, from 5 to 120 minutes |
+| **允许置顶** | 开 | 允许宾客置顶歌曲使其接下来播放（插队）。宾客可以在搜索结果中置顶歌曲，或点按队列中即将播放的条目使其排名提前。 |
+| **置顶令牌上限** | 1 | 宾客需要等待前可以使用的置顶次数，范围为 1 到 10 |
+| **置顶恢复速率（分钟）** | 20 分钟 | 恢复一次所需的时间，范围为 5 到 120 分钟 |
 
-#### Skip Song
+#### 跳过歌曲
 
-| Setting | Default | Description |
+| 设置 | 默认值 | 说明 |
 |---------|---------|-------------|
-| **Allow Skip Song** | Off | Let guests skip the currently playing song |
-| **Skip Song Token Limit** | 1 | How many skips a guest can use before having to wait, from 1 to 5 |
-| **Skip Song Refill Rate (minutes)** | 60 min | How long until they earn another go, from 15 to 180 minutes |
+| **允许跳过歌曲** | 关 | 允许宾客跳过当前播放的歌曲 |
+| **跳过歌曲令牌上限** | 1 | 宾客需要等待前可以使用的跳过次数，范围为 1 到 5 |
+| **跳过歌曲恢复速率（分钟）** | 60 分钟 | 恢复一次所需的时间，范围为 15 到 180 分钟 |
 
-### Badge Colors (Advanced)
+### 徽章颜色（高级）
 
-Customize the colors of badges shown on guest-requested songs in the queue:
+自定义队列中宾客点播歌曲所显示徽章的颜色：
 
-- **Request Badge Color** - For songs added to the queue (default: Green)
-- **Boost Badge Color** - For priority requests (default: Orange)
+- **点播徽章颜色** - 用于添加到队列的歌曲（默认：绿色）
+- **置顶徽章颜色** - 用于优先请求（默认：橙色）
 
-## User Interface
+## 用户界面
 
-### Party Dashboard
+### 派对仪表盘
 
-Access via the Party link in the Music Assistant sidebar. This view is designed for display on a TV or monitor at your party.
+通过 Music Assistant 侧边栏中的“派对”链接访问。此视图专为在您派对的电视或显示器上显示而设计。
 
-**Features:**
+**功能特性：**
 
-- Large QR code for easy scanning. Click it, or the **Copy link** button below it, to copy the join link. On devices that can share, the button is **Share invitation** instead, with **Copy link** in its menu
-- Animated track stack showing previous, current, and upcoming songs
-- Guest request badges visible on queue items
-- **Karaoke Mode** - A dedicated layout that puts synchronized lyrics front-and-center with the track stack minimized at the bottom and the QR code in the top-left corner. Great for sing-along parties!
-- **Anti Burn-in** - Automatically swaps UI element positions every 10 minutes to protect OLED and plasma displays
-- Access error display when the configured player is not available
+- 大尺寸二维码，方便扫描。点击二维码或其下方的 **“复制链接”（Copy link）** 按钮即可复制加入链接。在支持分享的设备上，该按钮会变为 **“分享邀请”（Share invitation）**，其菜单中包含 **“复制链接”（Copy link）**
+- 动画曲目堆栈，显示之前、当前和即将播放的歌曲
+- 队列条目上可见的宾客点播徽章
+- **卡拉OK模式** - 专门设计的布局，将同步歌词置于屏幕正中最醒目的位置，曲目堆栈最小化到底部，二维码位于左上角。非常适合合唱派对！
+- **防烧屏** - 每 10 分钟自动交换界面元素的位置，以保护 OLED 和等离子显示器
+- 当配置的播放器不可用时显示访问错误
 
 ![Party Dashboard with Boost](../../../assets/screenshots/party/party-dashboard-boost.png)
 
 ![Party Dashboard - Karaoke Mode](../../../assets/screenshots/party/party-dashboard-karaoke.png)
 
-### Guest View (Mobile Interface)
+### 宾客视图（手机界面）
 
-Guests are automatically redirected here after scanning the QR code.
+宾客扫描二维码后会自动跳转到此页面。
 
-**Features:**
+**功能特性：**
 
-- Search bar that shows results as you type, with a filter button to limit them to Tracks or Artists
-- Pick a track from the results to show its "Request" and "Boost" buttons
-- Pick an artist to browse their tracks, then tap a track to show its "Request" and "Boost" buttons
-- Tracks already in the queue show "Already in queue" instead of action buttons; successfully requested songs show "Added"
-- Current queue display with position indicators
-- Tap an upcoming queue item, then tap "Boost" to move it higher in the queue
-- Token counters showing remaining requests
-- "Request" and "Boost" badges on songs they've added
-- **Skip button** - When enabled by the host, guests can skip the currently playing song. The button appears next to the "Current Queue" header with a token counter showing remaining skips. Once tokens are used, a countdown timer shows when the next skip becomes available
+- 搜索栏会随输入实时显示结果，并提供筛选按钮，可将结果限定为曲目或艺术家
+- 从结果中选择一首曲目，即可显示其“点播”（Request）和“置顶”（Boost）按钮
+- 选择一位艺术家浏览其曲目，然后点按一首曲目即可显示其“点播”（Request）和“置顶”（Boost）按钮
+- 队列中已有的曲目会显示“已在队列中”（Already in queue）而不是操作按钮；成功点播的歌曲会显示“已添加”（Added）
+- 显示当前队列并带有位置指示
+- 点按队列中即将播放的条目，然后点按“置顶”（Boost）使其在队列中排名提前
+- 显示剩余请求次数的令牌计数器
+- 他们添加的歌曲上带有“点播”（Request）和“置顶”（Boost）徽章
+- **跳过按钮** - 由主持人启用后，宾客可以跳过当前播放的歌曲。该按钮会显示在“当前队列”（Current Queue）标题旁，并带有显示剩余跳过次数的令牌计数器。令牌用完后，倒计时器会显示下一次跳过何时可用
 
 ![Guest View - Search](../../../assets/screenshots/party/party-guest-view-search.png)
 
 ![Guest View - Queue](../../../assets/screenshots/party/party-guest-view-queue.png)
 
-## Remote Access
+## 远程访问
 
-When [Remote Access](/settings/remote-access) is enabled, the QR code URL uses `app.music-assistant.io`, allowing guests to connect from anywhere via WebRTC - even if they're not on your local network.
+启用[远程访问](/settings/remote-access)后，二维码 URL 将使用 `app.music-assistant.io`，允许宾客通过 WebRTC 从任何地方连接——即使他们不在您的本地网络中。
 
-When remote access is disabled, guests must be on the same network as your Music Assistant server.
+禁用远程访问后，宾客必须与您的 Music Assistant 服务器处于同一网络中。
 
-## Known Issues / Notes
+## 已知问题/注意事项
 
-- The QR code stops working after the Party Duration (8 hours unless you change it). Once a guest has joined, their session lasts up to 24 hours and then they need to scan the QR code again
-- Switching guest access off or removing the Party plugin signs all guests out and stops the QR code from working
-- Rate limiting tokens are stored in the guest's browser - clearing browser data resets their limits
-- The Party Dashboard works best on landscape displays; the guest view is optimized for portrait (mobile)
+- 二维码在派对时长结束后失效（除非您更改，否则为 8 小时）。宾客加入后，其会话最长可持续 24 小时，之后需要重新扫描二维码
+- 关闭宾客访问或移除派对插件会使所有宾客退出登录，并使二维码失效
+- 速率限制令牌存储在宾客的浏览器中 - 清除浏览器数据会重置其限制
+- 派对仪表盘在横屏显示效果最佳；宾客视图则针对竖屏（手机）进行了优化
 
-### Opening the QR link on a signed-in device
+### 在已登录的设备上打开二维码链接
 
-If you open the QR code or join link in a browser that is already signed in to Music Assistant, you stay signed in as yourself and land on the guest page. Tap your initial at the top right and choose **Back to Music Assistant** to return to the full app. If that browser is not signed in to this server, it joins as a normal guest and any login you have there stays as it is.
+如果您在已登录 Music Assistant 的浏览器中打开二维码或加入链接，您将以自己的身份保持登录状态，并进入宾客页面。点按右上角您的首字母，然后选择 **“返回 Music Assistant”（Back to Music Assistant）** 即可返回完整应用。如果该浏览器未登录此服务器，则会以普通宾客身份加入，您在该浏览器中的任何登录状态都保持不变。
 
-Guests find **Leave guest mode** in the same menu. When a guest session ends, for example because it expired or guest access was switched off, the guest sees **Your party session has ended** with a button to scan the QR code again.
+宾客可在同一菜单中找到 **“退出访客模式”（Leave guest mode）**。当宾客会话结束时（例如因过期或宾客访问被关闭），宾客会看到 **“您的派对会话已结束”（Your party session has ended）**，并带有重新扫描二维码的按钮。
 
-## Tips for Hosting
+## 主持技巧
 
-1. **Display the Party Dashboard** - Use a spare tablet, TV, or monitor to show the QR code and queue
-2. **Pre-populate the queue** - Add some songs before guests arrive to set the mood
-3. **Adjust rate limits** - For smaller gatherings, you might disable rate limiting entirely
-4. **Use a dedicated player** - Configure a specific player for party to avoid conflicts with other rooms
-5. **Enable remote access** - If some guests might be on cellular data, enable remote access so the QR code works for everyone
-6. **Enable Karaoke Mode** - For sing-along parties, turn on Karaoke Mode to show lyrics prominently on the big screen. Works best with music providers that supply synced (LRC) lyrics
+1. **显示派对仪表盘** - 使用闲置的平板电脑、电视或显示器来显示二维码和队列
+2. **预先填充队列** - 在宾客到来之前添加一些歌曲来营造气氛
+3. **调整速率限制** - 对于小型聚会，您可以完全禁用速率限制
+4. **使用专用播放器** - 为派对配置一个特定的播放器，以避免与其他房间冲突
+5. **启用远程访问** - 如果有些宾客可能在使用蜂窝数据，请启用远程访问，确保二维码对每个人都有效
+6. **启用卡拉OK模式** - 对于合唱派对，请开启卡拉OK模式，在大屏幕上醒目地显示歌词。对于提供同步（LRC）歌词的音乐服务商效果最佳

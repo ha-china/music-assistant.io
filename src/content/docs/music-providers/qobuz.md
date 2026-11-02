@@ -4,11 +4,11 @@ title: "Qobuz"
 
 # Qobuz <img src="/assets/icons/qobuz-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has full support for <a href="https://www.qobuz.com/" target="_blank" rel="noopener noreferrer">Qobuz</a>, including Qobuz's excellent HiRes catalogue!
+Music Assistant 完全支持 <a href="https://www.qobuz.com/" target="_blank" rel="noopener noreferrer">Qobuz</a>，包括 Qobuz 出色的 HiRes 曲库！
 
-Qobuz is a French subscription streaming service aimed at people who care about sound quality. Everything streams lossless, and it also sells albums as downloads you keep.
+Qobuz 是一家来自法国的订阅制流媒体服务，面向注重音质的用户。所有内容均以无损格式流式传输，同时也出售可永久保存的专辑下载。
 
-Sign in and your Qobuz favourites appear in Music Assistant, along with the whole catalogue to search through.
+登录后，您的 Qobuz 收藏夹（Favourites）将显示在 Music Assistant 中，同时还可以搜索整个曲库。
 
 ## Features
 
@@ -33,18 +33,32 @@ Sign in and your Qobuz favourites appear in Music Assistant, along with the whol
 - Marking an item as "in library" from the Music Assistant interface will also mark it as a favorite in Qobuz
 - On playback, the highest quality is preferered automatically
 
-## Configuration
+### Other
 
-In the configuration, you need to enter your Qobuz username and password
+- Searching the Qobuz catalogue
+- Items in your Qobuz Favourites will be marked as "in library" in Music Assistant
+- Marking an item as "in library" from the Music Assistant interface will also mark it as a favorite in Qobuz
+- On playback, the highest quality is preferered automatically
 
-### Settings
+### 其他
 
-Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+- 搜索 Qobuz 曲库
+- 您 Qobuz 收藏夹中的条目会在 Music Assistant 中被标记为“在资料库中”
+- 在 Music Assistant 界面中将条目标记为“在资料库中”时，也会同时在 Qobuz 中将其标记为收藏
+- 播放时会自动优先使用最高音质
 
-## Known Issues / Notes
+## 配置
 
-- Qobuz only fetches images for artists/albums that have been directly added to the library (eg not albums of artists) to prevent too many API calls
+在配置中，您需要输入您的 Qobuz 用户名和密码
 
-## Not yet supported
+### 设置
 
-- Recommendations
+请参阅[资料库导入控制（Library Import Control）](/music-providers/#library-import-control)设置。
+
+## 已知问题 / 说明
+
+- 为避免过多的 API 调用，Qobuz 只会为直接添加到资料库中的艺人/专辑获取图片（例如，不包括艺人的专辑）
+
+## 尚不支持
+
+- 推荐内容

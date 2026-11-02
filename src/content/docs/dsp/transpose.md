@@ -1,36 +1,36 @@
 ---
-title: DSP Transpose
-description: Explanation of the use and effect of the DSP Transpose filter
+title: DSP 移调（Transpose）
+description: 说明 DSP 移调（Transpose）滤波器的用途和效果
 ---
 
-# Transpose
+# 移调（Transpose）
 
-Shifts the pitch of the music up or down without changing how fast it plays. Raising the pitch by twelve semitones moves the music up by a full octave, and lowering it by twelve moves it down an octave, while the performance still takes exactly as long as it did before.
+将音乐的音高升高或降低，而不改变其播放速度。音高升高十二个半音（semitone）相当于把音乐提高一个完整的八度（octave），降低十二个半音则降低一个八度，而演奏时长仍与之前完全相同。
 
-This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
+该滤波器可在[播放器的 DSP 设置](/settings/individual-player/#dsp-settings)中添加和配置。完整的滤波器路径请参阅[数字信号处理概述](/dsp/)。
 
-This is not the same as changing the playback speed. Playing a record at the wrong speed changes pitch and tempo together, whereas this filter separates the two and alters only the pitch. That separation is what makes it useful, but it is also why the filter is more demanding than the others: the audio has to be analysed and rebuilt rather than simply adjusted in level.
+这与改变播放速度并不相同。以错误的速度播放唱片会同时改变音高和节奏，而该滤波器将两者分开，只改变音高。正是这种分离使它变得有用，但这也是它比其他滤波器更耗费资源的原因：音频必须经过分析和重建，而不是仅仅调整电平。
 
-## Usage
+## 用法
 
-The shift is set with the **Semitones** control, from −12 (an octave down) through 0 (unchanged) to +12 (an octave up). A semitone is one step on a piano keyboard, counting the black keys, so twelve semitones make an octave. The slider shows +/-6 semitones but values up to 12 can be manually entered.
+移调量通过 **Semitones（半音）** 控件设置，范围从 −12（降低一个八度）经过 0（不变）到 +12（升高一个八度）。半音是钢琴键盘上的一个键位（包括黑键），因此十二个半音构成一个八度。滑块显示的范围为 +/-6 半音，但最多可手动输入 12 的数值。
 
-Fractional values are allowed, which is what makes alternative concert pitches possible. The **A=432 Hz** button is a shortcut that sets the shift to −0.318 semitones, and it is explained in the section below.
+允许使用小数值，这正是能够实现其他音乐会音高的原因。**A=432 Hz** 按钮是一个快捷方式，可将移调量设为 −0.318 半音，其详细说明见下一节。
 
-At 0 semitones the filter does nothing at all and the audio passes through untouched, so it can be left in the path without effect. Unlike Balance, Stereo Width and Crossfeed, this filter does not depend on the relationship between the two channels, so it applies equally to mono and stereo material.
+在 0 半音时，该滤波器完全不产生任何作用，音频原样通过，因此可以将它留在路径中而不产生影响。与 Balance（平衡）、Stereo Width（立体声宽度）和 Crossfeed（交叉馈送）不同，该滤波器不依赖于两个声道之间的关系，因此对单声道和立体声素材同样适用。
 
-Formants are preserved, which means the resonances that give a voice or an instrument its character stay where they are while the notes move. Without this, shifting upwards produces the familiar chipmunk effect and shifting downwards makes voices sound artificially deep. With it, a shifted voice still sounds like the same voice singing in a different key.
+共振峰（formant）得以保留，这意味着赋予人声或乐器特色的共振位置在音符移动时保持不变。没有这一特性，向上移调会产生大家熟悉的花栗鼠效果，向下移调则会让人声听起来不自然地低沉。有了这一特性，移调后的人声听起来仍是同一个人的声音，只是用不同的调在演唱。
 
-## Concert Pitch and the A=432 Hz Preset
+## 音乐会音高与 A=432 Hz 预设
 
-Concert pitch is the reference that instruments are tuned to, expressed as the frequency of the A above middle C. The international standard is 440 Hz and virtually all recordings use it. Some listeners prefer the slightly mellower character of the older 432 Hz reference, and some instruments are tuned to it; background on the standard can be found on <a href="https://en.wikipedia.org/wiki/A440_(pitch_standard)" target="_blank" rel="noopener noreferrer">Wikipedia</a>.
+音乐会音高（concert pitch）是乐器调音所依据的基准，以中央 C 上方的 A 音频率来表示。国际标准为 440 Hz，几乎所有录音都采用这一标准。一些听众偏爱较早的 432 Hz 基准略显圆润柔和的音色，也有一些乐器按 432 Hz 调音；有关该标准的背景信息可在 <a href="https://en.wikipedia.org/wiki/A440_(pitch_standard)" target="_blank" rel="noopener noreferrer">Wikipedia</a> 上查阅。
 
-The button is a shortcut that sets the shift to −0.318 semitones, which is the distance between the two references, so a recording made at A=440 Hz plays with its A on 432 Hz. The shift applies to every note rather than only to A, so the music stays in tune with itself and simply sits a fraction of a semitone lower. It also assumes the source was recorded at A=440 Hz, as the filter does not analyse the incoming audio; applied to something already tuned to 432 Hz it will just make it flatter still.
+该按钮是一个快捷方式，可将移调量设为 −0.318 半音，这正是两个基准之间的差距，因此以 A=440 Hz 录制的录音在播放时，其 A 音将位于 432 Hz。移调作用于每一个音符，而不只是 A 音，因此音乐自身保持音准一致，只是整体低了不到一个半音。它还假定源录音是按 A=440 Hz 录制的，因为该滤波器不会分析输入的音频；如果应用于本身已按 432 Hz 调音的内容，只会使其音高变得更低。
 
-The change is subtle, well short of the semitone or so needed to hear a recording as being in the wrong key, so it is best judged with the filter's enable toggle rather than from memory.
+这种变化十分微妙，远小于让人听出录音调性不对所需的约一个半音的差距，因此最好通过该滤波器的启用开关进行对比判断，而不是凭记忆。
 
-## Notes
+## 注意事项
 
-Pitch shifting is the most computationally demanding of the filters, as the audio must be reconstructed rather than adjusted. On low powered hardware, particularly when several players are streaming at once, this may be noticeable, so it is worth enabling it only on the players where it is actually wanted.
+变调是所有滤波器中计算量最大的，因为音频必须经过重建而不是简单调整。在低性能硬件上，尤其是多个播放器同时进行串流播放时，这种开销可能会被察觉，因此建议只在确实需要的播放器上启用它。
 
-Shifting by whole semitones changes the key the music is in, which is a substantial musical change rather than a refinement. It suits practising or singing along with a track in a more comfortable key, but it is not something to leave enabled for general listening. The A=432 Hz shift is far smaller and is reasonable to leave in place, provided the library is consistently tuned to A=440 Hz.
+以整数半音移调会改变音乐所处的调性，这是一种重大的音乐变化，而不是细微的润色。它适合用于练习，或以更舒适的调跟随曲目演唱，但不适合在一般聆听时一直保持启用。A=432 Hz 的移调量要小得多，如果音乐库始终按 A=440 Hz 调音，将其一直保留是合理的。

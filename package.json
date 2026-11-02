@@ -10,7 +10,7 @@
     "prestart": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
     "start": "astro dev --host",
     "prebuild": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
-    "build": "astro build",
+    "build": "astro build && node scripts/collect-subpath.mjs",
     "preview": "astro preview --host",
     "astro": "astro"
   },

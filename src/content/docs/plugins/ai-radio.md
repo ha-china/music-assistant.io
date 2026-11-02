@@ -1,176 +1,176 @@
 ---
-title: AI Radio Plugin
-description: Turn a playlist into a radio show with an AI host, or let an AI DJ talk over the queue you are already playing.
+title: AI Radio 插件
+description: 通过 AI 主持人将播放列表变成一档电台节目，或让 AI DJ 在你正在播放的队列中插话。
 pluginGroup: discover
 ---
 
-# AI Radio Plugin
+# AI Radio 插件
 
-AI Radio puts a spoken host between your tracks. The host can open the show, introduce songs, link one track to the next, and add weather, news or artist facts along the way.
+AI Radio 会在你的曲目之间插入一位语音主持人（host）。这位主持人可以为节目开场、介绍歌曲、衔接下一首曲目，并在过程中穿插天气、新闻或艺人小知识。
 
-There are two ways to use it:
+有两种使用方式：
 
-- A **show** turns one of your playlists into a radio programme and plays it on a player you choose
-- The **AI DJ** adds the same spoken breaks to a queue you are already listening to, without setting up a show at all
+- **节目（show）** 会把你的一个播放列表变成一档电台节目，并在你选择的播放器上播放
+- **AI DJ** 会在你已经在收听的队列中加入同样的语音插播，完全无需创建节目
 
 :::note
-AI Radio is in alpha. The show and host editors, the bundled hosts and the generated output may all change between Music Assistant releases.
+AI Radio 目前处于 alpha 阶段。节目和主持人编辑器、内置主持人以及生成的输出内容在 Music Assistant 的各个版本之间都可能发生变化。
 :::
 
-## Features
+## 功能特性
 
-- Build reusable **shows** from your playlists
-- Start from a bundled host such as **Morning show**, **Minimal DJ**, **Music nerd** or **Party host**
-- Give a host its own voice, language and personality, and reuse it across shows
-- Decide when the host speaks, from every song to once an hour
-- Let the host look things up on the web for segments that need current information
-- Add weather to any segment through Open-Meteo
-- Turn on an AI DJ for any queue straight from the queue menu
-- Duplicate a show to make a variation without starting again
+- 从你的播放列表构建可复用的**节目**
+- 从内置主持人开始，例如**晨间节目**、**极简 DJ**、**音乐极客**或**派对主持人**
+- 为主持人设置专属的语音、语言和个性，并在多个节目中复用
+- 自行决定主持人何时发言，从每首歌一次到每小时一次
+- 对于需要最新信息的段落，允许主持人在网络上查询
+- 通过 Open-Meteo 为任意段落添加天气信息
+- 直接从队列菜单为任意队列启用 AI DJ
+- 复制节目以创建变体，而无需从头再来
 
-## Before you start
+## 开始之前
 
-- An **AI engine** to write what the host says, and a **text-to-speech engine** to speak it. Both come from other plugins, so set these up first. AI Radio will not get past its own first step without them. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines)
-- A player to listen on, enabled and available
-- A playlist with playable tracks, if you want to build a show. The AI DJ works on whatever is already in the queue
+- 一个用于撰写主持人台词的 **AI 引擎**，以及一个用于朗读这些台词的**文本转语音引擎（text-to-speech engine）**。两者都来自其他插件，因此需要先完成设置。没有它们，AI Radio 将无法通过自己的第一步。参见 [AI 与文本转语音引擎](/ha-plugin/#ai-and-text-to-speech-engines)
+- 一个用于收听的播放器，且已启用并可用
+- 一个包含可播放曲目的播放列表（如果你想创建节目的话）。AI DJ 则作用于队列中已有的任何内容
 
-## Setting it up
+## 初始设置
 
-1. Go to **Settings → Plugins → Add a plugin**.
-2. Add **AI Radio**.
-3. Setup opens at **Set up AI Radio**. Choose the AI engine that writes the host's lines and the text-to-speech engine that voices them.
-4. If you want weather in your shows, fill in the weather city and country on the same screen. You can leave them empty and add them later.
-5. **AI Radio** then appears in the main navigation.
+1. 前往**设置 → 插件 → 添加插件**。
+2. 添加 **AI Radio**。
+3. 设置界面将打开**设置 AI Radio**。选择撰写主持人台词的 AI 引擎，以及为台词配音的文本转语音引擎。
+4. 如果你希望在节目中加入天气，请在同一界面上填写天气城市和国家。也可以先留空，之后再添加。
+5. 随后 **AI Radio** 会出现在主导航中。
 
-### Changing the AI or text-to-speech engine later
+### 之后更改 AI 或文本转语音引擎
 
-:::caution[The engine pickers are not in AI Radio's settings]
-AI Radio stores its two engine choices with its setup rather than its settings, so **Configure** does not show them.
+:::caution[引擎选择器并不在 AI Radio 的设置中]
+AI Radio 把这两个引擎的选择保存在它的初始设置中，而不是保存在它的设置里，因此**配置**中不会显示它们。
 
-To change either engine, choose **Reconfigure** from the AI Radio provider's menu. This reopens **Set up AI Radio** with your current choices filled in, so you can change one and leave the other. Your shows and hosts are not affected.
+要更改任一引擎，请从 AI Radio 提供程序的菜单中选择**重新配置**。这会重新打开**设置 AI Radio**，并填入你当前的选择，因此你可以只更改其中一个而保留另一个。你的节目和主持人不受影响。
 :::
 
-## Shows and hosts
+## 节目与主持人
 
-AI Radio keeps these two things separate, and it is worth knowing which is which before you start.
+AI Radio 将这两者分开管理，在开始之前值得先弄清楚哪个是什么。
 
-A **show** is the short part. It is a playlist, a host, and a name.
+**节目** 是其中简短的部分。它就是一个播放列表、一位主持人和一个名称。
 
-A **host** is where the character lives. It holds the voice, the language, the personality, and the segments that decide what gets said and when. Because the host is separate, one host can front several shows, and changing the host changes all of them.
+**主持人** 则是角色所在之处。它保存着语音、语言、个性，以及决定说什么和何时说的各个段落。由于主持人是独立的，同一位主持人可以主持多个节目，而更改主持人会影响所有这些节目。
 
-The AI Radio page has a gallery for each, **Shows** and **Hosts**.
+AI Radio 页面为两者各提供了一个展示区：**节目**和**主持人**。
 
-## Creating a show
+## 创建节目
 
-1. Open **AI Radio** from the navigation.
-2. Select **Create show**.
-3. Choose a **Source playlist**.
-4. Choose a **Host**.
-5. Give the show a **Show name**.
-6. Select **Create**, or **Create & play** to start it straight away.
+1. 从导航中打开 **AI Radio**。
+2. 选择**创建节目**。
+3. 选择一个**来源播放列表**。
+4. 选择一位**主持人**。
+5. 为节目填写一个**节目名称**。
+6. 选择**创建**，或选择**创建并播放**以立即开始。
 
-There is a shortcut if you are already looking at the playlist you want. Open its menu and choose **Play as AI Radio**, which opens the AI Radio page with that playlist already filled in.
+如果你正好在查看想要的播放列表，还有一个快捷方式。打开它的菜单并选择**作为 AI Radio 播放**，这会打开 AI Radio 页面，并且已自动填入该播放列表。
 
-## Playing a show
+## 播放节目
 
-Each show card has **Play**, which starts it on the show's player. While it runs the card shows **On air**, and **Stop** ends it.
+每张节目卡片上都有**播放**，用于在该节目的播放器上开始播放。节目运行期间卡片会显示**播出中**，**停止**则会结束播放。
 
-Music Assistant prepares the first few tracks and host segments, queues them, and keeps preparing more while the show plays.
+Music Assistant 会准备最开始的几首曲目和主持人段落，将它们加入队列，并在节目播放期间继续准备更多内容。
 
-Only one show can be on air at a time. If another is already running, Music Assistant asks whether to stop it and switch.
+同一时间只能有一个节目在播出。如果另一个节目已经在运行，Music Assistant 会询问是否将其停止并切换。
 
-The host is written fresh every time, so the same show will not say the same thing twice.
+主持人的台词每次都是全新撰写的，因此同一个节目不会两次说出相同的内容。
 
 > [!NOTE]
-> Starting a show clears the target queue and turns off shuffle on it, so the segments stay with the tracks they were written for. Anything already queued is replaced.
+> 开始播放节目会清空目标队列并关闭其随机播放，这样各段落才能与为之撰写的曲目保持对应。队列中已有的内容会被替换。
 
-## The AI DJ on a queue
+## 队列上的 AI DJ
 
-The AI DJ is the quick way in. Instead of building a show, you point a host at a queue and it starts talking between the tracks already playing there.
+AI DJ 是最快捷的入门方式。无需创建节目，你只需让一位主持人指向某个队列，它就会在该队列正在播放的曲目之间开始说话。
 
-Open the queue menu and choose **Enable AI Radio DJ**, then pick a host. Choose **Off** in the same menu to stop it.
+打开队列菜单并选择**启用 AI Radio DJ**，然后选择一位主持人。在同一个菜单中选择**关闭**即可停止。
 
-The choice sticks to that queue and survives a Music Assistant restart, so the DJ carries on until you turn it off. Switching to a different host removes anything the previous host had lined up.
+这一选择会与该队列绑定，并且在 Music Assistant 重启后依然有效，因此 DJ 会一直工作，直到你将其关闭。切换到另一位主持人会清除前一位主持人已准备好的内容。
 
-A queue has one host at a time. If you start a show on the queue, the show takes it over and the menu shows **On air** with that show's host instead.
+一个队列同一时间只能有一位主持人。如果你在该队列上启动节目，节目会将其接管，菜单会改为显示**播出中**以及该节目的主持人。
 
-The difference from a show is that a show has a beginning and an end, while a queue just keeps going. The DJ only ever fills the gaps between songs, so a host's **Once at start** and **Once at end** segments never play. If you want the opening greeting and the sign-off, run it as a show.
+与节目的区别在于：节目有开头和结尾，而队列会一直持续下去。DJ 只会填补歌曲之间的空隙，因此主持人的**开头一次**和**结尾一次**段落永远不会播放。如果你想要开场问候和结束语，请将其作为节目运行。
 
-## Customizing a show
+## 自定义节目
 
-Select **Customize** on a show card.
+在节目卡片上选择**自定义**。
 
-| Field | Description |
+| 字段 | 说明 |
 |---|---|
-| **Show name** | The name on the card |
-| **Source playlist** | The playlist the music comes from |
-| **Host** | The host that fronts this show |
+| **节目名称** | 卡片上显示的名称 |
+| **来源播放列表** | 音乐来源的播放列表 |
+| **主持人** | 主持该节目的主持人 |
 
 <details>
-<summary>Advanced show settings</summary>
+<summary>高级节目设置</summary>
 
-| Setting | Default | Description |
+| 设置 | 默认值 | 说明 |
 |---|---:|---|
-| **Default Playback Device (optional)** | Empty | The player **Play** uses. **Use current player** fills in the one you are listening on |
-| **Source Playtime Cap (minutes)** | 0 | The most source music the show will use, in minutes. Tracks are taken in the order the show plays them until the cap is reached. Leave it at 0 for no limit |
-| **Shuffle Playlist Tracks** | On | Plays the source playlist in random order. Turn it off to follow the playlist's own order |
+| **默认播放设备（可选）** | 空 | **播放**所使用的播放器。**使用当前播放器**会填入你正在收听的播放器 |
+| **来源播放时长上限（分钟）** | 0 | 节目最多使用的源音乐时长，以分钟计。曲目将按节目播放它们的顺序依次选取，直到达到上限。保持为 0 表示不限制 |
+| **随机播放列表曲目** | 开启 | 以随机顺序播放来源播放列表。关闭后将遵循播放列表自身的顺序 |
 
 </details>
 
-## Customizing a host
+## 自定义主持人
 
-Select **Edit** on a host card, or **Add host** to build one from scratch. You can also start from **Blank host**.
+在主持人卡片上选择**编辑**，或选择**添加主持人**从零开始创建。你也可以从**空白主持人**开始。
 
-### Personality
+### 个性
 
-| Field | Description |
+| 字段 | 说明 |
 |---|---|
-| **Host name** | The name shown wherever you pick a host |
-| **Voice** | The text-to-speech voice this host speaks with. **Default** uses the engine chosen during setup |
-| **Language** | The language the host speaks. **Follow server language** uses the **Preferred language** from [**Settings → System → Metadata**](/settings/core/#metadata) |
-| **Host and Program Instructions** | The personality and writing style. This goes to the AI with every segment |
+| **主持人名称** | 在任何选择主持人的地方显示的名称 |
+| **语音** | 该主持人朗读时所使用的文本转语音声音。**默认**使用初始设置时选择的引擎 |
+| **语言** | 主持人所说的语言。**跟随服务器语言**将使用 [**设置 → 系统 → 元数据**](/settings/core/#metadata) 中的**首选语言** |
+| **主持人与节目指令** | 个性与写作风格。每个段落都会把它发送给 AI |
 
-### Segments
+### 段落
 
-A segment is one spoken part. **Add segment** offers ready-made ones for **Intro**, **Transition**, **Weather**, **News**, **Artist fact** and **Sign-off**, or a **Blank segment**.
+段落是一段单独的口播内容。**添加段落**提供以下现成类型：**开场白**、**过渡**、**天气**、**新闻**、**艺人小知识**和**结束语**，也可以选择**空白段落**。
 
-| Field | Description |
+| 字段 | 说明 |
 |---|---|
-| **Segment name** | The name shown in the editor |
-| **Prompt** | What you want the AI to say in this segment |
-| **Web Search Mode** | Whether the host may look things up for this segment |
-| **Character Limit** | Roughly how long the spoken text may get |
-| **Plays** | When and how often the segment is used |
+| **段落名称** | 在编辑器中显示的名称 |
+| **提示词** | 你希望 AI 在该段落中说些什么 |
+| **网页搜索模式** | 主持人在该段落中是否可以进行查询 |
+| **字符数上限** | 口播文本大致可以达到的长度 |
+| **播放时机** | 该段落在何时以及以何种频率使用 |
 
-**Plays** offers **Once at start**, **Once at end**, **Every song**, **Every ~N songs**, **Every ~N min** and **Occasionally**, the last with a percentage.
+**播放时机**提供**开头一次**、**结尾一次**、**每首歌**、**约每 N 首歌**、**约每 N 分钟**和**偶尔**这些选项，其中最后一项可设置百分比。
 
-If two between-song segments fall at the same point, AI Radio writes them separately and merges them into a single break, so a song transition and the weather arrive as one piece of speech rather than two.
+如果两个歌曲间隔段落恰好落在同一位置，AI Radio 会分别撰写它们，然后将它们合并为一次插播，因此歌曲过渡和天气会作为同一段话语出现，而不是分成两段。
 
-### Web search modes
+### 网页搜索模式
 
-| Mode | What it does |
+| 模式 | 作用 |
 |---|---|
-| **disabled (no web tool)** | The host uses the prompt and the track information only |
-| **allow (model may use web)** | The host may search if the AI engine supports it |
-| **force (web search required)** | The segment always searches. Use this for news |
+| **disabled（无网页工具）** | 主持人仅使用提示词和曲目信息 |
+| **allow（模型可使用网页）** | 如果 AI 引擎支持，主持人可以进行搜索 |
+| **force（必须进行网页搜索）** | 该段落始终会进行搜索。新闻类段落请使用此项 |
 
-Music Assistant does not search the web itself. These settings add a line to the prompt asking the AI to use current information, and it is up to your AI engine whether it acts on it. Engines with their own built-in search will but local models and models without search will not, and may answer from what they were trained on instead, which can be out of date or wrong.
-Use it sparingly. Searching makes a segment slower to prepare, and what it can do depends on your AI engine.
+Music Assistant 本身不会搜索网页。这些设置只是在提示词中添加一句话，要求 AI 使用最新信息，至于是否照做则取决于你的 AI 引擎。自带内置搜索的引擎会照做，而本地模型和没有搜索功能的模型则不会，它们可能会根据训练时学到的内容来回答，而这些内容可能已经过时或有误。
+请谨慎使用。搜索会让段落准备得更慢，而且实际能达到的效果取决于你的 AI 引擎。
 
-### Placeholders
+### 占位符
 
-Anything below is filled in before the prompt goes to the AI. In the editor you can tap a placeholder to copy it.
+以下所有内容都会在提示词发送给 AI 之前被填入实际值。在编辑器中，你可以点击某个占位符来复制它。
 
-| Placeholder | Meaning |
+| 占位符 | 含义 |
 |---|---|
-| `<prev_songinfo>` | The track just played |
-| `<next_songinfo>` | The track coming up |
-| `<very_next_songinfo>` | The track after that |
-| `<timestamp>` | The current local time |
-| `<weather_hourly>` | The weather now and over the next few hours |
-| `<weather_daily>` | The weather for the day |
+| `<prev_songinfo>` | 刚刚播放的曲目 |
+| `<next_songinfo>` | 接下来播放的曲目 |
+| `<very_next_songinfo>` | 再下一首曲目 |
+| `<timestamp>` | 当前的本地时间 |
+| `<weather_hourly>` | 当前及未来几个小时的天气 |
+| `<weather_daily>` | 当天的天气 |
 
-An example prompt:
+提示词示例：
 
 ```text
 The previous track was <prev_songinfo> and the next track is <next_songinfo>.
@@ -178,86 +178,86 @@ Create a natural radio transition that connects both songs and keeps it concise.
 ```
 
 <details>
-<summary>Advanced text-to-speech options</summary>
+<summary>高级文本转语音选项</summary>
 
-A host can pass extra options straight to its text-to-speech engine as key and value pairs, for example a `voice` key with a value of `en_US-lessac-medium`.
+主持人可以将额外的选项以键值对的形式直接传递给其文本转语音引擎，例如一个值为 `en_US-lessac-medium` 的 `voice` 键。
 
-Only add keys your chosen engine understands. An unsupported key can make the engine reject the whole clip, so the host says nothing at all.
+只添加你所选引擎能够识别的键。不支持的键可能导致引擎拒绝整个音频片段，从而使主持人一言不发。
 
 </details>
 
-## Weather
+## 天气
 
-Weather comes from Open-Meteo. To use it, set the weather city and country in the plugin settings, then give a segment a prompt containing `<weather_hourly>` or `<weather_daily>`.
+天气数据来自 Open-Meteo。要使用它，请在插件设置中填写天气城市和国家，然后在某个段落的提示词中包含 `<weather_hourly>` 或 `<weather_daily>`。
 
-A timing such as **Every ~60 min** or **Occasionally** keeps it from coming round too often.
+**约每 60 分钟**或**偶尔**这样的时机设置可以避免天气播报得过于频繁。
 
-If the weather cannot be fetched, the host leaves the weather out and carries on rather than stopping the show. A segment that exists only to read the forecast is skipped instead.
+如果无法获取天气数据，主持人会跳过天气内容并继续主持，而不是让节目停下来。仅用于播报天气预报的段落则会被直接跳过。
 
-## Plugin settings
+## 插件设置
 
-Found under **Configure** on the AI Radio provider.
+位于 AI Radio 提供程序的**配置**中。
 
-| Setting | Default | Description |
+| 设置 | 默认值 | 说明 |
 |---|---|---|
-| **Weather City** | From setup | The city used to look up the forecast |
-| **Weather Country** | From setup | The country that goes with it |
+| **天气城市** | 来自初始设置 | 用于查询天气预报的城市 |
+| **天气国家** | 来自初始设置 | 与该城市配套的国家 |
 
 <details>
-<summary>Advanced plugin settings</summary>
+<summary>高级插件设置</summary>
 
-These appear only when the `Show advanced settings` toggle is on.
+只有当 `Show advanced settings` 开关打开时才会显示这些设置。
 
-| Setting | Default | Description |
+| 设置 | 默认值 | 说明 |
 |---|---|---|
-| **Timezone** | The server's | The timezone used to work out the current time for `<timestamp>` |
-| **Weather Provider** | Open-Meteo | Where the forecast comes from. Set it to Disabled to stop looking one up |
-| **Weather Request Timeout** | 20 | How long to wait for the forecast, in seconds, before giving up |
-| **Spoken Clip Loudness Boost** | 3 | How many decibels above the music the spoken sections sit. Peaks are always limited so the audio cannot clip, so the last few decibels arrive mostly as compression rather than loudness. Set it to 0 to keep speech at the same level as the music |
+| **时区** | 服务器的时区 | 用于计算 `<timestamp>` 当前时间所使用的时区 |
+| **天气提供程序** | Open-Meteo | 天气预报的来源。将其设置为已禁用可停止查询天气 |
+| **天气请求超时** | 20 | 等待天气预报的时长（以秒为单位），超过即放弃 |
+| **口播片段响度提升** | 3 | 口播部分高于音乐的分贝数。峰值始终会受到限制，因此音频不会削波，最后几分贝主要以压缩而非响度的形式体现。将其设置为 0 可让语音与音乐保持相同的音量水平 |
 
 </details>
 
-## Tips
+## 使用技巧
 
-- Start with **Minimal DJ** if you want the music mostly left alone
-- **Music nerd** with web search allowed is the one for artist facts
-- **Morning show** is the busiest, with weather and news built in
-- Keep prompts short and specific. Say what the segment is for, and that it will be read aloud
-- Use the character limit to stop a segment turning into a monologue
-- Try a new host on a queue with the AI DJ first. It is quicker than building a show to hear how it sounds
+- 如果你希望尽量不打扰音乐本身，可以从**极简 DJ** 开始
+- **音乐极客**配合允许网页搜索，最适合获取艺人小知识
+- **晨间节目**内容最丰富，内置了天气和新闻
+- 提示词要简短具体。说明该段落的用途，并说明它将被朗读出来
+- 利用字符数上限来防止某个段落变成冗长的独白
+- 想试听新主持人的效果，可以先在队列上启用 AI DJ。这比创建一个节目更快
 
-## Troubleshooting
+## 故障排除
 
-### Setup will not let me past the first step
+### 设置无法通过第一步
 
-AI Radio needs both an AI engine and a text-to-speech engine, and neither can be created here. Set up a plugin that provides the missing one first, as described under [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines), then add AI Radio again.
+AI Radio 需要同时具备 AI 引擎和文本转语音引擎，而两者都无法在此处创建。请先按照 [AI 与文本转语音引擎](/ha-plugin/#ai-and-text-to-speech-engines)中的说明，设置提供所缺引擎的插件，然后再重新添加 AI Radio。
 
-### I cannot find the engine pickers in the plugin's settings
+### 在插件设置中找不到引擎选择器
 
-They are not there. Use **Reconfigure** on the AI Radio provider's menu instead, as described under [changing the AI or text-to-speech engine later](#changing-the-ai-or-text-to-speech-engine-later).
+它们确实不在那里。请改用 AI Radio 提供程序菜单中的**重新配置**，具体参见[之后更改 AI 或文本转语音引擎](#changing-the-ai-or-text-to-speech-engine-later)。
 
-### AI Radio says an AI or text-to-speech engine is not available
+### AI Radio 提示 AI 或文本转语音引擎不可用
 
-The engine it was using has gone. This usually means the entity behind it was removed or renamed in Home Assistant, or the plugin providing it is no longer loaded. Music Assistant will not quietly move you to a different engine, so put the original back or choose another one through **Reconfigure**.
+它之前使用的引擎已经不存在了。这通常意味着其背后的实体（entity）在 Home Assistant 中被删除或重命名，或者提供该引擎的插件已不再加载。Music Assistant 不会悄悄地将你切换到其他引擎，因此请恢复原来的引擎，或通过**重新配置**选择另一个引擎。
 
-### No speech is generated
+### 没有生成语音
 
-Check the text-to-speech engine works at its source. With Home Assistant, test the entity there first, then check that the [Home Assistant plugin](/ha-plugin/) is still connected in Music Assistant.
+请检查文本转语音引擎在其来源处是否正常工作。如果使用 Home Assistant，请先在那里测试该实体，然后确认 [Home Assistant 插件](/ha-plugin/)在 Music Assistant 中仍然保持连接。
 
-If the host has **Advanced text-to-speech options** set, try removing them. A key the engine does not understand can make it reject the clip.
+如果主持人设置了**高级文本转语音选项**，请尝试将其移除。引擎无法识别的键可能导致它拒绝该音频片段。
 
-### A show will not start
+### 节目无法启动
 
-The show needs a player, and that player has to be enabled and available. If the show has no default playback device, pick one before pressing **Play**.
+节目需要一个播放器，且该播放器必须已启用并可用。如果节目没有设置默认播放设备，请在按下**播放**之前选择一个。
 
-### The AI DJ is on but never speaks
+### AI DJ 已启用但从不说话
 
-Check the queue is actually playing. The DJ fills the gaps between tracks, so it has nothing to do while the queue is stopped. If a show is on air on that queue, the show has taken it over and the menu will say so.
+请检查队列是否确实正在播放。DJ 只会填补曲目之间的空隙，因此队列停止时它无事可做。如果该队列上正在播出节目，说明节目已将其接管，菜单中会显示相应状态。
 
-### Weather segments are empty or skipped
+### 天气段落为空或被跳过
 
-Check the weather city and country are set in the plugin settings, and that **Weather Provider** has not been set to Disabled.
+请检查插件设置中是否填写了天气城市和国家，以及**天气提供程序**是否被设置为已禁用。
 
-### Web search seems to do nothing (or hallucinates)
+### 网页搜索似乎不起作用（或出现幻觉）
 
-Your AI engine does likely not have search of its own or the search is not triggered by the prompt hint. For the latter, try rephrasing the prompt in your Host prompt. If your AI engine does not have a search of its own, set web search to disabled on every segment, or the host will keep inventing current events. See [web search modes](#web-search-modes).
+你的 AI 引擎很可能没有自己的搜索功能，或者搜索没有被提示词中的提示触发。对于后一种情况，可以尝试改写主持人提示词中的措辞。如果你的 AI 引擎没有自己的搜索功能，请将每个段落的网页搜索设置为 disabled，否则主持人会不断编造时事。参见[网页搜索模式](#web-search-modes)。

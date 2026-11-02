@@ -1,20 +1,21 @@
 ---
+import { withBase } from "../../lib/base";
 import Button from "../marketing/ui/Button.astro";
 import Section from "../marketing/ui/Section.astro";
 ---
 
 <Section id="get-started" tone="base" labelledby="final-title" class="final">
   <div class="container" data-reveal>
-    <h2 id="final-title">Bring your music home.</h2>
+    <h2 id="final-title">把音乐带回家。</h2>
     <p>
       Install Music Assistant on Home Assistant or with Docker, then connect
       your music and speakers.
     </p>
     <div class="actions">
-      <Button href="/get-started/" size="lg" trailingIcon="arrow-right">
+      <Button href={withBase("/get-started/")} size="lg" trailingIcon="arrow-right">
         Get Music Assistant
       </Button>
-      <Button href="/documentation/" variant="secondary" size="lg">
+      <Button href={withBase("/documentation/")} variant="secondary" size="lg">
         Read the documentation
       </Button>
     </div>

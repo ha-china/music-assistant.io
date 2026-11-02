@@ -4,15 +4,15 @@ title: "SomaFM Radio"
 
 # SomaFM Radio <img src="/assets/icons/somafm-icon.png" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for [SomaFM Radio](https://somafm.com/) which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by [@macegr](https://github.com/macegr)
+Music Assistant 支持 [SomaFM Radio](https://somafm.com/)，可以方便地将其电台添加到 Music Assistant 中。由 [@macegr](https://github.com/macegr) 贡献并维护。
 
-SomaFM is a listener-supported internet radio station from San Francisco, broadcasting since 2000. It runs around forty channels, each with its own character and each put together by a person rather than an algorithm, with no advertising at all.
+SomaFM 是一家位于旧金山、由听众支持的互联网电台，自 2000 年起开始广播。它运营着大约四十个频道，每个频道都有自己的特色，且均由人工精心编排而非算法生成，完全没有广告。
 
-This source makes the SomaFM channels available in Music Assistant.
+该音源使 SomaFM 的频道可在 Music Assistant 中使用。
 
 > [!TIP]
-> **Donate**
-> SomaFM Radio has no ads or subscription, relying on listener donations to keep running since 2000. If you enjoy using this Music Assistant source, please consider donating at https://somafm.com/support or purchasing something from https://somafm.com/store.
+> **捐赠**
+> SomaFM Radio 没有广告，也没有订阅收费，自 2000 年以来一直依靠听众的捐赠维持运营。如果你喜欢使用这个 Music Assistant 音源，请考虑在 https://somafm.com/support 捐赠，或从 https://somafm.com/store 购买一些商品。
 
 ## Features
 
@@ -30,10 +30,10 @@ This source makes the SomaFM channels available in Music Assistant.
 | Maximum Stream Quality | AAC 130kbps |
 | Login Method | None |
 
-## Configuration
+## 配置
 
-Quality can be set to Highest, High, or Low in Advanced Settings (default Highest)
+可以在高级设置中将音质设置为 Highest（最高）、High（高）或 Low（低）（默认为 Highest）
 
-## Usage
+## 用法
 
-Use the browse view to find stations to add to the library.
+使用浏览视图查找电台并将其添加到资料库中。

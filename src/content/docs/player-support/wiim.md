@@ -4,45 +4,45 @@ title: "WiiM"
 
 # WiiM <img src="/assets/icons/wiim.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming music to [WiiM devices](https://www.wiimhome.com/). 
+Music Assistant 支持将音乐流式传输到 [WiiM 设备](https://www.wiimhome.com/)。
 
-## Features
+## 功能
 
-- WiiM devices are auto detected by Music Assistant
-- WiiM devices can optionally be grouped with AirPlay devices
-- Up to 192khz / 24 bit support
+- WiiM 设备可被 Music Assistant 自动检测
+- WiiM 设备可选择与 AirPlay 设备分组
+- 支持高达 192khz / 24 bit
 
-### AirPlay Functionality
+### AirPlay 功能
 
-Some WiiM devices support the AirPlay 1 <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> protocol and/or the Airplay 2 protocol and this enables very useful functionality within Music Assistant.
+部分 WiiM 设备支持 AirPlay 1 的 <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> 协议和/或 Airplay 2 协议，这在 Music Assistant 中带来了非常实用的功能。
 
-If the WiiM device is grouped with an AirPlay device, or if the default [output protocol](/settings/individual-player/#output-protocols) is changed to `AirPlay`, then the AirPlay protocol will be used for playback. Other WiiM players can be synced with this player (even if they themselves do not have AirPlay, as the native WiiM will be used for that connection). This means it is possible to play the same audio in perfect sync to a combination of AirPlay and WiiM speakers.
+如果 WiiM 设备与 AirPlay 设备分组，或者默认的[输出协议](/settings/individual-player/#output-protocols)被更改为 `AirPlay`，则将使用 AirPlay 协议进行播放。其他 WiiM 播放器（player）可以与此播放器同步（即使它们本身不支持 AirPlay，因为该连接将使用 WiiM 原生协议）。这意味着可以将相同的音频以完美同步的方式播放到 AirPlay 和 WiiM 扬声器的组合上。
 
 > [!NOTE]
-> If, as a result of grouping, a switch is required to the AirPlay protocol then a small silence due to the stream restart is to be expected.
+> 如果由于分组而需要切换到 AirPlay 协议，则由于流式传输重新开始，预计会出现短暂的静音。
 
-## Configuration
+## 配置
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `WiiM`.
-2. Your WiiM devices will be discovered automatically and will appear in the player list, usually within a minute.
+1. 在 Music Assistant 中，前往 **设置 → 播放器提供程序（Settings → Player Providers）**，点击 **添加播放器提供程序（Add a player provider）** 并选择 `WiiM`。
+2. 你的 WiiM 设备将被自动发现，并通常会在一分钟内出现在播放器列表中。
 
-If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+如果设备没有出现，请逐项排查[发现检查清单](/faq/networking/#checklist-my-players-are-not-being-discovered)。
 
-## Settings
+## 设置
 
-In addition to the [Player Provider Settings](/settings/player-provider/) when setting up this provider the following settings are available:
+除了[播放器提供程序设置](/settings/player-provider/)之外，在设置此提供程序（provider）时还可以使用以下设置：
 
-- <b>Manual IP addresses for discovery.</b> Not recommended for normal use. Refer to the description in the MA UI
+- <b>用于发现的手动 IP 地址。</b>不建议在正常使用中设置。详情请参考 MA 界面中的说明
 
-WiiM players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). One of those differs here:
+WiiM 播放器使用标准的[单个播放器设置](/settings/individual-player/)，包括[大多数协议共享的设置](/settings/individual-player/#settings-shared-by-most-protocols)。其中一项在此处有所不同：
 
-- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Unusually, everything up to 192 kHz / 24 bit is selected by default. Older Generation 1 devices only support up to 48 kHz / 16 bit, so remove the higher rates on those
-- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. Only applies while flow mode is off, so it is greyed out once flow mode is enabled
+- <b>[此播放器支持的采样率（sample rate）](/settings/individual-player/#sample-rates-supported-by-this-player)。</b>与通常情况不同，默认选中了所有高达 192 kHz / 24 bit 的选项。较旧的第一代设备仅支持高达 48 kHz / 16 bit，因此请在这类设备上移除更高的采样率
+- <b>允许在不同采样率的曲目之间进行交叉淡入淡出（crossfade）。</b>如果在曲目切换时出现音频故障，应禁用此选项。仅在流模式（flow mode）关闭时生效，因此一旦启用流模式，该选项将被置灰
 
-Generic LinkPlay speakers such as Edifier are handled differently to WiiM and Audio Pro devices. Music Assistant controls them but hands the audio to another output protocol, so their audio settings appear under that protocol's own section rather than the list above.
+诸如 Edifier 之类的通用 LinkPlay 扬声器的处理方式与 WiiM 和 Audio Pro 设备不同。Music Assistant 会控制它们，但会将音频交给另一个输出协议，因此它们的音频设置会显示在该协议自己的设置部分下，而不是上面的列表中。
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- No sound during grouped playback: When multiple WiiM devices are part of an Airplay group, and one of those WiiM devices does not support Airplay, this could result in silence. For example, grouping a Sonos with a WiiM amp (Airplay) and a WiiM sound (no Airplay). Changing the Airplay protocol of the 'bridge device' (i.e. the device that does support Airplay) to 'Prefer Airplay 2' in the advanced settings fixes this
-- Song restarted when grouping a WiiM device: A song is restarted the first time a WiiM device is grouped to another WiiM device. This looks like something in the WiiM firmware itself where it is (probably) changing to a 'group playback mode' ensuring compatible sample rate / bit depth. Any subsequent group/ungroup actions should not be affected. We are looking for a workaround for this
-- Album art sometimes not visible in the WiiM app: Album art is sometimes not shown in the WiiM app because the WiiM firmware cannot handle long URLs sent out by our imageproxy. We are looking into a way to fix this.
+- 分组播放时没有声音：当多个 WiiM 设备属于一个 AirPlay 分组，而其中一个 WiiM 设备不支持 AirPlay 时，可能会导致静音。例如，将 Sonos 与一台 WiiM 功放（支持 AirPlay）和一台 WiiM 声音设备（不支持 AirPlay）进行分组。在高级设置中，将“桥接设备”（即支持 AirPlay 的那台设备）的 AirPlay 协议更改为 “Prefer Airplay 2”（优先使用 AirPlay 2）即可解决此问题
+- 将 WiiM 设备分组时歌曲重新开始播放：WiiM 设备第一次与另一台 WiiM 设备分组时，歌曲会重新开始播放。这看起来是 WiiM 固件本身的行为——它（很可能）会切换到“分组播放模式”以确保采样率 / 位深兼容。后续的任何分组/取消分组操作应该都不会受到影响。我们正在为此寻找解决方法
+- 专辑封面有时在 WiiM 应用中不可见：由于 WiiM 固件无法处理我们的 imageproxy 发送的长 URL，专辑封面有时不会显示在 WiiM 应用中。我们正在研究解决此问题的方法。

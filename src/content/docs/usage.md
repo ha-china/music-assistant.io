@@ -1,161 +1,161 @@
 ---
-title: Overview
-description: Information regarding various elements of Music Assistant
+title: 概览
+description: 有关 Music Assistant 各类元素的信息
 ---
 
-# Overview
+# 概览
 
-Music Assistant is meant to be picked up by using it: add a source, add a player, press play. These four pages are not a walkthrough of that.
+Music Assistant 的设计初衷是通过实际使用来上手：添加音源（source）、添加播放器（player）、按下播放。这四个页面并不是对这一过程的逐步讲解。
 
-They cover the ideas the interface assumes you already understand, so that when something is not self-evident, the explanation is here.
+这些页面介绍的是界面假定你已经理解的概念，这样当某些内容不那么一目了然时，这里会有相应的解释。
 
-- **This page** — what the library actually holds, how the queue and Endless Mix behave, what playlists can and cannot do, and where artwork and other metadata come from
-- **[UI](/ui/)** — a tour of the interface itself, view by view
-- **[Groups](/faq/groups/)** — playing the same music on more than one speaker at once
-- **[Genres](/genres/)** — how Music Assistant categorises your library, and how to shape that
+- **本页面** — 资料库（library）中实际存储的内容、队列（queue）和 Endless Mix（无尽混音）的行为方式、播放列表能做与不能做的事情，以及封面图片（artwork）和其他元数据的来源
+- **[UI](/ui/)** — 对界面本身的逐一导览
+- **[Groups](/faq/groups/)** — 在多个音箱上同时播放相同的音乐
+- **[Genres](/genres/)** — Music Assistant 如何对资料库进行分类，以及如何调整分类
 
-None of it needs reading end to end. Use the contents list to jump to whatever you are looking for.
+这些内容无需从头读到尾。使用目录列表跳转到你正在查找的内容即可。
 
-## The Library
+## 资料库
 
-The Music Assistant Library is a database containing details of the music you are interested in listening to on a regular basis. It holds information about Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts and Radio Stations, which allows easy searching, display and cross referencing across the User Interface.
+Music Assistant 资料库（Library）是一个数据库，包含你经常收听的音乐的详细信息。它存储有关艺术家（Artist）、专辑（Album）、曲目（Track）、播放列表（Playlist）、有声读物（Audiobook）、播客（Podcast）和电台（Radio Station）的信息，从而便于在整个用户界面中进行搜索、显示和交叉引用。
 
-What ends up in the library depends on the type of source:
+最终进入资料库的内容取决于音源的类型：
 
-- **Local sources:** all artists, albums, tracks and playlists are imported* into the MA library when you add the source and at each sync.
-- **Streaming sources:** only the items that are already in the streaming service's own library (or favorites, or however the service terms it) are imported*. For example, if an artist is in your streaming library but none of their albums are, the MA library shows that artist with no albums or tracks. Add the albums or tracks to the MA library yourself if you want to see them in the library views. You can also toggle the library / streaming source filter option to see everything that is available in the streaming source.
+- **本地音源：** 当你添加音源时以及每次同步时，所有艺术家、专辑、曲目和播放列表都会被导入* 到 MA 资料库中。
+- **流媒体音源：** 只有流媒体服务自身资料库（或收藏，或该服务使用的其他说法）中已有的项目才会被导入*。例如，如果某位艺术家在你的流媒体资料库中，但他的任何专辑都不在其中，MA 资料库将显示该艺术家，但没有专辑或曲目。如果你想在资料库视图中看到这些专辑或曲目，请自行将它们添加到 MA 资料库。你也可以切换资料库/流媒体音源过滤选项，以查看流媒体音源中所有可用的内容。
 
-\* <i>imported means metadata is added to the database. No files are moved or downloaded.</i>
+\* <i>“导入”是指将元数据添加到数据库中，不会移动或下载任何文件。</i>
 
-In each view there is a ⋮ menu in the top right corner. This menu has various library related functions. Two important ones are UPDATE METADATA and REFRESH ITEM. Update metadata only retrieves additional metadata for the item being viewed and does not alter any of the existing/base details, while refresh item completely re-adds the item into the database, overwriting all existing data. To update the images section or lyrics, UPDATE METADATA is all you need.
+每个视图的右上角都有一个 ⋮ 菜单。此菜单包含各种与资料库相关的功能。其中两个重要的功能是 UPDATE METADATA（更新元数据）和 REFRESH ITEM（刷新项目）。更新元数据只会为当前查看的项目检索额外的元数据，不会更改任何现有/基础详细信息；而刷新项目会将该项目完全重新添加到数据库中，覆盖所有现有数据。要更新图片部分或歌词，只需使用 UPDATE METADATA 即可。
 
 > [!NOTE]
-> If identical items (e.g. an album or track) have not been matched across sources or within a source then navigate to the [Provider Details](/ui/#provider-details) section of the item and use the options there to link them.
+> 如果相同的项目（例如某张专辑或某首曲目）尚未在不同音源之间或同一音源内完成匹配，请前往该项目的 [Provider Details](/ui/#provider-details)（提供者详情）部分，并使用其中的选项将它们关联起来。
     
 [![Preview image](/assets/screenshots/library.png)](/assets/screenshots/library.png)
 
-In order to make all available content accessible in a digestible manner many of the expandable views are filtered by provider. The open box icon is shown when a section is expanded and indicates that multiple providers can populate the section. Note only one can be selected at any one time. In the screenshot above "All albums" is collapsed, so the provider selection icon is not shown. Immediately below is the "Top tracks" section which is expanded and does show the icon. In both cases the currently selected provider is shown on the left side. 
+为了让所有可用内容以易于理解的方式呈现，许多可展开的视图都按提供者（provider）进行了过滤。当某个部分处于展开状态时会显示一个打开的方框图标，表示该部分可以由多个提供者填充。请注意，同一时间只能选择其中一个。在上面的截图中，“All albums”（所有专辑）处于折叠状态，因此未显示提供者选择图标。其正下方的“Top tracks”（热门曲目）部分处于展开状态，并显示了该图标。在这两种情况下，当前选定的提供者都显示在左侧。 
 
-**Favorites**
+**收藏**
 
-As a further means of filtering the library, you can mark items as a "favourite". This is shown in the UI as a filled heart icon. Whether items are favorited by default when imported from the music source is determined by the [source settings](/music-providers/). All items can be seen if the heart icon is deselected in the top menu.
+作为过滤资料库的另一种方式，你可以将项目标记为“收藏”（favourite）。它在 UI 中显示为一个实心心形图标。项目从音源导入时是否默认收藏，由[音源设置](/music-providers/)决定。如果取消选中顶部菜单中的心形图标，则可以看到所有项目。
 
-## The Queue
+## 队列
 
-Each player has its own queue. View the queue by pressing the ![Preview image](/assets/icons/queue-button.png) button. This button can be found on the player bar at the bottom of the UI or, for narrow displays, in the NOW PLAYING view.
+每个播放器都有自己的队列。按下 ![Preview image](/assets/icons/queue-button.png) 按钮即可查看队列。该按钮位于 UI 底部的播放器栏上；对于窄屏显示，则位于 NOW PLAYING（正在播放）视图中。
 
-The queue order can be adjusted by selecting and dragging the six dot icon or via the options in the ⋮ menu.
+可以通过选择并拖动六点图标，或使用 ⋮ 菜单中的选项来调整队列顺序。
 
 > [!NOTE]
-> What happens to the queue when the different types of items (e.g. album, artist, playlist etc) are added to it is configurable in [**Settings → System → Player Queues**](/settings/core/#player-queues)
+> 将不同类型的项目（例如专辑、艺术家、播放列表等）添加到队列时的行为，可以在 [**设置 → 系统 → 播放器队列**](/settings/core/#player-queues) 中进行配置
     
-The options in the menu available in the top right is shown below. 
+右上角菜单中可用的选项如下所示。 
 
-Transferring the queue will also transfer the shuffle and repeat setting to the new player.
+转移队列时，随机播放和循环播放设置也会一并转移到新的播放器。
 
 ![Preview image](/assets/screenshots/now_playing_menu.png)
 
-Announcements can be sent directly from the MA UI using the menu item shown above which will open the dialog shown below. The Speak option is only available when the UI is accessed via https. A TTS provider has to be selected in the [System Player Settings](/settings/core/#players)
+可以使用上面显示的菜单项直接从 MA UI 发送公告，这将打开下面显示的对话框。只有通过 https 访问 UI 时，Speak（朗读）选项才可用。必须在[系统播放器设置](/settings/core/#players)中选择一个 TTS 提供者
 
 ![Preview image](/assets/screenshots/play_announcement.png)
 
-When Autoplay is on the mode will be automatically enabled when the last track of the queue is reached. The added tracks will be based on the settings set globally unless overridden in the queue settings.
+当 Autoplay（自动播放）开启时，会在队列播放到最后一首曲目时自动启用该模式。添加的曲目将基于全局设置，除非在队列设置中进行了覆盖。
 
-Each queue has a number of options which affect various behaviours. The options can be set globally in the [player queues settings](/settings/core/#player-queues) or individually via the option in the ⋮ menu. The individual player queue settings are as follows:
+每个队列都有许多影响各种行为的选项。这些选项可以在[播放器队列设置](/settings/core/#player-queues)中全局设置，也可以通过 ⋮ 菜单中的选项单独设置。单个播放器队列的设置如下：
 
 [![Preview image](/assets/screenshots/queue-settings.png)](/assets/screenshots/queue-settings.png)
 
-See the [player queues settings](/settings/core/#player-queues) section for more information about Smart Shuffle, Autoplay, and Smart Crossfade. 
+有关 Smart Shuffle（智能随机播放）、Autoplay 和 Smart Crossfade（智能交叉淡入淡出）的更多信息，请参阅[播放器队列设置](/settings/core/#player-queues)部分。 
 
 > [!NOTE]
-> If a queue is paused for more than 30 seconds its status will change to stopped
+> 如果队列暂停超过 30 秒，其状态将变为已停止（stopped）
 
 > [!CAUTION]
-> Adding thousands of tracks to the queue may cause MA to become unresponsive depending on the resources of the host hardware. It is recommended to keep the queue to one thousand tracks or less.
+> 根据主机硬件的资源情况，向队列添加数千首曲目可能导致 MA 失去响应。建议将队列保持在 1000 首曲目或更少。
 
-### Shuffle
+### 随机播放
 
-As mentioned shuffle is treated as a setting on the queue, and it stays how you left it. The one exception is media that has its own track order: album, audiobook, podcast, podcast episode and radio/audio source. Starting one of these with play or replace switches shuffle off, so the tracks play in order.
+如前所述，随机播放被视为队列的一项设置，并保持你上次离开时的状态。唯一的例外是具有自身曲目顺序的媒体：专辑、有声读物、播客、播客单集以及电台/音频音源。使用“播放”或“替换”方式启动这类媒体时，随机播放会被关闭，因此曲目将按顺序播放。
 
 ### Endless Mix
 
-Endless Mix keeps the music playing by adding tracks similar to what you started from, using the similar tracks features of your streaming sources (Apple Music, Deezer, Spotify, Subsonic, Tidal, or YouTube Music). When this is selected Autoplay is enabled and can't be disabled, and shuffle is disabled and can't be enabled.
+Endless Mix 通过添加与你最初播放内容相似的曲目来让音乐持续播放，它使用的是流媒体音源（Apple Music、Deezer、Spotify、Subsonic、Tidal 或 YouTube Music）的相似曲目功能。选择此选项后，Autoplay 会被启用且无法禁用，随机播放会被禁用且无法启用。
 
 <details>
-<summary>How Endless Mix picks tracks</summary>
+<summary>Endless Mix 如何挑选曲目</summary>
 
-**Starting from a Track or Album:**
-Endless Mix retrieves similar tracks using the track's provider mappings (shown in the [Provider Details](/ui/#provider-details) section in the UI). When you start Endless Mix from a track in the [library](#the-library), Music Assistant checks each of the track's provider mappings in order and uses the first source that supports the similar tracks feature. For example, if a track exists on both Spotify and Tidal, and Spotify is listed first in the provider mappings, Spotify's similar tracks algorithm will be used exclusively. When starting from an album, Music Assistant first selects base tracks from that album, then applies the same provider selection logic for each track. If you start Endless Mix with a track or album that is not in the library (i.e., directly from a music source), that source's similar tracks implementation is used.
+**从曲目或专辑开始：**
+Endless Mix 使用曲目的提供者映射（provider mappings，显示在 UI 的 [Provider Details](/ui/#provider-details) 部分）来获取相似曲目。当你从[资料库](#the-library)中的曲目启动 Endless Mix 时，Music Assistant 会按顺序检查该曲目的每个提供者映射，并使用第一个支持相似曲目功能的音源。例如，如果某首曲目同时存在于 Spotify 和 Tidal 上，且 Spotify 在提供者映射中排在第一位，则将专门使用 Spotify 的相似曲目算法。从专辑开始时，Music Assistant 会先从该专辑中选取基础曲目，然后对每首曲目应用相同的提供者选择逻辑。如果你使用不在资料库中的曲目或专辑启动 Endless Mix（即直接从音源启动），则会使用该音源的相似曲目实现。
 
-**Starting from an Artist:**
-Endless Mix works differently when starting from an artist. For an artist in the library with multiple provider mappings, Music Assistant fetches the top tracks from all sources where that artist exists, combines them into a single pool, then randomly samples five tracks as the base. Each sampled track then queries its own source for similar tracks. This means Endless Mix started from an artist typically produces a diverse mix of results from multiple sources, as each base track contributes similar tracks from its respective source (e.g., some from Spotify, some from Tidal, some from Apple Music). For artists not in the library, only that source's top tracks are used as the base.
+**从艺术家开始：**
+Endless Mix 从艺术家开始时的工作方式有所不同。对于资料库中具有多个提供者映射的艺术家，Music Assistant 会从该艺术家所在的所有音源获取热门曲目，将其合并为一个池，然后从中随机抽取五首曲目作为基础。每首被抽取的曲目随后会向其所属的音源查询相似曲目。这意味着从艺术家启动的 Endless Mix 通常会产生来自多个音源的多样化结果，因为每首基础曲目都会从其各自的音源贡献相似曲目（例如，一些来自 Spotify，一些来自 Tidal，一些来自 Apple Music）。对于不在资料库中的艺术家，则仅使用该音源的热门曲目作为基础。
 
 </details>
 
-## Playlists
+## 播放列表
 
-Playlists must be stored on a source. A music source's playlist can only contain tracks from that source. However, MA has a built-in provider with the ability to create playlists that have tracks from multiple music sources. In this case the playlist will be stored solely within the MA database. These options are automatically presented in the Add to Playlist dialog.
+播放列表必须存储在某个音源上。音源的播放列表只能包含来自该音源的曲目。不过，MA 内置了一个提供者，能够创建包含来自多个音源曲目的播放列表。在这种情况下，播放列表将仅存储在 MA 数据库中。这些选项会在“Add to Playlist”（添加到播放列表）对话框中自动呈现。
 
-Playlists can be created or added to from various menus in the different views. They can also be created in the Playlist view by clicking on the icon in the top right.
+可以在不同视图的各种菜单中创建播放列表或向其中添加内容。也可以在播放列表视图中点击右上角的图标来创建播放列表。
 
 [![Preview image](/assets/screenshots/playlist-create.png)](/assets/screenshots/playlist-create.png)
 
-Playlists which consist solely of tracks from the filesystem source can be stored on the local filesystem if MA has write access. Music Assistant stores its own playlists inside its data storage; they are not written to your music folders.
+仅包含文件系统音源曲目的播放列表，在 MA 具有写权限的情况下可以存储在本地文件系统上。Music Assistant 会将自己的播放列表存储在其数据存储内部；它们不会写入你的音乐文件夹。
 
-User created playlists from streaming sources will be imported into the MA database and will remain synchronized regardless of whether changes are made from the MA UI or from the streaming source's native application (assuming the streaming source has the functionality for two way sync). Refer to the individual Music Source pages for any limitations.
+来自流媒体音源的用户创建播放列表将被导入 MA 数据库，并且无论更改是通过 MA UI 还是流媒体音源的官方应用进行的（前提是流媒体音源具有双向同步功能），都会保持同步。有关任何限制，请参阅各个音源（Music Source）页面。
 
-Playlists can be copied from one source to another by opening the original playlist and selecting all of the tracks and then in the ACTIONS menu select `Add to Playlist` and can also be imported and exported as described below.
+可以通过打开原始播放列表并选择所有曲目，然后在 ACTIONS（操作）菜单中选择 `Add to Playlist`，将播放列表从一个音源复制到另一个音源；此外还可以按照下文所述进行导入和导出。
 
-Automatically generated playlists from streaming sources may be supported. See the specific source documentation for further information.
+来自流媒体音源的自动生成播放列表可能受支持。有关更多信息，请参阅具体音源的文档。
 
-MA automatically generates some dynamic playlists. These playlists will be updated at the sync interval set for the `Refresh playlist metadata` task in [**Settings → System → Background tasks**](/settings/core/#background-tasks) or they can be updated manually by navigating to the playlist and then pressing on the refresh icon ![refresh](/assets/icons/icon-refresh-plain.png) or by going to the ⋮ menu in the top right and selecting **Refresh item**.
+MA 会自动生成一些动态播放列表。这些播放列表会按照 [**设置 → 系统 → 后台任务**](/settings/core/#background-tasks) 中为 `Refresh playlist metadata` 任务设置的同步间隔进行更新，也可以手动更新：导航到该播放列表，然后点击刷新图标 ![refresh](/assets/icons/icon-refresh-plain.png)，或者打开右上角的 ⋮ 菜单并选择 **Refresh item**（刷新项目）。
 
-There are also two pseudo-playlists, the Infinite Mixes (one based on the whole library and one on the favorites). Viewing these playlists shows no tracks; playing one results in an endless queue where 25 random tracks are added and refreshed as the queue comes to an end.
+还有两个伪播放列表（pseudo-playlist），即 Infinite Mixes（无限混音），一个基于整个资料库，一个基于收藏。查看这些播放列表不会显示任何曲目；播放其中一个会生成一个无尽的队列：在队列即将播完时会添加并刷新 25 首随机曲目。
 
-### Playlist Artwork
+### 播放列表封面
 
-MA will use the artwork supplied from the streaming providers. For local providers MA will create a collage based on the tracks in the playlist. Alternatively, for the local file system providers, an image which has the same prefix as the playlist will be used (eg. mix.m3u and mix.jpg)
+MA 将使用流媒体提供者提供的封面图片。对于本地提供者，MA 会根据播放列表中的曲目创建一张拼贴图。另外，对于本地文件系统提供者，将使用文件名前缀与播放列表相同的图片（例如 mix.m3u 和 mix.jpg）。
 
-### Importing and Exporting
+### 导入与导出
 
-Music Assistant can export in-library playlists to M3U8 files and import them back, preserving far more detail than the standard M3U format allows. Use it to back up playlists, move them between MA instances, or migrate from one streaming provider to another.
+Music Assistant 可以将资料库中的播放列表导出为 M3U8 文件并将其重新导入，所能保留的详细信息远超标准 M3U 格式所能容纳。可以用它来备份播放列表、在多个 MA 实例之间移动播放列表，或从一个流媒体提供者迁移到另一个。
 
-Exports stay compatible with normal M3U players (VLC, Kodi, etc.), but MA adds extended tags that carry full metadata - ISRC (a unique ID that identifies a recording), MusicBrainz ID, artist/album info, provider mappings, and artwork. Other players ignore these; MA uses them to rebuild the playlist faithfully on import.
+导出的文件仍与普通 M3U 播放器（VLC、Kodi 等）保持兼容，但 MA 添加了承载完整元数据的扩展标签——ISRC（标识一段录音的唯一 ID）、MusicBrainz ID、艺术家/专辑信息、提供者映射以及封面图片。其他播放器会忽略这些标签；MA 则会在导入时使用它们来忠实地重建播放列表。
 
-**Exporting a playlist**
+**导出播放列表**
 
-Open the playlist to be exported, click the ⋮ menu in the header, and choose Export playlist. MA downloads a .m3u8 file named after the playlist.
+打开要导出的播放列表，点击页眉中的 ⋮ 菜单，然后选择 Export playlist（导出播放列表）。MA 会下载一个以该播放列表命名的 .m3u8 文件。
 
-Only playlists that live in the Music Assistant library can be exported; provider-owned playlists (e.g. ones that appear in Spotify or Tidal searches) do not show the option.
+只有位于 Music Assistant 资料库中的播放列表才能导出；由提供者所有的播放列表（例如出现在 Spotify 或 Tidal 搜索结果中的播放列表）不会显示该选项。
 
-**Importing a playlist**
+**导入播放列表**
 
-On the Playlists page, there is an option in the toolbar menu to `Import playlist`, select it and then pick a .m3u or .m3u8 file. MA creates a new library playlist from it.
+在 Playlists（播放列表）页面上，工具栏菜单中有一个 `Import playlist` 选项，选择它，然后选取一个 .m3u 或 .m3u8 文件。MA 会据此创建一个新的资料库播放列表。
 
-In the import dialog, you will see a `Search for tracks on` list with a checkbox for each installed music provider. These are the providers MA will search when a track in the file can't be played directly (for example, the file references a Spotify track but Spotify is no longer installed, or you are importing a M3U that someone else exported).
+在导入对话框中，你会看到一个 `Search for tracks on` 列表，其中每个已安装的音源都有一个复选框。这些就是当文件中的曲目无法直接播放时 MA 会搜索的提供者（例如，文件引用了一首 Spotify 曲目但 Spotify 已不再安装，或者你正在导入他人导出的 M3U）。
 
-MA searches for the best available version on those providers, preferring exact matches on ISRC or MusicBrainz ID and falling back to title/artist/duration when those IDs aren't present. You will see a "Playlist created" notification as soon as the import finishes, with an Open playlist shortcut. If MA can't find a confident match for a track, the original reference is kept in the playlist so you can see what the original item was and fix it by hand.
+MA 会在这些提供者上搜索最佳可用版本，优先选择 ISRC 或 MusicBrainz ID 完全匹配的结果；当这些 ID 不存在时，则退而按标题/艺术家/时长进行匹配。导入完成后，你会立即看到“Playlist created”（播放列表已创建）通知，其中带有 Open playlist（打开播放列表）快捷方式。如果 MA 无法为某首曲目找到可信的匹配项，播放列表中会保留原始引用，以便你查看原始项目是什么并手动修复。
 
-**Getting the best results**
+**获得最佳效果**
 
-- **Export from MA whenever possible.** MA's exports carry ISRC and MusicBrainz IDs, which produce near-perfect matches on import. Third-party M3U files only have title/artist/duration, so matching is fuzzier.
-- **Install the providers to be matched from before importing.** MA only searches providers that are currently available. If migrating from Spotify to Tidal, install Tidal first.
-- **Use the provider checkboxes to scope matching.** Leaving everything checked gives MA the widest net; narrow it if you want matches to come from one or two specific services.
+- **尽可能从 MA 导出。** MA 导出的文件带有 ISRC 和 MusicBrainz ID，在导入时可以实现近乎完美的匹配。第三方 M3U 文件只有标题/艺术家/时长信息，因此匹配结果较为模糊。
+- **在导入之前先安装要用作匹配来源的提供者。** MA 只会搜索当前可用的提供者。如果要从 Spotify 迁移到 Tidal，请先安装 Tidal。
+- **使用提供者复选框来限定匹配范围。** 保持全部勾选可让 MA 的搜索范围最广；如果你希望匹配结果仅来自一两个特定服务，可以缩小范围。
 
-## Streaming Protocols
+## 流媒体协议
 
-Music Assistant talks to your players using whichever streaming protocol suits them best; you do not normally need to think about this. Many devices support more than one protocol and Music Assistant combines all of the different protocols that it discovers into one player. Each player has a default protocol which is [selectable in the settings](/settings/individual-player/#output-protocols) that will always be used when playback is initiated to the individual player. When grouping players, Music Assistant will identify the most ideal protocol to use for grouping and playback, and will switch to that protocol without you needing to do anything. In some cases there might be an interruption to playback if the stream must be restarted.
+Music Assistant 会使用最适合你播放器的流媒体协议与其通信；通常你无需为此操心。许多设备支持不止一种协议，Music Assistant 会将它发现的所有不同协议组合成一个播放器。每个播放器都有一个默认协议，可在[设置](/settings/individual-player/#output-protocols)中选择，向单个播放器发起播放时将始终使用该协议。在将播放器分组时，Music Assistant 会确定最适合用于分组和播放的协议，并自动切换到该协议，无需你执行任何操作。在某些情况下，如果必须重新启动流，播放可能会出现中断。
 
-## Online Metadata Sources
+## 在线元数据来源
 
-Music Assistant relies on metadata (artist details, artwork, lyrics) to look its best. It reads this from your locally tagged files and from free online sources. The free online resources limit how fast MA may query them, so:
+Music Assistant 依靠元数据（艺术家详情、封面图片、歌词）来呈现最佳效果。它从你本地带标签的文件以及免费的在线来源读取这些信息。免费的在线资源对 MA 的查询速度有所限制，因此：
 
-- MA queries online resources very slowly in the background
-- If your local files are badly tagged or have no images in the music folders, there will be a significant delay until artist thumbs appear
-- If a track has no album artist tag, MA will not attempt to retrieve one from a metadata provider and will use Various Artists by default
+- MA 会在后台以非常缓慢的速率查询在线资源
+- 如果你的本地文件标签不规范，或者音乐文件夹中没有图片，艺术家缩略图出现之前会有明显的延迟
+- 如果某首曲目没有专辑艺术家（album artist）标签，MA 不会尝试从元数据提供者获取，而是默认使用 Various Artists（群星）
 
-Music Assistant never modifies the tags in your local files; online metadata retrieval only fills gaps in what your tags provide. See the [Metadata](/metadata/) section for the full detail of which online sources are used and when.
+Music Assistant 绝不会修改你本地文件中的标签；在线元数据获取只是填补你的标签未提供的信息。有关使用了哪些在线来源以及何时使用的完整细节，请参阅 [Metadata](/metadata/)（元数据）部分。
 
-If you have local files with local artwork as well as streaming sources, preferably add the local source first and allow the sync to complete and all artwork to appear before adding the streaming sources. Not doing so can result in the streaming source artwork being preferred, although this can be fixed by using the [images section](/ui/#view---individual-artist) in the artist view.
+如果你既有带本地封面图片的本地文件，又有流媒体音源，建议先添加本地音源，并等待同步完成、所有封面图片都显示之后，再添加流媒体音源。否则可能导致流媒体音源的封面图片被优先使用，不过可以通过艺术家视图中的[图片部分](/ui/#view---individual-artist)来修复。
 
-You can speed up the metadata retrieval for an individual item (including lyrics when a track is selected) by using the UPDATE METADATA option in the ⋮ menu in the top right corner of the [individual artist, album, or track view](/ui/#view---artist--album--track).
+你可以使用[单个艺术家、专辑或曲目视图](/ui/#view---artist--album--track)右上角 ⋮ 菜单中的 UPDATE METADATA（更新元数据）选项，来加快单个项目的元数据获取速度（选择曲目时包括歌词）。

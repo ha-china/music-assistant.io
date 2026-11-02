@@ -1,28 +1,28 @@
 ---
-title: Subsonic Scrobbler Plugin
-description: Report what you play to a Subsonic media server, so its play counts and history stay right.
+title: Subsonic Scrobbler 插件
+description: 将您播放的内容报告给 Subsonic 媒体服务器，使其播放次数和历史记录保持准确。
 pluginGroup: scrobbling
 ---
 
 # Subsonic Scrobbler <img src="/assets/icons/subsonic_icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has the ability to report played tracks to a [Subsonic media server](/music-providers/subsonic/). Contributed and maintained by <a href="https://github.com/clusters" target="_blank" rel="noopener noreferrer">Clusters</a>
+Music Assistant 可以将播放的曲目报告给 [Subsonic 媒体服务器](/music-providers/subsonic/)。由 <a href="https://github.com/clusters" target="_blank" rel="noopener noreferrer">Clusters</a> 贡献并维护
 
-## Features
+## 功能
 
-- Scrobble music playback to a Subsonic media server. This is useful for keeping track of play count or play history
-- Now playing feature is supported
+- 将音乐播放 Scrobble 到 Subsonic 媒体服务器。这对于跟踪播放次数或播放历史非常有用
+- 支持正在播放（Now playing）功能
 
-## Configuration
+## 配置
 
-- No plugin specific configuration is necessary, but a Subsonic music source must be configured for the plugin to work
+- 无需进行插件特定的配置，但必须配置 Subsonic 音乐源，插件才能正常工作
 
-### Settings
+### 设置
 
-- <b>Suffix version to track names.</b> This adds the version, as stored in the Music Assistant database, to the end of the track name when it is sent to the Subsonic server. This may be useful if Musicbrainz IDs are not available to disambiguate same named tracks from an artist
-- <b>Scrobble for users.</b> This allows selection of which logged-in user will be scrobbled by this plugin. Multiple instances of this plugin can be added
-- <b>Scrobble for players.</b> This allows selection of which players will register scrobbles
+- <b>在曲目名称后添加版本后缀。</b>这会在曲目发送到 Subsonic 服务器时，将 Music Assistant 数据库中存储的版本添加到曲目名称的末尾。如果无法使用 Musicbrainz ID 来区分同一艺术家的同名曲目，这可能会很有用
+- <b>为用户 Scrobble。</b>这允许选择此插件将为哪个已登录用户进行 Scrobble。可以添加此插件的多个实例
+- <b>为播放器 Scrobble。</b>这允许选择哪些播放器将记录 Scrobble
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- Songs will only get reported as played when they are fully played (90+%)
+- 歌曲只有在完整播放（90% 以上）后才会被报告为已播放

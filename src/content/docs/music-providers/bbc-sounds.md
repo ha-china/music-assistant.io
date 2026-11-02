@@ -4,11 +4,11 @@ title: "BBC Sounds"
 
 # BBC Sounds <img src="/assets/icons/bbcsounds-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming from BBC Sounds. Contributed and maintained by <a href="https://github.com/kieranhogg" target="_blank" rel="noopener noreferrer">Kieran Hogg</a>
+Music Assistant 支持从 BBC Sounds 进行流媒体播放。由 <a href="https://github.com/kieranhogg" target="_blank" rel="noopener noreferrer">Kieran Hogg</a> 贡献并维护
 
-BBC Sounds is the BBC's free audio service. It carries the live BBC radio stations, programmes to catch up on after broadcast, podcasts and music mixes.
+BBC Sounds 是 BBC 的免费音频服务。它提供 BBC 电台的直播节目、播出后可回听的往期节目、播客以及音乐混编内容。
 
-This source brings all of that into Music Assistant. It works without an account, though signing in adds your personalised content and some programmes that are only available in the UK.
+此音源将所有这些内容引入 Music Assistant。它无需账户即可使用，不过登录后可以添加你的个性化内容以及一些仅在英国境内可用的节目。
 
 ## Features
 
@@ -34,27 +34,43 @@ This source brings all of that into Music Assistant. It works without an account
 
 *Requires a logged in BBC account
 
-## Usage
+### Other
 
-You can access the main Sounds menu by navigating to *Browse > BBC Sounds*. Relevant content will also be shown on the homepage as recommended items, and available content can also be accessed through search.
+- Stream live BBC radio shows, podcast series and on-demand audio
+- Access your personalised BBC Sounds content*
+- Keeps your My Sounds listen history up to date with your Music Assistant activity*
 
-## Configuration
+*Requires a logged in BBC account
 
-The provider works without a login, but you will be restricted to a basic version of the Sounds content.
+### 其他
 
-### Settings
-- <b>Username and Password.</b> A BBC Sounds account is optional, but some UK-only content may not work without being logged in
-- <b>Advanced - Show local radio stations</b>. By default, only national radio stations are listed. Enabling this option will also show local stations.
-- <b>Advanced - Preferred Stream Format</b> Options are `HLS [default]` or `MPEG-DASH`
+- 播放 BBC 电台直播节目、播客系列和点播音频
+- 访问你的个性化 BBC Sounds 内容*
+- 根据你在 Music Assistant 中的活动，使你的 My Sounds 收听历史保持最新*
 
-## Known Issues / Notes
+*需要已登录的 BBC 账户
 
-The full functionality is enabled when you are a UK-based listener, and signed in to your BBC account. The BBC has slowly been moving towards excluding non-UK listeners from using its Sounds platform, more details <a href="https://www.bbc.co.uk/sounds/help/questions/listening-outside-the-uk/outside-uk-changes" target="_blank" rel="noopener noreferrer">here</a>. This provider currently allows access to live and catch up radio to International listeners via the Sounds API, but this could be restricted in the future.
+## 使用方法
 
-## Not Yet Supported
+你可以导航到 *浏览 > BBC Sounds* 来访问 Sounds 主菜单。相关内容也会作为推荐项目显示在主页上，可用内容还可以通过搜索来访问。
 
-- Pausing and seeking live radio
-- International accounts may work, but are not currently supported
-- The international menu should show available podcasts, this has not been implemented yet
-- Showing the currently playing song for stations and catch-up is implemented but not yet released
-- For signed-in users, accessing your subscribed content through the library is not yet supported, but is planned
+## 配置
+
+该提供程序无需登录即可工作，但你只能使用 Sounds 内容的基础版本。
+
+### 设置
+- <b>用户名和密码。</b>BBC Sounds 账户是可选的，但某些仅限英国的内容在未登录的情况下可能无法使用
+- <b>高级 - 显示本地电台</b>。默认情况下，仅列出全国性电台。启用此选项后还会显示本地电台。
+- <b>高级 - 首选流媒体格式</b> 选项为 `HLS [default]` 或 `MPEG-DASH`
+
+## 已知问题 / 注意事项
+
+只有当你身处英国并已登录 BBC 账户时，才能使用完整功能。BBC 正在逐步将非英国听众排除在其 Sounds 平台之外，更多详情请见<a href="https://www.bbc.co.uk/sounds/help/questions/listening-outside-the-uk/outside-uk-changes" target="_blank" rel="noopener noreferrer">此处</a>。目前，该提供程序通过 Sounds API 允许国际听众访问直播和回听电台，但此访问权限将来可能会受到限制。
+
+## 尚不支持
+
+- 暂停和跳转直播电台播放
+- 国际账户可能可以使用，但目前不受支持
+- 国际菜单应显示可用的播客，此功能尚未实现
+- 显示电台和回听节目的当前播放曲目功能已实现，但尚未发布
+- 对于已登录用户，尚不支持通过媒体库访问你订阅的内容，但已在计划之中

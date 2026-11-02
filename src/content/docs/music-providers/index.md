@@ -1,64 +1,61 @@
 ---
-title: "Music Sources"
+title: "音乐源"
 sidebar:
   label: Overview
 ---
 
-# Music Sources
+# 音乐源
 ![Logo Banner](/assets/music-provider-logos.png)
 
-## What a music source is
+## 什么是音乐源
 
-Music Assistant holds no music of its own. A **music source** is somewhere your music actually lives: a streaming service such as Spotify or Tidal, a folder of files on a disk or a NAS, a media server like Plex or Jellyfin, or a directory of radio stations, podcasts or audiobooks.
+Music Assistant 本身不存放任何音乐。**音乐源**（music source）是您的音乐实际所在的地方：可以是 Spotify 或 Tidal 等流媒体服务、磁盘或 NAS 上的一个文件文件夹、Plex 或 Jellyfin 等媒体服务器，或者是存放电台、播客或有声书的目录。
 
-You add the sources you already use, and Music Assistant reads from all of them at once. Nothing appears until you add at least one, even if Home Assistant can already see the media.
+您可以添加已经在使用的源，Music Assistant 会同时从所有源读取内容。在至少添加一个源之前，什么都不会显示，即使 Home Assistant 已经能够看到这些媒体。
 
-Everything you add is combined into a single **library**: one set of artists, albums, tracks, playlists, radio stations, podcasts and audiobooks, whichever source each item came from. Where the same album exists in several sources, Music Assistant tries to link those copies together so you see one entry rather than three, and plays the [best quality version](/faq/tech-info/#stream-selection) available. Linking only happens where the sources supply enough metadata to identify a match, so it is not guaranteed; see [Provider Details](/ui/#provider-details) for what to do when copies stay separate.
+您添加的所有内容都会合并到一个统一的**媒体库**（library）中：包括一组艺人、专辑、曲目、播放列表、电台、播客和有声书，无论每一项来自哪个源。当同一张专辑存在于多个源中时，Music Assistant 会尝试将这些副本链接在一起，让您看到一个条目而不是三个，并播放其中[可用的最佳音质版本](/faq/tech-info/#stream-selection)。只有当各源提供了足以识别匹配的元数据时才会进行链接，因此并不保证一定成功；如果副本仍保持独立该怎么办，请参阅[提供商详情](/ui/#provider-details)。
 
-How much of a source ends up in that library is up to you. Each one has its own settings for what gets synced and how often, which the rest of this page covers.
+一个源中有多少内容最终进入该媒体库由您决定。每个源都有各自关于同步哪些内容以及同步频率的设置，本页其余部分将对此进行介绍。
 
-## Adding a source
+## 添加音乐源
 
-Go to [**Settings → Music Sources → Add a music source**](/settings/music-provider-settings/) and pick the one you want. Each source has its own page in this section covering what it offers and how to set it up.
+前往[**设置 → 音乐源 → 添加音乐源**](/settings/music-provider-settings/)，然后选择您想要的源。本部分中的每个源都有各自的页面，介绍它提供的功能以及如何进行设置。
 
-If you remove a source, the database is cleaned up afterwards, which takes a little while. If you still see entries from a deleted source after some time, restart MA to retrigger the cleanup.
+如果您移除某个源，之后会清理数据库，这需要一些时间。如果过了一段时间后您仍然看到来自已删除源的条目，请重启 MA 以重新触发清理。
 
 > [!TIP]
-> If a problem occurs the automatic linking process may need to be initiated again. If what appears to be identical albums or tracks are seen then navigate to the album or track and use the <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> icon at the top of the [PROVIDER DETAILS](/ui/#provider-details) section. This will trigger the linking process and should result in the same albums and tracks being collapsed together.
+> 如果出现问题，自动链接过程可能需要重新启动。如果看到看起来完全相同的专辑或曲目，请导航至该专辑或曲目，并使用 [提供商详情](/ui/#provider-details) 部分顶部的 <img src="/assets/icons/database-search.png" alt="question mark" style="width: 20px;"  loading="lazy" /> 图标。这将触发链接过程，并应使相同的专辑和曲目合并到一起。
 
 ![image](/assets/screenshots/add-music-provider.png)
 
-## Settings
+## 设置
 
-All Music Sources have settings which can be configured. The settings page will look similar to the following. The icon in the top right is a hyperlink to the relevant page in this documentation. Specific help for a setting or configurable field is often available and is accessed by selecting this icon ![question mark](/assets/icons/question-mark.png). All sources can be given a custom name and disabled if necessary. The log level can be adjusted for all sources and this is found in the advanced settings. (Do not select Verbose unless asked for by a dev as it can have an adverse performance impact). See the sources pages for source specific settings.
+所有音乐源都有可供配置的设置。设置页面看起来与下图类似。右上角的图标是指向本文档中相关页面的超链接。针对某个设置或可配置字段的特定帮助通常可用，选择此图标 ![question mark](/assets/icons/question-mark.png) 即可查看。所有源都可以指定自定义名称，如有必要还可以禁用。所有源的日志级别都可以调整，该选项位于高级设置中。（除非开发人员要求，否则不要选择 Verbose，因为它可能会对性能产生不利影响）。有关特定源的设置，请参阅各个源的页面。
 
 ![image](/assets/screenshots/generic-settings.png)
 
-## Library Import Control
+## 媒体库导入控制
 
-All music sources have options to control the import of media items and this is shown in the image below. The image shows a typical streaming provider on the left and a typical filesytem provider on the right. Note that if an individual track is in the source's library (but not its associated album) and, for example, all of the import settings are set to sync then the individual track will be imported and the album will be created in the database but all of the other album tracks will not be added. This behaviour can be changed by using the `Import album tracks` toggle. Also it should be noted that when a track is added from a streaming provider then the associated artist and album are added to the database but are NOT marked as in library (unless those items are also in the streaming provider's library). Thus you will not see the artist or album in the artist or library views. You can however, navigate to the track and then click through to see the artist or album from there.
+所有音乐源都有用于控制媒体项导入的选项，如下图所示。图中左侧是典型的流媒体提供商，右侧是典型的文件系统提供商。请注意，如果某首单曲曲目位于源的媒体库中（但其所属专辑不在），并且例如所有导入设置都设为同步，那么该单曲曲目将被导入，专辑也会在数据库中创建，但专辑的其他曲目不会被添加。可以通过 `Import album tracks` 开关来更改此行为。另外需要注意的是，当从流媒体提供商添加曲目时，相关的艺人和专辑会被添加到数据库中，但不会被标记为在媒体库中（除非这些项目也在该流媒体提供商的媒体库中）。因此，您不会在艺人或媒体库视图中看到该艺人或专辑。不过，您可以导航到该曲目，然后从那里点击查看艺人或专辑。
 
-Control of the synchronisation timing between the provider and MA is done in the [Background Tasks](/settings/core/#background-tasks) view in **Settings → System**. 
+提供商与 MA 之间同步时机的控制是在 **设置 → 系统** 中的 [后台任务](/settings/core/#background-tasks) 视图中进行的。
 
-There is a setting which controls whether additions to the MA library are also made to the source library. For clarity, adding an item to the MA library will only be reflected in the originating source of the item. So, for example, if you had the Deezer and Spotify sources installed and you searched for an artist you will likely see that artist listed twice, once from each source. If you add the artist to the MA library and you have sync back enabled, then the artist will only be added to the source that was associated with item selected. The list view is required to see the source's icons.
+有一个设置用于控制对 MA 媒体库的添加是否也会作用到源媒体库。需要说明的是，将项目添加到 MA 媒体库只会反映在该项目的原始源中。举例来说，如果您安装了 Deezer 和 Spotify 两个源并搜索某位艺人，您可能会看到该艺人被列出两次，每个源各一次。如果您将该艺人添加到 MA 媒体库并启用了反向同步，那么该艺人只会被添加到与所选项目相关联的那个源中。需要使用列表视图才能看到源的图标。
 
-Lastly, depending on sources installed, there may be additional sync related options at the bottom of the section. Refer to the individual source settings for more information.
+最后，根据所安装的源的不同，本节底部可能还有其他与同步相关的选项。有关更多信息，请参阅各个源的设置。
 
 ![image](/assets/screenshots/library-import-settings.png)
 
-- <b>Sync Library Artists/Albums/Tracks/Playlists/Audiobooks/Podcasts from this source to Music Assistant.</b> Whether to synchronize all artists/albums/tracks/playlists/audiobooks/podcasts from the local source. 
-- <b>Import album tracks.</b> By default, adding albums to the Music Assistant library imports only the album entry rather than the associated tracks. This approach allows for the manual selection of specific tracks to include. To override this behavior, this configuration option can be enabled. Users should note that some streaming sources may already automate this process by adding all tracks to their favorites by default.
-- <b>Import playlist tracks.</b> By default, importing a playlist into Music Assistant adds only the playlist itself to the library. This allows the playlist to be streamed and individual tracks can be added manually as desired. This configuration option overrides that behavior for specific playlists by importing all associated tracks. Entries can be made using either the case-sensitive playlist name or the playlist URI.
-- <b>Sync back library additions/removals (2-way sync).</b> This setting determines the behavior when an item is manually added to or removed from the Music Assistant library. Enabling this option ensures that these actions are synchronized back to the original source. Without synchronization, items removed from the library may reappear during the next automatic sync if they remain present on the source's side.
-- <b>Sync Podcast Progress from (source).</b> Automatically sync episode played status from the source to Music Assistant. Episodes marked as played in the source will be marked as played in MA. Only enable this if you use both the the source's app and Music Assistant for podcast playback.
-- <b>Sync Audiobook Progress from (source).</b> Automatically sync audiobook progress from the source to Music Assistant. Progress from the source's app will sync to MA when audiobooks are accessed. Only enable this if you use both the the source's app and Music Assistant for audiobook playback.
-- <b>Propagate track genres to albums and artists.</b> As the file system has no way to attach genres to the albums and artists this setting will take all genres found in an album or artist's tracks and attach them to the album or artist
+- <b>将媒体库中的艺人/专辑/曲目/播放列表/有声书/播客从此源同步到 Music Assistant。</b> 是否同步来自本地源的所有艺人/专辑/曲目/播放列表/有声书/播客。
+- <b>导入专辑曲目。</b> 默认情况下，将专辑添加到 Music Assistant 媒体库时只导入专辑条目，而不是相关曲目。这种方式允许手动选择要包含的特定曲目。要覆盖此行为，可以启用此配置选项。用户应注意，某些流媒体源可能已自动完成此过程，默认情况下会将所有曲目添加到其收藏中。
+- <b>导入播放列表曲目。</b> 默认情况下，将播放列表导入 Music Assistant 时只将播放列表本身添加到媒体库中。这样可以对播放列表进行流式播放，并可根据需要手动添加单曲曲目。此配置选项通过导入所有相关曲目来覆盖特定播放列表的这种行为。可以使用区分大小写的播放列表名称或播放列表 URI 来进行输入。
+- <b>反向同步媒体库的添加/移除（双向同步）。</b> 此设置决定当项目被手动添加到 Music Assistant 媒体库或从中移除时的行为。启用此选项可确保这些操作被同步回原始源。如果不进行同步，从媒体库中移除的项目如果仍存在于源端，可能会在下次自动同步时重新出现。
+- <b>从（源）同步播客进度。</b> 自动将单集的已播放状态从源同步到 Music Assistant。在源中标记为已播放的单集将在 MA 中标记为已播放。仅当您同时使用源的应用和 Music Assistant 收听播客时才启用此选项。
+- <b>从（源）同步有声书进度。</b> 自动将有声书的进度从源同步到 Music Assistant。访问有声书时，来自源应用的进度将同步到 MA。仅当您同时使用源的应用和 Music Assistant 收听有声书时才启用此选项。
+- <b>将曲目流派传播到专辑和艺人。</b> 由于文件系统无法将流派附加到专辑和艺人，此设置会将专辑或艺人的曲目中发现的所有流派附加到专辑或艺人
 
-Information for other options not listed above is available in the MA UI.
+有关上述未列出的其他选项的信息，可在 MA UI 中查看。
 
-## Not sure which source you need?
+## 不确定需要哪个音乐源？
 
-If you know what you want to listen to but not which source provides it, start at
-[I Want To Listen To](/faq/listen-to/). It groups every source by what it plays, from local
-files and streaming through to radio, podcasts and audiobooks, and by the country its content
-comes from. That page also carries the summary table comparing all of the sources side by side.
+如果您知道自己想听什么，但不知道哪个源提供该内容，可以从[我想听](/faq/listen-to/)开始。该页面按每个源播放的内容对其进行分组，涵盖从本地文件和流媒体到电台、播客和有声书，并按内容来源的国家/地区分类。该页面还包含一个并排比较所有源的汇总表。

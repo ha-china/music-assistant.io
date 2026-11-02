@@ -32,8 +32,8 @@ head:
       property: "og:image:category"
       content: "Announcements"
 
-title: "Community Day 2026: Save the date!"
-description: "Community Day returns on Saturday, November 7, 2026! We learned a lot from last year’s debut event, and have exciting plans to make this one even better."
+title: "Community Day 2026：敬请期待！"
+description: "Community Day 将于 2026 年 11 月 7 日（星期六）回归！我们从去年首届活动的举办中学到了很多，并且已经制定了令人振奋的计划，要让这次活动更加精彩。"
 crosspostSource: "Open Home Foundation"
 cover:
   image: "https://www.openhomefoundation.org/assets/images/blog/community-day-2026-save-the-date/card.webp"
@@ -47,4 +47,4 @@ tags:
   - community
 ---
 
-You’ve been asking all year, and the wait is over… Mark your calendars, because <a href="https://luma.com/communityday2026" target="_blank" rel="noopener">Community Day 2026</a> will be held on Saturday, November 7! 🎉
+大家问了一整年，现在等待终于结束……请在日历上做好标记，因为 <a href="https://luma.com/communityday2026" target="_blank" rel="noopener">Community Day 2026</a> 将于 11 月 7 日（星期六）举行！🎉

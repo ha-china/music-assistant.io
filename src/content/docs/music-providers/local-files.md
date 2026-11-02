@@ -1,13 +1,13 @@
 ---
-title: "Local Files"
-description: Features, Configuration, Issues and More for the File System Music Sources
+title: "本地文件"
+description: 文件系统音乐源的功能、配置、问题及更多内容
 ---
 
-# Filesystem Sources <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 文件系统源 <img src="/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has full support for reading local music files on disk or a remote server and will catalog it into the library, allowing playback to all player providers supported by Music Assistant.  Network support is limited to SMB/CIFS, NFS and WebDAV, plus the cloud storage services Google Drive and Microsoft OneDrive.
+Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文件，并将其编目到资料库（library）中，从而使 Music Assistant 支持的所有播放器提供方（player provider）都能播放这些文件。网络支持仅限于 SMB/CIFS、NFS 和 WebDAV，以及云存储服务 Google Drive 和 Microsoft OneDrive。
 
-When streaming sources are also available in MA linking will only occur when the same item is found in the "Library" of that streaming source. However, additional tracks and albums will be seen in various views or via the global search which can then be added separately to the MA Library.
+当 MA 中还有流媒体源可用时，只有当相同条目出现在该流媒体源的"资料库"（Library）中时才会建立链接。不过，额外的曲目和专辑仍会出现在各种视图中，或可通过全局搜索找到，之后可单独添加到 MA 资料库中。
 
 ## Features
 
@@ -34,269 +34,278 @@ When streaming sources are also available in MA linking will only occur when the
 - On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
 - It is possible to add multiple filesystem sources
 
-## Configuration
+### 其他
 
-Separate sources must be added for Music, Audiobooks and Podcasts.
+- 可以搜索曲目
+- 本地音乐会自动包含在 MA 资料库中
+- 文件默认不会被收藏。取消选择"收藏"筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
+- 如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全
+- 播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本
+- 可以添加多个文件系统源
 
-**Audio files are on a disk/folder of the device running the Music Assistant Server**
+## 配置
 
-If the files are stored on the device running Music Assistant, for example the `/media` folder in Home Assistant OS, the Filesystem (local disk) source should be selected and then the path to the files provided. 
+音乐、有声读物和播客必须分别添加单独的源。
+
+**音频文件位于运行 Music Assistant 服务器的设备的磁盘/文件夹上**
+
+如果文件存储在运行 Music Assistant 的设备上，例如 Home Assistant OS 中的 `/media` 文件夹，则应选择"文件系统（本地磁盘）"（Filesystem (local disk)）源，然后提供文件的路径。
 
 > [!NOTE]
-> On Home Assistant OS only the /media folder can be accessed, and it is not possible to mount a folder from Home Assistant into that path. Docker users can mount their own folder paths.
+> 在 Home Assistant OS 上只能访问 /media 文件夹，且无法将 Home Assistant 中的文件夹挂载到该路径。Docker 用户可以挂载自己的文件夹路径。
 
 > [!CAUTION]
-> Music Assistant assumes your NFS or SMB server is on your local network. It adds no encryption or access control of its own, so these shares should not be reached over the internet.
+> Music Assistant 假定你的 NFS 或 SMB 服务器位于本地网络中。它自身不提供任何加密或访问控制，因此不应通过互联网访问这些共享。
 
-**Audio files are on a remote share served via SMB/CIFS**
+**音频文件位于通过 SMB/CIFS 提供服务的远程共享上**
 
-Music Assistant has support for SMB (also known as samba or CIFS) shares and DFS. Select the music source "Filesystem (remote share)" and configure the (fqdn) hostname (or alternatively the IP address) to the server, the name of the share and optionally any subfolder. Advanced options are:
+Music Assistant 支持 SMB（也称为 samba 或 CIFS）共享和 DFS。选择音乐源"文件系统（远程共享）"（Filesystem (remote share)），并配置服务器的（fqdn）主机名（或 IP 地址）、共享名称以及可选的子文件夹。高级选项包括：
 
-- <b>SMB Version.</b> The SMB protocol version to use. SMB 3.0 or higher is recommended for better performance and security. Use Auto to let the system negotiate. The options are `Auto`, `SMB 1.0`, `SMB 2.0`, `SMB 2.1`, `SMB 3.0 [default]`, and `SMB 3.1.1`
-- <b>Cache Mode.</b> Cache mode affects performance and consistency. 'Loose' provides better performance for read heavy workloads and is recommended for music libraries.. The options are `Strict`, `Loose (Recommended) [default]`, and `None`
+- <b>SMB 版本。</b>要使用的 SMB 协议版本。为获得更好的性能和安全性，建议使用 SMB 3.0 或更高版本。使用 Auto 可让系统自动协商。可选值为 `Auto`、`SMB 1.0`、`SMB 2.0`、`SMB 2.1`、`SMB 3.0 [default]` 和 `SMB 3.1.1`
+- <b>缓存模式。</b>缓存模式会影响性能和一致性。"Loose"（宽松）可为读取密集型工作负载提供更好的性能，推荐用于音乐资料库。可选值为 `Strict`、`Loose (Recommended) [default]` 和 `None`
 
-**Audio files are on a remote share served via NFS**
+**音频文件位于通过 NFS 提供服务的远程共享上**
 
-Music Assistant has support for NFS shares. Select the music source "Filesystem (NFS share)" and configure the IP address (without leading `http://`) of the server, the absolute export path of the share (e.g. `/volume1/music`) and optionally any subfolder.
+Music Assistant 支持 NFS 共享。选择音乐源"文件系统（NFS 共享）"（Filesystem (NFS share)），并配置服务器的 IP 地址（不带前导 `http://`）、共享的绝对导出路径（例如 `/volume1/music`）以及可选的子文件夹。
 
-**Audio files are on a remote share served via WebDAV**
+**音频文件位于通过 WebDAV 提供服务的远程共享上**
 
-Music Assistant has support for WebDAV shares. Select the music source "WebDAV" and configure the full web address of the WebDAV share including the full path to the content folder (e.g. `https://example.com/webdav/music`). Provide username and password if authentication is required. SSL certificate verification is optional and disabled by default.
+Music Assistant 支持 WebDAV 共享。选择音乐源 "WebDAV"，并配置 WebDAV 共享的完整网址，包括内容文件夹的完整路径（例如 `https://example.com/webdav/music`）。如果需要身份验证，请提供用户名和密码。SSL 证书验证是可选的，默认处于禁用状态。
 
-**Audio files are on a remote share served via Google Drive**
+**音频文件位于通过 Google Drive 提供服务的远程共享上**
 
-Music Assistant has support for Google Drive. Follow the Home Assistant documentation to [obtain a Client ID and Secret](https://www.home-assistant.io/integrations/google_drive/) but use `https://music-assistant.io/callback` as the `Authorized redirect URI`. Then add the music source `Google Drive` and put the client ID and secret in the required fields before pressing `AUTHORIZE WITH GOOGLE`. Finally, add the `Drive Folder ID to Scan` which is the sequence of characters seen at the end of the URL when the drive folder is visited in a browser. For example: `https://drive.google.com/drive/u/0/folders/`<b>abcfJhfIilxCtMj6rItMmAdA3rDz1ab1c</b>
+Music Assistant 支持 Google Drive。按照 Home Assistant 文档[获取客户端 ID 和机密](https://www.home-assistant.io/integrations/google_drive/)，但使用 `https://music-assistant.io/callback` 作为 `Authorized redirect URI`（授权重定向 URI）。然后添加音乐源 `Google Drive`，将客户端 ID 和机密填入必填字段，再按 `AUTHORIZE WITH GOOGLE`。最后，添加 `Drive Folder ID to Scan`（要扫描的云端硬盘文件夹 ID），即用浏览器访问云端硬盘文件夹时 URL 末尾的字符串。例如：`https://drive.google.com/drive/u/0/folders/`<b>abcfJhfIilxCtMj6rItMmAdA3rDz1ab1c</b>
 
 > [!CAUTION]
-> Make sure the OAuth consent screen is set to `In production` (not `Testing`), otherwise Google revokes access after 7 days and you will need to re-authorize weekly.
+> 确保将 OAuth 同意屏幕设置为 `In production`（生产状态，而非 `Testing` 测试状态），否则 Google 会在 7 天后撤销访问权限，你将需要每周重新授权。
 
-**Audio files are on a remote share served via One Drive**
+**音频文件位于通过 One Drive 提供服务的远程共享上**
 
-Music Assistant has support for Microsoft One Drive personal accounts (business accounts are not supported). Setup instructions are below.
+Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户）。设置说明如下。
 
 <details>
-<summary><b>Setting up OneDrive for Music Assistant</b></summary>
+<summary><b>为 Music Assistant 设置 OneDrive</b></summary>
 <div>
 <br>
-You need two things from Microsoft: a <b>Client ID</b>, and a <b>Client Secret</b>. Setup takes about 15 minutes.
+你需要从 Microsoft 获得两样东西：<b>客户端 ID</b>（Client ID）和<b>客户端机密</b>（Client Secret）。设置大约需要 15 分钟。
 
-#### 1. Get an Azure directory (first time only)
+#### 1. 获取 Azure 目录（仅首次需要）
 
-Microsoft won't let you register an app without a directory.
+没有目录，Microsoft 就不允许你注册应用。
 
-- Go to https://azure.microsoft.com and **sign up for a free Azure account**
-- The free tier is enough. You may be asked for a card for identity verification, but you won't be charged
+- 访问 https://azure.microsoft.com 并**注册免费的 Azure 账户**
+- 免费层就足够了。可能会要求你提供银行卡进行身份验证，但不会向你收费
 
-#### 2. Register the application
+#### 2. 注册应用程序
 
-1. Go to the **Microsoft Entra admin portal** > **App registrations** > **New registration**.
-2. **Name:** anything, e.g. `Music Assistant`.
-3. **Supported account types:** choose **"Accounts in any organizational directory and personal Microsoft accounts"**.
-4. **Redirect URI:** set type to **Web** and URL to `https://music-assistant.io/callback`
-5. Click **Register**.
+1. 进入 **Microsoft Entra 管理门户** > **应用注册** > **新注册**。
+2. **名称：**任意名称，例如 `Music Assistant`。
+3. **受支持的账户类型：**选择 **"任何组织目录中的账户和个人 Microsoft 账户"**。
+4. **重定向 URI：**将类型设置为 **Web**，URL 设置为 `https://music-assistant.io/callback`
+5. 点击**注册**。
 
-#### 3. Fix the manifest (important - two settings)
+#### 3. 修正清单（重要 - 两项设置）
 
-Personal Microsoft accounts won't work until you change two values.
+必须更改两个值，个人 Microsoft 账户才能正常工作。
 
-1. In your app, open **Manifest** (left menu).
-2. Set these two properties:
+1. 在你的应用中，打开**清单**（Manifest，左侧菜单）。
+2. 设置以下两个属性：
    ```json
    "signInAudience": "AzureADandPersonalMicrosoftAccount",
    "requestedAccessTokenVersion": 2
    ```
-3. **Save.** Wait ~2 minutes for the change to propagate.
+3. **保存。**等待约 2 分钟让更改生效。
 
-> If you skip this you'll get: *"unauthorized_client: The client does not exist or is not enabled for consumers."*
+> 如果跳过此步骤，你会遇到：*"unauthorized_client: The client does not exist or is not enabled for consumers."*
 
-#### 4. Copy the Client ID
+#### 4. 复制客户端 ID
 
-- On the app's **Overview** page, copy **Application (client) ID**.
-- This is your **Client ID**.
+- 在应用的**概述**（Overview）页面，复制**应用程序（客户端）ID**。
+- 这就是你的**客户端 ID**。
 
-#### 5. Create the Client Secret
+#### 5. 创建客户端机密
 
-1. Left menu > **Certificates & secrets** > **New client secret**.
-2. Add a description, pick an expiry (max ~2 years).
-3. **Copy the Value column immediately** - not the Secret ID. The Value is hidden once you leave the page. This is your **Client Secret**.
+1. 左侧菜单 > **证书和机密**（Certificates & secrets） > **新建客户端机密**。
+2. 添加描述，选择一个过期时间（最长约 2 年）。
+3. **立即复制"值"（Value）列** - 而不是机密 ID。离开该页面后"值"将被隐藏。这就是你的**客户端机密**。
 
-> The secret **expires**. When it does, create a new one and re-authorise in Music Assistant.
+> 机密会**过期**。过期时，请创建新的机密并在 Music Assistant 中重新授权。
 
-#### 6. (Optional) Choose a folder
+#### 6. （可选）选择文件夹
 
-Leave the folder as `root` to scan your whole drive, or enter a folder **path** to limit the scan, for example, `Music` or `Documents/Music`
+将文件夹保留为 `root` 可扫描整个云端硬盘，或者输入文件夹**路径**来限制扫描范围，例如 `Music` 或 `Documents/Music`
 
-Use the folder name(s) as they appear in OneDrive.
+请使用文件夹在 OneDrive 中的显示名称。
 
-#### 7. Setup provider in Music Assistant
+#### 7. 在 Music Assistant 中设置提供方
 
-1. Add the OneDrive provider.
-2. Paste **Client ID** and **Client Secret**, set **Folder to scan** (or `root`).
-3. Click **Authorize with Microsoft**, sign in, approve access.
-4. Save.
+1. 添加 OneDrive 提供方。
+2. 粘贴**客户端 ID** 和**客户端机密**，设置**要扫描的文件夹**（或 `root`）。
+3. 点击**通过 Microsoft 授权**（Authorize with Microsoft），登录并批准访问。
+4. 保存。
 
-#### Common errors
+#### 常见错误
 
-| Error | Fix |
+| 错误 | 解决方法 |
 |---|---|
-| "unable to create app outside a directory" | Sign up for Azure (step 1) |
-| "unauthorized_client ... not enabled for consumers" | Manifest settings (step 3), wait 2 min |
-| "Property api.requestedAccessTokenVersion is invalid" | Set `requestedAccessTokenVersion` to `2` (step 3) |
-| "Folder not found" | Check the folder path spelling (step 6), or use `root` |
-| Authorize shows callback but MA won't save | Try and click `Authorize with Microsoft` again |
+| "unable to create app outside a directory" | 注册 Azure（步骤 1） |
+| "unauthorized_client ... not enabled for consumers" | 清单设置（步骤 3），等待 2 分钟 |
+| "Property api.requestedAccessTokenVersion is invalid" | 将 `requestedAccessTokenVersion` 设置为 `2`（步骤 3） |
+| "Folder not found" | 检查文件夹路径拼写（步骤 6），或使用 `root` |
+| 授权显示回调但 MA 不保存 | 再次尝试点击 `Authorize with Microsoft` |
 </div>
 </details>
 
-### Settings
+### 设置
 
-In addition to the settings outlined above to configure this source, there are additional settings available (note certain options will be greyed out depending upon the content type selected):
+除了上述用于配置此源的设置之外，还有其他可用设置（注意，某些选项会根据所选内容类型而变灰不可用）：
 
-- <b>Content type in media folder(s).</b> This setting defines the content type of the source and is necessary for Music, Audiobooks and Podcasts to be correctly identified
-- <b>Action when a track is missing the Albumartist ID3 tag.</b> In the first instance [tag the files correctly](#tagging-files). MA needs an album artist defined so that the item can be added correctly to the database. Instead of skipping tracks that do not have this information, this setting defines how the situation should be handled. By default, `Various Artists` will be used but the other options available are `Track Artist` and `Folder name (if possible)`.
-- <b>Ignore playlists with album tracks within album folders.</b> Some users have a playlist per album. For large collections this results in an unusable Playlist View. To avoid this situation, this setting, which is enabled by default, will result in playlists which are more than one level below the root folder of the source to be ignored
-- <b>Sync Library Artists/Albums from this source to Music Assistant.</b> Whether to synchronize all artists/albums from the local source. 
-- <b>Import tracks/files into the Music Assistant library.</b> Define if the import of tracks/files is desired. When not importing into the library, tracks can still be manually browsed using the Browse feature. Note that by adding a Track into the Music Assistant library, the track artists and album will always be imported as well
-- <b>Import playlists (m3u files) into the Music Assistant library.</b> Define if the import of playlists (m3u files) is desired. When not importing into the library, they can still be manually browsed using the Browse feature.
-- <b>Import Podcasts/Audiobooks into the Music Assistant library.</b> Define if the import of Podcasts/Audiobooks is desired. When not importing into the library, items can still be manually browsed using the Browse feature.
-- <b>Propagate track genres to albums and artists.</b> Derive albums and artist genres from their tracks when album/artist have no genre metadata of their own
+- <b>媒体文件夹中的内容类型。</b>此设置定义源的内容类型，是正确识别音乐、有声读物和播客所必需的
+- <b>曲目缺少专辑艺术家 ID3 标签时的操作。</b>首先应[正确标记文件](#tagging-files)。MA 需要定义专辑艺术家，才能将条目正确添加到数据库。此设置定义了应如何处理这种情况，而不是直接跳过缺少该信息的曲目。默认将使用 `Various Artists`，其他可用选项为 `Track Artist` 和 `Folder name (if possible)`。
+- <b>忽略专辑文件夹中包含专辑曲目的播放列表。</b>有些用户为每张专辑创建一个播放列表。对于大型收藏，这会导致播放列表视图无法使用。为避免这种情况，此设置（默认启用）将忽略位于源根文件夹下超过一层深度的播放列表
+- <b>将此源中的资料库艺术家/专辑同步到 Music Assistant。</b>是否同步本地源中的所有艺术家/专辑。
+- <b>将曲目/文件导入 Music Assistant 资料库。</b>定义是否需要导入曲目/文件。如果不导入资料库，仍可使用浏览（Browse）功能手动浏览曲目。请注意，将曲目添加到 Music Assistant 资料库时，曲目艺术家和专辑也会始终一并被导入
+- <b>将播放列表（m3u 文件）导入 Music Assistant 资料库。</b>定义是否需要导入播放列表（m3u 文件）。如果不导入资料库，仍可使用浏览（Browse）功能手动浏览。
+- <b>将播客/有声读物导入 Music Assistant 资料库。</b>定义是否需要导入播客/有声读物。如果不导入资料库，仍可使用浏览（Browse）功能手动浏览条目。
+- <b>将曲目流派传播到专辑和艺术家。</b>当专辑/艺术家自身没有流派元数据时，从其曲目派生专辑和艺术家的流派
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- Write access to the share is required in order to edit or create playlists which are stored locally. Playlists can still be saved to the MA built-in provider if only read access is granted
-- When using the remote share connection, be aware that use of SMB1 (which is very old) is not recommended. If the connection keeps failing, look at the NAS settings to see if SMB1 can be disabled
-- WebDAV, Google Drive and OneDrive are reached over the internet rather than over your own network, so library sync is slower than local, SMB or NFS, particularly for large libraries. The first sync of a cloud source reads the tags of every file over the internet
-- Writing to WebDAV, Google Drive and OneDrive sources is not supported. Playlists can be read but not created or edited. Use the MA built-in provider for playlist management
+- 需要对共享的写入权限才能编辑或创建存储在本地的播放列表。如果只授予读取权限，播放列表仍可保存到 MA 内置提供方
+- 使用远程共享连接时，请注意不建议使用 SMB1（已非常老旧）。如果连接一直失败，请查看 NAS 设置，看是否可以禁用 SMB1
+- WebDAV、Google Drive 和 OneDrive 是通过互联网而非你自己的网络访问的，因此资料库同步比本地、SMB 或 NFS 更慢，对于大型资料库尤其如此。云源的首次同步会通过互联网读取每个文件的标签
+- 不支持写入 WebDAV、Google Drive 和 OneDrive 源。播放列表可以读取，但无法创建或编辑。请使用 MA 内置提供方进行播放列表管理
 
 > [!NOTE]
-> **Cloud sources (Google Drive / OneDrive)**
+> **云源（Google Drive / OneDrive）**
 >
-> - Expect a 1-2 second delay when playback starts or when seeking as the audio has to be fetched from the cloud service on demand
-> - Folder listings are cached for up to five minutes to keep browsing snappy, so changes made on the cloud service can take up to five minutes to appear in the BROWSE view. Library sync always reads fresh listings, so new content is never missed by a sync
+> - 播放开始或拖动进度时预计会有 1-2 秒的延迟，因为音频需要按需从云服务获取
+> - 文件夹列表会缓存最多五分钟以保持浏览流畅，因此在云服务上所做的更改可能需要长达五分钟才会显示在 BROWSE（浏览）视图中。资料库同步始终读取最新列表，因此同步绝不会遗漏新内容
 
-- In regard to folder and filenames note the following:
-    - Folders commencing with an underscore will be ignored
-    - Music Assistant requires all file and folder names to be valid UTF-8. Files with non-UTF-8 characters in their names will be skipped during library sync and a warning will be logged identifying the affected file. This most commonly affects files originally tagged or named on Windows using legacy encodings such as Windows-1252, where characters like curly quotes or accented letters may have been written as non-UTF-8 bytes
-    - Emoji and other special characters in folder or file names are not supported on SMB/CIFS network shares. Items with these characters will be skipped during library sync
+- 关于文件夹和文件名，请注意以下几点：
+    - 以下划线开头的文件夹将被忽略
+    - Music Assistant 要求所有文件和文件夹名称均为有效的 UTF-8。名称中包含非 UTF-8 字符的文件将在资料库同步期间被跳过，并会记录一条警告以指明受影响的文件。这最常影响最初在 Windows 上使用 Windows-1252 等旧编码进行标记或命名的文件，其中弯引号或带重音的字母等字符可能已被写入为非 UTF-8 字节
+    - SMB/CIFS 网络共享不支持文件夹或文件名中的表情符号及其他特殊字符。包含这些字符的条目将在资料库同步期间被跳过
  
-## Organising Your Files
+## 整理你的文件
 
-How you name and arrange your folders decides how much Music Assistant can work out about your collection. The sections below cover each kind of content, and artwork.
+文件夹的命名和排列方式决定了 Music Assistant 能对你的收藏了解多少。下面的章节涵盖每种内容类型以及封面图片。
 
-### Music
+### 音乐
 
-- Local tracks and albums will be linked to the same tracks or albums on any source (local or streaming). Note that same is not simply same name. The tags are reviewed to ascertain whether it is indeed the exact same track. Without tag information MA will attempt to identify identical tracks based on the other information it has such as artist name, album, and track length. However, poor tag information may lead to poor matches
-- If your files are untagged, MA will fall back to reading `Artist - Title.ext` from the filename. See [Files Without Tags](#files-without-tags) for the exact rules and their limits. Tagging the files is always the better answer
-- Text files containing song lyrics are supported. These files must be named identically to the track filename and in the same folder but with a `.lrc` file extension. The lyrics will be loaded when playback commences
-- To minimise the chance of problems, music folders should follow the /artist/album structure and the folder names should match the artist and album names as tagged with any non-[alphanumeric characters](https://en.wikipedia.org/wiki/Alphanumericals) removed (e.g. AC/DC should be in a folder ACDC)
-- Files placed into a random structure will be imported but no other data will be able to retrieved from the folder names and other problems may occur
+- 本地曲目和专辑将与任何源（本地或流媒体）上相同的曲目或专辑建立链接。请注意，"相同"不只是名称相同。系统会检查标签以确认是否确实是同一曲目。在没有标签信息的情况下，MA 会尝试根据它所掌握的其他信息（如艺术家名称、专辑和曲目长度）来识别相同的曲目。不过，糟糕的标签信息可能导致糟糕的匹配
+- 如果你的文件没有标签，MA 将退而根据文件名读取 `Artist - Title.ext`。确切规则及其限制请参见[无标签文件](#files-without-tags)。为文件添加标签始终是更好的解决办法
+- 支持包含歌词的文本文件。这些文件必须与曲目文件名相同，并位于同一文件夹中，但文件扩展名为 `.lrc`。播放开始时会加载歌词
+- 为尽量减少问题，音乐文件夹应遵循 /artist/album 结构，文件夹名称应与标记的艺术家和专辑名称一致，并去掉其中所有非[字母数字字符](https://en.wikipedia.org/wiki/Alphanumericals)（例如 AC/DC 应放在名为 ACDC 的文件夹中）
+- 放在随意结构中的文件也会被导入，但无法从文件夹名称获取其他数据，并且可能会出现其他问题
 
-### Audiobooks
+### 有声读物
 
-- Supported file formats are: `.aa`, `.aax`, `.m4b`, `.m4a`, `.mp3`, `.mp4`, `.flac`, `.ogg`, `.opus`
-- Audiobooks in their own folder are always supported and is the preferred option. For untagged files this is mandatory, and filenames must sort alphabetically in chapter order
-- A single file with embedded chapters (e.g. `.m4b`) works in any folder
-- Multiple books can share a single folder if each file has an album tag (used as the book title to group chapters) and a track number tag. Multi-disc books also need a disc number tag. The title tag is used as the chapter name if present
-- Author is read from the writer, album artist, or artist tag (in that order). Optional but recommended
-- Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
-- A `.txt` file in the folder will be used as the book description
+- 支持的文件格式包括：`.aa`、`.aax`、`.m4b`、`.m4a`、`.mp3`、`.mp4`、`.flac`、`.ogg`、`.opus`
+- 有声读物放在自己的文件夹中始终受支持，这也是首选方式。对于没有标签的文件，这是强制要求，并且文件名必须按字母顺序排列以符合章节顺序
+- 带有内嵌章节的单个文件（例如 `.m4b`）放在任何文件夹中都可以使用
+- 如果每个文件都有专辑标签（用作书名以对章节进行分组）和曲目编号标签，多本书可以共用一个文件夹。多碟书籍还需要碟片编号标签。如果存在标题标签，则会将其用作章节名称
+- 作者从 writer、专辑艺术家或艺术家标签中读取（按此顺序）。可选，但建议提供
+- 封面图片将从内嵌图像或文件夹中的图像文件（`.jpg`、`.jpeg`、`.png`、`.gif`）获取
+- 文件夹中的 `.txt` 文件将用作书籍描述
 
-### Podcasts
+### 播客
 
-- Supported file formats are: `.aa`, `.aax`, `.m4b`, `.m4a`, `.mp3`, `.mp4`, `.flac`, `.ogg`, `.opus`
-- Podcasts must be placed in their own folder. Every file in the folder is an episode of that podcast
-- Podcast name is obtained from the `album` tag of the episodes; if absent, the folder name is used
-- Episode name is obtained from the `title` tag. Episode order is set by the track number tag
-- Embedded chapters within individual episode files are supported
-- A `metadata.json` file in the folder can provide additional podcast-level metadata: title, sorttitle, description, publisher, genres, and image URL.
-- Cover art will be obtained from an embedded image, or an image file (`.jpg`, `.jpeg`, `.png`, `.gif`) in the folder
+- 支持的文件格式包括：`.aa`、`.aax`、`.m4b`、`.m4a`、`.mp3`、`.mp4`、`.flac`、`.ogg`、`.opus`
+- 播客必须放在自己的文件夹中。文件夹中的每个文件都是该播客的一集
+- 播客名称从各集的 `album` 标签获取；如果不存在，则使用文件夹名称
+- 单集名称从 `title` 标签获取。单集顺序由曲目编号标签决定
+- 支持单个单集文件中的内嵌章节
+- 文件夹中的 `metadata.json` 文件可提供额外的播客级元数据：标题（title）、排序标题（sorttitle）、描述（description）、发布者（publisher）、流派（genres）和图片 URL。
+- 封面图片将从内嵌图像或文件夹中的图像文件（`.jpg`、`.jpeg`、`.png`、`.gif`）获取
 
-### Artwork
+### 封面图片
 
-Artwork embedded in your audio files is supported and will be extracted. Artwork stored alongside your files as separate images is also supported, and is the better option.
+支持音频文件中内嵌的封面图片并将其提取出来。也支持以单独图像的形式与文件存放在一起的封面图片，这是更好的选择。
 
-- Use the following naming convention for local artwork
-    - Artist thumb: cover.jpg, folder.jpg or artist.jpg (or jpeg/png)
-    - Album thumb: cover.jpg, folder.jpg or album.jpg (or jpeg/png)
-    - Fan Art (used as background in banners): fanart.jpg (or jpeg/png)
-    - Logo (used on Artist view): logo.png
-    - Playlist thumb: Name the image file the same as the playlist file (e.g. rock.m3u & rock.jpg)
-- Artist thumb, Fanart and Logo should be in the folder with the artist name. Album thumbs should be in the folder with the album name or in the disc folders below that. More about artwork file types can be found here https://kodi.wiki/view/Artwork_types
-- Artwork which needs to be downloaded will be done very slowly in the background. It is possible to force the download by selecting "Update Metadata" from the ⋮ menu in the banner at the top of a view
+- 本地封面图片请使用以下命名规则
+    - 艺术家缩略图：cover.jpg、folder.jpg 或 artist.jpg（或 jpeg/png）
+    - 专辑缩略图：cover.jpg、folder.jpg 或 album.jpg（或 jpeg/png）
+    - 粉丝艺术图（用作横幅背景）：fanart.jpg（或 jpeg/png）
+    - 标志（用于艺术家视图）：logo.png
+    - 播放列表缩略图：将图像文件命名为与播放列表文件相同（例如 rock.m3u 和 rock.jpg）
+- 艺术家缩略图、粉丝艺术图和标志应放在以艺术家名称命名的文件夹中。专辑缩略图应放在以专辑名称命名的文件夹中或其下方的碟片文件夹中。有关封面图片文件类型的更多信息，请参见 https://kodi.wiki/view/Artwork_types
+- 需要下载的封面图片会在后台非常缓慢地完成下载。可以通过在视图顶部横幅的 ⋮ 菜单中选择"更新元数据"（Update Metadata）来强制下载
 
 > [!TIP]
-> **Local Artwork is Optimal**
+> **本地封面图片是最佳选择**
 >
-> Using embedded images on every track of the same album is suboptimal for both disk space and performance. Use a single folder.jpg in the album's folder instead
+> 在同一张专辑的每首曲目上都使用内嵌图像，对磁盘空间和性能而言都不是最优的。请改用专辑文件夹中的单个 folder.jpg
 
-## Tagging Files 
+## 标记文件 
 
-- It is very important that all audio files contain correct, and ideally, extensive tag information. The more comprehensive the tagging the better the results will be when using MA. Note the following:
-    - Universal Tag Support: Music Assistant reads tags from all the common file formats
-    - Your tags win: Embedded tags are treated as the definitive source for artist, album, and track names. External metadata providers (like MusicBrainz or Fanart.tv) are only used to supplement missing info, such as high-resolution artwork or artist bios
-    - Cross-Platform Linking: MA uses identifier tags such as MusicBrainz IDs (MBID) and ISRC codes to seamlessly link local files with matching tracks on streaming services like Spotify or Tidal
-    - Recommended Tagger: For the best results in Music Assistant, it is strongly recommended to use <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a> to ensure the files contain the specific IDs needed for library linking. Other programs such as <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a> are often also based on the Musicbrainz catalog and can work as well provided they include the tags shown in the [Tags used by MA](#tags-used-by-ma) table. If Picard cannot find an album, see [Improve MusicBrainz Data](/help/musicbrainz/)
+- 所有音频文件都包含正确且（理想情况下）丰富的标签信息非常重要。标记越全面，使用 MA 时得到的结果就越好。请注意以下几点：
+    - 通用标签支持：Music Assistant 可从所有常见文件格式读取标签
+    - 你的标签优先：内嵌标签被视为艺术家、专辑和曲目名称的权威来源。外部元数据提供方（如 MusicBrainz 或 Fanart.tv）仅用于补充缺失的信息，例如高分辨率封面图片或艺术家简介
+    - 跨平台链接：MA 使用标识符标签（如 MusicBrainz ID（MBID）和 ISRC 代码）将本地文件与 Spotify 或 Tidal 等流媒体服务上的匹配曲目无缝链接
+    - 推荐的标记工具：为了在 Music Assistant 中获得最佳效果，强烈建议使用 <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a>，以确保文件包含资料库链接所需的特定 ID。其他程序（如 <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a>）通常也基于 Musicbrainz 目录，只要包含 [MA 使用的标签](#tags-used-by-ma)表中所示的标签，也可以正常使用。如果 Picard 找不到专辑，请参见[改进 MusicBrainz 数据](/help/musicbrainz/)
 
-- Fields with multiple values can be handled as follows:
-    - For ID3v2.3 and MP4 tags, multiple items should be separated by a semi-colon (this is the only tag splitter supported). In Picard this is an option in OPTIONS >> TAGS >> ID3.
-    - For Vorbis (FLAC, OGG), use multiple fields per the [Vorbis spec](https://xiph.org/vorbis/doc/v-comment.html)
-    - For ID3v2.4 and APEv2 tags, multiple artists and album artists can be separated by the null character
-- MA requires the Album Artist tag to be set. If that tag is not set then what happens to those tracks when the provider is scanned depends on the `Action when a track is missing the Albumartist ID3 tag` setting for the local provider
-- `.nfo` files with enhanced metadata are supported
-- For multi disc albums it is recommended (but not required) to add folders named “Disc 1”, “Disc 2”, etc beneath a folder with the album name. Artwork for the album can be added to the top level album folder or in the disc folders
-- If there is nothing added to the disc tag then the disc number will not be shown in the display
+- 包含多个值的字段可按以下方式处理：
+    - 对于 ID3v2.3 和 MP4 标签，多个条目应以分号分隔（这是唯一支持的标签拆分方式）。在 Picard 中，这是 OPTIONS >> TAGS >> ID3 中的一个选项。
+    - 对于 Vorbis（FLAC、OGG），按照 [Vorbis 规范](https://xiph.org/vorbis/doc/v-comment.html)使用多个字段
+    - 对于 ID3v2.4 和 APEv2 标签，多个艺术家和专辑艺术家可以用空字符（null character）分隔
+- MA 要求设置专辑艺术家（Album Artist）标签。如果未设置该标签，那么在扫描提供方时这些曲目会如何处理，取决于本地提供方的 `Action when a track is missing the Albumartist ID3 tag` 设置
+- 支持包含增强元数据的 `.nfo` 文件
+- 对于多碟专辑，建议（但非必需）在专辑名称文件夹下添加名为"Disc 1"、"Disc 2"等的文件夹。专辑的封面图片可以添加到顶层的专辑文件夹或碟片文件夹中
+- 如果碟片标签中未填写任何内容，则碟片编号不会显示在界面上
 
 ![image](/assets/screenshots/no-disc-tag.png)
 
-- To minimise the chance of problems with MA the <a href="https://kodi.wiki/view/Music_tagging" target="_blank" rel="noopener noreferrer">Kodi guidelines</a> should be followed. Just about all the tips, tricks and suggestions on that page are applicable to MA and if it is followed to the letter the UX will be much better
+- 为尽量减少 MA 出现问题，应遵循 <a href="https://kodi.wiki/view/Music_tagging" target="_blank" rel="noopener noreferrer">Kodi 指南</a>。该页面上的几乎所有技巧和建议都适用于 MA，如果严格遵守，用户体验会好得多
 
-### Multi-Artist Tracks
+### 多艺术家曲目
 
-For tracks with multiple artists, the simple summary is: tag your files with MusicBrainz Picard and let it write the ARTISTS tag and the MusicBrainz IDs; MA will then link the artists correctly. If your artists are being split incorrectly (or not split at all), the details below explain exactly how MA reads multi-artist tags for each file format.
+对于包含多个艺术家的曲目，简单的总结是：使用 MusicBrainz Picard 标记文件，让它写入 ARTISTS 标签和 MusicBrainz ID，MA 便会正确链接艺术家。如果你的艺术家被错误拆分（或完全没有拆分），下面的细节将准确说明 MA 如何针对每种文件格式读取多艺术家标签。
 
 <details>
-<summary>How MA parses multi-artist tags (per file format)</summary>
+<summary>MA 如何解析多艺术家标签（按文件格式）</summary>
 
-For tracks with multiple artists, MA supports several approaches. The most reliable way is to provide a semi-colon delimited list of MusicBrainz IDs for ARTIST ID and RELEASE ARTIST ID alongside your artist tags. When the MBID count matches the parsed artist count, the tag names are used as-is. If the counts disagree (for example an artist whose real name contains a separator character), MA will query MusicBrainz to resolve the canonical names from the IDs instead.
+对于包含多个艺术家的曲目，MA 支持多种方式。最可靠的方法是在艺术家标签之外，为 ARTIST ID 和 RELEASE ARTIST ID 提供以分号分隔的 MusicBrainz ID 列表。当 MBID 数量与解析出的艺术家数量一致时，将按原样使用标签中的名称。如果数量不一致（例如某艺术家的真实名称中包含分隔符字符），MA 将改为查询 MusicBrainz，根据 ID 解析出规范名称。
 
-Whether or not MBIDs are present, the artist names themselves need to be encoded in your tags using one of the following:
+无论是否存在 MBID，艺术家名称本身都需要在标签中使用以下方式之一进行编码：
 
-1. ID3v2.3 and MP4: Use an ARTISTS tag - A dedicated multi-value field listing each artist delimited by a semi-colon. (It is not possible to have artists with a semi-colon in their name with this method)
-2. FLAC/OGG/Opus: Use multiple ARTIST fields. The Vorbis comment spec allows multiple ARTIST fields (one per artist). MA reads all of these. (Note that taggers may add multiple ARTISTS (plural) fields. This is not standard according to the Vorbis spec but MA will handle this case)
-3. ID3v2.4 and APEv2: Use a null separated list of names in the ARTIST tag
-4. ARTIST tag parsing - If none of the above are present, MA will attempt to parse the ARTIST string. Semicolons are treated as the primary separator. Featuring-style separators (e.g. feat., vs., presents, etc.) are always split. Other separators (&, comma, +, "with") are only used when MusicBrainz Artist IDs indicate multiple artists are expected
+1. ID3v2.3 和 MP4：使用 ARTISTS 标签 - 一个专用的多值字段，列出以分号分隔的每个艺术家。（使用此方法时，无法表示名称中带分号的艺术家）
+2. FLAC/OGG/Opus：使用多个 ARTIST 字段。Vorbis comment 规范允许多个 ARTIST 字段（每个艺术家一个）。MA 会读取所有这些字段。（注意，标记工具可能会添加多个 ARTISTS（复数）字段。这不符合 Vorbis 规范，但 MA 会处理这种情况）
+3. ID3v2.4 和 APEv2：在 ARTIST 标签中使用以空字符分隔的名称列表
+4. ARTIST 标签解析 - 如果以上方式均不存在，MA 将尝试解析 ARTIST 字符串。分号被视为主要分隔符。合作类分隔符（例如 feat.、vs.、presents 等）始终会被拆分。其他分隔符（&、逗号、+、"with"）仅在 MusicBrainz Artist ID 表明预期有多个艺术家时才会使用
 
 > [!NOTE]
-> - If artist tags are split undesirably then use the ARTISTS tag, multiple ARTIST fields, or Musicbrainz identifiers to control exactly how artists are added to the database
+> - 如果艺术家标签被不合需要地拆分，请使用 ARTISTS 标签、多个 ARTIST 字段或 Musicbrainz 标识符来精确控制艺术家添加到数据库的方式
 >
-> - The album artist tag is parsed the same way as ARTIST - same multi-value rules, same splitters (including featuring-style and MBID-guided), and the same MusicBrainz fallback when the parsed count doesn't match the MBID count
+> - 专辑艺术家标签的解析方式与 ARTIST 相同 - 相同的多值规则、相同的分隔符（包括合作类和 MBID 引导的分隔符），以及解析数量与 MBID 数量不匹配时相同的 MusicBrainz 回退机制
 
 > [!NOTE]
-> As the semi-colon is the standard delimiter for multi-value tags, an artist with the semi-colon in their name requires special handling. One of the following options must be used:
-> - All formats: Single MusicBrainz Artist ID
-> - Vorbis (FLAC, OGG): Multiple (more than 1) ARTIST fields (one per artist)
-> - ID3v2.4 (MP3): Multiple (more than 1) null-separated values in TPE1
-> - APEv2 (WavPack, Musepack, etc.): Multiple (more than 1) null-separated values in Artist field
+> 由于分号是多值标签的标准分隔符，名称中带分号的艺术家需要特殊处理。必须使用以下选项之一：
+> - 所有格式：单个 MusicBrainz Artist ID
+> - Vorbis（FLAC、OGG）：多个（多于 1 个）ARTIST 字段（每个艺术家一个）
+> - ID3v2.4（MP3）：TPE1 中多个（多于 1 个）以空字符分隔的值
+> - APEv2（WavPack、Musepack 等）：Artist 字段中多个（多于 1 个）以空字符分隔的值
 
 </details>
 
-### Tags used by MA
+### MA 使用的标签
 
 <div class="tag-table">
 
-| Tag | Importance | Why it matters |
+| 标签 | 重要性 | 为什么重要 |
 |:--|:--|:--|
-| Title<br />Artist<br />Album<br />Album Artist<br />Track number | Mandatory | Required for basic functionality of Music Assistant |
-| Artists | Strongly recommended<br />for ID3 tags | Required for ID3 tags to disambiguate multiple artist names on the one item |
-| Album Artist Sort Order<br />Artist Sort Order | Strongly recommended | Required for some sorting options in the UI |
-| ISRC | Strongly recommended | Required for linking identical streaming provider items to streaming and local items |
-| Barcode<br />Catalogue Number | Recommended | Can be used for linking identical streaming provider items to streaming and local items |
-| Genre | Strongly recommended | Required for the Genre view in the UI |
-| MusicBrainz Artist ID<br />MusicBrainz Recording ID<br />MusicBrainz Release Artist ID<br />MusicBrainz Release Group ID<br />MusicBrainz Release ID<br />MusicBrainz Track ID | Strongly recommended | Required to link identical tracks across local providers. Eliminates same named tracks, artists or albums from being incorrectly linked together |
-| Release Type | Strongly recommended | Used as a filter and displayed in the UI |
-| Disc Number<br />Total Discs | Strongly recommended | Used in the UI |
-| Date | Recommended | Used as the album date and fallback for track date and used in the UI |
-| Original Release Date<br />Original Release Year | Recommended | Used as the track date and fallback for album date and used in the UI |
-| Record label<br />Release country<br />Release status | Optional | Can be used in future UI updates as sorting or search options |
+| Title<br />Artist<br />Album<br />Album Artist<br />Track number | 必需 | Music Assistant 基本功能所必需 |
+| Artists | 强烈建议<br />（针对 ID3 标签） | ID3 标签需要它来区分同一条目上的多个艺术家名称 |
+| Album Artist Sort Order<br />Artist Sort Order | 强烈建议 | UI 中的某些排序选项需要 |
+| ISRC | 强烈建议 | 将相同的流媒体提供方条目与流媒体和本地条目进行链接时需要 |
+| Barcode<br />Catalogue Number | 建议 | 可用于将相同的流媒体提供方条目与流媒体和本地条目进行链接 |
+| Genre | 强烈建议 | UI 中的流派视图需要 |
+| MusicBrainz Artist ID<br />MusicBrainz Recording ID<br />MusicBrainz Release Artist ID<br />MusicBrainz Release Group ID<br />MusicBrainz Release ID<br />MusicBrainz Track ID | 强烈建议 | 在本地提供方之间链接相同曲目所必需。避免同名的曲目、艺术家或专辑被错误地链接在一起 |
+| Release Type | 强烈建议 | 用作筛选器并显示在 UI 中 |
+| Disc Number<br />Total Discs | 强烈建议 | 在 UI 中使用 |
+| Date | 建议 | 用作专辑日期并在曲目日期缺失时作为回退，在 UI 中使用 |
+| Original Release Date<br />Original Release Year | 建议 | 用作曲目日期并在专辑日期缺失时作为回退，在 UI 中使用 |
+| Record label<br />Release country<br />Release status | 可选 | 可在未来的 UI 更新中用作排序或搜索选项 |
 
 </div>
 
@@ -310,54 +319,54 @@ Whether or not MBIDs are present, the artist names themselves need to be encoded
   .tag-table td:nth-child(2) { white-space: nowrap; }
 </style>
 
-The left column corresponds to the TAG NAME shown in the <a href="https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html" target="_blank" rel="noopener noreferrer">MusicBrainz Picard Tag Mapping</a> table. Refer then to the appropriate tag name for the format of the file being tagged
+左栏对应 <a href="https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html" target="_blank" rel="noopener noreferrer">MusicBrainz Picard 标签映射</a>表中显示的 TAG NAME（标签名称）。请根据被标记文件的格式参考相应的标签名称
 
-Loudness tags are read as well. If a file is tagged with ReplayGain or R128 loudness values, Music Assistant uses them for [volume normalization](/faq/tech-info/#volume-normalization) instead of measuring the track itself. Both track and album values are read, and album values are the only way to normalize an album as a whole. Tags added or changed after a track was scanned are picked up with **Refresh item** on the track.
+响度标签也会被读取。如果文件标记了 ReplayGain 或 R128 响度值，Music Assistant 会将其用于[音量归一化](/faq/tech-info/#volume-normalization)，而不是自行测量曲目。曲目值和专辑值都会被读取，而专辑值是将整张专辑作为整体进行归一化的唯一方法。曲目扫描之后添加或更改的标签，可通过曲目上的**刷新条目**（Refresh item）来获取。
 
-### Manually Adjusting Tags
-
-> [!WARNING]
-> Manual tag editing is for users who deliberately want different behaviour from the MusicBrainz defaults. Making manual changes to the tags can have undesired effects to the MA library if mistakes are made. Additionally, matching may not occur or may occur incorrectly between sources
-
-Normally it is best to leave the Picard tags unchanged. However, some people do not agree with Musicbrainz that <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">remasters are the same as the original recording.</a> This technique can also be used for personally ripped albums or tracks that are not in the Musicbrainz database. To separate these out the tags can be edited as follows:
-
-- Remove MusicBrainz Release ID and Recording ID (Refer to the [Picard tag mapping documentation](https://picard-docs.musicbrainz.org/en/latest/appendices/tag_mapping.html#id39) for the exact tag name as it changes with the music file format)
-- Keep MusicBrainz Artist ID
-- Remove ISRC (as that is also used as strong identifier for tracks)
-- Remove barcode (as that is also used as strong identifier for albums)
-- Because there is no version specific tag, place the version between brackets in the title, for the Album, Track, or both (when using the Album tag, make sure it is identical on all tracks of that release). For example, Great Song (Vinyl Rip Version). Regardless of what other text is in the brackets ensure the word `Version` is also there
-- If the AcoustID Lookup provider is in use, disable it, as it will re-add the Recording ID that was just removed
-
-### Files Without Tags
-
-Tags are always preferred. When a file has no `title`, `artist` or `track` tag at all, MA falls back to reading the filename, but this is a last resort and it is deliberately simple. If your files are untagged, name them `Artist - Title.ext` and nothing else.
+### 手动调整标签
 
 > [!WARNING]
-> The filename is read only as far as the **first** period. `Dr. Dre - Still D.R.E..mp3` is read as the title `Dr` with no artist. Untagged filenames must contain exactly one period, the one before the file extension
+> 手动编辑标签适用于有意希望获得与 MusicBrainz 默认行为不同的用户。如果出错，对标签进行手动更改可能会对 MA 资料库产生不良影响。此外，源之间的匹配可能不会发生，或者可能错误地发生
+
+通常最好保持 Picard 标签不变。不过，有些人并不认同 Musicbrainz 的观点，即 <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">重制版与原始录音相同。</a>此技术也可用于不在 Musicbrainz 数据库中的个人抓取的专辑或曲目。要将这些区分开来，可以按如下方式编辑标签：
+
+- 移除 MusicBrainz Release ID 和 Recording ID（确切标签名称随音乐文件格式而变化，请参见 [Picard 标签映射文档](https://picard-docs.musicbrainz.org/en/latest/appendices/tag_mapping.html#id39)）
+- 保留 MusicBrainz Artist ID
+- 移除 ISRC（因为它也用作曲目的强标识符）
+- 移除条形码（因为它也用作专辑的强标识符）
+- 由于没有版本专用标签，请将版本放在标题的括号中，可用于专辑、曲目或两者（使用专辑标签时，请确保在该发行版的所有曲目上完全一致）。例如，Great Song (Vinyl Rip Version)。无论括号中还有其他什么文字，请确保其中也包含 `Version` 一词
+- 如果正在使用 AcoustID Lookup 提供方，请将其禁用，因为它会重新添加刚刚移除的 Recording ID
+
+### 无标签文件
+
+始终首选标签。当文件完全没有 `title`、`artist` 或 `track` 标签时，MA 会退而读取文件名，但这只是最后手段，而且特意保持简单。如果你的文件没有标签，请将其命名为 `Artist - Title.ext`，除此之外不要有其他内容。
+
+> [!WARNING]
+> 文件名只读取到**第一个**句点为止。`Dr. Dre - Still D.R.E..mp3` 会被读取为标题 `Dr`，且没有艺术家。无标签的文件名必须恰好包含一个句点，即文件扩展名之前的那一个
 
 <details>
-<summary>How MA reads untagged filenames</summary>
+<summary>MA 如何读取无标签的文件名</summary>
 
-- The separator must be a hyphen with a space either side. `Artist-Title.mp3` is not split, and the whole name becomes the title with no artist
-- Everything before the first ` - ` is the artist and the next segment is the title. Further segments are discarded, so `Nirvana - Come As You Are - Live.mp3` imports as `Come As You Are` and the `Live` marker is lost
-- Do not put a track number in the filename. A leading number is read as the artist, so `01 - Come As You Are.mp3` gives the artist `01`, and `01 - Nirvana - Come As You Are.mp3` gives the artist `01` and the title `Nirvana`
-- There is no filename or folder fallback for the **album** name, so an untagged file is never grouped into an album. The `Action when a track is missing the Albumartist ID3 tag` setting covers the album *artist* only, and only once an album tag exists
+- 分隔符必须是两侧都带空格的连字符。`Artist-Title.mp3` 不会被拆分，整个名称将成为标题，且没有艺术家
+- 第一个 ` - ` 之前的内容是艺术家，下一段是标题。更多段落会被丢弃，因此 `Nirvana - Come As You Are - Live.mp3` 会以 `Come As You Are` 导入，而 `Live` 标记会丢失
+- 不要在文件名中加入曲目编号。开头的数字会被读取为艺术家，因此 `01 - Come As You Are.mp3` 会得到艺术家 `01`，而 `01 - Nirvana - Come As You Are.mp3` 会得到艺术家 `01` 和标题 `Nirvana`
+- **专辑**名称没有文件名或文件夹回退机制，因此无标签的文件永远不会被归入专辑。`Action when a track is missing the Albumartist ID3 tag` 设置仅涵盖专辑*艺术家*，而且只有在专辑标签存在时才起作用
 
 </details>
 
 ---
 
-## CUE Sheet Support
+## CUE Sheet 支持
 
-When the filesystem provider encounters a `.cue` file, each track described by the sheet becomes its own library track. The referenced audio file itself is not imported as a separate track.
+当文件系统提供方遇到 `.cue` 文件时，CUE Sheet 中描述的每首曲目都会成为资料库中独立的曲目。被引用的音频文件本身不会作为单独的曲目导入。
 
-Information for each track is built from two sources: the CUE Sheet and the tags in the referenced audio file. Where both describe the same album-level field, the CUE Sheet wins.
+每首曲目的信息由两个来源构建：CUE Sheet 和被引用音频文件中的标签。当两者都描述同一专辑级字段时，以 CUE Sheet 为准。
 
-A standard CUE sheet produced by a mainstream ripping tool (EAC, CUETools, foobar2000, XLD) will just work, and the section below shows the minimum MA needs. To get the best experience, provide the additional fields in the [full field reference](#full-field-reference). They give MA the same rich metadata that the [strongly recommended tags](#tags-used-by-ma) provide for regular audio files.
+由主流抓取工具（EAC、CUETools、foobar2000、XLD）生成的标准 CUE Sheet 可以直接使用，下面的章节展示了 MA 所需的最低要求。为了获得最佳体验，请提供[完整字段参考](#full-field-reference)中的附加字段。它们为 MA 提供的丰富元数据，与[强烈建议的标签](#tags-used-by-ma)为普通音频文件提供的相同。
 
-### Minimum viable CUE sheet
+### 最低可用的 CUE Sheet
 
-Assuming the audio file has proper `album`/`albumartist` tags of its own:
+假设音频文件本身具有正确的 `album`/`albumartist` 标签：
 
 ```
 FILE "album.flac" WAVE
@@ -369,19 +378,19 @@ FILE "album.flac" WAVE
     INDEX 01 03:45:00
 ```
 
-Each track requires:
+每首曲目需要：
 
 - `TRACK NN AUDIO`
-- `TITLE "..."` - tracks without a title are skipped with a warning
+- `TITLE "..."` - 没有标题的曲目将被跳过并记录警告
 - `INDEX 01 MM:SS:FF`
 
-The sheet requires:
+CUE Sheet 需要：
 
-- `FILE` - can be omitted if the CUE Sheet shares the audio file's stem (e.g. `album.cue` alongside `album.flac`).
+- `FILE` - 如果 CUE Sheet 与音频文件共享相同的主文件名（例如 `album.cue` 与 `album.flac` 并存），则可以省略。
 
-Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
+其他所有内容（专辑标题、艺术家、年份、流派、封面图片、MBID）均继承自音频文件自身的标签。
 
-If the audio file also has no album/artist tags, the minimum grows to:
+如果音频文件也没有专辑/艺术家标签，则最低要求增加为：
 
 ```
 PERFORMER "The Band"
@@ -395,81 +404,81 @@ FILE "album.flac" WAVE
     INDEX 01 03:45:00
 ```
 
-Without either a CUE `TITLE` or an audio-file album tag, tracks are still imported but without an album attachment - a warning is logged.
+如果既没有 CUE `TITLE` 也没有音频文件专辑标签，曲目仍会导入，但不会附加到任何专辑 - 会记录一条警告。
 
-### Full field reference
+### 完整字段参考
 
 <details>
-<summary>Every directive Music Assistant parses, and how metadata is combined</summary>
+<summary>Music Assistant 解析的每个指令，以及元数据的组合方式</summary>
 
-The original Cue Sheet specification only had [13 directives](https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/). These are not sufficient for Music Assistant to work optimally, so additional support has been added through various REM fields to allow the provision of the equivalent [tags listed above](#tags-used-by-ma). This metadata can be provided through any combination of tags in the file and fields in the Cue Sheet as described below. Because mainstream CUE Sheet authoring tools do not emit these REM fields (they follow the original 13-directive spec), users who want the full metadata available to Music Assistant will need to add them manually to the CUE Sheet - or, for album-level metadata, tag the audio file itself. The naming follows [Picard's variable conventions](https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html), so anyone already tagging their library with Picard will find the fields familiar.
+最初的 Cue Sheet 规范只有 [13 个指令](https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/)。这些不足以让 Music Assistant 达到最佳工作效果，因此通过各种 REM 字段添加了额外支持，以便提供与[上文所列标签](#tags-used-by-ma)等效的内容。如下所述，此元数据可以通过文件中的标签与 Cue Sheet 中字段的任意组合来提供。由于主流的 CUE Sheet 制作工具不会输出这些 REM 字段（它们遵循最初的 13 指令规范），希望为 Music Assistant 提供完整元数据的用户需要手动将它们添加到 CUE Sheet 中 - 或者，对于专辑级元数据，直接标记音频文件本身。命名遵循 [Picard 的变量约定](https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html)，因此已经使用 Picard 标记资料库的用户会对此类字段感到熟悉。
 
-**Multi-value strategy**
+**多值策略**
 
-Multi-value fields follow the Vorbis convention: repeat the line rather than delimiter-joining. This keeps names like `AC/DC` or `Wait, Wait... Don't Tell Me!` intact. Multi-value capable directives are indicated in the table below.
+多值字段遵循 Vorbis 约定：重复整行，而不是用分隔符连接。这样可以保持 `AC/DC` 或 `Wait, Wait... Don't Tell Me!` 这类名称完好无损。下表中标注了支持多值的指令。
 
-Where both artists and a companion field (sort names, MB artist IDs) are multi-value, Music Assistant aligns them by index - the Nth `REM ARTISTSORT` goes with the Nth `PERFORMER`.
+当艺术家与伴随字段（排序名称、MB 艺术家 ID）都为多值时，Music Assistant 会按索引对齐它们 - 第 N 个 `REM ARTISTSORT` 对应第 N 个 `PERFORMER`。
 
-**Fields read from the CUE sheet (album level)**
+**从 CUE Sheet 读取的字段（专辑级）**
 
-Written at the top of the file, before any `TRACK`. The **Standard** column indicates whether the directive is commonly emitted by mainstream ripping/authoring tools (EAC, CUETools, foobar2000, XLD), not necessarily part of the original 13-directive CDRWIN spec. Fields marked **No** are Music Assistant extensions - other players may ignore them.
+写在文件顶部、任何 `TRACK` 之前。**Standard**（标准）列表示该指令是否通常由主流抓取/制作工具（EAC、CUETools、foobar2000、XLD）输出，而不一定是最初 13 指令 CDRWIN 规范的一部分。标记为 **No** 的字段是 Music Assistant 的扩展 - 其他播放器可能会忽略它们。
 
-Standard directives FLAGS, PREGAP, POSTGAP, SONGWRITER, and CDTEXTFILE are accepted but ignored.
+标准指令 FLAGS、PREGAP、POSTGAP、SONGWRITER 和 CDTEXTFILE 会被接受但会被忽略。
 
-| Directive | Standard | Multi? | Feeds |
+| 指令 | 标准 | 多值？ | 提供内容 |
 |-----------|:---:|:---:|-------|
-| `FILE "..." WAVE\|MP3\|...` | Yes | no | Path to the referenced audio file |
-| `TITLE "..."` | Yes | no | Album title (overrides audio album) |
-| `PERFORMER "..."` | Yes | yes | Album artists (overrides audio albumartist(s)) |
-| `CATALOG <upc>` | Yes | no | Disc UPC/EAN - album barcode |
-| `REM DATE YYYY` | Yes | no | Album year |
-| `REM GENRE "..."` / `GENRE "..."` | Yes | yes | Album genres |
-| `REM ALBUMSORT "..."` | No | no | Album sort name |
-| `REM ALBUMARTISTSORT "..."` | No | yes | Album artist sort names (aligned with `PERFORMER`) |
-| `REM MUSICBRAINZ_ALBUMARTISTID ...` | No | yes | Album artist MBIDs (aligned with `PERFORMER`) |
-| `REM MUSICBRAINZ_ALBUMID <uuid>` | No | no | Album MBID also known as the RELEASE ID |
-| `REM MUSICBRAINZ_RELEASEGROUPID <uuid>` | No | no | Release group MBID |
-| `REM RELEASETYPE ...` | No | yes | Album type (e.g. `album`, `compilation`, `live`) |
+| `FILE "..." WAVE\|MP3\|...` | 是 | 否 | 被引用音频文件的路径 |
+| `TITLE "..."` | 是 | 否 | 专辑标题（覆盖音频文件中的专辑） |
+| `PERFORMER "..."` | 是 | 是 | 专辑艺术家（覆盖音频文件中的专辑艺术家） |
+| `CATALOG <upc>` | 是 | 否 | 碟片 UPC/EAN - 专辑条形码 |
+| `REM DATE YYYY` | 是 | 否 | 专辑年份 |
+| `REM GENRE "..."` / `GENRE "..."` | 是 | 是 | 专辑流派 |
+| `REM ALBUMSORT "..."` | 否 | 否 | 专辑排序名称 |
+| `REM ALBUMARTISTSORT "..."` | 否 | 是 | 专辑艺术家排序名称（与 `PERFORMER` 对齐） |
+| `REM MUSICBRAINZ_ALBUMARTISTID ...` | 否 | 是 | 专辑艺术家 MBID（与 `PERFORMER` 对齐） |
+| `REM MUSICBRAINZ_ALBUMID <uuid>` | 否 | 否 | 专辑 MBID，也称为 RELEASE ID |
+| `REM MUSICBRAINZ_RELEASEGROUPID <uuid>` | 否 | 否 | 发行组 MBID |
+| `REM RELEASETYPE ...` | 否 | 是 | 专辑类型（例如 `album`、`compilation`、`live`） |
 
-**Fields read from the CUE sheet (track level)**
+**从 CUE Sheet 读取的字段（曲目级）**
 
-Written inside each `TRACK NN AUDIO` block:
+写在每个 `TRACK NN AUDIO` 块内：
 
-| Directive | Standard | Multi? | Feeds |
+| 指令 | 标准 | 多值？ | 提供内容 |
 |-----------|:---:|:---:|-------|
-| `TRACK NN AUDIO` | Yes | no | Track number |
-| `INDEX 01 MM:SS:FF` | Yes | no | Track start position (`INDEX 00` pregap is ignored) |
-| `TITLE "..."` | Yes | no | Track name |
-| `PERFORMER "..."` | Yes | yes | Track artists (falls back to sheet-level `PERFORMER`) |
-| `ISRC ...` | Yes | yes | Track ISRCs |
-| `REM GENRE "..."` / `GENRE "..."` | Yes | yes | Per-track genres (overrides album genre for this track) |
-| `REM TITLESORT "..."` | No | no | Track sort name |
-| `REM ARTISTSORT "..."` | No | yes | Track artist sort names (aligned by index with `PERFORMER`) |
-| `REM MUSICBRAINZ_ARTISTID ...` | No | yes | Track artist MBIDs (aligned by index with `PERFORMER`) |
-| `REM MUSICBRAINZ_RECORDINGID <uuid>` | No | no | Unique identifier for the original recording of the track |
-| `REM MUSICBRAINZ_TRACKID <uuid>` | No | no | Unique identifier for the track on this release |
-| `REM COPYRIGHT "..."` | No | no | Track copyright metadata |
-| `REM GROUPING "..."` | No | no | Track grouping metadata |
-| `REM COMMENT "..."` | No | no | Track description metadata |
-| `REM ITUNESADVISORY 0\|1` | No | no | Explicit flag |
+| `TRACK NN AUDIO` | 是 | 否 | 曲目编号 |
+| `INDEX 01 MM:SS:FF` | 是 | 否 | 曲目起始位置（`INDEX 00` 前间隙会被忽略） |
+| `TITLE "..."` | 是 | 否 | 曲目名称 |
+| `PERFORMER "..."` | 是 | 是 | 曲目艺术家（回退到 CUE Sheet 级的 `PERFORMER`） |
+| `ISRC ...` | 是 | 是 | 曲目 ISRC |
+| `REM GENRE "..."` / `GENRE "..."` | 是 | 是 | 单曲流派（对此曲目覆盖专辑流派） |
+| `REM TITLESORT "..."` | 否 | 否 | 曲目排序名称 |
+| `REM ARTISTSORT "..."` | 否 | 是 | 曲目艺术家排序名称（按索引与 `PERFORMER` 对齐） |
+| `REM MUSICBRAINZ_ARTISTID ...` | 否 | 是 | 曲目艺术家 MBID（按索引与 `PERFORMER` 对齐） |
+| `REM MUSICBRAINZ_RECORDINGID <uuid>` | 否 | 否 | 曲目原始录音的唯一标识符 |
+| `REM MUSICBRAINZ_TRACKID <uuid>` | 否 | 否 | 此发行版中曲目的唯一标识符 |
+| `REM COPYRIGHT "..."` | 否 | 否 | 曲目版权元数据 |
+| `REM GROUPING "..."` | 否 | 否 | 曲目分组元数据 |
+| `REM COMMENT "..."` | 否 | 否 | 曲目描述元数据 |
+| `REM ITUNESADVISORY 0\|1` | 否 | 否 | Explicit（限制级）标志 |
 
-Track duration is computed from the next track's `INDEX 01` minus this track's `INDEX 01`. For the final track, it is computed from the audio file's total duration.
+曲目时长由下一首曲目的 `INDEX 01` 减去本曲目的 `INDEX 01` 计算得出。对于最后一首曲目，则根据音频文件的总时长计算。
 
-**Fields read from the audio file**
+**从音频文件读取的字段**
 
-Tags on the referenced audio file supply everything that applies to the album as a whole, plus the technical format used for playback:
+被引用音频文件上的标签提供了适用于整张专辑的所有内容，以及用于播放的技术格式：
 
-- **Format** (shared by every CUE track) - sample rate, bit depth, channels, bit rate, container/codec, embedded cover art, disc number.
-- **Album metadata** (used unless overridden by the CUE sheet) - album, albumsort, albumartist/albumartists, albumartistsort, musicbrainzalbumartistid, album_type, date/year, genre, barcode, musicbrainzalbumid, musicbrainzreleasegroupid.
-- **Loudness normalisation** - run a ReplayGain scanner against the audio file (e.g. `metaflac --add-replay-gain album.flac` or `rsgain easy album.flac`). Music Assistant reads `REPLAYGAIN_ALBUM_GAIN` from the audio file tags automatically; for a single-file CUE rip, file gain *is* album gain.
+- **格式**（每条 CUE 曲目共享） - 采样率、位深度、声道数、比特率、容器/编解码器、内嵌封面图片、碟片编号。
+- **专辑元数据**（除非被 CUE Sheet 覆盖，否则使用） - album、albumsort、albumartist/albumartists、albumartistsort、musicbrainzalbumartistid、album_type、date/year、genre、barcode、musicbrainzalbumid、musicbrainzreleasegroupid。
+- **响度归一化** - 对音频文件运行 ReplayGain 扫描器（例如 `metaflac --add-replay-gain album.flac` 或 `rsgain easy album.flac`）。Music Assistant 会自动从音频文件标签中读取 `REPLAYGAIN_ALBUM_GAIN`；对于单文件 CUE 抓取，文件增益*就是*专辑增益。
 
-Track-specific audio tags (title, artists, lyrics, per-track loudness, etc.) are not applied per CUE track - a single-file rip only carries one copy of those, so Music Assistant relies on the CUE sheet for anything that varies between tracks.
+曲目专属的音频标签（标题、艺术家、歌词、单曲响度等）不会逐条应用于各个 CUE 曲目 - 单文件抓取只包含其中每种信息的一个副本，因此曲目之间有差异的任何信息都由 Music Assistant 依靠 CUE Sheet 获取。
 
-Track artists (PERFORMER) fall back to sheet-level PERFORMER rather than audio tags. If there are no PERFORMER directives found then [unknown] will be applied.
+曲目艺术家（PERFORMER）会回退到 CUE Sheet 级的 PERFORMER，而不是音频标签。如果未找到任何 PERFORMER 指令，则会应用 [unknown]。
 
-**Reference CUE sheet**
+**参考 CUE Sheet**
 
-Every directive Music Assistant currently parses:
+Music Assistant 当前解析的每一个指令：
 
 ```
 PERFORMER "Pink Floyd"
@@ -521,4 +530,3 @@ REM MUSICBRAINZ_ALBUMARTISTID aa000000-0000-0000-0000-000000000000
 </details>
 
 ---
-

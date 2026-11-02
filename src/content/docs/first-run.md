@@ -1,20 +1,20 @@
 ---
-title: "First Run (Authentication)"
+title: "首次运行（身份验证）"
 ---
 
-# Initial Authentication Setup
+# 初始身份验证设置
 
-Access to the Music Assistant User Interface (UI) requires a login and password.
+访问 Music Assistant 用户界面（UI）需要登录名和密码。
 
-What you see on first startup depends on how you installed MA and how you access it. If you installed the Music Assistant server as an App in Home Assistant and open the MA UI via HA Ingress (the sidebar), an administrator account is set up automatically and you are taken straight to the settings page. In all other circumstances you will see an initial authentication setup dialog. The administrator username and password are the first to be set up: do not forget them, as there is no way to recover them later. If they are forgotten the MA server will need to be rebuilt (docker users can delete auth.db).
+首次启动时看到的内容取决于您安装 MA 的方式以及访问它的方式。如果您将 Music Assistant 服务器作为应用安装在 Home Assistant 中，并通过 HA Ingress（侧边栏）打开 MA UI，系统会自动设置一个管理员账户，并直接带您进入设置页面。在所有其他情况下，您将看到初始身份验证设置对话框。管理员用户名和密码是首先需要设置的：请不要忘记它们，因为以后无法恢复。如果忘记了，MA 服务器将需要重建（Docker 用户可以删除 auth.db）。
 
 > [!NOTE]
-> Signing in with Home Assistant requires a pop up browser tab to be opened, so ensure your browser allows this (most notably Safari on iOS)
+> 使用 Home Assistant 登录需要打开一个弹出的浏览器标签页，因此请确保您的浏览器允许此操作（尤其是 iOS 上的 Safari）
 
-The initial authentication setup dialog will appear as follows
+初始身份验证设置对话框将如下所示
 
 <a href="/assets/screenshots/auth-flow.png"><img src="/assets/screenshots/auth-flow.png" alt="Preview image" style="width: 256px;"  loading="lazy" /></a>
 
-After successfully logging in, your first action as administrator is to add [music sources](/music-providers/) and any necessary [players](/player-support/). This banner is shown to support this
+成功登录后，您作为管理员的首要操作是添加[音乐源](/music-providers/)和任何必要的[播放器](/player-support/)。系统会显示此横幅以协助您完成此操作
 
 ![Preview image](/assets/screenshots/setup-banner.png)

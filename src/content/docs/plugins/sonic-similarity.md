@@ -1,138 +1,138 @@
 ---
-title: Sonic Similarity
-description: Local similarity search powering library-wide Similar Tracks, Endless Mix, an "Inspired by recently played" discover row, and natural-language search.
+title: 声音相似度（Sonic Similarity）
+description: 本地相似度搜索，为全库相似曲目（Similar Tracks）、无尽混音（Endless Mix）、“受最近播放启发”发现行以及自然语言搜索提供支持。
 pluginGroup: discover
 ---
 
-# Sonic Similarity
+# 声音相似度（Sonic Similarity）
 
-The **Sonic Similarity** plugin turns the audio fingerprints already produced by the [Sonic Analysis](/audio-analysis/sonic-analysis) provider into useful discovery surfaces across your library — all running locally on the server.
+**声音相似度**插件将 [声音分析（Sonic Analysis）](/audio-analysis/sonic-analysis) 提供器（provider）已生成的音频指纹，转化为覆盖你整个媒体库的实用发现功能——全部在服务器上本地运行。
 
-What it powers:
+它所驱动的功能：
 
-- **Library-wide Similar Tracks** — works even on filesystem libraries and on providers that do not supply their own similar-tracks feed
-- **Endless Mix** — the same data is used when Music Assistant needs to extend a queue with similar tracks and no streaming-side radio is available
-- **An "Inspired by recently played" row** on the discover page
-- **Natural-language search** — optionally lets you search for tracks by typing things like *"super dancy disco"* or *"calm acoustic morning"*
+- **全库相似曲目（Similar Tracks）**——即使在文件系统媒体库以及不自带相似曲目源的提供器上也能正常工作
+- **无尽混音（Endless Mix）**——当 Music Assistant 需要用相似曲目扩展播放队列而又没有流媒体端的电台可用时，会使用同一份数据
+- 发现页上的 **“受最近播放启发”** 行
+- **自然语言搜索**——可让你通过输入诸如 *“超级动感迪斯科”* 或 *“宁静的原声清晨”* 之类的文字来搜索曲目
 
-No audio is sent anywhere; all similarity and search runs against local indexes stored under the Music Assistant data directory.
+不会向任何地方发送任何音频；所有相似度计算和搜索都基于存储在 Music Assistant 数据目录下的本地索引进行。
 
 :::caution[Experimental]
-This plugin is in early development. The configuration options and behaviour may change before the final release.
+该插件尚处于早期开发阶段。配置选项和行为在最终版本发布前可能会发生变化。
 :::
 
-## Requirements
+## 前提条件
 
-The plugin builds on top of the [Sonic Analysis](/audio-analysis/sonic-analysis) provider and the [Smart Fades](/audio-analysis/smart-fades) provider, both of which must be configured and have analysed at least a few tracks. Similar Tracks results and the discover row appear once Sonic Similarity has built its index from the available analyses.
+该插件构建在 [声音分析](/audio-analysis/sonic-analysis) 提供器和 [智能淡入淡出（Smart Fades）](/audio-analysis/smart-fades) 提供器之上，这两者都必须完成配置，并且至少已分析过几首曲目。当声音相似度根据现有的分析结果构建好自己的索引后，相似曲目结果和发现行就会出现。
 
-## What you'll see in Music Assistant
+## 你会在 Music Assistant 中看到什么
 
-Once the plugin has built its index, a **Similar tracks** section appears on every track's details page:
+插件构建好索引后，每首曲目的详情页上都会出现一个 **相似曲目** 板块：
 
-![Similar tracks on a track details page](/assets/screenshots/sonic-similarity/track-details-similar.png)
+![曲目详情页上的相似曲目](/assets/screenshots/sonic-similarity/track-details-similar.png)
 
-And — unless it is disabled in the settings — an **Inspired by recently played** row appears on the discover page, seeded by the tracks you have played most recently:
+此外——除非已在设置中将其禁用——发现页上还会出现 **“受最近播放启发”** 行，以你最近播放过的曲目为种子（seed）：
 
-![Inspired by recently played row on the discover page](/assets/screenshots/sonic-similarity/discover-inspired-by.png)
+![发现页上的“受最近播放启发”行](/assets/screenshots/sonic-similarity/discover-inspired-by.png)
 
-## How it works
+## 工作原理
 
-Three engines run inside the plugin. The Traits engine is always on; the Character and Free-Text Search engines are independently toggleable from the configuration page.
+插件内部运行着三个引擎。特征（Traits）引擎始终开启；气质（Character）引擎和自由文本（free-text）搜索引擎可以在配置页面中独立开启或关闭。
 
-### Traits engine (always on)
+### 特征引擎（始终开启）
 
-Matches on measured sound traits — tempo, energy, loudness, key, and so on. The engine builds a small per-track signature from those measurements and ranks neighbours using one of the configurable weight presets. Cheap to build, cheap to query, and fits comfortably in memory for libraries of tens of thousands of tracks.
+基于测得的声学特征进行匹配——速度、能量、响度、调性等。该引擎根据这些测量值为每首曲目生成一个小的签名（signature），并使用可配置的权重预设之一对相邻曲目进行排序。构建开销小、查询开销小，对于拥有数万首曲目的媒体库也能轻松放进内存。
 
-This engine powers the Similar Tracks menu, Endless Mix, and the discover row by default.
+默认情况下，由该引擎为相似曲目菜单、无尽混音和发现行提供支持。
 
-### Character engine (opt-in)
+### 气质引擎（可选开启）
 
-Matches on overall character — how a listener would describe the sound. The engine builds a second search index over the audio fingerprints that Sonic Analysis already stores for every track; the resulting matches lean toward *"this feels like that"* rather than *"these have similar tempo"*, which is useful when a song's mood or texture matters more than its measurable properties.
+基于整体气质进行匹配——即听众会如何描述这种声音。该引擎在声音分析已为每首曲目存储的音频指纹之上构建第二个搜索索引；其匹配结果更偏向 *“这首听起来像那首”*，而不是 *“这两首速度相近”*，当一首歌的情绪或质感比其可测量的属性更重要时，这一点非常有用。
 
-No extra downloads are required; the fingerprints are already on disk from Sonic Analysis.
+无需任何额外下载；这些指纹已经由声音分析存储在磁盘上。
 
-### Free-text search (opt-in)
+### 自由文本搜索（可选开启）
 
-Turns a natural-language phrase like *"super dancy disco track"* into the same kind of fingerprint used for tracks, then returns the tracks whose sound is closest. Enabling this implicitly turns on the Character engine above, since both features share the same model.
+将 *“超级动感的迪斯科曲目”* 这类自然语言短语转换成与曲目所用指纹相同类型的指纹，然后返回声音最接近的曲目。启用该功能会隐式开启上文的气质引擎，因为这两个功能共享同一个模型。
 
-The first time free-text search is loaded, about 500 MB of language model files download to the server. 
+首次加载自由文本搜索时，大约有 500 MB 的语言模型文件会下载到服务器。
 
-![Free-text search returning matching tracks for "bright female vocal performance"](/assets/screenshots/sonic-similarity/free-text-search.png)
+![自由文本搜索为“明亮的女声演唱”返回匹配曲目](/assets/screenshots/sonic-similarity/free-text-search.png)
 
-## Configuration
+## 配置
 
-The plugin is installed via **Settings → Plugins → Add a plugin**. All settings live on a single configuration page made up of four panels: **Generic**, **Similarity search**, **Discover**, and **Status**.
+该插件通过 **设置 → 插件 → 添加插件** 安装。所有设置都位于同一个配置页面上，该页面由四个面板组成：**常规（Generic）**、**相似度搜索（Similarity search）**、**发现（Discover）** 和 **状态（Status）**。
 
-### Generic
+### 常规
 
-![Sonic Similarity Generic panel](/assets/screenshots/sonic-similarity/setup-screen-generic.png)
+![声音相似度常规面板](/assets/screenshots/sonic-similarity/setup-screen-generic.png)
 
-| Setting | Description |
+| 设置 | 描述 |
 |---|---|
-| **Enable Character index** | Builds a second on-disk index over the audio fingerprints already produced by Sonic Analysis. Off by default. |
-| **Enable free-text search** | Enables natural-language track search. On first use about 500 MB of language model files are lazily downloaded to the server. |
+| **启用气质索引** | 在声音分析已生成的音频指纹之上构建第二个磁盘索引。默认关闭。 |
+| **启用自由文本搜索** | 启用自然语言曲目搜索。首次使用时，大约 500 MB 的语言模型文件会延迟下载到服务器。 |
 
-Toggling either of these requires the plugin to reload before the new feature set takes effect.
+切换其中任何一项，都需要插件重新加载后，新的功能集才会生效。
 
-### Similarity search
+### 相似度搜索
 
-Controls how the library-wide **Similar Tracks** action picks its matches.
+控制全库 **相似曲目** 操作如何挑选匹配结果。
 
-![Sonic Similarity Similarity search panel](/assets/screenshots/sonic-similarity/setup-similarity.png)
+![声音相似度相似度搜索面板](/assets/screenshots/sonic-similarity/setup-similarity.png)
 
-| Setting | Description |
+| 设置 | 描述 |
 |---|---|
-| **Similar Tracks engine** | Which engine powers library-wide Similar Tracks. The **Traits** option matches on measured sound traits — tempo, energy, loudness, key. The **Character** option matches on overall character — how a listener would describe the sound — and returns no results for tracks that do not yet have a fingerprint. Only appears when the Character index is enabled. Defaults to Traits. |
-| **Similar Tracks preset** | Weight preset applied when the Traits engine is in use. See [Similarity presets](#similarity-presets) below for what each preset favours. Only appears when the Traits engine is selected. Defaults to Balanced. |
-| **Similar Tracks diversity** | Slider from 0 to 10. `0` keeps results closest to the seed; `10` maximises variety. Only appears when the Traits engine is selected. |
+| **相似曲目引擎** | 由哪个引擎驱动全库相似曲目。**特征** 选项基于测得的声学特征进行匹配——速度、能量、响度、调性。**气质** 选项基于整体气质进行匹配——即听众会如何描述这种声音——并且对尚无指纹的曲目不返回任何结果。仅在启用气质索引时才会显示。默认为特征。 |
+| **相似曲目预设** | 使用特征引擎时应用的权重预设。各预设分别偏好什么，请参见下方的 [相似度预设](#similarity-presets)。仅在选择了特征引擎时才会显示。默认为均衡（Balanced）。 |
+| **相似曲目多样性** | 0 到 10 的滑块。`0` 使结果最贴近种子曲目；`10` 最大化多样性。仅在选择了特征引擎时才会显示。 |
 
-### Discover
+### 发现
 
-Controls the **Inspired by recently played** row on the discover page.
+控制发现页上的 **“受最近播放启发”** 行。
 
-![Sonic Similarity Discover panel](/assets/screenshots/sonic-similarity/setup-discover.png)
+![声音相似度发现面板](/assets/screenshots/sonic-similarity/setup-discover.png)
 
-| Setting | Description |
+| 设置 | 描述 |
 |---|---|
-| **Show 'Inspired by recently played' on the discover page** | Adds a discover-page row seeded by your recently-played tracks. On by default. Disable this to suppress the row without uninstalling the plugin. |
-| **Discover row engine** | Which engine powers the discover row — same options as the Similar Tracks engine in the Similarity search panel. Only appears when the Character index is enabled. Defaults to Traits. |
-| **Discover row preset** | Similarity weight preset used to rank candidates for the row. See [Similarity presets](#similarity-presets) below for what each preset favours. Only appears when the Traits engine is selected. |
-| **Discover row diversity** | Slider from 0 to 10. `0` keeps results closest to the seeds; `10` maximises variety — some results may be less similar individually, but the row as a whole will be more varied. Only appears when the Traits engine is selected. |
+| **在发现页上显示“受最近播放启发”** | 在发现页上添加一行，以你最近播放的曲目为种子。默认开启。禁用此项即可隐藏该行，而无需卸载插件。 |
+| **发现行引擎** | 由哪个引擎驱动发现行——选项与相似度搜索面板中的相似曲目引擎相同。仅在启用气质索引时才会显示。默认为特征。 |
+| **发现行预设** | 用于为该行的候选曲目排序的相似度权重预设。各预设分别偏好什么，请参见下方的 [相似度预设](#similarity-presets)。仅在选择了特征引擎时才会显示。 |
+| **发现行多样性** | 0 到 10 的滑块。`0` 使结果最贴近种子曲目；`10` 最大化多样性——部分结果单独来看可能相似度较低，但整行内容会更加多样。仅在选择了特征引擎时才会显示。 |
 
-### Status
+### 状态
 
-Shows the current health of each engine — number of tracks indexed, coverage, and whether the optional text encoder is loaded. Manual rebuild buttons live behind the **Advanced** toggle on the same page and are not needed in normal use; both engines build and refresh their indexes automatically in the background.
+显示每个引擎当前的运行状况——已索引的曲目数量、覆盖率，以及可选的文本编码器是否已加载。手动重建按钮位于同一页面的 **高级（Advanced）** 开关之后，正常使用时无需用到；两个引擎都会在后台自动构建并刷新各自的索引。
 
-![Sonic Similarity Status panel](/assets/screenshots/sonic-similarity/setup-status.png)
+![声音相似度状态面板](/assets/screenshots/sonic-similarity/setup-status.png)
 
-| Element | Meaning |
+| 元素 | 含义 |
 |---|---|
-| **Traits engine status row** | Shows how many tracks are indexed, how many signatures are cached, whether the engine is ready to serve queries (shown in the UI as *corpus stats ready*), and, when available, how its coverage compares to Sonic Analysis' analysed / pending counts. |
-| **Rebuild Traits index** *(Advanced)* | Re-scans all stored signatures and rebuilds the Traits search index from scratch. Runs in the background. Only present when **Advanced** settings are shown. |
-| **Character engine status row** | Shows the number of fingerprints indexed and the current coverage. Only present when the Character engine is enabled. |
-| **Rebuild Character index** *(Advanced)* | Incrementally adds any new fingerprints to the Character index. Runs in the background. Only present when **Advanced** settings are shown and the Character engine is enabled. |
-| **Text encoder status row** | Shows whether the text encoder is loaded; *warm* or *cold*. When cold, the language model files (~500 MB) will be downloaded on the next free-text query. Only present when free-text search is enabled. |
+| **特征引擎状态行** | 显示已索引多少首曲目、缓存了多少个签名、引擎是否已就绪、可以响应查询（在 UI 中显示为 *corpus stats ready*），以及在可用时，其覆盖率与声音分析的已分析 / 待分析数量的对比。 |
+| **重建特征索引** *（高级）* | 重新扫描所有已存储的签名，并从头重建特征搜索索引。在后台运行。仅在显示 **高级** 设置时才会出现。 |
+| **气质引擎状态行** | 显示已索引的指纹数量以及当前覆盖率。仅在启用气质引擎时才会显示。 |
+| **重建气质索引** *（高级）* | 以增量方式将新增的指纹添加到气质索引中。在后台运行。仅在显示 **高级** 设置且气质引擎已启用时才会出现。 |
+| **文本编码器状态行** | 显示文本编码器是否已加载；是 *warm*（热）还是 *cold*（冷）。处于 cold 状态时，语言模型文件（约 500 MB）将在下一次自由文本查询时下载。仅在启用自由文本搜索时才会显示。 |
 
-## Similarity presets
+## 相似度预设
 
-The Traits engine groups its features and applies a per-group weight when ranking. The five built-in presets bias those weights toward different listening intents:
+特征引擎会将各项特征分成组，并在排序时为每组应用一个权重。五个内置预设会将这些权重向不同的聆听意图倾斜：
 
-| Preset | What it favours |
+| 预设 | 偏好侧重 |
 |---|---|
-| **Balanced** | All groups weighted equally. A reasonable default for "more like this". |
-| **Vibe** | Mood, timbre and dynamics dominate; rhythm and key matter less. |
-| **Party** | Rhythm, regularity and energy dominate; mood and key matter less. |
-| **Genre + Era** | Key and harmonic features, plus genre and era bonuses, dominate. Stays close to the seed's genre and decade. |
-| **Discover (novelty-leaning)** | Timbre and mood matter most; genre and era are deliberately downweighted so the row is allowed to drift outside the seed's neighbourhood. |
+| **均衡（Balanced）** | 所有组权重相等。对于“找更多类似曲目”这一需求来说是合理的默认选择。 |
+| **氛围（Vibe）** | 情绪、音色和动态占主导；节奏和调性权重较低。 |
+| **派对（Party）** | 节奏、规律性和能量占主导；情绪和调性权重较低。 |
+| **流派 + 年代（Genre + Era）** | 调性与和声特征，再加上流派和年代加成，占主导。结果会紧贴种子曲目的流派和所处年代。 |
+| **偏新颖的发现（Discover (novelty-leaning)）** | 音色和情绪最为重要；流派和年代被有意降低权重，因此该行可以漂移到种子曲目的邻近范围之外。 |
 
-The **Similar Tracks** action (configured in the Similarity search panel) and the **Inspired by recently played** discover row (configured in the Discover panel) each select an engine, preset, and diversity independently, so they can lean different ways — for instance, Similar Tracks can stay close to the seed while the discover row drifts toward novelty.
+**相似曲目** 操作（在相似度搜索面板中配置）和 **“受最近播放启发”** 发现行（在发现面板中配置）各自独立选择引擎、预设和多样性，因此二者可以有不同的倾向——例如，相似曲目可以紧贴种子曲目，而发现行则向新颖方向漂移。
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- The search indexes live under the Music Assistant data directory as derived caches. They are safe to delete — the next plugin start will recreate them from the existing track analyses.
-- Toggling **Enable Character index** or **Enable free-text search**, or changing the options for the Discover panel, requires the plugin to reload before the new feature set takes effect.
+- 搜索索引作为派生缓存存放在 Music Assistant 数据目录下。删除它们是安全的——插件下次启动时会根据现有的曲目分析结果重新创建这些索引。
+- 切换 **启用气质索引** 或 **启用自由文本搜索**，或更改发现面板中的选项，都需要插件重新加载后，新的功能集才会生效。
 
-## Credits
+## 致谢
 
-- [Microsoft CLAP](https://github.com/microsoft/CLAP) — the joint audio + text model behind the optional Character similarity and free-text search engines.
-- [unum-cloud/usearch](https://github.com/unum-cloud/usearch) — the fast similarity search library used by both engines.
+- [Microsoft CLAP](https://github.com/microsoft/CLAP) —— 可选的气质相似度和自由文本搜索引擎背后所使用的音频 + 文本联合模型。
+- [unum-cloud/usearch](https://github.com/unum-cloud/usearch) —— 两个引擎共同使用的快速相似度搜索库。

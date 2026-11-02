@@ -1,35 +1,35 @@
 ---
-title: Release Cycle
-description: Details of the release cycle for the stable and beta versions of the server
+title: 发布周期
+description: 服务器稳定版和测试版发布周期的详细信息
 ---
 
-# Release Cycle <img src="/assets/icons/release-cycle-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 发布周期 <img src="/assets/icons/release-cycle-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-## Stable Releases
+## 稳定版发布
 
-Stable releases will be published every 3 months. These stable releases will come after a beta cycle has been concluded.
+稳定版发布将每 3 个月发布一次。这些稳定版发布将在测试版（beta）周期结束后推出。
 
-Patch releases may be issued on Fridays, once every two weeks, if there is a compelling need (e.g. an urgent bug fix).
+如有迫切需要（例如紧急的错误修复），补丁版本可能会在每两周的周五发布。
 
-## Beta Releases
+## 测试版发布
 
-In addition to the stable channel there is also a beta channel, for which there is a dedicated Home Assistant App (and docker image) and [documentation](https://beta.music-assistant.io/).
-Once a new stable version has been published, a new beta cycle will start (with the minor version increased).
-For example, once stable version 2.8 is released, the beta for version 2.9 starts.
+除了稳定版渠道之外，还有测试版（beta）渠道，为此有专门的 Home Assistant 应用（以及 docker 镜像）和[文档](https://beta.music-assistant.io/)。
+一旦新的稳定版本发布，新的测试版周期就会开始（次版本号会增加）。
+例如，当稳定版本 2.8 发布后，版本 2.9 的测试版就开始了。
 
-Beta releases are planned to be released every Friday. In some cases, when a large feature is in development for example, expect multiple beta releases per week.
+测试版计划每周五发布。在某些情况下，例如当某个大型功能正在开发中时，预计每周会有多个测试版发布。
 
-### Nightly Releases
+### 每夜版发布
 
-Each night, if there are at least two PRs merged, an automated Nightly Release will be built. Install this version if you want to keep up with the latest bleeding edge development of Music Assistant! Use it at your own risk, it might not be recommended for daily/production use because it can be unstable.
+每天晚上，如果有至少两个 PR 被合并，就会自动构建一个每夜版（Nightly Release）。如果您想紧跟 Music Assistant 最前沿的开发进展，请安装此版本！使用风险自负，由于它可能不稳定，因此可能不建议用于日常/生产环境。
 
-### DEV Channel
+### DEV 渠道
 
-This is a special development app for Music Assistant that allows developers to quickly test specific branches (frontend and backend), pull requests, or even forks of Music Assistant directly in Home Assistant. The option to install this will not be seen unless the HA user is in [advanced mode](https://www.youtube.com/watch?v=JPSDVPChjm0&t=115s).
+这是一个 Music Assistant 的特殊开发应用，允许开发人员直接在 Home Assistant 中快速测试特定分支（branch，前端和后端）、拉取请求（pull request），甚至是 Music Assistant 的分叉（fork）。除非 HA 用户处于[高级模式](https://www.youtube.com/watch?v=JPSDVPChjm0&t=115s)，否则不会看到安装此应用的选项。
 
-## Running Parallel Server Versions
+## 并行运行多个服务器版本
 
-It is possible to run the stable, beta, nightly or dev server apps side by side as they don't share any data. For example, you can temporarily run the beta app to try out new features and then revert to the stable version. You can do this by manually stopping and starting the relevant server. Don't have two servers running on the same host at the same time.
+可以并行运行稳定版、测试版、每夜版或开发版服务器应用，因为它们不共享任何数据。例如，您可以临时运行测试版应用来试用新功能，然后再恢复到稳定版本。您可以通过手动停止和启动相应的服务器来实现。请不要在同一主机上同时运行两个服务器。
 
 > [!CAUTION]
-> Be careful that you don't accidentally remove an app, because that will result in the loss of all your data (if you didn't back it up). The same applies to docker users: be careful with the data folder and be aware that the data folder is not backwards compatible. Don't try to use it between channels!
+> 请小心不要意外移除应用，因为这会导致您丢失所有数据（如果您没有备份的话）。docker 用户同样如此：请小心对待数据文件夹，并注意数据文件夹不具备向后兼容性。请不要尝试在不同渠道之间使用它！

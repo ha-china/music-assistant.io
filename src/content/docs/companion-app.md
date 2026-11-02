@@ -1,8 +1,8 @@
 ---
-title: "Desktop Companion App"
+title: "桌面伴侣应用"
 ---
 
-# Music Assistant Desktop App
+# Music Assistant 桌面应用
 
 [![latest version](https://img.shields.io/github/release/music-assistant/desktop-app?display_name=tag&include_prereleases&label=Latest%20version)](https://github.com/music-assistant/desktop-app/releases/latest)
 [![discord](https://img.shields.io/discord/753947050995089438?label=Discord&logo=discord&color=5865F2)](https://discord.gg/kaVm8hGpne)
@@ -11,53 +11,53 @@ title: "Desktop Companion App"
 ![sponsor](https://img.shields.io/static/v1?label=Bundled%20Size&message=25.1MB&color=0974B4)
 [![sponsor](https://img.shields.io/static/v1?label=Stage&message=Alpha&color=2BB4AB)](https://github.com/music-assistant/tauri-companion-app/blob/main/LICENSE)
 
-The desktop app for Music Assistant!
+Music Assistant 的桌面应用！
 
-Available for macOS, Windows, and Linux (Debian, AppImage, or RPM; for both x64 and ARM).
+支持 macOS、Windows 和 Linux（Debian、AppImage 或 RPM；同时支持 x64 和 ARM 架构）。
 
-[**Download the latest release here**](https://github.com/music-assistant/desktop-app/releases/latest)
+[**在此下载最新版本**](https://github.com/music-assistant/desktop-app/releases/latest)
 
 > [!TIP]
-> **This is still in very early alpha. Bugs *will* be present.**
+> **此应用仍处于非常早期的 alpha 阶段。Bug *肯定*会存在。**
 >
-> Please help finding them. You can report any bugs on the <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord server</a> or in the <a href="https://github.com/music-assistant/desktop-app/issues" target="_blank" rel="noopener noreferrer">repo issues</a>
+> 请帮助我们找出这些 bug。你可以在 <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord 服务器</a>或<a href="https://github.com/music-assistant/desktop-app/issues" target="_blank" rel="noopener noreferrer">仓库的 issues</a> 中报告任何 bug。
 
-## Setup
+## 设置
 
-When starting the app for the first time you are asked for some information about the Music Assistant Server.
+首次启动应用时，系统会要求你提供一些关于 Music Assistant Server 的信息。
 
 ![image](/assets/screenshots/companion-app-config.png)
 
-## Features
+## 功能特性
 
-- Native Audio Playback - High-quality audio output via [Sendspin](/player-support/sendspin/), MA's own streaming technology, with selection of the output device
-- System Tray Integration - Control playback and see what's playing from the system tray
-- OS Media Controls - Integrates with macOS Control Center, Windows Media Controls, and Linux media controls (MPRIS)
-- Discord Rich Presence - Show what you're listening to on Discord
-- Server Discovery - Finds your Music Assistant server automatically on your network
+- 原生音频播放 - 通过 [Sendspin](/player-support/sendspin/)（MA 自有的流媒体技术）实现高质量音频输出，并可选择输出设备
+- 系统托盘集成 - 从系统托盘控制播放并查看正在播放的内容
+- 操作系统媒体控制 - 与 macOS 控制中心、Windows 媒体控制以及 Linux 媒体控制（MPRIS）集成
+- Discord Rich Presence - 在 Discord 上显示你正在收听的内容
+- 服务器发现 - 自动在你的网络中查找你的 Music Assistant 服务器
 
 ### <a href="https://discord.com/developers/docs/rich-presence/how-to#so-what-is-it" target="_blank" rel="noopener noreferrer">Discord Rich Presence</a>
 
-Like the Spotify app, the Music Assistant app can do Discord Rich Presence.
+与 Spotify 应用一样，Music Assistant 应用也可以使用 Discord Rich Presence。
 
-Example of Discord Rich Presence:
+Discord Rich Presence 示例：
 
-!<a href="https://github.com/music-assistant/tauri-companion-app/assets/74015378/8de18bac-b963-4aba-bb61-5730b41759a9" target="_blank" rel="noopener noreferrer">Example of Discord Rich Presence</a>
+!<a href="https://github.com/music-assistant/tauri-companion-app/assets/74015378/8de18bac-b963-4aba-bb61-5730b41759a9" target="_blank" rel="noopener noreferrer">Discord Rich Presence 示例</a>
 
-## Installation
+## 安装
 
 ### Windows
 
-You can download the .msi installer from the <a href="https://github.com/music-assistant/desktop-app/releases/latest/" target="_blank" rel="noopener noreferrer">releases</a>.
+你可以从 <a href="https://github.com/music-assistant/desktop-app/releases/latest/" target="_blank" rel="noopener noreferrer">releases 页面</a>下载 .msi 安装程序。
 
 ### macOS
 
-You can download the .dmg from the <a href="https://github.com/music-assistant/desktop-app/releases/latest/" target="_blank" rel="noopener noreferrer">releases</a>.
+你可以从 <a href="https://github.com/music-assistant/desktop-app/releases/latest/" target="_blank" rel="noopener noreferrer">releases 页面</a>下载 .dmg 文件。
 
-### Debian (and Debian based distributions)
+### Debian（以及基于 Debian 的发行版）
 
-You can download the .deb from the <a href="https://github.com/music-assistant/desktop-app/releases/latest/" target="_blank" rel="noopener noreferrer">releases</a>.
+你可以从 <a href="https://github.com/music-assistant/desktop-app/releases/latest/" target="_blank" rel="noopener noreferrer">releases 页面</a>下载 .deb 文件。
 
-### All the other Linux distros
+### 所有其他 Linux 发行版
 
-You can download the AppImage from the <a href="https://github.com/music-assistant/desktop-app/releases/latest/" target="_blank" rel="noopener noreferrer">releases</a>.
+你可以从 <a href="https://github.com/music-assistant/desktop-app/releases/latest/" target="_blank" rel="noopener noreferrer">releases 页面</a>下载 AppImage。

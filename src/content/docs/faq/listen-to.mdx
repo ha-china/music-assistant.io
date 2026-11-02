@@ -1,32 +1,26 @@
 ---
-title: "I Want To Listen To"
-description: Find the Music Assistant music sources that provide what you want to listen to
+title: "我想听的内容"
+description: 查找能提供你想听内容的 Music Assistant 音乐来源
 ---
 
 import TilePage from '../../../components/TilePage.astro';
 import MusicSourceMatrix from '../../../components/MusicSourceMatrix.astro';
 import { MUSIC_SOURCES_PAGE } from '../../../data/music-sources';
 
-# I Want To Listen To
+# 我想听的内容
 
-Music Assistant plays from music sources, and there are a lot of them. Rather than reading
-through the list one at a time, start from what you actually want to hear and see which sources
-provide it.
+Music Assistant 可以从音乐来源播放内容，而且这样的来源有很多。与其逐个阅读列表，不如从你实际想听的内容入手，看看哪些来源能提供它。
 
-Pick a heading below to jump to the sources for it. Most sources appear more than once, because
-plenty of them do several jobs at the same time. You can also compare all providers
-[side by side](#comparing-sources-side-by-side).
+点击下方任一标题即可跳转到相应的音乐来源。大多数来源会出现不止一次，因为其中许多来源同时承担多种功能。你也可以[并排对比](#comparing-sources-side-by-side)所有提供商。
 
 <TilePage page={MUSIC_SOURCES_PAGE} />
 
-## Comparing sources side by side
+## 并排对比各来源
 
-Every source above has its own page covering what it can do, what it costs and how to set it up.
-To weigh two of them against each other instead, the table below summarises all of them at once.
-Green ticks mark a desirable quality or function.
+上面列出的每个来源都有自己的页面，介绍它能做什么、费用是多少以及如何设置。如果你想将其中两个放在一起权衡，下方的表格则一次性汇总了所有来源。绿色对勾表示具备理想的品质或功能。
 
-Stream quality is shown as either [Hi-Res](/player-support/#audio-quality), <a href="https://www.soundguys.com/high-bitrate-audio-is-overkill-cd-quality-is-still-great-16518/" target="_blank" rel="noopener noreferrer">CD quality</a> or lossy, with the codec and bitrate where available.
+流媒体音质显示为 [Hi-Res](/player-support/#audio-quality)、<a href="https://www.soundguys.com/high-bitrate-audio-is-overkill-cd-quality-is-still-great-16518/" target="_blank" rel="noopener noreferrer">CD 音质</a>或有损压缩，并在有相关信息时标注编解码器和比特率。
 
-The most user friendly login method is a password. Next best is OAuth, where you log in on the service's own website and grant Music Assistant access to your account. The cookie method, where you copy a hidden value out of your browser, is the least desirable.
+最易用的登录方式是密码。其次是 OAuth，即你在该服务自己的网站上登录，并授权 Music Assistant 访问你的账户。最不可取的是 cookie 方式，即从浏览器中复制一个隐藏的值。
 
 <MusicSourceMatrix />

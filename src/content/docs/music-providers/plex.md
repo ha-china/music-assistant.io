@@ -4,11 +4,11 @@ title: "Plex"
 
 # Plex <img src="/assets/icons/plex-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for using Plex (MusicLibrary). Contributed by <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> and maintained by <a href="https://github.com/anatosun" target="_blank" rel="noopener noreferrer">anatosun</a>
+Music Assistant 支持使用 Plex（MusicLibrary）。由 <a href="https://github.com/micha91" target="_blank" rel="noopener noreferrer">micha91</a> 贡献，并由 <a href="https://github.com/anatosun" target="_blank" rel="noopener noreferrer">anatosun</a> 维护
 
-Plex is a media server you run yourself, paired with apps for phones, TVs and browsers. It indexes the music and video held on your own storage and streams it to you wherever you are.
+Plex 是一款由你自己运行的媒体服务器，配有适用于手机、电视和浏览器的应用程序。它会为你自己存储中的音乐和视频建立索引，并随时随地串流给你。
 
-This source connects Music Assistant to the music library on your Plex server. Everything you have already organised there becomes part of your Music Assistant library.
+此音乐源（source）将 Music Assistant 连接到你 Plex 服务器上的音乐库。你在其中整理好的所有内容都将成为 Music Assistant 媒体库的一部分。
 
 ## Features
 
@@ -31,29 +31,39 @@ This source connects Music Assistant to the music library on your Plex server. E
 - Search the Plex server
 - Track progress for audiobooks/podcasts across Plex clients
 
-## Configuration
+### Other
+
+- Search the Plex server
+- Track progress for audiobooks/podcasts across Plex clients
+
+### 其他
+
+- 搜索 Plex 服务器
+- 跨 Plex 客户端跟踪有声读物/播客的播放进度
+
+## 配置
 
 [![Preview image](/assets/screenshots/plex/plex-config-opts.png)](/assets/screenshots/plex/plex-config-opts.png)
 
-- Click the `Use Plex GDM to discover local servers` button, this **should** discover your local server and prefill the `local_server_ip` and `local_server_port` fields
-- If GDM discovery fails, the 2 fields mentioned above will be filled with **"Discovery failed.... "**. In this case, please add the IP address (without any http:// prefix) of your server, and the port (usually 32400) that you are exposing it on
-- Select the `SSL (HTTPS)` toggle if required. If this setting is enabled an option in the Advanced Settings will be activated which requires the certificate to be verified (default is on)
-- If you login to Plex via MYPLEX.TV, click the `Authenticate on MYPLEX.TV` button, this may trigger your browser `pop-up` detection, so watch out for that, authenticate as you normally would for Plex
-- If you have configured Plex to allow local connection without authentication (see below), click the `Authenticate Locally` button
-- Select the library and type (Music, Audiobook, or Podcast) that you would like to use; options will be auto-selected based on your existing configuration, but you can change as needed.
-- Save the settings
+- 点击 `Use Plex GDM to discover local servers` 按钮，这**应该**能发现你的本地服务器，并自动填充 `local_server_ip` 和 `local_server_port` 字段
+- 如果 GDM 发现失败，上述两个字段将被填充为 **"Discovery failed.... "**。在这种情况下，请填入你服务器的 IP 地址（不带任何 http:// 前缀），以及你为其对外开放的端口（通常为 32400）
+- 如有需要，请开启 `SSL (HTTPS)` 开关。启用此设置后，高级设置中将激活一个要求验证证书的选项（默认开启）
+- 如果你通过 MYPLEX.TV 登录 Plex，请点击 `Authenticate on MYPLEX.TV` 按钮，这可能会触发浏览器的 `pop-up`（弹出窗口）拦截提示，请留意这一点，然后像平时登录 Plex 那样完成身份验证
+- 如果你已将 Plex 配置为允许无需身份验证的本地连接（见下文），请点击 `Authenticate Locally` 按钮
+- 选择你想要使用的媒体库及其类型（音乐、有声读物或播客）；相关选项会根据你的现有配置自动选择，但你可以根据需要进行更改。
+- 保存设置
 
-### Advanced Settings
+### 高级设置
 
-- <b>Extended recommendations.</b> Enabled by default. Adds extra rows on the [Discover](/ui/#view---discover) view to include <b>Mixes For You</b> (the personalised mixes Plex builds from the listening history), recent library playlists and <b>On This Day</b> releases, matching the rows Plex's own clients show. Changes take effect on the next recommendations refresh
+- <b>扩展推荐（Extended recommendations）。</b>默认启用。它会在 [发现（Discover）](/ui/#view---discover) 视图中添加额外的行，包括 <b>Mixes For You（为你推荐的混音）</b>（Plex 根据收听历史生成的个性化混音）、最近的媒体库播放列表以及 <b>On This Day（历史上的今天）</b>发行的内容，与 Plex 官方客户端显示的行保持一致。更改将在下一次推荐刷新时生效
 
-## Plex Configuration
+## Plex 配置
 
-- If you want to allow Music Assistant to connect to Plex without authentication, go to your Plex configuration, Settings / Network. In the field labeled `List of IP addresses and networks that are allowed without auth` enter the IP address of the computer running Music Assistant, and `Save Changes`
+- 如果你想允许 Music Assistant 在无需身份验证的情况下连接到 Plex，请进入你的 Plex 配置，即设置（Settings）/ 网络（Network）。在标记为 `List of IP addresses and networks that are allowed without auth` 的字段中填入运行 Music Assistant 的计算机的 IP 地址，然后点击 `Save Changes`
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- A Plex source is always bound to a user account and a library
-- If you have multiple libraries and/or library types, you need to add the Plex provider multiple times
-- If you have multiple Plex accounts, which have their own playlists, you can also add them as separate provider instances
-- If a Plex Media Server is running on the same host as MA, the Plex Connect plugin will fail to start because both attempt to bind to the GDM discovery port (32412). This is a known incompatibility. To resolve this it is necessary to run MA in Docker and remap the port, or run Plex and MA on separate hosts
+- 一个 Plex 音乐源总是绑定到一个用户账户和一个媒体库
+- 如果你拥有多个媒体库和/或媒体库类型，则需要多次添加 Plex 提供程序（provider）
+- 如果你拥有多个 Plex 账户，并且这些账户各自拥有自己的播放列表，你也可以将它们作为单独的提供程序实例添加
+- 如果 Plex Media Server 与 MA 运行在同一台主机上，Plex Connect 插件将无法启动，因为两者都会尝试绑定 GDM 发现端口（32412）。这是一个已知的不兼容问题。要解决此问题，必须在 Docker 中运行 MA 并重新映射端口，或者将 Plex 和 MA 分别运行在不同的主机上

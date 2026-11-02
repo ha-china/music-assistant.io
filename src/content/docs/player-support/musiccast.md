@@ -1,47 +1,47 @@
 ---
 title: "MusicCast"
-description: A Description of the MusicCast Player Provider
+description: MusicCast 播放器提供程序的说明
 ---
 
 # MusicCast <img src="/assets/icons/musiccast-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for <a href="https://au.yamaha.com/en/products/contents/audio_visual/musiccast/index.html" target="_blank" rel="noopener noreferrer">MusicCast</a> devices. Contributed and maintained by <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a>
+Music Assistant 支持 <a href="https://au.yamaha.com/en/products/contents/audio_visual/musiccast/index.html" target="_blank" rel="noopener noreferrer">MusicCast</a> 设备。由 <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a> 贡献并维护
 
-## Features
+## 功能特性
 
-- MusicCast devices are auto detected by Music Assistant
-- MusicCast devices will play in perfect sync when grouped
-- Crossfading and metadata is supported
-- A source can be specified to switch to when a player leaves a group
-- MA will show metadata if the player is playing non-MA content
-- Source selection of the MusicCast device is possible
+- MusicCast 设备可被 Music Assistant 自动检测
+- MusicCast 设备分组后播放时可保持完美同步
+- 支持交叉淡入淡出（crossfading）和元数据
+- 可指定播放器退出群组时切换到的音源
+- 播放器播放非 MA 内容时，MA 会显示元数据
+- 可以选择 MusicCast 设备的音源
 
-## Configuration
+## 配置
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `MusicCast`.
-2. Your MusicCast devices will be discovered automatically and will appear in the player list, usually within a minute.
+1. 在 Music Assistant 中，前往 **设置 → 播放器提供程序**，点击 **添加播放器提供程序**，然后选择 `MusicCast`。
+2. 您的 MusicCast 设备将被自动发现，并通常会在一分钟内出现在播放器列表中。
 
-If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+如果设备未出现，请按照[发现检查清单](/faq/networking/#checklist-my-players-are-not-being-discovered)进行排查。
 
-## Settings
+## 设置
 
-In addition to the [Individual Player Settings](/settings/individual-player/) and the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols), the MusicCast provider has some unique settings in the `Output Protocol(s)` section for the player:
+除了[单个播放器设置](/settings/individual-player/)和[大多数协议共享的设置](/settings/individual-player/#settings-shared-by-most-protocols)之外，MusicCast 提供程序还在播放器的 `Output Protocol(s)` 部分中提供了一些独有的设置：
 
-- <b>Disable zone handling completely.</b> This disables the automatic source change if playback is switched to another source. It is recommended to first try using the provider with this toggle disabled. However, should issues be encountered during playback then toggle this on, which makes the other two zone settings below inactive. This setting is only available on multi-zone players
-- <b>Switch to this non-net source when leaving a group.</b> Players have to switch inputs when leaving a group. This option defines which input is selected. It must be an input that does not need a network connection, and it is recommended to select a source that is unused so that unexpected sound output does not occur upon input switching. This setting is only available on multi-zone players
-- <b>Turn off the zone when it leaves a group.</b> Toggle defines the power behaviour when the player leaves a group. This setting is only available on multi-zone players
-- <b>Auto-advance queue when the device stops at end of track.</b> On by default. Yamaha receivers occasionally drop the queued next track and stop playing, and this lets Music Assistant notice that and move the queue on. The side effect is that stopping playback yourself in the last few seconds of a track also advances to the next item, so turn it off if you would rather the device's own stop always be respected
-- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit. Set these to match what your device handles
+- <b>完全禁用区域（zone）处理。</b>当播放切换到其他音源时，此选项会禁用自动音源切换。建议先在禁用此开关的情况下试用提供程序。但是，如果播放过程中遇到问题，请开启此开关，这会使下方另外两个区域设置失效。此设置仅适用于多区域播放器
+- <b>退出群组时切换到此非网络音源。</b>播放器退出群组时必须切换输入。此选项定义选择哪个输入。它必须是不需要网络连接的输入，并且建议选择一个未使用的音源，以免切换输入时产生意外的声音输出。此设置仅适用于多区域播放器
+- <b>退出群组时关闭该区域。</b>此开关定义播放器退出群组时的电源行为。此设置仅适用于多区域播放器
+- <b>设备在曲目末尾停止时自动推进队列。</b>默认开启。Yamaha 接收机偶尔会丢弃队列中的下一首曲目并停止播放，该选项可让 Music Assistant 检测到这种情况并继续推进队列。副作用是，如果您在曲目最后几秒自行停止播放，也会推进到下一项，因此如果您希望始终遵循设备自身的停止操作，请将其关闭
+- <b>[此播放器支持的采样率](/settings/individual-player/#sample-rates-supported-by-this-player)。</b>采样率最高可达 192 kHz / 24 位。请将其设置为与您的设备所支持的规格相匹配
 
-## Player Options
+## 播放器选项
 
-MusicCast has support for [player options](/player-support/#player-options). Refer to the MA UI and the device's manual for information about the options available
+MusicCast 支持[播放器选项](/player-support/#player-options)。有关可用选项的信息，请参阅 MA 界面和设备的使用手册
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- Supported devices are those from circa 2015 and later
-- If a device has multiple zones (i.e. main + max 3 others) only one of these zones can be streamed to. However, if streaming to main, the other zones can be joined to that player. This is a limitation of the Yamaha devices. Only one network connection is possible at a time and therefore only one network input can be active at a time. This means a different non-network source must be selected by MA when the device leaves a group. It also means that attempting to use the `Select Source` option to set two different network sources will result in unexpected behaviour 
-- The main zone cannot be successfuly joined to a non-main zone. Attempting to do so will result in unexpected behaviour
-- When grouping multiple devices which have multiple zones and it is desired that two or more of the device's zones will be joined, the main zone of the joining device must be added first and then the non-main zones can be joined. If only a single zone of another device is to be grouped then that can be done at any time
-- The HA integration and MA integration can be used alongside each other but is not advisable to do so as duplicate player entities will get created unnecessarily
-- If the receiver switches input source while skipping, then try disabling the zone handling in the player settings
+- 支持的设备为 2015 年左右及之后的产品
+- 如果设备具有多个区域（即主区域 + 最多 3 个其他区域），则只能向其中一个区域进行流式播放。不过，如果是向主区域播放，其他区域可以加入该播放器。这是 Yamaha 设备的局限性。同一时间只能建立一个网络连接，因此同一时间只能有一个网络输入处于活动状态。这意味着当设备退出群组时，MA 必须选择另一个非网络音源。这也意味着，尝试使用 `Select Source` 选项设置两个不同的网络音源会导致意外行为
+- 主区域无法成功加入非主区域。尝试这样做会导致意外行为
+- 在将多个具有多区域功能的设备分组，且希望将某台设备的两个或更多区域加入时，必须先添加该设备的主区域，然后才能加入其非主区域。如果只需将另一台设备的单个区域加入分组，则可以随时进行
+- HA 集成（integration）和 MA 集成可以同时使用，但不建议这样做，因为会不必要地创建重复的播放器实体
+- 如果接收机在跳过曲目时切换了输入音源，请尝试在播放器设置中禁用区域处理

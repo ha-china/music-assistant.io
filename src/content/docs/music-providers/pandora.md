@@ -2,17 +2,16 @@
 title: "Pandora"
 ---
 
-
 # Pandora <img src="/assets/icons/pandora.png" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for personal radio stations from [Pandora](https://www.pandora.com/). This component is contributed and maintained by [Gavin](https://github.com/ozgav)
+Music Assistant 支持来自 [Pandora](https://www.pandora.com/) 的个人电台。该组件由 [Gavin](https://github.com/ozgav) 贡献并维护
 
-Pandora provides personalized radio stations that play an endless stream of songs based on the user's musical preferences.
+Pandora 提供个性化电台，可根据用户的音乐偏好播放源源不断的歌曲。
 
-Pandora is officially available in the United States only. This source brings the stations from your account into Music Assistant.
+Pandora 官方仅在美国可用。此音源会将您账户中的电台引入 Music Assistant。
 
 > [!NOTE]
-> Both the free and paid subscription options are supported
+> 免费和付费订阅选项均受支持
 
 ## Features
 
@@ -30,21 +29,21 @@ Pandora is officially available in the United States only. This source brings th
 | Maximum Stream Quality | MP3 192kbps |
 | Login Method | Password |
 
-## Configuration:
-- In the configuration, enter the user name and password
-- Optionally select your music quality preference if you have a paid account
-- Click the save button.
+## 配置：
+- 在配置中输入用户名和密码
+- 如果您有付费账户，可选择您的音乐音质偏好
+- 点击保存按钮。
 
-## Settings
-- <b>Username and Password.</b> Account credentials for your Pandora account
-- <b>Audio quality.</b> Select preference between standard (AAC 64kbps) and high quality (MP3 192kbps) audio. A paid account is required for high quality audio, free accounts will use standard quality audio despite this setting.
-- <b>Take Over Stream.</b> Request that Pandora disconnect any other devices that are streaming and instead allow streaming via MA (See [Notes](#known-issues--notes) for more information)
-- [Standard sync options](../#library-import-control) are available
+## 设置
+- <b>用户名和密码。</b>您的 Pandora 账户凭据
+- <b>音质。</b>在标准音质（AAC 64kbps）和高品质音质（MP3 192kbps）之间选择偏好。高品质音质需要付费账户，免费账户尽管设置了此选项，仍将使用标准音质音频。
+- <b>接管流播放。</b>请求 Pandora 断开正在播放流的其他设备，改为允许通过 MA 进行流播放（更多信息请参见[说明](#known-issues--notes)）
+- 可使用[标准同步选项](../#library-import-control)
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- This source is limited to Radio Stations only and does not support search or station creation. This constraint is due to Pandora's API structure
-- Users must continue to create stations on the official Pandora app/website, and those stations will then automatically appear in MA after a sync
-- Stream metadata is provided although occassionally there is missing album art 
-- As with all radio stations in MA, tracks cannot be skipped
-- Pandora only supports streaming to one device at a time per account. This provider will automatically take over the stream when initially starting the stream but it will not automatically take over the stream if it receives a concurrent-streaming error from pandora at any point other than the initial start of playback. A button in the provider configuration can be used to issue a takeover request if needed.
+- 此音源仅限于电台，不支持搜索或电台创建。此限制是由于 Pandora 的 API 结构所致
+- 用户必须继续在官方 Pandora 应用/网站上创建电台，同步之后这些电台将自动出现在 MA 中
+- 提供流元数据，但偶尔会缺少专辑封面
+- 与 MA 中的所有电台一样，曲目无法跳过
+- Pandora 每个账户一次仅支持向一台设备进行流播放。此提供程序在最初开始播放流时会自动接管流，但如果在初始播放开始之后的任何时刻收到来自 Pandora 的并发流播放错误，则不会自动接管流。如有需要，可以使用提供程序配置中的按钮发出接管请求。

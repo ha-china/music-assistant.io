@@ -4,39 +4,25 @@ title: "Spotify"
 
 # Spotify <img src="/assets/icons/spotify-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has full support for Spotify media listing and playback.
+Music Assistant 完全支持 Spotify 媒体浏览和播放。
 
-Spotify is the largest of the music streaming services, with a catalogue of around 100 million tracks alongside podcasts and audiobooks.
+Spotify 是规模最大的音乐流媒体服务，拥有约 1 亿首曲目的曲库，同时还提供播客和有声读物。
 
-Connecting your account puts your saved music and playlists into Music Assistant and makes the catalogue searchable.
-
-> [!NOTE]
-> A Spotify Premium account is required, including Duo and Family. Free accounts will not work.
-
-## Playback engines
-
-Spotify audio can be played through two different engines. You choose one while adding the provider and can switch later by re-running the setup.
-
-**Spotify Soloist (official)** — Spotify's own playback engine for devices without a screen. It works with **every** Premium account, including accounts created since December 2024, and can deliver lossless audio. Setting it up needs a personal API key from the Spotify developer website and a one-off pairing with your Spotify app; the setup guides you through both.
+连接你的账户后，你保存的音乐和播放列表会被导入 Music Assistant，并且曲库可供搜索。
 
 > [!NOTE]
-> Music Assistant may not distribute Soloist as part of its own installation, so it is downloaded from Spotify's servers on your behalf (after your consent in the setup) and updated automatically. Spotify's terms do not clearly allow using Soloist this way — using it through Music Assistant is at your own risk.
+> 需要 Spotify Premium 账户（包括 Duo 和 Family 套餐）。免费账户无法使用。
 
-**librespot (community)** — a community-built, reverse-engineered engine, and the default. The setup is a bit easier and it starts playing quicker, but it is intended for Premium accounts created **before December 2024** and may stop working whenever Spotify changes things on their end.
+## 播放引擎
 
-### Which one should I pick?
+Spotify 音频可以通过两种不同的引擎播放。你在添加该提供商（provider）时选择其中一种，之后可以重新运行设置来切换。
 
-|  | Spotify Soloist | librespot |
-|:--|:--|:--|
-| Accounts created since December 2024 | Works | Usually will not play |
-| Best audio quality | Lossless, up to 24-bit/44.1 kHz | Ogg Vorbis 320kbps |
-| Setup | Terms, an API key and pairing | A one-time playback approval |
-| Starting a queue, and seeking | Takes a little longer | Quick |
-| Playing on two players at once | One at a time, per Spotify account | Supported |
+**Spotify Soloist（官方）** — Spotify 自家的播放引擎，适用于无屏幕设备。它适用于**所有** Premium 账户，包括 2024 年 12 月及以后创建的账户，并可提供无损音频。设置它需要来自 Spotify 开发者网站的个人 API 密钥，并与你的 Spotify 应用进行一次性配对；设置流程会引导你完成这两步。
 
-With Soloist, the **first** song of a queue takes a little longer to start than with librespot, and so does seeking. Songs after it follow on without a break — though a podcast episode or an audiobook chapter start fresh.
+> [!NOTE]
+> Music Assistant 可能不会将 Soloist 作为其自身安装的一部分进行分发，因此它会在你的名义下（经你在设置中同意后）从 Spotify 的服务器下载并自动更新。Spotify 的条款并未明确允许以这种方式使用 Soloist —— 通过 Music Assistant 使用它需自行承担风险。
 
-librespot is preselected for a new setup, and stays selected for setups added before this choice existed.
+**librespot（社区）** — 由社区构建的逆向工程引擎，也是默认选项。它的设置更简单一些，开始播放也更快，但它仅适用于**2024 年 12 月之前**创建的 Premium 账户，而且只要 Spotify 在其端上做出更改，它就可能随时停止工作。
 
 ## Features
 
@@ -63,88 +49,113 @@ librespot is preselected for a new setup, and stays selected for setups added be
 - Marking an item as a favourite in Music Assistant will also add it to the MA Library and "Your Library" in Spotify
 - Multiple Spotify accounts can be added. All playlists from all accounts will be shown. If a playlist is selected for playback the source Spotify account will be used
 
-## Configuration
+## 功能
 
-### Basic setup
+|           |                     |
+|:-----------------------|:---------------------:|
+| 免费订阅 | 否 |
+| 自托管本地媒体 | 否 |
+| 支持的媒体类型 | 艺术家、专辑、曲目、播放列表、播客、有声读物 |
+| [推荐](/ui/#view---discover)支持 | 否 |
+| 歌词支持 | 否 |
+| [无限混音（Endless Mix）](/ui/#track-menu) | 是 |
+| 艺术家热门曲目支持                       |            是                     |
+| 相似艺术家支持                         |            否                      |
+| 相似曲目支持                          |            是                      |
+| 最高流媒体音质 | 无损，最高 24-bit/44.1 kHz（Soloist） |
+| 登录方式 | OAuth |
 
-1. Add the Spotify source via **Settings → Music Sources → Add a music source**.
-2. Follow the on screen instructions which should take you through the initial flow shown here
+### 其他
+
+- 可以搜索 Spotify 曲库
+- 浏览（Browse）视图中提供"新发行"（New Releases）和"流派与心情"（Genres and Moods）文件夹
+- 你 Spotify 资料库中的项目（包括 Liked Songs 播放列表）将被添加到 Music Assistant 的资料库（Library）中
+- 将 Spotify 中的项目添加到 Music Assistant 资料库时，也会同时将其添加到 Spotify 的"你的资料库"（Your Library）中
+- 在 Music Assistant 中将某个项目标记为收藏，也会将其添加到 MA 资料库以及 Spotify 的"你的资料库"中
+- 可以添加多个 Spotify 账户。所有账户的播放列表都会显示。如果选择某个播放列表进行播放，则会使用其所属的源 Spotify 账户
+
+## 配置
+
+### 基本设置
+
+1. 通过**设置 → 音乐源 → 添加音乐源**添加 Spotify 音乐源。
+2. 按照屏幕上的说明操作，它会引导你完成如下所示的初始流程
 <a href="/assets/screenshots/spotify-phase1.png"><img src="/assets/screenshots/spotify-phase1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
-3. Choose how Spotify audio should be played. `librespot (community)` continues with the one-time playback approval below; `Spotify Soloist (official)` continues with [its own steps](#setting-up-spotify-soloist) instead.
+3. 选择 Spotify 音频的播放方式。`librespot (community)` 将继续执行下文的一次性播放授权；`Spotify Soloist (official)` 则继续执行[其专属步骤](#setting-up-spotify-soloist)。
 
-### librespot: the one-time playback approval
+### librespot：一次性播放授权
 
-Playing audio needs a separate approval from Spotify, on top of the sign-in you just completed.
+播放音频除了需要你刚完成的登录之外，还需要 Spotify 的单独授权。
 
-**Use the Spotify app for this.** It is a couple of taps and it is the smoother of the two routes. The web browser alternative is there for networks where your phone cannot reach the Music Assistant server, and it is more fiddly.
+**请使用 Spotify 应用完成此操作。**只需点按几下，是两种方式中更顺畅的一种。网页浏览器方式适用于你的手机无法访问 Music Assistant 服务器的网络环境，但操作更为繁琐。
 
 <details>
-<summary>I clicked - Use the Spotify App (recommended)</summary>
+<summary>我点击了 - 使用 Spotify 应用（推荐）</summary>
 <div>
 
 > [!NOTE]
-> Your mobile device must be on the same network as the MA server for this to work
+> 你的移动设备必须与 MA 服务器处于同一网络，此方式才能正常工作
 
 <a href="/assets/screenshots/spotify-phase2a.png"><img src="/assets/screenshots/spotify-phase2a.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
 
 <details>
-<summary>I clicked - Use a web browser instead (only if the app route will not work)</summary>
+<summary>我点击了 - 改用网页浏览器（仅当应用方式无法使用时）</summary>
 <div>
 
 > [!NOTE]
-> The webpage error is shown in step 3 is normal. You then need to copy the entire URL from that browser tab and paste it into the dialog shown in the MA UI
+> 第 3 步中显示的网页错误属于正常现象。接下来，你需要从该浏览器标签页复制完整的 URL，并粘贴到 MA 界面所显示的对话框中
 
 <a href="/assets/screenshots/spotify-phase2b.png"><img src="/assets/screenshots/spotify-phase2b.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
 
-Spotify will now work, but consider the optional step further below or click `Finish` and then `Done`.
+现在 Spotify 已经可以使用了，但可以考虑下文的可选步骤，或者点击 `Finish`，然后点击 `Done`。
 
-### Setting up Spotify Soloist
+### 设置 Spotify Soloist
 
-Choosing Soloist replaces the playback approval above with three steps of its own:
+选择 Soloist 后，上文中的播放授权将被以下三个专属步骤取代：
 
-1. **Read and accept the terms.** Soloist is downloaded from Spotify's servers and run on your behalf, and Spotify's terms do not clearly allow this. You have to agree before the setup continues.
-2. **Create your API key.** Open the <a href="https://developer.spotify.com/dashboard/soloist" target="_blank" rel="noopener noreferrer">Soloist API key page</a>, sign in, accept Spotify's terms if asked, choose `Generate API Key` and paste the key into Music Assistant. Creating the key needs a Premium account. Music Assistant stores it encrypted and only shares it with the Soloist app — your Spotify password is never asked for.
-3. **Pair with your Spotify app.** Music Assistant advertises itself as `Music Assistant Pairing`. In the Spotify app, start playing anything, tap the speaker icon and choose `Music Assistant Pairing`. The setup then continues by itself and you can switch back to your usual speaker straight away.
+1. **阅读并接受条款。**Soloist 会从 Spotify 的服务器下载并以你的名义运行，而 Spotify 的条款并未明确允许这样做。你必须先同意，设置才能继续。
+2. **创建你的 API 密钥。**打开 <a href="https://developer.spotify.com/dashboard/soloist" target="_blank" rel="noopener noreferrer">Soloist API 密钥页面</a>，登录，如被要求则接受 Spotify 的条款，选择 `Generate API Key`，然后将密钥粘贴到 Music Assistant 中。创建密钥需要 Premium 账户。Music Assistant 会加密存储该密钥，并且只与 Soloist 应用共享 —— 绝不会要求你提供 Spotify 密码。
+3. **与你的 Spotify 应用配对。**Music Assistant 会以 `Music Assistant Pairing` 的名称对外显示。在 Spotify 应用中，随便播放一些内容，点击扬声器图标并选择 `Music Assistant Pairing`。之后设置会自动继续进行，你可以立即切换回平时使用的扬声器。
 
 > [!IMPORTANT]
-> Pair from a Spotify app signed in to the **same account** you connected in the first step, so your music library and the audio come from the same place. Music Assistant checks this and will ask you to pair again if the accounts do not match.
+> 请从登录了与你第一步中所连接**相同账户**的 Spotify 应用进行配对，这样你的音乐库和音频才会来自同一个地方。Music Assistant 会对此进行检查，如果账户不匹配，会要求你重新配对。
 
 > [!NOTE]
-> Not seeing `Music Assistant Pairing`? Make sure the device running the Spotify app is on the same network as the Music Assistant server.
+> 看不到 `Music Assistant Pairing`？请确保运行 Spotify 应用的设备与 Music Assistant 服务器处于同一网络。
 
-### Optional: add a personal Client ID
+### 可选：添加个人 Client ID
 
-Music Assistant shares one allowance from Spotify with everybody else using it, and Spotify limits how fast that allowance can be used. Registering your own free Client ID gives you an allowance of your own, which may make everything quicker but it does have some potential problems detailed in the known issues section.
+Music Assistant 与所有其他用户共享来自 Spotify 的同一个配额，而 Spotify 会限制该配额的使用速度。注册你自己的免费 Client ID 可以让你拥有独立配额，这可能会让一切更快，但也存在一些潜在问题，详见已知问题部分。
 
-1. Complete the basic setup above, then check `Use my own Spotify developer key (advanced, optional)` and click finish.
-2. A new dialog will open where you must add your own Client ID. 
-3. Create an app on Spotify's <a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">developer dashboard</a>. When filling in the app details, the only field that matters is the `Redirect URL`. Set it exactly to `https://music-assistant.io/callback`.
-4. Enter the Client ID from your new app in the dialog you saw after completing step 2, then click `Finish` and then `Done`.
+1. 完成上方的基本设置，然后勾选 `Use my own Spotify developer key (advanced, optional)` 并点击完成。
+2. 将会打开一个新的对话框，你需要在其中添加自己的 Client ID。 
+3. 在 Spotify 的<a href="https://developer.spotify.com/documentation/web-api/concepts/apps" target="_blank" rel="noopener noreferrer">开发者控制台</a>上创建一个应用。填写应用详情时，唯一重要的字段是 `Redirect URL`。请将其精确设置为 `https://music-assistant.io/callback`。
+4. 在完成第 2 步后看到的对话框中输入你新应用的 Client ID，然后点击 `Finish`，再点击 `Done`。
 
-### Settings
+### 设置
 
-Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+请参阅[资料库导入控制](/music-providers/#library-import-control)设置。
 
-Two extra settings appear when Spotify Soloist is the playback engine:
+当播放引擎为 Spotify Soloist 时，会出现两个额外设置：
 
-- **Streaming quality** — the highest quality Spotify is asked to stream, defaulting to `Lossless`. This is a ceiling rather than a promise: Spotify still picks something lower on a slow connection, when a song has no file at that quality, or when your plan does not include it. Podcasts and audiobooks are always Ogg Vorbis. Takes effect the next time playback starts.
-- **Enable Spotify's volume normalization** — on by default. Spotify evens out the loudness between songs using values computed for its whole catalogue, and Music Assistant then leaves the level alone instead of correcting it twice, which also makes songs start noticeably quicker. Turn it off to have Music Assistant do it instead, the same way it does for every other music source. Either way it only applies while volume normalization is enabled for the queue.
+- **流媒体音质** — 要求 Spotify 使用的最高流式传输音质，默认为 `Lossless`。这只是上限而非保证：当网络连接较慢、歌曲没有该音质的文件，或者你的订阅套餐不包含该音质时，Spotify 仍会选择较低的音质。播客和有声读物始终为 Ogg Vorbis。将在下一次播放开始时生效。
+- **启用 Spotify 音量标准化** — 默认开启。Spotify 会使用针对其整个曲库计算出的数值来均衡歌曲之间的响度，Music Assistant 随后将不再对音量进行调整，以避免二次校正，这也使歌曲开始播放时明显更快。关闭它则改由 Music Assistant 执行，方式与对所有其他音乐源相同。无论哪种方式，都仅在队列启用了音量标准化时生效。
 
-Crossfade is not set here — enable it for the player as usual, and it works the same as for every other music source.
+此处不设置交叉淡入淡出（crossfade）—— 照常为播放器启用即可，其工作方式与对所有其他音乐源相同。
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- Premium is required, including Duo and Family. Free accounts will not work
-- Accounts created around December 2024 and later generally cannot play through librespot, and some older accounts are affected too. If playback fails and you see `Key Error` messages in the log, that is the symptom — choose Spotify Soloist instead
-- Spotify Soloist cannot be used on hosts with Docker bridge networks  
-- Each Spotify Soloist account plays one thing at a time. Starting Spotify on a second player asks you to stop the first one; a second Spotify account added as its own source has a session of its own
-- While Spotify Soloist is playing, Music Assistant shows up in your Spotify app as a device called `Music Assistant Playback`. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
-- With Spotify Soloist, starting a queue or seeking takes a little longer than with librespot
-- When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
-- Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
-- Spotify does not tell Music Assistant what genre anything is
+- 需要 Premium 订阅，包括 Duo 和 Family 套餐。免费账户无法使用
+- 2024 年 12 月左右及之后创建的账户通常无法通过 librespot 播放，一些较旧的账户也会受到影响。如果播放失败且日志中出现 `Key Error` 消息，那就是该问题的症状 —— 请改用 Spotify Soloist
+- Spotify Soloist 无法在带有 Docker 桥接（bridge）网络的主机上使用  
+- 每个 Spotify Soloist 账户一次只能播放一个内容。在第二个播放器上启动 Spotify 时会要求你停止第一个播放器；将第二个 Spotify 账户作为单独的音乐源添加，则它会拥有自己的会话
+- 在 Spotify Soloist 播放期间，Music Assistant 会在你的 Spotify 应用中显示为一个名为 `Music Assistant Playback` 的设备。在该设备上暂停或跳过曲目会干扰播放，因此请使用 Music Assistant 自带的控制功能
+- 使用 Spotify Soloist 时，启动队列或进度跳转比使用 librespot 稍慢
+- 首次保存该音乐源时，Music Assistant 会检查你的账户是否包含有声读物。如果包含，下次打开设置时会出现有声读物相关选项
+- Spotify 不会向 Music Assistant 提供任何推荐内容，因此"发现"（Discover）视图中不会出现任何来自 Spotify 的内容
+- Spotify 不会告知 Music Assistant 任何内容的流派信息

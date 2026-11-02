@@ -4,34 +4,34 @@ title: "Bluesound"
 
 # Bluesound <img src="/assets/icons/bluesound-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for <a href="https://www.bluesound.com/" target="_blank" rel="noopener noreferrer">Bluesound</a> (BlueOS) based devices. This component is contributed and maintained by <a href="https://github.com/Cyanogenbot" target="_blank" rel="noopener noreferrer">Cyanogenbot</a>.
+Music Assistant 支持基于 <a href="https://www.bluesound.com/" target="_blank" rel="noopener noreferrer">Bluesound</a>（BlueOS）的设备。该组件由 <a href="https://github.com/Cyanogenbot" target="_blank" rel="noopener noreferrer">Cyanogenbot</a> 贡献并维护。
 
-## Features
+## 功能
 
-- Bluesound devices are auto detected by Music Assistant
+- Bluesound 设备会被 Music Assistant 自动检测
 
-## Configuration
+## 配置
 
-1. In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Bluesound`.
-2. Your Bluesound devices will be discovered automatically and will appear in the player list, usually within a minute.
+1. 在 Music Assistant 中，前往 **设置 → 播放器提供程序（Player Providers）**，点击 **添加播放器提供程序（Add a player provider）** 并选择 `Bluesound`。
+2. 你的 Bluesound 设备将被自动发现并显示在播放器列表中，通常在一分钟内。
 
-If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+如果设备没有出现，请按照[发现检查清单](/faq/networking/#checklist-my-players-are-not-being-discovered)进行排查。
 
-## Settings
+## 设置
 
-Refer to the [Player Provider Settings](/settings/player-provider/) when setting up this provider as it has no unique settings at the provider level.
+由于该提供程序在提供程序级别没有独有的设置，因此在设置此提供程序时，请参阅[播放器提供程序设置](/settings/player-provider/)。
 
-Bluesound players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). These differ on BluOS:
+Bluesound 播放器使用标准的[单个播放器设置（Individual Player Settings）](/settings/individual-player/)，包括[大多数协议共享的设置](/settings/individual-player/#settings-shared-by-most-protocols)。在 BluOS 上这些设置有所不同：
 
-- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Everything up to 192 kHz / 24 bit is selected by default, rather than only 44.1 kHz / 16 bit and 48 kHz / 16 bit. Remove the higher ones if your player cannot manage them
-- <b>[Try to inject metadata into stream (ICY)](/settings/individual-player/#try-to-inject-metadata-into-stream-icy).</b> Defaults to Profile 2 - full info, rather than being off as it is elsewhere
+- <b>[此播放器支持的采样率](/settings/individual-player/#sample-rates-supported-by-this-player)。</b>默认选中了所有高达 192 kHz / 24 bit 的采样率，而不仅仅是 44.1 kHz / 16 bit 和 48 kHz / 16 bit。如果你的播放器无法处理更高的采样率，请将其移除
+- <b>[尝试将元数据注入到流中（ICY）](/settings/individual-player/#try-to-inject-metadata-into-stream-icy)。</b>默认为 Profile 2 - 完整信息，而不是像其他地方那样默认关闭
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- Alternative inputs might not be detected
-- Album covers are not visible in the Bluesound app or on devices that have a screen due to limitations in the API
+- 备用输入源可能无法被检测到
+- 由于 API 的限制，专辑封面在 Bluesound 应用中或带有屏幕的设备上不可见
   
-## Not Yet Supported
+## 尚不支持
 
-- Announcements
-- Synchronised playback
+- 公告
+- 同步播放

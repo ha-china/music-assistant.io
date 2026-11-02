@@ -1,32 +1,33 @@
 ---
+import { withBase } from "../../lib/base";
 import Logo from "./ui/Logo.astro";
 
 const columns = [
   {
-    title: "Product",
+    title: "产品",
     links: [
-      { href: "/get-started/", label: "Get started" },
-      { href: "/music-providers/", label: "Music sources" },
-      { href: "/player-support/", label: "Players" },
-      { href: "/plugins/", label: "Plugins" },
+      { href: "/get-started/", label: "快速开始" },
+      { href: "/music-providers/", label: "音乐源" },
+      { href: "/player-support/", label: "播放器" },
+      { href: "/plugins/", label: "插件" },
     ],
   },
   {
-    title: "Learn",
+    title: "学习",
     links: [
-      { href: "/documentation/", label: "Documentation" },
-      { href: "/blog/", label: "News" },
-      { href: "/faq/troubleshooting/", label: "Troubleshooting" },
-      { href: "/support/", label: "Support" },
+      { href: "/documentation/", label: "文档" },
+      { href: "/blog/", label: "新闻" },
+      { href: "/faq/troubleshooting/", label: "故障排查" },
+      { href: "/support/", label: "支持" },
     ],
   },
   {
-    title: "Community",
+    title: "社区",
     links: [
       { href: "https://github.com/music-assistant", label: "GitHub" },
       { href: "https://discord.gg/kaVm8hGpne", label: "Discord" },
-      { href: "/help/", label: "Help or donate" },
-      { href: "/help/lokalise/", label: "Translate" },
+      { href: "/help/", label: "帮助 / 捐赠" },
+      { href: "/help/lokalise/", label: "参与翻译" },
     ],
   },
 ];
@@ -37,12 +38,11 @@ const isExternal = (href: string) => href.startsWith("http");
   <div class="container">
     <div class="top">
       <div class="about">
-        <a href="/" class="home" aria-label="Music Assistant home">
+        <a href={withBase("/")} class="home" aria-label="Music Assistant 首页">
           <Logo />
         </a>
         <p>
-          Your music. Your way. Free and open source, and a project of the Open
-          Home Foundation.
+          你的音乐，由你做主。免费开源，Open Home Foundation 旗下项目。
         </p>
         <a
           class="ohf"

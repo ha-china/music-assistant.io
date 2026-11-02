@@ -34,12 +34,12 @@
     const readMore = document.createElement("a");
     readMore.className = "read-more";
     readMore.href = href;
-    readMore.append(document.createTextNode("Read more"));
+    readMore.append(document.createTextNode("阅读全文"));
     readMore.insertAdjacentHTML("beforeend", arrowIconSvg);
 
     // The link text repeats on every card, so name the post for screen readers.
     const title = link.textContent?.trim();
-    if (title) readMore.setAttribute("aria-label", `Read more: ${title}`);
+    if (title) readMore.setAttribute("aria-label", `阅读全文：${title}`);
 
     // After the excerpt where one exists, otherwise straight after the header.
     const excerpt = article.querySelector(":scope > .sl-markdown-content");

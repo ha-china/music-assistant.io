@@ -1,211 +1,211 @@
 ---
-title: User Interface
-description: A Walkthrough of the Music Assistant User Interface
+title: 用户界面
+description: Music Assistant 用户界面导览
 ---
 
-# User Interface
+# 用户界面
 
-## Main Menu
+## 主菜单
 
 ![image](/assets/screenshots/UI-main-menu.png)
 
-This menu's appearance can be configured by clicking on the ⋮ in the bottom right and selecting `Edit menu`. Items can then be re-ordered, shown or hidden and section titles renamed.
+通过点击右下角的 ⋮ 并选择 `Edit menu`（编辑菜单），可以配置此菜单的外观。随后可以对项目重新排序、显示或隐藏，并重命名分区标题。
 
-In [**Settings → User Interface**](/settings/user-interface/#display) there are Display options which affect the UI. On a desktop, the menu can be placed vertically on the left or right or horizontally at the bottom (by selecting "Force mobile layout"). In the mobile layout, Menu, Discover, Search, and Players will be seen. 
+在 [**设置 → 用户界面**](/settings/user-interface/#display) 中有一些会影响 UI 的显示（Display）选项。在桌面端，菜单可以垂直放置在左侧或右侧，也可以水平放置在底部（通过选择“强制移动端布局”）。在移动端布局中，将显示菜单（Menu）、发现（Discover）、搜索（Search）和播放器（Players）。
 
-### Sidebar Shortcuts
+### 侧边栏快捷方式
 
-Use shortcuts to pin frequently used library items to the main menu for quick access.
+使用快捷方式可以将常用的媒体库（library）项目固定到主菜单，以便快速访问。
 
-- Add a shortcut from an item's context menu (⋮ menu, right click, or long press) by selecting **Add to shortcuts**.
-- Remove it from the same menu with **Remove from shortcuts**.
-- Shortcuts are stored per user account.
-- If a pinned item is updated (for example renamed), the shortcut is updated automatically.
-- If a pinned item is deleted, it is removed from shortcuts automatically.
+- 通过项目的上下文菜单（⋮ 菜单、右键点击或长按）选择 **添加到快捷方式（Add to shortcuts）** 来添加快捷方式。
+- 在同一菜单中选择 **从快捷方式中移除（Remove from shortcuts）** 即可将其移除。
+- 快捷方式按用户账户分别存储。
+- 如果被固定的项目被更新（例如重命名），快捷方式会自动更新。
+- 如果被固定的项目被删除，它会自动从快捷方式中移除。
 
-## Global Search
+## 全局搜索
 [![image](/assets/screenshots/global-search.png)](/assets/screenshots/global-search.png)
 
-Searches can be done via any combination of words or partial words and also via a URL to a source such as `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu` 
+可以使用任意词语或部分词语的组合进行搜索，也可以通过指向某个来源的 URL 进行搜索，例如 `https://open.spotify.com/album/0BwWUstDMUbgq2NYONRqlu`
 
-Initially, the view defaults to ALL which is limited to a maximum of 8 items in the eight categories of Tracks, Artists, Albums, Playlists, Podcasts, Audiobooks, Radio, and Genres. Which media types are shown can be selected with the filter. Similarly, the providers used for the search can also be filtered.
+最初，视图默认为 ALL（全部），在曲目（Tracks）、艺术家（Artists）、专辑（Albums）、播放列表（Playlists）、播客（Podcasts）、有声书（Audiobooks）、电台（Radio）和流派（Genres）这八个类别中，每个类别最多显示 8 个项目。可以通过筛选器选择显示哪些媒体类型。类似地，也可以对搜索所使用的提供商（provider）进行筛选。
 
-Selecting an individual media type will then show a maximum of 50 items per provider. Context sensitive menus are available for each. If the item desired is not found then narrow the search term.
+选择单个媒体类型后，每个提供商最多显示 50 个项目。每个项目均有上下文相关菜单可用。如果未找到所需的项目，请缩小搜索词的范围。
 
-## Player Bar
+## 播放器栏
 [![image](/assets/screenshots/UI-playercontrols-bar.png)](/assets/screenshots/UI-playercontrols-bar.png)
 
-The [Audio Pipeline](/audiopipeline/) selectable label shows, via a colored icon and two letters, the sound quality of the audio output: LQ (Low Quality), SQ (Standard Quality), HQ (High Quality) or HR (Hi-Res). Select the label to see the full path the audio takes; what each quality level means is explained on the [Audio Pipeline](/audiopipeline/) page. For groups, where the quality varies between players, the highest quality available will be indicated.
+[音频管线（Audio Pipeline）](/audiopipeline/)可选标签通过彩色图标和两个字母来指示音频输出的音质：LQ（低音质）、SQ（标准音质）、HQ（高音质）或 HR（Hi-Res，高解析音质）。选择该标签可以查看音频所经过的完整路径；各音质等级的含义在[音频管线](/audiopipeline/)页面中有说明。对于组而言，由于各播放器的音质可能不同，将指示其中可用的最高音质。
 
-The overflow menu holds a number of useful options. Of note, for podcasts and audiobooks, there is a `Change playback speed` option which when selected will open a dialog with five preset speeds and a slider. The slider ranges from 0.5x to 2.0x and a preset is available for a boosted speed of 3.0x.
+溢出菜单中包含许多实用的选项。值得注意的是，对于播客和有声书，有一个 `Change playback speed`（更改播放速度）选项，选中后会打开一个对话框，其中包含五个预设速度和一个滑块。滑块范围为 0.5x 到 2.0x，另有一个 3.0x 倍速的预设可用。
 
-## Now Playing View
+## 正在播放视图
 [![image](/assets/screenshots/now-playing-view.png)](/assets/screenshots/now-playing-view.png)
 
-This view will change depending on screen width. With wider displays you will be able to see the track that is playing (and associated information) as well as the queue. With narrow displays you need to use the toggle in the bottom right to switch between the currently playing information and the queue. Adjustments to the queue can be done with the ⋮ menu on the right. This view can be cast to compatible devices using the cast icon in the top right.
+此视图会随屏幕宽度而变化。在较宽的显示屏上，您可以看到正在播放的曲目（及相关信息）以及队列。在较窄的显示屏上，您需要使用右下角的切换按钮在当前播放信息和队列之间进行切换。可以通过右侧的 ⋮ 菜单对队列进行调整。可以使用右上角的投屏图标将此视图投屏到兼容设备上。
 
-The [Audio Pipeline](/audiopipeline/) selectable label is described above in the [Player Bar](#player-bar) section.
+[音频管线](/audiopipeline/)可选标签已在上文[播放器栏](#player-bar)部分中介绍。
 
-You can also access the [Now Playing view directly via URL](/faq/how-to/#open-the-ui-with-the-now-playing-view-showing)
+您也可以[通过 URL 直接访问正在播放视图](/faq/how-to/#open-the-ui-with-the-now-playing-view-showing)
 
-When the favorite icon is solid then selecting that will bring up two options - `Remove from Favorites` and `Add to Playlist`. It is possible that if the favorite status is changed from a different view after playback has commenced then the favorite status may not indicate correctly until playback of the track is restarted.
+当收藏图标为实心时，点击它会弹出两个选项：`Remove from Favorites`（从收藏中移除）和 `Add to Playlist`（添加到播放列表）。如果播放开始后从其他视图更改了收藏状态，那么在重新开始播放该曲目之前，收藏状态可能无法正确显示。
 
-When lyrics are available for the track being played then the LYRICS selectable label will be shown in white. Upon selection, the queue will be replaced by the lyrics which will be in sync with the music when timing information is available. Accurate lyric selection is contingent upon the metadata providers and may not be accurate for alternate versions of a song. Adjustment to the lyric timing is available in the ⋮ menu.
+当正在播放的曲目有可用歌词时，LYRICS 可选标签会以白色显示。选中后，队列将被歌词取代；当有时间信息时，歌词会与音乐同步。歌词能否准确选取取决于元数据提供商，对于歌曲的其他版本可能并不准确。可以在 ⋮ 菜单中调整歌词时间。
 
-The Autoplay and Crossfade toggleable buttons allow quick access to the behaviour configured at the global level or for the particular queue. [Individual queue settings](/usage/#the-queue) are available in the ⋮ menu.
+自动播放（Autoplay）和交叉淡入淡出（Crossfade）这两个可切换按钮，可让您快速访问在全局级别或特定队列上配置的行为。[单个队列设置](/usage/#the-queue)可在 ⋮ 菜单中找到。
 
-A sleep timer is also available in the ⋮ menu, which will stop playback after the selected period.
+⋮ 菜单中还提供睡眠定时器，它会在选定的时间段结束后停止播放。
 
-The contents of the ⋮ menu vary depending upon player and queue state. When a track is playing the full set of options are available and will look like:
+⋮ 菜单的内容因播放器和队列状态而异。当曲目正在播放时，可以使用全部选项，如下所示：
 
 [![image](/assets/screenshots/now_playing_menu.png)](/assets/screenshots/now_playing_menu.png)
 
-## Player List
+## 播放器列表
 
 [![image](/assets/screenshots/UI-speakers-menu.png)](/assets/screenshots/UI-speakers-menu.png)
 
 > [!NOTE]
-> The volume shown against a player group is the MAXIMUM of the volumes of the child players. When the group volume is changed then each player is changed by a proportionate amount such that all speakers reach 0 when the group slider hits 0 and 100 when it hits 100. The relative balance between speakers is preserved such that returning the group slider to the original value will revert each child player to their original volumes
+> 播放器组（player group）所显示的音量是其子播放器音量的最大值。当组音量改变时，每个播放器都会按相应的比例改变，使得当组滑块到达 0 时所有扬声器都达到 0，滑块到达 100 时所有扬声器都达到 100。扬声器之间的相对平衡得以保留，因此将组滑块恢复到原始值会使每个子播放器恢复到其原始音量
 
-When a [player group](/faq/groups/) is powered on the members of that group will disappear from the player list and individual playback to those players will not be possible. In order to playback to an individual player, then either power off the group or remove the player from the group.
-
-> [!NOTE]
-> The icon shown against each player (a <a href="https://pictogrammers.com/library/mdi/" target="_blank" rel="noopener noreferrer">Material Design Icon</a>) can be changed in the player settings.
-
-## Grouping Players
-
-There are four ways to group players
-
-1.   **[TEMPORARY SYNC GROUP.](/faq/groups/#temporary-sync-group)** As shown in the [Player List](#player-list) section players can be linked via the checkbox in the player list. Only like player types that support synced playback are allowed to be joined. These players will then play in sync. It should be noted that when players are grouped in this way only the main player holds the queue. 
-2.   **[SYNC GROUP.](/faq/groups/#sync-groups)** Create a (permanent) group player from the players list in the settings; its members are then set on the [player's own settings page](/settings/individual-player/). In addition to playing in sync the group will also keep the queue on the group player instead of one of its child players.
-3.   **[UNIVERSAL GROUP.](/faq/groups/#universal-groups)** This allows grouping of dissimilar player provider types but carefully note the potential limitations on the linked page.
-4.   **NATIVE GROUP.** Use the native functionality to group players offered by some player provider types (e.g. Google Cast)
+当[播放器组](/faq/groups/)开启后，该组的成员将从播放器列表中消失，且无法再单独向这些播放器播放。要向单个播放器播放，请关闭该组或将该播放器从组中移除。
 
 > [!NOTE]
-> If an attempt is made to power on a group and a member of that group is already a member of another powered on group then an error will be shown.
+> 每个播放器所显示的图标（一个 <a href="https://pictogrammers.com/library/mdi/" target="_blank" rel="noopener noreferrer">Material Design Icon</a>）可以在播放器设置中更改。
+
+## 播放器分组
+
+有四种方式可以对播放器进行分组
+
+1.   **[临时同步组（TEMPORARY SYNC GROUP）。](/faq/groups/#temporary-sync-group)** 如[播放器列表](#player-list)部分所示，可以通过播放器列表中的复选框来链接播放器。仅允许将支持同步播放的同类型播放器连接在一起。这些播放器随后将同步播放。需要注意的是，以这种方式分组时，只有主播放器拥有队列。
+2.   **[同步组（SYNC GROUP）。](/faq/groups/#sync-groups)** 在设置的播放器列表中创建一个（永久的）组播放器；然后在该[播放器自身的设置页面](/settings/individual-player/)上设置其成员。除了同步播放之外，该组还会将队列保存在组播放器上，而不是其某个子播放器上。
+3.   **[通用组（UNIVERSAL GROUP）。](/faq/groups/#universal-groups)** 这允许对不同类型的播放器提供商进行分组，但请仔细注意所链接页面上的潜在限制。
+4.   **原生组（NATIVE GROUP）。** 使用某些播放器提供商类型所提供的原生功能来对播放器进行分组（例如 Google Cast）
 
 > [!NOTE]
-> If a player is taken over by another app, MA will not have knowledge of that, and the group may no longer function correctly. Additionally, if a player of a sync group tries to join late (e.g. it was unpowered) it will not be synced to the group.
-
-## Play Button ![image](/assets/icons/play-button.png)
-
-The play button is used as a shortcut to play the various items in the UI. It is shown on hover for non-mobile devices or is always in view for mobile devices.  
-
-Clicking/touching the Play Button will either execute the default play action for the item or show the play menu. To ensure the user doesn't accidentally play on the wrong player, the play menu will show:
-
-- the first time the MA view is entered; or
-- if the player is not playing (or paused)
+> 如果尝试开启一个组，而该组中的某个成员已经是另一个已开启组的成员，则会显示错误。
 
 > [!NOTE]
-> If there is ever uncertainty as to whether the item will immediately start playing use a right click or long press to bring up the menu.
+> 如果某个播放器被其他应用接管，MA 将不会知晓此事，该组可能因此无法再正常工作。此外，如果同步组的某个播放器试图延迟加入（例如它之前未开机），它将无法与组同步。
 
-## Multi Select ![image](/assets/icons/multiselect.png)
+## 播放按钮 ![image](/assets/icons/play-button.png)
 
-When the Multi Select icon is selected the Select All icon will appear.  
+播放按钮用作播放 UI 中各种项目的快捷方式。在非移动设备上，它会在悬停时显示；在移动设备上则始终可见。
 
-Clicking/touching the Select All icon will select all of the items in the view (or section of the view as appropriate). For large lists a confirmation dialog will appear, as selecting thousands of items can cause unresponsiveness depending on the resources of the host.
+点击/触摸播放按钮将执行该项目的默认播放操作，或显示播放菜单。为了确保用户不会意外地在错误的播放器上播放，播放菜单将在以下情况下显示：
 
-CTRL-A will also select all items unless the search box is in view in which case it will select all text in that box. Also CTRL-A won't work on views that have multiple sections (e.g. the artist view has albums and tracks) so the Multi Select icon must be used in that case. 
+- 首次进入 MA 视图时；或
+- 播放器未处于播放状态（或已暂停）时
 
-## Track Menu
+> [!NOTE]
+> 如果不确定该项目是否会立即开始播放，请使用右键点击或长按来调出菜单。
 
-In any of the following views, Right click or long press on a track to get the following menus
+## 多选 ![image](/assets/icons/multiselect.png)
+
+选中多选（Multi Select）图标后，将出现全选（Select All）图标。
+
+点击/触摸全选图标将选中视图中的所有项目（或视情况选中视图中的某个分区）。对于大型列表，会出现一个确认对话框，因为根据主机的资源情况，选中数千个项目可能会导致无响应。
+
+CTRL-A 也会选中所有项目，除非搜索框显示在视图中，在这种情况下它将选中该搜索框中的所有文本。此外，CTRL-A 在具有多个分区的视图上无法使用（例如艺术家视图包含专辑和曲目），因此在这种情况下必须使用多选图标。
+
+## 曲目菜单
+
+在以下任一视图中，右键点击或长按曲目即可调出以下菜单
 
 ![image](/assets/screenshots/UI-track-menu.png)
 
-The **View ... endless mix** option will only be seen if there is a provider that supports it. The wording follows what you selected, so it reads track, album or artist. [It populates the queue with tracks based on that selection](/usage/#endless-mix). The tracks are selected by the provider not MA. 
+**查看 ... 无尽混音**（View ... endless mix）选项只有在存在支持该功能的提供商时才会显示。其措辞会跟随您所选择的内容，因此会显示为曲目、专辑或艺术家。[它会根据该选择将曲目填充到队列中](/usage/#endless-mix)。这些曲目由提供商而非 MA 来挑选。
 
-## View - Discover
+## 视图 - 发现
 
 [![image](/assets/screenshots/homescreen.png)](/assets/screenshots/homescreen.png)
 
-The Discover view provides quick access to different media types and recommendations. Recommendation rows load independently, so content appears one row at a time as it becomes available. Each enabled music provider can supply its own rows.
+发现（Discover）视图提供对不同媒体类型和推荐的快速访问。推荐行独立加载，因此内容会随着可用而逐行出现。每个已启用的音乐提供商都可以提供自己的推荐行。
 
-Select the pencil icon in the top right to enter edit mode. From there, show or hide rows and drag them into your preferred order. Some specialized or slower-loading rows are hidden by default to keep Discover fast; enable them in edit mode if you want to use them. Select `Leave edit mode` to return to the normal view.
+选择右上角的铅笔图标进入编辑模式。在那里，您可以显示或隐藏各行，并将它们拖动为您偏好的顺序。一些特殊或加载较慢的行默认被隐藏，以保持“发现”视图的响应速度；如果您想使用它们，可以在编辑模式中启用。选择 `Leave edit mode`（退出编辑模式）即可返回正常视图。
 
 [![image](/assets/screenshots/homescreen_edit.png)](/assets/screenshots/homescreen_edit.png)
 
-Refer to the [Library Recommendations Plugin](/plugins/library-recommendations) for information about the available recommendations rows that are built into Music Assistant.
+有关 Music Assistant 内置的可用推荐行的信息，请参阅[媒体库推荐插件（Library Recommendations Plugin）](/plugins/library-recommendations)。
 
-## View - Artist / Album / Track
+## 视图 - 艺术家 / 专辑 / 曲目
 
 [![image](/assets/screenshots/UI-artist-view.png)](/assets/screenshots/UI-artist-view.png)
 
-Album, Track and Playlist Views look similar to the above except there is no album artist filter option and the track view has an [ADD VIA URL](/music-providers/builtin/) option. Playlists have a `Create new playlist on` option as well as a `Import playlist` option which allows the manual importation of plain text M3U and M3U8 playlist files. 
+专辑、曲目和播放列表视图与上面的类似，只是没有专辑艺术家筛选选项，并且曲目视图有一个 [通过 URL 添加（ADD VIA URL）](/music-providers/builtin/) 选项。播放列表视图具有 `Create new playlist on`（在……上创建新播放列表）选项以及 `Import playlist`（导入播放列表）选项，后者允许手动导入纯文本的 M3U 和 M3U8 播放列表文件。
 
-A blue dot on any icon (e.g. search icon ![image](/assets/icons/search-icon.png) ) indicates that the viewed results are subject to filtering.
+任何图标上的蓝点（例如搜索图标 ![image](/assets/icons/search-icon.png) ）表示所查看的结果经过了筛选。
 
-The provider filter option will only show when there are two or more music sources installed that support the media type being viewed. Multiple providers can be selected as part of the filter.
+提供商筛选选项只有在安装了两个或更多支持当前所查看媒体类型的音乐源时才会显示。可以在筛选器中选择多个提供商。
 
-Items in all views can be "right-clicked" or "long-pressed" to bring up an extensive menu of options which is the same as that accessed by the ⋮ menu on the right. In the image above the complete list of possibilities is shown and this will vary slightly depending on the current view.
+所有视图中的项目都可以“右键点击”或“长按”来调出一个内容丰富的选项菜单，该菜单与右侧 ⋮ 菜单所打开的菜单相同。上图中显示了所有可能的选项的完整列表，这会根据当前视图略有不同。
 
-Multiple selections of albums / artists / tracks is possible by clicking the [multi-select icon](#multi-select-). Once one or more items are selected then clicking on the "ACTIONS" at the bottom
+可以通过点击[多选图标](#multi-select-)来多选专辑 / 艺术家 / 曲目。选中一个或多个项目后，点击底部的“操作”
 
 ![image](/assets/screenshots/UI-actions.png)
 
-will bring up this menu
+将调出此菜单
 
 ![image](/assets/screenshots/UI-actions-menu.png)
 
-The behavior described above will work on any view where you see the "x item(s) selected" text.
+上述行为在任何能看到“已选择 x 个项目”文本的视图中都有效。
 
-## View - Individual Artist
+## 视图 - 单个艺术家
 
 [![image](/assets/screenshots/UI-individual-artist.png)](/assets/screenshots/UI-individual-artist.png)
 
-Each section is collapsible. The tracks section shows all tracks that are in the library. The Top tracks section can be filtered by provider when there is more that one available to provide that data.
+每个分区都可以折叠。曲目分区显示媒体库中的所有曲目。当有多个提供商可以提供该数据时，可以对热门曲目（Top tracks）分区按提供商进行筛选。
 
-The album section has an additional filter option. You can choose to filter by or in any combination of ALBUM, SINGLE, COMPILATION, EP, LIVE, SOUNDTRACK or UNKNOWN album types.
+专辑分区还有一个额外的筛选选项。您可以选择按 ALBUM、SINGLE、COMPILATION、EP、LIVE、SOUNDTRACK 或 UNKNOWN 专辑类型或其任意组合进行筛选。
 
-Expanding the IMAGES section (only visible to users with the Administrators role) allows for the selection of Thumb, Fanart or Logo. The other types shown are not used in the UI at this time. If there are no or limited images shown or the Images section is missing then go to the ⋮ menu in the top right of the view and select UPDATE METADATA. Right click on an image to make it the primary to be used. (Similar functionality is also available in the album view for Thumb)
+展开 IMAGES 分区（仅对具有管理员（Administrators）角色的用户可见）可以选择 Thumb、Fanart 或 Logo。目前 UI 中并未使用所显示的其他类型。如果没有显示图像或显示的图像有限，或者 IMAGES 分区缺失，请前往视图右上角的 ⋮ 菜单并选择 UPDATE METADATA（更新元数据）。右键点击某个图像可将其设为主要使用的图像。（专辑视图中的 Thumb 也有类似功能）
 
-### Provider Details
+### 提供商详情
 
-The PROVIDER DETAILS section (read only for other than users with the Administrator role) shows what providers are linked to the artist (albums and tracks have a similar section) across the available providers. It is normal to have multiple entries here if an artist has aliases or there are variant spellings, use of punctuation, etc. Thus there may be many entries showing matching links within a provider and across providers. Cross linking across and within providers occurs when the item is added to the MA library and can be triggered by using the <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />icon. Adding a new provider does not trigger linking across existing library items.
+PROVIDER DETAILS（提供商详情）分区（对不具有管理员（Administrator）角色的用户为只读）显示在所有可用提供商中，哪些提供商与该艺术家建立了链接（专辑和曲目也有类似的分区）。如果艺术家有别名，或者存在拼写变体、标点符号使用差异等情况，这里出现多个条目是正常的。因此可能会有许多条目，显示提供商内部以及跨提供商的匹配链接。跨提供商以及提供商内部的交叉链接发生在项目被添加到 MA 媒体库之时，并且可以通过使用 <img src="/assets/icons/database-search.png" alt="icon" style="width: 20px;"  loading="lazy" />图标来触发。添加新的提供商不会触发对现有媒体库项目的链接。
 
-When an item is available from several providers, Music Assistant picks the highest quality one at playback time. See [Stream Selection](/faq/tech-info/#stream-selection) for how that choice is made.
+当某个项目可从多个提供商获得时，Music Assistant 会在播放时选择音质最高的那一个。有关该选择是如何做出的，请参阅[流选择（Stream Selection）](/faq/tech-info/#stream-selection)。
 
-The creation of links within the MA library to other identical items in the MA library (within or across providers) can occur when an item is added to the MA library. Links will be made automatically if internal matching logic is satisfied.
+当项目被添加到 MA 媒体库时，可能会创建 MA 媒体库内指向 MA 媒体库中其他相同项目（提供商内部或跨提供商）的链接。如果内部匹配逻辑得到满足，就会自动建立这些链接。
 
-Incorrect mappings can be removed via the delete option in the ⋮ menu. For local files incorrect links may occur if the source file isn't [comprehensively tagged](/music-providers/local-files/#tagging-files).
+错误的映射可以通过 ⋮ 菜单中的删除选项移除。对于本地文件，如果源文件的[标签不够全面](/music-providers/local-files/#tagging-files)，则可能出现错误的链接。
 
-The ID shown against the streaming provider may be used in automations and scripts and is obtainable by pressing the ⋮ icon on the right. Also in this menu, for streaming providers, is an external link which opens the page for the item on the source provider.
+流媒体提供商旁显示的 ID 可用于自动化（automation）和脚本，按右侧的 ⋮ 图标即可获取。在此菜单中（针对流媒体提供商），还有一个外部链接，可打开该项目在源提供商上的页面。
 
-## View - Individual Track
+## 视图 - 单个曲目
 
 [![image](/assets/screenshots/UI-track-show-info.png)](/assets/screenshots/UI-track-show-info.png)
 
 > [!NOTE]
-> The PROVIDER DETAILS section in this view also has the functionality to play a short sample of the track on the local device. Any indicated sample rate and bit depth are as reported by the provider and may differ during playback if transcoding is done before the audio data reaches MA.
+> 此视图中的 PROVIDER DETAILS 分区还具有在本地设备上播放该曲目一小段样本的功能。所标示的采样率和位深度均为提供商报告的数值；如果在音频数据到达 MA 之前进行了转码，播放时可能会有所不同。
 
-## View - Audiobooks
-The audiobooks view shows available audiobooks in your library.
+## 视图 - 有声书
+有声书视图显示您的媒体库中可用的有声书。
 [![image](/assets/screenshots/audiobooks/audiobooks_view_annotated.png)](/assets/screenshots/audiobooks/audiobooks_view_annotated.png)
 
-1. Tabs for audiobooks, authors and narrators. These tabs are only shown if at least one of your configured music sources supports syncing of authors and/ or narrators to the Music Assistant library. Otherwise there is only the plain audiobooks view without tabs.
-2. Collapse collections: If the music source supports syncing collections (e.g. audiobook series) to Music Assistant, using "Collapse collections" minimizes these collections to single items.
+1. 有声书、作者和朗读者（narrator）的标签页。只有在您所配置的至少一个音乐源支持将作者和/或朗读者同步到 Music Assistant 媒体库时，才会显示这些标签页。否则，只有不带标签页的普通有声书视图。
+2. 折叠合集：如果音乐源支持将合集（例如有声书系列）同步到 Music Assistant，使用“折叠合集”可将这些合集折叠为单个项目。
 [![image](/assets/screenshots/audiobooks/audiobook_view_collections_collapsed.png)](/assets/screenshots/audiobooks/audiobook_view_collections_collapsed.png)
 
-## View - Audiobooks Collection & Author/ Narrator details
-The collection subview shows audiobooks in a collection. The items are sorted in the order given by the music source. When you play a collection, it will always enqueue the first not fully played item.
+## 视图 - 有声书合集与作者/朗读者详情
+合集子视图显示某个合集内的有声书。这些项目按音乐源给定的顺序排序。当您播放一个合集时，它总是会将第一个尚未完整播放的项目加入队列。
 [![image](/assets/screenshots/audiobooks/collection_view.png)](/assets/screenshots/audiobooks/collection_view.png)
 
-The author & narrator subview shows audiobooks belonging to the given artist. For library items it is possible to collapse collections.
+作者与朗读者子视图显示属于给定艺术家的有声书。对于媒体库项目，可以折叠合集。
 [![image](/assets/screenshots/audiobooks/author_details_collapse_collections.png)](/assets/screenshots/audiobooks/author_details_collapse_collections.png)
 
-## View - Radio
+## 视图 - 电台
 
-The Radio view shows streaming radio stations that are available in the MA library. Stations can be added to the library in the following ways:
+电台视图显示 MA 媒体库中可用的流媒体电台。可以通过以下方式将电台添加到媒体库：
 
-* Add item from URL - A URL for a streaming radio station (e.g. self-hosted Icecast stations) can be added to the library by selecting `Add item from URL` from the menu in the top right of the Radio view. When filtering by provider, they will be shown as provided by "Music Assistant". 
+* 通过 URL 添加项目 - 通过在电台视图右上角的菜单中选择 `Add item from URL`（通过 URL 添加项目），可以将流媒体电台的 URL（例如自托管的 Icecast 电台）添加到媒体库。按提供商筛选时，这些电台将显示为由“Music Assistant”提供。
 
-* Music providers that support Radio items will have those items shown here when they are added to the library
+* 支持电台项目的音乐提供商，在将其添加到媒体库后，这些项目将显示在此处
 
-## View - Browse
+## 视图 - 浏览
 
-Entering the Browse view will present a list of the installed [Music Sources](/music-providers/) that have a browse capability. Selecting one of those will show a relevant list of the items from that source that can be browsed. 
+进入浏览（Browse）视图后，将显示已安装的、具备浏览功能的[音乐源（Music Sources）](/music-providers/)列表。选择其中之一，将显示该源中可浏览项目的相应列表。
 
-When viewing a source which has a native library then only what is in that library will be seen. For the local sources and other sources that do not have a native library, you will see all items available from the source. For local sources, if a folder is visited that is not already in the MA Library it will be automatically added even if it has been previously removed.
+在查看具有原生媒体库的源时，只能看到该媒体库中的内容。对于本地源以及其他没有原生媒体库的源，您将看到该源提供的所有可用项目。对于本地源，如果访问的文件夹尚未存在于 MA 媒体库中，即使它之前已被移除，也会被自动添加。
 
 > [!CAUTION]
-> Be careful once browsing within the source as selecting PLAY on a folder will play everything in that folder and all subfolders. Attempting to play thousands of tracks may consume an excessive amount of system resources on the host and cause MA to crash or become unresponsive.
+> 在源内浏览时请务必小心，因为在文件夹上选择 PLAY（播放）将播放该文件夹及所有子文件夹中的全部内容。尝试播放数千首曲目可能会占用主机上过多的系统资源，导致 MA 崩溃或无响应。

@@ -1,34 +1,34 @@
 ---
-title: Loudness Analysis
+title: 响度分析
 ---
 
-# Loudness Analysis Provider  <img src="/assets/icons/loudness-analysis-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 响度分析提供程序  <img src="/assets/icons/loudness-analysis-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The **Loudness Analysis** provider measures each track's loudness using FFmpeg's EBU R128 implementation, so Music Assistant can keep perceived volume consistent across tracks from very different sources.
+**响度分析**提供程序使用 FFmpeg 的 EBU R128 实现来测量每首曲目的响度，从而使 Music Assistant 能够让来自截然不同来源的曲目保持一致的感知音量。
 
-It is built in, always on, and cannot be disabled. Measurements run automatically on tracks that do not yet have a loudness value stored. Scanning is done as a background task for local file system (i.e. Local, SMB or NFS) provided tracks, and any track is measured while it plays.
+该功能为内置功能，始终开启，且无法禁用。对于尚未存储响度值的曲目，会自动进行测量。对于由本地文件系统（即 Local、SMB 或 NFS）提供的曲目，扫描以后台任务的形式进行，而任何曲目在播放时都会被测量。
 
-## What is measured
+## 测量内容
 
-For each analysed track:
+对于每首经过分析的曲目：
 
-- **Integrated loudness** — EBU R128 LUFS.
-- **Loudness range** — EBU R128 LU.
-- **True peak** — ITU-R BS.1770-4 dBTP.
+- **综合响度（Integrated loudness）** — EBU R128 LUFS。
+- **响度范围（Loudness range）** — EBU R128 LU。
+- **真峰值（True peak）** — ITU-R BS.1770-4 dBTP。
 
-When a track already carries a loudness value from its tags or from the music provider, that value is used and the track is not analysed at all. The tags read are `R128_TRACK_GAIN` and `R128_ALBUM_GAIN`, then `REPLAYGAIN_TRACK_GAIN` and `REPLAYGAIN_ALBUM_GAIN`, with the R128 pair taking priority where both are present. Plex and Subsonic report the same data through their own APIs.
+当曲目已经通过其标签或音乐提供程序携带了响度值时，将直接使用该值，并且完全不会对该曲目进行分析。读取的标签依次为 `R128_TRACK_GAIN` 和 `R128_ALBUM_GAIN`，然后是 `REPLAYGAIN_TRACK_GAIN` 和 `REPLAYGAIN_ALBUM_GAIN`，当两者同时存在时，R128 这一对标签优先。Plex 和 Subsonic 通过各自的 API 报告相同的数据。
 
-Album level values come only from those tags or from a music provider. This provider measures the individual track, so unless a music provider supplies one, album gain is available only for tracks carrying an `R128_ALBUM_GAIN` or `REPLAYGAIN_ALBUM_GAIN` tag. The album tag is read alongside the track tag, so a file that carries an album value but no track value is treated as having no loudness value at all. How the values are chosen and applied is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
+专辑级别的值仅来自这些标签或音乐提供程序。此提供程序测量的是单曲，因此除非音乐提供程序提供了专辑值，否则只有携带 `R128_ALBUM_GAIN` 或 `REPLAYGAIN_ALBUM_GAIN` 标签的曲目才能获得专辑增益。专辑标签会与曲目标签一起读取，因此带有专辑值但没有曲目值的文件将被视为完全没有响度值。关于这些值如何选择和应用，请参见[技术信息](/faq/tech-info/#volume-normalization)页面。
 
-Tracks shorter than 10 seconds, longer than 10 minutes of analysed audio, or whose measurement comes back near silence are skipped to avoid unreliable values.
+时长短于 10 秒、分析音频超过 10 分钟，或测量结果接近静音的曲目将被跳过，以避免产生不可靠的值。
 
-## How the data is used
+## 数据的使用方式
 
-- **[Volume normalization](/settings/core/#queue-playback)**. Keeps perceived loudness consistent when transitioning between tracks from different sources (a loudly-mastered modern album, a quiet jazz release, a podcast and a streaming track all play back at comparable loudness). How the measurement is used is chosen under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), and normalization is switched on or off per queue.
-- When a track is played through a player that has volume normalization disabled, or from a source that delivers its audio at a loudness target of its own, the live loudness measurement is skipped, as no gain would be applied. However, a background job continues to measure local library tracks independently of playback, so a measurement is still produced over time.
+- **[音量归一化](/settings/core/#queue-playback)**。在从不同来源的曲目之间切换时保持感知响度一致（一张响度处理很重的现代专辑、一张安静的爵士专辑、一个播客和一首流媒体曲目，都能以相近的响度播放）。如何使用测量值可在 [**设置 → 系统 → 流 → 队列播放**](/settings/core/#queue-playback)中进行选择，并且可按队列分别开启或关闭归一化。
+- 当曲目通过已禁用音量归一化的播放器播放，或来自以其自身响度目标交付音频的来源时，将跳过实时响度测量，因为不会应用任何增益。不过，后台任务仍会独立于播放继续测量本地媒体库中的曲目，因此随着时间推移仍会产生测量结果。
 
-## Settings
+## 设置
 
-- <b>Write `REPLAYGAIN_TRACK_GAIN` tags back to files.</b> When enabled, a `REPLAYGAIN_TRACK_GAIN` tag is written into each audio file after its loudness has been measured. This is the only situation in which Music Assistant ever modifies an audio file and by default this is off.
+- <b>将 `REPLAYGAIN_TRACK_GAIN` 标签写回文件。</b>启用后，每首音频文件的响度测量完成后，`REPLAYGAIN_TRACK_GAIN` 标签将被写入该音频文件。这是 Music Assistant 唯一会修改音频文件的情况，且默认情况下此功能处于关闭状态。
 
-This is useful when other apps on the network read these tags for their own volume normalization. Write access to the file is required; read-only files are silently skipped.
+当网络上的其他应用读取这些标签以进行各自的音量归一化时，此功能非常有用。需要对文件具有写入权限；只读文件将被静默跳过。

@@ -1,70 +1,70 @@
 ---
-title: Announcements
-description: Details of the announcements functionality
+title: 公告
+description: 公告功能的详细信息
 ---
 
-# Announcements
+# 公告
 
-Announcements are either Text-to-Speech or audio files that are sent (from Home Assistant) to the MA players via the <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">`tts.xxxxxx`</a> or [`music_assistant.play_announcement`](/faq/massannounce/) HA actions.
+公告是通过 <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">`tts.xxxxxx`</a> 或 [`music_assistant.play_announcement`](/faq/massannounce/) Home Assistant 服务发送到 MA 播放器的文本转语音或音频文件。
 
-Only the [Home Assistant integration](/integration/installation/) is needed for this. The Home Assistant plugin and Home Assistant Media Players play no part in announcements.
+为此只需要 [Home Assistant 集成](/integration/installation/)。Home Assistant 插件和 Home Assistant 媒体播放器不参与公告功能。
 
 > [!NOTE]
-> The integration is not strictly required to send announcements as this can be done [via the UI](/usage/#the-queue)
+> 发送公告并非严格要求必须使用集成，因为这也可以[通过 UI](/usage/#the-queue) 完成。
 
-## Overview
+## 概述
 
-If music is being played by MA then this will be temporarily paused and restored after the announcement.
+如果 MA 正在播放音乐，音乐将被暂时暂停，并在公告播放完毕后恢复。
 
-Players will be powered on before the announcement and then off again if it was not powered/active before the announcement.
+播放器会在公告播放前开启，如果公告播放前未通电/处于活动状态，则会在公告播放后再次关闭。
 
-Volume can be adjusted while playing the announcement.
+播放公告时可以调整音量。
 
-If a player type has native support for announcements (i.e. Sonos, Snapcast, Sendspin) then that will be used in preference to the MA functionality providing an even smoother experience.
+如果播放器类型原生支持公告（例如 Sonos、Snapcast、Sendspin），则会优先使用该原生功能而非 MA 功能，从而提供更流畅的体验。
 
-The functionality works with all players that are supported by Music Assistant.
+该功能适用于 Music Assistant 支持的所有播放器。
 
-Each player has settings which allow for adjustment of certain aspects of the announcement playback. Groups only have a setting for the pre-announcement sound. See also [Announcements Configuration](/settings/individual-player/#announcements-configuration)
+每个播放器都有相应的设置，允许调整公告播放的某些方面。群组仅有公告前提示音的设置。另请参阅[公告配置](/settings/individual-player/#announcements-configuration)
 
-Which engine turns the text into speech is chosen once for the whole server, with the **Announcement text to speech engine** setting under [**Settings → System → Players**](/settings/core/#players). The engines on offer there come from your plugins, and the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines) makes every Home Assistant text-to-speech entity available.
+将文本转换为语音的引擎是为整个服务器统一选择的，通过 [**设置 → 系统 → 播放器**](/settings/core/#players) 下的 **公告文本转语音引擎** 设置进行配置。那里提供的引擎来自您的插件，而 [Home Assistant 插件](/ha-plugin/#ai-and-text-to-speech-engines) 可使所有 Home Assistant 文本转语音实体可用。
 
 ![image](/assets/screenshots/announcement-settings.png)
 
-## Native Support
+## 原生支持
 
-If an announcement is sent to a single player that supports native announcements, the announcement will be handled by the player itself.
+如果将公告发送到支持原生公告的单个播放器，该公告将由播放器自身处理。
 
-Native announcement support usually means that the player can "overlay" the announcement on top of any music that is playing. It will "duck" the volume of the music (or silence it completely), play the announcement with a volume boost and then revert the music volume. Music keeps playing and the entire announcement will be handled by the player itself.
+原生公告支持通常意味着播放器可以在任何正在播放的音乐上“叠加”公告。它会“压低”（duck）音乐音量（或完全静音），以增强的音量播放公告，然后恢复音乐音量。音乐保持播放，整个公告过程由播放器自身处理。
 
-Currently the only player types that support native announcements are Sonos S2 speakers and Sendspin.
+目前，唯一支持原生公告的播放器类型是 Sonos S2 扬声器和 Sendspin。
 
-## MA Player Support
+## MA 播放器支持
 
-If a player does not support native announcements, MA will take care of it by stopping any playing music, adjust the volume (as configured), play the announcement, and then restore the previous state.
-
-> [!NOTE]
-> The MA announcement feature will ONLY work reliably if the player reports the state (e.g. playing, paused, idle) and the progress report (elapsed time) correctly. If any of those are not updated correctly then announcements will work poorly.
-
-ESPHome can be unreliable with state updates so issues may occur with this player type. The same applies to some HA media players. Future updates of those platforms should improve performance.
-
-If a player does not resume after playing an announcement, or it takes a very long time, check the HTTP profile settings. `Fixed content length` may need to be used. For example, ESPHome devices may have this issue.
-
-## Group Behaviour
-
-If an announcement is sent to a native Google Cast Group, Sync Group or a Universal Group, the announcement will always be played to ALL child players. The preference to (not) use a pre-announcement sound is defined on the group player in this case. The volume setting of the announcement is defined per player. If one of the child players was already playing, playback will be interrupted and NOT resumed. Bear that in mind with automations and target announcements to the individual players or just restart individual player playback if/when needed. Google Cast groups should play the announcement in sync.
-
-If an announcement is sent to a group of players that are manually synced, the announcement will be played to all childplayers (in sync).
-
-If an announcement is sent to a Sync Group (temporary or permananent) of which ALL child players support native announcements, the native functionality will be used to playback the announcement and MA will ensure the announcement is started at (more or less) the same time so all players should play the announcement in sync.
-
-If an announcement is sent to a player that is currently synced to another player (and does not support native announcements), it will be temporarily unsynced, the announcement played and then added back to the group.
-
-In all cases the playback should resume after the announcement.
+如果播放器不支持原生公告，MA 将通过停止任何正在播放的音乐、调整音量（按配置）、播放公告，然后恢复之前的状态来处理。
 
 > [!NOTE]
-> If the announcement is sent to one player of a group, the playback needs to resume afterwards and for AirPlay and Squeezelite that will be noticeable
+> MA 公告功能仅在播放器正确报告状态（例如播放中、已暂停、空闲）和进度报告（已用时间）时才能可靠运行。如果其中任何一项未正确更新，公告功能的表现将会很差。
+
+ESPHome 在状态更新方面可能不够可靠，因此该播放器类型可能会出现一些问题。某些 HA 媒体播放器也是如此。这些平台的未来更新应会改善性能。
+
+如果播放器在播放公告后未恢复，或者耗时过长，请检查 HTTP 配置文件设置。可能需要使用 `Fixed content length`。例如，ESPHome 设备可能会出现此问题。
+
+## 群组行为
+
+如果将公告发送到原生 Google Cast 群组、同步群组或通用群组，公告将始终播放给所有子播放器。在这种情况下，是否使用公告前提示音的偏好在群组播放器上定义。公告的音量设置按每个播放器定义。如果其中一个子播放器已在播放，播放将被中断且不会恢复。在使用自动化时请牢记这一点，并将公告目标指向单个播放器，或者在需要时重新启动单个播放器的播放。Google Cast 群组应同步播放公告。
+
+如果将公告发送到手动同步的一组播放器，公告将播放给所有子播放器（同步播放）。
+
+如果将公告发送到同步群组（临时或永久），且其所有子播放器均支持原生公告，则将使用原生功能播放公告，并且 MA 会确保公告在（大致）相同的时间开始，因此所有播放器都应同步播放公告。
+
+如果将公告发送到当前与另一个播放器同步（且不支持原生公告）的播放器，它将暂时取消同步，播放公告，然后重新添加到群组中。
+
+在所有情况下，播放都应在公告播放后恢复。
 
 > [!NOTE]
-> If the announcement is sent to one player of a group, and that player is the sync leader of a permanent Sync Group, then this will be treated the same as sending the request to the whole Sync Group. All players will play the announcement and the whole group will resume afterwards.
+> 如果将公告发送到群组中的某个播放器，之后需要恢复播放，对于 AirPlay 和 Squeezelite，这将会很明显。
 
-Any case not mentioned above is not supported
+> [!NOTE]
+> 如果将公告发送到群组中的某个播放器，且该播放器是永久同步群组的同步领导者，则此操作将被视为向整个同步群组发送请求。所有播放器都将播放公告，整个群组随后将恢复播放。
+
+未在上述提及的任何情况均不受支持

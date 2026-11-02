@@ -4,11 +4,11 @@ title: "SoundCloud"
 
 # SoundCloud <img src="/assets/icons/soundcloud-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for Soundcloud. Contributed by <a href="https://github.com/gieljnssns" target="_blank" rel="noopener noreferrer">gieljnssns</a>. Maintained by <a href="https://github.com/robsonke" target="_blank" rel="noopener noreferrer">robsonke</a>
+Music Assistant 支持 SoundCloud。由 <a href="https://github.com/gieljnssns" target="_blank" rel="noopener noreferrer">gieljnssns</a> 贡献。由 <a href="https://github.com/robsonke" target="_blank" rel="noopener noreferrer">robsonke</a> 维护
 
-SoundCloud is a site where anyone can upload and share audio, so a great deal of what is on it comes straight from the artist. It is where DJ mixes, remixes, demos and music that has not been released anywhere else tend to turn up.
+SoundCloud 是一个任何人都可以上传和分享音频的网站，因此站上的大量内容直接来自艺术家本人。DJ 混音集、重混音（remix）、小样（demo）以及未在其他任何地方发行的音乐往往会出现在这里。
 
-Connecting your account puts what you have liked and followed on SoundCloud into Music Assistant, with the wider catalogue there to search.
+连接你的账户后，你在 SoundCloud 上喜欢和关注的内容会同步到 Music Assistant 中，同时还可以搜索其更为丰富的曲库。
 
 ## Features
 
@@ -26,19 +26,19 @@ Connecting your account puts what you have liked and followed on SoundCloud into
 | Maximum Stream Quality | AAC 256kbps |
 | Login Method | Cookie |
 
-## Configuration
+## 配置
 
-SoundCloud has no sign-in for outside apps, so two values have to be copied out of your browser while you log in. You need a **Client id** and an **Authorization**.
+SoundCloud 没有提供面向外部应用的登录方式，因此需要在登录时从浏览器中复制两个值。你需要一个 **Client id** 和一个 **Authorization**。
 
-1. Clear your SoundCloud cookies, so that logging in again produces the requests you need to see
-2. Go to <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">SoundCloud</a> but do not log in yet
-3. Press F12 to open your browser's developer tools, and go to the **Network** tab
-4. Now log in. A long list of entries will appear
-5. Type `auth` in the filter box to narrow the list down
-6. Look through those entries for `client_id`. It is a run of 32 letters and numbers. Copy it
-7. Now find the `oauth_token` cookie for soundcloud.com and copy its value. In Music Assistant this goes in the **Authorization** field with `OAuth ` typed in front of it, including the space
+1. 清除你的 SoundCloud cookies，以便重新登录时能够看到你需要查看的请求
+2. 访问 <a href="https://soundcloud.com" target="_blank" rel="noopener noreferrer">SoundCloud</a>，但先不要登录
+3. 按 F12 打开浏览器的开发者工具，并切换到 **Network**（网络）标签页
+4. 现在登录。此时会出现一长串条目
+5. 在筛选框中输入 `auth` 以缩小列表范围
+6. 在这些条目中查找 `client_id`。它是一串由 32 个字母和数字组成的字符串。将其复制下来
+7. 现在找到 soundcloud.com 的 `oauth_token` cookie 并复制其值。在 Music Assistant 中，将其填入 **Authorization** 字段，并在其前面加上 `OAuth `（包括那个空格）
 
-The screenshots below show where each of these appears.
+下面的截图展示了这些值各自出现的位置。
 
 ### Client id
 <img src="/assets/screenshots/soundcloud-clientid.jpg" alt="screenshot" style="width: 1005px; float: center;"  loading="lazy" />
@@ -46,14 +46,14 @@ The screenshots below show where each of these appears.
 ### OAuth token
 <img src="/assets/screenshots/soundcloud-token.jpg" alt="screenshot" style="width: 1005px; float: center;"  loading="lazy" />
 
-Filled in, the two fields should look like this. These values are made up — use your own:
+填写完成后，这两个字段应如下所示。这些值是虚构的——请使用你自己的值：
 
 ```
 client_id = 5Hvc9wa0Ejf092wj3f3920w3F920asuL
 Authorization = OAuth 2-26432-21446-asdif2309fQ
 ```
 > [!IMPORTANT]
-> Ensure that `OAuth ` is added to the start of the token otherwise login will fail with `unexpected mimetype` errors
-## Known Issues / Notes
+> 请确保在令牌开头添加 `OAuth `，否则登录将失败并出现 `unexpected mimetype` 错误
+## 已知问题 / 注意事项
 
-- What SoundCloud calls an artist is really whoever holds the account, so that is what appears as the artist in Music Assistant. If someone else uploads a track by an artist, it will be filed under the uploader rather than under the artist
+- SoundCloud 所谓的“艺术家”实际上就是账户的持有者，因此 Music Assistant 中显示的艺术家就是这个账户的持有者。如果其他人上传了某位艺术家的曲目，该曲目会被归类到上传者名下，而不是艺术家名下。

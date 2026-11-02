@@ -1,185 +1,185 @@
 ---
-title: "Individual Player Settings"
+title: "独立播放器设置"
 ---
 
-# Individual Player Settings <img src="/assets/icons/settings-individual-player-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 独立播放器设置 <img src="/assets/icons/settings-individual-player-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Individual Player Settings are usually quite extensive. The typical headings of the various sections are shown in the following image and subsections below will expand on them. Some items are hidden unless the `Show advanced settings` toggle is on. Groups have the same sections but less settings available. Not all players have all the settings listed. Reference can be made to the [Player Summary Table](/player-support/) to identify some of the functionality that should be available for a given player type otherwise visit the settings page for the player. 
+独立播放器设置（Individual Player Settings）的选项通常相当丰富。下图展示了各部分的典型标题，下方的小节将对它们进行详细说明。除非打开 `Show advanced settings`（显示高级设置）开关，否则某些项目将被隐藏。组（group）具有相同的部分，但可用设置较少。并非所有播放器（player）都拥有列出的全部设置。可以参阅[播放器概览表](/player-support/)来了解特定类型的播放器应具备的部分功能，否则请访问该播放器的设置页面。
 
 ![image](/assets/screenshots/individual-player-settings.png)
 
-A powerful feature of Music Assistant is that it will combine all of the available protocols from a device into one player. The available protocols can be seen in the chips at the top of the page and in the Output Protocols section of the settings.
+Music Assistant 的一个强大功能是，它会把设备的所有可用协议合并到一个播放器中。可用的协议可以在页面顶部的芯片（chips）以及设置的输出协议部分中查看。
 
-The `Reconfigure` button launches the configuration wizard for the player and for those with multiple protocols the one to be reconfigured will need to be selected from a drop down box. 
+`Reconfigure`（重新配置）按钮会启动该播放器的配置向导；对于具有多种协议的播放器，需要从下拉框中选择要重新配置的那一个。
 
-## Queue Settings
+## 队列设置
 
-This is a link to the respective [Queue Settings](/usage/#the-queue). It should be noted that these can be set globally in the [Player Queues Settings](/settings/core/#player-queues)
+这里是指向相应[队列设置](/usage/#the-queue)的链接。请注意，这些设置可以在[播放器队列设置](/settings/core/#player-queues)中进行全局设置。
 
-## DSP Settings
+## DSP 设置
 
-All providers have the option to apply <a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">Digital Signal Processing</a> (DSP) filters to the audio stream. This section is where the DSP is configured for each player, which means that each player has its own independently configurable DSP settings.
+所有提供程序（provider）都可以选择对音频流应用<a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">数字信号处理</a>（DSP）滤波器。本部分用于为每个播放器配置 DSP，这意味着每个播放器都有自己可独立配置的 DSP 设置。
 
-Full details of the DSP capabilities and the filters that are available can be found in the [Digital Signal Processing](/dsp/) section of the documentation.
+有关 DSP 能力以及可用滤波器的完整详细信息，请参阅文档的[数字信号处理](/dsp/)部分。
 
-## Player Options
+## 播放器选项
 
-Some players (e.g. [MusicCast](/player-support/musiccast/) have [unique control features](/player-support/#player-options) which are fully described in the documentation for the relevant player provider 
+某些播放器（例如 [MusicCast](/player-support/musiccast/)）具有[独特的控制功能](/player-support/#player-options)，这些功能在相应播放器提供程序的文档中有完整描述。
 
-## Generic Settings
+## 通用设置
 
-- <b>Hide this player in the UI.</b> This setting determines when the player will not be shown in the [Player List](/ui/#player-list) and other areas of the UI
-- <b>Expose this player to Home Assistant</b>. If disabled the player will not be imported into HA
-- <b>Icon.</b> A material design icon is used in some parts of the UI and this can be configured on a per player basis
-- <b>Play Media overrides active group.</b> When this player is currently captured by an active group or sync session, an explicit Play Media command (e.g. starting a new playlist or track from Home Assistant) will release this player from the group/sync and play the new media directly on this player. Disable this to keep the legacy behaviour where Play Media is redirected to the group leader. Other commands (next/prev/pause/resume) are always forwarded to the group leader as they act on the existing playback
+- <b>在 UI 中隐藏此播放器。</b>此设置决定播放器何时不会显示在[播放器列表](/ui/#player-list)以及 UI 的其他区域中
+- <b>将此播放器暴露给 Home Assistant</b>。如果禁用，该播放器将不会被导入到 HA 中
+- <b>图标。</b>UI 的某些部分会使用 Material Design 图标，且可以针对每个播放器进行配置
+- <b>播放媒体（Play Media）覆盖活动组。</b>当此播放器当前被一个活动组或同步会话占用时，显式的播放媒体命令（例如从 Home Assistant 开始新的播放列表或曲目）会将此播放器从组/同步中释放出来，并直接在此播放器上播放新媒体。禁用此选项可保留旧行为，即播放媒体命令被重定向到组长（group leader）。其他命令（下一首/上一首/暂停/继续）总是转发给组长，因为它们作用于当前的播放
 
-## Output Protocols
+## 输出协议
 
-- <b>Preferred Output Protocol.</b> Choose from the list of available protocols
+- <b>首选输出协议。</b>从可用协议列表中选择
 
-Each available protocol then has its own configuration section. Protocols can be disabled except for the native protocol of the device. A protocol whose toggle says *(experimental)* is switched off until you turn it on yourself, with a warning above the toggle explaining what to expect. The [Audio Pipeline](/audiopipeline/) view shows which protocol a player is actually using and what the audio quality is at each stage.
+随后，每个可用协议都有其各自的配置部分。协议可以被禁用，但设备的原生协议除外。开关旁标注为*（实验性）*的协议在您自行将其打开之前处于关闭状态，开关上方会有一条警告，说明可能会出现什么情况。[音频管线](/audiopipeline/)视图会显示播放器实际正在使用的协议以及每个阶段的音频质量。
 
-### Settings shared by most protocols
+### 大多数协议共享的设置
 
-The settings below appear under most protocols and mean the same thing wherever you see them. **Most people never need to change any of them.** The defaults are chosen to work on the widest range of hardware, and the usual reason to come here is that something is not playing properly.
+以下设置出现在大多数协议下，并且无论您在哪里看到它们，其含义都是相同的。**大多数人从不需要更改其中的任何设置。**这些默认值经过选择，能够在最广泛的硬件上正常工作，而来到这里的常见原因是某些内容无法正常播放。
 
-Two things are true of all of them:
+对于所有这些设置，有两点是共同的：
 
-- They are only visible when the `Show advanced settings` toggle is on
-- Changing one reloads the player, so anything currently playing stops briefly
+- 它们只有在 `Show advanced settings` 开关打开时才可见
+- 更改其中任何一项都会重新加载播放器，因此当前正在播放的内容会短暂停止
 
-Not every player shows every setting, and that is normal. A provider can set its own default, or hide a setting where it does not apply. Some also depend on what the player can do, so a player that always streams the queue in one go has no flow mode setting, and a player that reports its own capabilities has no sample rate setting. Where a player differs from the defaults below, its own page says so.
+并非每个播放器都会显示每项设置，这是正常现象。提供程序可以设置自己的默认值，或在设置不适用的地方将其隐藏。有些设置还取决于播放器的能力，因此总是一次性串流整个队列的播放器没有流动模式（flow mode）设置，而报告自身能力的播放器没有采样率设置。如果某个播放器与下方的默认值不同，其自身的页面会予以说明。
 
-AirPlay, Sendspin and Snapcast do not stream over HTTP, so those players show only **Output Channel Mode** from this list.
+AirPlay、Sendspin 和 Snapcast 不通过 HTTP 串流，因此这些播放器在此列表中只显示 **输出声道模式（Output Channel Mode）**。
 
-#### Enable queue flow mode
+#### 启用队列流动模式
 
-Sends the whole queue to the player as one continuous stream, instead of one track at a time. Off by default on most players, though several providers turn it on because their devices work better that way; those pages say so.
+将整个队列作为一个连续的流发送到播放器，而不是一次发送一首曲目。在大多数播放器上默认关闭，不过几个提供程序会将其打开，因为它们的设备以这种方式工作时效果更好；相关页面会有说明。
 
-Turn it on if the player leaves a gap between tracks, fails to transition to the next track, or cannot do gapless playback at all. Music Assistant also switches it on by itself when crossfade is in use *and* the player cannot do gapless playback on its own, since stitching those tracks together needs one continuous stream.
+如果播放器在曲目之间留有间隙、无法过渡到下一首曲目，或完全无法实现无缝播放（gapless playback），请打开此选项。当使用交叉淡入淡出（crossfade）*且*播放器自身无法实现无缝播放时，Music Assistant 也会自动将其打开，因为这些曲目需要拼接成一个连续的流。
 
-The trade-off is that most players stop showing track information on their own display, because they only ever receive one long "track". The ICY setting below can put some of it back. [Track Queueing](/faq/tech-info/#track-queueing) explains how this differs from letting the player queue the next track itself.
+其代价是，大多数播放器不再在自己的显示屏上显示曲目信息，因为它们只会收到一首很长的“曲目”。下方的 ICY 设置可以找回其中部分信息。[曲目排队](/faq/tech-info/#track-queueing)解释了这与让播放器自行将下一首曲目加入队列有何不同。
 
-#### Flow Mode sample rate
+#### 流动模式的采样率
 
-Only applies when flow mode is on. A flow stream uses a single sample rate from start to finish, and this decides which one. `Smart` is the default and the right choice for almost everyone.
+仅在流动模式开启时适用。流动流从头到尾使用单一的采样率，此项设置决定使用哪个采样率。`Smart`（智能）是默认值，对几乎所有人来说都是正确的选择。
 
 <details>
-<summary>What each option does</summary>
+<summary>各选项的作用</summary>
 
-| Option | Behaviour |
+| 选项 | 行为 |
 | --- | --- |
-| **Smart** *(default)* | Starts at the first track's rate, upsamples lower-rate tracks to match, and restarts the stream only when a track has a higher rate. The best balance of quality and seamless playback |
-| **Bit-perfect** | Never resamples. Playback restarts between tracks of differing sample rates, which disables gapless and crossfade across those transitions |
-| **48 kHz** | Resamples everything to a fixed 48 kHz, or the closest rate the player supports. A good compromise of quality and bandwidth |
-| **96 kHz** | Resamples everything to a fixed 96 kHz, or the closest rate the player supports |
-| **Highest supported by player** | Resamples everything to the highest rate the player supports. Best quality, but can waste a lot of bandwidth |
+| **Smart**（智能）*（默认）* | 从第一首曲目的采样率开始，将较低采样率的曲目前升采样以保持一致，并且仅当某首曲目的采样率更高时才重新启动流。在音质与无缝播放之间取得最佳平衡 |
+| **Bit-perfect**（比特完美） | 从不重新采样。采样率不同的曲目之间会重新开始播放，这会禁用这些过渡处的无缝播放和交叉淡入淡出 |
+| **48 kHz** | 将所有音频重新采样为固定的 48 kHz，或播放器支持的最接近采样率。是音质与带宽之间的良好折中 |
+| **96 kHz** | 将所有音频重新采样为固定的 96 kHz，或播放器支持的最接近采样率 |
+| **播放器支持的最高采样率** | 将所有音频重新采样为播放器支持的最高采样率。音质最佳，但可能浪费大量带宽 |
 
 </details>
 
-#### Try to inject metadata into stream (ICY)
+#### 尝试向流中注入元数据（ICY）
 
-Only applies when flow mode is on. Puts the track title and artist into the audio stream itself so the player can display them, in the same way internet radio stations do. Disabled by default.
+仅在流动模式开启时适用。将曲目标题和艺术家名称放入音频流本身，以便播放器能够显示它们，其方式与网络电台相同。默认禁用。
 
-Turn it on if your player shows nothing useful while flow mode is running. Start with Profile 1, and move to Profile 2 if you want album art as well. Not every player handles it correctly, so if playback becomes unreliable, step back down or turn it off again.
+如果您的播放器在流动模式运行期间没有显示任何有用的内容，请打开此选项。从 Profile 1（配置文件 1）开始，如果您还想要专辑封面，则切换到 Profile 2。并非每个播放器都能正确处理它，因此如果播放变得不稳定，请退回较低的配置文件或再次将其关闭。
 
 <details>
-<summary>What each option does</summary>
+<summary>各选项的作用</summary>
 
-| Option | Behaviour |
+| 选项 | 行为 |
 | --- | --- |
-| **Disabled - do not send ICY metadata** *(default)* | No metadata is injected; the player will not show track info during flow mode |
-| **Profile 1 - basic info** | Title and artist only. Lightweight and widely compatible |
-| **Profile 2 - full info (including image)** | Also sends the album name and cover art. Richer, but some players mishandle it, so use Profile 1 if you see playback issues |
+| **禁用 - 不发送 ICY 元数据** *（默认）* | 不注入任何元数据；流动模式期间播放器不会显示曲目信息 |
+| **Profile 1 - 基本信息** | 仅包含标题和艺术家名称。轻量且兼容性广泛 |
+| **Profile 2 - 完整信息（包括图像）** | 还会发送专辑名称和封面图。信息更丰富，但有些播放器处理不当，因此如果遇到播放问题，请使用 Profile 1 |
 
 </details>
 
-#### Output codec to use for streaming audio to the player
+#### 向播放器串流音频时使用的输出编解码器
 
-The format Music Assistant encodes the audio into before sending it. `FLAC` by default, which is lossless.
+Music Assistant 在发送音频之前将音频编码成的格式。默认为 `FLAC`，这是无损格式。
 
-Change it if the player cannot play FLAC, or to cut down network traffic on a weak Wi-Fi link. A lossy codec is a good first thing to try when playback stutters on wireless players.
+如果播放器无法播放 FLAC，或者想在信号较弱的 Wi-Fi 链路上减少网络流量，可以更改此项。当无线播放器出现播放卡顿时，有损编解码器是一个值得首先尝试的选项。
 
 <details>
-<summary>What each option does</summary>
+<summary>各选项的作用</summary>
 
-| Option | Behaviour |
+| 选项 | 行为 |
 | --- | --- |
-| **FLAC (lossless, compressed)** *(default)* | Full quality at a moderate bitrate. The best choice for most players |
-| **MP3 (lossy)** | Smaller bitrate at some quality cost. Use for players that cannot play FLAC, or to save bandwidth |
-| **AAC (lossy)** | Comparable to MP3; pick it for players that prefer AAC |
-| **WAV (uncompressed PCM)** | Highest bandwidth of the four. Only needed for players that cannot handle FLAC |
+| **FLAC（无损，压缩）** *（默认）* | 以中等码率实现完整音质。对大多数播放器来说是最佳选择 |
+| **MP3（有损）** | 码率更小，但有一定音质损失。用于无法播放 FLAC 的播放器，或为了节省带宽 |
+| **AAC（有损）** | 与 MP3 相当；适合偏好 AAC 的播放器 |
+| **WAV（未压缩 PCM）** | 四者中带宽最高。仅当播放器无法处理 FLAC 时才需要 |
 
 </details>
 
-#### Sample rates supported by this player
+#### 此播放器支持的采样率
 
-The sample rates and bit depths this player can be sent without resampling. Anything higher is resampled down to fit. `44.1 kHz / 16 bit` and `48 kHz / 16 bit` are selected by default.
+此播放器无需重新采样即可接收的采样率和位深。更高的采样率会被向下重新采样以适应。默认选择 `44.1 kHz / 16 bit` 和 `48 kHz / 16 bit`。
 
-You choose the rates from a drop down list of checkboxes, and the ones you pick are then shown as chips in the field, so you can see the whole selection at a glance.
+您可以从复选框的下拉列表中选择采样率，所选的采样率随后会以芯片的形式显示在该字段中，以便您一目了然地看到整个选择。
 
-Rates go up to 384 kHz / 24 bit, though most providers narrow that list to what the device plausibly handles. On most players the selection is a safe starting point rather than something detected from the device, and the higher rates are there for you to try. If your player genuinely supports them, add them and you will get better quality. If playback breaks or the player falls silent, remove them again. Manufacturers vary, so test rather than assume. Some providers do detect the device's capabilities and set this for you, and those pages say so.
+采样率最高可达 384 kHz / 24 bit，不过大多数提供程序会将该列表缩小到设备可能支持的范围内。在大多数播放器上，此选择是一个安全的起点，而不是从设备检测得到的结果，更高的采样率供您自行尝试。如果您的播放器确实支持这些采样率，添加它们即可获得更好的音质。如果播放中断或播放器归于静默，请再次将它们移除。各制造商情况不一，因此请实际测试而不要凭空假设。有些提供程序确实会检测设备的能力并为您进行此项设置，相关页面会有说明。
 
-#### Output Channel Mode
+#### 输出声道模式
 
-Whether the player receives both channels, one channel, or a mono mix of the two. `Stereo` by default.
+播放器是接收两个声道、单个声道，还是两者的单声道混合。默认为 `Stereo`（立体声）。
 
-The usual reason to change it is building a stereo pair from two players. Set one to `Left channel only` and the other to `Right channel only`, then group them.
+更改此项的常见原因是用两台播放器组建一对立体声。将一台设置为 `Left channel only`（仅左声道），另一台设置为 `Right channel only`（仅右声道），然后将它们组成组。
 
-#### Prefer low-latency WAV for live sources
+#### 实时音源优先使用低延迟 WAV
 
-Sends live sources such as [Spotify Connect](/plugins/spotify-connect/) and the [AirPlay Receiver](/plugins/airplay-receiver/) as uncompressed audio, so there is less delay before you hear them. Off by default on most players; providers that turn it on say so on their own page.
+将诸如 [Spotify Connect](/plugins/spotify-connect/) 和 [AirPlay Receiver](/plugins/airplay-receiver/) 等实时音源以未压缩音频的形式发送，从而减少您听到它们之前的延迟。在大多数播放器上默认关闭；开启此选项的提供程序会在其自己的页面上说明。
 
-Turn it off if those sources are unreliable on your player; Music Assistant will fall back to the output codec set above.
+如果这些音源在您的播放器上不稳定，请关闭此选项；Music Assistant 将回退到上文设置的输出编解码器。
 
-#### HTTP Profile used for sending audio
+#### 发送音频时使用的 HTTP Profile
 
-A low-level detail of how the audio is handed to the player. `Profile 2` by default, and correct for most players.
+关于音频如何交付给播放器的一个底层细节。默认为 `Profile 2`，这对大多数播放器来说是正确的。
 
-The three differ in whether Music Assistant tells the player how much audio is coming before it starts sending any. Most players do not mind either way, but a few will not start, stop part way through, or refuse to skip within a track unless they are told in advance.
+三者的区别在于，Music Assistant 在开始发送任何音频之前是否会告诉播放器即将到来的音频量。大多数播放器对两种方式都不介意，但有少数播放器除非事先被告知，否则将无法开始播放、会在中途停止，或拒绝在曲目内跳转。
 
-Change it only to fix a problem. If the player behaves in any of those ways, work through the other profiles.
+只有在解决问题时才更改此项。如果播放器出现上述任何行为，请依次尝试其他 Profile。
 
 <details>
-<summary>What each option does</summary>
+<summary>各选项的作用</summary>
 
-| Option | Behaviour |
+| 选项 | 行为 |
 | --- | --- |
-| **Profile 1 - chunked** | Sends the audio in pieces as it is produced, without saying how much is coming |
-| **Profile 2 - no content length** *(default)* | Sends the audio as one continuous stream, without saying how much is coming. Right for most players |
-| **Profile 3 - forced content length** | Tells the player up front roughly how much audio to expect, worked out from the length of the track. Try this one first if the player will not start, cuts off early, or will not let you skip within a track |
+| **Profile 1 - 分块传输** | 边生成边分块发送音频，而不说明即将到来的音频量 |
+| **Profile 2 - 无内容长度** *（默认）* | 将音频作为一个连续的流发送，而不说明即将到来的音频量。适合大多数播放器 |
+| **Profile 3 - 强制内容长度** | 事先告诉播放器大约会有多少音频（根据曲目长度计算得出）。如果播放器无法开始播放、提前中断或无法在曲目内跳转，请首先尝试此项 |
 
 </details>
 
-## Group Player Settings
+## 组播放器设置
 
-For group players the following settings will be seen. **Group members** and **Allowed members** are both chosen from a drop down list of checkboxes, with the players you pick then shown as chips in the field.
+组播放器将显示以下设置。**组成员**和**允许的成员**都是从复选框的下拉列表中选择，您所选的播放器随后会以芯片的形式显示在字段中。
 
-- <b>Group members.</b> The players that belong to this group
-- <b>Enable dynamic members</b> toggle. This setting is available for [Sync and Universal Groups](/faq/groups/). When enabled, it is then possible to add and remove members from these group types
-- <b>Allowed members</b>. Limit which players can join this group. Leave empty to allow any sync-compatible player. This can be used to reduce the list of players that show up for joining in case you have a lot of players. Only shown when the advanced toggle is on
-- <b>Allow crossfades between tracks of different sample rates</b>. Enable this option to allow crossfades between tracks that have different sample rates (e.g. 44.1kHz to 48kHz). Disable this option if you experience audio glitches during transitions between tracks. Only shown when the advanced toggle is on
+- <b>组成员。</b>属于此组的播放器
+- <b>启用动态成员</b>开关。此设置适用于[同步组和通用组](/faq/groups/)。启用后，即可从这些组类型中添加和移除成员
+- <b>允许的成员</b>。限制哪些播放器可以加入此组。留空则允许任何支持同步的播放器。如果您有很多播放器，可以使用此选项来减少加入时显示的播放器列表。仅在高级开关打开时显示
+- <b>允许在不同采样率的曲目之间进行交叉淡入淡出</b>。启用此选项可允许在具有不同采样率的曲目之间进行交叉淡入淡出（例如从 44.1kHz 到 48kHz）。如果您在曲目之间的过渡中遇到音频故障，请禁用此选项。仅在高级开关打开时显示
 
-Universal Groups default to `Profile 1 - chunked` for the HTTP Profile, rather than Profile 2 as elsewhere.
+通用组（Universal Group）的 HTTP Profile 默认为 `Profile 1 - chunked`，而不是像其他地方那样默认为 Profile 2。
 
-## Announcements Configuration
+## 公告配置
 
-There are a number of configurable options for controlling the volume of [announcements](/integration/announcements/) sent to the MA players. These are well described by the help available by selecting this icon ![image](/assets/icons/question-mark.png) beside each field. The `Maximum` and `Minimum Volume` level boxes do not apply when the `Absolute volume` option is selected.
+有多个可配置的选项用于控制发送到 MA 播放器的[公告](/integration/announcements/)的音量。这些选项在点击每个字段旁边的此图标 ![image](/assets/icons/question-mark.png) 所显示的帮助中有很好的说明。当选中 `Absolute volume`（绝对音量）选项时，`Maximum`（最大）和 `Minimum Volume`（最小音量）级别框将不适用。
 
 ![image](/assets/screenshots/announcements-settings.png)
 
-## Player Controls
+## 播放器控制
 
-Each player has a number of options available to control the behaviour of the power, volume and mute controls in the MA UI. By default, if a device supports these controls then that native behaviour will be used or if the control is not supported then it will be disabled in the UI (the setting will indicate NONE). It is also possible to manually disable the controls by changing the setting to NONE. Some of the options require the advanced toggle to be enabled before they can be seen.
+每个播放器都有若干可用选项，用于控制 MA UI 中电源、音量和静音控件的行为。默认情况下，如果设备支持这些控件，则使用其原生行为；如果不支持某个控件，则该控件在 UI 中将被禁用（设置将显示为 NONE）。也可以通过将设置更改为 NONE 来手动禁用这些控件。某些选项需要先启用高级开关才能看到。
 
-It is possible to map other HA entities to the MA player controls. in order for this to be an option the HA entities need to be first exposed to MA via the settings in the [HA Plugin](/ha-plugin/).
+可以将其他 HA 实体（entity）映射到 MA 播放器控件。要使此选项可用，需要先通过 [HA 插件](/ha-plugin/)中的设置将 HA 实体暴露给 MA。
 
-**Power** If a player does not support power but it is desired that the player has an on and off state then a FAKE option is available which will simulate the on/off functionality. Power controls assume the underlying device is in a standby mode and not physically powered off.
+**电源** 如果播放器不支持电源功能，但希望播放器具有开和关状态，则可以使用 FAKE 选项来模拟开/关功能。电源控件假定底层设备处于待机模式，而不是物理断电。
 
-**Volume** This allows the volume control to be defined or disabled.
+**音量** 此选项允许定义或禁用音量控制。
 
-**Mute** There is a FAKE option that will set the volume to zero and restore it when mute and unmute is commanded.
+**静音** 有一个 FAKE 选项，当命令静音和取消静音时，它会把音量设为零，并在取消静音时恢复音量。
 
-**Minimum and Maximum Volume** Two sliders allow the application of limits to the maximum and minimum values that are sent to the player. The volume sliders in the UI are rescaled so the full 0-100 range will still be seen. (Only shown when the advanced toggle is on)
+**最小和最大音量** 两个滑块允许对发送到播放器的最大值和最小值施加限制。UI 中的音量滑块会相应地重新缩放，因此仍会看到完整的 0-100 范围。（仅在高级开关打开时显示）
 
-**Automatically play/resume on power on** If the player supports power control then this option will cause the player to immediately start playing any items in the queue on power on.
+**开机时自动播放/恢复播放** 如果播放器支持电源控制，则此选项将使播放器在开机时立即开始播放队列中的任何项目。

@@ -1,144 +1,144 @@
 ---
-title: Smart Playlists
-description: Create dynamic playlists based on rules from your library or from music discovered via seed tracks, artists, albums, or playlists.
+title: 智能播放列表
+description: 基于媒体库中的规则创建动态播放列表，或通过种子曲目、艺人、专辑或播放列表发现的相似音乐来创建动态播放列表。
 pluginGroup: discover
 ---
 
-# Smart Playlists
+# 智能播放列表
 
-The Smart Playlists plugin lets you create rule-based playlists from your Music Assistant library.
+智能播放列表（Smart Playlists）插件让您可以从 Music Assistant 媒体库中创建基于规则的播放列表。
 
-Smart playlists are **dynamic**: the tracks are re-evaluated whenever you play the playlist, based on your saved rules and current library/provider state.
+智能播放列表是**动态的**：每当您播放该播放列表时，都会根据您保存的规则以及当前媒体库/提供方（provider）的状态重新评估曲目。
 
-:::caution[Experimental]
-This plugin is currently marked as **experimental**. Behaviour may change before the final release.
+:::caution[实验性]
+该插件目前被标记为**实验性**。在正式发布之前，其行为可能会发生变化。
 :::
 
-## Installation
+## 安装
 
-Enable the **Smart Playlists** plugin via **Settings → Plugins → Add a plugin**. No additional configuration is required.
+通过**设置 → 插件 → 添加插件**启用**智能播放列表**插件。无需额外配置。
 
 ![Smart Playlists plugin entry](/assets/screenshots/smart_playlist/add_plugin.png)
 
-## Creating a Smart Playlist
+## 创建智能播放列表
 
-In the Playlists view, select the <img src="/assets/screenshots/smart_playlist/create_button.png" alt="Create Smart Playlist button" style="height: 1.4em; vertical-align: middle;" loading="lazy" /> button in the top right and choose **Create Smart Playlist**.
+在播放列表视图中，选择右上角的 <img src="/assets/screenshots/smart_playlist/create_button.png" alt="Create Smart Playlist button" style="height: 1.4em; vertical-align: middle;" loading="lazy" /> 按钮，然后选择**创建智能播放列表**。
 
 ![Create Smart Playlist menu](/assets/screenshots/smart_playlist/menu_entry.png)
 
 ![Create Smart Playlist dialog (Discover mode)](/assets/screenshots/smart_playlist/create_smart_playlist_discover.png)
 
-The screenshot above shows a **Discover mode** setup.
+上面的截图展示了一个**发现模式**（Discover mode）的设置。
 
 ![Create Smart Playlist dialog (From my library / rule-based mode)](/assets/screenshots/smart_playlist/create_smart_playlist_rulebased.png)
 
-The screenshot above shows **From my library** mode (rule-based setup).
+上面的截图展示了**从我的媒体库**（From my library）模式（基于规则的设置）。
 
-Enter a name and choose a source mode:
+输入名称并选择来源模式：
 
-- **From my library**: build from tracks already in your MA library.
-- **Discover mode**: use one or more seed items (tracks, artists, albums, or playlists) and fetch similar content from supported streaming providers.
+- **从我的媒体库**：基于您 MA 媒体库中已有的曲目构建。
+- **发现模式**：使用一个或多个种子项目（曲目、艺人、专辑或播放列表），并从支持的流媒体提供方获取相似内容。
 
-## Rule model
+## 规则模型
 
-Smart playlists use include/exclude style rules:
+智能播放列表使用包含/排除（include/exclude）风格的规则：
 
-- **Genre**: is / is not (one or more genres)
-- **Artist**: is / is not (library mode, one or more artists)
-- **Album**: is / is not (library mode, one or more albums)
-- **Album type**: is / is not (filter by album type: album, single, EP, compilation, etc.)
-- **Explicit**: filter tracks by explicit content marker (three options: allowed, explicit only, not allowed; provider-dependent)
-- **Favorite**: yes (library mode)
-- **Year**: between from/to (it is possible to use only `from` or only `to`)
-- **Duration**: between from/to in MM:SS format (filter tracks by length)
-- **Last played**: filter tracks by how recently they were played (e.g., "1 days ago", "2 weeks ago")
+- **流派**：是 / 不是（一个或多个流派）
+- **艺人**：是 / 不是（媒体库模式，一个或多个艺人）
+- **专辑**：是 / 不是（媒体库模式，一个或多个专辑）
+- **专辑类型**：是 / 不是（按专辑类型筛选：专辑、单曲、EP、合辑等）
+- **限制级内容**：按限制级内容标记筛选曲目（三个选项：允许、仅限制级内容、不允许；取决于提供方）
+- **收藏**：是（媒体库模式）
+- **年份**：介于 from/to 之间（可以只使用 `from` 或只使用 `to`）
+- **时长**：以 MM:SS 格式设置 from/to 之间的范围（按时长筛选曲目）
+- **上次播放**：按曲目最近一次播放的时间进行筛选（例如 "1 days ago"、"2 weeks ago"）
 
-Album type examples:
+专辑类型示例：
 
-- **Album type is "Album"**: only full-length albums (excludes singles, EPs, compilations)
-- **Album type is not "Single"**: excludes all single releases
-- **Album type is "Album" or "EP"**: includes full albums and EPs (excludes singles and compilations)
-- **Album type is "Live"**: only live recordings/concerts
+- **专辑类型为 "Album"**：仅完整专辑（排除单曲、EP 和合辑）
+- **专辑类型不为 "Single"**：排除所有单曲发行
+- **专辑类型为 "Album" 或 "EP"**：包含完整专辑和 EP（排除单曲和合辑）
+- **专辑类型为 "Live"**：仅现场录音/演唱会
 
-Available album types: **Album**, **Single**, **EP**, **Compilation**, **Live**, **Soundtrack**, **Audiobook**, **Podcast**, **Unknown album type** (albums without a specific type classification or where the music provider does not provide type information).
+可用的专辑类型：**Album**（专辑）、**Single**（单曲）、**EP**、**Compilation**（合辑）、**Live**（现场）、**Soundtrack**（原声带）、**Audiobook**（有声书）、**Podcast**（播客）、**Unknown album type**（未知专辑类型）（没有具体类型分类、或音乐提供方未提供类型信息的专辑）。
 
-Explicit content filter options:
+限制级内容筛选选项：
 
-- **Allowed**: include both explicit and non-explicit tracks (no filtering)
-- **Explicit only**: include only tracks marked as explicit content
-- **Not allowed**: exclude all tracks marked as explicit content
+- **允许**：同时包含限制级和非限制级曲目（不进行筛选）
+- **仅限制级内容**：仅包含被标记为限制级内容的曲目
+- **不允许**：排除所有被标记为限制级内容的曲目
 
-**Note:** Explicit content filtering depends on your music provider supplying explicit markers in their metadata. Not all music providers include this information, and availability varies by provider and region. If your provider does not supply explicit markers, this filter will have no effect.
+**注意：** 限制级内容筛选取决于您的音乐提供方是否在其元数据中提供限制级标记。并非所有音乐提供方都包含此信息，且可用性因提供方和地区而异。如果您的提供方未提供限制级标记，此筛选器将不会生效。
 
-Year examples:
+年份示例：
 
-- `from: 1969` means 1969 or newer.
-- `to: 1980` means 1980 or older.
+- `from: 1969` 表示 1969 年或更新。
+- `to: 1980` 表示 1980 年或更早。
 
-Duration examples:
+时长示例：
 
-- `from: 0:30` means 30 seconds or longer (excludes very short tracks such as interludes).
-- `to: 5:00` means 5 minutes or shorter.
-- `between: 3:00 and 6:00` means tracks between 3 and 6 minutes.
+- `from: 0:30` 表示 30 秒或更长（排除间奏等非常短的曲目）。
+- `to: 5:00` 表示 5 分钟或更短。
+- `between: 3:00 and 6:00` 表示介于 3 到 6 分钟之间的曲目。
 
-Last played examples:
+上次播放示例：
 
-- `1 days ago` means tracks played within the last day.
-- `7 days ago` means tracks played within the last week.
-- Use this to create "recently played" playlists or to exclude tracks played recently.
+- `1 days ago` 表示最近一天内播放过的曲目。
+- `7 days ago` 表示最近一周内播放过的曲目。
+- 使用此选项可创建“最近播放”播放列表，或排除最近播放过的曲目。
 
-In **From my library** mode you can choose whether tracks must match **all** rules or **any** rule.
+在**从我的媒体库**模式中，您可以选择曲目必须匹配**所有**规则还是**任意一条**规则。
 
-In **Discover mode**, filters are applied to the provider result after similar content is fetched.
+在**发现模式**中，会在获取相似内容之后对提供方的结果应用筛选器。
 
 ![Rule examples in From my library mode](/assets/screenshots/smart_playlist/rules_example.png)
 
-## Discover mode
+## 发现模式
 
-Discover mode fetches similar content from your streaming providers based on seed items.
+发现模式基于种子项目，从您的流媒体提供方获取相似内容。
 
-:::note[Best Effort Service]
-Discover mode relies on external music provider APIs for content recommendations. Results depend on:
-- Provider availability and API limits
-- Seed track/artist/album recognition by the provider
-- Provider-specific recommendation algorithms
+:::note[尽力而为的服务]
+发现模式依赖外部音乐提供方的 API 来获取内容推荐。结果取决于：
+- 提供方的可用性和 API 限制
+- 提供方对种子曲目/艺人/专辑的识别情况
+- 提供方特定的推荐算法
 
-Quality and availability of results may vary between providers and over time.
+结果的质量和可用性可能因提供方和时间而异。
 :::
 
-When using **Discover mode**:
+使用**发现模式**时：
 
-- Add one or more seeds from tracks, artists, albums, or playlists.
-- Seed lookups depend on provider support for the selected seed types.
-- Results are sampled from provider output and refreshed on each play.
+- 从曲目、艺人、专辑或播放列表中添加一个或多个种子。
+- 种子查找取决于提供方对所选种子类型的支持情况。
+- 结果从提供方的输出中抽样，并在每次播放时刷新。
 
-## Track count and duration hint
+## 曲目数量和时长提示
 
-The dialog shows a live estimate while you edit rules:
+在您编辑规则时，对话框会显示实时估算：
 
-- **From my library mode**: live matching track count + duration estimate, updated as rules change.
-- **Discover mode**: no live matching-count calculation; the UI only shows guidance that up to 50 tracks are fetched from your streaming provider.
+- **从我的媒体库模式**：实时显示匹配的曲目数量 + 时长估算，并随规则的变化而更新。
+- **发现模式**：不进行实时的匹配数量计算；界面仅显示提示，说明最多会从您的流媒体提供方获取 50 首曲目。
 
-The screenshot below shows **From my library** mode (rule-based smart playlist).
+下面的截图展示了**从我的媒体库**模式（基于规则的智能播放列表）。
 
 ![Track count indicator (From my library mode)](/assets/screenshots/smart_playlist/track_count.png)
 
-The screenshot below shows the Track Count hint for **Discover mode**.
+下面的截图展示了**发现模式**的曲目数量提示。
 
 ![Track count indicator (Discover mode)](/assets/screenshots/smart_playlist/track_count_discover.png)
 
-## Playlist detail
+## 播放列表详情
 
-After saving, open the smart playlist to view a current sample output based on your rules.
+保存后，打开该智能播放列表即可查看基于您的规则生成的当前示例输出。
 
 ![Smart Playlist detail view](/assets/screenshots/smart_playlist/playlist_detail.png)
 
-## AI descriptions
+## AI 描述
 
-The Smart Playlists provider settings have an **AI descriptions** option. With it switched on, Music Assistant writes a short description for each smart playlist from the rules you gave it, so the playlist says what it holds without you having to write that yourself.
+智能播放列表提供方设置中有一个 **AI 描述**（AI descriptions）选项。开启该选项后，Music Assistant 会根据您给出的规则为每个智能播放列表撰写一段简短描述，这样播放列表就能说明其包含的内容，而无需您亲自编写。
 
-This needs an **AI engine**, which comes from another plugin. Switching **AI descriptions** on reveals an **AI engine** picker directly beneath it, which you can change at any time. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
+这需要一个 **AI 引擎**（AI engine），它来自另一个插件。开启 **AI 描述**后，其正下方会显示一个 **AI 引擎**选择器，您可以随时更改。请参阅 [AI 和文本转语音引擎](/ha-plugin/#ai-and-text-to-speech-engines)。
 
-## Notes
+## 注意事项
 
-- Smart playlists only exist as long as the Smart Playlists plugin is installed. Removing the plugin also removes associated smart playlists from the MA library.
+- 智能播放列表仅在安装了智能播放列表插件时才存在。移除该插件也会将相关联的智能播放列表从 MA 媒体库中移除。

@@ -4,19 +4,19 @@ title: "YouTube Music"
 
 # YouTube Music <img src="/assets/icons/ytm-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for Youtube Music. Contributed and maintained by <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener noreferrer">MarvinSchenkel</a>
+Music Assistant 支持 YouTube Music，由 <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener noreferrer">MarvinSchenkel</a> 贡献并维护。
 
-YouTube Music is Google's streaming service, built on top of YouTube itself. As well as the usual catalogue it reaches material uploaded to YouTube, so live sets, covers and rarities that other services do not carry are often there.
+YouTube Music 是 Google 的流媒体服务，构建于 YouTube 之上。除了常规曲库之外，它还能访问上传到 YouTube 的内容，因此其他服务不提供的现场演出、翻唱曲目和稀有资源通常都能在这里找到。
 
-With your account connected, your library and playlists appear in Music Assistant and the catalogue can be searched.
+连接您的账户后，您的媒体库和播放列表将显示在 Music Assistant 中，并且可以搜索曲库。
 
 > [!WARNING]
-> **DISCLAIMER**
+> **免责声明**
 >
-> Please note that Youtube does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis. Unexpected behavior will occur whilst using this source. For this reason if you have another streaming source you may find it more convenient to use that instead of this one.
+> 请注意，YouTube 不提供用于获取数据和流的官方 API，这意味着一切均基于尽力而为（best-effort）的原则构建。在使用此音源时会出现意外行为。因此，如果您还有其他流媒体音源，使用那个可能会比使用这个更方便。
 
 > [!NOTE]
-> Free accounts are NOT supported.
+> 不支持免费账户。
 
 ## Features
 
@@ -38,83 +38,87 @@ With your account connected, your library and playlists appear in Music Assistan
 - Searching the YouTube Music catalogue
 - The highest available stream from Youtube Music will be selected for playback (similar to configuring 'high' in the web-app)
 
-## Configuration
+### 其他
+- 搜索 YouTube Music 曲库
+- 播放时会选择 YouTube Music 可用的最高音质流（类似于在网页应用中将音质配置为 'high'）
 
-Cookie authentication is the **only** way to get YT Music working; Google does not support any other login method for third party apps. The process is somewhat cumbersome, but you only need to repeat it when the cookie expires. Setup has three parts: install the PO Token app, obtain your login cookie, then configure the source.
+## 配置
 
-> [!NOTE]
-> Cookies expire after some time. If YT Music stops working and you see `401: Unauthorized` or `Unable to fetch PO Token for web_music client` in the MA log, run the cookie steps again
-
-> [!NOTE]
-> If you use a Family Account, setting up a dedicated account for MA will help maximise cookie life
-
-### Step 1: Install the PO Token app
-
-Google will not let anything play until it has been given a 'Proof of Origin' token, which is its way of checking the request came from a real YouTube app. This small piece of software produces those for Music Assistant in the background, and you never have to touch it again once it is running. Install it before adding the YT Music source:
-
-1. In Home Assistant, go to `Settings >> Apps >> Install app`.
-2. Scroll down to the 'Music Assistant' section.
-3. Install the app called 'YT Music PO Token Generator' and make sure it is started.
+Cookie 身份验证是让 YT Music 正常工作的**唯一**方式；Google 不为第三方应用提供任何其他登录方式。这个过程有些繁琐，但只有在 Cookie 过期时才需要重复操作。设置分为三个部分：安装 PO Token 应用、获取您的登录 Cookie，然后配置该音源。
 
 > [!NOTE]
-> If you host Music Assistant yourself, download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a>. You must run the version currently supported by MA, which is 1.2.1. Install and run the correct version, then add its URL when configuring the YT Music source in Step 3.
+> Cookie 会在一段时间后过期。如果 YT Music 停止工作，并且在 MA 日志中看到 `401: Unauthorized` 或 `Unable to fetch PO Token for web_music client`，请重新执行获取 Cookie 的步骤
 
-### Step 2: Obtain your login cookie
+> [!NOTE]
+> 如果您使用的是家庭账户（Family Account），为 MA 设置一个专用账户将有助于最大限度延长 Cookie 的有效期
 
-YouTube rotates account cookies frequently on open YouTube browser tabs as a security measure. To export a cookie that keeps working, export it in a way that never rotates it. One way to do this is through a private browsing/incognito window:
+### 第 1 步：安装 PO Token 应用
 
-1. Open <a href="http://music.youtube.com/" target="_blank">YT Music</a> in your browser in an incognito window and log in to your account.
-2. Open the developer tools via View -> Developer -> Developer Tools. Note that this might be named differently based on your browser. It should open a window similar to this:
+在获得"来源证明"（Proof of Origin）令牌之前，Google 不会让任何内容开始播放，这是 Google 用来检查请求是否来自真实 YouTube 应用的方式。这款小软件会在后台为 Music Assistant 生成这些令牌，一旦它运行起来，您就再也不需要去管它了。请在添加 YT Music 音源之前先安装它：
+
+1. 在 Home Assistant 中，前往 `Settings >> Apps >> Install app`。
+2. 向下滚动到 'Music Assistant' 部分。
+3. 安装名为 'YT Music PO Token Generator' 的应用，并确保它已启动。
+
+> [!NOTE]
+> 如果您自行托管 Music Assistant，请<a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">在此处</a>下载 PO Token 服务器的 Docker 文件。您必须运行 MA 目前支持的版本，即 1.2.1。安装并运行正确的版本，然后在第 3 步配置 YT Music 音源时添加其 URL。
+
+### 第 2 步：获取您的登录 Cookie
+
+作为一项安全措施，YouTube 会在打开的浏览器标签页中频繁轮换账户 Cookie。要导出一个能持续有效的 Cookie，需要以永远不会轮换它的方式导出。方法之一是通过隐私浏览/无痕窗口：
+
+1. 在无痕窗口中用浏览器打开 <a href="http://music.youtube.com/" target="_blank">YT Music</a>，并登录您的账户。
+2. 通过 View -> Developer -> Developer Tools 打开开发者工具。请注意，该菜单的名称可能因浏览器而异。它应该会打开一个类似下图的窗口：
 [![Dev tools](/assets/screenshots/ytmusic-developer-tools.png)](/assets/screenshots/ytmusic-developer-tools.png)
-3. Navigate to the 'Network' tab.
-4. In the filter bar, type "/browse". Reload the page if no results are shown.
-5. Now navigate to a page in YT Music that requires authentication, for example, one of your library playlists.
-6. A request will show up in the table:
+3. 前往 'Network'（网络）标签页。
+4. 在筛选栏中输入 "/browse"。如果没有显示任何结果，请刷新页面。
+5. 现在前往 YT Music 中一个需要身份验证的页面，例如您媒体库中的某个播放列表。
+6. 一个请求将出现在表格中：
 
 [![Auth request](/assets/screenshots/ytmusic-auth-request.png)](/assets/screenshots/ytmusic-auth-request.png)
 
-7. Click the request and make sure you are on the 'Headers' tab.
-8. Find the section called 'Request Headers'.
-9. Find the item named 'Cookie' and copy the **value**. It is **VERY** important that you copy the exact value. Double check that you do not include any additional spaces or characters at the start/end of the value.
+7. 点击该请求，并确保您位于 'Headers'（标头）标签页。
+8. 找到名为 'Request Headers'（请求标头）的部分。
+9. 找到名为 'Cookie' 的条目并复制其**值**。复制完全准确的值**非常**重要。请仔细检查，确保没有在值的开头/结尾包含任何多余的空格或字符。
 [![Cookie value](/assets/screenshots/ytmusic-cookie-value.png)](/assets/screenshots/ytmusic-cookie-value.png)
-10. Close the incognito window right away. Do not log out first, as that ends the session the cookie belongs to. A window left open keeps rotating the cookie and makes the copy in MA stop working.
+10. 请立即关闭无痕窗口。不要先注销登录，因为那样会终止该 Cookie 所属的会话。保持窗口开启会不断轮换 Cookie，导致 MA 中的副本失效。
 
 > [!NOTE]
-> If your cookie still expires quickly, the yt-dlp project documents an <a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">alternative export method</a> aimed at maximising cookie life. It is written for users of the yt-dlp tool, so expect a more technical walkthrough
+> 如果您的 Cookie 仍然很快过期，yt-dlp 项目文档中记录了一种旨在最大限度延长 Cookie 有效期的<a href="https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies" target="_blank" rel="noopener noreferrer">替代导出方法</a>。它是为 yt-dlp 工具的用户编写的，因此内容会更加偏技术化
 
-### Step 3: Configure the source
+### 第 3 步：配置音源
 
-1. In Music Assistant, go to **Settings → Music Sources → Add a music source** and select 'Youtube Music'.
-2. Fill out the fields in the Generic Settings section as follows:
-    - <b>Username.</b> Use your gmail address or use a brand account (see [brand account](#using-brand-accounts))
-    - <b>Login Cookie.</b> Paste the value you copied in Step 2
-    - <b>PO Token Server URL.</b> Leave this setting as the default if you run the PO server as an App on the same host as the MA App. If you run the PO token server separately, adjust the IP address and port accordingly
-3. Click 'Save'.
+1. 在 Music Assistant 中，前往**设置 → 音乐源 → 添加音乐源**，然后选择 'Youtube Music'。
+2. 按照如下方式填写通用设置（Generic Settings）部分中的字段：
+    - <b>用户名（Username）。</b>使用您的 Gmail 地址，或使用品牌账户（参见[品牌账户](#using-brand-accounts)）
+    - <b>登录 Cookie（Login Cookie）。</b>粘贴您在第 2 步中复制的值
+    - <b>PO Token 服务器 URL（PO Token Server URL）。</b>如果您将 PO 服务器作为应用（App）运行在与 MA 应用相同的主机上，请将此设置保留为默认值。如果您单独运行 PO Token 服务器，请相应调整 IP 地址和端口
+3. 点击 'Save'（保存）。
 
 > [!CAUTION]
-> **Error on saving?**
+> **保存时出错？**
 >
-> If the error mentions `__Secure-3PAPISID`, your cookie did not come from a logged-in (authenticated) request. Go back to the incognito window, open a few more pages that require your account (for example your library), and copy the cookie again. You can check a cookie before saving it: paste it into a text editor and search for `__Secure-3PAPISID`; the right cookie contains this value. If you cannot obtain a cookie containing this value, try a different browser.
+> 如果错误信息中提到 `__Secure-3PAPISID`，说明您的 Cookie 并非来自已登录（经过身份验证）的请求。请返回无痕窗口，多打开几个需要您账户的页面（例如您的媒体库），然后重新复制 Cookie。您可以在保存之前检查 Cookie：将其粘贴到文本编辑器中并搜索 `__Secure-3PAPISID`；正确的 Cookie 应包含此值。如果您无法获得包含此值的 Cookie，请尝试使用其他浏览器。
 
-### Settings
+### 设置
 
-Refer to the [Library Import Control](/music-providers/#library-import-control) settings.
+请参阅[媒体库导入控制（Library Import Control）](/music-providers/#library-import-control)设置。
 
-## Using brand accounts
-A brand account is a sub-account that lives under your main Google account. You need to find your brand account id if you want to login using your brand account.
+## 使用品牌账户
+品牌账户（brand account）是位于您主 Google 账户下的一个子账户。如果您想使用品牌账户登录，则需要找到您的品牌账户 ID。
 
-- Go to <a href="https://myaccount.google.com/" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/</a>
-- From the top right menu, select your brand account
-- Look at the URL and copy the 21-digit number
-- Use this number in the 'Username' field when setting up the source
+- 前往 <a href="https://myaccount.google.com/" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/</a>
+- 在右上角的菜单中，选择您的品牌账户
+- 查看 URL 并复制其中的 21 位数字
+- 在设置音源时，将此数字填入 'Username'（用户名）字段
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- This source mimics YouTube Music. Do not expect to see the same search results as you see if using YouTube
-- It is not possible to have more than three concurrent streams
-- YouTube Music does not tell Music Assistant which disc a track is on, so tracks are simply numbered in the order they arrive. That is usually right, but a multi-disc album may come out in the wrong order
-- Whether music videos are selected for playback fully depends on what you are playing. If you have saved a specific album in your library, then that exact version will show up in MA and thus you will have the album version. However, if you start a radio on, for example, a playlist, then Youtube Music decides which songs will be played in a 'dynamic radio' playlist which could include videos
-- Uploaded Music should be able to be found when it is in a playlist. If it's just a single track being searched for then it may not be found, since often those uploaded songs don't have proper metadata. It will be hard to find them via the UI in MA
-- Expect some blurry artwork. YouTube Music sends low quality images when Music Assistant asks for a whole album or playlist, and only sends the good one when a single track is asked for. Music Assistant works around this where it can by fetching the artwork for the next track in advance, but some of it will still look poor
-- By default, only the liked music and 'episodes for later' playlists are added to the YTM library and thus will appear in MA. In order to see other personal playlists in the MA library, you have to go into the YT Music web app and add those personal playlists to your library
-- Other Versions is populated on a best effort basis and may not include any or all versions of an item than can be found by manually searching
+- 此音源是对 YouTube Music 的模拟实现。不要期望看到与使用 YouTube 时相同的搜索结果
+- 无法同时进行超过三个并发流
+- YouTube Music 不会告知 Music Assistant 曲目位于哪张碟片上，因此曲目只是按到达顺序进行编号。这通常是正确的，但多碟专辑可能会以错误的顺序出现
+- 是否选择音乐视频进行播放完全取决于您正在播放的内容。如果您在媒体库中保存了某张特定专辑，那么该确切版本将显示在 MA 中，因此您获得的将是专辑版本。但是，如果您基于某个播放列表等开始播放电台，那么将由 YouTube Music 决定在"动态电台"（dynamic radio）播放列表中播放哪些歌曲，其中可能包含视频
+- 已上传的音乐如果位于某个播放列表中，应该能够被找到。如果只是搜索单个曲目，则可能无法找到，因为这些上传的歌曲通常没有正确的元数据。很难通过 MA 的界面找到它们
+- 请对部分模糊的封面图有所预期。当 Music Assistant 请求整张专辑或整个播放列表时，YouTube Music 会发送低质量图片，只有在请求单个曲目时才会发送高质量图片。Music Assistant 会通过提前获取下一曲目的封面图来尽可能规避此问题，但部分封面图看起来仍会比较糟糕
+- 默认情况下，只有"喜欢的音乐"和"稍后观看的剧集"（episodes for later）这两个播放列表会被添加到 YTM 媒体库中，因此会显示在 MA 中。要在 MA 媒体库中查看其他个人播放列表，您需要进入 YT Music 网页应用，并将这些个人播放列表添加到您的媒体库中
+- "其他版本"（Other Versions）基于尽力而为的原则填充，可能不包含某个项目通过手动搜索所能找到的全部或任何版本

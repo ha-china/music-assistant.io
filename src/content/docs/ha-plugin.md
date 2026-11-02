@@ -1,83 +1,83 @@
 ---
-title: Home Assistant Plugin Provider
-description: Reach into Home Assistant to link entities to player controls, and to use its AI and text-to-speech services in Music Assistant.
+title: Home Assistant 插件提供者
+description: 深入 Home Assistant 以将实体链接到播放器控制，并在 Music Assistant 中使用其 AI 和文本转语音服务。
 pluginGroup: other-systems
 ---
-# Home Assistant Plugin Provider <img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Home Assistant 插件提供者 <img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The Home Assistant Plugin provides a connection from HA to MA. It is the bridge Music Assistant uses to reach into Home Assistant.
+Home Assistant 插件提供了从 HA 到 MA 的连接。它是 Music Assistant 用于深入 Home Assistant 的桥梁。
 
-It does not add any players by itself. To play to Home Assistant media players you also need the [Home Assistant Media Players](/player-support/home-assistant/) provider, which builds on this plugin. The plugin is still worth having on its own, though, for the entity-linked player controls and the AI and text-to-speech features described below.
+它本身不添加任何播放器。要向 Home Assistant 媒体播放器播放，您还需要 [Home Assistant 媒体播放器](/player-support/home-assistant/) 提供者，该提供者构建在此插件之上。不过，该插件本身仍然值得安装，因为它提供了下文所述的实体链接播放器控制以及 AI 和文本转语音功能。
 
-If you are not sure how this fits with the Home Assistant integration, see [how the pieces fit together](/integration/#how-the-pieces-fit-together).
+如果您不确定它与 Home Assistant 集成（integration）如何配合，请参阅[各部分如何协同工作](/integration/#how-the-pieces-fit-together)。
 
-## Features
+## 功能
 
-- Allows HA entities to be linked to power, mute or volume controls of any player available in MA. This can be useful if the player doesn't support the feature natively or in advanced use cases
-- Makes the AI and text-to-speech entities you already have in Home Assistant available to Music Assistant features that need them
-- Is a prerequisite for the [Home Assistant Media Players](/player-support/home-assistant/) provider, which is what allows HA media players to be players in the MA User Interface
+- 允许将 HA 实体（entity）链接到 MA 中任何可用播放器的电源、静音或音量控制。如果播放器本身不支持该功能或在高级用例中，这会非常有用
+- 使您已经在 Home Assistant 中拥有的 AI 和文本转语音实体可供需要它们的 Music Assistant 功能使用
+- 是 [Home Assistant 媒体播放器](/player-support/home-assistant/) 提供者的先决条件，正是它允许 HA 媒体播放器成为 MA 用户界面中的播放器
  
-## Configuration
+## 配置
 
-The plugin connects directly to Home Assistant's own API and does not need the [Home Assistant integration](/integration/installation/) to be installed. The two are independent: the integration puts MA players into HA, the plugin lets MA reach into HA.
+该插件直接连接到 Home Assistant 自身的 API，无需安装 [Home Assistant 集成](/integration/installation/)。两者是独立的：集成将 MA 播放器放入 HA，而插件让 MA 深入 HA。
 
-- Navigate to **Settings → Plugins** and add the plug-in
-- If using the Music Assistant App (i.e. HAOS), you wont need any server details, it should auto connect to the local HA instance
-- If using the docker version of the MA server, you will be required to enter the URL to your HA instance and then authenticate
+- 导航到 **设置 → 插件** 并添加该插件
+- 如果使用 Music Assistant 应用（即 HAOS），您不需要任何服务器详细信息，它应该会自动连接到本地 HA 实例
+- 如果使用 MA 服务器的 docker 版本，则需要输入 HA 实例的 URL 并进行身份验证
 
-Once it is added, the only settings here are the three player control lists described under [Linking Home Assistant entities to player controls](#linking-home-assistant-entities-to-player-controls).
+添加后，此处的唯一设置是[将 Home Assistant 实体链接到播放器控制](#linking-home-assistant-entities-to-player-controls)下描述的三个播放器控制列表。
 
-## AI and text-to-speech engines
+## AI 和文本转语音引擎
 
-Some Music Assistant features need to write text with AI, or to speak it out loud. [AI Radio](/plugins/ai-radio/) needs both. [Music Quiz](/plugins/music-quiz/) and [Smart Playlists](/plugins/smart_playlist/) need AI only.
+一些 Music Assistant 功能需要使用 AI 编写文本，或者将其大声朗读出来。[AI 电台](/plugins/ai-radio/) 两者都需要。[音乐问答](/plugins/music-quiz/) 和 [智能播放列表](/plugins/smart_playlist/) 仅需要 AI。
 
-This plugin does neither job itself. It offers up what Home Assistant can already do: every AI task entity becomes an **AI engine** and every text-to-speech entity becomes a **text-to-speech engine**. Nothing is chosen here. Each feature picks what it wants from its own settings.
+该插件本身不执行这两项任务。它提供 Home Assistant 已经能做的事情：每个 AI 任务实体都成为一个 **AI 引擎**，每个文本转语音实体都成为一个 **文本转语音引擎**。此处不进行任何选择。每个功能从其自身的设置中选择所需的内容。
 
-Other plugins provide engines too. The [OpenAI Compatible plugin](/plugins/openai_compatible/) and the [OpenAI Text-to-speech](/plugins/openai_tts/) plugin provides AI engines with no Home Assistant involved at all.
+其他插件也提供引擎。[OpenAI 兼容插件](/plugins/openai_compatible/) 和 [OpenAI 文本转语音](/plugins/openai_tts/) 插件提供完全不涉及 Home Assistant 的 AI 引擎。
 
-### What you need in Home Assistant
+### 您在 Home Assistant 中需要什么
 
-- For an **AI engine**, an <a href="https://www.home-assistant.io/integrations/ai_task/" target="_blank" rel="noopener noreferrer">AI Task</a> entity. These come from an AI integration you add, such as <a href="https://www.home-assistant.io/integrations/openai_conversation/" target="_blank" rel="noopener noreferrer">OpenAI Conversation</a>. Not all AI integrations offer one, so check the page for whichever you prefer
-- For a **text-to-speech engine**, a <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">text-to-speech</a> entity. Home Assistant lists the integrations that provide these. Test yours there first and make sure it will speak a short message
+- 对于 **AI 引擎**，需要一个 <a href="https://www.home-assistant.io/integrations/ai_task/" target="_blank" rel="noopener noreferrer">AI 任务</a> 实体。这些来自您添加的 AI 集成，例如 <a href="https://www.home-assistant.io/integrations/openai_conversation/" target="_blank" rel="noopener noreferrer">OpenAI Conversation</a>。并非所有 AI 集成都提供此功能，因此请检查您首选的集成页面
+- 对于 **文本转语音引擎**，需要一个 <a href="https://www.home-assistant.io/integrations/tts/" target="_blank" rel="noopener noreferrer">文本转语音</a> 实体。Home Assistant 列出了提供这些功能的集成。请先在那里测试您的集成，并确保它能朗读一条简短的消息
 
-The engines only decide which Home Assistant entity gets called. The model, the voice, the language, the speaking speed and the audio quality are all set in Home Assistant.
+引擎仅决定调用哪个 Home Assistant 实体。模型、声音、语言、语速和音频质量均在 Home Assistant 中设置。
 
-### Choosing an engine for a feature
+### 为功能选择引擎
 
-Each feature has its own drop-down labelled **AI engine** or **Text-to-speech engine**. Options are named after the plugin and then the entity, so two similar engines can be told apart:
+每个功能都有其自己的下拉菜单，标记为 **AI 引擎** 或 **文本转语音引擎**。选项以插件命名，然后是实体，因此可以区分两个相似的引擎：
 
 ```text
 Home Assistant | Google Translate (tts.google_translate_en_com)
 ```
 
-| Feature | What it needs | Where to change it |
+| 功能 | 所需内容 | 更改位置 |
 |---|---|---|
-| [AI Radio](/plugins/ai-radio/) | AI **and** text-to-speech | **Reconfigure** on the provider's menu, not its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later) |
-| [Music Quiz](/plugins/music-quiz/) | AI | Provider settings, under **Features** |
-| [Smart Playlists](/plugins/smart_playlist/) | AI | Provider settings, once **AI descriptions** is switched on |
+| [AI 电台](/plugins/ai-radio/) | AI **和** 文本转语音 | 在提供者的菜单上进行 **重新配置**，而不是其常规设置。请参阅[稍后更改引擎](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later) |
+| [音乐问答](/plugins/music-quiz/) | AI | 提供者设置，在 **功能** 下 |
+| [智能播放列表](/plugins/smart_playlist/) | AI | 提供者设置，开启 **AI 描述** 后 |
 
 > [!TIP]
-> With only one engine of each kind there is nothing to do. A feature takes the only one available and remembers it. The picker matters when you have more than one.
+> 如果每种类型只有一个引擎，则无需进行任何操作。功能会获取唯一可用的引擎并记住它。当您有多个引擎时，选择器才起作用。
 
-If a feature needs an engine you do not have, its drop-down is greyed out with a message telling you to set up a plugin that provides one. Some features will not finish setting up at all until it exists.
+如果某个功能需要您没有的引擎，其下拉菜单将变灰，并显示一条消息，提示您设置提供该引擎的插件。在引擎存在之前，某些功能根本无法完成设置。
 
-If an engine you chose later disappears, because the entity was removed or renamed in Home Assistant for example, Music Assistant reports it as missing rather than quietly switching to a different one.
+如果您稍后选择的引擎消失，例如因为该实体在 Home Assistant 中被移除或重命名，Music Assistant 会将其报告为缺失，而不是悄悄切换到另一个引擎。
 
-## Linking Home Assistant entities to player controls
+## 将 Home Assistant 实体链接到播放器控制
 
-The Home Assistant Plugin can expose HA entities to MA that can then be mapped to the power, volume or mute functions of the MA player. This works for any player in Music Assistant, not just Home Assistant ones, so it is useful where a player has no native support for the function. A power entity might wake an amplifier from standby when playback starts, or switch on the active speakers a player feeds into; a volume or mute entity might drive an amplifier that the player has no direct control over. There are three drop down lists which contain a filtered list of HA entities:
+Home Assistant 插件可以将 HA 实体暴露给 MA，然后可以将其映射到 MA 播放器的电源、音量或静音功能。这适用于 Music Assistant 中的任何播放器，而不仅仅是 Home Assistant 播放器，因此在播放器本身不支持该功能的情况下非常有用。电源实体可能会在播放开始时将放大器从待机状态唤醒，或者打开播放器馈入的有源扬声器；音量或静音实体可能会驱动播放器无法直接控制的放大器。有三个下拉列表，其中包含经过筛选的 HA 实体列表：
 
-- For power controls, entities that can be turned on/off and have a boolean state will be shown. (i.e. switch, input_boolean and media_player)
+- 对于电源控制，将显示可以打开/关闭并具有布尔状态的实体。（即 switch、input_boolean 和 media_player）
 
-- For mute controls, entities that can be turned on/off and have a boolean state will be shown. (i.e. switch, input_boolean and also media_player (where mute state will be mapped))
+- 对于静音控制，将显示可以打开/关闭并具有布尔状态的实体。（即 switch、input_boolean 以及 media_player（将映射静音状态））
 
-- For volume controls, entities that can have a numeric value/state will be shown. (i.e. number, input_number and media_player (where volume_level will be mapped))
+- 对于音量控制，将显示可以具有数值/状态的实体。（即 number、input_number 和 media_player（将映射 volume_level））
 
-When an entity is selected it will then appear as an option in an individual player's [Player Controls](/settings/individual-player/#player-controls) settings.
+选择实体后，它将作为选项出现在单个播放器的[播放器控制](/settings/individual-player/#player-controls)设置中。
 
 > [!NOTE]
-> For power controls, this cannot be used to switch the player itself on and off. If a player is switched off at the mains it drops off the network, Music Assistant marks it unavailable, and the power control is disabled along with everything else. Switch whatever the player feeds into, not the player.
+> 对于电源控制，这不能用于打开和关闭播放器本身。如果播放器被切断主电源，它会从网络断开，Music Assistant 会将其标记为不可用，并且电源控制以及所有其他功能都会被禁用。请切换播放器馈入的设备，而不是播放器本身。
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-This plugin will be automatically installed (and cannot be disabled) if the MA server is running as a Home Assistant App.
+如果 MA 服务器作为 Home Assistant 应用运行，此插件将自动安装（且无法禁用）。

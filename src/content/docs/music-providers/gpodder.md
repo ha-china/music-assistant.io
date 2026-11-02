@@ -1,22 +1,17 @@
 ---
 title: "gPodder"
-description: "Sync podcast subscriptions and listening progress between Music Assistant and other podcast apps, such as AntennaPod, using a gPodder compatible server."
+description: "使用兼容 gPodder 的服务器，在 Music Assistant 与其他播客应用（如 AntennaPod）之间同步播客订阅和收听进度。"
 ---
 
 # gPodder <img src="/assets/icons/gpodder-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for <a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a>. Contributed and maintained by <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a>
+Music Assistant 支持 <a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a>。由 <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a> 贡献并维护
 
-gPodder is a synchronisation service for podcast apps rather than a place to discover podcasts. It keeps a
-shared record of the podcasts you subscribe to and how far through each episode you are, so that several apps
-can stay in sync with one another.
+gPodder 是面向播客应用的同步服务，而不是一个发现播客的地方。它会保存一份共享记录，记录你订阅了哪些播客以及每一集你收听到了哪里，从而使多个应用之间能够保持同步。
 
-This provider connects Music Assistant to that shared record. Your existing subscriptions turn up as podcasts
-you can play, and your listening progress is written back as you go, so an episode started elsewhere can be
-finished on a speaker, or the other way round.
+该提供方（provider）将 Music Assistant 连接到这份共享记录。你现有的订阅会以可播放播客的形式出现，你的收听进度也会随时写回，因此在别处开始收听的一集可以在音箱上继续听完，反之亦然。
 
-Music Assistant does not host the shared record itself. You run a gPodder compatible server and point this
-provider at it, as described under [Configuration](#configuration).
+Music Assistant 本身并不托管这份共享记录。你需要自行运行一台兼容 gPodder 的服务器，并将该提供方指向它，具体参见[配置](#configuration)。
 
 ## Features
 
@@ -39,78 +34,79 @@ provider at it, as described under [Configuration](#configuration).
 - Populates libraries with podcasts
 - Updates playlog on regular provider syncs
 
-## Configuration
-### gpodder.net compatible webservice
-A <a href="https://github.com/gpodder/mygpo" target="_blank" rel="noopener noreferrer">mygpo</a> compatible web service is supported, and this provider is tested against
-<a href="https://github.com/kd2org/opodsync" target="_blank" rel="noopener noreferrer">opodsync</a>
-To setup this functionality you need:
+### Other
+- Progress reporting and acquiring
+- Populates libraries with podcasts
+- Updates playlog on regular provider syncs
 
-- <b>gPodder Service URL.</b> For example, `http://192.168.1.20:14000` or `https://sync.yourdomain.com`
-- <b>Username.</b>
-- <b>Password.</b>
-- <b>Device ID.</b>
+### 其他
+- 进度的上报与获取
+- 用播客填充媒体库
+- 在提供方定期同步时更新播放日志（playlog）
+
+## 配置
+### 兼容 gpodder.net 的网络服务
+支持兼容 <a href="https://github.com/gpodder/mygpo" target="_blank" rel="noopener noreferrer">mygpo</a> 的网络服务，并且该提供方已针对
+<a href="https://github.com/kd2org/opodsync" target="_blank" rel="noopener noreferrer">opodsync</a> 进行过测试
+要设置此功能，你需要：
+
+- <b>gPodder 服务 URL。</b> 例如，`http://192.168.1.20:14000` 或 `https://sync.yourdomain.com`
+- <b>用户名。</b>
+- <b>密码。</b>
+- <b>设备 ID。</b>
 
 > [!NOTE]
-> The Device ID can be anything you like, as long as it is plain letters and numbers. What matters is that every app you want kept in sync uses exactly the same one.
+> 设备 ID 可以是任何你喜欢的名称，只要由纯字母和数字组成即可。关键在于，所有需要保持同步的应用都必须使用完全相同的 ID。
 
 > [!NOTE]
-> `gpodder.net` is deliberately _not_ supported. This source checks in with the server often, and the service hosted there is known to be either slow or completely unresponsive, which would hold Music Assistant up. Run one of the alternatives yourself instead.
+> `gpodder.net` 被有意_排除在外_，不受支持。该来源会频繁与服务器通信，而托管在那里的服务以缓慢或完全无响应著称，这会拖慢 Music Assistant。请改为自行运行上述替代方案之一。
 
 ### nextcloud-gpodder
-The provider supports <a href="https://apps.nextcloud.com/apps/gpoddersync" target="_blank" rel="noopener noreferrer">nextcloud-gpodder/gpoddersync</a>.
+该提供方支持 <a href="https://apps.nextcloud.com/apps/gpoddersync" target="_blank" rel="noopener noreferrer">nextcloud-gpodder/gpoddersync</a>。
 
-To setup this functionality, you need the `Nextcloud URL`, and then click the AUTHENTICATE WITH NEXTCLOUD button to start the authentication flow. Click save when finished
+要设置此功能，你需要提供 `Nextcloud URL`，然后点击 AUTHENTICATE WITH NEXTCLOUD 按钮以开始身份验证流程。完成后点击保存
 
-### Multi-user environment
+### 多用户环境
 
-The gpodder provider can be set up multiple times for individual users.
-To achieve correct syncing of the progress of individual media items with an MA
-user please refer to [user management](/settings/user-management/#filter-progress-multi-user).
+gpodder 提供方可以为各个用户分别设置多次。
+要让单个媒体条目的进度与某个 MA 用户正确同步，请参考[用户管理](/settings/user-management/#filter-progress-multi-user)。
 
-### Settings
+### 设置
 
-- <b>Maximum number of episodes.</b> Maximum number of episodes to sync per feed. Use 0 for unlimited
-- <b>Advanced - Verify SSL.</b> Enable to verify the certificate of SSL/TLS connections. This is on by default
+- <b>单集数量上限。</b> 每个源（feed）同步的最大单集（episode）数量。设为 0 表示不限制
+- <b>高级 - 验证 SSL。</b> 启用后将验证 SSL/TLS 连接的证书。默认开启
 
-## Known Issues / Notes
+## 已知问题 / 备注
 
-- Nil
+- 无
 
-## Syncing with other podcast apps
+## 与其他播客应用同步
 
-Music Assistant does not talk to other podcast apps directly. Every app reads from and writes to the same
-gPodder compatible server, and picks up whatever the others have left there, so anything that supports
-gPodder sync can share a set of subscriptions and a listening position with Music Assistant.
+Music Assistant 不与其他播客应用直接通信。每个应用都从同一台兼容 gPodder 的服务器读取和写入数据，并获取其他应用留在那里的内容，因此任何支持 gPodder 同步的应用都可以与 Music Assistant 共享同一组订阅和收听位置。
 
-What travels in each direction:
+各方向上传输的内容：
 
 |           |                     |
 |:-----------------------|:---------------------:|
-| Subscriptions | To Music Assistant only |
-| Playback progress and resume position | Both ways |
-| Mark as unplayed | Both ways |
-| Episode deleted in another app | To Music Assistant only |
+| 订阅 | 仅传向 Music Assistant |
+| 播放进度和续播位置 | 双向 |
+| 标记为未播放 | 双向 |
+| 在其他应用中删除单集 | 仅传向 Music Assistant |
 
 > [!IMPORTANT]
-> Subscriptions are only read from the server. Adding or removing a podcast inside Music Assistant is not
-> sent back, so subscribe and unsubscribe from another app or on the server itself.
+> 订阅仅从服务器读取。在 Music Assistant 中添加或移除播客不会被回传，因此请从其他应用或直接在服务器上进行订阅和取消订阅。
 
-Podcast audio does not pass through the sync server. Music Assistant reads the podcast's RSS feed and streams
-the episode from the feed's own address, so the server only ever holds feed addresses and listening progress.
+播客音频不经过同步服务器。Music Assistant 会读取播客的 RSS 源（feed），并直接从源自身的地址流式播放单集，因此服务器只保存源地址和收听进度。
 
-If you connect through a [gPodder or opodsync server](#gpoddernet-compatible-webservice), pick one Device ID
-and enter that same value in every app, Music Assistant included. It does not matter what you choose, only
-that it is identical everywhere.
+如果你通过 [gPodder 或 opodsync 服务器](#gpoddernet-compatible-webservice)连接，请选定一个设备 ID，并在每个应用（包括 Music Assistant）中输入相同的值。选什么并不重要，重要的是处处保持一致。
 
-A mismatch is the usual reason syncing appears to do nothing: your podcasts still arrive, but episodes never
-resume where another app left off, because each app can only see the progress it recorded itself. If that is
-what you are seeing, compare the Device ID in each app before looking any further.
+设备 ID 不一致是同步看似毫无作用的最常见原因：你的播客仍然会出现，但单集从不会在其他应用中断的地方续播，因为每个应用只能看到它自己记录的进度。如果你遇到的就是这种情况，请先比较各应用中的设备 ID，再作其他排查。
 
-Connecting through [Nextcloud](#nextcloud-gpodder) has no Device ID, so there is nothing to set.
+通过 [Nextcloud](#nextcloud-gpodder) 连接则没有设备 ID，因此无需设置。
 
-Apps that support gPodder sync include:
+支持 gPodder 同步的应用包括：
 
-- <a href="https://antennapod.org" target="_blank" rel="noopener noreferrer">AntennaPod</a> (Android)
-- <a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a> (desktop)
-- <a href="https://apps.kde.org/kasts/" target="_blank" rel="noopener noreferrer">Kasts</a> (Linux, Android and Windows)
-- <a href="https://github.com/madeofpendletonwool/PinePods" target="_blank" rel="noopener noreferrer">PinePods</a> (self-hosted)
+- <a href="https://antennapod.org" target="_blank" rel="noopener noreferrer">AntennaPod</a>（Android）
+- <a href="https://gpodder.github.io" target="_blank" rel="noopener noreferrer">gPodder</a>（桌面端）
+- <a href="https://apps.kde.org/kasts/" target="_blank" rel="noopener noreferrer">Kasts</a>（Linux、Android 和 Windows）
+- <a href="https://github.com/madeofpendletonwool/PinePods" target="_blank" rel="noopener noreferrer">PinePods</a>（自托管）

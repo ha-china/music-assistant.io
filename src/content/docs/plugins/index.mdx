@@ -1,26 +1,26 @@
 ---
-title: Plugins
-description: What plugins are and what they add to Music Assistant
+title: 插件
+description: 插件是什么，以及它们为 Music Assistant 增添了什么
 ---
 
 import PluginList from '../../../components/PluginList.astro';
 
-# Plugins
+# 插件
 
-Plugins add things that sit alongside playback rather than being part of it.
+插件添加的是与播放并行运行、而非作为播放一部分的功能。
 
-A [music source](/music-providers/) brings music in. A [player provider](/player-support/) sends it out to a speaker. A plugin does something else entirely: it might host a party your guests queue tracks from, run a music quiz on the TV, let another app send audio *to* Music Assistant over AirPlay or DLNA, or report what you played to Last.fm.
+[音乐源（music source）](/music-providers/)负责把音乐引入。[播放器提供程序（player provider）](/player-support/)负责把音乐发送到扬声器。而插件做的完全是另一类事情：它可以举办一场派对，让你的客人从中点播曲目；可以在电视上运行音乐问答游戏；可以让其他应用通过 AirPlay 或 DLNA 把音频发送*到* Music Assistant；或者把你播放过的内容上报给 Last.fm。
 
-Plugins are optional. Music Assistant works perfectly well without any of them.
+插件是可选的。即使一个插件都没有，Music Assistant 也能运行得非常好。
 
-## Adding a plugin
+## 添加插件
 
-Go to **Settings → Plugins → Add a plugin** and pick one from the list. Every plugin has its own page in this section covering what it does and how to configure it.
+前往 **设置 → 插件 → 添加插件**，然后从列表中选择一个。每个插件在本节中都有自己的页面，介绍它的功能以及如何配置。
 
-Some plugins depend on something else being set up first. For example, he [Home Assistant](/ha-plugin/) plugin needs a Home Assistant instance it can connect to.
+有些插件依赖于先设置好其他东西。例如，[Home Assistant](/ha-plugin/) 插件需要一个它可以连接的 Home Assistant 实例。
 
-## All plugins
+## 所有插件
 
-Every plugin, grouped by what it is for. Each one has its own page with the detail.
+每个插件都按其用途进行了分组。每个插件都有自己的详情页面。
 
 <PluginList />

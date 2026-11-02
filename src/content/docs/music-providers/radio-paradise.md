@@ -4,16 +4,16 @@ title: "Radio Paradise"
 
 # Radio Paradise <img src="/assets/icons/radioparadise-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for <a href="https://radioparadise.com/" target="_blank" rel="noopener noreferrer">Radio Paradise</a> which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
+Music Assistant 支持 <a href="https://radioparadise.com/" target="_blank" rel="noopener noreferrer">Radio Paradise</a>，可轻松将其电台添加到 Music Assistant 中。由 <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a> 贡献并维护
 
-Radio Paradise is a listener-supported internet radio station from California, running since 2000. Its channels are put together by hand rather than by an algorithm, carry no advertising, and stream at high quality including lossless FLAC.
+Radio Paradise 是一家来自加利福尼亚、由听众支持的互联网电台，自 2000 年运营至今。其频道由人工编排而非算法生成，不含任何广告，并以高音质进行流媒体播放，包括无损 FLAC。
 
-This source adds those channels to Music Assistant as radio stations.
+此音源会将这些频道作为电台添加到 Music Assistant 中。
 
 > [!TIP]
-> **Donate**
+> **捐赠**
 >
-> Radio Paradise exists due to the generosity of their donors. If you are using this source consider supporting them https://radioparadise.com/support
+> Radio Paradise 的存续得益于捐赠者的慷慨支持。如果您正在使用此音源，请考虑支持他们 https://radioparadise.com/support
 
 ## Features
 
@@ -35,15 +35,23 @@ This source adds those channels to Music Assistant as radio stations.
 
 - When available, details of upcoming tracks will be shown
 
-## Configuration
+### Other
 
-In the configuration, you only need to click the save button
+- When available, details of upcoming tracks will be shown
 
-## Usage
+### 其他
 
-Use the browse view to find stations to add to the library.
+- 在可用时，将显示即将播放曲目的详细信息
 
-## Known Issues / Notes
+## 配置
 
-- Some other applications support skipping tracks. This is not supported in Music Assistant
-- Now playing and upcoming track information can lead or lag reality due to Radio Paradise's own data 
+在配置中，您只需点击保存按钮即可
+
+## 使用方法
+
+使用浏览视图（browse view）查找要添加到资料库（library）的电台。
+
+## 已知问题 / 注意事项
+
+- 一些其他应用支持跳过曲目。Music Assistant 不支持此功能
+- 由于 Radio Paradise 自身数据的原因，正在播放和即将播放曲目的信息可能领先或滞后于实际情况

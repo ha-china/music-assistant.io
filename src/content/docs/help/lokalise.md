@@ -1,38 +1,38 @@
 ---
-title: "Translations"
+title: "翻译"
 ---
 
-# Translations
+# 翻译
 
-If you're following the frontend repo, you may have seen that we are now using Lokalise as a central translation management portal.
+如果你关注前端代码库，你可能已经注意到我们现在使用 Lokalise 作为集中的翻译管理平台。
 
 <a href="https://lokalise.com" target="_blank" rel="noopener noreferrer"><img src="https://github.com/lokalise/i18n-ally/raw/screenshots/lokalise-logo.png?raw=true" alt="Lokalise logo" width="275px" loading="lazy"></a>
 
-At the time of writing the translation status for the various languages in MA is as follows
+在撰写本文时，MA 中各种语言的翻译状态如下
 
 ![image](/assets/screenshots/lokalise-stats.png)
 
-We would love to support more languages but we need your help to do so.
+我们非常希望能支持更多语言，但这需要您的帮助。
 
-## How can I contribute?
+## 我该如何参与贡献？
 
-Use the sign-up link for your project to join as a translator and check if your language is already available; if so, you can start immediately.
-- [MA Frontend](https://app.lokalise.com/public/321419046440c0f2bba414.05634832/)
-- [MA Mobile App](https://app.lokalise.com/public/695520566a0e9085a45b61.13739013/)
-- [MA Desktop App](https://app.lokalise.com/public/701408876a3161720d8f59.60695778/)
-- [MA Server](https://app.lokalise.com/public/264744796a2c5fd1b48fb5.28236063/)
+使用您所在项目的注册链接以翻译者身份加入，并检查您的语言是否已可用；如果已可用，您可以立即开始。
+- [MA 前端](https://app.lokalise.com/public/321419046440c0f2bba414.05634832/)
+- [MA 移动端应用](https://app.lokalise.com/public/695520566a0e9085a45b61.13739013/)
+- [MA 桌面端应用](https://app.lokalise.com/public/701408876a3161720d8f59.60695778/)
+- [MA 服务端](https://app.lokalise.com/public/264744796a2c5fd1b48fb5.28236063/)
 
-If the language hasn't been added yet, create an issue in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a> and specify the language you want to contribute. We will then add this language to the project in Lokalise and resolve the issue in GitHub. You can then use the sign-up link above to join.
+如果尚未添加您的语言，请在 <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">Issue 跟踪器</a> 中创建一个 issue，并指明您希望贡献的语言。随后，我们会将该语言添加到 Lokalise 的项目中，并在 GitHub 上解决该 issue。之后，您就可以使用上方的注册链接加入。
 
-Please only select the language that you intend to contribute to when requesting to join the team on Lokalise.
+在 Lokalise 上申请加入团队时，请仅选择您打算贡献的语言。
 
 ![image](/assets/screenshots/lokalise-select-language.png)
 
-Thanks for taking the time to read this, we're looking forward to your contributions.
+感谢您抽出时间阅读此文，我们期待您的贡献。
 
-## Onboarding
+## 新手入门
 
-The Lokalise team have prepared extensive documentation to get started and comfortable with the platform <a href="https://docs.lokalise.com/en/articles/2967175-onboarding-guide-for-translators" target="_blank" rel="noopener noreferrer">here</a>
+Lokalise 团队准备了详尽的文档，帮助您快速上手并熟悉该平台，请查看 <a href="https://docs.lokalise.com/en/articles/2967175-onboarding-guide-for-translators" target="_blank" rel="noopener noreferrer">此处</a>
 
-If you prefer to jump straight into a video tutorial, you can watch that below.
-[![Lokalise editor for translators | Tutorial](https://img.youtube.com/vi/ZxhXvnkcLQ4/0.jpg)](https://www.youtube.com/watch?v=ZxhXvnkcLQ4)
+如果您更喜欢直接观看视频教程，可以观看下方的视频。
+[![Lokalise 翻译者编辑器 | 教程](https://img.youtube.com/vi/ZxhXvnkcLQ4/0.jpg)](https://www.youtube.com/watch?v=ZxhXvnkcLQ4)

@@ -1,15 +1,15 @@
 ---
-title: "Profile Settings"
+title: "个人资料设置"
 ---
 
-# MA Profile Settings <img src="/assets/icons/profile-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# MA 个人资料设置 <img src="/assets/icons/profile-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-This page relates to the currently logged in user. User name, display name and password can be changed here.
+此页面与当前登录的用户相关。用户名、显示名称和密码都可以在此处修改。
 
-## Active Sessions
+## 活动会话
 
-A list of active sessions that have been logged in with this user are shown and can be logged out by using the bin icon
+此处显示了使用此用户登录的活动会话列表，可以使用垃圾桶图标将其注销
 
-## Long-lived access tokens
+## 长期访问令牌
 
-Tokens can be created here which can be used with the [API](/api/), with external applications, or to allow frontend access from [devices that have not been logged in](/faq/how-to/#access-the-ma-views-directly-via-url).
+可以在此处创建令牌，这些令牌可用于 [API](/api/)、外部应用程序，或允许从[尚未登录的设备](/faq/how-to/#access-the-ma-views-directly-via-url)访问前端。

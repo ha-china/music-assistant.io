@@ -1,22 +1,22 @@
 ---
-title: "Search Action"
+title: "搜索操作"
 ---
 
-# MA search Action
+# MA 搜索操作
 
 > [!NOTE]
-> This action is used from Home Assistant scripts and automations and requires the [Home Assistant integration](/integration/installation/). See [Home Assistant scripts and automations](/faq/how-to/#home-assistant-scripts-and-automations) for examples.
+> 此操作用于 Home Assistant 脚本和自动化（automation）中，需要 [Home Assistant 集成](/integration/installation/)。有关示例，请参阅 [Home Assistant 脚本和自动化](/faq/how-to/#home-assistant-scripts-and-automations)。
 
 
-This action does a global search across all providers 
+此操作会对所有提供方执行全局搜索
 
 ![image](/assets/screenshots/service-call/search1.png)
 
-This will return something like this
+这将返回类似以下的结果
 
 ![image](/assets/screenshots/service-call/search2.png)
 
-You could then use a template to extract what you need and then use the `play_media` service call. For example:
+然后您可以使用模板提取所需的内容，再使用 `play_media` 服务调用。例如：
 
 ```
 script:

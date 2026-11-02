@@ -1,90 +1,90 @@
 ---
-title: Frequently Asked Questions - Groups
-description: Player Grouping Functionality in Music Assistant
+title: 常见问题 - 分组
+description: Music Assistant 中的播放器分组功能
 ---
 
-# Groups
+# 分组
 
 > [!CAUTION]
-> Do not delete or disable a player which is in a group while the group is playing
+> 请勿在分组正在播放时删除或禁用该分组中的播放器（player）
 
-Music Assistant uses four types of groups (these are outlined in the [Grouping Players](/ui/#grouping-players) section and three of the types are described in detail below) which provides a flexible way to combine players together. When a group is powered on then playback to individual members of the group is no longer possible. To play to an individual member, the group must be powered off or the individual player must be removed from the group. If the group is still powered on then players can only be removed from [Temporary Sync Groups](#temporary-sync-group), or from [Sync Groups](#sync-groups) and [Universal Groups](#universal-groups) which have the dynamic member option enabled. When allowable, players can be removed by using the checkboxes in the [Player List](/ui/#player-list) or by using the <a href="https://www.home-assistant.io/integrations/media_player/#media-control-actions" target="_blank" rel="noopener noreferrer">HA media_player.unjoin action</a>.
+Music Assistant 使用四种类型的分组（group）（这些类型在[播放器分组](/ui/#grouping-players)部分中进行了概述，其中三种类型将在下文详细介绍），这提供了一种灵活地将播放器组合在一起的方式。当分组开机后，就无法再向分组中的各个成员单独播放。若要向单个成员播放，必须关闭分组电源，或将该播放器从分组中移除。如果分组仍处于开机状态，则只能从[临时同步分组](#temporary-sync-group)中移除播放器，或从启用了动态成员（dynamic member）选项的[同步分组](#sync-groups)和[通用分组](#universal-groups)中移除播放器。在允许的情况下，可以通过[播放器列表](/ui/#player-list)中的复选框移除播放器，或使用 <a href="https://www.home-assistant.io/integrations/media_player/#media-control-actions" target="_blank" rel="noopener noreferrer">HA 的 media_player.unjoin 动作</a>移除播放器。
 
-See also the section on Announcements [Group Behaviour](/integration/announcements/#group-behaviour).
+另请参阅公告（Announcements）中关于[分组行为](/integration/announcements/#group-behaviour)的部分。
 
-For temporary and permanent sync groups the [protocol linking](/usage/#streaming-protocols) feature and Sendspin bridges available to Music Assistant lead to powerful options for group creation. The Sendspin bridges create a link between the Sendspin protocol, and the AirPlay and Google Cast protocols which allows for creation of groups of different provider types which will all play in sync. For users with Sonos devices with [AirPlay functionality](/player-support/sonos/#airplay-functionality) then this will further allow Sonos devices to also be played in sync. Even more impressively, Sonos devices without AirPlay functionality can be grouped with a player that does and then that player grouped to an AirPlay group. All of this functionality is illustrated in the following diagram. On the left is the traditional model where each provider type is isolated (and this remains the case for many of the providers available in MA) and then on the right is shown the potential broad linking of disparate types that is available across the Sendspin, AirPlay, Google Cast and Sonos ecosystems.
+对于临时和永久同步分组，Music Assistant 提供的[协议链接](/usage/#streaming-protocols)功能和 Sendspin 桥接为创建分组提供了强大的选项。Sendspin 桥接在 Sendspin 协议与 AirPlay 和 Google Cast 协议之间建立了链接，从而可以创建由不同提供程序（provider）类型组成的分组，并且所有成员都能同步播放。对于拥有支持 [AirPlay 功能](/player-support/sonos/#airplay-functionality)的 Sonos 设备的用户来说，这进一步使得 Sonos 设备也能同步播放。更令人惊叹的是，不支持 AirPlay 功能的 Sonos 设备可以与支持该功能的播放器组成一组，然后再将该播放器加入 AirPlay 分组。下图展示了上述所有功能。左侧是传统模式，其中每种提供程序类型都是相互隔离的（对于 MA 中可用的许多提供程序来说，情况依然如此）；右侧则展示了跨 Sendspin、AirPlay、Google Cast 和 Sonos 生态系统可实现的不同类型之间的广泛链接潜力。
 
 <a href="/assets/group-diagram.png"><img src="/assets/group-diagram.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
 > [!NOTE]
-> Sendspin bridging will only be indicated on some devices and even then its not guaranteed to work due to device firmware limitations. AirPlay - Sendspin bridges should always work. On Chromecast devices Sendspin is experimental and switched off by default, so it has to be turned on per speaker before that speaker can join a Sendspin group, see [Sendspin on Cast devices](/player-support/google-cast/#sendspin-on-cast-devices)
+> 仅部分设备会显示 Sendspin 桥接，而且即使显示，由于设备固件限制，也不保证能够正常工作。AirPlay - Sendspin 桥接应始终可用。在 Chromecast 设备上，Sendspin 处于实验阶段且默认关闭，因此必须先在每个音箱上单独开启，该音箱才能加入 Sendspin 分组，请参阅 [Cast 设备上的 Sendspin](/player-support/google-cast/#sendspin-on-cast-devices)
 
-## Temporary Sync Group
+## 临时同步分组
 
-Temporary Sync Group players are configured via the [Player List](/ui/#player-list) or HA action. This type of group provides a very flexible way to create and destroy Sync Groups as the players can be added or removed at any time. 
+临时同步分组播放器可通过[播放器列表](/ui/#player-list)或 HA 动作进行配置。这种类型的分组提供了一种非常灵活的创建和销毁同步分组的方式，因为播放器可以随时被添加或移除。
 
-### Features
+### 功能
 
-- Players can be dynamically added or removed before or during playback
-- Players in the group will play in perfect sync
-- The HA actions of <a href="https://www.home-assistant.io/integrations/media_player/#action-media_playerjoin" target="_blank" rel="noopener noreferrer">media_player.join</a> and <a href="https://www.home-assistant.io/integrations/media_player/#action-media_playerunjoin" target="_blank" rel="noopener noreferrer">media_player.unjoin</a> can be used to manage this type of group
+- 可以在播放前或播放过程中动态添加或移除播放器
+- 分组中的播放器将完美同步（perfect sync）播放
+- 可以使用 <a href="https://www.home-assistant.io/integrations/media_player/#action-media_playerjoin" target="_blank" rel="noopener noreferrer">media_player.join</a> 和 <a href="https://www.home-assistant.io/integrations/media_player/#action-media_playerunjoin" target="_blank" rel="noopener noreferrer">media_player.unjoin</a> 这两个 HA 动作来管理此类型的分组
 
-### Known Issues / Notes
+### 已知问题 / 注意事项
 
-- Players can be linked via the checkbox in the [Player List](/ui/#player-list)
-- Only like player types that support synced playback are allowed to be joined
-- When players are grouped in this way only the main player holds the queue. For example, player A has an existing queue and players B and C are joined to player A. If player A is turned off players B and C will stop
-- Some player types may pause momentarily as a new device is joined
-- HA automations could be used to quickly create an often used group of players 
+- 可以通过[播放器列表](/ui/#player-list)中的复选框来链接播放器
+- 仅允许将支持同步播放的同类型播放器连接在一起
+- 当播放器以这种方式分组时，只有主播放器保存队列（queue）。例如，播放器 A 有一个现有的队列，播放器 B 和 C 连接到播放器 A。如果播放器 A 被关闭，播放器 B 和 C 将停止播放
+- 当新设备加入时，某些播放器类型可能会短暂暂停
+- 可以使用 HA 自动化（automation）来快速创建常用的一组播放器
 
-## Sync Groups
+## 同步分组
 
-These are permanent group players. You create one from the players list in the settings, and once it exists its members are set in the group settings on the [player's own settings page](/settings/individual-player/). These should be used when the make up of the group will rarely change and it is desired that the players will typically all continuously play music. Normally a player cannot be removed from the group if the group is playing although it can be muted (or volume reduced to 0). If there is a need to add or remove additional players then enable the dynamic members option or switch to using a manual sync group. At power on/off of the syncgroup the original set of members will be restored.
+这些是永久的分组播放器。你可以在设置中的播放器列表创建一个同步分组，创建完成后，其成员在[播放器自身的设置页面](/settings/individual-player/)的分组设置中进行设定。当分组的构成很少变动，且希望播放器通常都能持续播放音乐时，应使用此类分组。通常情况下，如果分组正在播放，播放器无法从分组中移除，尽管可以将其静音（或将音量降低到 0）。如果需要添加或移除额外的播放器，可以启用动态成员选项，或者改用手动同步分组。同步分组开机/关机时，将恢复最初的成员集合。
 
 ![image](/assets/screenshots/syncgroup.png)
 
-After selecting ADD GROUP PLAYER as shown above, the group configuration screen will appear where the group type must be selected. You need to specify a name for the group player. The order that the players are selected when the group is created will be the order that the players are shown when viewing the group in the [Player List](/ui/#player-list).
+如上图所示，选择 ADD GROUP PLAYER 后，将出现分组配置界面，必须在该界面中选择分组类型。你需要为分组播放器指定一个名称。创建分组时选择播放器的顺序，就是在[播放器列表](/ui/#player-list)中查看该分组时播放器的显示顺序。
 
 > [!NOTE]
-> The ADD GROUP PLAYER button is only visible if a players which supports perfect sync or the Universal Group player provider, have been added
+> 只有在已添加支持完美同步的播放器或通用分组播放器提供程序的情况下，ADD GROUP PLAYER 按钮才会显示
 
 > [!TIP]
-> Remember Chromecast devices must be grouped in the Google Home app for perfect sync
+> 请记住，Chromecast 设备必须在 Google Home 应用中进行分组才能实现完美同步
 
-### Features
+### 功能
 
-- The native player types shown (i.e. not the Universal Group option) support perfect sync
-- In addition to playing in sync the group will hold the queue regardless of which player(s) in the group are powered off
-- The list of players available for sync will change dynamically depending upon the selections made 
-  
-### Known Issues / Notes
+- 所显示的原生播放器类型（即通用分组选项以外的类型）均支持完美同步
+- 除了同步播放之外，无论分组中的哪个（些）播放器被关闭，分组都会保存队列
+- 可用于同步的播放器列表会根据所做的选择动态变化
 
-- As mentioned above the group player holds the queue rather than any individual player. However, if the group leader is lost then playback will stop but the queue can be restarted
-- The group will not power on if one of the child players is synced to another group
-- The group will power on even if one or more of the child players is unavailable
-- If, in the group settings, the player friendly name has been replaced by an unusual ID then likely the player was seen by the MA logic as unavailable. Check the individual player status
-- When adding a player to an already playing group, AirPlay, Snapcast and Sonos will keep playing but all other types will pause for a very brief period to resync
+### 已知问题 / 注意事项
 
-## Universal Groups
+- 如上所述，队列由分组播放器保存，而非任何单个播放器。但是，如果分组的主控播放器丢失，播放将会停止，不过队列可以重新启动
+- 如果其中一个子播放器已同步到另一个分组，则该分组将无法开机
+- 即使一个或多个子播放器不可用，该分组仍会开机
+- 如果在分组设置中，播放器的友好名称被一个异常的 ID 取代，那么该播放器很可能已被 MA 逻辑判定为不可用。请检查单个播放器的状态
+- 当向正在播放的分组中添加播放器时，AirPlay、Snapcast 和 Sonos 会继续播放，但其他所有类型都会短暂暂停以重新同步
 
-Music Assistant has support for grouping dissimilar playback devices. Configuration is done in the same manner as described in the Sync Groups section with UNIVERSAL GROUP PLAYER selected as the Group Type. These groups also support the dynamic member option. Universal Group functionality is not enabled by default, it must be first added as a provider.
+## 通用分组
 
-### Features
+Music Assistant 支持将不同的播放设备组合在一起。其配置方式与同步分组部分所述相同，只需将分组类型选为 UNIVERSAL GROUP PLAYER 即可。这些分组同样支持动态成员选项。通用分组功能默认未启用，必须先将其作为提供程序添加。
 
-- All devices can be grouped and will play the same audio but will not play the audio in sync. Use this playertype only for players that are not in close range to each other
-- See the individual player providers page for any specific limitations
+### 功能
 
-### Settings
+- 所有设备都可以被分组并播放相同的音频，但无法同步播放音频。仅对彼此相距较远的播放器使用此播放器类型
+- 有关具体的限制，请参阅各个播放器提供程序页面
 
-- <b>Output format for Universal Group playback.</b> Universal Groups deliver the exact same encoded stream to every member, regardless of each member's capabilities. Pick the format that all members can play. MP3 is the safest default. The options are `MP3 (320 kbps)`, `FLAC 44.1 kHz / 16-bit` and `FLAC 48 kHz / 24-bit`. Use the FLAC options only when every member supports FLAC playback
+### 设置
 
-### Known Issues / Notes
+- <b>通用分组播放的输出格式。</b>通用分组会向每个成员传输完全相同的编码流，而不考虑各成员的能力。请选择所有成员都能播放的格式。MP3 是最稳妥的默认选项。可选格式包括 `MP3 (320 kbps)`、`FLAC 44.1 kHz / 16-bit` 和 `FLAC 48 kHz / 24-bit`。仅当每个成员都支持 FLAC 播放时才使用 FLAC 选项
 
-- This type of group should be avoided if a [Sync Group or Native Group](/ui/#grouping-players) can be used
-- Universal Groups cannot contain other groups
-- When adding a player to an already playing group, MA will try and join seamlessly but there may be a slight pause with some player types
-- The group will not power on if one of the child players is synced to another group
-- The group will power on even if one or more of the child players is unavailable
-- If, in the group settings, the player friendly name has been replaced by an unusual ID then likely the player was seen by the MA logic as unavailable. Check the individual player status
-- Universal Groups are on a best-effort basis and might not work correctly with all player models or give unexpected results
-- It is not possible to add a fixed sync delay option that will provide an acceptable user experience for the majority of users
+### 已知问题 / 注意事项
+
+- 如果可以使用[同步分组或原生分组](/ui/#grouping-players)，则应避免使用此类型的分组
+- 通用分组不能包含其他分组
+- 当向正在播放的分组中添加播放器时，MA 会尝试无缝加入，但某些播放器类型可能会出现轻微停顿
+- 如果其中一个子播放器已同步到另一个分组，则该分组将无法开机
+- 即使一个或多个子播放器不可用，该分组仍会开机
+- 如果在分组设置中，播放器的友好名称被一个异常的 ID 取代，那么该播放器很可能已被 MA 逻辑判定为不可用。请检查单个播放器的状态
+- 通用分组采用尽力而为的方式，可能无法在所有播放器型号上正常工作，或产生意外的结果
+- 目前无法添加一个能为大多数用户提供可接受体验的固定同步延迟选项

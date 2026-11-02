@@ -1,102 +1,102 @@
 ---
-title: Playlist Metadata Provider
-description: Features and configuration for the Playlist Metadata Provider
+title: 播放列表元数据提供者
+description: 播放列表元数据提供者的功能与配置
 ---
 
-# Playlist Metadata Provider
+# 播放列表元数据提供者
 
-Music Assistant includes a built-in metadata provider that generates custom artwork and metadata for library playlists. This provider creates unique, visually appealing playlist covers using images from the tracks' artists and albums, with support for multiple configurable layout templates. It can also automatically detect and assign genres based on the playlist's track content. This provider is built-in and cannot be disabled. It runs automatically during the metadata refresh cycle for playlists.
+Music Assistant 包含一个内置的元数据提供者，可为媒体库播放列表生成自定义封面和元数据。该提供者使用曲目中艺术家和专辑的图片创建独特且美观的播放列表封面，并支持多种可配置的布局模板。它还可以根据播放列表的曲目内容自动检测并分配流派。此提供者为内置功能，无法禁用。它会在播放列表的元数据刷新周期中自动运行。
 
-## Features
+## 功能
 
-### Playlist Artwork
+### 播放列表封面
 
-The Playlist Metadata Provider generates artwork for library playlists using seven different layout templates. Each template uses images from the playlist's content to create a unique visual representation:
+播放列表元数据提供者使用七种不同的布局模板为媒体库播放列表生成封面。每个模板都使用播放列表内容中的图片来创建独特的视觉表现：
 
-#### Available Templates
+#### 可用模板
 
-**Album-Based Templates**
+**基于专辑的模板**
 
-- **Album Grid** (default) — Classic album-cover grid layout. Shows up to 4 album covers in a 2×2 grid
+- **专辑网格**（默认）— 经典专辑封面网格布局。在 2×2 网格中最多显示 4 张专辑封面
 
 ![Album Grid Example](/assets/screenshots/playlist_metadata/album_grid.png)
 
-- **Album Fan** — Up to three album covers displayed as framed photo-print cards in a rotated, stacked arrangement
+- **专辑扇形** — 最多三张专辑封面以旋转堆叠的方式显示为带框的照片打印卡片
 
 ![Album Fan Example](/assets/screenshots/playlist_metadata/album_fan.png)
 
-- **Album Grid Tilted** — Album covers in a grid with white gaps between tiles, with the entire composition rotated approximately 15° for a dynamic look
+- **倾斜专辑网格** — 网格中的专辑封面，图块之间有白色间隙，整个构图旋转约 15° 以呈现动态外观
 
 ![Album Grid Tilted Example](/assets/screenshots/playlist_metadata/album_grid_tilted.png)
 
-**Artist-Based Templates**
+**基于艺术家的模板**
 
-- **Artist Mosaic** — Dominant artist image large in the center, with other artists displayed as smaller tiles around it
+- **艺术家马赛克** — 中心为大尺寸的主要艺术家图片，其他艺术家以较小的图块显示在周围
 
 ![Artist Mosaic Example](/assets/screenshots/playlist_metadata/artist_mosaic.png)
 
-- **Artist Grid** — Equal-sized grid of unique artist images (up to 4)
+- **艺术家网格** — 等尺寸的独立艺术家图片网格（最多 4 张）
 
 ![Artist Grid Example](/assets/screenshots/playlist_metadata/artist_grid.png)
 
-- **Artist Radio** — Artist-focused layout with the main artist centered on a solid background, overlapping circles of secondary artists around the edges
+- **艺术家电台** — 以艺术家为中心的布局，主要艺术家居中显示在纯色背景上，次要艺术家的重叠圆圈环绕在边缘
 
 ![Artist Radio Example](/assets/screenshots/playlist_metadata/artist_radio.png)
 
-- **Artist Banner** — Full-bleed artist image with playlist name as text overlay
+- **艺术家横幅** — 满幅艺术家图片，播放列表名称作为文本叠加层
 
 ![Artist Banner Example](/assets/screenshots/playlist_metadata/artist_banner.png)
 
-#### How Artwork Generation Works
+#### 封面生成工作原理
 
-When a playlist is refreshed, this provider:
+当播放列表刷新时，此提供者会：
 
-1. **For Smart Playlists**: Uses images from the playlist rules (artist/album seeds, genre filters) if available
-2. **Otherwise**: Analyzes tracks to identify the most prominent artists and albums
-3. Generates artwork using the selected template
+1. **对于智能播放列表**：如果可用，则使用播放列表规则（艺术家/专辑种子、流派过滤器）中的图片
+2. **否则**：分析曲目以识别最突出的艺术家和专辑
+3. 使用选定的模板生成封面
 
-Image cleanup runs automatically every 2 hours.
+图片清理每 2 小时自动运行一次。
 
-### Genre Detection
+### 流派检测
 
-When enabled, the provider automatically detects genres for playlists by analyzing the genre tags of all tracks in the playlist. This helps categorize and discover playlists based on musical style.
+启用后，提供者通过分析播放列表中所有曲目的流派标签来自动检测播放列表的流派。这有助于根据音乐风格对播放列表进行分类和发现。
 
-#### How Genre Detection Works
+#### 流派检测工作原理
 
-1. **Collects genres** from all tracks in the playlist
-2. **Calculates percentages** based on how frequently each genre appears
-3. **Filters genres** that meet the minimum threshold (default: 10% of tracks)
-4. **Returns top genres** up to the maximum count (default: 3 genres)
+1. 从播放列表中的所有曲目**收集流派**
+2. 根据每个流派出现的频率**计算百分比**
+3. **过滤流派**，仅保留满足最低阈值（默认：曲目的 10%）的流派
+4. **返回排名靠前的流派**，最多达到最大数量（默认：3 个流派）
 
-For example, a 26-track playlist with 15 Rock tracks (57.7%), 5 Pop tracks (19.2%), and 3 Jazz tracks (11.5%) would be assigned genres: Rock, Pop, Jazz.
+例如，一个包含 26 首曲目的播放列表，其中有 15 首摇滚曲目（57.7%）、5 首流行曲目（19.2%）和 3 首爵士曲目（11.5%），将被分配流派：摇滚、流行、爵士。
 
 > [!NOTE]
-> Genre detection requires tracks to have genre metadata. Tracks from streaming providers typically include genre information; for local files, ensure genre tags are populated.
+> 流派检测要求曲目具有流派元数据。来自流媒体提供者的曲目通常包含流派信息；对于本地文件，请确保已填充流派标签。
 
-## Configuration
+## 配置
 
-### Settings
+### 设置
 
-**Artwork**
+**封面**
 
-- **Template** — Select which layout template to use for generating playlist artwork
-  - Options: `album_grid` (default), `album_fan`, `album_grid_tilted`, `artist_mosaic`, `artist_grid`, `artist_radio`, `artist_banner`
+- **模板** — 选择用于生成播放列表封面的布局模板
+  - 选项：`album_grid`（默认）、`album_fan`、`album_grid_tilted`、`artist_mosaic`、`artist_grid`、`artist_radio`、`artist_banner`
   
-- **Skip Provider Playlists** (default: enabled) — When enabled, skips artwork generation and genre detection for playlists that already have provider-supplied metadata (e.g., playlists synced from Spotify or Tidal). This preserves official artwork and genres from streaming services
+- **跳过提供者播放列表**（默认：启用）— 启用后，将跳过对已具有提供者提供的元数据的播放列表（例如，从 Spotify 或 Tidal 同步的播放列表）的封面生成和流派检测。这可以保留流媒体服务中的官方封面和流派
 
-**Genre Detection**
+**流派检测**
 
-- **Enable Genre Detection** (default: disabled) — When enabled, automatically detects and assigns genres to playlists based on their track content
+- **启用流派检测**（默认：禁用）— 启用后，根据播放列表的曲目内容自动检测并分配流派
 
-- **Genre Minimum Threshold** (default: 10%, range: 5-50%, advanced) — Minimum percentage of tracks that must share a genre for it to be included. For example, with a 10% threshold, a 20-track playlist needs at least 2 tracks of a genre for it to be assigned
+- **流派最低阈值**（默认：10%，范围：5-50%，高级）— 必须共享某一流派的曲目最低百分比，该流派才会被包含在内。例如，在 10% 的阈值下，一个包含 20 首曲目的播放列表至少需要 2 首某一流派的曲目才会分配该流派
 
-- **Genre Maximum Count** (default: 3, range: 1-10, advanced) — Maximum number of genres to assign to each playlist. Only the most common genres (above the threshold) are kept
+- **流派最大数量**（默认：3，范围：1-10，高级）— 分配给每个播放列表的最大流派数量。仅保留最常见的流派（高于阈值）
 
 > [!TIP]
-> The advanced genre settings (threshold and maximum count) are hidden by default. Enable "Show advanced options" in the provider settings to adjust these values.
+> 高级流派设置（阈值和最大数量）默认隐藏。在提供者设置中启用“显示高级选项”以调整这些值。
 
-## Notes
+## 注意事项
 
-- Artwork is generated automatically during playlist metadata refresh
-- Smart Playlists with artist or album seed filters will use those images directly for more relevant artwork
-- Artist templates work best with diverse-artist playlists; album templates work better for compilation-style playlists
+- 封面在播放列表元数据刷新期间自动生成
+- 带有艺术家或专辑种子过滤器的智能播放列表将直接使用这些图片，以获得更相关的封面
+- 艺术家模板最适合包含多位艺术家的播放列表；专辑模板更适合合辑风格的播放列表

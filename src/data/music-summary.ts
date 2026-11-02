@@ -39,35 +39,35 @@ export interface SummaryColumn {
 export const YES_NO_COLUMNS: SummaryColumn[] = [
   {
     id: "subscriptionFree",
-    label: "Free",
-    head: ["Free"],
-    help: "Some or all of what this source offers can be played without paying for a subscription.",
+    label: "免费",
+    head: ["免费"],
+    help: "该音源的部分或全部内容无需付费订阅即可播放。",
     featuresLabel: /^Subscription FREE$/i,
   },
   {
     id: "selfHosted",
-    label: "Self-hosted",
-    head: ["Local"],
-    help: "The source plays from files you hold yourself, on your own disk, NAS or server, rather than from someone else's catalogue.",
+    label: "自托管",
+    head: ["本地"],
+    help: "该音源从你自己的磁盘、NAS 或服务器上的文件播放，而不是别人的曲库。",
     featuresLabel: /^Self-Hosted Local Media$/i,
   },
   {
     id: "endlessMix",
-    label: "Endless Mix",
+    label: "无限混播",
     // Abbreviated, because the column is a tick and the full name would set a
     // width the ticks never use. The legend spells it out.
-    head: ["E. Mix"],
-    help: "Music Assistant can keep playing in a similar vein once the queue runs out, using this source's own idea of what is similar.",
+    head: ["混播"],
+    help: "队列播完后，Music Assistant 能按该音源自己的“相似”逻辑继续播放。",
     href: "/usage/#endless-mix",
     featuresLabel: /^Endless Mix$/i,
   },
   {
     id: "recommendations",
-    label: "Recommendations",
+    label: "推荐",
     // Short, because the column is a tick: at body size the full word would
     // hold sixty pixels to show fifteen. The legend keeps the full term.
-    head: ["Recs"],
-    help: "The source offers its own suggestions, which appear in the Discover view.",
+    head: ["推荐"],
+    help: "该音源提供自己的推荐内容，显示在“发现”视图中。",
     href: "/ui/#view---discover",
     featuresLabel: /^Recommendations Supported$/i,
   },
@@ -77,24 +77,24 @@ export const YES_NO_COLUMNS: SummaryColumn[] = [
 export const TEXT_COLUMNS = {
   quality: {
     id: "quality",
-    label: "Max Stream Quality",
-    head: ["Max Stream", "Quality"],
-    help: "The best this source can deliver. Hi-Res is above 48kHz or above 16 bits; CD matches a compact disc; Lossy has been compressed in a way that discards detail; Varies means it depends on the station or feed rather than on the source.",
+    label: "最高音质",
+    head: ["最高流", "音质"],
+    help: "该音源能提供的最佳音质。Hi-Res 指高于 48kHz 或 16bit；CD 对应激光唱片规格；Lossy 表示经过有损压缩；Varies 表示取决于电台或节目而非音源本身。",
     href: "/player-support/#audio-quality",
     featuresLabel: /^Maximum Stream Quality$/i,
   },
   mediaTypes: {
     id: "mediaTypes",
-    label: "Media Types",
-    head: ["Media", "Types"],
-    help: "What this source can play. A source often does several of these at once.",
+    label: "媒体类型",
+    head: ["媒体", "类型"],
+    help: "该音源能播放的内容类型。一个音源往往同时支持多种。",
     featuresLabel: /^Media Types Supported$/i,
   },
   login: {
     id: "login",
-    label: "Login",
-    head: ["Login"],
-    help: "What you need to sign in with. A password is the most straightforward; OAuth signs you in on the service's own site; a cookie has to be copied out of your browser by hand and is the least user friendly.",
+    label: "登录",
+    head: ["登录"],
+    help: "登录方式。密码最直接；OAuth 在服务自己的网站上登录；Cookie 需要手动从浏览器复制，体验最差。",
     featuresLabel: /^Login Method$/i,
   },
 } as const;

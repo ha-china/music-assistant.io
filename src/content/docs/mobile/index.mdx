@@ -1,24 +1,24 @@
 ---
-title: Mobile Device General Information
-description: Information Relevant to all Mobile Devices
+title: 移动设备通用信息
+description: 与所有移动设备相关的信息
 ---
 
 import Swiper from '../../../components/Swiper.astro';
 import SwiperSlide from '../../../components/SwiperSlide.astro';
 
-# Mobile Devices
+# 移动设备
 
-## Notification Screen Support
+## 通知屏幕支持
 
-When you access the Music Assistant UI in a modern browser, a media player widget will be seen in the device's notification or lock screen (this uses the browser's <a href="https://caniuse.com/?search=mediasession" target="_blank" rel="noopener noreferrer">Media Session feature</a>). Support is available for the pause, play, next track, and previous track functions.
+当您在现代浏览器中访问 Music Assistant 界面时，将在设备的通知屏幕或锁屏界面看到一个媒体播放器小部件（这使用了浏览器的 <a href="https://caniuse.com/?search=mediasession" target="_blank" rel="noopener noreferrer">Media Session 功能</a>）。支持暂停、播放、下一曲和上一曲功能。
 
-Whilst this functionality has been tested to work when using the iOS Home Assistant app to access the Music Assistant UI, the same can not be said for the Android Home Assistant app. If you want this functionality on an Android device, use a supported browser.
+虽然已测试此功能在使用 iOS Home Assistant 应用访问 Music Assistant 界面时有效，但 Android 版 Home Assistant 应用尚无法保证相同的效果。如果您想在 Android 设备上使用此功能，请使用受支持的浏览器。
 
-Android users should also note that they may observe a label "This Phone" when observing playback on a remote device. This is a limitation of the Android OS.
+Android 用户还应注意，在远程设备上观察播放时，可能会看到“This Phone”标签。这是 Android 操作系统的限制。
 
-If the media player widget is not seen then a different, supported browser will need to be used.
+如果未看到媒体播放器小部件，则需要使用其他受支持的浏览器。
 
-## Official Mobile Apps
+## 官方移动应用
 
 <Swiper class="mobile-screens" slidesPerView={1} pagination loop>
 	<SwiperSlide>
@@ -45,4 +45,4 @@ If the media player widget is not seen then a different, supported browser will 
 	}
 `}</style>
 
-The official mobile apps are still in BETA. Android users wishing to try it out can [sign up as a tester on Google Play](https://play.google.com/apps/testing/io.music_assistant.client). iOS users can get the app from [TestFlight](https://testflight.apple.com/join/AkvSDf2z). More information is available in the [Mobile App Repository](https://github.com/music-assistant/mobile-app).
+官方移动应用仍处于测试（BETA）阶段。希望尝试的 Android 用户可以[在 Google Play 上注册成为测试员](https://play.google.com/apps/testing/io.music_assistant.client)。iOS 用户可以从 [TestFlight](https://testflight.apple.com/join/AkvSDf2z) 获取该应用。更多信息可在[移动应用代码库](https://github.com/music-assistant/mobile-app)中找到。

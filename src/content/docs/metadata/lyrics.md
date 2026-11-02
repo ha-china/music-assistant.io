@@ -1,58 +1,58 @@
 ---
-title: Lyrics
+title: 歌词
 ---
 
-# Lyrics <img src="/assets/icons/metadata-lyrics-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 歌词 <img src="/assets/icons/metadata-lyrics-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant shows lyrics in the [Now Playing view](/ui/#now-playing-view) when they are available for the playing track; there is nothing to configure by default. This page explains where lyrics come from and how to fix wrong ones.
+当正在播放的曲目有可用歌词时，Music Assistant 会在[正在播放视图](/ui/#now-playing-view)中显示歌词；默认情况下无需进行任何配置。本页介绍了歌词的来源以及如何修复错误的歌词。
 
-Two kinds of lyrics are available:
+提供两种类型的歌词：
 
-- **Synchronized lyrics** (`.lrc` format with timestamps)
-- **Unsynchronized lyrics** (plain text)
+- **同步歌词**（带有时间戳的 `.lrc` 格式）
+- **非同步歌词**（纯文本）
 
-## Lyrics Sources
+## 歌词来源
 
-Music Assistant currently has two dedicated lyrics metadata providers. They run in addition to any lyrics delivered by the music source itself (Tidal, local tags, .lrc files, etc.) and are skipped when a track already has lyrics. If both providers are enabled, LRCLIB runs first and Genius fills in only when LRCLIB returned nothing. The following lists all lyric sources in order of preference:
+Music Assistant 目前有两个专用的歌词元数据提供商。它们会作为音乐源本身提供的任何歌词（Tidal、本地标签、.lrc 文件等）的补充运行，并且在曲目已有歌词时会被跳过。如果同时启用了这两个提供商，LRCLIB 会首先运行，只有在 LRCLIB 未返回任何内容时，Genius 才会进行补充。以下按优先级顺序列出了所有歌词来源：
 
-1. **Embedded lyrics** in the audio file's tags.
-2. **`.lrc` file** with the same name as the audio file (the format produced by tools such as [LRCGET](https://github.com/tranxuanthang/lrcget)).
-3. **The track's own music provider**, when it exposes lyrics natively (e.g. some streaming providers).
-4. **LRCLIB** — synchronized is preferred but there is an unsynchronized falllback.
-5. **Genius Lyrics** (optional) — unsynchronized only, matched on title and artist.
+1. 音频文件标签中的**嵌入歌词**。
+2. 与音频文件同名的 **`.lrc` 文件**（由 [LRCGET](https://github.com/tranxuanthang/lrcget) 等工具生成的格式）。
+3. **曲目自身的音乐提供商**，前提是其原生提供歌词（例如某些流媒体提供商）。
+4. **LRCLIB** — 优先使用同步歌词，但也提供非同步歌词作为后备。
+5. **Genius Lyrics**（可选）— 仅提供非同步歌词，根据标题和艺术家进行匹配。
 
-A background lookup is started as soon as a track enters the queue, so lyrics are usually available by the time the song starts.
+一旦曲目进入队列，就会启动后台查找，因此通常在歌曲开始播放时歌词就已经可用。
 
-## How lyrics are fetched
+## 歌词的获取方式
 
-For all music sources, if one or more lyric metadata providers are available then lyrics will be attempted to be obtained according to the following rules (note that it is possible that matching lyrics can't be found)
+对于所有音乐源，如果有一个或多个歌词元数据提供商可用，则将尝试根据以下规则获取歌词（请注意，可能无法找到匹配的歌词）
 
-- **First play of a track:** As soon as the track is queued, Music Assistant starts a lyrics lookup in the background. Because metadata updates are throttled to one every ~30 seconds, lyrics usually won't appear during that first playback — they'll be in place the next time the track is played
-- **Opening the Now Playing view:** Music Assistant returns whatever is already stored for the track. For tracks playing directly from a source (i.e. not in your library), if nothing is stored it will try the track's own music provider first (e.g. Tidal) and then fall back to the lyrics metadata providers on demand
-- **Periodic refresh:** Stored metadata, including lyrics, is considered fresh for 90 days. After that, the next play triggers a fresh lookup
-- **Manual refresh:** Selecting Update Metadata from a track's menu bypasses the 90-day check and re-runs the lookup immediately
+- **首次播放曲目：** 一旦曲目加入队列，Music Assistant 就会在后台启动歌词查找。由于元数据更新被限制为大约每 30 秒一次，因此在首次播放期间通常不会显示歌词——它们会在下次播放该曲目时就绪
+- **打开正在播放视图：** Music Assistant 会返回该曲目已存储的任何内容。对于直接从源播放的曲目（即不在您的媒体库中），如果没有存储任何内容，它将首先尝试曲目自身的音乐提供商（例如 Tidal），然后根据需求回退到歌词元数据提供商
+- **定期刷新：** 存储的元数据（包括歌词）在 90 天内被视为新鲜数据。此后，下一次播放将触发全新的查找
+- **手动刷新：** 从曲目菜单中选择“更新元数据”会绕过 90 天的检查并立即重新运行查找
 
-Tidal has native lyrics support, but due to its API lyrics are only fetched as part of a full track lookup, which happens when you open a track's info page or play it. You may need to refresh the item and play again before lyrics appear.
+Tidal 原生支持歌词，但由于其 API 的限制，歌词仅作为完整曲目查找的一部分进行获取，这会在您打开曲目信息页或播放曲目时发生。在歌词显示之前，您可能需要刷新该项目并重新播放。
 
-## Two lyrics providers
+## 两个歌词提供商
 
 ### LRCLIB
 
-Enabled by default and the primary source for synchronized lyrics from [lrclib.net](https://lrclib.net). Matching requires track name, artist, album and duration within 2 seconds. It returns synced lyrics when available, otherwise falls back to plain lyrics.
+默认启用，是来自 [lrclib.net](https://lrclib.net) 的同步歌词的主要来源。匹配需要曲目名称、艺术家、专辑以及误差在 2 秒内的时长。它在可用时返回同步歌词，否则回退到纯文本歌词。
 
-LRCLIB is throttled to one request per 30 seconds against the public API, so a newly added library will populate gradually. For faster lookups across a large library, a self-hosted LRCLIB instance can be used by pointing Music Assistant at the custom endpoint via the provider's "API URL" setting.
+针对公共 API，LRCLIB 被限制为每 30 秒一个请求，因此新添加的媒体库将逐渐填充。为了在大型媒体库中实现更快的查找，可以通过提供商的“API URL”设置将 Music Assistant 指向自定义端点，从而使用自托管的 LRCLIB 实例。
 
 ### Genius Lyrics
 
-An optional fallback for unsynchronized lyrics and is a fallback source for plain (unsynchronized) lyrics, scraped from genius.com. Matching is on title and artist only — this can return results for more tracks but risks incorrect versions for ambiguously-titled songs.
+作为非同步歌词的可选后备，它是从 genius.com 抓取的纯文本（非同步）歌词的后备来源。匹配仅基于标题和艺术家——这可以为更多曲目返回结果，但对于标题模糊的歌曲存在返回错误版本的风险。
 
-Genius Lyrics is enabled from [**Settings → Metadata Providers → Add a metadata provider**](/settings/metadata-provider-settings/).
+Genius Lyrics 可通过 [**设置 → 元数据提供商 → 添加元数据提供商**](/settings/metadata-provider-settings/) 启用。
 
-## Replacing wrong or stale lyrics
+## 替换错误或过期的歌词
 
-Once lyrics are stored on a track, the standard "Update metadata" action will not replace them as both LRCLIB and Genius skip tracks that already have lyrics.
+一旦歌词存储在曲目上，标准的“更新元数据”操作将不会替换它们，因为 LRCLIB 和 Genius 都会跳过已有歌词的曲目。
 
-Therefore, to replace the existing lyrics:
+因此，要替换现有歌词：
 
-- **For local files**: edit the embedded lyrics tag and then the next library scan will pick it up. If a `.lrc` file is edited, then either also touch the audio file or select `Refresh Item` on the track
-- **For all others**: use `Refresh Item` on the track as it re-fetches the track from its provider and re-runs the lyrics lookup
+- **对于本地文件**：编辑嵌入的歌词标签，然后下一次媒体库扫描就会获取它。如果编辑了 `.lrc` 文件，则还需修改音频文件的修改时间，或者在曲目上选择 `Refresh Item`
+- **对于其他所有情况**：在曲目上使用 `Refresh Item`，因为它会从提供商处重新获取曲目并重新运行歌词查找

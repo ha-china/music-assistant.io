@@ -4,22 +4,21 @@ title: "Yandex Music"
 
 # Yandex Music <img src="/assets/icons/yandex-music-icon.svg" alt="Preview image" style="width: 50px; float: right;" loading="lazy" />
 
-Music Assistant has support for [Yandex Music](https://music.yandex.ru). Contributed and maintained by [TrudenBoy](https://github.com/TrudenBoy).
+Music Assistant 支持 [Yandex Music](https://music.yandex.ru)。由 [TrudenBoy](https://github.com/TrudenBoy) 贡献并维护。
 
-Yandex Music is the streaming service of Yandex, the Russian internet company. It has a large Russian language catalogue alongside international releases, and its My Wave personalised radio is how a lot of people listen to it.
+Yandex Music 是俄罗斯互联网公司 Yandex 旗下的流媒体服务。它拥有庞大的俄语曲库，同时也收录国际发行的音乐，其 My Wave 个性化电台是许多人收听它的方式。
 
-Connecting your account puts your Yandex Music library, the wider catalogue and My Wave itself inside Music Assistant.
+连接你的账户后，你的 Yandex Music 媒体库、更广泛的曲库以及 My Wave 本身都会呈现在 Music Assistant 中。
 
 > [!CAUTION]
-> This is an unofficial implementation and is not affiliated with or endorsed by Yandex.
+> 这是一个非官方实现，与 Yandex 无关联，也未获得其认可。
 
 > [!NOTE]
-> A Yandex Music Plus subscription is required for lossless (FLAC) quality and for everything here to work.
-> Without one, some of what is described below will be unavailable.
+> 无损（FLAC）音质以及此处所有功能的正常使用都需要 Yandex Music Plus 订阅。
+> 没有订阅时，下文描述的部分功能将无法使用。
 
 > [!NOTE]
-> Full source documentation (RU/EN): **[trudenboy.github.io/ma-provider-yandex-music](https://trudenboy.github.io/ma-provider-yandex-music/)**
-
+> 完整源码文档（俄语/英语）：**[trudenboy.github.io/ma-provider-yandex-music](https://trudenboy.github.io/ma-provider-yandex-music/)**
 
 ## Features
 
@@ -53,43 +52,59 @@ Connecting your account puts your Yandex Music library, the wider catalogue and 
 - **Audiobooks** are synced, browsable with chapters, and stream natively. Playback position round-trips between Music Assistant and Yandex's own apps, so resume points stay in sync
 - Multiple Yandex Music accounts can be added simultaneously
 
-## Configuration
+### 其他
 
-There are three ways to sign in. The first is the easiest and keeps working on its own, so use that one unless it fails.
+- 可以搜索 Yandex Music 曲库
+- 用户 Yandex Music 媒体库中的条目会同步到 Music Assistant
+- 向 Music Assistant 媒体库添加或移除条目会同步回 Yandex Music
+- 可通过浏览（Browse）功能探索 Yandex Music 曲库
+- 有歌词时会显示歌词（服务提供逐行同步歌词时显示同步歌词，否则显示纯文本）
+- 个性化推荐（My Wave、为你推荐、排行榜、新发行等）会显示在主页的“推荐内容”区域
+- **My Wave** 个性化电台。你的喜欢、不喜欢、跳过以及完整听完的曲目都会反馈给 Yandex，因此该电台会不断从你在 Music Assistant 中的行为中学习
+- **Wave 模式** — 为 My Wave 提供 11 种一键预设（发现 / 收藏 / 热门，平静 / 活跃 / 欢乐 / 忧伤，俄语 / 非俄语 / 无人声）
+- **我的预设** — 保存你自己命名的多样性、情绪和语言组合，之后无需费力调整设置即可从浏览（Browse）中重新启动
+- 相似曲目可从曲目的上下文菜单中获取（无尽混播即使用该功能）；当播放电台曲目时，无尽混播会延续同一个由 Yandex 策划的会话，而不是分支到无关的相似曲目流
+- **播客**会从你的 Yandex 媒体库同步，可按单集浏览，并以原生方式串流播放
+- **有声书**会同步，可按章节浏览，并以原生方式串流播放。播放进度会在 Music Assistant 与 Yandex 官方应用之间双向同步，因此续播位置保持一致
+- 可同时添加多个 Yandex Music 账户
 
-### Option 1: Sign in with a code (recommended)
+## 配置
 
-1. In Music Assistant, add the Yandex Music source and click **Login with device code**
-2. A short web address and a code appear. Open that address on any device, such as your phone, and type in the code
-3. Approve the request in your Yandex account
-4. Music Assistant finishes the setup on its own. It will stay signed in, so there is nothing to renew later
+有三种登录方式。第一种最简单，而且能自行持续正常工作，因此除非它失效，否则请使用这种方式。
 
-### Option 2: QR Code
+### 方式 1：使用代码登录（推荐）
 
-1. In Music Assistant, add the Yandex Music source and click **Login with QR code**
-2. Scan the code with the Yandex app on your phone, signed in to the account you want to use
-3. Approve it in the app and Music Assistant does the rest
+1. 在 Music Assistant 中添加 Yandex Music 音乐源，然后点击**使用设备代码登录**
+2. 此时会出现一个简短的网址和一个代码。在任意设备（例如你的手机）上打开该网址，并输入代码
+3. 在你的 Yandex 账户中批准该请求
+4. Music Assistant 会自行完成设置。它将保持登录状态，因此之后无需任何续期操作
 
-### Option 3: Paste a token by hand (advanced)
+### 方式 2：二维码
 
-Only needed if neither of the above works:
+1. 在 Music Assistant 中添加 Yandex Music 音乐源，然后点击**使用二维码登录**
+2. 在手机上打开已登录你想要使用账户的 Yandex 应用，并扫描该二维码
+3. 在应用中批准该请求，剩下的交给 Music Assistant 完成
 
-1. Open [this Yandex sign-in link](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d) in your browser
-2. Sign in to your Yandex account if asked
-3. You will land on a page whose web address contains `access_token=` followed by a long run of characters
-4. Copy that run of characters — everything after `access_token=` and before the next `&`
-5. Paste it into the Yandex Music source in Music Assistant, under advanced settings
+### 方式 3：手动粘贴令牌（高级）
 
-Note that a token pasted this way will expire and have to be replaced by hand.
+仅在前两种方式都无法使用时才需要：
 
-### Settings
+1. 在浏览器中打开[这个 Yandex 登录链接](https://oauth.yandex.ru/authorize?response_type=token&client_id=23cabbbdc6cd418abb4b39c32c41195d)
+2. 如果系统要求，请登录你的 Yandex 账户
+3. 你会来到一个页面，其网址中包含 `access_token=`，后面跟着一长串字符
+4. 复制这串字符 — 即 `access_token=` 之后、下一个 `&` 之前的全部内容
+5. 将其粘贴到 Music Assistant 中 Yandex Music 音乐源的高级设置下
 
-- **Audio quality**: Select preferred audio quality. Options: `Efficient (AAC ~64 kbps)`, `Balanced (AAC ~192 kbps)` (default), `High (MP3 320 kbps)`, `Lossless (FLAC)` (requires Yandex Music Plus subscription)
-- **Remember session**: stays signed in and renews the connection on its own. On by default when you sign in with a code or a QR code
-- **My Wave custom presets**: advanced-settings builder for saving named wave combinations (name + up to three dropdowns). Saved entries surface under **Radio → My Presets** in Browse
+请注意，以这种方式粘贴的令牌会过期，必须手动更换。
 
-## Known Issues / Notes
+### 设置
 
-- A token pasted in by hand expires and has to be replaced. Signing in with a code or a QR code avoids this
-- Lossless FLAC requires an active Yandex Music Plus subscription. Without one, Yandex Music plays at the highest quality your account allows
-- Tracks played through Music Assistant do **not** show up in your Yandex listening history. If you want them to, play through the Yandex app itself, or add the [Yandex Music Connect (Ynison)](/plugins/yandex-ynison/) plugin
+- **音质**：选择首选音频音质。选项：`Efficient (AAC ~64 kbps)`、`Balanced (AAC ~192 kbps)`（默认）、`High (MP3 320 kbps)`、`Lossless (FLAC)`（需要 Yandex Music Plus 订阅）
+- **记住会话**：保持登录状态并自动续期连接。使用代码或二维码登录时默认开启
+- **My Wave 自定义预设**：高级设置中的构建器，用于保存已命名的电台组合（名称 + 最多三个下拉菜单）。保存的条目会显示在浏览（Browse）中的**电台 → 我的预设**下
+
+## 已知问题 / 说明
+
+- 手动粘贴的令牌会过期，必须更换。使用代码或二维码登录可以避免这一问题
+- 无损 FLAC 需要有效的 Yandex Music Plus 订阅。没有订阅时，Yandex Music 会以你账户所允许的最高音质播放
+- 通过 Music Assistant 播放的曲目**不会**出现在你的 Yandex 收听历史中。如果希望它们出现，请改用 Yandex 应用本身播放，或添加 [Yandex Music Connect (Ynison)](/plugins/yandex-ynison/) 插件

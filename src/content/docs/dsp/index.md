@@ -1,110 +1,110 @@
 ---
-title: Digital Signal Processing
-description: Overview of the Digital Signal Processing (DSP) capabilities of Music Assistant and the filters that are available
+title: 数字信号处理
+description: Music Assistant 的数字信号处理（DSP）功能概述，以及可用的滤波器介绍
 ---
 
-# Digital Signal Processing
+# 数字信号处理
 
-All players have the option to apply <a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">Digital Signal Processing</a> (DSP) filters to the audio stream. DSP allows the audio to be shaped and refined with a variety of filters. It can be used to tailor the sound to a room's acoustics, compensate for speaker characteristics, and fine-tune the frequency balance to personal taste.
+所有播放器都可以对音频流应用<a href="https://en.wikipedia.org/wiki/Digital_signal_processing" target="_blank" rel="noopener noreferrer">数字信号处理</a>（DSP）滤波器。DSP 允许通过各种滤波器对音频进行塑造和优化。它可以用来让声音适应房间的声学特性、补偿扬声器特性，并根据个人品味微调频率平衡。
 
-The DSP option is found in the [Music Assistant settings for each player](/settings/individual-player/#dsp-settings) which means that each player has its own independently configurable DSP settings.
+DSP 选项位于[每个播放器的 Music Assistant 设置](/settings/individual-player/#dsp-settings)中，这意味着每个播放器都有各自独立配置的 DSP 设置。
 
-When playing in a group, individual player DSP settings will only be used for Universal groups and when playing via AirPlay, Squeezelite or Sendspin. Groups using all other protocols will have DSP disabled.
+在分组播放时，单个播放器的 DSP 设置仅适用于 Universal 分组，以及通过 AirPlay、Squeezelite 或 Sendspin 播放的情况。使用其他所有协议的分组将禁用 DSP。
 
-## The DSP Path
+## DSP 路径
 
-The DSP path consists of an INPUT pre-amplifier for initial gain control, followed by optional audio filters that can be added between input and output (multiple times if desired). The path ends with an OUTPUT stage that provides gain control. If there is a risk of clipping, for example after boosting with an equalizer or the Gain filter, a Safety Limiter filter can be added to the path.
+DSP 路径由一个用于初始增益控制的 INPUT（输入）前置放大器开始，随后是可在输入和输出之间添加的可选音频滤波器（可根据需要添加多个）。路径以提供增益控制的 OUTPUT（输出）级结束。如果存在削波（clipping）风险，例如在使用均衡器或增益（Gain）滤波器进行提升之后，可以在路径中添加安全限制器（Safety Limiter）滤波器。
 
-The DSP settings can be enabled and disabled via a toggle which allows easy <a href="https://www.youtube.com/watch?v=KefGjPYyIO4" target="_blank" rel="noopener noreferrer">A-B testing</a>
+DSP 设置可以通过一个开关来启用和禁用，从而轻松进行<a href="https://www.youtube.com/watch?v=KefGjPYyIO4" target="_blank" rel="noopener noreferrer">A-B 对比试听</a>。
 
-The line on the left of the DSP settings represents the audio path, in sequential order, from the audio file (top) to the player (bottom). A dot on the line represents a component that changes the signal. The lack of a dot indicates that the particular component has been disabled.
+DSP 设置左侧的线条表示音频路径，按顺序从音频文件（顶部）到播放器（底部）。线条上的圆点表示会改变信号的组件。没有圆点则表示该组件已被禁用。
 
-Using the icons at the top of the view, the filters can be reordered, disabled/enabled or deleted.
+使用视图顶部的图标，可以对滤波器进行重新排序、禁用/启用或删除。
 
-Some filters work on the relationship between the left and right channels and therefore only apply to stereo audio. Balance, Stereo Width and Crossfeed are all passed through unchanged when the source is mono, so they can be left in the path without affecting mono material.
+一些滤波器作用于左右声道之间的关系，因此仅适用于立体声音频。当源为单声道时，平衡（Balance）、立体声宽度（Stereo Width）和交叉馈送（Crossfeed）都会原样直通，因此可以将它们留在路径中而不会影响单声道素材。
 
 ![DSP image](/assets/screenshots/dsp.jpg)
 
-## Where to Start
+## 从哪里开始
 
-DSP is entirely optional and most people will never need to touch it. If a player sounds fine, leaving DSP switched off is a perfectly good choice, as it means the audio reaches the player exactly as it was in the source file.
+DSP 完全是可选的，大多数人可能根本不需要碰它。如果播放器的声音已经很好，保持 DSP 关闭是一个完全合理的选择，因为这意味着音频会以源文件中的原样送达播放器。
 
-For anyone approaching it for the first time, the Tone Controls and Balance filters are the place to begin. They are the two simplest filters, they behave in the way the equivalent controls on an amplifier do, and neither of them can do any harm. The Parametric Equalizer is far more capable, but it is also the easiest to get lost in, so it is worth becoming familiar with the simple controls first.
+对于初次接触 DSP 的人来说，音调控制（Tone Controls）和平衡（Balance）滤波器是入门之选。它们是两个最简单的滤波器，其行为方式与放大器上的同类控制一样，而且都不会造成任何危害。参数均衡器（Parametric Equalizer）功能强大得多，但也最容易让人迷失其中，因此值得先熟悉这些简单的控制。
 
-Three habits make the process much easier. Change one thing at a time, so that it is always clear what caused a difference. Use the enable toggle to compare the processed and unprocessed sound, as the ear adjusts surprisingly quickly and a change that seemed like an improvement often turns out not to be. Finally, prefer cutting to boosting: reducing the frequencies that are too prominent generally sounds more natural than raising the ones that are not, and it avoids any risk of clipping.
+三个习惯可以让这一过程轻松许多。每次只改动一处，这样就能始终清楚是哪项改动产生了差异。使用启用开关来比较有处理和未处理的声音，因为耳朵的适应速度快得惊人，看似改善的调整往往实际上并非如此。最后，优先做衰减而非提升：削减过于突出的频率通常比提升不够突出的频率听起来更自然，而且可以避免任何削波风险。
 
-It is also worth remembering that DSP is configured per player, so corrections made for the kitchen speaker have no effect on the living room system, and each player can be treated entirely on its own terms.
+还值得记住的是，DSP 是按播放器分别配置的，因此为厨房音箱所做的修正不会影响客厅系统，每个播放器都可以完全按照自身的情况来对待。
 
-### Choosing a Filter
+### 选择滤波器
 
-- **The music is too bassy, too dull or too bright**:  Start with [Tone Controls](/dsp/tonecontrols). If a specific narrow problem remains, such as one boomy note in a room, move on to the [Parametric Equalizer](/dsp/parametriceq/).
-- **The sound is pulled towards one side, or the listening position is off-centre**: Use Balance.
-- **One player is noticeably quieter or louder than the others**: Use Gain to bring it into line.
-- **Listening on headphones**: Crossfeed will make a speaker mix sound more natural, and hard-panned older recordings can be brought in further with Stereo Width. If a correction preset exists for the headphones, for example from [AutoEQ](https://autoeq.app/), it can be imported directly into the [Parametric Equalizer](/dsp/parametriceq/).
-- **Small speakers distorting or straining on bass**: Add a High Pass filter at around 80 Hz to remove the deep bass they cannot reproduce anyway.
-- **Quiet passages disappear in a noisy room, or for background listening**: The Compressor will even out the difference between loud and quiet.
-- **A boost has introduced clipping or harshness on peaks**: Add a Safety Limiter after the filter responsible.
+- **音乐低音过重、过于沉闷或过于明亮**：从[音调控制（Tone Controls）](/dsp/tonecontrols)开始。如果仍存在某个特定的窄频问题，例如房间中某个音符出现轰鸣，则继续使用[参数均衡器（Parametric Equalizer）](/dsp/parametriceq/)。
+- **声音偏向一侧，或听音位置偏离中心**：使用平衡（Balance）。
+- **某个播放器明显比其他播放器更安静或更响**：使用增益（Gain）使其与其他播放器保持一致。
+- **使用耳机聆听**：交叉馈送（Crossfeed）会让为扬声器混音的录音听上去更自然，而硬声像定位的老录音可以通过立体声宽度（Stereo Width）进一步收拢。如果该耳机已有校正预设，例如来自 [AutoEQ](https://autoeq.app/) 的预设，可以直接导入[参数均衡器（Parametric Equalizer）](/dsp/parametriceq/)。
+- **小型扬声器在低音处失真或吃力**：添加一个约 80 Hz 的高通滤波器，以去除它们本来就无法重放的深沉低音。
+- **在嘈杂的房间里或作为背景音乐聆听时，安静的乐段消失了**：压缩器（Compressor）会拉平响亮与安静部分之间的差异。
+- **提升导致削波或峰值处刺耳**：在相应的滤波器之后添加安全限制器（Safety Limiter）。
 
-## Available Filters
+## 可用滤波器
 
-The following filters can be added to the DSP path. The simpler filters are explained below, while the more advanced filters are described on their own dedicated pages.
+以下滤波器可以添加到 DSP 路径中。较简单的滤波器在下文中说明，而较高级的滤波器则在各自的专门页面上介绍。
 
-### Balance
+### 平衡（Balance）
 
-Shifts the stereo image left or right, from −100 (full left) through 0 (centred) to +100 (full right). Rather than the near side being boosted, the opposite side is quietened so the audio never becomes louder than the source and cannot distort. The value is the percentage by which the opposite channel is reduced: at +20 the left channel is played at 80% level, and at +100 the left channel is fully muted. Because the amount is expressed as a percentage of level rather than in decibels, it is best suited to balancing by ear; for a specific decibel trim, it should be noted that roughly every 20 points corresponds to about −2 dB on the opposite channel.
+将立体声声像向左或向右移动，范围从 −100（完全偏左）经 0（居中）到 +100（完全偏右）。它不是提升靠近的一侧，而是衰减另一侧，因此音频绝不会比源信号更响，也不会失真。该数值表示另一侧声道被衰减的百分比：在 +20 时，左声道以 80% 的电平播放；在 +100 时，左声道被完全静音。由于该量以电平百分比而非分贝表示，因此最适合凭听感进行平衡调整；若需要精确的分贝微调，应注意大约每 20 个点约相当于另一侧声道 −2 dB。
 
-### Compressor
+### 压缩器（Compressor）
 
-Reduces the difference between the loudest and the quietest parts of the audio to produce a more consistent, controlled sound. It is described in detail on the [Compressor](/dsp/compressor/) page.
+缩小音频中最响亮与最安静部分之间的差异，以产生更一致、更可控的声音。详情请参见[压缩器（Compressor）](/dsp/compressor/)页面。
 
-### Convolution
+### 卷积（Convolution）
 
-Applies a recorded impulse response to the audio, most commonly for room correction, speaker correction or headphone simulation. It is described in detail on the [Convolution](/dsp/convolution/) page.
+将录制的脉冲响应（impulse response）应用到音频上，最常见的用途是房间校正、扬声器校正或耳机模拟。详情请参见[卷积（Convolution）](/dsp/convolution/)页面。
 
-### Crossfeed
+### 交叉馈送（Crossfeed）
 
-Makes headphone listening feel more natural by gently blending the left and right channels, in a similar way to listening on speakers. With speakers, each ear hears both speakers, the sound from the further one arriving slightly later and duller. Headphones remove that blending entirely and send each channel to one ear only, which is why recordings mixed for speakers, particularly older ones with instruments panned hard left or right, can sound unnaturally wide or fatiguing over long listening sessions. Crossfeed reintroduces a small, filtered amount of each channel into the other to recreate what happens naturally in a room.
+通过轻柔地混合左右声道，以类似于扬声器聆听的方式，让耳机聆听感觉更自然。使用扬声器时，每只耳朵都能听到两个扬声器，来自较远扬声器的声音会稍晚到达且略显沉闷。耳机完全去除了这种混合，将每个声道只送到一只耳朵，这就是为什么为扬声器混音的录音（尤其是将乐器硬声像定位到极左或极右的老录音）听起来会不自然地宽，或长时间聆听后令人疲劳。交叉馈送将每个声道的一小部分（经过滤波）重新引入另一侧，以重现房间里自然发生的情况。
 
-The amount of blending is set with the Low, Medium and High buttons. Low leaves the stereo image close to the original and simply takes the edge off hard-panned recordings, while High pulls the image furthest in towards the centre for the most speaker-like presentation. Low is a good starting point, with the higher settings suiting older or more extremely panned recordings. There is also a Soundstage control, which sets how much of the frequency range the blending is applied to: lower values confine it to the lower frequencies for a subtler effect, while higher values extend it further up and give a wider, more open impression.
+混合量通过 Low（低）、Medium（中）和 High（高）按钮设置。Low 使声像接近原始状态，只是减轻硬声像定位录音的生硬感；而 High 将声像最大程度地向中心收拢，呈现最接近扬声器的效果。Low 是很好的起点，较高的设置更适合老录音或声像定位更极端的录音。还有一个声场（Soundstage）控制，用于设置混合应用到的频率范围大小：较低的值将其限制在较低频率，效果更含蓄；较高的值将其扩展到更高频率，呈现更宽、更开阔的听感。
 
-Crossfeed has no neutral setting, so it is switched off by disabling the filter rather than by turning a control down. Because Music Assistant cannot detect whether a player's output is going to headphones or speakers, this filter should only be enabled on players that are actually used with headphones. On speakers, crossfeed already happens acoustically in the room, so applying it again only narrows the image with no benefit.
+交叉馈送没有中性设置，因此只能通过禁用该滤波器来关闭它，而不是把某个控制调到最小。由于 Music Assistant 无法检测播放器的输出是连接到耳机还是扬声器，因此只应在实际搭配耳机使用的播放器上启用该滤波器。在使用扬声器时，房间中的声学串音已经自然发生，再次应用交叉馈送只会使声像变窄，没有任何好处。
 
-### Gain
+### 增益（Gain）
 
-Raises or lowers the overall volume by a fixed amount, from −15 dB to +15 dB (0 dB leaves the volume unchanged). It is useful for levelling a player against others, or for reclaiming headroom before other processing is applied.
+以固定量升高或降低整体音量，范围从 −15 dB 到 +15 dB（0 dB 时音量不变）。它可用于将某个播放器的音量与其他播放器拉平，或在应用其他处理之前回收动态余量（headroom）。
 
-### High and Low Pass
+### 高通与低通（High and Low Pass）
 
-Removes everything above or below a chosen frequency, rather than turning it up or down. A high-pass filter passes the high frequencies and removes the low ones, and a low-pass filter does the opposite. Which of the two applies is chosen with the Mode buttons, so a single filter covers both; adding two of these filters, one of each mode, will restrict the audio to a band in between.
+直接去除所选频率以上或以下的所有内容，而不是将其提升或衰减。高通滤波器让高频通过并去除低频，低通滤波器则相反。应用其中哪一种通过模式（Mode）按钮选择，因此单个滤波器即可覆盖两者；添加两个这样的滤波器（各设一种模式），可以将音频限制在两者之间的一个频带内。
 
-The Cutoff sets the frequency at which the filter starts to take effect. The transition is gradual rather than a wall, so the cutoff is the point at which the signal has been reduced by 3 dB, with frequencies further beyond it reduced progressively more. This means a high-pass set to 80 Hz still lets a little content through below 80 Hz, and the deeper the frequency the more it is removed.
+截止频率（Cutoff）设置滤波器开始生效的频率。过渡是渐变的而非一堵墙，因此截止频率是指信号已被衰减 3 dB 的位置，比它更远的频率会被逐渐更多地衰减。这意味着设置为 80 Hz 的高通滤波器仍会让少量 80 Hz 以下的内容通过，频率越低，被去除得越多。
 
-The Slope sets how sharply the audio is removed beyond the cutoff, in decibels per octave, where an octave is a halving or doubling of frequency. At 12 dB per octave, a high-pass set to 80 Hz reduces 40 Hz by around 12 dB; at 48 dB per octave, the same 40 Hz is reduced by around 48 dB and is effectively gone. Gentler slopes blend more naturally into the rest of the music, while steeper slopes remove unwanted content more completely at the cost of a more abrupt transition. Only 12, 24 and 48 dB per octave are offered, as the filter is built from stages that each contribute 12 dB per octave.
+斜率（Slope）设置在截止频率之外音频被去除的陡峭程度，单位为每倍频程分贝，一个倍频程即频率减半或加倍。在每倍频程 12 dB 时，设置为 80 Hz 的高通滤波器会将 40 Hz 衰减约 12 dB；在每倍频程 48 dB 时，同样的 40 Hz 会被衰减约 48 dB，实际上已经消失。较缓的斜率能更自然地融入音乐的其余部分，而较陡的斜率能更彻底地去除不需要的内容，代价是过渡更为突兀。该滤波器仅提供每倍频程 12、24 和 48 dB 三档，因为它由多级构成，每级贡献每倍频程 12 dB。
 
-The most common use is a high-pass to relieve small speakers of deep bass they cannot reproduce anyway, which removes rumble and cone movement that only adds distortion, typically somewhere between 60 Hz and 100 Hz. A low-pass is useful for taming harshness or hiss at the top end, or for feeding a speaker that is only meant to handle the lower part of the range. For gentler shaping of a frequency region rather than removing it outright, the Parametric Equalizer is the better tool.
+最常见的用途是用高通滤波器为小型扬声器减去它们本来就无法重放的深沉低音，从而去除只会增加失真的隆隆声和纸盆运动，截止频率通常设在 60 Hz 到 100 Hz 之间。低通滤波器则适合抑制高频端的刺耳声或嘶声，或者用于为只负责处理低频段的扬声器馈送信号。如果只想对某个频率区域做温和的塑形而非彻底去除，参数均衡器是更好的工具。
 
-### Parametric Equalizer
+### 参数均衡器（Parametric Equalizer）
 
-Allows precise adjustment of specific frequency ranges and is the most powerful of the available filters. It is described in detail on the [Parametric Equalizer](/dsp/parametriceq/) page.
+允许对特定频率范围进行精确调整，是可用滤波器中功能最强大的一个。详情请参见[参数均衡器（Parametric Equalizer）](/dsp/parametriceq/)页面。
 
-### Safety Limiter
+### 安全限制器（Safety Limiter）
 
-Sets a hard ceiling that the audio is not allowed to exceed, from −24 dB up to 0 dB, with a default of −2 dB. Anything that would peak above the ceiling is turned down just enough to stay beneath it, leaving everything below the ceiling untouched. Its purpose is to catch clipping rather than to shape the sound, so no make-up gain is applied and the overall level is not raised to compensate.
+设置一个音频不允许超过的硬性上限，范围从 −24 dB 到 0 dB，默认为 −2 dB。任何峰值会超过上限的信号都会被刚好调低到上限以下，而低于上限的所有内容则保持不变。其目的是拦截削波而不是塑造声音，因此不会应用补偿增益（make-up gain），也不会提高整体电平来弥补。
 
-It is most useful placed after a filter that can add level, such as a Parametric Equalizer with boosted bands, the Gain filter, or Stereo Width set above 1.0. Because filters are applied in order, the limiter must sit after the filter it is protecting against in order to have any effect. A ceiling a little below 0 dB, such as the −2 dB default, is generally a safer choice than 0 dB itself, as it leaves a small amount of headroom for the player's own processing. Unlike Gain or Balance, the filter has no neutral setting, so it is switched off by disabling it rather than by returning the ceiling to a particular value. 
+它最适合放置在可能增加电平的滤波器之后，例如带有提升频段的参数均衡器、增益（Gain）滤波器，或设置在 1.0 以上的立体声宽度（Stereo Width）。由于滤波器按顺序应用，限制器必须位于它所防范的那个滤波器之后才能发挥作用。将上限设在略低于 0 dB 的位置（例如默认的 −2 dB）通常比 0 dB 本身更安全，因为它为播放器自身的处理留出了少量动态余量。与增益或平衡不同，该滤波器没有中性设置，因此只能通过禁用它来关闭，而不是把上限调回某个特定值。
 
-### Stereo Width
+### 立体声宽度（Stereo Width）
 
-Adjusts how wide the stereo image sounds, from 0 (mono) through 1.0 (unchanged) to 2.0 (wide). It works on the difference between the two channels rather than on the channels themselves, so anything sitting in the centre of the mix, typically lead vocals, bass and kick drum, is left untouched while panned instruments and ambience are moved further out or pulled further in. Values below 1.0 narrow the image towards mono, and values above 1.0 widen it. The useful musical range is fairly narrow: modest adjustments are effective, whereas pushing towards the top of the range tends to hollow out the centre and sound unnatural.
+调整立体声声像听起来的宽度，范围从 0（单声道）经 1.0（不变）到 2.0（宽）。它作用于两个声道之间的差异而不是声道本身，因此位于混音中央的内容（通常是主唱人声、贝斯和底鼓）保持不变，而被声像定位的乐器和氛围声则被进一步外移或内收。低于 1.0 的值使声像向单声道收窄，高于 1.0 的值使其变宽。有用的音乐性调节范围相当窄：适度的调整是有效的，而推向范围顶端往往会使中央变得空洞，听感不自然。
 
-Narrowing is always safe, but widening adds energy to the signal and can therefore push peaks into clipping. If the width is raised much above 1.0, a Safety Limiter should be added after the Stereo Width filter in the chain, as order matters here. It should be noted that limiting will pull a widened image back in on loud transients, since it is protecting against clipping rather than performing a mastering task.
+收窄始终是安全的，但加宽会给信号增加能量，因此可能将峰值推入削波。如果宽度提高到远超 1.0，应在链中的立体声宽度滤波器之后添加安全限制器，因为这里的顺序很重要。需要注意，限制会在响亮的瞬态上把已加宽的声像往回收拢，因为它的作用是防止削波而不是执行母带处理任务。
 
-A width of 0 produces dual mono, meaning the stream still carries two channels but both contain the same summed signal. This is not the same as the player's Output channels option, which actually reduces the number of channels sent to the player; the two are complementary rather than alternatives.
+宽度为 0 会产生双单声道（dual mono），即流仍然携带两个声道，但两者包含相同的求和信号。这与播放器的输出声道（Output channels）选项不同，后者会实际减少发送给播放器的声道数量；两者是互补关系，而非二选一的替代关系。
 
-### Tone Controls
+### 音调控制（Tone Controls）
 
-Provides simple bass, mid and treble adjustments of the audio signal. They are described in detail on the [Tone Controls](/dsp/tonecontrols/) page.
+提供对音频信号的简单低音、中音和高音调整。详情请参见[音调控制（Tone Controls）](/dsp/tonecontrols/)页面。
 
-### Transpose
+### 移调（Transpose）
 
-Provides a means of shifting the pitch of the music up or down without changing how fast it plays. This can be particularly useful for those that prefer the slightly mellower character of music when the key of A is at 432Hz instead of the typical 440Hz. This filter is described in detail on the [Transpose](/dsp/transpose/) page.
+提供一种在不改变播放速度的情况下将音乐音调升高或降低的方法。这对于偏好当 A 调音高为 432Hz 而非通常的 440Hz 时音乐略显柔润特质的人来说特别有用。详情请参见[移调（Transpose）](/dsp/transpose/)页面。

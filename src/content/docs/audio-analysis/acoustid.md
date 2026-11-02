@@ -1,54 +1,54 @@
 ---
-title: AcoustID Lookup
+title: AcoustID 查找
 ---
 
-# AcoustID Lookup Provider  <img src="/assets/icons/acoustid-lookup-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# AcoustID 查找提供程序  <img src="/assets/icons/acoustid-lookup-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-**AcoustID Lookup** works out what a track is by listening to it. It takes a fingerprint of the actual sound and looks that up in the AcoustID database, which tells it which recording this is.
+**AcoustID 查找**通过聆听曲目来判断它是什么。它会提取实际声音的指纹（fingerprint），并在 AcoustID 数据库中进行查找，从而确定这是哪一段录音。
 
-That matters because Music Assistant normally relies on the tags in your files to fetch artwork, descriptions and biographies. Where the tags are thin or missing, nothing can be found. Once AcoustID has identified a track, all of that becomes available, and the same track from different sources is matched up more reliably.
+这一点很重要，因为 Music Assistant 通常依赖文件中的标签（tag）来获取封面、简介和艺人传记。如果标签信息过少或缺失，就什么也找不到。一旦 AcoustID 识别出某首曲目，这些内容就都可以获取了，而且来自不同来源的同一首曲目也能更可靠地相互匹配。
 
-You have to switch this provider on yourself. It comes ready to use, or you can supply a free key of your own from [acoustid.org](https://acoustid.org/my-applications).
+你需要自行开启此提供程序（provider）。它开箱即用，或者你也可以从 [acoustid.org](https://acoustid.org/my-applications) 获取一个自己的免费密钥。
 
-## Who should enable it
+## 谁应该启用它
 
-This provider is intended for libraries containing audio files that lack a MusicBrainz Recording Id. For local files, this typically means tracks not yet tagged with [MusicBrainz Picard](https://picard.musicbrainz.org/) or an equivalent tool. For streaming providers, this typically means catalogues with limited metadata (for example, YouTube Music).
+此提供程序适用于包含缺少 MusicBrainz Recording Id 的音频文件的媒体库。对于本地文件，这通常指尚未使用 [MusicBrainz Picard](https://picard.musicbrainz.org/) 或同类工具打上标签的曲目。对于流媒体提供程序，这通常指元数据有限的曲库（例如 YouTube Music）。
 
-The largest visible improvement is for albums that currently show no cover art in Music Assistant because their tags do not include a MusicBrainz identifier. Once a release-group is identified, art and metadata are fetched automatically by the existing Cover Art Archive, fanart.tv, and TheAudioDB providers.
+最明显的改进体现在那些目前在 Music Assistant 中不显示封面的专辑上，因为它们的标签中不包含 MusicBrainz 标识符。一旦识别出发行组（release-group），封面和元数据就会由现有的 Cover Art Archive、fanart.tv 和 TheAudioDB 提供程序自动获取。
 
-## What is identified
+## 识别的内容
 
-For each analysed track:
+对于每首被分析的曲目：
 
-- **AcoustID** — A unique "fingerprint" created by analysing the actual sound waves
-- **MusicBrainz Recording Id** — A unique identifier for the recording
-- **ISRC(s)** — Stands for International Standard Recording Code, a unique 12-character alphanumeric code assigned by labels and distributors to identify specific sound recordings. Having one linked to a track improves matching against streaming providers that expose ISRC in their catalogue
-- **MusicBrainz Artist Id(s)** — A unique identifier for an artist. These are only written to file tags (see the *Write tags back* setting)
+- **AcoustID** —— 通过分析实际声波而生成的唯一“指纹”
+- **MusicBrainz Recording Id** —— 该录音的唯一标识符
+- **ISRC(s)** —— International Standard Recording Code（国际标准录音代码）的缩写，是由唱片公司和发行商分配的、用于标识特定录音的 12 位字母数字唯一代码。曲目关联 ISRC 后，与在其曲库中提供 ISRC 的流媒体提供程序进行匹配的效果会更好
+- **MusicBrainz Artist Id(s)** —— 艺人的唯一标识符。这些 ID 只会写入文件标签（参见*回写标签*设置）
 
-For each analysed album, once enough of its tracks have been identified:
+对于每张被分析的专辑，当其中足够多的曲目已被识别后：
 
-- **MusicBrainz Release Group Id** — A unique identifier for a group of album releases. This is identified from the analysed tracks on the album and cross-checked against the album name already in the tags. This is what unlocks artwork and album metadata, Release group will only be confirmed when at least half of the tracks in the library from the album have been analysed. This is to try and maximise the chance of identifying the correct release group. For this reason, it is ideal if all of the tracks that are intended to be added to the library are added before tracks are played (and therefore analysed)
+- **MusicBrainz Release Group Id** —— 一组专辑发行版本的唯一标识符。它根据专辑中已分析的曲目识别得出，并与标签中已有的专辑名称进行交叉核对。正是它解锁了封面和专辑元数据。只有当媒体库中来自该专辑的曲目至少有一半已被分析时，发行组才会被确认，这是为了尽可能提高识别出正确发行组的概率。因此，最理想的做法是在播放（也就是分析）曲目之前，先把打算加入媒体库的所有曲目都添加进来
 
-## When analysis runs
+## 分析何时运行
 
-- During the nightly audio-analysis scan, around local midnight. Local audio files only (including SMB, NFS, and WebDAV shares)
-- During playback of an eligible track. Local files are always eligible; streaming-provider tracks are eligible when *Analyse tracks from streaming providers* is enabled and the track is in the MA library
+- 在每夜音频分析扫描期间进行，大约在本地午夜时分。仅限本地音频文件（包括 SMB、NFS 和 WebDAV 共享）
+- 在播放符合条件的曲目时进行。本地文件始终符合条件；当启用*分析来自流媒体提供程序的曲目*且曲目位于 MA 媒体库中时，流媒体提供程序的曲目也符合条件
 
-Large libraries may take several nights to work through. A well tagged library will see almost nothing happen, because any track that already carries a MusicBrainz Recording Id or an ISRC is skipped. Tracks from streaming services are picked up gradually as you play them rather than all at once.
+大型媒体库可能需要数个晚上才能处理完。标签完善的媒体库几乎不会发生任何处理，因为任何已带有 MusicBrainz Recording Id 或 ISRC 的曲目都会被跳过。来自流媒体服务的曲目会在你播放它们的过程中逐渐被处理，而不是一次性全部处理。
 
-The "stale" count shown on the [Audio analysis page](/settings/core/#audio-analysis) is the number of tracks that AcoustID could not find. Those are tried again every 60 days, in case the database has caught up.
+[音频分析页面](/settings/core/#audio-analysis)上显示的“陈旧”（stale）计数是 AcoustID 无法找到的曲目数量。这些曲目每 60 天会重试一次，以防数据库此后已经补全了相关数据。
 
-## Limitations
+## 局限性
 
-- **Wrong identifications are difficult to reverse automatically.** Once a track's MusicBrainz Recording Id is set, AcoustID skips that file on future scans. Using Refresh Item may clear the stored Id from the library and allow a fresh lookup, but two things limit the recovery: the file's own tags reassert themselves on the next scan if *Write tags back* was on, and AcoustID's lookup is cached for 30 days so the same audio returns the same result inside that window. The most reliable correction is to fix the source file's tags directly (for example, by running MusicBrainz Picard against the album) and then rescan in Music Assistant
-- **Release-group identification is a best-effort match.** The album name in the file tags must agree with one of the candidate release-group titles returned by AcoustID. When the album is untagged, abbreviated, or differs significantly from MusicBrainz's canonical form, no release-group is written and album-level metadata remains unenriched
-- **Country and edition variants may not match exactly.** Multiple pressings of the same album (UK, US, Japan, anniversary editions, remasters) often share the same recordings and are acoustically indistinguishable. The artwork variant Music Assistant chooses may differ from the user's specific pressing, although the album name and tracks will still be correct
-- **At least half of an album's tracks must be analysed before the release-group is set.** Single-track folders only ever receive track-level identification; their album row stays unenriched unless the album name agrees closely with the AcoustID candidate
-- **Mis-identified tracks are possible.** Very short tracks, generic loops, and low-quality recordings can match the wrong recording. The minimum match score reduces but does not eliminate this risk
+- **错误识别很难自动撤销。** 一旦曲目的 MusicBrainz Recording Id 被设置，AcoustID 在之后的扫描中就会跳过该文件。使用“刷新条目”（Refresh Item）可能清除媒体库中存储的 ID 并允许重新查找，但有两点会限制恢复：如果*回写标签*曾处于开启状态，文件自身的标签会在下一次扫描时重新生效；而且 AcoustID 的查找结果会缓存 30 天，在此期间相同的音频会返回相同的结果。最可靠的纠正方法是直接修复源文件的标签（例如对这张专辑运行 MusicBrainz Picard），然后在 Music Assistant 中重新扫描
+- **发行组识别是尽力而为的匹配。** 文件标签中的专辑名称必须与 AcoustID 返回的某个候选发行组标题相符。当专辑没有标签、名称被缩写，或与 MusicBrainz 的规范名称差异明显时，就不会写入发行组，专辑级元数据也不会得到补充
+- **国家和地区版本可能无法精确匹配。** 同一张专辑的多个发行版本（英国、美国、日本、周年纪念版、重制版）通常使用相同的录音，在声学上无法区分。Music Assistant 选择的封面版本可能与用户持有的特定版本不同，但专辑名称和曲目仍然会保持正确
+- **必须先分析专辑中至少一半的曲目，才会设置发行组。** 单曲文件夹只会得到曲目级别的识别；除非专辑名称与 AcoustID 的候选结果高度一致，否则其专辑条目将保持未补充状态
+- **可能会出现被错误识别的曲目。** 极短的曲目、通用循环音频和低质量录音可能会匹配到错误的录音。最低匹配分数可以降低这种风险，但无法完全消除
 
-## Settings
+## 设置
 
-- <b>AcoustID API key.</b> Only visible when the advanced toggle is on. The provider comes with a builtin API key but if rate limits are hit or for any other reason a personal API key is desired then obtain one free of charge from [acoustid.org](https://acoustid.org/my-applications). Be careful to ensure the API key for uploading fingerprints is not used
-- <b>Minimum match score.</b> How sure AcoustID has to be before a match is accepted. The default of 0.85 balances identifying as much as possible against getting it wrong. Raising it means fewer mistakes but more tracks left unidentified (Only visible when advanced toggle is on)
-- <b>Analyse tracks from streaming providers.</b> When enabled, tracks played from streaming providers (Spotify, Tidal, Qobuz, YouTube Music, …) that are in the library and lack a MusicBrainz Recording Id are also fingerprinted and identified. Particularly useful for streaming providers like YouTube Music whose catalogues have thin metadata. Note that streaming-provider tracks are only analysed during playback, not in the nightly background scan
-- <b>Write AcoustID/MusicBrainz tags back to files.</b> When enabled, the Acoustid Id, MusicBrainz Recording Id, ISRC, and (where resolvable) MusicBrainz Artist Id tags are written back into the source audio file once identification succeeds. Useful when other applications on the network read these tags for their own metadata or to save re-scans if the MA library database is wiped. Write access to the file is required; read-only files are skipped. By default this is off, and identifiers are only stored in the Music Assistant library database
+- <b>AcoustID API 密钥。</b> 仅在高级开关开启时可见。此提供程序内置了一个 API 密钥，但如果遇到了速率限制，或出于其他原因需要个人 API 密钥，可以从 [acoustid.org](https://acoustid.org/my-applications) 免费获取一个。请务必小心，确保没有使用用于上传指纹的 API 密钥
+- <b>最低匹配分数。</b> AcoustID 在接受一个匹配之前需要达到的确定程度。默认值 0.85 在尽可能多地识别与避免出错之间取得了平衡。调高该值意味着错误更少，但未被识别的曲目也更多（仅在高级开关开启时可见）
+- <b>分析来自流媒体提供程序的曲目。</b> 启用后，从流媒体提供程序（Spotify、Tidal、Qobuz、YouTube Music 等）播放的、位于媒体库中且缺少 MusicBrainz Recording Id 的曲目也会被提取指纹并进行识别。对于像 YouTube Music 这样元数据匮乏的流媒体提供程序尤其有用。请注意，流媒体提供程序的曲目只在播放时进行分析，不会在每夜后台扫描中分析
+- <b>将 AcoustID/MusicBrainz 标签回写到文件。</b> 启用后，一旦识别成功，Acoustid Id、MusicBrainz Recording Id、ISRC 以及（在可解析的情况下）MusicBrainz Artist Id 标签就会被写回源音频文件。当网络中的其他应用读取这些标签作为自己的元数据时，或者在 MA 媒体库数据库被清空后想要避免重新扫描时，此功能很有用。需要对文件具有写入权限；只读文件会被跳过。默认情况下此选项为关闭状态，标识符仅存储在 Music Assistant 媒体库数据库中

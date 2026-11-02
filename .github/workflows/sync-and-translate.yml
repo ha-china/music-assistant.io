@@ -1,0 +1,115 @@
+name: Sync upstream and translate
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-and-translate
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+      LLM_API_URL: ${{ secrets.LLM_API_URL }}
+      LLM_MODEL: ${{ secrets.LLM_MODEL }}
+    steps:
+      - name: Checkout Chinese branch
+        uses: actions/checkout@v4
+        with:
+          ref: Chinese
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Fetch upstream
+        run: |
+          git remote add upstream https://github.com/music-assistant/music-assistant.io.git
+          git fetch upstream main
+          git config user.name "translate-bot"
+          git config user.email "actions@users.noreply.github.com"
+
+      - name: Merge upstream
+        run: |
+          set -e
+          PRE=$(git rev-parse HEAD)
+          UP=$(git rev-parse upstream/main)
+          git merge upstream/main -X theirs --no-edit -m "Sync from upstream $UP"
+          # The GITHUB_TOKEN cannot push workflow files ("workflows"
+          # permission is not grantable), so keep our workflows exactly as
+          # they were before the merge and fold that into the merge commit.
+          if ! git diff --quiet "$PRE" HEAD -- .github/workflows; then
+            git checkout "$PRE" -- .github/workflows
+            git commit --amend --no-edit
+          fi
+          echo "UPSTREAM_SHA=$UP" >> "$GITHUB_ENV"
+
+      # -X theirs takes the upstream side of every file both branches touched,
+      # which resets the Chinese chrome. Idempotent scripts re-apply it.
+      - name: Re-apply Chinese chrome
+        run: node scripts/ensure-chinese.mjs
+
+      - name: List changed content files
+        id: files
+        run: |
+          UP=$(git rev-parse upstream/main)
+          if [ -f .github/translation/last-sync-sha.txt ]; then
+            LAST="$(cat .github/translation/last-sync-sha.txt)"
+          else
+            LAST=""
+          fi
+          if [ -z "$LAST" ]; then
+            FILES=$(git ls-files -c 'src/content/docs/**/*.md' 'src/content/docs/**/*.mdx' 'src/content/docs/*.md' 'src/content/docs/*.mdx' | grep -v '^src/content/docs/404\.md$' || true)
+          elif [ "$LAST" = "$UP" ]; then
+            echo "No upstream changes since last sync"
+            FILES=""
+          else
+            FILES=$(git diff --name-only --diff-filter=ACMRT "$LAST" "$UP" -- 'src/content/docs/**/*.md' 'src/content/docs/**/*.mdx' 'src/content/docs/*.md' 'src/content/docs/*.mdx' | grep -v '^src/content/docs/404\.md$' || true)
+          fi
+          {
+            echo 'files<<EOF'
+            echo "$FILES"
+            echo EOF
+          } >> "$GITHUB_OUTPUT"
+          echo "Last sync sha: ${LAST:-<none, full translation>}"
+          echo "Files to translate:"; echo "$FILES"
+
+      - name: Translate
+        if: steps.files.outputs.files != ''
+        run: node scripts/translate-upstream.mjs
+        env:
+          FILE_LIST: ${{ steps.files.outputs.files }}
+
+      # The translation renames the "## Features" headings that
+      # MusicSourceMatrix parses at build time; put the English data tables
+      # back (the prose around them stays Chinese).
+      - name: Restore Features tables
+        run: node scripts/restore-features-sections.mjs
+
+      # The tile-page data files are TypeScript, so the Markdown pipeline
+      # cannot translate them; they are reset to English by -X theirs when
+      # upstream touches them, and re-translated here.
+      - name: Translate data files
+        if: env.LLM_API_KEY != ''
+        run: node scripts/translate-data-ts.mjs
+
+      - name: Translate capability legend
+        run: node scripts/translate-capabilities.mjs
+
+      - name: Persist last-sync commit
+        run: |
+          mkdir -p .github/translation
+          echo "$UPSTREAM_SHA" > .github/translation/last-sync-sha.txt
+
+      - name: Commit and push
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing to commit"
+          else
+            git commit -m "Translate content from upstream $UPSTREAM_SHA"
+            git push origin Chinese
+          fi

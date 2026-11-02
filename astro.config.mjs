@@ -4,23 +4,38 @@ import starlight from "@astrojs/starlight";
 import starlightBlog from "starlight-blog";
 import mdx from "@astrojs/mdx";
 import { remarkAlert } from "remark-github-blockquote-alert";
+import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
 import { authors } from "./src/authors.mjs";
 
 const isProduction =
   process.env.CONTEXT === "production" || !process.env.CONTEXT;
 
+// Chinese mirror deployment: served from hasscn.top/music-assistant. Both
+// overridable so the upstream root deploy keeps working from this branch.
+const SITE_URL = process.env.SITE_URL || "https://www.hasscn.top";
+const BASE_PATH = process.env.SITE_BASE_PATH || "/music-assistant";
+
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.music-assistant.io",
+  site: SITE_URL,
+  base: BASE_PATH,
   image: {
     domains: ["assets.openhomefoundation.org", "www.openhomefoundation.org"],
+    remotePatterns: [
+      { protocol: "https", hostname: "assets.openhomefoundation.org" },
+      { protocol: "https", hostname: "www.openhomefoundation.org" },
+    ],
   },
   markdown: {
     remarkPlugins: [remarkAlert],
+    rehypePlugins: [rehypeBasePath()],
   },
   integrations: [
     starlight({
       title: "Music Assistant",
+      locales: {
+        root: { label: "简体中文", lang: "zh-cn" },
+      },
       titleDelimiter: "-",
       editLink: isProduction
         ? {
@@ -66,7 +81,7 @@ export default defineConfig({
             operatingSystem: "Linux",
             description:
               "Music library manager for your offline and online music sources",
-            url: "https://www.music-assistant.io",
+            url: "https://www.hasscn.top/music-assistant/",
             author: {
               "@type": "Organization",
               name: "Open Home Foundation",
@@ -78,7 +93,15 @@ export default defineConfig({
           tag: "link",
           attrs: {
             rel: "icon",
-            href: "/favicon.svg",
+            href: "/music-assistant/favicon.svg",
+          },
+        },
+        {
+          tag: "script",
+          attrs: {
+            charset: "UTF-8",
+            id: "LA_COLLECT",
+            src: "//sdk.51.la/js-sdk-pro.min.js?id=3MhQABjxy4RZQ6Ig&ck=3MhQABjxy4RZQ6Ig",
           },
         },
         {
@@ -94,14 +117,14 @@ export default defineConfig({
           tag: "meta",
           attrs: {
             property: "og:image",
-            content: "https://www.music-assistant.io/assets/website-social.png",
+            content: "https://www.hasscn.top/music-assistant/assets/website-social.png",
           },
         },
         {
           tag: "meta",
           attrs: {
             name: "twitter:image",
-            content: "https://www.music-assistant.io/assets/website-social.png",
+            content: "https://www.hasscn.top/music-assistant/assets/website-social.png",
           },
         },
         {
@@ -116,7 +139,7 @@ export default defineConfig({
       routeMiddleware: "./src/starlightRouteData.ts",
       plugins: [
         starlightBlog({
-          title: "News",
+          title: "新闻",
           prefix: "blog",
           postCount: 10,
           recentPostCount: 5,
@@ -124,146 +147,146 @@ export default defineConfig({
         }),
       ],
       sidebar: [
-        { label: "Home", link: "/" },
-        { label: "Documentation", slug: "documentation" },
+        { label: "首页", link: "/" },
+        { label: "文档", slug: "documentation" },
         {
-          label: "I Want To",
+          label: "我想要…",
           items: [
-            { label: "Install Music Assistant", slug: "installation" },
+            { label: "安装 Music Assistant", slug: "installation" },
             {
-              label: "Install the HA Integration",
+              label: "安装 HA 集成",
               slug: "integration/installation",
             },
-            { label: "Listen To...", slug: "faq/listen-to" },
-            { label: "Stream To...", slug: "faq/stream-to" },
+            { label: "听什么…", slug: "faq/listen-to" },
+            { label: "推流到哪…", slug: "faq/stream-to" },
           ],
         },
         {
-          label: "First Run and Settings",
+          label: "首次运行与设置",
           collapsed: true,
           items: [
-            { label: "First Run (Authentication)", slug: "first-run" },
+            { label: "首次运行（认证）", slug: "first-run" },
             {
-              label: "Music Sources",
+              label: "音乐源",
               slug: "settings/music-provider-settings",
             },
-            { label: "Player Providers", slug: "settings/player-provider" },
+            { label: "播放器提供方", slug: "settings/player-provider" },
             {
-              label: "Metadata Providers",
+              label: "元数据提供方",
               slug: "settings/metadata-provider-settings",
             },
-            { label: "Players", slug: "settings/individual-player" },
-            { label: "Profile", slug: "settings/profile" },
-            { label: "User Interface", slug: "settings/user-interface" },
-            { label: "User Management", slug: "settings/user-management" },
-            { label: "Remote Access", slug: "settings/remote-access" },
-            { label: "System Settings", slug: "settings/core" },
-            { label: "About", slug: "settings/about" },
+            { label: "播放器", slug: "settings/individual-player" },
+            { label: "配置档案", slug: "settings/profile" },
+            { label: "用户界面", slug: "settings/user-interface" },
+            { label: "用户管理", slug: "settings/user-management" },
+            { label: "远程访问", slug: "settings/remote-access" },
+            { label: "系统设置", slug: "settings/core" },
+            { label: "关于", slug: "settings/about" },
           ],
         },
         {
-          label: "Home Assistant Integration",
+          label: "Home Assistant 集成",
           collapsed: true,
           items: [
-            { label: "Overview", slug: "integration" },
-            { label: "Installation", slug: "integration/installation" },
-            { label: "Announcements", slug: "integration/announcements" },
-            { label: "Play Media Action", slug: "faq/massplaymedia" },
-            { label: "Play Announcement Action", slug: "faq/massannounce" },
-            { label: "Search Action", slug: "faq/masssearch" },
-            { label: "Get Library Action", slug: "faq/get_library" },
-            { label: "Get Queue Action", slug: "faq/get_queue" },
-            { label: "Transfer Queue Action", slug: "faq/masstransfer" },
-            { label: "Voice Control", slug: "integration/voice" },
+            { label: "概览", slug: "integration" },
+            { label: "安装", slug: "integration/installation" },
+            { label: "播报", slug: "integration/announcements" },
+            { label: "播放媒体动作", slug: "faq/massplaymedia" },
+            { label: "播放公告动作", slug: "faq/massannounce" },
+            { label: "搜索动作", slug: "faq/masssearch" },
+            { label: "获取资料库动作", slug: "faq/get_library" },
+            { label: "获取队列动作", slug: "faq/get_queue" },
+            { label: "转移队列动作", slug: "faq/masstransfer" },
+            { label: "语音控制", slug: "integration/voice" },
           ],
         },
         {
-          label: "Music Sources",
+          label: "音乐源",
           collapsed: true,
           autogenerate: { directory: "music-providers" },
         },
         {
-          label: "Player Providers",
+          label: "播放器提供方",
           collapsed: true,
           autogenerate: { directory: "player-support" },
         },
         {
-          label: "Using Music Assistant",
+          label: "使用 Music Assistant",
           collapsed: true,
           items: [
-            { label: "Overview", slug: "usage" },
-            { label: "UI", slug: "ui" },
-            { label: "Groups", slug: "faq/groups" },
-            { label: "Genres", slug: "genres" },
+            { label: "概览", slug: "usage" },
+            { label: "界面", slug: "ui" },
+            { label: "分组", slug: "faq/groups" },
+            { label: "流派", slug: "genres" },
           ],
         },
         {
-          label: "Fine Tuning the Audio",
+          label: "音频微调",
           collapsed: true,
           items: [
-            { label: "Audio Pipeline", slug: "audiopipeline" },
-            { label: "Digital Signal Processing", slug: "dsp" },
-            { label: "DSP Compressor Filter", slug: "dsp/compressor" },
-            { label: "DSP Convolution Filter", slug: "dsp/convolution" },
-            { label: "DSP Parametric Equalizer", slug: "dsp/parametriceq" },
-            { label: "DSP Tone Controls", slug: "dsp/tonecontrols" },
-            { label: "DSP Transpose Filter", slug: "dsp/transpose" },
+            { label: "音频管线", slug: "audiopipeline" },
+            { label: "数字信号处理", slug: "dsp" },
+            { label: "DSP 压缩器滤波器", slug: "dsp/compressor" },
+            { label: "DSP 卷积滤波器", slug: "dsp/convolution" },
+            { label: "DSP 参数均衡器", slug: "dsp/parametriceq" },
+            { label: "DSP 音调控制滤波器", slug: "dsp/tonecontrols" },
+            { label: "DSP 变调滤波器", slug: "dsp/transpose" },
           ],
         },
         {
-          label: "Enhancing Music Assistant",
+          label: "增强 Music Assistant",
           collapsed: true,
           items: [
             {
-              label: "Plugins",
+              label: "插件",
               collapsed: true,
               items: [
-                { label: "Overview", slug: "plugins" },
-                { label: "AI Radio", slug: "plugins/ai-radio" },
-                { label: "AirPlay Receiver", slug: "plugins/airplay-receiver" },
+                { label: "概览", slug: "plugins" },
+                { label: "AI 电台", slug: "plugins/ai-radio" },
+                { label: "AirPlay 接收器", slug: "plugins/airplay-receiver" },
                 {
-                  label: "Ariacast Receiver",
+                  label: "Ariacast 接收器",
                   slug: "plugins/ariacast-receiver",
                 },
-                { label: "FastMCP Server", slug: "plugins/fastmcp-server" },
+                { label: "FastMCP 服务器", slug: "plugins/fastmcp-server" },
                 { label: "Home Assistant", slug: "ha-plugin" },
                 {
                   label: "Hue Entertainment",
                   slug: "plugins/hue-entertainment",
                 },
-                { label: "LastFM Scrobbler", slug: "plugins/lastfm_scrobble" },
+                { label: "LastFM 听歌记录", slug: "plugins/lastfm_scrobble" },
                 {
-                  label: "Library Recommendations",
+                  label: "资料库推荐",
                   slug: "plugins/library-recommendations",
                 },
                 {
-                  label: "Listenbrainz Scrobbler",
+                  label: "ListenBrainz 听歌记录",
                   slug: "plugins/listenbrainz_scrobble",
                 },
                 {
-                  label: "MilkDrop Visualizer",
+                  label: "MilkDrop 可视化",
                   slug: "plugins/milkdrop-visualizer",
                 },
-                { label: "Music Quiz", slug: "plugins/music-quiz" },
+                { label: "音乐问答", slug: "plugins/music-quiz" },
                 {
-                  label: "OpenAI Compatible",
+                  label: "OpenAI 兼容接口",
                   slug: "plugins/openai_compatible",
                 },
                 {
-                  label: "OpenAI Text-to-speech",
+                  label: "OpenAI 文字转语音",
                   slug: "plugins/openai_tts",
                 },
-                { label: "Party", slug: "plugins/party" },
+                { label: "派对模式", slug: "plugins/party" },
                 { label: "Plex Connect", slug: "plugins/plex-connect" },
-                { label: "Sendspin Source", slug: "plugins/sendspin-source" },
-                { label: "Smart Playlist", slug: "plugins/smart_playlist" },
-                { label: "Sonic Similarity", slug: "plugins/sonic-similarity" },
+                { label: "Sendspin 音源", slug: "plugins/sendspin-source" },
+                { label: "智能播放列表", slug: "plugins/smart_playlist" },
+                { label: "听感相似度", slug: "plugins/sonic-similarity" },
                 { label: "Spotify Connect", slug: "plugins/spotify-connect" },
                 {
-                  label: "Subsonic Scrobbler",
+                  label: "Subsonic 听歌记录",
                   slug: "plugins/subsonic_scrobble",
                 },
-                { label: "VBAN Receiver", slug: "plugins/vban-receiver" },
+                { label: "VBAN 接收器", slug: "plugins/vban-receiver" },
                 {
                   label: "Yandex Music Connect (Ynison)",
                   slug: "plugins/yandex-ynison",
@@ -275,15 +298,15 @@ export default defineConfig({
               ],
             },
             {
-              label: "Metadata Providers",
+              label: "元数据提供方",
               collapsed: true,
               items: [
-                { label: "Overview", slug: "metadata" },
-                { label: "Artwork", slug: "metadata/artwork" },
-                { label: "Lyrics", slug: "metadata/lyrics" },
-                { label: "Media Items", slug: "metadata/media-items" },
+                { label: "概览", slug: "metadata" },
+                { label: "封面艺术", slug: "metadata/artwork" },
+                { label: "歌词", slug: "metadata/lyrics" },
+                { label: "媒体条目", slug: "metadata/media-items" },
                 {
-                  label: "LastFM Recommendations",
+                  label: "LastFM 推荐",
                   slug: "metadata-providers/lastfm-recommendations",
                 },
                 {
@@ -291,23 +314,23 @@ export default defineConfig({
                   slug: "metadata-providers/musicbrainz",
                 },
                 {
-                  label: "Playlist Metadata",
+                  label: "播放列表元数据",
                   slug: "metadata-providers/playlist-metadata",
                 },
               ],
             },
             {
-              label: "Audio Analysis Providers",
+              label: "音频分析提供方",
               collapsed: true,
               items: [
-                { label: "AcoustID Lookup", slug: "audio-analysis/acoustid" },
+                { label: "AcoustID 查询", slug: "audio-analysis/acoustid" },
                 {
-                  label: "Loudness Analysis",
+                  label: "响度分析",
                   slug: "audio-analysis/loudness-analysis",
                 },
-                { label: "Smart Fades", slug: "audio-analysis/smart-fades" },
+                { label: "智能淡入淡出", slug: "audio-analysis/smart-fades" },
                 {
-                  label: "Sonic Analysis",
+                  label: "听感分析",
                   slug: "audio-analysis/sonic-analysis",
                 },
               ],
@@ -315,40 +338,40 @@ export default defineConfig({
           ],
         },
         {
-          label: "Apps",
+          label: "应用",
           collapsed: true,
           items: [
-            { label: "Desktop Companion App", slug: "companion-app" },
-            { label: "Mobile Devices", slug: "mobile" },
+            { label: "桌面伴侣应用", slug: "companion-app" },
+            { label: "移动设备", slug: "mobile" },
           ],
         },
         {
-          label: "Help",
+          label: "帮助",
           collapsed: true,
           items: [
-            { label: "How Do I...", slug: "faq/how-to" },
-            { label: "Troubleshooting", slug: "faq/troubleshooting" },
-            { label: "Support", slug: "support" },
-            { label: "Technical Info", slug: "faq/tech-info" },
-            { label: "Networking Basics", slug: "faq/networking" },
+            { label: "我想知道…", slug: "faq/how-to" },
+            { label: "故障排查", slug: "faq/troubleshooting" },
+            { label: "支持", slug: "support" },
+            { label: "技术信息", slug: "faq/tech-info" },
+            { label: "网络基础", slug: "faq/networking" },
             { label: "API", slug: "api" },
-            { label: "Release Cycle", slug: "release" },
+            { label: "发布周期", slug: "release" },
           ],
         },
         {
-          label: "Community",
+          label: "社区",
           collapsed: true,
           items: [
-            { label: "I Want to Help / Donate", slug: "help" },
-            { label: "Translations", slug: "help/lokalise" },
-			{ label: "Improve MusicBrainz Data", slug: "help/musicbrainz" },
+            { label: "参与帮助 / 捐赠", slug: "help" },
+            { label: "翻译", slug: "help/lokalise" },
+			{ label: "完善 MusicBrainz 数据", slug: "help/musicbrainz" },
             {
-              label: "Community Extensions",
+              label: "社区扩展",
               slug: "community-extensions",
             },
           ],
         },
-        { label: "News", link: "/blog/" },
+        { label: "新闻", link: "/blog/" },
       ],
       components: {
         Head: "./src/components/Head.astro",

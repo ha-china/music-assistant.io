@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/base";
 import AppWindow from "../marketing/ui/AppWindow.astro";
 import Icon from "../marketing/ui/Icon.astro";
 import Section from "../marketing/ui/Section.astro";
@@ -25,7 +26,7 @@ const points = [
 <Section id="experience" tone="base" labelledby="discover-title">
   <div class="container layout">
     <div class="copy" data-reveal>
-      <h2 id="discover-title">Get lost in the music.</h2>
+      <h2 id="discover-title">沉浸在音乐里。</h2>
       <p class="lead">
         One place to find what to play next, whichever service it comes from.
       </p>
@@ -44,16 +45,16 @@ const points = [
     </div>
     <div class="shots" data-reveal style="--reveal-delay: 120ms">
       <AppWindow
-        src="/assets/landing/albums-dark.webp"
-        srcLight="/assets/landing/albums-light.webp"
-        alt="The album library in Music Assistant, a grid of album covers"
+        src={withBase("/assets/landing/albums-dark.webp")}
+        srcLight={withBase("/assets/landing/albums-light.webp")}
+        alt="Music Assistant 的专辑资料库：专辑封面网格"
         width={1800}
         height={1125}
       />
       <AppWindow
-        src="/assets/landing/now-playing-mobile-dark.webp"
-        srcLight="/assets/landing/now-playing-mobile-light.webp"
-        alt="Now playing on a phone, with the album cover, progress and playback controls"
+        src={withBase("/assets/landing/now-playing-mobile-dark.webp")}
+        srcLight={withBase("/assets/landing/now-playing-mobile-light.webp")}
+        alt="手机上的“正在播放”界面：专辑封面、进度条与播放控制"
         width={640}
         height={1385}
         device="phone"

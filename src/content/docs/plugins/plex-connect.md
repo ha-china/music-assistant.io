@@ -1,47 +1,47 @@
 ---
-title: Plex Connect Plugin
-description: Put your players in the device list of Plex clients such as Plexamp. Needs the Plex music source.
+title: Plex Connect 插件
+description: 将您的播放器添加到 Plexamp 等 Plex 客户端的设备列表中。需要 Plex 音乐源。
 pluginGroup: incoming
 ---
 
 # Plex Connect <img src="/assets/icons/plex-connect-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has the ability to expose MA players to Plex clients like Plexamp for discovery and control.
+Music Assistant 能够将 MA 播放器暴露给 Plexamp 等 Plex 客户端，以便进行发现和控制。
 
 > [!NOTE]
-> This plugin requires the Plex music source to be configured.
+> 此插件需要先配置 Plex 音乐源。
 
-## Features
+## 功能特性
 
-- Any MA player can be exposed as a Plex Connect target, including groups
-- Players are automatically discovered by Plex clients via GDM (Good Day Mate) broadcasts on the local network
-- Standard playback controls: play, pause, skip, seek
-- Queue management: add tracks, reorder, clear queue
-- Access to Plex features: Sonic Adventures, Radio, DJs, Mixes
-- Playback state, current track, progress, and queue are synchronized in real-time
-- Volume control works on groups and sync groups, adjusting the members together while keeping their balance
-- If a player already has a queue when the plugin starts, that queue is sent to Plex so you can see and control it straight away
-- Playback activity is reported to the Plex server
-- Listening history and scrobbles are visible in Plex dashboard
-- Supports Plex features like "Continue Listening"
+- 任何 MA 播放器都可以作为 Plex Connect 目标暴露，包括分组播放器
+- 播放器通过局域网内的 GDM（Good Day Mate）广播被 Plex 客户端自动发现
+- 标准播放控制：播放、暂停、跳过、跳转
+- 队列管理：添加曲目、重新排序、清空队列
+- 访问 Plex 功能：Sonic Adventures、Radio、DJs、Mixes
+- 播放状态、当前曲目、进度和队列实时同步
+- 音量控制适用于分组和同步分组，可统一调整成员音量，同时保持各成员之间的音量平衡
+- 如果插件启动时播放器已有队列，该队列会被发送到 Plex，以便您立即查看和控制
+- 播放活动会上报给 Plex 服务器
+- 收听历史和 scrobble 记录可在 Plex 仪表盘（dashboard）中查看
+- 支持"Continue Listening"等 Plex 功能
 
-## Configuration
+## 配置
 
-To make each player appear as a Plex Connect target in Plex clients, the Plex Connect plugin needs to be added individually for each player. The plugin is added via **Settings → Plugins → Add a plugin**.
+要使每个播放器在 Plex 客户端中显示为 Plex Connect 目标，需要为每个播放器单独添加 Plex Connect 插件。插件通过 **设置 → 插件 → 添加插件** 添加。
 
-### Configuration Options
+### 配置选项
 
-- **Plex Music Provider**: the Plex music source this instance connects to (required).
-- **Music Assistant Player**: the MA player to expose as a Plex remote client.
-- **Player Name in Plex**: the name shown for this player in Plex apps. Leave empty to use the player's name.
-- **Device Class**: how the player shows up in Plex apps. Choose from Speaker, Phone, Tablet, Set-Top Box, TV, PC or Cloud.
-- **Network Port** (advanced): the TCP port this player is reachable on. Leave it empty to have Music Assistant pick a free port and remember it, so the instance keeps the same port after a restart.
+- **Plex Music Provider**：此实例连接的 Plex 音乐源（必填）。
+- **Music Assistant Player**：要作为 Plex 远程客户端暴露的 MA 播放器。
+- **Player Name in Plex**：在 Plex 应用中显示的此播放器的名称。留空则使用播放器的名称。
+- **Device Class**：播放器在 Plex 应用中的显示类型。可选 Speaker、Phone、Tablet、Set-Top Box、TV、PC 或 Cloud。
+- **Network Port**（高级）：此播放器可访问的 TCP 端口。留空则由 Music Assistant 自动选择一个空闲端口并记住它，这样实例在重启后仍保持相同的端口。
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- To use Plex Connect, all devices must be connected to the same network
-- Timeline reporting to the Plex server is done on a per-player basis
-- A queue loaded from Plex is capped at 100 tracks to keep loading and syncing responsive
-- Each plugin instance keeps the same network port across restarts. If you run several instances, give each one a different port, or leave the port empty and let Music Assistant pick and remember a free one for each
-- Plex does not offer a public protocol for controlling Plex players, so this plugin builds on the reverse-engineering work done by others. A Plex update could stop it from working overnight, and there is no guarantee it can be fixed
-- Playback is driven by Music Assistant, not by Plex, so features are mirrored by MA and are not exactly the same as playing on a real Plex client. The Sweet Fades (Plexamp's crossfade feature) and the shuffling, for example, are handled on the MA side
+- 要使用 Plex Connect，所有设备必须连接到同一网络
+- 向 Plex 服务器上报时间线是按每个播放器单独进行的
+- 从 Plex 加载的队列上限为 100 首曲目，以保证加载和同步的响应速度
+- 每个插件实例在重启后都会保持相同的网络端口。如果您运行多个实例，请为每个实例指定不同的端口，或者将端口留空，让 Music Assistant 为每个实例自动选择并记住一个空闲端口
+- Plex 没有提供用于控制 Plex 播放器的公开协议，因此此插件基于他人的逆向工程成果构建。Plex 的一次更新可能会使其一夜之间失效，且不保证能够修复
+- 播放由 Music Assistant 驱动，而非由 Plex 驱动，因此各项功能由 MA 镜像实现，与在真实 Plex 客户端上播放并不完全相同。例如，The Sweet Fades（Plexamp 的淡入淡出功能）和随机播放都是在 MA 端处理的

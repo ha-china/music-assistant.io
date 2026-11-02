@@ -4,11 +4,11 @@ title: "ARD Sounds"
 
 # ARD Sounds <img src="/assets/icons/ard-sounds.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming from <a href="https://www.ardsounds.de/" target="_blank" rel="noopener noreferrer">ARD Sounds</a>. Contributed and maintained by <a href="https://github.com/jfeil" target="_blank" rel="noopener noreferrer">Jan Feil</a>
+Music Assistant 支持从 <a href="https://www.ardsounds.de/" target="_blank" rel="noopener noreferrer">ARD Sounds</a> 进行流媒体播放。由 <a href="https://github.com/jfeil" target="_blank" rel="noopener noreferrer">Jan Feil</a> 贡献并维护。
 
-ARD Sounds (previously ARD Audiothek) is the audio platform of ARD, the group of public broadcasters in Germany. It collects radio programmes, podcasts, radio plays and documentaries from the national and regional stations, all free to listen to.
+ARD Sounds（前身为 ARD Audiothek）是 ARD 的音频平台，ARD 是德国的公共广播集团。它汇集了来自全国和各地方电台的广播节目、播客、广播剧和纪录片，全部免费收听。
 
-This source makes that content available inside Music Assistant. An ARD account is optional and mainly useful if you want the podcasts you follow to come across with your listening position.
+此音源使这些内容可在 Music Assistant 中使用。ARD 账户是可选的，主要适用于希望所关注的播客能同步你的收听进度的情况。
 
 ## Features
 
@@ -32,23 +32,34 @@ This source makes that content available inside Music Assistant. An ARD account 
 - Populates libraries with subscribed podcasts
 - Updates playlog on regular provider syncs
 
+### Other
 
-## Configuration
+- Progress reporting and acquiring
+- Populates libraries with subscribed podcasts
+- Updates playlog on regular provider syncs
 
-Login to the ARD Sounds app, if syncing is required
+### 其他
 
-### Settings
-- <b>E-Mail address of ARD account.</b>
-- <b>Password of ARD account.</b>
-- <b>Maximum bitrate for streams (0 for unlimited)</b> Define the maximum stream bitrate
-- <b>Percentage required before podcast episode is marked as fully played</b> Configure how much of an episode playback must occur before the podcast is recorded as fully played (this is only used for visualization within Music Assistant) 
+- 播放进度的上报与获取
+- 将已订阅的播客添加到媒体库
+- 在提供程序（provider）定期同步时更新播放日志
 
-## Known Issues / Notes
+## 配置
 
-- Nil
+如需同步，请先登录 ARD Sounds 应用
 
-## Not Yet Supported
+### 设置
+- <b>ARD 账户的电子邮箱地址。</b>
+- <b>ARD 账户的密码。</b>
+- <b>流的最高比特率（0 表示不限制）</b> 定义流媒体的最大比特率
+- <b>播客单集标记为已完整播放所需的百分比</b> 配置在播客被记录为已完整播放之前，单集必须播放多少内容（此选项仅用于 Music Assistant 中的可视化显示） 
 
-- Subscription management is not supported
-- Podcast recommendations is not implemented
-- For radio streams: Current played song is not displayed
+## 已知问题 / 说明
+
+- 无
+
+## 尚不支持的功能
+
+- 不支持订阅管理
+- 尚未实现播客推荐
+- 对于电台流：不显示当前播放的歌曲

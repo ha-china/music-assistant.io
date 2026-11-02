@@ -1,73 +1,73 @@
 ---
-title: VBAN Receiver Plugin
-description: Let another computer send its sound across the network and play it on your speakers, like an aux input.
+title: VBAN Receiver 插件
+description: 让另一台计算机通过网络发送其声音，并在你的扬声器上播放，就像一个 AUX 输入。
 pluginGroup: incoming
 ---
 
 # VBAN Receiver <img src="/assets/icons/vban-icon.svg" alt="Preview image" style="width: 126px; float: right;"  loading="lazy" />
 
-This plugin lets another computer on your network send its audio to Music Assistant, which then plays it on any of your speakers. It behaves like an aux input: whatever the other machine is playing turns up in Music Assistant as something you can choose to listen to. Contributed and maintained by <a href="https://github.com/sprocket-9" target="_blank" rel="noopener noreferrer">sprocket-9</a>
+该插件允许你网络中的另一台计算机将其音频发送到 Music Assistant，然后由 Music Assistant 在你的任意扬声器上播放。它的作用类似于 AUX 输入：另一台机器正在播放的任何内容都会出现在 Music Assistant 中，供你选择收听。由 <a href="https://github.com/sprocket-9" target="_blank" rel="noopener noreferrer">sprocket-9</a> 贡献并维护
 
-That can be everything coming out of the other computer, the sound from one particular application, or something plugged into it such as a microphone or a turntable on a line-in.
+这可以是另一台计算机输出的全部声音、来自某个特定应用程序的声音，或者接入该计算机的外部设备（例如麦克风，或连接到线路输入（line-in）的黑胶唱机）的声音。
 
-VBAN is the method used to carry the audio across the network. It comes from <a href="https://vb-audio.com/Voicemeeter/vban.htm" target="_blank" rel="noopener noreferrer">VB-Audio</a> and sends the sound uncompressed, so nothing is lost on the way. The sending computer needs software that can speak it — see [VBAN Senders](#vban-senders) below for the usual choices.
+VBAN 是用于在网络中传输音频的方法。它来自 <a href="https://vb-audio.com/Voicemeeter/vban.htm" target="_blank" rel="noopener noreferrer">VB-Audio</a>，以未压缩的方式发送声音，因此在传输过程中不会有任何损失。发送音频的计算机需要支持该协议的软件——常见选择请参见下方的 [VBAN 发送端](#vban-senders)。
 
-## Features
+## 功能
 
-- Take in audio from any VBAN sender on your network and play it like any other source
-- Send everything from another computer, or just one application, a microphone or a line-in
-- Add the plugin more than once, one for each incoming feed
+- 接收来自网络中任意 VBAN 发送端的音频，并像其他任何音源一样播放
+- 可以发送另一台计算机的全部声音，也可以只发送某个应用程序、麦克风或线路输入的声音
+- 可以多次添加该插件，每一路传入的音频源各对应一个实例
 
-## Configuration
+## 配置
 
-Most of these settings have to match what you set on the sending computer, or no sound will come through. Fill in the sender's side first, then copy the same values here.
+其中大多数设置必须与你在发送端计算机上设置的值相匹配，否则将没有任何声音传出。请先在发送端一侧填写，然后将相同的值复制到此处。
 
-If you add the plugin more than once, give each one its own port number.
+如果你多次添加该插件，请为每个实例分配各自的端口号。
 
-### Settings
+### 设置
 
-- <b>Receiver: UDP Port.</b> The port Music Assistant listens on. The sending computer needs to be able to reach your Music Assistant server on this port
-- <b>Sender: VBAN Stream Name.</b> The name given to the feed on the sending computer. It has to match exactly or nothing will come through. Up to 16 characters, letters and numbers only
-- <b>Sender: VBAN Sender hostname/IP address.</b> The address of the computer sending the audio
-- <b>PCM audio format.</b> Match this to the sending computer
-- <b>PCM sample rate.</b> Match this to the sending computer
-- <b>Channels.</b> `1` for mono or `2` for stereo
+- <b>接收端：UDP 端口。</b> Music Assistant 监听的端口。发送端计算机需要能够通过此端口访问你的 Music Assistant 服务器
+- <b>发送端：VBAN 流名称。</b> 在发送端计算机上为该音频流指定的名称。必须完全匹配，否则将收不到任何内容。最多 16 个字符，只能使用字母和数字
+- <b>发送端：VBAN Sender 主机名/IP 地址。</b> 发送音频的计算机的地址
+- <b>PCM 音频格式。</b> 与发送端计算机保持一致
+- <b>PCM 采样率。</b> 与发送端计算机保持一致
+- <b>声道。</b> 单声道为 `1`，立体声为 `2`
 
-In the ADVANCED section:
+在 ADVANCED（高级）部分：
 
-- <b>Receiver: Bind to IP/interface.</b> Which of your server's network connections to listen on. The default `0.0.0.0` means all of them, which is almost always what you want
-- <b>Receiver: VBAN queue strategy.</b> What to do when audio arrives faster than it can be dealt with. The options are `Clear entire queue`, `Clear the oldest half of the queue` and `Remove single oldest queue entry`
-- <b>Receiver: VBAN packets queue size.</b> How much audio can wait to be dealt with. Raising it may help on a slower server, but most people never need to touch it
+- <b>接收端：绑定的 IP/网络接口。</b> 监听服务器的哪一个网络连接。默认值 `0.0.0.0` 表示全部接口，这几乎总是你想要的结果
+- <b>接收端：VBAN 队列策略。</b> 当音频到达的速度超过处理速度时采取的操作。选项包括 `Clear entire queue`、`Clear the oldest half of the queue` 和 `Remove single oldest queue entry`
+- <b>接收端：VBAN 数据包队列大小。</b> 可以等待处理的音频数量。在较慢的服务器上提高该值可能会有帮助，但大多数人无需修改它
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- To listen to the plugin audio, navigate to Browse in the sidebar and choose the desired VBAN Receiver stream
-- Expect a small delay between the sound leaving the other computer and coming out of your speakers. Most of it comes from the player at the end rather than from this plugin, so how much you get depends on which speakers you are using. This is not meant for anything where the sound has to line up with a picture
-- Audio sent this way is not resent if any of it goes missing on the way, so the quality of your network matters. A wired connection is far more reliable than wi-fi. On a congested or weak network you may hear dropouts or crackling
-- A sending computer that is slow or busy can also cause the sound to break up
-- Only the audio part of VBAN is supported, not its other functions
+- 要收听该插件的音频，请在侧边栏中打开“浏览”（Browse），然后选择所需的 VBAN Receiver 流
+- 声音从另一台计算机发出到从你的扬声器播出之间会有少量延迟。延迟大部分来自末端的播放器而非本插件，因此延迟多少取决于你使用的扬声器。它不适用于任何声音需要与画面同步的场景
+- 以这种方式发送的音频在传输过程中如有丢失不会重发，因此网络质量很重要。有线连接比 Wi-Fi 可靠得多。在拥塞或信号较弱的网络上，你可能会听到声音中断或爆音
+- 发送端计算机运行缓慢或繁忙也可能导致声音断断续续
+- 仅支持 VBAN 的音频部分，不支持其其他功能
 
-## VBAN Senders
+## VBAN 发送端
 
 ### VB-Audio Windows Apps
-Most of the <a href="https://vb-audio.com/index.htm" target="_blank" rel="noopener noreferrer">Voicemeeter apps</a> (from the creator of the VBAN protocol) have VBAN Sender functionality, the "simplest" one being Voicemeeter Banana.  These audio mixer apps are full-featured, fairly complex and configuration highly system dependent.  The documentation and Youtube videos are far better sources of information on how to configure them than can be supplied here. At a basic level the apps will install many Voicemeeter system audio devices.  The Voicemeeter Input device is selected as the default output device to route whole system audio over VBAN, or selected as the output for an application in the Volume Mixer.
+大多数 <a href="https://vb-audio.com/index.htm" target="_blank" rel="noopener noreferrer">Voicemeeter 应用</a>（来自 VBAN 协议的创造者）都具有 VBAN Sender 功能，其中“最简单”的是 Voicemeeter Banana。这些调音台应用功能齐全、相当复杂，且配置高度依赖系统。关于如何配置它们，官方文档和 YouTube 视频是远比此处所能提供的更为详尽的信息来源。从基本层面来说，这些应用会安装许多 Voicemeeter 系统音频设备。将 Voicemeeter Input 设备选为默认输出设备即可通过 VBAN 路由整个系统音频，或者在音量混合器（Volume Mixer）中将它选为某个应用程序的输出设备。
 
-Basic tips:
+基本提示：
 
-* Make sure to run the install program as Administrator.
-* In the Hardware Out section, configure the A1 Output Device as a MME device.
-* In some cases, disabling power saving on network cards may be necessary.
+* 请确保以管理员身份运行安装程序。
+* 在 Hardware Out（硬件输出）部分，将 A1 输出设备配置为 MME 设备。
+* 在某些情况下，可能需要禁用网卡的节能功能。
 
-Press the VBAN button to configure an Outgoing Stream:
-* IP Address to:  MA Server IP
-* Stream name, sample rate and audio format - mirror these in the VBAN Receiver plugin settings
-* UDP Port - Help documentation shows the app used to allow setting the VBAN Receiver's UDP port here, but that's no longer the case and defaults to port 6980 so use this port in the VBAN Receiver plugin settings.
-* Press "On" to start the stream.
+点击 VBAN 按钮来配置一个输出流（Outgoing Stream）：
+* IP Address：填 MA 服务器的 IP
+* 流名称、采样率和音频格式——在 VBAN Receiver 插件设置中填写相同的值
+* UDP Port——帮助文档显示此应用过去允许在此处设置 VBAN Receiver 的 UDP 端口，但如今已不再如此，默认端口为 6980，因此请在 VBAN Receiver 插件设置中使用此端口。
+* 点击“On”以开始推流。
 
-If error numbers/red lights appear next to the outgoing VBAN stream in the Voicemeeter VBAN section this is a **sender-side issue, NOT receiver/MA side**.  Something in the mixer configuration is likely wrong.
+如果在 Voicemeeter 的 VBAN 部分中，输出 VBAN 流旁边出现错误编号/红灯，这是**发送端的问题，而非接收端/MA 端的问题**。很可能是调音台配置中有误。
 
 ## Pipewire
-Pipewire systems have the <a href="https://docs.pipewire.org/page_module_vban_send.html" target="_blank" rel="noopener noreferrer">vban-send</a> module which creates a system audio sink.  Any audio sent to the sink is converted to VBAN packets and sent to the VBAN Receiver at the destination ip:port which needs set to the IP address of the MA server and listener port in the VBAN Receiver plugin.
+Pipewire 系统拥有 <a href="https://docs.pipewire.org/page_module_vban_send.html" target="_blank" rel="noopener noreferrer">vban-send</a> 模块，它会创建一个系统音频 sink（输出端）。任何发送到该 sink 的音频都会被转换为 VBAN 数据包，并发送到目标 ip:port 处的 VBAN Receiver，该 ip:port 需设置为 MA 服务器的 IP 地址以及 VBAN Receiver 插件中设置的监听端口。
 
 `~/.config/pipewire/pipewire.conf.d/01-vban.conf`
 
@@ -91,8 +91,8 @@ Pipewire systems have the <a href="https://docs.pipewire.org/page_module_vban_se
 }
 ```
 
-In a desktop environment, the sink is available as an audio output in the sound manager UI for routing whole system or per-app audio to.
+在桌面环境中，该 sink 会作为音频输出设备出现在声音管理界面中，可用于路由整个系统或单个应用程序的音频。
 
-In a headless environment the <a href="https://docs.pipewire.org/page_man_pw-link_1.html" target="_blank" rel="noopener noreferrer">pw-link</a> command will link audio output ports to the vban-sender-ma input ports by port ID.  The links are only temporary and need recreated on reboot or pipewire restart, where the port IDs will likely have changed.  Dynamic linking using node properties rather than port IDs is achievable using the Wireplumber session manager and a lua script:
+在无头（headless）环境中，可以使用 <a href="https://docs.pipewire.org/page_man_pw_link_1.html" target="_blank" rel="noopener noreferrer">pw-link</a> 命令通过端口 ID 将音频输出端口连接到 vban-sender-ma 输入端口。这些连接只是临时的，需要在重启或 pipewire 重启后重新创建，而此时端口 ID 很可能已经改变。借助 Wireplumber 会话管理器和一个 lua 脚本，可以实现基于节点属性而非端口 ID 的动态连接：
 
-See <a href="https://bennett.dev/auto-link-pipewire-ports-wireplumber/" target="_blank" rel="noopener noreferrer">this guide</a>, <a href="https://github.com/bennetthardwick/dotfiles/blob/master/.config/wireplumber/scripts/auto-connect-ports.lua" target="_blank" rel="noopener noreferrer">this GitHub script</a>, and <a href="https://franks-reich.net/posts/creating_pipewire_links_with_wireplumber/" target="_blank" rel="noopener noreferrer">this article</a> for examples.
+有关示例，请参见<a href="https://bennett.dev/auto-link-pipewire-ports-wireplumber/" target="_blank" rel="noopener noreferrer">本指南</a>、<a href="https://github.com/bennetthardwick/dotfiles/blob/master/.config/wireplumber/scripts/auto-connect-ports.lua" target="_blank" rel="noopener noreferrer">这个 GitHub 脚本</a>以及<a href="https://franks-reich.net/posts/creating_pipewire_links_with_wireplumber/" target="_blank" rel="noopener noreferrer">这篇文章</a>。

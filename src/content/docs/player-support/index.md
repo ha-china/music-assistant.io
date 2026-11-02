@@ -1,41 +1,41 @@
 ---
-title: Player Support
+title: 播放器支持
 sidebar:
   label: Overview
-description: Information Relevant to all Player Providers 
+description: 与所有播放器提供商相关的信息
 ---
 
-# Player Providers
+# 播放器提供商
 
-## What a player provider is
+## 什么是播放器提供商
 
-A **player provider** is not one speaker. It is the part of Music Assistant that knows how to talk to a whole family of them: one AirPlay provider covers every AirPlay device in the house, one Sonos provider covers all your Sonos.
+一个**播放器提供商**（player provider）并不是单个音箱。它是 Music Assistant 中懂得如何与一整类音箱通信的部分：一个 AirPlay 提供商就能覆盖家中所有的 AirPlay 设备，一个 Sonos 提供商就能覆盖你所有的 Sonos 设备。
 
-So you do not add speakers one at a time. You add the provider for the kind of device you own, and where that provider supports auto-discovery it finds them for you and keeps looking, so a speaker you plug in next month turns up on its own. Not every provider can discover devices; some need an address entered by hand. The page for each provider says which it is.
+因此，你不必逐个添加音箱。你只需为你拥有的设备类型添加相应的提供商；如果该提供商支持自动发现，它会为你找出这些设备并持续查找，因此下个月接入的音箱会自动出现。并非每个提供商都能发现设备；有些提供商需要手动输入地址。每个提供商的页面会说明它属于哪一种。
 
-Some devices can be reached more than one way. Anything Home Assistant already knows about can be played to through [Home Assistant Media Players](/player-support/home-assistant/), but **if Music Assistant has a provider of its own for a device, use it**. The Home Assistant route is a fallback for devices with no native provider, not an alternative to one. [Audio Quality](#audio-quality) below explains why.
+有些设备可以通过多种方式访问。Home Assistant 已知的任何设备都可以通过 [Home Assistant 媒体播放器](/player-support/home-assistant/)进行播放，但**如果 Music Assistant 为某设备提供了自己的提供商，请使用它**。通过 Home Assistant 的方式只是为没有原生提供商的设备提供的后备方案，而不是原生提供商的替代方案。下文的[音质](#audio-quality)部分解释了原因。
 
-## Adding a player provider
+## 添加播放器提供商
 
-Go to [**Settings → Player Providers → Add a player provider**](/settings/player-provider/) and pick the one that matches your devices. Each provider has its own page in this section covering what it supports and how to set it up.
+前往 [**设置 → 播放器提供商 → 添加播放器提供商**](/settings/player-provider/)，并选择与你的设备匹配的那一个。本节中每个提供商都有自己的页面，介绍其支持的功能和设置方法。
 
-Settings that apply to every provider are described on the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages.
+适用于所有提供商的设置在[播放器提供商设置](/settings/player-provider/)和[单个播放器设置](/settings/individual-player/)页面中进行了说明。
 
-If you know what you want to play on but not which provider drives it, start at [I Want To Stream To](/faq/stream-to/). It groups every provider by whether you buy the device ready to use or set it up yourself, and carries the summary table comparing all of them side by side.
+如果你知道想在什么设备上播放，但不知道由哪个提供商驱动它，可以从[我想串流到](/faq/stream-to/)开始。该页面根据设备是购买即用还是需要自行设置，将每个提供商分组，并附有将所有提供商并排对比的汇总表。
 
-Only players provided by certain providers — that is, Home Assistant Players, Snapcast, and Universal Player — support deletion. Deleting a player can be useful to reset a problematic player’s configuration. For providers that support deletion, deleted players that are still on the network will be rediscovered automatically on the next Music Assistant restart or player provider reload.
+只有由特定提供商提供的播放器——即 Home Assistant 播放器、Snapcast 和通用播放器（Universal Player）——支持删除。删除播放器有助于重置出现问题的播放器配置。对于支持删除的提供商，已删除但仍存在于网络中的播放器将在下次 Music Assistant 重启或播放器提供商重新加载时被自动重新发现。
 
 > [!NOTE]
-> If any player is not transitioning between songs then check if the player has the option [QUEUE FLOW MODE](/faq/tech-info/#track-queueing). Try enabling it if it does.
+> 如果某个播放器在歌曲之间无法顺畅过渡，请检查该播放器是否有 [QUEUE FLOW MODE](/faq/tech-info/#track-queueing) 选项。如果有，请尝试启用它。
 
-## Audio Quality
+## 音质
 
-Audio quality is the principal reason why native MA players are developed. These players provide the highest quality playback experience. HA players should work and may work well but they may also have been written with a basic objective such as enabling text to speech. Therefore, if there is a MA player available and a HA integration then you should always choose the MA player. 
+音质是开发原生 MA 播放器的首要原因。这些播放器能够提供最高质量的播放体验。HA 播放器应该可以工作，而且可能工作得很好，但其编写目标也可能只是比较基础的用途，例如实现文本转语音。因此，如果某个设备既有 MA 播放器又有 HA 集成（integration），你应始终选择 MA 播放器。
 
-A sample rate above 48kHz or a bit depth above 16 is considered High Resolution (Hi Res)
+采样率高于 48kHz 或位深高于 16 即被视为高解析度（Hi Res）
 
-## Player Options
+## 播放器选项
 
-A player provider may optionally expose additional player specific settings (e.g. the ability to adjust the player's native bass or treble value). These options can be accessed either within the player's settings, or via the three-dot menu in the full-screen player view via "Player Options."
+播放器提供商可以选择性公开额外的、特定于播放器的设置（例如调整播放器原生低音或高音值的功能）。这些选项既可以在播放器的设置中访问，也可以在全屏播放器视图中通过三点菜单里的“播放器选项”进行访问。
 
-Available player options are mapped to number, switch, text or select entities starting with Home Assistant version 2026.5.0.
+从 Home Assistant 2026.5.0 版本开始，可用的播放器选项将映射为数字、开关、文本或选择实体（entity）。

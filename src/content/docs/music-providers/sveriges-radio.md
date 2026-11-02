@@ -4,9 +4,9 @@ title: "Sveriges Radio"
 
 # Sveriges Radio <img src="/assets/icons/sverigesradio-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for <a href="https://sverigesradio.se" target="_blank" rel="noopener noreferrer">Sveriges Radio</a>, Sweden's public service radio, providing access to its live national and local channels. Contributed and maintained by <a href="https://github.com/romany" target="_blank" rel="noopener noreferrer">romany</a>
+Music Assistant 支持 <a href="https://sverigesradio.se" target="_blank" rel="noopener noreferrer">Sveriges Radio</a>（瑞典公共广播电台），可访问其全国及地方的直播频道。由 <a href="https://github.com/romany" target="_blank" rel="noopener noreferrer">romany</a> 贡献并维护
 
-Sveriges Radio is funded publicly rather than by advertising. It runs four national channels, P1 for news and speech, P2 for classical and jazz, P3 for pop and younger listeners, and P4 as a network of regional stations, alongside a number of digital-only channels. Listening is free and no account is involved.
+Sveriges Radio 由公共资金资助，而非依靠广告。它运营四个全国频道：P1 为新闻和谈话频道，P2 为古典和爵士频道，P3 为面向年轻听众的流行音乐频道，P4 则是由地方电台组成的网络，此外还有若干纯数字频道。收听免费，无需注册账户。
 
 ## Features
 
@@ -29,16 +29,26 @@ Sveriges Radio is funded publicly rather than by advertising. It runs four natio
 - All live national and local Sveriges Radio channels are available to browse and search
 - Channel artwork is provided where available
 
-## Configuration
+### Other
 
-No configuration is required. The provider is added and its channels become available immediately
+- All live national and local Sveriges Radio channels are available to browse and search
+- Channel artwork is provided where available
 
-## Known Issues / Notes
+### 其他
 
-- Only live channels are exposed. On-demand programmes, podcasts, and episodes from the Sveriges Radio API are not provided
-- Seeking is not supported on live streams
+- 所有 Sveriges Radio 全国及地方直播频道均可浏览和搜索
+- 有可用时会提供频道封面图
 
-## Not Yet Supported
+## 配置
 
-- On-demand content (podcasts and programme episodes)
-- Additional metadata available in the API but not yet exposed
+无需任何配置。添加该提供方后，其频道即可立即使用
+
+## 已知问题 / 说明
+
+- 仅提供直播频道。Sveriges Radio API 中的点播节目、播客和节目单集不会提供
+- 直播流不支持进度跳转
+
+## 尚不支持
+
+- 点播内容（播客和节目单集）
+- API 中可用的其他元数据尚未提供

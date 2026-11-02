@@ -1,84 +1,84 @@
 ---
-title: Library Recommendations
-description: Fill the Discover page with rows drawn from your own library and what you have been playing. Built in and always on.
+title: 媒体库推荐
+description: 用来自你个人媒体库和近期收听内容的推荐行填满“发现”页面。内置且始终开启。
 pluginGroup: discover
 ---
 
-# Library Recommendations
+# 媒体库推荐
 
-Music Assistant surfaces recommendation rows based on what's in your library and how you've been listening. These rows appear on the Discover page and help you find tracks, albums, and artists to play next.
+Music Assistant 会根据你媒体库中的内容以及你的收听习惯来生成推荐行。这些推荐行显示在“发现”（Discover）页面上，帮助你找到接下来要播放的曲目、专辑和艺术家。
 
 > [!NOTE]
-> This is a built-in plugin that's always enabled. It cannot be disabled, but you can choose which individual rows you want to see on your Discover page.
+> 这是一个始终启用的内置插件。它无法被禁用，但你可以选择在“发现”页面上显示哪些具体的推荐行。
 
-## What's available
+## 可用内容
 
-Library Recommendations provides several discovery rows:
+媒体库推荐（Library Recommendations）提供了多个发现行：
 
-### Recently played
-- **Recently Added Tracks/Albums** — Your latest library additions
+### 最近播放
+- **最近添加的曲目/专辑（Recently Added Tracks/Albums）** — 你最新添加到媒体库的内容
 
-![Recently Added Tracks row on the Discover page](/assets/screenshots/library-recommendations/recently-added-tracks.png)
+![“发现”页面上的最近添加曲目行](/assets/screenshots/library-recommendations/recently-added-tracks.png)
 
-![Recently Added Albums row on the Discover page](/assets/screenshots/library-recommendations/recently-added-albums.png)
+![“发现”页面上的最近添加专辑行](/assets/screenshots/library-recommendations/recently-added-albums.png)
 
-### Favorites and collections
-- **Recent Favorite Tracks** — Tracks you recently marked as favorites
-- **Favorite Playlists** — Your favorite playlists, ready to play
-- **Favorite Radio** — Quick access to your favorite radio stations
+### 收藏与合集
+- **最近收藏的曲目（Recent Favorite Tracks）** — 你最近标记为收藏的曲目
+- **收藏的播放列表（Favorite Playlists）** — 你收藏的播放列表，随时可以播放
+- **收藏的电台（Favorite Radio）** — 快速访问你收藏的电台
 
-![Recent Favorite Tracks row on the Discover page](/assets/screenshots/library-recommendations/recent-favorite-tracks.png)
+![“发现”页面上的最近收藏曲目行](/assets/screenshots/library-recommendations/recent-favorite-tracks.png)
 
-![Favorite Playlists row on the Discover page](/assets/screenshots/library-recommendations/favorite_playlists.png)
+![“发现”页面上的收藏播放列表行](/assets/screenshots/library-recommendations/favorite_playlists.png)
 
-![Favorite Radio row on the Discover page](/assets/screenshots/library-recommendations/favorite-radio.png)
+![“发现”页面上的收藏电台行](/assets/screenshots/library-recommendations/favorite-radio.png)
 
-### Discovery and variety
-- **Random Artists/Albums** — Discover something different from your library
-- **Recent Artists/Tracks** — Artists and tracks from your recent listening
+### 发现与多样化
+- **随机艺术家/专辑（Random Artists/Albums）** — 从你的媒体库中发现一些不同的内容
+- **最近的艺术家/曲目（Recent Artists/Tracks）** — 来自你近期收听记录的艺术家和曲目
 
-![Random Albums row on the Discover page](/assets/screenshots/library-recommendations/random-albums.png)
+![“发现”页面上的随机专辑行](/assets/screenshots/library-recommendations/random-albums.png)
 
-![Random Artists row on the Discover page](/assets/screenshots/library-recommendations/random-artists.png)
+![“发现”页面上的随机艺术家行](/assets/screenshots/library-recommendations/random-artists.png)
 
-![Recent Artists row on the Discover page](/assets/screenshots/library-recommendations/recent-artists.png)
+![“发现”页面上的最近艺术家行](/assets/screenshots/library-recommendations/recent-artists.png)
 
-![Recent Tracks row on the Discover page](/assets/screenshots/library-recommendations/recent-tracks.png)
+![“发现”页面上的最近曲目行](/assets/screenshots/library-recommendations/recent-tracks.png)
 
-### Rediscovery
-- **Forgotten Tracks** — Tracks you haven't played in a while
-- **Forgotten Albums** — Albums you haven't heard in a while  
-- **Forgotten Artists** — Artists you haven't listened to recently
-- **Never / Rarely Played** — Discover what you haven't explored yet in your library
+### 重新发现
+- **久未播放的曲目（Forgotten Tracks）** — 你有一段时间没有播放过的曲目
+- **久未播放的专辑（Forgotten Albums）** — 你有一段时间没有听过的专辑  
+- **久未聆听的艺术家（Forgotten Artists）** — 你最近没有听过的艺术家
+- **从未/很少播放（Never / Rarely Played）** — 探索你媒体库中尚未涉猎的内容
 
-![Forgotten Tracks row on the Discover page](/assets/screenshots/library-recommendations/forgotten-tracks.png)
+![“发现”页面上的久未播放曲目行](/assets/screenshots/library-recommendations/forgotten-tracks.png)
 
-![Forgotten Albums row on the Discover page](/assets/screenshots/library-recommendations/forgotten-albums.png)
+![“发现”页面上的久未播放专辑行](/assets/screenshots/library-recommendations/forgotten-albums.png)
 
-![Forgotten Artists row on the Discover page](/assets/screenshots/library-recommendations/forgotten-artists.png)
+![“发现”页面上的久未聆听艺术家行](/assets/screenshots/library-recommendations/forgotten-artists.png)
 
-![Never / Rarely Played row on the Discover page](/assets/screenshots/library-recommendations/never-played-tracks.png)
+![“发现”页面上的从未/很少播放行](/assets/screenshots/library-recommendations/never-played-tracks.png)
 
-### Top played
-- **Most Played Tracks** — Your all-time favorite tracks based on play count
+### 播放最多
+- **播放最多的曲目（Most Played Tracks）** — 根据播放次数统计出的你的最爱曲目
 
-![Most Played Tracks row on the Discover page](/assets/screenshots/library-recommendations/most-played-tracks.png)
+![“发现”页面上的播放最多曲目行](/assets/screenshots/library-recommendations/most-played-tracks.png)
 
-## How to use
+## 使用方法
 
-All recommendation rows can be toggled on or off individually:
+所有推荐行都可以单独开启或关闭：
 
-1. Go to your **Discover** page
-2. Tap the settings icon (usually in the top right)
-3. Each row has a visibility toggle — turn on the ones you want to see
-4. The rows update automatically based on your listening
+1. 前往你的**发现**页面
+2. 点击设置图标（通常位于右上角）
+3. 每个推荐行都有一个可见性开关——打开你想看到的那些推荐行
+4. 推荐行会根据你的收听情况自动更新
 
-## What you'll see
+## 你会看到什么
 
-The rows update automatically based on your listening:
-- "Recently Played" and similar rows refresh as you play new music
-- "Forgotten" rows resurface items you haven't heard in a while
-- "Random" rows give you variety from your library
-- "Most Played" shows your personal favorites over time
+推荐行会根据你的收听情况自动更新：
+- “最近播放”及类似的推荐行会随着你播放新音乐而刷新
+- “久未播放”类推荐行会重新呈现你一段时间没有听过的内容
+- “随机”类推荐行为你带来来自媒体库的多样化内容
+- “播放最多”会展示你长期以来最喜爱的内容
 
-The rows only include music already in your Music Assistant library. For discovering new music you don't own yet, check out the available [music sources](/music-providers/) and [metadata providers](/metadata/) that offer recommendations.
+这些推荐行只包含你 Music Assistant 媒体库中已有的音乐。要发现你尚未拥有的新音乐，请查看提供推荐功能的[音乐源](/music-providers/)和[元数据提供商](/metadata/)。

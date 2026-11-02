@@ -1,65 +1,65 @@
 ---
-title: Artwork
+title: 封面与图片
 ---
 
-# Artwork <img src="/assets/icons/metadata-artwork-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 封面与图片 <img src="/assets/icons/metadata-artwork-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Artwork for artists, albums, tracks, playlists and radio streams is gathered from a mix of source metadata (file tags, folder images, music providers) and dedicated online metadata providers — without altering the originals.
+艺术家、专辑、曲目、播放列表和电台流的封面与图片收集自源元数据（文件标签、文件夹图片、音乐提供商）和专用在线元数据提供商的混合数据，且不会修改原始文件。
 
-## Sources and order of preference
+## 来源与优先级
 
-For artists and albums, the first available image is used in the UI, in this order:
+对于艺术家和专辑，用户界面（UI）中会按以下顺序使用第一个可用的图片：
 
-1. **Folder images** next to the album or artist (`cover.jpg`, `folder.jpg`, `artist.jpg`, etc.).
-2. **Embedded tags** in the audio file (front cover).
-3. **The track's music provider** (Spotify, Tidal, Plex, Jellyfin, Subsonic, …).
-4. **Online metadata providers**, prioritised: **Fanart.tv**, **The Audio DB**, **iTunes Artwork**, **Cover Art Archive**.
+1. 专辑或艺术家旁边的**文件夹图片**（`cover.jpg`、`folder.jpg`、`artist.jpg` 等）。
+2. 音频文件中的**嵌入标签**（封面）。
+3. **曲目的音乐提供商**（Spotify、Tidal、Plex、Jellyfin、Subsonic 等）。
+4. **在线元数据提供商**，优先级为：**Fanart.tv**、**The Audio DB**、**iTunes Artwork**、**Cover Art Archive**。
 
-For tracks, embedded artwork will be attached to the track but it is only seen in lists in the UI. When looking at the full detail or now playing view then the album artwork will be seen.
+对于曲目，嵌入的封面将附加到曲目上，但仅在 UI 的列表中可见。当查看完整详情或正在播放视图时，将看到专辑封面。
 
-Artwork from the music source always wins over artwork from online metadata providers. To change the artwork shown in the UI, a higher-quality image can be placed into the album or artist folder; the new image is picked up on the next library scan. Also the Images section of the Artist and Album view can be used to select the desired image. 
+来自音乐源的封面始终优先于来自在线元数据提供商的封面。要更改 UI 中显示的封面，可以将更高质量的图片放入专辑或艺术家文件夹中；新图片将在下次媒体库扫描时被获取。此外，还可以使用艺术家和专辑视图中的“图片”部分来选择所需的图片。 
 
-## Image variants
+## 图片变体
 
-Beyond a single thumbnail, the metadata providers expose several artwork variants used in different parts of the UI:
+除了单个缩略图外，元数据提供商还提供了几种用于 UI 不同部分的封面变体：
 
-- **Thumb** — the primary square cover used in lists and details (all providers).
-- **Fanart / Background** — wide background imagery (Fanart.tv, The Audio DB).
-- **Banner**, **logo**, **clearart**, **cutout**, **landscape** — used in artist detail views (Fanart.tv, The Audio DB).
-- **Disc art / CD art / 3D case art** — extra album imagery (Fanart.tv, The Audio DB).
+- **Thumb** — 用于列表和详情的主要方形封面（所有提供商）。
+- **Fanart / Background** — 宽幅背景图片（Fanart.tv、The Audio DB）。
+- **Banner**、**logo**、**clearart**、**cutout**、**landscape** — 用于艺术家详情视图（Fanart.tv、The Audio DB）。
+- **Disc art / CD art / 3D case art** — 额外的专辑图片（Fanart.tv、The Audio DB）。
 
-Most of these require a MusicBrainz Artist ID or Release Group ID; iTunes Artwork uses the album's UPC / EAN barcode instead.
+其中大部分需要 MusicBrainz 艺术家 ID 或发行组 ID；而 iTunes Artwork 则使用专辑的 UPC / EAN 条形码。
 
-## Radio Stream Metadata
+## 电台流元数据
 
-MA will parse the metadata from streams in the following formats:
+MA 将解析以下格式的流元数据：
 
 - ICY
 - HLS EXTINF
-- Ogg container metadata (Vorbis comments) - supports Vorbis, Opus, and FLAC codecs
-- Legacy SHOUTcast v1
+- Ogg 容器元数据（Vorbis 注释）- 支持 Vorbis、Opus 和 FLAC 编解码器
+- 旧版 SHOUTcast v1
 
 > [!NOTE]
-> See also the page for the various radio stream providers as they may provide artwork directly
+> 另请参阅各种电台流提供商的页面，因为它们可能会直接提供封面
 
-## Radio Stream Artist Artwork
+## 电台流艺术家封面
 
-When playing radio streams, Music Assistant can display album or artist images instead of the station logo. If the radio provider supplies its own artwork then this is used exclusively. For other stations artwork will be attempted to be sourced according to the following:
+播放电台流时，Music Assistant 可以显示专辑或艺术家图片，而不是电台标志。如果电台提供商提供自己的封面，则将专门使用该封面。对于其他电台，将尝试按以下规则获取封面：
 
-- "Artist - Title" format in the stream metadata is required
-- Artwork for the single release is preferred first
-- If no single artwork is found, then album artwork is tried
-- If no album artwork is found, then artist imagery is tried
-- Station logo is displayed when:
-    - No artist/title metadata is available from the stream
-    - The artist/track cannot be matched in the library or on MusicBrainz
-    - No artwork is found from any source
-    - An advertisement is detected in the stream
+- 流元数据中必须包含“艺术家 - 标题”格式
+- 优先获取单曲发行的封面
+- 如果未找到单曲封面，则尝试获取专辑封面
+- 如果未找到专辑封面，则尝试获取艺术家图片
+- 在以下情况下显示电台标志：
+    - 流中没有可用的艺术家/标题元数据
+    - 无法在媒体库或 MusicBrainz 中匹配到艺术家/曲目
+    - 未从任何来源找到封面
+    - 在流中检测到广告
 
-## Playlists
+## 播放列表
 
-MA will use the artwork supplied from the streaming providers. For local providers MA will create a collage based on the track's thumbnails in the playlist. For the local file system providers, local images will be used if found.
+MA 将使用流媒体提供商提供的封面。对于本地提供商，MA 将根据播放列表中曲目的缩略图创建拼贴画。对于本地文件系统提供商，如果找到本地图片，则将使用本地图片。
 
-## Caching
+## 缓存
 
-Artwork is cached locally so the UI stays responsive and to keep API usage low. The on-disk thumbnail cache size is configurable under [**Settings → System → Metadata**](/settings/core/#metadata) → "Maximum thumbnail cache size" (default 500 MB). Oldest thumbnails are evicted when the limit is reached.
+封面会在本地进行缓存，以保持 UI 的响应速度并降低 API 使用率。磁盘上的缩略图缓存大小可在 [**设置 → 系统 → 元数据**](/settings/core/#metadata) → “最大缩略图缓存大小”（默认 500 MB）下进行配置。达到限制时，将清除最旧的缩略图。

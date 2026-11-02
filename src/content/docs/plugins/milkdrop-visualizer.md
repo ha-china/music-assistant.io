@@ -1,47 +1,47 @@
 ---
-title: MilkDrop Visualizer
-description: Render a MilkDrop (Butterchurn) music visualizer behind the now-playing views, reacting live to the audio.
+title: MilkDrop 可视化器
+description: 在正在播放视图后方渲染 MilkDrop（Butterchurn）音乐可视化器，并随音频实时变化。
 pluginGroup: visuals
 ---
 
-# MilkDrop Visualizer
+# MilkDrop 可视化器
 
-This plugin renders a <a href="https://github.com/jberg/butterchurn" target="_blank" rel="noopener noreferrer">Butterchurn</a> (MilkDrop 2) music visualizer behind the now-playing views in the Music Assistant web interface, reacting live to whatever is playing. It replaces the usual gradient background with animated visuals driven by the actual audio.
+此插件在 Music Assistant 网页界面的正在播放视图后方渲染一个 <a href="https://github.com/jberg/butterchurn" target="_blank" rel="noopener noreferrer">Butterchurn</a>（MilkDrop 2）音乐可视化器，并随正在播放的内容实时变化。它将通常的渐变背景替换为由实际音频驱动的动态视觉效果。
 
 > [!CAUTION]
-> This plugin is marked experimental. Functionality may change and bugs may occur.
+> 此插件被标记为实验性。功能可能会发生变化，并且可能出现错误。
 
-## Features
+## 功能
 
-- A full-screen visualizer behind the fullscreen player, the now-playing dashboard, and the party screen
-- The complete Butterchurn preset library, with favourites and random or fixed preset selection
-- Optional preset switching on the beat, using Music Assistant's beat analysis
-- Per-user controls for blur, opacity and render quality
-- Reacts to the audio of whichever player you are viewing, in time with playback
+- 在全屏播放器、正在播放仪表盘（dashboard）和派对屏幕后方显示全屏可视化器
+- 完整的 Butterchurn 预设（preset）库，支持收藏以及随机或固定的预设选择
+- 可选的随节拍切换预设功能，利用 Music Assistant 的节拍分析
+- 按用户单独调整的模糊、不透明度和渲染质量控制
+- 对您正在查看的播放器的音频做出反应，与播放保持同步
 
-## Configuration
+## 配置
 
-- The visualizer works with any player: it reads the waveform from the audio Music Assistant is already decoding for playback, whatever protocol the player renders over
-- In Music Assistant, go to **Settings → Plugins → Add a plugin** and select **Milkdrop Visualizer**
-- Once enabled, a `MilkDrop` entry appears in the sidebar leading to its settings page, and a droplet toggle appears in the fullscreen player menu
-- Turn the visualizer on from the player menu (or the party screen), play something, and the visuals appear behind the now-playing view
+- 可视化器可与任何播放器配合使用：无论播放器通过何种协议输出，它都会从 Music Assistant 为播放而正在解码的音频中读取波形
+- 在 Music Assistant 中，前往 **设置 → 插件 → 添加插件** 并选择 **Milkdrop Visualizer**
+- 启用后，侧边栏中会出现一个 `MilkDrop` 条目并指向其设置页面，同时全屏播放器菜单中会出现一个水滴形切换开关
+- 从播放器菜单（或派对屏幕）开启可视化器，播放一些内容，视觉效果便会出现在正在播放视图的后方
 
-### Settings
+### 设置
 
-- <b>Render quality.</b> Low / Medium / High / Native. Higher tiers render sharper visuals at more GPU and CPU cost. Use a lower tier on tablets and TVs. Default `High`.
-- <b>Preset selection.</b> How the visualizer chooses a preset:
-    - <b>Random from all presets</b> - picks from the whole library.
-    - <b>Random from favourites</b> - picks only from presets you have starred.
-    - <b>Fixed preset</b> - always shows the one you choose.
-- <b>Switch preset on downbeat.</b> Automatically change preset on a downbeat, using Music Assistant's beat analysis. Takes precedence over a fixed preset.
-- <b>Minimum time between switches.</b> How long a preset stays on screen before a downbeat may switch it.
-- <b>Blur</b> and <b>opacity</b> are adjusted per user from the visualizer menu in the fullscreen player.
+- <b>渲染质量。</b>低 / 中 / 高 / 原生。更高的档位以更多的 GPU 和 CPU 开销为代价渲染更清晰的视觉效果。在平板电脑和电视上请使用较低档位。默认为 `High`。
+- <b>预设选择。</b>可视化器如何选择预设：
+    - <b>从所有预设中随机选择</b> - 从整个预设库中挑选。
+    - <b>从收藏中随机选择</b> - 仅从您已加星标的预设中挑选。
+    - <b>固定预设</b> - 始终显示您选择的那个预设。
+- <b>在重拍（downbeat）时切换预设。</b>利用 Music Assistant 的节拍分析，在重拍时自动更换预设。此设置优先于固定预设。
+- <b>切换之间的最短时间。</b>预设切换可能发生之前，一个预设会在屏幕上停留的最短时间。
+- <b>模糊</b>和<b>不透明度</b>由每位用户在全屏播放器的可视化器菜单中单独调整。
 
-Favourite the preset currently showing with the star next to the preset picker in the fullscreen player.
+在全屏播放器中，使用预设选择器旁边的星标即可收藏当前显示的预设。
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- If the normal background still shows after enabling this plugin, your browser is likely too old to run the visualizer; try a current one. (You can check yours at <a href="https://get.webgl.org/webgl2/" target="_blank" rel="noopener noreferrer">get.webgl.org/webgl2</a>.)
-- Google Cast receivers do not support this plugin, so casting a dashboard to a Chromecast keeps the normal background. To run the visualizer on a TV, open a now-playing dashboard in the TV's own browser or a kiosk browser app
-- Beat-driven preset switching uses the track's beat analysis from the [Smart Fades](/audio-analysis/smart-fades) provider when available; it may be unavailable until the analysis has been computed, or on lower-powered devices
-- Audio that a provider streams directly to the device (an external source) is not decoded by Music Assistant, so the visualizer has nothing to react to while such a source plays
+- 如果启用此插件后仍显示普通背景，您的浏览器可能过于陈旧而无法运行可视化器；请尝试较新的浏览器。（您可以在 <a href="https://get.webgl.org/webgl2/" target="_blank" rel="noopener noreferrer">get.webgl.org/webgl2</a> 检查您的浏览器。）
+- Google Cast 接收器不支持此插件，因此将仪表盘投屏到 Chromecast 时仍会保留普通背景。若要在电视上运行可视化器，请在电视自带的浏览器或 kiosk 浏览器应用中打开一个正在播放仪表盘
+- 节拍驱动的预设切换在可用时会使用 [Smart Fades](/audio-analysis/smart-fades) 提供程序提供的曲目节拍分析；在分析尚未计算完成时，或在性能较低的设备上，该功能可能不可用
+- 由提供程序直接流式传输到设备的音频（外部音源）不经过 Music Assistant 解码，因此在此类音源播放期间，可视化器没有可做出反应的音频

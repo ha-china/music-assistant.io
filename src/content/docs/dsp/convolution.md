@@ -1,52 +1,52 @@
 ---
-title: DSP Convolution
-description: Explanation of the use and effect of the DSP Convolution filter
+title: DSP 卷积
+description: DSP 卷积（Convolution）滤波器的使用与效果说明
 ---
 
-# Convolution
+# 卷积
 
-[Convolution](https://www.edmprod.com/convolution-reverb/) applies a recorded impulse response to the audio. An impulse response, usually shortened to IR, is a recording of how a particular space or piece of equipment reacts to a single, very short sound. Playing music through that recording makes the music take on the same character, which is why convolution is the tool of choice for room correction, speaker correction and headphone simulation. A more detailed explanation can be found in this <a href="https://en.wikipedia.org/wiki/Impulse_response" target="_blank" rel="noopener noreferrer">description of impulse responses</a>.
+[卷积](https://www.edmprod.com/convolution-reverb/)（Convolution）将录制好的脉冲响应（impulse response）应用于音频。脉冲响应通常缩写为 IR，是某个特定空间或设备对单个极短声音的反应的录音。通过该录音播放音乐，会使音乐带上相同的特性，这也是卷积成为房间校正、扬声器校正和耳机模拟首选工具的原因。更详细的解释可参阅这篇<a href="https://en.wikipedia.org/wiki/Impulse_response" target="_blank" rel="noopener noreferrer">脉冲响应说明</a>。
 
-Unlike the other filters, convolution does not shape the sound according to controls that are set by hand. The correction is contained entirely within the impulse response file, which is typically produced by measurement software such as <a href="https://www.roomeqwizard.com/" target="_blank" rel="noopener noreferrer">Room EQ Wizard</a>, or downloaded from a project that publishes ready-made responses.
+与其他滤波器（filter）不同，卷积并不根据手动设置的控件来塑造声音。校正是完全包含在脉冲响应文件中的，该文件通常由诸如 <a href="https://www.roomeqwizard.com/" target="_blank" rel="noopener noreferrer">Room EQ Wizard</a> 之类的测量软件生成，或从发布现成响应的项目下载。
 
-This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
+此滤波器在[播放器的 DSP 设置](/settings/individual-player/#dsp-settings)中添加和配置。完整的滤波器路径请参见[数字信号处理概述](/dsp/)。
 
-## Usage
+## 用法
 
-The filter has two controls: the impulse response to apply, and a gain adjustment.
+该滤波器有两个控件：要应用的脉冲响应和增益（gain）调节。
 
-### Impulse Response
+### 脉冲响应
 
-The dropdown lists every impulse response that has been uploaded to the server, showing the sample rate, channel count and duration of each. Selecting one applies it to the audio.
+下拉列表中列出了所有已上传到服务器的脉冲响应，并显示每个文件的采样率、声道数和时长。选择其中一个即可将其应用到音频。
 
-A newly added filter starts with **None selected**, which leaves the audio untouched, so an impulse response must be chosen before the filter does anything. If a response is shown as **Unavailable impulse response**, the filter is referring to a file that no longer exists on the server, which most commonly happens when a DSP preset created on another server is loaded.
+新添加的滤波器初始为**未选择（None selected）**，此时音频不受影响，因此必须先选择一个脉冲响应，滤波器才会生效。如果某个响应显示为**不可用的脉冲响应（Unavailable impulse response）**，则表示该滤波器引用的文件已不在服务器上，这种情况最常见于加载了在另一台服务器上创建的 DSP 预设。
 
-### Gain
+### 增益
 
-An impulse response almost always changes the overall loudness of the audio, and frequently raises it. The Gain control compensates for this, and should be set to zero or a negative value; raising it risks clipping. Where a measurement tool suggests a particular amount of attenuation for its correction file, that value should be entered here.
+脉冲响应几乎总会改变音频的整体响度，而且经常使其增大。增益（Gain）控件用于补偿这一点，应设置为零或负值；调高它会有削波（clipping）的风险。如果测量工具针对其校正文件建议了特定的衰减量，则应在此处输入该值。
 
 ![Convolution](/assets/screenshots/dsp-convolution.png)
 
-## Managing Impulse Response Files
+## 管理脉冲响应文件
 
-Impulse responses are stored on the server rather than within an individual player's settings, so a file only needs to be uploaded once and is then available to every player and every DSP preset. The library is opened with the `MANAGE IR FILES` button next to the dropdown.
+脉冲响应存储在服务器上，而不是存储在单个播放器的设置中，因此文件只需上传一次，即可供所有播放器和所有 DSP 预设使用。通过下拉列表旁边的 `MANAGE IR FILES` 按钮可打开该库。
 
-### Uploading
+### 上传
 
-Choosing a file and giving it a name adds it to the library. The name is only a label, and is what appears in the dropdown, so something descriptive such as the room or headphone the response was measured for is more useful than the original filename.
+选择一个文件并为其命名即可将其添加到库中。名称只是一个标签，也就是显示在下拉列表中的内容，因此使用具有描述性的名称（例如测量该响应时所在的房间或所用的耳机）比原始文件名更有用。
 
-Most common audio formats are accepted, with WAV and FLAC being the usual choices. On upload the file is converted to a standard format and stored on the server, and is checked in the process, so a file that is not valid audio will be rejected with an explanation rather than failing silently later during playback. Files may be up to 50 MB in size, which is far larger than any normal impulse response requires.
+大多数常见音频格式均可接受，其中 WAV 和 FLAC 是常用的选择。上传时文件会被转换为标准格式并存储到服务器，过程中还会进行检查，因此无效的音频文件会被拒绝并给出说明，而不是在稍后播放时悄无声息地失败。文件大小最大可达 50 MB，远超任何正常脉冲响应所需的体积。
 
-The sample rate of the file does not need to match the audio being played, as the impulse response is resampled to suit the stream. A mono response is applied identically to both channels, whereas a stereo response applies each of its channels to the matching side of the audio, which is what measurement software produces when the left and right speakers are measured separately.
+文件的采样率无需与正在播放的音频匹配，因为脉冲响应会被重采样以适应该音频流。单声道响应会对两个声道应用相同的效果，而立体声响应则将其每个声道应用到音频的对应一侧，这正是测量软件在分别测量左右扬声器时生成的结果。
 
-Only mono and stereo files are accepted. So-called **true stereo** impulse responses, which carry four channels to describe how each speaker reaches each ear, are rejected on upload with a message explaining why. Applying one would require reducing it to two channels first, which blends the four measurements together and does not reproduce the intended effect, so a mono or two channel version of the same measurement should be used instead.
+仅接受单声道和立体声文件。所谓的**真立体声（true stereo）**脉冲响应包含四个声道，用于描述每个扬声器到达每只耳朵的情况，这类文件在上传时会被拒绝，并给出原因说明。若要应用这类文件，必须先将其缩减为两个声道，这会将四个测量结果混合在一起，无法重现预期的效果，因此应改用同一测量的单声道或双声道版本。
 
-### Deleting
+### 删除
 
-The delete icon beside an entry removes it from the library. Because the library is shared, a file may be in use by more than one player, so deleting it also resets any convolution filter that referred to it, on every player and in every preset, back to no impulse response selected. The filters themselves are not removed, and will pass audio through unchanged until another response is chosen.
+条目旁边的删除图标会将其从库中移除。由于该库是共享的，一个文件可能同时被多个播放器使用，因此删除该文件还会将引用它的所有卷积滤波器（在每个播放器和每个预设中）重置为未选择任何脉冲响应的状态。滤波器本身不会被移除，在选择另一个响应之前，它们会原样透传音频。
 
 ![Impulse Response Library](/assets/screenshots/dsp-convolution-irmanager.png)
 
-## Technical Details
+## 技术细节
 
-The convolution is performed by FFmpeg's `afir` filter, with the impulse response supplied as a second input and resampled to the sample rate of the stream. Gain normalisation is applied so that the convolution itself is unity gain, meaning any change in level comes from the response of the file rather than from the process. Because convolution is considerably more demanding than the other filters, particularly with long impulse responses, servers with limited processing power may struggle when several players are streaming at once.
+卷积由 FFmpeg 的 `afir` 滤波器执行，脉冲响应作为第二个输入提供，并被重采样至音频流的采样率。系统会应用增益归一化，使卷积本身为单位增益，也就是说，任何电平变化都来自文件的响应，而不是来自处理过程本身。由于卷积比其他滤波器的运算负担重得多，尤其是使用较长的脉冲响应时，处理能力有限的服务器在多个播放器同时播放时可能会不堪重负。

@@ -1,235 +1,235 @@
 ---
-title: Music Quiz Plugin
-description: Host multiplayer music quiz games with QR-code guest access, shared or remote playback, and several game types.
+title: Music Quiz 插件
+description: 通过二维码访客加入、共享或远程播放以及多种游戏类型，举办多人音乐问答游戏。
 pluginGroup: shared
 ---
 
-# Music Quiz Plugin
+# Music Quiz 插件
 
-The Music Quiz plugin turns the Music Assistant library into a multiplayer quiz. Open the host dashboard on a TV, computer, or tablet, let players join by scanning a QR code, and run the game without creating accounts for the guests.
+Music Quiz 插件将 Music Assistant 媒体库变成一个多人问答游戏。在电视、电脑或平板上打开主持人仪表盘（dashboard），让玩家扫描二维码加入，无需为访客创建账户即可运行游戏。
 
-Players answer on their own phones while the dashboard shows the lobby, round progress, answers, scores, and final podium. Music can play through one shared speaker or directly on every player's device.
+玩家在自己的手机上作答，仪表盘则显示大厅、回合进度、答案、得分和最终领奖台。音乐可以通过一个共享扬声器播放，也可以直接在每个玩家的设备上播放。
 
-:::caution[Experimental]
-Music Quiz is experimental. Its game types, settings, and behavior may change between Music Assistant releases.
+:::caution[实验性功能]
+Music Quiz 处于实验阶段。其游戏类型、设置和行为可能会在 Music Assistant 的不同版本之间发生变化。
 :::
 
-## Features
+## 功能特性
 
-- QR-code guest access with no guest accounts or app installation required
-- A host dashboard with round controls, live player progress, leaderboards, and a final podium
-- Full-screen **Present mode** for a TV or other shared display
-- **Venue mode** for playback through one Music Assistant player
-- **Remote mode** for silent-disco-style playback on every player's device
-- Three game types: **Guess the Song**, **Music Timeline**, and AI-generated **Music Trivia**
-- Select tracks, playlists, albums, artists, and library genres as quiz sources
-- Optional similar-music expansion for more varied rounds
-- Automatic answer deadlines, early reveal when everyone finishes, and player-ready progression
-- Optional synchronized lyrics during the Guess the Song reveal
-- Replay the same setup and player group or create a different game
-- Remote Access support for players who are not on the same local network
+- 二维码访客加入，无需访客账户或安装应用
+- 主持人仪表盘，提供回合控制、实时玩家进度、排行榜和最终领奖台
+- 面向电视或其他共享显示屏的全屏**演示模式（Present mode）**
+- 通过一个 Music Assistant 播放器进行播放的**场地模式（Venue mode）**
+- 在每个玩家设备上进行“静音迪斯科”式播放的**远程模式（Remote mode）**
+- 三种游戏类型：**猜歌（Guess the Song）**、**音乐时间线（Music Timeline）**以及 AI 生成的**音乐知识问答（Music Trivia）**
+- 可选择曲目、播放列表、专辑、艺术家和媒体库流派作为测验来源
+- 可选的相似音乐扩展，让各回合更加多样化
+- 自动作答截止时间、全员完成后提前揭晓，以及玩家就绪后进入下一回合
+- 猜歌揭晓时可选的同步歌词
+- 可重玩相同的设置和玩家组合，或创建不同的游戏
+- 支持远程访问（Remote Access），方便不在同一局域网内的玩家加入
 
-## Requirements
+## 要求
 
-- At least one configured music source containing playable tracks
-- For **Venue mode**, an available, enabled Music Assistant player, stereo pair, or group
-- For **Remote mode**, the Sendspin provider must be available; each player also needs a device and browser that can play web audio
-- For **Music Timeline**, enough unique tracks with usable release years: one initial anchor plus one track per configured round
-- For **Music Trivia**, an **AI engine** from either the [OpenAI Compatible plugin](/plugins/openai_compatible/) or the [Home Assistant plugin](/ha-plugin/) with an AI task entity set up in Home Assistant, plus enough selected tracks with usable metadata
+- 至少配置一个包含可播放曲目的音乐来源
+- 使用**场地模式**时，需要一个可用且已启用的 Music Assistant 播放器、立体声对或分组
+- 使用**远程模式**时，Sendspin 提供程序必须可用；每位玩家还需要一台能够播放网络音频的设备和浏览器
+- 使用**音乐时间线**时，需要有足够多带有效发行年份的不重复曲目：一首初始锚点曲目，外加每个已配置回合一首曲目
+- 使用**音乐知识问答**时，需要一个来自 [OpenAI Compatible 插件](/plugins/openai_compatible/)或 [Home Assistant 插件](/ha-plugin/)、并在 Home Assistant 中设置好 AI 任务实体（entity）的 **AI 引擎**，以及足够多带有效元数据的已选曲目
 
 :::note
-Music Trivia is only shown in the game picker when a compatible AI plugin is loaded. Guess the Song and Music Timeline do not require AI.
+只有加载了兼容的 AI 插件后，音乐知识问答才会显示在游戏选择器中。猜歌和音乐时间线不需要 AI。
 :::
 
-## How it works
+## 工作原理
 
-### For the host
+### 主持人端
 
-1. Go to **Settings → Plugins → Add a plugin** and add **Music Quiz**.
-2. Open **Music Quiz** from the Music Assistant sidebar.
-3. Select **New Game**, choose a game type, and configure playback, rounds, answer time, and music sources.
-4. Create the game and display the QR code. Use **Present mode** for a full-screen lobby and scoreboard.
-5. Wait for players to join, then select **Start Quiz**.
-6. Use the host controls to reveal an answer early, move to the next round, finish the quiz, or end the game.
+1. 前往**设置 → 插件 → 添加插件**（Settings → Plugins → Add a plugin），并添加 **Music Quiz**。
+2. 从 Music Assistant 侧边栏打开 **Music Quiz**。
+3. 选择**新游戏（New Game）**，选择一种游戏类型，然后配置播放方式、回合数、作答时间和音乐来源。
+4. 创建游戏并显示二维码。使用**演示模式**可获得全屏大厅和记分板。
+5. 等待玩家加入，然后选择**开始测验（Start Quiz）**。
+6. 使用主持人控制来提前揭晓答案、进入下一回合、结束测验或结束游戏。
 
-Only users with permission to invite users can create and control a game. Music Quiz is single-instance and runs one game at a time.
+只有拥有邀请用户权限的用户才能创建和控制游戏。Music Quiz 为单实例，同一时间只运行一个游戏。
 
-![Configure a Music Quiz game with Remote playback, rounds, difficulty, and a selected album](../../../assets/screenshots/music-quiz/music-quiz-setup.png)
+![配置一个使用远程播放、含回合数、难度和所选专辑的 Music Quiz 游戏](../../../assets/screenshots/music-quiz/music-quiz-setup.png)
 
-![The host lobby with its join QR code, selected music, and game controls](../../../assets/screenshots/music-quiz/music-quiz-lobby.png)
+![主持人大厅，显示加入二维码、所选音乐和游戏控制按钮](../../../assets/screenshots/music-quiz/music-quiz-lobby.png)
 
-### For players
+### 玩家端
 
-1. Scan the QR code with the phone's camera or open the copied join link.
-2. Enter a unique display name and select **Join Quiz**.
-3. In Remote mode, tap **Listen in** if browser audio does not start automatically.
-4. Submit an answer before the countdown ends. An answer is locked after submission.
-5. Review the answer and points during the reveal, then select **Ready for next round** when ready.
-6. Follow the live leaderboard until the final scores and podium appear.
+1. 用手机摄像头扫描二维码，或打开已复制的加入链接。
+2. 输入一个唯一的显示名称，然后选择**加入测验（Join Quiz）**。
+3. 在远程模式下，如果浏览器音频未自动开始播放，请点击**一起听（Listen in）**。
+4. 在倒计时结束前提交答案。答案提交后即被锁定。
+5. 在揭晓阶段查看答案和得分，准备好后选择**准备好下一回合（Ready for next round）**。
+6. 关注实时排行榜，直到最终得分和领奖台出现。
 
-A player who joins after a round has started can watch that round and begins answering from the next round.
+在某个回合开始后加入的玩家可以观看该回合，并从下一回合开始作答。
 
-| Create a game on a phone | Join from a phone |
+| 在手机上创建游戏 | 从手机加入 |
 |---|---|
-| ![The Music Quiz game type picker on a phone](../../../assets/screenshots/music-quiz/music-quiz-mobile-game-types.png) | ![The Music Quiz guest join screen on a phone](../../../assets/screenshots/music-quiz/music-quiz-mobile-join.png) |
+| ![手机上的 Music Quiz 游戏类型选择器](../../../assets/screenshots/music-quiz/music-quiz-mobile-game-types.png) | ![手机上的 Music Quiz 访客加入界面](../../../assets/screenshots/music-quiz/music-quiz-mobile-join.png) |
 
-![The Music Quiz player view during an answer reveal](../../../assets/screenshots/music-quiz/music-quiz-player.png)
+![答案揭晓时的 Music Quiz 玩家视图](../../../assets/screenshots/music-quiz/music-quiz-player.png)
 
-## Game types
+## 游戏类型
 
-![Choose between Guess the Song and Music Timeline when creating a game](../../../assets/screenshots/music-quiz/music-quiz-game-types.png)
+![创建游戏时在猜歌和音乐时间线之间进行选择](../../../assets/screenshots/music-quiz/music-quiz-game-types.png)
 
-### Guess the Song
+### 猜歌（Guess the Song）
 
-A track starts playing and players select its title from a set of choices. The answer reveal shows the song, artwork, individual result, points, and lyrics when available.
+一首曲目开始播放，玩家从一组选项中选出它的歌名。答案揭晓会显示歌曲、封面、个人结果、得分，以及歌词（如有）。
 
-| Setting | Default | Range | Description |
+| 设置 | 默认值 | 范围 | 描述 |
 |---|---:|---:|---|
-| **Rounds** | 5 | 2–50 | Number of songs in the game. A track is not reused within the same game. |
-| **Answer choices** | 4 | 2–8 | Number of possible answers shown each round. |
-| **Answer time** | 30 seconds | 5–120 seconds | Maximum time to answer. If a track is shorter, its duration limits the answer window. |
-| **Difficulty** | Normal | Easy / Normal / Hard | Changes how plausible the incorrect answers are. Easy favors random tracks from the selected sources; Normal favors catalog matches; Hard favors similar tracks and artists. |
+| **回合数（Rounds）** | 5 | 2–50 | 游戏中的歌曲数量。同一游戏内不会重复使用曲目。 |
+| **答案选项数（Answer choices）** | 4 | 2–8 | 每回合显示的可选答案数量。 |
+| **作答时间（Answer time）** | 30 秒 | 5–120 秒 | 作答的最长时间。如果曲目更短，则曲目时长会限制作答窗口。 |
+| **难度（Difficulty）** | 普通 | 简单 / 普通 / 困难 | 改变错误答案的可信程度。简单倾向于从所选来源中随机选取曲目；普通倾向于曲库中的匹配项；困难倾向于相似曲目和艺术家。 |
 
-### Music Timeline
+### 音乐时间线（Music Timeline）
 
-Players listen to a hidden song and place it into a growing chronological timeline. The first round starts with an automatically selected anchor song. After placing the new song, players can optionally identify its artist and title for bonus points.
+玩家聆听一首隐藏的歌曲，并将其放入一条不断增长的按时间顺序排列的时间线中。第一回合从一首自动选择的锚点歌曲开始。放置新歌后，玩家可以选择识别其艺术家和歌名以获得加分。
 
-| Setting | Default | Range / options | Description |
+| 设置 | 默认值 | 范围 / 选项 | 描述 |
 |---|---:|---:|---|
-| **Rounds** | 5 | 1–100 | Number of songs players place. The source pool needs at least this many dated tracks plus one anchor. |
-| **Answer time** | 30 seconds | 1–300 seconds | Maximum time to place the song and complete any enabled bonuses. |
-| **Artist bonus** | Off | Off / Free text / Multiple choice | Adds an optional artist question after a correct placement. |
-| **Title bonus** | Off | Off / Free text / Multiple choice | Adds an optional song-title question after a correct placement. |
+| **回合数（Rounds）** | 5 | 1–100 | 玩家需要放置的歌曲数量。来源池至少需要这么多的带日期曲目，外加一首锚点曲目。 |
+| **作答时间（Answer time）** | 30 秒 | 1–300 秒 | 放置歌曲并完成所有已启用附加题的最长时间。 |
+| **艺术家附加题（Artist bonus）** | 关闭 | 关闭 / 自由文本 / 选择题 | 在正确放置后添加一个可选的艺术家问题。 |
+| **歌名附加题（Title bonus）** | 关闭 | 关闭 / 自由文本 / 选择题 | 在正确放置后添加一个可选的歌名问题。 |
 
-Bonus questions are offered only after a correct placement. Players may answer them or select **Skip remaining bonuses**.
+只有在正确放置后才会提供附加题。玩家可以回答附加题，也可以选择**跳过剩余附加题（Skip remaining bonuses）**。
 
-### Music Trivia
+### 音乐知识问答（Music Trivia）
 
-Music Trivia asks AI-worded questions grounded in the title, artist, album, or release-year metadata of tracks from the selected sources. Music Assistant chooses the fact and validates the generated question and incorrect answers; the AI does not decide the correct answer.
+音乐知识问答会提出由 AI 措辞的问题，这些问题基于所选来源中曲目的歌名、艺术家、专辑或发行年份元数据。Music Assistant 负责选择事实并验证生成的问题和错误答案；正确答案并非由 AI 决定。
 
-| Setting | Default | Range / options | Description |
+| 设置 | 默认值 | 范围 / 选项 | 描述 |
 |---|---:|---:|---|
-| **Rounds** | 5 | 1–100 | Number of questions. The source pool needs at least one unique track with usable metadata per round. |
-| **Answer choices** | 4 | 2–8 | Number of possible answers shown for each question. |
-| **Answer time** | 30 seconds | 1–300 seconds | Maximum time to answer. |
-| **Difficulty** | Normal | Easy / Normal / Hard | Instructs the AI to adjust the wording and plausibility of incorrect answers. |
-| **Question language** | Current UI language | Available UI languages | Language used for generated question text and incorrect answers. Proper names remain unchanged. |
-| **Play revealed songs** | On | On / Off | Plays the track behind the question after the correct answer is revealed. |
+| **回合数（Rounds）** | 5 | 1–100 | 问题数量。来源池中每回合至少需要一首带有效元数据的不重复曲目。 |
+| **答案选项数（Answer choices）** | 4 | 2–8 | 每个问题显示的可选答案数量。 |
+| **作答时间（Answer time）** | 30 秒 | 1–300 秒 | 作答的最长时间。 |
+| **难度（Difficulty）** | 普通 | 简单 / 普通 / 困难 | 指示 AI 调整错误答案的措辞和可信程度。 |
+| **问题语言（Question language）** | 当前 UI 语言 | 可用的 UI 语言 | 用于生成问题文本和错误答案的语言。专有名词保持不变。 |
+| **播放揭晓的歌曲（Play revealed songs）** | 开启 | 开启 / 关闭 | 在正确答案揭晓后播放问题背后的曲目。 |
 
-When reveal audio is enabled, players can use **Listen in** and the selected venue speaker or remote devices play the grounded track during the reveal. Trivia advances automatically after 15 seconds unless everyone marks themselves ready sooner.
+启用揭晓音频后，玩家可以使用**一起听**，在揭晓期间由所选的场地扬声器或远程设备播放作为问题依据的曲目。除非所有人都提前标记为就绪，否则问答会在 15 秒后自动进入下一回合。
 
-## Playback modes
+## 播放模式
 
-Playback is selected while creating each game. Music Assistant remembers the last successful mode and venue player as the defaults for the next game.
+在创建每个游戏时选择播放方式。Music Assistant 会记住上一次成功的模式和场地播放器，并将其用作下一个游戏的默认值。
 
-### Venue mode
+### 场地模式（Venue mode）
 
-Venue mode plays quiz audio through one selected Music Assistant player, stereo pair, or group so everyone in the room hears the same stream. Only enabled, available, visible, fully configured native players are offered.
+场地模式通过一个选定的 Music Assistant 播放器、立体声对或分组播放问答音频，让房间里的每个人都听到相同的音频流。仅会提供已启用、可用、可见且已完全配置的原生播放器。
 
-Players may also see **Listen in** on their own device. This depends on whether the selected playback session can attach that web player; the room speaker remains the primary output.
+玩家也可能在自己的设备上看到**一起听**。这取决于所选的播放会话能否附加该网页播放器；房间扬声器仍是主要输出。
 
-### Remote mode
+### 远程模式（Remote mode）
 
-Remote mode creates a Sendspin playback session and sends quiz audio to each player's web player. This is useful for silent-disco games or players in different locations. Each player should tap **Listen in** and keep the quiz page open so the browser can continue playing audio.
+远程模式会创建一个 Sendspin 播放会话，并将问答音频发送到每位玩家的网页播放器。这适用于“静音迪斯科”（silent disco）式游戏，或身处不同地点的玩家。每位玩家应点击**一起听**并保持测验页面打开，以便浏览器继续播放音频。
 
 :::tip
-Phone browsers commonly require a user gesture before playing sound. Asking everyone to join and tap **Listen in** before the host starts avoids missing the beginning of the first round.
+手机浏览器通常需要用户先进行交互才能播放声音。在主持人开始之前，让所有人加入并点击**一起听**，可以避免错过第一回合的开头。
 :::
 
-## Music sources
+## 音乐来源
 
-Every game requires at least one source. The source picker supports:
+每个游戏至少需要一个来源。来源选择器支持：
 
-- Tracks
-- Playlists
-- Albums
-- Artists
-- Genres from the Music Assistant library
+- 曲目
+- 播放列表
+- 专辑
+- 艺术家
+- Music Assistant 媒体库中的流派
 
-Music Assistant combines the tracks from all selected sources, removes duplicates, and randomly chooses unused tracks for the rounds. Choose sources with more unique tracks than the configured round count so unplayable items or missing metadata do not prevent the game from being created or continued.
+Music Assistant 会合并所有所选来源中的曲目，去除重复项，并随机挑选未使用过的曲目用于各回合。请选择不重复曲目数量多于已配置回合数的来源，这样无法播放的项目或缺失的元数据就不会导致游戏无法创建或继续进行。
 
-### Include similar music
+### 包含相似音乐（Include similar music）
 
-Enable **Include similar music** to extend the selected pool with playable recommendations related to the available sources. This provides more variety than the exact albums, artists, playlists, genres, or tracks selected. When compatible radio/similar-track support is unavailable, Music Quiz continues with the selected sources only.
+启用**包含相似音乐**后，系统会用与可用来源相关的可播放推荐内容来扩展所选曲库。这比只使用所选的确切专辑、艺术家、播放列表、流派或曲目能提供更多变化。当兼容的电台/相似曲目支持不可用时，Music Quiz 将仅使用所选来源继续。
 
-For predictable games, especially a carefully themed quiz, leave this option disabled.
+对于需要可预期效果的游戏（尤其是精心设计的主题测验），请将此选项保持为禁用。
 
-## Plugin configuration
+## 插件配置
 
-The Music Quiz provider settings, under **Features**, contain the following:
+Music Quiz 提供程序设置位于**功能（Features）**下，包含以下内容：
 
-| Setting | Default | Description |
+| 设置 | 默认值 | 描述 |
 |---|---:|---|
-| **Enhance the Experience with AI** | Off | Lets AI generate more convincing fake answers where supported. It currently enhances Hard Guess the Song distractors and Music Timeline multiple-choice bonuses. Built-in answer generation remains the fallback if AI is unavailable or returns an unusable response. |
-| **AI engine** | First available | Which AI engine Music Quiz uses. Change it here at any time, no reconfiguring needed. |
+| **使用 AI 增强体验（Enhance the Experience with AI）** | 关闭 | 在支持的地方让 AI 生成更具说服力的虚假答案。目前它会增强困难难度的猜歌干扰项以及音乐时间线的选择题附加题。如果 AI 不可用或返回无法使用的响应，仍以内置答案生成作为后备。 |
+| **AI 引擎** | 第一个可用的引擎 | Music Quiz 使用哪个 AI 引擎。可随时在此更改，无需重新配置。 |
 
-These two are separate. Music Trivia always needs an AI engine, whether or not **Enhance the Experience with AI** is switched on, so the engine picker stays available either way.
+这两项设置是相互独立的。无论**使用 AI 增强体验**是否开启，音乐知识问答始终需要一个 AI 引擎，因此无论哪种情况，引擎选择器都会保持可用。
 
-Engines come from other plugins, and Music Quiz uses the only one available unless you pick a different one. See [AI and text-to-speech engines](/ha-plugin/#ai-and-text-to-speech-engines).
+引擎来自其他插件。除非你选择其他引擎，否则 Music Quiz 会使用唯一可用的那个。参见 [AI 和文本转语音引擎](/ha-plugin/#ai-and-text-to-speech-engines)。
 
-## Game flow and host controls
+## 游戏流程与主持人控制
 
-| Phase | What happens |
+| 阶段 | 发生的事情 |
 |---|---|
-| **Lobby** | The QR code, player list, game type, and playback mode are shown. The host starts the game. |
-| **Answering** | The countdown runs and answers are locked as they are submitted. The host can reveal early; the server also reveals when time expires or all active players finish. |
-| **Reveal** | The correct answer, per-round points, and leaderboard are shown. Players can mark themselves ready. The host can advance manually, and the game advances early when all active players are ready. |
-| **Finished** | The winner, podium, and final leaderboard are shown. The host can replay the same game or set up a new one. |
+| **大厅** | 显示二维码、玩家列表、游戏类型和播放模式。由主持人开始游戏。 |
+| **作答** | 倒计时进行中，答案在提交后即被锁定。主持人可以提前揭晓；当时间用尽或所有活跃玩家完成时，服务器也会揭晓。 |
+| **揭晓** | 显示正确答案、每回合得分和排行榜。玩家可以标记自己已就绪。主持人可以手动推进，当所有活跃玩家都就绪时游戏也会提前推进。 |
+| **结束** | 显示获胜者、领奖台和最终排行榜。主持人可以重玩同一游戏或创建新游戏。 |
 
-![The host dashboard showing a revealed answer, player progress, and leaderboard](../../../assets/screenshots/music-quiz/music-quiz-active-round.png)
+![主持人仪表盘，显示已揭晓的答案、玩家进度和排行榜](../../../assets/screenshots/music-quiz/music-quiz-active-round.png)
 
-After **Play again**, scores and rounds are reset but the settings and joined players are retained. If at least one player is still connected, the replay starts automatically after a 30-second lobby countdown; the host can start it immediately.
+点击**再玩一次（Play again）**后，得分和回合会重置，但设置和已加入的玩家会保留。如果至少有一名玩家仍然保持连接，重玩会在 30 秒的大厅倒计时结束后自动开始；主持人也可以立即开始。
 
-Selecting **End game** removes the game for every player and stops its playback session.
+选择**结束游戏（End game）**会为所有玩家移除该游戏并停止其播放会话。
 
-## Scoring
+## 计分
 
-### Guess the Song and Music Trivia
+### 猜歌和音乐知识问答
 
-Only correct answers score. Correct players are ordered by submission time: the fastest receives 1,000 points and the remaining correct answers receive linearly decreasing points. Incorrect or missing answers receive no points.
+只有回答正确才能得分。答对的玩家按提交时间排序：最快的获得 1,000 分，其余答对者获得线性递减的分数。错误或未提交的答案不得分。
 
-### Music Timeline
+### 音乐时间线
 
-A correct placement uses the same speed-based scale, with the fastest correct placement receiving 1,000 points. Each correct enabled bonus answer adds 250 points. Bonus points are available only when the timeline placement itself is correct.
+正确的放置采用同样的基于速度的计分标准，最快的正确放置获得 1,000 分。每个已启用的附加题每答对一题加 250 分。只有当时间线放置本身正确时才能获得附加分。
 
-The leaderboard updates after every reveal. Equal total scores share the same rank, and equal top scores produce joint winners.
+排行榜在每次揭晓后更新。总分相同的玩家排名并列，最高分相同则产生并列获胜者。
 
-## Present mode
+## 演示模式（Present mode）
 
-Select **Present mode** from the host controls to open the TV-friendly full-screen layout. It shows:
+从主持人控制中选择**演示模式**即可打开适合电视的全屏布局。它会显示：
 
-- The join QR code and player list in the lobby
-- The current question or hidden-song state during answering
-- Answer progress without exposing the correct answer early
-- The revealed answer and live leaderboard
-- The final podium and scores
+- 大厅中的加入二维码和玩家列表
+- 作答期间的当前问题或隐藏歌曲状态
+- 作答进度，且不会提前泄露正确答案
+- 已揭晓的答案和实时排行榜
+- 最终领奖台和得分
 
-![Music Quiz Present mode lobby with its join QR code and player list](../../../assets/screenshots/music-quiz/music-quiz-present-lobby.png)
+![Music Quiz 演示模式大厅，显示加入二维码和玩家列表](../../../assets/screenshots/music-quiz/music-quiz-present-lobby.png)
 
-![The final Music Quiz leaderboard in Present mode](../../../assets/screenshots/music-quiz/music-quiz-final-leaderboard.png)
+![演示模式下的 Music Quiz 最终排行榜](../../../assets/screenshots/music-quiz/music-quiz-final-leaderboard.png)
 
-Exiting browser full-screen also exits Present mode. Host controls remain in the regular dashboard, so keep another administrator device available if the presentation screen is not convenient to control.
+退出浏览器全屏也会退出演示模式。主持人控制仍保留在常规仪表盘中，因此如果演示屏幕不便于操作，请确保有另一台管理员设备可用。
 
-## Remote Access
+## 远程访问（Remote Access）
 
-When [Remote Access](/settings/remote-access) is enabled, the QR code uses `app.music-assistant.io` and players can join through WebRTC from outside the local network.
+启用[远程访问](/settings/remote-access)后，二维码会使用 `app.music-assistant.io`，玩家可以通过 WebRTC 从局域网之外加入。
 
-When Remote Access is disabled, the join link uses the Music Assistant server's local address and players must be able to reach that address, normally by joining the same network.
+禁用远程访问时，加入链接会使用 Music Assistant 服务器的本地地址，玩家必须能够访问该地址，通常需要加入同一网络。
 
-## Known issues and notes
+## 已知问题与说明
 
-- Music Quiz supports up to 100 joined players. Display names are limited to 40 characters and must be unique, ignoring capitalization.
-- A disconnected player is kept for a 60-second reconnect grace period. After that, the player is removed from an active game and can join again.
-- Guest join codes expire after 8 hours. Reloading an already joined page continues to use its issued guest session while that session remains valid.
-- Some phone browsers suspend background tabs or block audio until the page is tapped. Keep the quiz visible and use **Listen in** again if audio stops.
-- Music Timeline ignores tracks without a usable release year. Compilation or incomplete metadata can also make tracks unsuitable for Trivia.
-- A player who joins during a round cannot answer until the following round.
+- Music Quiz 支持最多 100 名加入的玩家。显示名称最多 40 个字符，且必须唯一（不区分大小写）。
+- 断开连接的玩家会保留 60 秒的重新连接宽限期。之后，该玩家会从正在进行的游戏中移除，并可以重新加入。
+- 访客加入代码在 8 小时后过期。只要访客会话仍然有效，重新加载已加入的页面会继续使用其已发放的访客会话。
+- 某些手机浏览器会挂起后台标签页，或在页面被点击前阻止音频播放。请保持测验页面可见，如果音频停止，请再次使用**一起听**。
+- 音乐时间线会忽略没有有效发行年份的曲目。合辑或不完整的元数据也可能导致曲目不适合知识问答。
+- 在回合中途加入的玩家要到下一回合才能作答。
 
-## Hosting tips
+## 主持技巧
 
-1. Use a TV or large monitor for Present mode and a separate phone or laptop for host controls.
-2. Test the selected speaker or Remote mode before inviting players.
-3. Start with four answer choices and a 30-second timer, then shorten the timer for experienced groups.
-4. Select sources with consistent, complete title, artist, and release-year metadata for better answers.
-5. Use playlists or genres for a broad game, or a small set of albums and artists for a themed quiz.
-6. Enable Remote Access when players may use cellular data or join from another location.
+1. 为演示模式使用电视或大屏幕显示器，并为主持人控制单独准备一部手机或笔记本电脑。
+2. 在邀请玩家之前，先测试所选的扬声器或远程模式。
+3. 从四个答案选项和 30 秒计时开始，然后针对熟练的玩家缩短计时。
+4. 选择歌名、艺术家和发行年份元数据一致且完整的来源，以获得更好的答案。
+5. 使用播放列表或流派来进行宽泛的游戏，或使用少量专辑和艺术家来进行主题测验。
+6. 当玩家可能使用蜂窝数据或从其他地点加入时，启用远程访问。

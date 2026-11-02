@@ -1,60 +1,60 @@
 ---
-title: Sonic Analysis
+title: 声波分析
 ---
 
-# Sonic Analysis Provider  <img src="/assets/icons/sonic-analysis-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 声波分析提供程序（Sonic Analysis Provider）  <img src="/assets/icons/sonic-analysis-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The **Sonic Analysis** provider listens to each track in the library and works out what it actually *sounds* like — how energetic it is, how danceable, how cheerful or melancholy, whether it is mostly acoustic or heavily produced, and so on.
+**声波分析**（Sonic Analysis）提供程序会监听媒体库中的每一首曲目，并分析出它实际的*听感*——它有多大能量、多适合跳舞、是欢快还是忧郁、以原声为主还是经过重度电子制作，等等。
 
-These "sonic fingerprints" let Music Assistant (and other plugins, such as [Sonic Similarity](/plugins/sonic-similarity)) find tracks that sound similar to each other, build smart playlists based on mood, and power features that go beyond what genre tags and artist names can describe.
+这些“声波指纹”让 Music Assistant（以及其他插件，例如 [Sonic Similarity](/plugins/sonic-similarity)）能够找到彼此听感相似的曲目、基于情绪构建智能播放列表，并实现流派标签和艺术家名称所无法描述的功能。
 
-Everything runs locally on the server — no audio is ever sent anywhere. The first time the provider is enabled, about 300 MB of audio-model files are downloaded; after that they are reused.
+所有处理都在服务器本地运行——音频绝不会发送到任何地方。首次启用该提供程序时会下载约 300 MB 的音频模型文件，之后便可重复使用。
 
-## What is worked out for each track
+## 每首曲目会分析出哪些内容
 
-A handful of straightforward measurements:
+一组简单直接的测量指标：
 
-- **Energy** — how loud and full-on the track is overall
-- **Brightness** — how bright or dark it sounds (think shimmering cymbals vs. deep bass)
-- **Harmonic complexity** — how rich and varied the harmony is (a simple two-chord folk song scores low; a dense jazz piece scores high)
-- **Rhythmic regularity** — how steady and predictable the beat is
-- **Loudness** and **peak level** — rough loudness summaries (for proper volume normalization, see the [Loudness Analysis](/audio-analysis/loudness-analysis) provider)
+- **能量（Energy）**——曲目整体上有多响亮、多激烈
+- **明亮度（Brightness）**——听感偏明亮还是偏暗沉（想象闪耀的镲片与深沉低音的区别）
+- **和声复杂度（Harmonic complexity）**——和声有多丰富多变（简单的双和弦民谣得分低；密集的爵士乐作品得分高）
+- **节奏规律性（Rhythmic regularity）**——节拍有多稳定、多可预测
+- **响度（Loudness）**和**峰值电平（peak level）**——粗略的响度概要（若要进行恰当的音量归一化，请参阅 [Loudness Analysis](/audio-analysis/loudness-analysis) 提供程序）
 
-And a set of "feel" scores, each from 0 to 1:
+以及一组“感受”评分，每项范围从 0 到 1：
 
-- **Danceability** — how easy it is to dance to
-- **Valence** — how happy or sad it feels
-- **Arousal** — how calm or intense it feels
-- **Instrumentalness** — how likely it is to have no vocals
-- **Acousticness** — how acoustic vs. electronic/produced it sounds
+- **舞蹈性（Danceability）**——有多适合跟着起舞
+- **情绪效价（Valence）**——听感是欢快还是悲伤
+- **唤醒度（Arousal）**——听感是平静还是激烈
+- **器乐性（Instrumentalness）**——曲目没有人声的可能性有多高
+- **原声性（Acousticness）**——听起来是偏原声还是偏电子/经制作的声音
 
-Alongside these scores, a compact **audio fingerprint** is saved for every track. Other plugins use this fingerprint to find similar-sounding tracks instantly, without having to listen to them all again — the [Sonic Similarity](/plugins/sonic-similarity) plugin is the main consumer today.
+在这些评分之外，还会为每首曲目保存一个紧凑的**音频指纹（audio fingerprint）**。其他插件利用这个指纹可以立即找到听感相似的曲目，而无需将它们全部重新分析一遍——目前 [Sonic Similarity](/plugins/sonic-similarity) 插件是它的主要使用者。
 
-## When analysis runs
+## 分析何时运行
 
-- **Live during playback.** When an in-MA library track that has not been analysed yet is played, it is analysed live during playback
-- **Background scan.** A background job also works through the rest of the local files (SMB, NFS, and WebDAV) over time, so coverage grows even without active listening
-- **Once per track.** Once a track has been analysed, the result is reused on every subsequent play — the analysis is not repeated unless the underlying file changes or a newer model version supersedes the previous one
-- **Tracks without a known duration are skipped** — a known length is required for the analysis to be consistent
+- **播放时实时分析。**当播放 Music Assistant 媒体库中尚未分析过的曲目时，会在播放过程中进行实时分析
+- **后台扫描。**后台任务也会随时间推移逐步处理其余本地文件（SMB、NFS 和 WebDAV），因此即使没有主动收听，覆盖率也会不断提高
+- **每首曲目只分析一次。**曲目一经分析，结果会在之后的每次播放中重复使用——除非底层文件发生变化，或有更新的模型版本取代旧版本，否则不会重复分析
+- **没有已知时长的曲目会被跳过**——分析需要已知时长才能保证结果的一致性
 
-## Tracking progress
+## 跟踪进度
 
-Coverage for every audio analysis provider is shown on a single page under [**Settings → System → Audio analysis**](/settings/core/#audio-analysis).
+所有音频分析提供程序的覆盖率都显示在 [**设置 → 系统 → 音频分析**](/settings/core/#audio-analysis) 下的同一页面上。
 
-![Audio analysis coverage page showing Loudness Analysis, Smart Fades and Sonic Analysis](/assets/screenshots/audio-analysis-view.png)
+![音频分析覆盖率页面，显示响度分析、智能淡入淡出和声波分析](/assets/screenshots/audio-analysis-view.png)
 
-Each row shows the provider's overall coverage, the count of analysed vs. total tracks, and how many are *pending* (waiting to be analysed) or *stale* (analysed by an older model version and due for refresh).
+每一行显示该提供程序的整体覆盖率、已分析曲目数与曲目总数，以及有多少曲目处于*待处理*（等待分析）或*过期*（由较旧模型版本分析、需要刷新）状态。
 
-## How the data is used
+## 数据的使用方式
 
-- **Find similar music** — other plugins use the audio fingerprint to suggest tracks that sound like the one currently playing. The [Sonic Similarity](/plugins/sonic-similarity) plugin uses these fingerprints to power library-wide Similar Tracks, Endless Mix, an "Inspired by recently played" discover row, and optional natural-language search
-- **Mood-based playlists** — the "feel" scores allow playlists to be built around moods, such as "upbeat and danceable" or "calm and acoustic"
+- **查找相似音乐**——其他插件使用音频指纹来推荐与当前播放曲目听感相似的曲目。[Sonic Similarity](/plugins/sonic-similarity) 插件利用这些指纹，为整个媒体库范围的相似曲目（Similar Tracks）、无限混播（Endless Mix）、“受最近播放启发”的发现行以及可选的自然语言搜索提供支持
+- **基于情绪的播放列表**——“感受”评分让播放列表可以围绕情绪来构建，例如“欢快且适合跳舞”或“平静且偏原声”
 
-## Settings
+## 设置
 
-- <b>Analysis quality.</b> Controls how many short snippets of each track are analysed. More snippets give more accurate "feel" scores but take longer to process
-  - **Fast** — one snippet per track. Lowest CPU use; good enough for most libraries
-  - **Balanced** — three snippets per track (about 2.4× the CPU of Fast)
-  - **Thorough** — eight snippets per track (about 6.6× the CPU of Fast). Most useful when accurate *instrumentalness* matters, since a single snippet can miss vocals on tracks with long intros
+- <b>分析质量。</b>控制对每首曲目分析多少个短片段。片段越多，“感受”评分越准确，但处理时间也越长
+  - **快速（Fast）**——每首曲目一个片段。CPU 占用最低；对大多数媒体库来说已经足够好
+  - **均衡（Balanced）**——每首曲目三个片段（CPU 约为“快速”的 2.4 倍）
+  - **彻底（Thorough）**——每首曲目八个片段（CPU 约为“快速”的 6.6 倍）。在需要准确的*器乐性（instrumentalness）*时最为有用，因为单个片段可能会遗漏带有长前奏曲目中的人声
 
-By default, the first snippet is taken about 45 seconds into the track, so intros are skipped. Shorter tracks are handled automatically.
+默认情况下，第一个片段取自曲目开始约 45 秒处，因此前奏会被跳过。较短的曲目会自动处理。

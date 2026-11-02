@@ -4,14 +4,14 @@ title: "Nugs.net"
 
 # Nugs.net <img src="/assets/icons/nugsnet-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming your music from <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a>. Contributed and maintained by <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a>
+Music Assistant 支持从 <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a> 流式播放您的音乐。由 <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a> 贡献并维护
 
-Nugs.net is a subscription service for live concert recordings, run with the artists themselves. Its catalogue leans towards acts with a long history of taped shows, and many concerts appear soon after they are played.
+Nugs.net 是一项现场演唱会录音订阅服务，与艺人本人合作运营。其曲库偏向于拥有长期录音演出历史的艺人，许多演唱会会在演出结束后不久上架。
 
-This source signs Music Assistant in to your account, so the shows you have access to appear in your library.
+此音源会将 Music Assistant 登录到您的账户，因此您有权访问的演出将出现在您的资料库中。
 
 > [!NOTE]
-> A paid subscription is required to use this source
+> 使用此音源需要付费订阅
     
 ## Features
 
@@ -31,15 +31,19 @@ This source signs Music Assistant in to your account, so the shows you have acce
 
 ### Other
 
-## Configuration
+### Other
 
-To configure, input a username and password.
+### 其他
 
-## Known Issues / Notes
+## 配置
 
-Nugs does not support favorite tracks. Similarly, there is no endpoint available to pass a nugs track ID and receive relevant details such as track name or artist.
+要进行配置，请输入用户名和密码。
 
-## Not Yet Supported
+## 已知问题 / 备注
 
-- Nugs.net has a radio stream but this is not available
-- Search
+Nugs 不支持收藏曲目。同样，目前也没有可用的接口来传入 nugs 曲目 ID 并获取曲目名称或艺人等相关详细信息。
+
+## 尚不支持
+
+- Nugs.net 有一个电台流媒体，但目前不可用
+- 搜索

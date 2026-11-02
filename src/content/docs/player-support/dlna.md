@@ -1,41 +1,41 @@
 ---
 title: "DLNA"
-description: A description of the DLNA/UPnP Player Provider
+description: DLNA/UPnP 播放器提供程序（Player Provider）的描述
 ---
 
 # DLNA/UPnP <img src="/assets/icons/dlna-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for uPnP/DLNA based devices. This is a (somewhat) universal standard for streaming audio to supported devices. Due to the very inconsistent implementation of this protocol by manufacturers, some players will work great and others will simply not work at all or need workarounds. Other than that, if you have a device that works, you can enjoy fast local control, lossless audio support and in many cases metadata of your playing media.
+Music Assistant 支持基于 uPnP/DLNA 的设备。这是一种（算是）向支持的设备流式传输音频的通用标准。由于各制造商对该协议的实现非常不一致，有些播放器工作良好，而另一些则完全无法工作或需要变通方法。除此之外，如果您的设备能够正常工作，您可以享受快速的本地控制、无损音频支持，并且在很多情况下还能显示正在播放媒体的元数据。
 
 > [!NOTE]
-> Due to the patchy implementation of the DLNA protocol among manufacturers the most likely working configuration is with the QUEUE FLOW MODE on. If you still have problems after ensuring this is enabled then try each of the different streaming profiles
+> 由于各制造商对 DLNA 协议的实现参差不齐，最有可能正常工作的配置是开启 QUEUE FLOW MODE（队列流动模式）。如果在确保已启用此选项后仍有问题，请逐一尝试每种不同的流式传输配置文件
 
-## Features
+## 功能
 
-- DLNA devices are auto detected in Music Assistant
+- DLNA 设备会在 Music Assistant 中被自动检测到
 
-## Configuration
+## 配置
 
-1. In Music Assistant, go to **Settings → Player Providers** and check whether `DLNA` is already listed; it is added automatically on new installs. If it is missing, click **Add a player provider** and select `DLNA`.
-2. Your DLNA devices will be discovered automatically and will appear in the player list. Note it can take up to 5 minutes for some devices to be discovered.
+1. 在 Music Assistant 中，前往**设置 → 播放器提供程序**，检查 `DLNA` 是否已在列表中；新安装时会自动添加。如果没有，请点击**添加播放器提供程序**并选择 `DLNA`。
+2. 您的 DLNA 设备将被自动发现并出现在播放器列表中。请注意，某些设备可能需要长达 5 分钟才能被发现。
 
-If a device does not appear, work through the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered).
+如果设备未出现，请按照[发现检查清单](/faq/networking/#checklist-my-players-are-not-being-discovered)逐一排查。
 
-## Settings
+## 设置
 
-For information about the settings seen in the MA UI refer to the [Player Provider Settings](/settings/player-provider/) and [Individual Player Settings](/settings/individual-player/) pages, including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). Settings that differ or are specific to DLNA are:
+有关 MA 界面中所见设置的信息，请参阅[播放器提供程序设置](/settings/player-provider/)和[单个播放器设置](/settings/individual-player/)页面，包括[大多数协议共享的设置](/settings/individual-player/#settings-shared-by-most-protocols)。与上述不同或 DLNA 特有的设置包括：
 
-- <b>[Enable queue flow mode](/settings/individual-player/#enable-queue-flow-mode).</b> On by default for DLNA, because most DLNA players cannot queue up the next track themselves
-- <b>Replace Pause with Stop.</b> Some older uPnP players are unable to pause streamed music and ignore the command. Enable this if that occurs and a stop command will be issued for both pause and stop
-- <b>[Sample rates supported by this player](/settings/individual-player/#sample-rates-supported-by-this-player).</b> Rates go up to 192 kHz / 24 bit
-- <b>Allow crossfades between tracks of different sample rates.</b> Should be disabled if audio glitches occur during track transitions. Only shown for players that support gapless playback, and only while flow mode is switched off
+- <b>[启用队列流动模式](/settings/individual-player/#enable-queue-flow-mode)。</b> DLNA 默认开启此选项，因为大多数 DLNA 播放器无法自行将下一曲目加入队列
+- <b>用停止替换暂停。</b> 一些较旧的 uPnP 播放器无法暂停流式音乐并会忽略该命令。如果出现这种情况，请启用此选项，这样暂停和停止都会发送停止命令
+- <b>[此播放器支持的采样率](/settings/individual-player/#sample-rates-supported-by-this-player)。</b> 采样率最高可达 192 kHz / 24 位
+- <b>允许不同采样率的曲目之间进行交叉淡入淡出。</b> 如果在曲目切换期间出现音频故障，应禁用此选项。仅对支持无缝播放的播放器显示，且仅在流动模式关闭时显示
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- Some devices need special workarounds to enable playback. If playback is not working, look at the Music Assistant logs for clues and report an issue with these logs provided. Unfortunately due to the difficulty in resolving these issues they are low priority. If your device supports a different protocol then use that instead of raising an issue
-- If your device is not found then try turning on the option `allow network scan for discovery`. Note it can take up to 5 mins for players to be discovered (this also applies if a device is turned back on)
-- DLNA speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, [queue flow mode](/faq/tech-info/#track-queueing) must be enabled in the player's settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
-- It is possible to group DLNA players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
-- Although Sonos devices are strictly also based on DLNA, they created their own extra layer on top of that such as crossfade support and many other goodies. It is therefore advised to use the Sonos Player provider with Music Assistant instead of the DLNA provider. MA disables any discovered Sonos DLNA devices by default
-- In order to support a greater number of players, different streaming profiles are available. If the player doesn't work, stops mid stream or has other playback issues then change the player setting `HTTP Profile used for sending audio` and try each option until the player works
-- Some players (e.g. JRiver Media Center, Naim NDX) do not support FLAC streams, or only support FLAC at certain quality settings (e.g. 44.1/16). If the play command fails, there is no sound, or you hear distortion, try changing `Output Codec to use for streaming audio to the player` (in the player settings under ADVANCED SETTINGS) to one of the other options
+- 某些设备需要特殊的变通方法才能启用播放。如果播放不工作，请查看 Music Assistant 日志寻找线索，并提供这些日志报告问题。遗憾的是，由于解决这些问题比较困难，它们的优先级较低。如果您的设备支持其他协议，请使用该协议，而不要提交问题报告
+- 如果未找到您的设备，请尝试开启 `allow network scan for discovery` 选项。请注意，播放器可能需要长达 5 分钟才能被发现（设备重新开机后也是如此）
+- DLNA 扬声器不支持音频交叉淡入淡出。如果您需要交叉淡入淡出和/或完整的无缝播放支持，必须在播放器设置中启用[队列流动模式](/faq/tech-info/#track-queueing)。启用流动模式可能会解决播放问题，但可能会带来禁用设备上实际物理按钮和/或元数据显示的副作用
+- 可以通过[通用分组](/faq/groups/#universal-groups)将 DLNA 播放器分组，但它们可能无法同步播放
+- 虽然 Sonos 设备严格来说也基于 DLNA，但他们在此之上创建了自己的额外功能层，例如交叉淡入淡出支持和许多其他特性。因此建议在 Music Assistant 中使用 Sonos 播放器提供程序，而不是 DLNA 提供程序。MA 默认禁用所有发现的 Sonos DLNA 设备
+- 为了支持更多的播放器，可以使用不同的流式传输配置文件。如果播放器不工作、流中途停止或有其他播放问题，请更改播放器设置 `HTTP Profile used for sending audio` 并逐一尝试每个选项，直到播放器正常工作
+- 某些播放器（例如 JRiver Media Center、Naim NDX）不支持 FLAC 流，或仅支持特定质量设置的 FLAC（例如 44.1/16）。如果播放命令失败、没有声音或听到失真，请尝试将 `Output Codec to use for streaming audio to the player`（位于播放器设置中的 ADVANCED SETTINGS 下）更改为其他选项之一

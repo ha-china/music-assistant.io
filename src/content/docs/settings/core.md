@@ -1,162 +1,161 @@
 ---
-title: "System Settings"
+title: "系统设置"
 ---
 
-# MA System Settings <img src="/assets/icons/settings-core-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# MA 系统设置 <img src="/assets/icons/settings-core-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The core server settings are set with typical defaults that should work for most users. However, there are settings available for each of the core controllers and these are outlined below. All controllers have a setting for the log level in the advanced section. There may be slight differences in the settings between the Home Assistant App and docker versions of the servers.
+核心服务器设置采用了适用于大多数用户的典型默认值。不过，每个核心控制器都有可用的设置项，下面将逐一列出。所有控制器在高级部分都有日志级别设置。Home Assistant App 版本与 docker 版本的服务器在设置上可能略有差异。
 
 ![image](/assets/screenshots/settings-core.png)
 
-## Background Tasks (configuration)
+## 后台任务（配置）
 
-- <b>Maximum number of concurrent background tasks.</b> Defaults to 2. This controls how many background tasks run simultaneously. Higher numbers mean higher demands on the system's resources and can slow the system down. Setting is only visible when the advanced toggle is on
+- <b>最大并发后台任务数。</b>默认为 2。此设置控制同时运行多少个后台任务。数值越大，对系统资源的需求越高，可能会拖慢系统。该设置仅在高级开关开启时可见
 
-## Cache
+## 缓存
 
-- A button is available to clear the cache used by Music Assistant. Do not routinely use this button as it increases [API usage](/usage/#online-metadata-sources) and slows down the MA experience
+- 提供了一个按钮，用于清除 Music Assistant 所使用的缓存。请勿频繁使用此按钮，因为它会增加 [API 使用量](/usage/#online-metadata-sources)并降低 MA 的使用体验
 
-## Discovery
+## 发现
 
-- <b>Allow network discovery for UPnP discovery.</b> When enabled, MA uses an additional broadcast based discovery method ([SSDP](/faq/networking/#the-jargon-translated)). Turn this on if some UPnP/DLNA players are not being found by regular discovery (see the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered))
-- <b>MDNS/Zeroconf discovery interface(s).</b> Options are `Default interface [default]` and `All interfaces`. Used in custom network setups when multiple network interfaces are used. Setting is only visible when the advanced toggle is on
+- <b>允许网络发现以进行 UPnP 发现。</b>启用后，MA 将使用一种额外的基于广播的发现方法（[SSDP](/faq/networking/#the-jargon-translated)）。如果某些 UPnP/DLNA 播放器无法通过常规发现找到，请开启此选项（参见[发现检查清单](/faq/networking/#checklist-my-players-are-not-being-discovered)）
+- <b>MDNS/Zeroconf 发现接口。</b>选项包括 `Default interface [default]` 和 `All interfaces`。在使用多个网络接口的自定义网络环境中使用。该设置仅在高级开关开启时可见
 
-## Metadata
+## 元数据
 
-- <b>Preferred language.</b> Preferred language for metadata. If the selected language is unavailable then English will be used
-- <b>Enable metadata retrieval from online metadata providers.</b> Enables the lookup of information that is not available locally. MA does not modify any existing metadata but supplements it
-- <b>Use local genre metadata only when available.</b> Online metadata providers will not add genres to items that already have a genre from a local source such as a file tag or NFO file. Items with no local genre still receive genres from online providers as usual
-- <b>Enable artist/track artwork lookup for radio streams.</b> Enables the lookup of album or artist imagery when the station supplies `Artist - Track` metadata
-- <b>Maximum thumbnail cache size(MB).</b> When the cache exceeds this value the oldest thumbnails are automatically removed
+- <b>首选语言。</b>元数据的首选语言。如果所选语言不可用，则将使用英语
+- <b>启用从在线元数据提供商获取元数据。</b>启用对本地不可用信息的查找。MA 不会修改任何现有元数据，只是对其进行补充
+- <b>仅在可用时使用本地流派元数据。</b>在线元数据提供商不会为已有本地来源流派（如文件标签或 NFO 文件）的项目添加流派。没有本地流派的项目仍会照常从在线提供商获取流派
+- <b>启用电台流媒体的艺术家/曲目图片查找。</b>当电台提供 `Artist - Track` 元数据时，启用专辑或艺术家图片的查找
+- <b>最大缩略图缓存大小（MB）。</b>当缓存超过此值时，最早的缩略图将被自动移除
 
-## Music
+## 音乐
 
-- <b>Advanced - Reset Library Database.</b> Selecting this button will erase the [MA library](/usage/#the-library) database. This is a destructive irreversible action! This should only be used if database corruption is confirmed. All library items including playlists stored in the database will be lost and will need to be recreated. A rescan of the music sources will rebuild the database with the information contained on those providers. Do not use this routinely. For problems with individual items use the REMOVE FROM LIBRARY menu option
+- <b>高级 - 重置媒体库数据库。</b>选择此按钮将清除 [MA 媒体库](/usage/#the-library)数据库。这是一个破坏性的不可逆操作！只有在确认数据库损坏时才应使用。数据库中存储的所有媒体库项目（包括播放列表）都将丢失，需要重新创建。重新扫描音乐源时，将使用这些提供商所包含的信息重建数据库。请勿经常使用此功能。若个别项目出现问题，请使用从媒体库中移除（REMOVE FROM LIBRARY）菜单选项
 
-## Players
+## 播放器
 
-- <b>Volume step size.</b> Defaults to zero which enables an adapative mode where the step size is smaller at the ends of the range. When set, this determines how much the volume change when an up or down command is received (e.g. mouse wheel click, slider tap, HA action)
-- <b>Announcement text to speech engine.</b> Which engine is used to generate [announcements](/integration/announcements/) sent from within Music Assistant. The engines on offer come from your plugins, such as the [Home Assistant Plugin](/ha-plugin/#ai-and-text-to-speech-engines)
+- <b>音量步进大小。</b>默认为零，表示启用自适应模式，即音量范围两端的步进较小。设置后，此项决定收到增大或减小命令时（例如鼠标滚轮点击、滑块点击、HA 动作）音量的变化幅度
+- <b>公告文字转语音引擎。</b>用于生成从 Music Assistant 内发出的[公告](/integration/announcements/)的引擎。可用的引擎来自您的插件，例如 [Home Assistant 插件](/ha-plugin/#ai-and-text-to-speech-engines)
 
-## Player Queues
+## 播放器队列
 
-The behaviour when playing or enqueuing items is determined by the settings in this section.
+播放或加入队列时的行为由本节中的设置决定。
 
 ![image](/assets/screenshots/settings-player-queues.png)
 
-Additionally, there are options which can be set on a global level which can be overridden on a per queue basis. 
+此外，还有一些可以在全局级别设置的选项，这些选项可以在每个队列的基础上被覆盖。 
 
 <a href="/assets/screenshots/settings-player-queues2.png"><img src="/assets/screenshots/settings-player-queues2.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
-Smart Shuffle enhances standard shuffle behavior by intelligently reducing repetition. Instead of selecting tracks purely at random, songs and artists that have been played recently are deprioritized, resulting in a more evenly distributed listening experience and reducing the likelihood of the same tracks being repeated when playlists are replayed. Smart Shuffle is always applied when playing a dynamic playlist, regardless of this setting.
+智能随机播放（Smart Shuffle）通过智能地减少重复来增强标准随机播放功能。它不再纯粹随机地选择曲目，而是降低近期播放过的歌曲和艺术家的优先级，从而带来更均匀分布的聆听体验，并减少重放播放列表时相同曲目重复出现的可能性。播放动态播放列表时，无论此设置如何，都会始终应用智能随机播放。
 
-Autoplay has four options as follows:
-- <b>Automatic — similar tracks, falling back to your library (default).</b> New tracks similar to what was recently played are requested from the music providers. If no provider is able to supply similar-track recommendations (for example, when only local files are used), an endless mix drawn from the library is used instead, so playback will not stop
+自动播放（Autoplay）有以下四个选项：
+- <b>自动 — 相似曲目，回退到您的媒体库（默认）。</b>从音乐提供商处请求与近期播放内容相似的新曲目。如果没有提供商能够提供相似曲目推荐（例如仅使用本地文件时），则改用从媒体库生成的无限混音，因此播放不会停止
 
-- <b>Similar to what you played.</b> Tracks that resemble the most recently played items in the queue are fetched from the connected music providers and appended to the queue. This mode relies on a provider that offers similar-track recommendations; if none is available, no tracks are added
+- <b>与您播放的内容相似。</b>从已连接的音乐提供商处获取与队列中最近播放项目相似的曲目，并将其追加到队列中。此模式依赖于提供相似曲目推荐的提供商；如果没有可用的提供商，则不会添加任何曲目
 
-- <b>Infinite mix from your library.</b> Tracks are selected from the local library, with preference given to those that have been played the least. The selection is biased towards the genres of the items that were played most recently; when too few matching tracks are found, the mix is topped up with random tracks from across the whole library.
+- <b>来自您媒体库的无限混音。</b>曲目从本地媒体库中选取，优先选取播放次数最少的曲目。选取会偏向最近播放项目的流派；当找到的匹配曲目过少时，会用整个媒体库中的随机曲目补足混音。
 
-- <b>Tracks from a playlist.</b> The playlist the user has selected in the box below will be played
+- <b>来自播放列表的曲目。</b>将播放用户在下方框中选择的播放列表
 
-Crossfade can be turned on and off via the button at the top of the [Now Playing view](/ui/#now-playing-view). Which crossfade mode will be enabled can be set here on a global level but can be overridden on a per player basis as well. [Smart crossfade](/audio-analysis/smart-fades/) is the default. Smart Fades automatically analyzes each track’s tempo and beats to create seamless, musically aligned transitions between songs. It adjusts BPM, aligns downbeats, and applies EQ-based mixing for smoother fades—falling back to standard crossfade if analysis fails. Standard crossfade smoothly overlaps the end of one song with the start of the next using a simple volume fade. This is the only place that the standard crossfade duration can be set.
+交叉淡入淡出（crossfade）可以通过[正在播放视图](/ui/#now-playing-view)顶部的按钮开启或关闭。此处可以在全局级别设置启用哪种交叉淡入淡出模式，但也可以在每个播放器的基础上进行覆盖。默认为[智能交叉淡入淡出](/audio-analysis/smart-fades/)。Smart Fades 会自动分析每首曲目的速度和节拍，以在歌曲之间创建无缝且符合音乐性的过渡。它会调整 BPM、对齐下拍，并应用基于 EQ 的混音以实现更平滑的过渡——如果分析失败，则回退到标准交叉淡入淡出。标准交叉淡入淡出使用简单的音量渐变，将一首歌的结尾与下一首歌的开头平滑重叠。这是唯一可以设置标准交叉淡入淡出时长的地方。
 
-[Volume Normalization](/faq/how-to/#use-volume-normalization-how-does-it-work) is enabled by default and works to eliminate volume differences between media items and sources. The target level is set in the [Streams Queue Playback Settings](#queue-playback)
+[音量标准化](/faq/how-to/#use-volume-normalization-how-does-it-work)默认启用，用于消除媒体项目与音源之间的音量差异。目标电平在[流媒体队列播放设置](#queue-playback)中设置
 
-## Streams
+## 流媒体
 
-All settings in this section should be considered advanced and will not need to be adjusted in the majority of cases. Users with complicated network setups will find settings in this section that will be useful. If MA appears to be setup correctly but no playback occurs then check the settings in this section.
+本节中的所有设置都应视为高级设置，在大多数情况下无需调整。网络设置复杂的用户会在本节中找到有用的设置。如果 MA 看起来设置正确但没有发生播放，请检查本节中的设置。
 
-### Queue Playback
+### 队列播放
 
-<b>Audio buffer size.</b> Controls how much audio is buffered in memory. A larger buffer improves playback stability and seeking but uses more memory. The options are `Maximum [default]`, `Minimal` and `Balanced`. The options are filtered depending upon system RAM. Minimal (60s buffer) is always available, Balanced (300s) requires a nominal 4 GB of RAM, and Maximum (1200s) requires a nominal 8 GB of RAM. If total memory can't be determined then all three presets are offered although the default in that case is, conservatively, Minimal.
+<b>音频缓冲区大小。</b>控制在内存中缓冲多少音频。较大的缓冲区可以提高播放稳定性和进度跳转（seek）体验，但会占用更多内存。选项包括 `Maximum [default]`、`Minimal` 和 `Balanced`。选项会根据系统内存进行过滤。Minimal（60 秒缓冲）始终可用，Balanced（300 秒）名义上需要 4 GB 内存，Maximum（1200 秒）名义上需要 8 GB 内存。如果无法确定总内存，则会提供全部三个预设，尽管在这种情况下默认值是保守的 Minimal。
 
-This section contains settings which affect the [Volume Normalization](/faq/tech-info/#volume-normalization) functionality of MA. This functionality is enabled by default and settings are also available on an [individual queue basis](/usage/#the-queue). There are two of these settings, one for tracks, one for radio, and you set them independently.
+本节包含影响 MA [音量标准化](/faq/tech-info/#volume-normalization)功能的设置。此功能默认启用，并且也可以在[单个队列](/usage/#the-queue)的基础上进行设置。这类设置有两个，一个用于曲目，一个用于电台，您可以分别独立设置。
 
-The best result comes from a loudness measurement of the audio. Tracks tagged with ReplayGain or R128 loudness values supply one directly, and Music Assistant uses those in preference to measuring anything itself. Everything else it measures on its own: your local library automatically in a nightly background scan, and anything played, including streaming services, while it plays, so those are covered from the second play onwards. The options differ mainly in what happens before a value exists:
+最佳效果来自对音频的响度测量。带有 ReplayGain 或 R128 响度值标签的曲目会直接提供该值，Music Assistant 会优先使用这些值，而不是自己进行任何测量。其余内容它都会自行测量：您的本地媒体库会在每夜后台扫描中自动测量，而任何播放的内容（包括流媒体服务）则在播放过程中进行测量，因此从第二次播放起就已覆盖。这些选项的主要区别在于尚无测量值时的处理方式：
 
-- Fallback Dynamic (default) — use the measurement when there is one, otherwise adjust loudness on the fly. Always evens things out; the on-the-fly path is slightly less precise
-- Fallback Fixed Gain — use the measurement when there is one, otherwise apply the fixed adjustment below
-- Measurement Only — only adjust when a measurement exists. Anything not yet analysed plays at its original loudness
-- Dynamic — always adjust on the fly, ignoring measurements
-- Fixed Gain — never analyse; apply the same fixed adjustment to everything
-- Disabled — leave loudness untouched
+- 回退动态（Fallback Dynamic，默认）— 有测量值时使用测量值，否则即时调整响度。总能使音量趋于一致；即时调整的路径精确度略低
+- 回退固定增益（Fallback Fixed Gain）— 有测量值时使用测量值，否则应用下方的固定调整
+- 仅测量（Measurement Only）— 仅在存在测量值时进行调整。尚未分析的内容按其原始响度播放
+- 动态（Dynamic）— 始终即时调整，忽略测量值
+- 固定增益（Fixed Gain）— 从不分析；对所有内容应用相同的固定调整
+- 禁用（Disabled）— 不改变响度
 
-Once a measurement exists it is used, whichever of the two fallback options is selected. Two other things are worth knowing: live radio is rarely measured, so the radio setting in practice runs on whichever fallback you choose, and volume normalization also has to be switched on for the player itself. These settings control how it's done, not whether. How the value is chosen, and when album gain is used instead of track gain, is covered on the [Technical Information](/faq/tech-info/#volume-normalization) page.
+一旦存在测量值，无论选择了两个回退选项中的哪一个，都会使用它。另外有两点值得了解：直播电台很少被测量，因此电台设置实际上运行于您选择的回退方式；此外，播放器本身也必须开启音量标准化。这些设置控制的是如何进行调整，而不是是否进行调整。关于如何选择数值，以及何时使用专辑增益而非曲目增益，请参阅[技术信息](/faq/tech-info/#volume-normalization)页面。
 
-Fixed/fallback gain adjustment — tracks / radio
+固定/回退增益调整 — 曲目 / 电台
 
-How much to raise or lower the volume, in dB, whenever the fixed-gain path is used. That's either the Fixed Gain method, or Fallback Fixed Gain when no measurement is available. Negative values make things quieter. The range is −20 to +10 dB and the default is −6. Other methods ignore it. Again, separate values exist for tracks and radio.
+在使用固定增益路径时，将音量提高或降低多少（以 dB 为单位）。这要么是固定增益（Fixed Gain）方法，要么是在没有测量值可用时的回退固定增益（Fallback Fixed Gain）。负值会使音量更安静。范围为 −20 到 +10 dB，默认值为 −6。其他方法会忽略此项。同样，曲目和电台有各自独立的数值。
 
 ![image](/assets/screenshots/settings-streamserver-audio.png)
 
-- <b>Allow crossfade between tracks from the same album.</b> Not enabled by default as it may not be desirable particularly for live albums
+- <b>允许在同一专辑的曲目之间交叉淡入淡出。</b>默认不启用，因为这可能并不符合预期，尤其是对于现场专辑
 
-### Streamserver Advanced Settings 
+### 流服务器高级设置 
 
-#### Generic
+#### 通用
 
-- The <b>Published IP address</b> and <b>TCP Port</b> are normally populated automatically and set to `auto`. This is the address Music Assistant advertises to stream clients (including [Sendspin](/player-support/sendspin/)) as the place to connect to for audio. It must be a literal IP address reachable by players on your local network, not a hostname, domain name, or URL. If there are issues with playback, confirm the IP address shown is reachable by the players on the local network. The port must be available.
-- <b>Bind to IP/interface.</b> Use in complex network setups to start the streamserver on a specific interface
+- <b>发布的 IP 地址</b>和 <b>TCP 端口</b>通常会自动填充并设置为 `auto`。这是 Music Assistant 向流客户端（包括 [Sendspin](/player-support/sendspin/)）公布的、用于连接音频的地址。它必须是本地网络上的播放器可以访问的字面 IP 地址，而不是主机名、域名或 URL。如果播放出现问题，请确认所显示的 IP 地址可以被本地网络上的播放器访问。该端口必须可用。
+- <b>绑定到 IP/接口。</b>在复杂的网络环境中使用，用于在特定接口上启动流服务器
 
-#### Audio Analysis Options
+#### 音频分析选项
 
-- <b>SmartFades Log Level.</b> Specific log level for the Smart Fades mixer and analyzer
-- <b>Background analysis concurrency.</b> Maximum number of tracks analysed concurrently during the nightly background scan. Default is 1 and should only be increased on more powerful systems
+- <b>SmartFades 日志级别。</b>Smart Fades 混音器和分析器的专用日志级别
+- <b>后台分析并发数。</b>每夜后台扫描期间并发分析的曲目数量上限。默认为 1，仅在性能更强的系统上才应调高
 
-## Webserver
+## Web 服务器
 
-- <b>Server Name.</b> The name of this Music Assistant instance, shown in the UI and announced on the network. Useful when you run more than one server. Clear the field to restore the default name
-- <b>Allow User Self-Registration.</b> Allows users to create accounts by logging in with Home Assistant. Only appears when the Home Assistant plugin is added in Music Assistant, since the login goes through your HA instance
+- <b>服务器名称。</b>此 Music Assistant 实例的名称，显示在 UI 中并在网络上公告。当您运行多个服务器时很有用。清空此字段可恢复默认名称
+- <b>允许用户自行注册。</b>允许用户通过登录 Home Assistant 来创建帐户。只有在 Music Assistant 中添加了 Home Assistant 插件时才会显示此项，因为登录要通过您的 HA 实例进行
 
-The settings below are advanced and only appear when advanced settings are enabled in the UI
+以下设置为高级设置，只有在 UI 中启用了高级设置后才会显示
 
-- <b>Internal URL.</b> The address devices and apps on your local network use to reach the web UI and API. Leave this on `auto` unless you have a reason not to. Music Assistant works the address out itself from the server's IP address and the TCP port below. Set it manually only when clients need to reach Music Assistant at a different address than the server sees, behind a reverse proxy, for example. In that case enter the full address including the port, such as `https://music.example.com:443`. The TCP Port field is separate and still applies, as it's the port Music Assistant itself listens on, which behind a proxy is usually not the port in your Internal URL
-- <b>External URL.</b> The address Music Assistant can be reached at from outside your local network, for example through a reverse proxy. Leave empty if your server isn't reachable from the internet
-- <b>TCP Port.</b> The port the webserver runs on (default `8095`). If you change it, and you set the Internal URL manually, change the port there as well
-- <b> Enable SSL/TLS.</b> Serves the web UI and API over HTTPS. When enabled, two additional fields are revealed for the `SSL Certificate` and `SSL Private Key`. Both must be PEM format, and you can either paste the file contents or enter an absolute path (e.g. `/ssl/fullchain.pem`). RSA and ECDSA are both supported and the private key must be unencrypted. Use the `Verify` button to check the certificate and key are valid and match. If the certificate can't be loaded, the webserver keeps running unencrypted and shows a warning
-- <b>Advanced-Bind to IP/Interface.</b> Start the webserver on this specific interface. The default `0.0.0.0` binds to all interfaces (IPv4 and IPv6). Change this only in setups such as binding to a docker-internal network behind a reverse proxy
+- <b>内部 URL。</b>本地网络上的设备和应用用于访问 Web UI 和 API 的地址。除非有特殊原因，否则请保持 `auto`。Music Assistant 会根据服务器的 IP 地址和下方的 TCP 端口自行计算出该地址。仅当客户端需要通过与服务器所见不同的地址访问 Music Assistant 时（例如在反向代理后面）才手动设置。在这种情况下，请输入包含端口的完整地址，例如 `https://music.example.com:443`。TCP 端口字段是独立的并且仍然有效，因为它是 Music Assistant 自身监听的端口，而在代理后面这通常不是内部 URL 中使用的端口
+- <b>外部 URL。</b>从本地网络外部（例如通过反向代理）访问 Music Assistant 的地址。如果您的服务器无法从互联网访问，请留空
+- <b>TCP 端口。</b>Web 服务器运行的端口（默认 `8095`）。如果您更改了它，并且手动设置了内部 URL，请同时更改那里的端口
+- <b> 启用 SSL/TLS。</b>通过 HTTPS 提供 Web UI 和 API。启用后，会显示两个额外字段：`SSL Certificate` 和 `SSL Private Key`。两者都必须是 PEM 格式，您可以粘贴文件内容，或输入绝对路径（例如 `/ssl/fullchain.pem`）。同时支持 RSA 和 ECDSA，且私钥必须未加密。使用 `Verify` 按钮检查证书和密钥是否有效且匹配。如果无法加载证书，Web 服务器将继续以未加密方式运行并显示警告
+- <b>高级 - 绑定到 IP/接口。</b>在此特定接口上启动 Web 服务器。默认值 `0.0.0.0` 会绑定到所有接口（IPv4 和 IPv6）。仅在特定场景下更改此项，例如绑定到反向代理后面的 docker 内部网络
 
-## Diagnostics
+## 诊断
 
-This opens a view where the 150 line tail of the Music Assistant log can be seen and the diagnostics report or full log can be downloaded.
+这会打开一个视图，可以在其中查看 Music Assistant 日志的最后 150 行，并可以下载诊断报告或完整日志。
 
-## Background Tasks
+## 后台任务
 
-This opens a view where the completed and upcoming background tasks can be seen. This is where the sync interval for the [automatically generated playlists](/usage/#playlists) is set. Any failures will be clearly indicated and log snippets can be inspected. Detailed information is obtained by clicking on a task. There is a ⋮ menu on the right which allows for:
-- Viewing the task details
-- Editing the task schedule. Frequency can be Hourly, Daily or Weekly. A precise time can be specified for the task for Daily and Weekly frequencies
-- Running of the task now
-- Disabling the schedule
+这会打开一个视图，可以在其中查看已完成和即将执行的后台任务。[自动生成的播放列表](/usage/#playlists)的同步间隔就是在这里设置的。任何失败都会被明确标示，并且可以查看日志片段。点击任务可获得详细信息。右侧有一个 ⋮ 菜单，可用于：
+- 查看任务详情
+- 编辑任务计划。频率可以为每小时、每天或每周。对于每天和每周频率，可以为任务指定精确的时间
+- 立即运行任务
+- 禁用计划
 
-Administrators can see all tasks on the server whereas Users can only see tasks created by them (e.g. playlist creation).
+管理员可以查看服务器上的所有任务，而普通用户只能查看自己创建的任务（例如播放列表创建）。
 
 ![image](/assets/screenshots/background-tasks.png)
 
-## Genre Management
+## 流派管理
 
-Administrators can access the **Genre Management** page from the settings menu. This page provides tools for maintaining the genre database. The [Genres](/genres/#managing-genres) page describes these tools and the rest of the genre system in full.
+管理员可以从设置菜单访问**流派管理**页面。此页面提供维护流派数据库的工具。[流派](/genres/#managing-genres)页面完整描述了这些工具以及流派系统的其余部分。
 
 ![image](/assets/screenshots/genres/genre-management-overview.png)
 
-## Genre Library Administration 
+## 流派库管理 
 
-Displays statistics about the genres in the library. Genres can be excluded from use via the ⋮ menu
+显示媒体库中流派的统计信息。可以通过 ⋮ 菜单将流派排除在可用范围之外
 
-### Restore Missing Defaults
+### 恢复缺失的默认流派
 
-Checks for any built-in default genres that are missing from your library and restores them. This does not affect any existing genres or their mappings.
+检查媒体库中缺失的内置默认流派并将其恢复。这不会影响任何现有流派或其映射。
 
-### Full Restore
+### 完全恢复
 
-A destructive operation that completely rebuilds the genre database from defaults. This removes all custom genres and restores the full set of built-in genres.
+一种破坏性操作，会从默认值完全重建流派数据库。这将移除所有自定义流派并恢复完整的内置流派集合。
 
 > [!CAUTION]
-> Full restore deletes all custom genres, aliases, and media mappings. This action requires a two-step confirmation to prevent accidental data loss.
+> 完全恢复会删除所有自定义流派、别名和媒体映射。此操作需要两步确认，以防止意外的数据丢失。
 
-## Audio Analysis
+## 音频分析
 
-Administrators can access the **Audio Analysis** page from the settings menu. This page allows examination of the progress of the installed audio analysis providers, namely [Loudness Analysis](/audio-analysis/loudness-analysis/), [Smart Fades](/audio-analysis/smart-fades/), [Sonic Analysis](/audio-analysis/sonic-analysis/) and [AcoustID Lookup](/audio-analysis/acoustid/). The stale number is the number of tracks that need to be re-analysed due to a version change. There is also a section which shows failures and the reason for the failure. Each line can be individually deleted to unblock the file and allow it to be rescanned.
+管理员可以从设置菜单访问**音频分析**页面。此页面可以查看已安装的音频分析提供商的进度，即[响度分析](/audio-analysis/loudness-analysis/)、[Smart Fades](/audio-analysis/smart-fades/)、[声波分析](/audio-analysis/sonic-analysis/)和 [AcoustID 查询](/audio-analysis/acoustid/)。过期（stale）数量是指由于版本变更而需要重新分析的曲目数量。还有一个部分显示失败情况及其失败原因。每一行都可以单独删除，以解除对相应文件的阻止并允许重新扫描。
 
 ![image](/assets/screenshots/audio-analysis-view.png)
-

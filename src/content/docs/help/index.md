@@ -1,118 +1,118 @@
 ---
-title: "I want to help"
+title: "我想提供帮助"
 ---
 
-# I want to help <img src="/assets/icons/help-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 我想提供帮助 <img src="/assets/icons/help-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant is built by the people who use it. Most of the ways to help don't involve writing code, so they come first on this page.
+Music Assistant 是由使用它的人共同构建的。大多数提供帮助的方式都不需要编写代码，因此它们在本页中排在最前面。
 
-Your first contribution doesn't need to be big. A typo fixed, ten strings translated, one question answered on Discord: each of those is a real contribution, and each one teaches you how the project works. Start small, and the next one is easier.
+你的第一次贡献不需要很大。修复一个错别字、翻译十个字符串、在 Discord 上回答一个问题：每一次都是真正的贡献，每一次都能让你了解项目是如何运作的。从小事做起，下一次就会更容易。
 
-If you'd rather support the project financially, see [Donations](#donations) at the bottom of this page.
+如果你更希望通过资金支持项目，请参阅本页底部的[捐赠](#donations)。
 
 > [!TIP]
-> **Not sure where to start?**
+> **不确定从哪里开始？**
 >
-> You don't need permission to begin, but it helps to know where to ask. Join the <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Music Assistant Discord</a> and say what you'd like to help with. "I'd like to help with X, where do I start?" is a perfectly good first message.
+> 你不需要获得许可就可以开始，但知道该去哪里提问会有所帮助。加入 <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Music Assistant Discord</a> 并说明你想帮忙做什么。“我想帮忙做 X，我该从哪里开始？”这是一个非常好的开场白。
 >
-> Many paths below use GitHub. A free <a href="https://github.com/signup" target="_blank" rel="noopener noreferrer">GitHub account</a> is all you need, and most changes can be made straight from your browser.
+> 下面的许多途径都需要使用 GitHub。你只需要一个免费的 <a href="https://github.com/signup" target="_blank" rel="noopener noreferrer">GitHub 账户</a>，而且大多数更改都可以直接在浏览器中完成。
 
-## Without writing code
+## 无需编写代码
 
-### Test the beta
+### 测试测试版
 
-A new beta comes out most Fridays, and every stable release goes through a beta cycle first. Running it and reporting what breaks keeps bugs out of everyone else's home. The beta, nightly and stable apps each keep their own data, so you can run the beta alongside stable and go back to stable at any time.
+几乎每个周五都会发布新的测试版，每个稳定版发布前都会先经历一个测试版周期。运行测试版并报告出现的问题，可以避免这些 bug 影响其他人的家庭环境。测试版、每夜版和稳定版应用各自保留独立的数据，因此你可以将测试版与稳定版并行运行，并随时切换回稳定版。
 
-- **You need:** an installation where a problem is an annoyance rather than a disaster, and a GitHub account to report what you find.
-- **Start here:** [Release Cycle](/release/#beta-releases), then [running versions side by side](/release/#running-parallel-server-versions). The beta has its own documentation at <a href="https://beta.music-assistant.io/" target="_blank" rel="noopener noreferrer">beta.music-assistant.io</a>.
+- **你需要：** 一个即使出现问题也只是带来麻烦而不会造成灾难的安装环境，以及一个用于报告发现的 GitHub 账户。
+- **从这里开始：** [发布周期](/release/#beta-releases)，然后是[并行运行版本](/release/#running-parallel-server-versions)。测试版在 <a href="https://beta.music-assistant.io/" target="_blank" rel="noopener noreferrer">beta.music-assistant.io</a> 有自己独立的文档。
 
 > [!CAUTION]
-> Data from a newer channel can't be used by an older one, so beta data can't be carried back to stable. Removing an app also deletes its data. Take a backup first.
+> 较新通道的数据无法被较旧的通道使用，因此测试版的数据无法回退到稳定版。移除应用也会删除其数据。请先进行备份。
 
-### Report a bug well
+### 提交高质量的 Bug 报告
 
-A clear report with steps to reproduce saves the developers a lot of time, often more than the fix itself takes.
+一份包含复现步骤的清晰报告能为开发者节省大量时间，这往往比修复本身花费的时间还要多。
 
-- **You need:** a GitHub account.
-- **Start here:** read [Troubleshooting](/faq/troubleshooting/), search the <a href="https://github.com/music-assistant/support/issues?q=is%3Aissue" target="_blank" rel="noopener noreferrer">open and closed issues</a>, then open a new one in the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue tracker</a>. Say which version and channel you run, which music source and player are involved, what you did, what you expected, and attach the log. [Support](/support/) has more on where to ask what.
+- **你需要：** 一个 GitHub 账户。
+- **从这里开始：** 阅读[故障排除](/faq/troubleshooting/)，搜索<a href="https://github.com/music-assistant/support/issues?q=is%3Aissue" target="_blank" rel="noopener noreferrer">已开启和已关闭的 issue</a>，然后在 <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issue 跟踪器</a>中开启一个新的 issue。说明你运行的版本和通道、涉及的音乐源和播放器、你执行了什么操作、你的预期是什么，并附上日志。[支持](/support/)页面提供了更多关于在哪里提问的指南。
 
-Already reported? Adding "same here, on version X with player Y" to an existing issue, or confirming that a fix works, is just as useful. Don’t overdo it, though: once several people have confirmed an issue, more +1s just add noise.
+已经有人报告过了？在现有的 issue 中添加“我也是这样，版本 X，播放器 Y”，或者确认某个修复有效，同样非常有用。不过不要过度：一旦有几个人确认了某个问题，更多的 +1 只会增加噪音。
 
-Using AI to help write a report is fine, but read and check it before you post, and use the issue template rather than working around it. Reports that look like unreviewed AI output, or that were posted by an automated agent, will be closed. See the <a href="https://github.com/music-assistant/.github/blob/main/AI_POLICY.md" target="_blank" rel="noopener noreferrer">AI Policy</a>.
+使用 AI 帮助撰写报告是可以的，但在发布前请务必阅读和检查，并使用 issue 模板而不是绕过它。看起来像是未经审查的 AI 输出，或者由自动化代理发布的报告，将会被关闭。请参阅 <a href="https://github.com/music-assistant/.github/blob/main/AI_POLICY.md" target="_blank" rel="noopener noreferrer">AI 政策</a>。
 
-### Report a security problem
+### 报告安全问题
 
-Found something that could put people's homes or accounts at risk? Don't open a public issue. Report it privately, so it can be fixed before the details are out.
+发现了可能危及他人家庭环境或账户安全的问题？请不要开启公开的 issue。请私下报告，以便在细节公开之前进行修复。
 
-- **Start here:** use **Report a vulnerability** on the <a href="https://github.com/music-assistant/server/security" target="_blank" rel="noopener noreferrer">Security tab of the server repository</a>.
+- **从这里开始：** 在<a href="https://github.com/music-assistant/server/security" target="_blank" rel="noopener noreferrer">服务器仓库的 Security 选项卡</a>中使用 **Report a vulnerability**。
 
-### Translate
+### 翻译
 
-The Music Assistant interface is translated by the people who use it, in your browser, on Lokalise. If you're a native speaker you can start in a few minutes.
+Music Assistant 界面由使用它的人在浏览器中通过 Lokalise 进行翻译。如果你是母语使用者，几分钟内就可以开始。
 
-- **You need:** a free Lokalise account, created when you join the project.
-- **Start here:** [Translations](/help/lokalise/).
+- **你需要：** 一个免费的 Lokalise 账户，在加入项目时创建。
+- **从这里开始：** [翻译](/help/lokalise/)。
 
-### Improve music data
+### 完善音乐数据
 
-Music Assistant uses MusicBrainz to match artists, albums and tracks across sources. Every release you add or correct there improves matching and artwork for everyone, not only Music Assistant users.
+Music Assistant 使用 MusicBrainz 来跨源匹配艺术家、专辑和曲目。你在那里添加或修正的每一个发行版，都能改善所有人的匹配和封面效果，而不仅仅是 Music Assistant 用户。
 
-- **You need:** a free MusicBrainz account.
-- **Start here:** [Improve MusicBrainz Data](/help/musicbrainz/).
+- **你需要：** 一个免费的 MusicBrainz 账户。
+- **从这里开始：** [完善 MusicBrainz 数据](/help/musicbrainz/)。
 
-### Help other people
+### 帮助他人
 
-Answer questions on Discord or in the <a href="https://github.com/orgs/music-assistant/discussions/categories/q-a" target="_blank" rel="noopener noreferrer">GitHub Q&A discussions</a>, point people to the right page, or help sort incoming issues and feature requests. Telling someone "this is already tracked in issue #123" saves a developer from doing it.
+在 Discord 或 <a href="https://github.com/orgs/music-assistant/discussions/categories/q-a" target="_blank" rel="noopener noreferrer">GitHub Q&A 讨论区</a>回答问题，指引他人找到正确的页面，或者帮助整理收到的 issue 和功能请求。告诉某人“这个问题已经在 issue #123 中跟踪了”，就能为开发者省去重复工作。
 
-- **You need:** a Discord or GitHub account.
-- **Want to do more?** The moderators always welcome help with the load of reports, requests and questions. Ask <a href="https://github.com/OzGav" target="_blank" rel="noopener noreferrer">OzGav</a> on Discord.
+- **你需要：** 一个 Discord 或 GitHub 账户。
+- **想做得更多？** 版主们总是欢迎有人帮忙分担报告、请求和问题的处理工作。在 Discord 上联系 <a href="https://github.com/OzGav" target="_blank" rel="noopener noreferrer">OzGav</a>。
 
-### Write and fix the documentation
+### 编写和修复文档
 
-This site is written by the community. Fix a typo, correct an instruction that no longer matches what you see, or write the how-to you wish had existed when you started.
+本站点由社区编写。修复一个错别字，更正不再符合你实际看到的操作说明，或者编写你希望在自己刚入门时就存在的操作指南。
 
-- **You need:** a GitHub account. You don't need to install or build anything: every pull request gets a preview of the whole site with your change in it.
-- **Start here:** the <a href="https://github.com/music-assistant/music-assistant.io/blob/beta/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">documentation contribution guide</a>. Fixes to the live site go to `main`, anything new goes to `beta`.
+- **你需要：** 一个 GitHub 账户。你不需要安装或构建任何东西：每个 pull request 都会生成包含你更改内容的整个站点的预览。
+- **从这里开始：** <a href="https://github.com/music-assistant/music-assistant.io/blob/beta/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">文档贡献指南</a>。对线上站点的修复提交到 `main`，任何新内容提交到 `beta`。
 
-### Share what you built
+### 分享你的作品
 
-Made a dashboard card, a script, a voice setup or another tool around Music Assistant that works well for you? It can help others too.
+制作了一个仪表盘卡片、脚本、语音设置或其他围绕 Music Assistant 构建且对你很有用的工具？它也能帮助其他人。
 
-- **Start here:** see [Community Extensions](/community-extensions/) for what is already out there, and share yours on Discord or in the <a href="https://github.com/orgs/music-assistant/discussions/categories/show-and-tell" target="_blank" rel="noopener noreferrer">GitHub discussions Show and Tell category</a>.
+- **从这里开始：** 查看[社区扩展](/community-extensions/)了解已有的内容，并在 Discord 或 <a href="https://github.com/orgs/music-assistant/discussions/categories/show-and-tell" target="_blank" rel="noopener noreferrer">GitHub 讨论区的 Show and Tell 分类</a>中分享你的作品。
 
-### Spread the word
+### 广为宣传
 
-Give the <a href="https://github.com/music-assistant/server" target="_blank" rel="noopener noreferrer">music-assistant server repository</a> a star (⭐) on GitHub, tell others how you use Music Assistant, and add <a href="https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas?discussions_q=is%3Aopen+category%3A%22Feature+requests+and+ideas%22+sort%3Atop" target="_blank" rel="noopener noreferrer">feature requests</a> for things you'd like to see added or improved.
+在 GitHub 上为 <a href="https://github.com/music-assistant/server" target="_blank" rel="noopener noreferrer">music-assistant 服务器仓库</a>点亮星标（⭐），告诉他人你是如何使用 Music Assistant 的，并提交<a href="https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas?discussions_q=is%3Aopen+category%3A%22Feature+requests+and+ideas%22+sort%3Atop" target="_blank" rel="noopener noreferrer">功能请求</a>，提出你希望添加或改进的功能。
 
-## With code
+## 编写代码
 
-The server is written in Python and relies heavily on asyncio. New music sources, player providers and plugins are each a self-contained folder in the server repository, so you can start without understanding the whole code base.
+服务器使用 Python 编写，并大量依赖 asyncio。新的音乐源、播放器提供商和插件在服务器仓库中各自是一个独立的文件夹，因此你无需理解整个代码库即可开始。
 
-AI tools are welcome, as long as there's a human in the loop. You need to understand every change in your pull request and be able to explain it in your own words, both in the description and when answering review questions. Pull requests that look like unreviewed AI output, or that come from autonomous agents, are closed without review. Read the <a href="https://github.com/music-assistant/.github/blob/main/AI_POLICY.md" target="_blank" rel="noopener noreferrer">AI Policy</a> before you start.
+AI 工具是受欢迎的，但必须有人类参与。你需要理解 pull request 中的每一处更改，并能够用自己的话在描述中以及回答审查问题时进行解释。看起来像是未经审查的 AI 输出，或者来自自主代理的 pull request，将不经审查直接关闭。开始前请阅读 <a href="https://github.com/music-assistant/.github/blob/main/AI_POLICY.md" target="_blank" rel="noopener noreferrer">AI 政策</a>。
 
-### Add a music source, player or plugin
+### 添加音乐源、播放器或插件
 
-- **You need:** a GitHub account, and Python on macOS or Linux (on Windows, run Linux in a virtual machine such as <a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer">VirtualBox</a>)
-- **Start here:** the <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">developer documentation</a> sets up your environment and explains each provider type. The <a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">existing providers</a>, including the demo music and player providers, are the best reference.
-- **Then:** add a documentation page for it. The <a href="https://github.com/music-assistant/music-assistant.io/blob/beta/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">documentation contribution guide</a> covers exactly what a new source or provider needs.
+- **你需要：** 一个 GitHub 账户，以及在 macOS 或 Linux 上安装 Python（在 Windows 上，请在 <a href="https://www.virtualbox.org/" target="_blank" rel="noopener noreferrer">VirtualBox</a> 等虚拟机中运行 Linux）
+- **从这里开始：** <a href="https://developers.music-assistant.io/" target="_blank" rel="noopener noreferrer">开发者文档</a>会指导你搭建环境并解释每种提供商类型。<a href="https://github.com/music-assistant/server/tree/dev/music_assistant/providers" target="_blank" rel="noopener noreferrer">现有的提供商</a>，包括演示音乐和播放器提供商，是最好的参考。
+- **然后：** 为其添加一个文档页面。<a href="https://github.com/music-assistant/music-assistant.io/blob/beta/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer">文档贡献指南</a>详细介绍了新的音乐源或提供商所需的内容。
 
-### Fix or improve something that's already there
+### 修复或改进现有功能
 
-Looking for something to pick up? Try the <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issues</a>, the <a href="https://github.com/orgs/music-assistant/projects/2/views/1" target="_blank" rel="noopener noreferrer">backlog</a> or the most-voted <a href="https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas?discussions_q=is%3Aopen+category%3A%22Feature+requests+and+ideas%22+sort%3Atop" target="_blank" rel="noopener noreferrer">feature requests</a>. A bug in a player or source you own yourself is often the best place to start, because you can test the fix.
+想找点事情做？试试 <a href="https://github.com/music-assistant/support/issues" target="_blank" rel="noopener noreferrer">issues</a>、<a href="https://github.com/orgs/music-assistant/projects/2/views/1" target="_blank" rel="noopener noreferrer">待办事项</a>或得票最多的<a href="https://github.com/orgs/music-assistant/discussions/categories/feature-requests-and-ideas?discussions_q=is%3Aopen+category%3A%22Feature+requests+and+ideas%22+sort%3Atop" target="_blank" rel="noopener noreferrer">功能请求</a>。你自己拥有的播放器或音乐源中的 bug 通常是最好的起点，因为你可以测试修复效果。
 
 > [!NOTE]
-> Planning something larger? Mention it on Discord before you write much code. A five-minute chat can save you a pull request that goes in a different direction from where the project is heading.
+> 计划做更大的改动？在编写大量代码之前，先在 Discord 上提一下。五分钟的交流可以避免你提交一个与项目发展方向不一致的 pull request。
 
-## What happens next
+## 后续流程
 
-Music Assistant is maintained by a small team, and most of them review in their spare time. Reviews can take a while, because there are more pull requests than reviewers. Small, focused pull requests that change one thing are reviewed fastest, so if you have several unrelated changes, open them separately. Be patient, answer review comments in the same pull request, and keep going.
+Music Assistant 由一个小团队维护，他们中的大多数人都是在业余时间进行审查。审查可能需要一些时间，因为 pull request 的数量多于审查者。专注于单一更改的小型 pull request 审查速度最快，因此如果你有多个不相关的更改，请分别提交。请保持耐心，在同一个 pull request 中回复审查意见，并继续推进。
 
-## Donations
+## 捐赠
 
-If you'd like to support the project financially, the best way is to subscribe to [Home Assistant Link](https://www.nabucasa.com/link/). It's an optional service from Nabu Casa, the commercial partner of the [Open Home Foundation (OHF)](https://www.openhomefoundation.org/), and the subscription funds the OHF and all its projects, including Music Assistant.
+如果你希望通过资金支持项目，最好的方式是订阅 [Home Assistant Link](https://www.nabucasa.com/link/)。这是 Nabu Casa 提供的一项可选服务，Nabu Casa 是 [Open Home Foundation (OHF)](https://www.openhomefoundation.org/) 的商业合作伙伴，订阅费用将资助 OHF 及其所有项目，包括 Music Assistant。
 
-You can also support the project by buying <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">merchandise from the official Open Home Foundation store</a> and officially branded <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant hardware</a>.
+你也可以通过购买 <a href="https://store.openhomefoundation.org/" target="_blank" rel="noopener noreferrer">Open Home Foundation 官方商店的周边产品</a>和官方品牌的 <a href="https://www.home-assistant.io/" target="_blank" rel="noopener noreferrer">Home Assistant 硬件</a>来支持项目。
 
-Appreciate a particular source, player or plugin? Its page in these docs names the developer who contributed it, and many have a sponsor or donation link on their GitHub profile. The core team is listed on the [Home Page](/#the-core-team).
+特别感谢某个音乐源、播放器或插件的贡献者？这些文档中的对应页面会列出贡献该功能的开发者，许多人在他们的 GitHub 个人资料中都有赞助或捐赠链接。核心团队名单可在[首页](/#the-core-team)查看。
 
-A really big thank you in advance from the whole team!
+整个团队在此提前表示最诚挚的感谢！

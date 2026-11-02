@@ -1,29 +1,29 @@
 ---
-title: "User Interface"
+title: "用户界面"
 ---
 
-# User Interface Settings <img src="/assets/icons/UI-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 用户界面设置 <img src="/assets/icons/UI-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Customise the user interface from this page. Preferences are stored per user and the remainder are stored per browser.
+可从此页面自定义用户界面。偏好设置按用户存储，其余设置则按浏览器存储。
 
-## Preferences
+## 偏好设置
 
-- <b>Theme.</b> Allow selection of a light or dark theme. Options are `Auto (follow system configuration) [default]`, `Light`, and `Dark`
-- <b>Language.</b> Allow selection of the language used by the user interface. Options are `Auto (follow system configuration) [default]`, or a wide variety of languages. Translations are [contributed by the community](/help/lokalise/). Note that the AUTO setting takes the language from the Browser's settings
-- <b>Customise Menu.</b> This button enables the edit mode for the menu
+- <b>主题。</b>允许选择浅色或深色主题。选项包括 `Auto (follow system configuration) [default]`、`Light` 和 `Dark`
+- <b>语言。</b>允许选择用户界面使用的语言。选项包括 `Auto (follow system configuration) [default]` 或多种语言。翻译由[社区贡献](/help/lokalise/)。请注意，AUTO 设置会采用浏览器设置中的语言
+- <b>自定义菜单。</b>此按钮用于启用菜单的编辑模式
 
-## Display
+## 显示
 
-- <b>Enable browser media controls</b> Allow control of playback using the browser's built in media controls (e.g. keyboard media keys)
-- <b>Force mobile layout.</b> The mobile layout has the menu at the bottom and has icons for HOME, and SEARCH and the remainder of the items are accessed via a single library icon
-- <b>Prefer waveform progress bar</b> Show a waveform-style progress bar in the now playing view when audio analysis data is available for the playing track. The data comes from the [Sonic Analysis](/audio-analysis/sonic-analysis/) provider, so the bar only appears on tracks it has analysed
-- <b>Mobile sidebar side.</b> Which side the navigation menu opens from. Default is left
+- <b>启用浏览器媒体控制</b>允许使用浏览器内置的媒体控制（例如键盘媒体键）控制播放
+- <b>强制移动布局。</b>移动布局将菜单置于底部，并带有 HOME 和 SEARCH 图标，其余项目通过单个媒体库图标访问
+- <b>优先使用波形进度条</b>当正在播放的曲目有可用的音频分析数据时，在正在播放视图中显示波形样式的进度条。数据来自 [Sonic Analysis](/audio-analysis/sonic-analysis/) 提供程序，因此该进度条仅出现在其已分析过的曲目上
+- <b>移动端侧边栏方向。</b>导航菜单从哪一侧打开。默认为左侧
 
-## Volume Control
+## 音量控制
 
-- <b>Volume slider behavior</b> Absolute (default) results in tapping or dragging the bar sets the volume to that position. Relative adjusts up or down from the current volume at half speed
-- <b>Volume haptic feedback.</b> On mobile devices with vibration, enables feedback during volume changes. On by default
+- <b>音量滑块行为</b>绝对（默认）模式下，点击或拖动滑条会将音量设置为该位置。相对模式则从当前音量以半速向上或向下调整
+- <b>音量触觉反馈。</b>在支持振动的移动设备上，可在音量变化时启用反馈。默认开启
 
-## Web Player
+## Web 播放器
 
-- <b>Enable built-in (Sendspin) Web Player.</b> Allows playback to THIS DEVICE using [Sendspin](/player-support/sendspin/), MA's built-in web player
+- <b>启用内置（Sendspin）Web 播放器。</b>允许使用 MA 内置的 Web 播放器 [Sendspin](/player-support/sendspin/) 将音频播放到此设备

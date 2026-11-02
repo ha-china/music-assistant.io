@@ -268,7 +268,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     <span class="msum__hintline">
       &mdash; click a chip, or a {YES_NO_COLUMNS.map((c) => c.head.join(" ")).join(" / ")} heading, to filter
     </span>
-    <button type="button" class="msum__clear" data-clear="" hidden>Clear filters</button>
+    <button type="button" class="msum__clear" data-clear="" hidden>清除筛选</button>
   </p>
 
   <div
@@ -278,7 +278,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     aria-labelledby="msum-caption"
   >
     <table>
-      <caption id="msum-caption">What each music source offers</caption>
+      <caption id="msum-caption">各音乐源能力一览</caption>
       <thead>
         <tr>
           <th scope="col" class="msum__source"><span class="msum__sronly">Source</span></th>
@@ -372,7 +372,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     No source matches all of those. Try turning one of the filters off.
   </p>
 
-  <p class="msum__hint">Scroll the table sideways to see every column.</p>
+  <p class="msum__hint">横向滚动表格查看所有列。</p>
 
   {
     notes.length > 0 && (
@@ -391,7 +391,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     the site's chevron. Inside the figure this would keep the ▶ from custom.css
     unmasked, which the emoji font draws as an orange tile. */}
 <details class="msum__legend">
-  <summary>What the columns mean</summary>
+  <summary>各列含义</summary>
   <dl>
     {
       LEGEND.map((column) => (
@@ -412,7 +412,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
 
 {/* Each tile section further up the page ends with one of these, and the table
     is the last thing on a very long page, so it gets one too. */}
-<a class="msum__top" href="#_top">Back to the top</a>
+<a class="msum__top" href="#_top">回到顶部</a>
 
 <script>
   // Filtering, added on top of a table that is complete and readable without
@@ -958,7 +958,7 @@ const TIERS = Object.keys(TIER_LABEL) as QualityTier[];
     color: var(--sl-color-white);
   }
 
-  /* Matches the "Back to the top" links TilePage puts under each section of
+  /* Matches the "回到顶部" links TilePage puts under each section of
      tiles further up the page. */
   .msum__top {
     display: inline-block;

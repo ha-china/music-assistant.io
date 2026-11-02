@@ -4,23 +4,23 @@ title: "API"
 
 # API <img src="/assets/icons/api-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant provides a powerful API to control your music library, manage players, and stream audio. Whether you're building a custom interface, integrating with home automation, or creating a music app, the API gives you complete control.
+Music Assistant 提供了强大的 API，可用于控制您的音乐库、管理播放器（player）以及串流音频。无论您是在构建自定义界面、与家庭自动化集成，还是开发音乐应用，该 API 都能让您完全掌控一切。
 
-The API documentation is automatically generated and available at http://YOUR_MA_SERVER_IP:8095/api-docs
+API 文档会自动生成，可在 http://YOUR_MA_SERVER_IP:8095/api-docs 访问
 
-## Before you start
+## 开始之前
 
-- Every request needs an authentication token. Create a long lived access token in the MA UI via [**Settings → Profile**](/settings/profile/#long-lived-access-tokens) and send it in the `Authorization: Bearer <token>` header (the examples below show a truncated token)
-- The `message_id` is any string of your choosing; it is echoed back in the response so you can match responses to requests
-- Each example below is shown in two forms: a `curl` command you can run from any terminal, and the equivalent Home Assistant <a href="https://www.home-assistant.io/integrations/rest_command/" target="_blank" rel="noopener noreferrer">rest_command</a> YAML for use in automations
+- 每个请求都需要身份验证令牌（token）。请在 MA 用户界面中通过 [**设置 → 个人资料**](/settings/profile/#long-lived-access-tokens) 创建一个长期访问令牌（long lived access token），并将其放在 `Authorization: Bearer <token>` 请求头中发送（下方示例中显示的是截断后的令牌）
+- `message_id` 可以是您自行选择的任意字符串；它会在响应中被原样返回，以便您将响应与请求一一对应
+- 下方每个示例均以两种形式展示：一种是可在任意终端中运行的 `curl` 命令，另一种是可在自动化中使用的等效 Home Assistant <a href="https://www.home-assistant.io/integrations/rest_command/" target="_blank" rel="noopener noreferrer">rest_command</a> YAML
 
-## Examples
+## 示例
 
-<a href="https://github.com/orgs/music-assistant/discussions/4438" target="_blank" rel="noopener noreferrer">Play a random track from a playlist</a>
+<a href="https://github.com/orgs/music-assistant/discussions/4438" target="_blank" rel="noopener noreferrer">从播放列表中随机播放一首曲目</a>
 
-<a href="https://github.com/orgs/music-assistant/discussions/1240#discussioncomment-12396494" target="_blank" rel="noopener noreferrer">Save current queue as a playlist</a>
+<a href="https://github.com/orgs/music-assistant/discussions/1240#discussioncomment-12396494" target="_blank" rel="noopener noreferrer">将当前队列保存为播放列表</a>
 
-<details><summary>Get All Available Player Settings</summary>
+<details><summary>获取所有可用的播放器设置</summary>
 
 ```bash
 curl --location 'http://192.168.1.1:8095/api' \
@@ -55,7 +55,7 @@ rest_command:
 
 </details>
 
-<details><summary>Set One or More Player Settings</summary>
+<details><summary>设置一项或多项播放器设置</summary>
 
 ```bash
 curl --location 'http://192.168.1.1:8095/api' \
@@ -96,9 +96,9 @@ rest_command:
 
 </details>
 
-<details><summary>Add Item to Favorites</summary>
+<details><summary>将条目添加到收藏夹</summary>
 
-item needs to be a URI or share URL
+item 需要是 URI 或分享 URL
 
 ```bash
 curl --location 'http://192.168.1.1:8095/api' \
@@ -114,7 +114,7 @@ curl --location 'http://192.168.1.1:8095/api' \
 ```
 </details>
 
-<details><summary>Get Album Tracks</summary>
+<details><summary>获取专辑曲目</summary>
 
 ```bash
 curl --location 'http://192.168.1.1:8095/api' \
@@ -152,7 +152,7 @@ rest_command:
 ```
 </details>
 
-<details><summary>Get Full Item Details (By Providing a URI)</summary>
+<details><summary>获取条目的完整详情（通过提供 URI）</summary>
 
 ```bash
 curl --location 'http://192.168.1.1:8095/api' \
@@ -168,9 +168,9 @@ curl --location 'http://192.168.1.1:8095/api' \
 ```
 </details>
 
-<details><summary>Get Recently Played Items</summary>
+<details><summary>获取最近播放的条目</summary>
 
-limit and media_types are optional
+limit 和 media_types 为可选参数
 ```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
@@ -186,10 +186,10 @@ curl --location 'http://192.168.1.1:8095/api' \
 ```
 </details>
 
-<details><summary>Get In Progress Items (Audiobooks, Podcast Episodes)</summary>
+<details><summary>获取进行中的条目（有声书、播客单集）</summary>
 
-Return a list of the Audiobooks and PodcastEpisodes that are in progress.
-limit is optional
+返回正在进行中的有声书（Audiobook）和播客单集（PodcastEpisode）的列表。
+limit 为可选参数
 ```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
@@ -204,11 +204,11 @@ curl --location 'http://192.168.1.1:8095/api' \
 ```
 </details>
 
-<details><summary>Starting Sync</summary>
+<details><summary>启动同步</summary>
 
-Start running the sync of (all or selected) musicproviders.
-  media_types: only sync these media types. None for all.
-  providers: only sync these provider instances. None for all.
+开始运行（全部或选定的）音乐提供方（musicprovider）的同步。
+  media_types：仅同步这些媒体类型。为 None 时表示同步全部。
+  providers：仅同步这些提供方实例。为 None 时表示同步全部。
 ```bash
 curl --location 'http://192.168.1.1:8095/api' \
 --header 'Content-Type: application/json' \
@@ -224,7 +224,7 @@ curl --location 'http://192.168.1.1:8095/api' \
 ```
 </details>
 
-<details><summary>Refresh Playlist</summary>
+<details><summary>刷新播放列表</summary>
 
 ```yaml
 rest_command:
@@ -249,9 +249,9 @@ rest_command:
 </details>
 
 
-<details><summary>Change crossfade state of a player</summary>
+<details><summary>更改播放器的淡入淡出（crossfade）状态</summary>
 
-player_id can be found at the top of the individual player settings
+player_id 可以在单个播放器设置的顶部找到
 
 ```yaml
 rest_command:
@@ -276,9 +276,9 @@ rest_command:
 ```
 </details>
 
-<details><summary>Get all items in the queue</summary>
+<details><summary>获取队列中的所有条目</summary>
 
-`queue_id` will be the same as the `player_id` unless the player is grouped. To confirm create a `rest_command` that calls `player_queues/all` and review the information returned. The `limit` defaults to 500 if you omit it. You are cautioned to not set a value greater than 500 to avoid breaking your system. The practical limit will depend on the resources available on your host. `offset` can also be omitted.
+`queue_id` 与 `player_id` 相同，除非该播放器已被分组。若要确认，可以创建一个调用 `player_queues/all` 的 `rest_command`，并查看返回的信息。如果省略 `limit`，其默认值为 500。请注意不要设置大于 500 的值，以免破坏您的系统。实际上限取决于您主机上可用的资源。`offset` 也可以省略。
 
 ```yaml
 rest_command:
@@ -302,9 +302,9 @@ rest_command:
 ```
 </details>
 
-<details><summary>Play latest podcast episode</summary>
+<details><summary>播放最新的播客单集</summary>
 
-Pass `latest` or `newest` as the `start_item` parameter.
+将 `latest` 或 `newest` 作为 `start_item` 参数传入。
 
 ```yaml
 rest_command:
@@ -328,9 +328,9 @@ rest_command:
 ```
 </details>
 
-<details><summary>Play from a specific playlist item or podcast episode</summary>
+<details><summary>从特定的播放列表条目或播客单集开始播放</summary>
 
-Pass a 3 character or more string as the `start_item`. For example, passing `Mirrors` will find the first item in the playlist with that word (case insensitive) within and then play the playlist from that point.
+传入一个长度不少于 3 个字符的字符串作为 `start_item`。例如，传入 `Mirrors` 将会在播放列表中查找第一个包含该单词（不区分大小写）的条目，然后从该位置开始播放播放列表。
 
 ```yaml
 rest_command:
@@ -354,16 +354,16 @@ rest_command:
 ```
 </details>
 
-<details><summary>Refresh a podcast and play the latest episode</summary>
+<details><summary>刷新播客并播放最新单集</summary>
 
-Firstly, note that this only works with RSS based feeds such as podcastfeed (RSS), iTunes Podcasts, gPodder and Overcast. For others, they may already always return the latest episode on request. For yet others, it may not be possible to update the list more frequently due to caching of the episode list (e.g. Deezer, iHeartradio, Spotify, Storytel)
+首先请注意，此功能仅适用于基于 RSS 的订阅源，例如 podcastfeed（RSS）、iTunes Podcasts、gPodder 和 Overcast。对于其他服务，它们可能在收到请求时本来就总是返回最新单集；而对于另一些服务，由于单集列表存在缓存，可能无法更频繁地更新列表（例如 Deezer、iHeartradio、Spotify、Storytel）
 
-Considerations:
+注意事项：
 
-- The token has to belong to an admin user.
-- The `provider_instance_id` is shown in the provider's settings.
-- Nothing happens if podcast sync is turned off for that provider.
-- With many subscribed podcasts, 10 seconds may not be long enough for the sync to reach the one you want.
+- 令牌必须属于管理员用户。
+- `provider_instance_id` 显示在该提供方的设置中。
+- 如果该提供方的播客同步已关闭，则不会发生任何操作。
+- 如果订阅的播客很多，10 秒的时间可能不足以让同步进行到您想要的那一个。
 
 ```yaml
 rest_command:
@@ -425,7 +425,7 @@ script:
           queue_id: "{{ queue_id }}"
           media: "{{ podcast_uri }}"
 ```
-Example call:
+示例调用：
 
 ```yaml
 action: script.ma_play_latest_podcast_fresh
@@ -435,4 +435,3 @@ data:
   podcast_uri: library://podcast/2
 ```
 </details>
-

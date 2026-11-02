@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/base";
 import { plugins } from "../../data/marketing";
 import Cover from "../marketing/ui/Cover.astro";
 import Icon from "../marketing/ui/Icon.astro";
@@ -10,10 +11,10 @@ import SectionHeading from "../marketing/ui/SectionHeading.astro";
   <div class="container">
     <SectionHeading
       id="plugins-title"
-      title="More than pressing play."
+      title="不止于按下播放。"
       lead="Add plugins for parties, games and new ways to listen."
     >
-      <a slot="action" class="text-link" href="/plugins/">
+      <a slot="action" class="text-link" href={withBase("/plugins/")}>
         All plugins <Icon name="arrow-right" size={16} />
       </a>
     </SectionHeading>

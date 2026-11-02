@@ -1,79 +1,79 @@
 ---
-title: Community Extensions
-description: A Collection of HA cards or dashboards
+title: 社区扩展
+description: HA 卡片或仪表盘合集
 ---
 
-# General <img src="/assets/icons/community-extensions-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
-This is a collection of community developed HA cards or dashboards for Music Assistant. Review the linked repos (the repo title is linked) for instructions and status of these projects. The complexity of these projects varies.
+# 概览 <img src="/assets/icons/community-extensions-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+这是一个由社区开发的 Music Assistant HA 卡片或仪表盘合集。请查看链接的仓库（仓库标题即为链接），了解这些项目的使用说明和进展情况。这些项目的复杂程度各不相同。
 *********************************
-## <a href="https://github.com/fastxl2024/mass-search-card" target="_blank" rel="noopener noreferrer">Music Assistant Search Card</a>
+## <a href="https://github.com/fastxl2024/mass-search-card" target="_blank" rel="noopener noreferrer">Music Assistant 搜索卡片</a>
 
-The Mass Search Card is an advanced search card for Home Assistant, designed to simplify interaction with Music Assistant. This card allows you to effortlessly search for artists, tracks, albums, playlists, and radio stations and play them on your selected media players.
+Mass Search Card 是一款面向 Home Assistant 的高级搜索卡片，旨在简化与 Music Assistant 的交互。借助这张卡片，您可以轻松搜索艺术家、曲目、专辑、播放列表和电台，并在所选的媒体播放器上播放。
 
 <img src="https://github.com/user-attachments/assets/2dbd3143-ffd8-4bea-8b63-52519ece9f1d" alt="image" style="width: 250px;"  loading="lazy" />
 
 <img src="https://github.com/user-attachments/assets/ce10cadf-bada-444a-87ea-a9d05f0a41db" alt="image" style="width: 250px;"  loading="lazy" />
 
 *********************************
-## <a href="https://github.com/antontanderup/mediocre-hass-media-player-cards" target="_blank" rel="noopener noreferrer">Mediocre Media Player Card</a>
+## <a href="https://github.com/antontanderup/mediocre-hass-media-player-cards" target="_blank" rel="noopener noreferrer">Mediocre 媒体播放器卡片</a>
 
-A bunch of custom media player cards for Home Assistant that let you group speakers and do some custom actions.
+一组适用于 Home Assistant 的自定义媒体播放器卡片，可让您对音箱进行分组并执行一些自定义操作。
 
 <img src="https://github.com/user-attachments/assets/2178b5d4-ea8f-46cf-9737-149e1da935c5" alt="image" style="width: 250px;"  loading="lazy" />
 
 *********************************
-## <a href="https://github.com/codemonkey2k5/HomeAssistent-Custom-Media-Card" target="_blank" rel="noopener noreferrer">Custom Media Card</a>
+## <a href="https://github.com/codemonkey2k5/HomeAssistent-Custom-Media-Card" target="_blank" rel="noopener noreferrer">自定义媒体卡片</a>
 
-A simple media player card for Home Assistant.
+一款适用于 Home Assistant 的简易媒体播放器卡片。
 
 <img src="https://github.com/user-attachments/assets/03815604-b80d-4aea-ac97-52b5c07aa3b2" alt="image" style="width: 250px;"  loading="lazy" />
 
 *********************************
 ## <a href="https://github.com/rxritalin/Music-Assistant-Lovelace-UI" target="_blank" rel="noopener noreferrer">Music Assistant Lovelace UI</a>
 
-A work in progress Lovelace UI for Music Assistant in Home Assistant using picture-elements
+一个仍在开发中的 Lovelace 界面，基于 picture-elements 为 Home Assistant 中的 Music Assistant 打造。
 
 <img src="https://github.com/user-attachments/assets/3c81c0cb-9290-4e86-afaa-5f9d3d445e02" alt="image" style="width: 600px;"  loading="lazy" />
 
 *********************************
-## <a href="https://github.com/OzGav/MA-floorplan" target="_blank" rel="noopener noreferrer">Music Assistant ha-floorplan based UI</a>
+## <a href="https://github.com/OzGav/MA-floorplan" target="_blank" rel="noopener noreferrer">基于 ha-floorplan 的 Music Assistant 界面</a>
 
-This is working concept demonstrator using the ha-floorplan custom component.
+这是一个使用 ha-floorplan 自定义组件的可运行概念演示。
 
 <img src="https://github.com/user-attachments/assets/babed2c0-646f-46b6-bdb6-b29f3b34087f" alt="image" style="width: 600px;"  loading="lazy" />
 
 *********************************
 ## <a href="https://github.com/jianyu-li/yet-another-media-player" target="_blank" rel="noopener noreferrer">Yet Another Media Player</a>
 
-YAMP is a Home Assistant media card for controlling multiple entities with highly customizable actions and UI elements
+YAMP 是一款 Home Assistant 媒体卡片，可通过高度可自定义的操作和 UI 元素控制多个实体（entity）。
 
 <img src="https://github.com/jianyu-li/yet-another-media-player/blob/main/preview/largepreview.png?raw=true" alt="image" style="width: 600px;"  loading="lazy" />
 
 *********************************
-## <a href="https://github.com/droans/mass-player-card" target="_blank" rel="noopener noreferrer">Music Assistant Player Card</a>
+## <a href="https://github.com/droans/mass-player-card" target="_blank" rel="noopener noreferrer">Music Assistant 播放器卡片</a>
 
-Music Assistant Player Card is a custom card which provides a full media player, browser, and player queue for Music Assistant. Requires the custom integration <a href="https://github.com/droans/mass_queue" target="_blank" rel="noopener noreferrer">Music Assistant Queue Actions</a> to work.
+Music Assistant Player Card 是一款自定义卡片，为 Music Assistant 提供完整的媒体播放器、浏览器和播放队列功能。需要安装自定义集成（integration）<a href="https://github.com/droans/mass_queue" target="_blank" rel="noopener noreferrer">Music Assistant Queue Actions</a> 才能使用。
 
 <img src="https://raw.githubusercontent.com/droans/mass-player-card/main/static/combined.png" alt="image" style="width: 600px;"  loading="lazy" />
 
 *********************************
-## <a href="https://github.com/trudenboy/sendspin-bt-bridge" target="_blank" rel="noopener noreferrer">Sendspin Bluetooth Bridge</a>
+## <a href="https://github.com/trudenboy/sendspin-bt-bridge" target="_blank" rel="noopener noreferrer">Sendspin 蓝牙桥接</a>
 
-Turn any Bluetooth speaker into a Music Assistant player using the Sendspin protocol. Supports multiple simultaneous devices, multiroom sync groups, and comes with a real-time web dashboard. Deploys as a Home Assistant App, Docker Compose, Proxmox LXC, or OpenWrt LXC.
+使用 Sendspin 协议将任何蓝牙音箱变成 Music Assistant 播放器。支持多台设备同时使用和多房间同步组，并附带实时 Web 仪表盘。可作为 Home Assistant App、Docker Compose、Proxmox LXC 或 OpenWrt LXC 部署。
 
 <img src="https://raw.githubusercontent.com/trudenboy/sendspin-bt-bridge/main/docs-site/public/screenshots/screenshot-dashboard-full.png" alt="Sendspin BT Bridge dashboard" style="width: 600px;"  loading="lazy" />
 
 *********************************
-## <a href="https://github.com/eliseo-juan/mass-coverwall-card" target="_blank" rel="noopener noreferrer">Music Assistant Cover Wall Card</a>
+## <a href="https://github.com/eliseo-juan/mass-coverwall-card" target="_blank" rel="noopener noreferrer">Music Assistant 封面墙卡片</a>
 
-A responsive cover wall for the Home Assistant Sections view that displays your Music Assistant playlists, albums, or artists as a tap-to-play grid. Supports multiroom playback, 16 sort options, and a manual pinning mode to always keep your go-to covers front and center.
+一款适用于 Home Assistant 分区（Sections）视图的响应式封面墙，可将您的 Music Assistant 播放列表、专辑或艺术家以点击即播的网格形式展示。支持多房间播放、16 种排序选项，以及手动置顶模式，让您常用的封面始终居于显眼位置。
 
 <img src="https://github.com/user-attachments/assets/9b4fbb2e-db2a-47d0-9b81-2b1d56204fd4" alt="MASS Cover Wall Example" style="width: 600px;"  loading="lazy"/>
 
 *********************************
 ## <a href="https://github.com/r11a/homeii-music-flow" target="_blank" rel="noopener noreferrer">HOMEii Flow</a>
 
-HOMEii Flow is a premium, minimalist music app experience for Music Assistant, fully responsive and optimized for **Desktop, Tablet, and Mobile**. It features a high-end UI with glassmorphism effects, dynamic backgrounds, and a specialized Studio Mode for a seamless experience across all your devices.
+HOMEii Flow 是一款为 Music Assistant 打造的高端极简音乐应用体验，完全响应式，并针对**桌面端、平板和手机**进行了优化。它拥有带玻璃拟态（glassmorphism）特效的高端 UI、动态背景，以及专为跨设备无缝体验设计的专属 Studio Mode。
 
 <img src="https://raw.githubusercontent.com/r11a/homeii-music-flow/main/HOMEii%20Flow%20Main.png" alt="HOMEii Flow - Responsive UI for Mobile, Tablet and Desktop" style="width: 600px;"  loading="lazy" />
 
@@ -81,11 +81,10 @@ HOMEii Flow is a premium, minimalist music app experience for Music Assistant, f
 *********************************
 
 
-## [Mobile MA – Native iOS App for Music Assistant](https://www.mobile-ma.app/en/)
+## [Mobile MA – Music Assistant 原生 iOS 应用](https://www.mobile-ma.app/en/)
 
 <img width="1600" height="900" alt="mobile-ma-community" src="https://github.com/user-attachments/assets/c88230ec-819c-4e1b-9b5b-a33a088b4d8b" />
 
-Mobile MA is a native SwiftUI app for iPhone and iPad that turns your device into a full remote and player for Music Assistant. Control every player and multiroom group, browse your library, podcasts and radio, and stream straight to your iPhone via Sendspin – at home over LAN or on the go through WebRTC remote access, without a VPN or cloud account. Comes with CarPlay, an Apple Watch remote, a companion Apple TV app, Siri and widgets. Free on the App Store with an optional one-time Unlimited upgrade (no subscription). Requires Music Assistant 2.9 or newer.
+Mobile MA 是一款适用于 iPhone 和 iPad 的原生 SwiftUI 应用，可将您的设备变成 Music Assistant 的完整遥控器和播放器。控制每一个播放器和多房间分组，浏览您的媒体库、播客和电台，并通过 Sendspin 直接串流到您的 iPhone——在家时通过局域网（LAN），外出时则通过 WebRTC 远程访问，无需 VPN 或云账号。附带 CarPlay、Apple Watch 遥控器、配套的 Apple TV 应用、Siri 和小组件。在 App Store 上免费提供，可选择一次性买断的 Unlimited 升级（无订阅）。需要 Music Assistant 2.9 或更高版本。
 
-[Mobile MA – native iOS app for Music Assistant](https://www.mobile-ma.app/en/)
-
+[Mobile MA – Music Assistant 原生 iOS 应用](https://www.mobile-ma.app/en/)

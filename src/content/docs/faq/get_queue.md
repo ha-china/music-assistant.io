@@ -1,20 +1,20 @@
 ---
-title: "Get Queue Action"
+title: "获取队列动作"
 ---
 
-# MA get_queue Action
+# MA get_queue 动作
 
 > [!NOTE]
-> This action is used from Home Assistant scripts and automations and requires the [Home Assistant integration](/integration/installation/). See [Home Assistant scripts and automations](/faq/how-to/#home-assistant-scripts-and-automations) for examples.
+> 此动作（action）在 Home Assistant 脚本和自动化中使用，并且需要 [Home Assistant 集成](/integration/installation/)。相关示例请参阅 [Home Assistant 脚本和自动化](/faq/how-to/#home-assistant-scripts-and-automations)。
 
 
-This action allows you to retrieve the details of a queue
+此动作可用于获取队列的详细信息
 
 ![image](/assets/screenshots/service-call/get_queue.png)
 
-The returned JSON is extensive and includes information about the current and next item in the queue. The <a href="https://www.home-assistant.io/docs/scripts/perform-actions#use-templates-to-handle-response-data" target="_blank" rel="noopener noreferrer">returned data can be used in templates</a>.
+返回的 JSON 内容十分详尽，其中包含了队列中当前项目和下一个项目的相关信息。<a href="https://www.home-assistant.io/docs/scripts/perform-actions#use-templates-to-handle-response-data" target="_blank" rel="noopener noreferrer">返回的数据可以在模板中使用</a>。
 
-## Example
+## 示例
 
 ```
 script:

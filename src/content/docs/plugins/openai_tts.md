@@ -1,66 +1,66 @@
 ---
-title: OpenAI Text-to-speech
-description: Turn text into speech for announcements and AI Radio using the OpenAI speech API, or a self-hosted server such as Kokoro-FastAPI, LocalAI or Speaches.
+title: OpenAI 文本转语音
+description: 使用 OpenAI 语音 API 或自托管服务器（例如 Kokoro-FastAPI、LocalAI 或 Speaches）将文本转换为语音，用于播报和 AI Radio。
 pluginGroup: other-systems
 ---
 
-# OpenAI Text-to-speech
+# OpenAI 文本转语音
 
-Some Music Assistant features need to speak: **announcements** that are sent as a text message instead of an audio link, and the presenter in **AI Radio**. Both need a text-to-speech (TTS) engine to turn the text into audio.
+Music Assistant 的某些功能需要发声：以文本消息而非音频链接形式发送的**播报（announcements）**，以及 **AI Radio** 中的主持人。两者都需要一个文本转语音（TTS）引擎来将文本转换为音频。
 
-Those features used to need Home Assistant, because a TTS entity there was the only thing that could speak for them. This plugin lets Music Assistant talk to a speech service directly, so they work without Home Assistant as well.
+这些功能过去需要 Home Assistant，因为那里的 TTS 实体（entity）是唯一能为它们发声的东西。此插件让 Music Assistant 能够直接与语音服务通信，因此即使没有 Home Assistant，这些功能也能正常工作。
 
-Each voice the plugin finds becomes a **TTS engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Each feature then chooses which engine it wants from its own settings.
+插件发现的每个音色（voice）都会成为一个 **TTS 引擎**，与 [Home Assistant 插件](/ha-plugin/) 提供的引擎一起提供给这些功能。然后，每个功能会在自己的设置中选择想要的引擎。
 
-It works with the OpenAI speech API and any service that implements the same endpoint:
+它适用于 OpenAI 语音 API 以及任何实现相同端点（endpoint）的服务：
 
-- The **OpenAI** cloud API
-- Speech servers you run yourself, such as **Kokoro-FastAPI**, **LocalAI** and **Speaches**
+- **OpenAI** 云端 API
+- 您自行运行的语音服务器，例如 **Kokoro-FastAPI**、**LocalAI** 和 **Speaches**
 
 :::caution[Alpha]
-This plugin is currently marked as **alpha**. It works, but it has not been tested against every service yet, and its settings may still change.
+此插件目前被标记为 **alpha**。它可以正常工作，但尚未针对所有服务进行测试，其设置也仍可能更改。
 :::
 
-## Features
+## 功能
 
-- One plugin for the OpenAI speech API and every server that implements the same endpoint, hosted or self-hosted
-- Each voice becomes a separate choice in the features that speak, so announcements and AI Radio can each use a different voice
-- Voices are found automatically on servers that publish a list of them
-- Rendered speech is cached, so a repeated announcement plays straight away without being rendered again
-- Multiple instances, so a local server and a hosted service can be used side by side
+- 一个插件即可支持 OpenAI 语音 API 以及所有实现相同端点的服务器，无论是托管服务还是自托管
+- 每个音色都会在需要发声的功能中成为一个独立选项，因此播报和 AI Radio 可以各自使用不同的音色
+- 在会发布音色列表的服务器上，音色会被自动发现
+- 渲染好的语音会被缓存，因此重复的播报可以立即播放，无需再次渲染
+- 支持多个实例，因此本地服务器和托管服务可以同时使用
 
-## Installation
+## 安装
 
-Add the plugin in **Settings → Plugins → Add a plugin** and pick **OpenAI Text-to-speech**.
+在 **设置 → 插件 → 添加插件** 中添加插件，然后选择 **OpenAI 文本转语音**。
 
-### Connection details
+### 连接详情
 
-- **API endpoint** — the address of the speech API, including the version path. Use `https://api.openai.com/v1` for the OpenAI cloud API, or the address of your own server, for example `http://localhost:8880/v1` for Kokoro-FastAPI. Change this if the server does not run where it normally would, for example when it runs on a different machine than Music Assistant, or when Music Assistant runs in a container and cannot reach `localhost`.
-- **API key** — the key from your service. Required for the OpenAI cloud API; leave it empty for a local server that does not ask for one.
-- **Model** — the speech model to use, for example `tts-1` or the higher quality `gpt-4o-mini-tts` on the OpenAI cloud API. Self-hosted servers use their own model names.
+- **API 端点** — 语音 API 的地址，包含版本路径。对于 OpenAI 云端 API，使用 `https://api.openai.com/v1`；对于您自己的服务器，则使用其地址，例如 Kokoro-FastAPI 使用 `http://localhost:8880/v1`。如果服务器并非运行在通常的位置，请修改此项，例如当它运行在与 Music Assistant 不同的机器上时，或者当 Music Assistant 运行在容器中而无法访问 `localhost` 时。
+- **API 密钥** — 来自您所使用服务的密钥。OpenAI 云端 API 必须填写；对于不要求密钥的本地服务器，可将其留空。
+- **模型** — 要使用的语音模型，例如 OpenAI 云端 API 上的 `tts-1` 或质量更高的 `gpt-4o-mini-tts`。自托管服务器则使用自己的模型名称。
 
-Music Assistant renders a short test phrase before finishing, so a wrong address, key or model is caught here rather than on the first announcement.
+Music Assistant 在完成之前会渲染一句简短的测试语句，因此错误的地址、密钥或模型会在这里被发现，而不会等到第一次播报时。
 
-### Voices
+### 音色
 
-The plugin finds its voices by itself:
+插件会自行发现音色：
 
-- If your server publishes a list of its voices, as Kokoro-FastAPI does, those voices are offered.
-- Otherwise the standard OpenAI voices are offered: `alloy`, `echo`, `fable`, `nova`, `onyx` and `shimmer`.
+- 如果您的服务器会发布自己的音色列表（Kokoro-FastAPI 就是这样），则会提供这些音色。
+- 否则，将提供标准的 OpenAI 音色：`alloy`、`echo`、`fable`、`nova`、`onyx` 和 `shimmer`。
 
-If your server has voices that are not found this way, open the plugin under **Settings → Plugins** and enter them under **Voices**, one voice per value. This replaces the voices that would otherwise be offered.
+如果您的服务器还有通过上述方式发现不了的音色，请在**设置 → 插件**下打开该插件，然后在**音色**中手动输入，每个值填写一个音色。这会替换原本会提供的音色。
 
-Each voice becomes its own TTS engine, listed as `OpenAI Text-to-speech | <voice>` wherever a TTS engine can be picked.
+每个音色都会成为独立的 TTS 引擎，在任何可选择 TTS 引擎的地方都会以 `OpenAI Text-to-speech | <voice>` 的形式列出。
 
-## Choosing a voice
+## 选择音色
 
-- **Announcements** use the engine set under **Announcement text-to-speech engine** in [**Settings → System → Players**](/settings/core/#players).
-- **AI Radio** picks its engine with **Reconfigure** on the provider's menu, not in its normal settings. See [changing the engines later](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later). This is where a natural-sounding voice is most noticeable, so it pays to try a few.
+- **播报**使用在 [**设置 → 系统 → 播放器**](/settings/core/#players) 中**播报文本转语音引擎**下所设置的引擎。
+- **AI Radio** 通过提供者菜单中的**重新配置**来选择引擎，而不是在其常规设置中选择。请参阅[稍后更改引擎](/plugins/ai-radio/#changing-the-ai-or-text-to-speech-engine-later)。音色是否自然在这里最为明显，因此值得多试几个。
 
-See [choosing an engine for a feature](/ha-plugin/#choosing-an-engine-for-a-feature) for how engines are picked across Music Assistant.
+关于引擎在整个 Music Assistant 中是如何选择的，请参阅[为功能选择引擎](/ha-plugin/#choosing-an-engine-for-a-feature)。
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- **Language.** The speech API has no language setting. The server works out the language from the text itself, so pick a voice that suits the language of your announcements.
-- **Costs.** The OpenAI cloud API bills you per character rendered. Repeated text is served from the cache for 24 hours instead of being rendered again, but AI Radio writes new text for every segment it announces, so keep an eye on your usage.
-- **Speed.** A self-hosted server running without a graphics card can take a while to render longer text. Requests are given up on after two minutes.
+- **语言。** 语音 API 没有语言设置。服务器会根据文本本身推断语言，因此请选择适合您播报所用语言的音色。
+- **费用。** OpenAI 云端 API 按渲染的字符数计费。重复的文本会在 24 小时内直接由缓存提供，而不会再次渲染，但 AI Radio 为其播报的每个片段撰写的都是新文本，因此请留意您的用量。
+- **速度。** 在没有显卡的情况下运行的自托管服务器渲染较长文本可能需要一些时间。请求会在两分钟后被放弃。

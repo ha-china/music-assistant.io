@@ -1,60 +1,60 @@
 ---
-title: Sendspin Source
-description: Bring a turntable, microphone or line-in on a Sendspin device into Music Assistant as a Live Input.
+title: Sendspin 音源
+description: 将 Sendspin 设备上的黑胶唱机、麦克风或线路输入接入 Music Assistant 作为实时输入（Live Input）。
 pluginGroup: incoming
 ---
 
-# Sendspin Source <img src="/assets/icons/sendspin-icon.svg" alt="Sendspin logo" style="width: 70px; float: right;" loading="lazy" />
+# Sendspin 音源 <img src="/assets/icons/sendspin-icon.svg" alt="Sendspin logo" style="width: 70px; float: right;" loading="lazy" />
 
-The Sendspin Source plugin brings audio from compatible devices into Music Assistant as Live Inputs. A line-in or AUX connection, turntable preamp, or microphone can then play on any available Music Assistant player, stereo pair, or group.
+Sendspin 音源插件将兼容设备的音频作为实时输入（Live Input）引入 Music Assistant。线路输入（line-in）或 AUX 连接、黑胶唱机前级放大器或麦克风随后即可在任何可用的 Music Assistant 播放器、立体声配对或分组上播放。
 
-Sendspin calls incoming audio the `source` role. The built-in [Sendspin player provider](/player-support/sendspin/) handles audio sent from Music Assistant to devices, while the companion Sendspin Source plugin handles audio coming into Music Assistant. Both use the same secure, paired client connection.
+Sendspin 将传入的音频称为 `source` 角色。内置的 [Sendspin 播放器提供程序](/player-support/sendspin/)处理从 Music Assistant 发送到设备的音频，而配套的 Sendspin 音源插件则处理进入 Music Assistant 的音频。两者使用相同的经过安全配对的客户端连接。
 
 > [!NOTE]
-> Sendspin Live Inputs require a paired device. Allowing unpaired access does not enable the Sendspin source role.
+> Sendspin 实时输入需要已配对的设备。允许未配对访问并不会启用 Sendspin 音源（source）角色。
 
-## Features
+## 功能
 
-- Discovers connected Sendspin clients that support `source@v1`
-- Adds every paired source as a Live Input
-- Plays an input on any Music Assistant player, stereo pair, or group
-- Supports several different source devices streaming at the same time
-- Can start and stop a line-in automatically on devices that report signal detection
+- 自动发现支持 `source@v1` 的已连接 Sendspin 客户端
+- 将每个已配对的音源添加为实时输入
+- 可在任何 Music Assistant 播放器、立体声配对或分组上播放输入
+- 支持多个不同的音源设备同时推流
+- 在报告信号检测的设备上可自动开始和停止线路输入
 
-## Setup and discovery
+## 设置与发现
 
-Sendspin Source is built in and starts automatically.
+Sendspin 音源为内置功能，会自动启动。
 
-Connect a compatible Sendspin source client to Music Assistant and complete the pairing request. Once paired, it appears as one Live Input.
+将兼容的 Sendspin 音源客户端连接到 Music Assistant 并完成配对请求。配对完成后，它会显示为一个实时输入。
 
-## Playing a Live Input
+## 播放实时输入
 
-Select the player, stereo pair, or group where you want to hear the input, then open **Browse**. A single available Sendspin input appears directly in Browse; when several are available, open **Sendspin Source** and choose one. Press **Play** to start it on the selected playback target.
+选择您想收听该输入的播放器、立体声配对或分组，然后打开**浏览**。如果只有一个可用的 Sendspin 输入，它会直接显示在浏览中；如果有多个可用，则打开 **Sendspin 音源**并选择一个。按**播放**即可在所选播放目标上开始播放。
 
-Each source can play on only one target at a time. Selecting the same source on another target moves it there. Different source clients can play on different targets concurrently.
+每个音源一次只能在一个目标上播放。在另一个目标上选择同一音源会将其移动到该处。不同的音源客户端可以同时在不同的目标上播放。
 
-Live Inputs play as 48 kHz, 16-bit stereo audio. Music Assistant adjusts for small timing and network variations to keep playback stable.
+实时输入以 48 kHz、16 位立体声音频播放。Music Assistant 会针对微小的时序和网络波动进行调整，以保持播放稳定。
 
-## Start playing automatically when a line-in becomes active
+## 线路输入激活时自动开始播放
 
-If your source device can detect an input signal, Music Assistant can start playing it on a chosen player as soon as the input becomes active. For example, lowering the needle onto a turntable can start playback in the room you selected.
+如果您的音源设备能够检测输入信号，Music Assistant 可以在输入激活时立即在所选播放器上开始播放。例如，将唱针放到黑胶唱机上即可在您选择的房间中开始播放。
 
-Choose the destination with the source device's **Automatically play line-in on** player setting. You can select any available player, stereo pair, or group. The destination does not need to use Sendspin. A device that is both a source and a player defaults to **This device**; a capture-only device defaults to **Off**.
+通过音源设备的**自动播放线路输入到**（Automatically play line-in on）播放器设置来选择目标位置。您可以选择任何可用的播放器、立体声配对或分组。目标位置无需使用 Sendspin。既是音源又是播放器的设备默认为**此设备**；仅用于采集的设备默认为**关闭**。
 
-Playback starts after a short delay, which prevents brief signal changes from triggering it by accident. It stops after the signal has been absent for one minute.
+播放会在短暂延迟后开始，以防止短暂的信号变化意外触发播放。信号消失一分钟后播放会停止。
 
-Restarting Music Assistant or reconnecting a device does not start an input that was already active. Automatic playback also does not move a source that is already playing somewhere else.
+重启 Music Assistant 或重新连接设备并不会启动之前已处于活动状态的输入。自动播放也不会移动已经在其他地方播放的音源。
 
-Devices without signal detection remain available for manual playback and do not show this setting. The selected destination plays in its usual way; automatic playback does not make it switch to Sendspin.
+没有信号检测功能的设备仍可用于手动播放，且不会显示此设置。所选目标位置按其通常方式播放；自动播放不会使其切换到 Sendspin。
 
-## Latency
+## 延迟
 
-The advanced provider setting **Target latency** controls how much audio Music Assistant buffers to keep playback stable. A larger value can help an unreliable network, but increases the delay between the input and the speakers. The setting applies to all Sendspin sources. Individual sources cannot have separate latency values.
+高级提供程序设置**目标延迟**（Target latency）控制 Music Assistant 为保持播放稳定而缓冲的音频量。较大的值有助于应对不稳定的网络，但会增加输入与扬声器之间的延迟。该设置适用于所有 Sendspin 音源。各个音源无法单独设置延迟值。
 
-## Interruptions and reconnecting
+## 中断与重新连接
 
-Brief gaps in audio do not immediately stop playback. A manually started input waits for audio to return and stops only when its source times out. An automatically started input stops after one minute without a signal, as described above.
+音频中的短暂间隙不会立即停止播放。手动启动的输入会等待音频恢复，只有在其音源超时后才会停止。自动启动的输入会在无信号一分钟后停止，如上文所述。
 
-If a client disconnects while playing, Music Assistant keeps playback open with silence. When the client reconnects before the timeout, live audio resumes after its buffer has been rebuilt. Audio captured while the client was disconnected cannot be recovered.
+如果客户端在播放时断开连接，Music Assistant 会以静音保持播放状态。当客户端在超时前重新连接时，实时音频会在其缓冲区重建后恢复。客户端断开连接期间采集的音频无法恢复。
 
-If a client only becomes unavailable and does not reconnect, its source stream does not restart automatically.
+如果客户端只是变为不可用且未重新连接，其音源流不会自动重启。

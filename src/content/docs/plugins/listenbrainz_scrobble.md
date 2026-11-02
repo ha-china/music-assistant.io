@@ -1,29 +1,29 @@
 ---
-title: Listenbrainz Scrobbler Plugin
-description: Scrobble what you play to Listenbrainz.
+title: Listenbrainz Scrobbler 插件
+description: 将你播放的内容 scrobble（提交听歌记录）到 Listenbrainz。
 pluginGroup: scrobbling
 ---
 
 # Listenbrainz Scrobbler <img src="/assets/icons/listenbrainz-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has the ability to <a href="https://www.collinsdictionary.com/dictionary/english/scrobble" target="_blank" rel="noopener noreferrer">scrobble</a> to <a href="https://listenbrainz.org" target="_blank" rel="noopener noreferrer">Listenbrainz</a>. Contributed and maintained by <a href="https://github.com/ijc" target="_blank" rel="noopener noreferrer">Ian Campbell</a>
+Music Assistant 可以将播放的内容 <a href="https://www.collinsdictionary.com/dictionary/english/scrobble" target="_blank" rel="noopener noreferrer">scrobble</a>（提交听歌记录）到 <a href="https://listenbrainz.org" target="_blank" rel="noopener noreferrer">Listenbrainz</a>。该插件由 <a href="https://github.com/ijc" target="_blank" rel="noopener noreferrer">Ian Campbell</a> 贡献并维护
 
-## Features
+## 功能
 
-- Connect to Listenbrainz and scrobble the songs that are playing
-- Now playing feature is supported
+- 连接到 Listenbrainz 并 scrobble 正在播放的歌曲
+- 支持正在播放（Now Playing）功能
 
-## Configuration
+## 配置
 
-- Obtain your User Token from https://listenbrainz.org/settings/ 
+- 从 https://listenbrainz.org/settings/ 获取你的用户令牌（User Token）
 
-### Settings
+### 设置
 
-- <b>Suffix version to track names.</b> This adds the version, as stored in the Music Assistant database, to the end of the track name when it is sent to ListenBrainz. This may be useful if Musicbrainz IDs are not available to disambiguate same named tracks from an artist
-- <b>Scrobble for users.</b> This allows selection of which logged-in user will be scrobbled by this plugin. Multiple instances of this plugin can be added
-- <b>Scrobble for players.</b> This allows selection of which players will register scrobbles
+- <b>为曲目名称附加版本后缀。</b> 这会在发送到 ListenBrainz 时，把 Music Assistant 数据库中存储的版本添加到曲目名称的末尾。当没有可用的 Musicbrainz ID 来区分某位艺术家的同名曲目时，此功能可能很有用
+- <b>为用户 scrobble。</b> 此选项允许选择此插件将为哪个已登录用户进行 scrobble。可以添加此插件的多个实例
+- <b>为播放器 scrobble。</b> 此选项允许选择哪些播放器会记录 scrobble
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- Currently songs will only get scrobbled when they're fully played (90+%)
-- Be careful to avoid double scrobbling. This is possible if a music source is used that also does scrobbling internally. A future improvement is to make it configurable which music sources will be scrobbled
+- 目前，歌曲只有完整播放（超过 90%）后才会被 scrobble
+- 请注意避免重复 scrobble。如果所使用的音乐源本身也会在内部进行 scrobble，就可能出现重复。未来的改进计划是支持配置哪些音乐源会被 scrobble

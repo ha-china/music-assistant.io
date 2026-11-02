@@ -1,39 +1,39 @@
 ---
-title: "Home Assistant Integration"
+title: "Home Assistant 集成"
 ---
 
-# Home Assistant Integration <img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Home Assistant 集成 <img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-The Music Assistant integration for Home Assistant provides a connection from MA to HA. This means that MA players are visible in HA and can be controlled via the HA UI or via automations or scripts.
+Home Assistant 的 Music Assistant 集成（integration）提供了从 MA 到 HA 的连接。这意味着 MA 播放器在 HA 中可见，并且可以通过 HA 用户界面、自动化（automation）或脚本进行控制。
 
-## About the integration
+## 关于该集成
 
-- The integration is an official part of Home Assistant, there is no need to install custom components
+- 该集成是 Home Assistant 的官方组成部分，无需安装自定义组件
 
-- The integration can connect to the MA server which is running either as a Home Assistant App or as a docker container on the same or another host system
+- 该集成可以连接到 MA 服务器，该服务器可以作为 Home Assistant 应用或作为 docker 容器运行在同一台或另一台主机系统上
 
-See also the <a href="https://www.home-assistant.io/integrations/music_assistant/" target="_blank" rel="noopener noreferrer">documentation from Home Assistant about the Music Assistant integration</a>
+另请参阅 <a href="https://www.home-assistant.io/integrations/music_assistant/" target="_blank" rel="noopener noreferrer">Home Assistant 关于 Music Assistant 集成的文档</a>
 
-## What you can do with it
+## 它能做什么
 
-- [Announcements](/integration/announcements/) from HA in the form of Text to Speech or audio files are fully supported.
+- 完全支持来自 HA 的文本转语音或音频文件形式的[公告](/integration/announcements/)。
 
-- With some additional setup [voice control of MA](/integration/voice/) via HA is also possible
+- 通过一些额外的设置，还可以通过 HA 实现对 MA 的[语音控制](/integration/voice/)
 
-## How the pieces fit together
+## 各部分如何协同工作
 
-Music Assistant and Home Assistant can be joined in both directions, and there are three separate pieces involved. Which ones you need depends on which direction you want.
+Music Assistant 和 Home Assistant 可以双向连接，其中涉及三个独立的部分。你需要哪些部分取决于你想要的连接方向。
 
 <a href="/assets/ha-connection-diagram.png"><img src="/assets/ha-connection-diagram.png" alt="The Home Assistant Integration, installed in Home Assistant, makes Music Assistant players appear in Home Assistant, and is all most people need. Installed in Music Assistant, the Home Assistant Plugin exposes Home Assistant control entities plus AI and text to speech. Home Assistant Media Players makes Home Assistant players appear in Music Assistant, and requires the plugin." style="width: 800px;" loading="lazy" /></a>
 
-| Piece | You install it in | What it gives you |
+| 组件 | 安装位置 | 提供的功能 |
 |:--|:--|:--|
-| [Home Assistant Integration](/integration/installation/) | Home Assistant | Your **MA players appear in HA**, ready for the HA UI, automations, scripts, announcements and voice |
-| [Home Assistant Plugin](/ha-plugin/) | Music Assistant | The connection back the other way. It adds no players by itself, but it lets you drive **any** MA player's power, volume or mute from an HA entity, and it gives plugins such as [AI Radio](/plugins/ai-radio/) access to Home Assistant's AI and text-to-speech |
-| [Home Assistant Media Players](/player-support/home-assistant/) | Music Assistant | Your **HA media players appear in MA** as places you can play music to |
+| [Home Assistant 集成](/integration/installation/) | Home Assistant | 你的 **MA 播放器在 HA 中显示**，可用于 HA 用户界面、自动化、脚本、公告和语音 |
+| [Home Assistant 插件](/ha-plugin/) | Music Assistant | 反向连接。它本身不添加播放器，但允许你通过 HA 实体（entity）控制**任何** MA 播放器的电源、音量或静音，并让 [AI Radio](/plugins/ai-radio/) 等插件能够访问 Home Assistant 的 AI 和文本转语音功能 |
+| [Home Assistant 媒体播放器](/player-support/home-assistant/) | Music Assistant | 你的 **HA 媒体播放器在 MA 中显示**，作为可以播放音乐的目标位置 |
 
-Most people only want the first row. Install the integration and your Music Assistant speakers show up in Home Assistant — that is the whole job.
+大多数人只需要第一行。安装该集成后，你的 Music Assistant 音箱就会出现在 Home Assistant 中——这就是全部工作。
 
-Add the third row if you also want the reverse: a speaker that Home Assistant knows about, but Music Assistant has no provider for, made available inside Music Assistant. It needs the plugin. The plugin does not need the integration, so the second and third rows work without the first.
+如果你还想要反向连接，请添加第三行：让 Home Assistant 知道但 Music Assistant 没有对应提供程序的音箱，在 Music Assistant 内部可用。这需要用到该插件。该插件不需要该集成，因此第二行和第三行可以在没有第一行的情况下独立工作。
 
-You may want the plugin on its own, without the third row. It is what lets you map a Home Assistant entity to the power, volume or mute control of any Music Assistant player, so that, for example, an amplifier sitting in standby can be woken when playback starts, and it is how plugins reach Home Assistant's AI and text-to-speech services.
+你可能只想单独使用插件，而不需要第三行。它允许你将 Home Assistant 实体映射到任何 Music Assistant 播放器的电源、音量或静音控制，这样，例如，处于待机状态的放大器可以在播放开始时被唤醒，并且这也是插件访问 Home Assistant 的 AI 和文本转语音服务（service）的方式。

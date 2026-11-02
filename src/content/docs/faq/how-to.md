@@ -1,34 +1,34 @@
 ---
-title: Frequently Asked Questions - How Do I...?
-description: Common Uses for Music Assistant
+title: 常见问题 - 我该如何……？
+description: Music Assistant 的常见用法
 ---
-# How do I...?
+# 我该如何……？
 
-The first part of this page covers everyday questions about using Music Assistant. The [second part](#home-assistant-scripts-and-automations) covers scripts and automations, which require the [Home Assistant integration](/integration/) and some Home Assistant knowledge.
+本页的第一部分介绍使用 Music Assistant 时的日常问题。[第二部分](#home-assistant-scripts-and-automations)介绍脚本和自动化，它们需要 [Home Assistant 集成](/integration/)以及一定的 Home Assistant 知识。
 
-## Use volume normalization? How does it work?
+## 如何使用音量标准化？它的工作原理是什么？
 
-After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -12 LUFS, and the default is -14 LUFS. **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
+当一首曲目被 MA 播放过一次后，系统会保留相关数据，以便对所有正在播放的曲目进行音量标准化。MA 中的这项设置就是音量标准化的目标电平。MA 不会压缩动态范围（因为那样会损害音质），而只是根据 EBU R128 标准测得的整首曲目整体响度来调整其增益。负值的绝对值越大，曲目通常听起来越轻，但也会留下很大的动态余量。不过，就每首单独的曲目而言，增益可能会升高或降低，以确保所有已播放曲目的整体响度都处于所选电平。建议使用 -23 到 -12 LUFS 之间的值，默认值为 -14 LUFS。**不要**将其设置得过高（接近零），因为削波会导致你的音乐听起来失真。
 
-The method, the target level and the fixed gain values are set under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback). Turning normalization on or off lives under [**Settings → System → Player Queues**](/settings/core/#player-queues) and can be overridden for [one queue](/usage/#the-queue).
+方法、目标电平和固定增益值可在 [**设置 → 系统 → 流媒体 → 队列播放**](/settings/core/#queue-playback) 中设置。标准化的开关位于 [**设置 → 系统 → 播放器队列**](/settings/core/#player-queues) 下，并且可以为[单个队列](/usage/#the-queue)单独覆盖。
 
-More details [here](/faq/tech-info/#volume-normalization)
+更多详情见[这里](/faq/tech-info/#volume-normalization)
 
-## Have my music continue if I change rooms
+## 更换房间时让音乐继续播放
 
-There are three options.
+有三种方法。
 
-1. Start streaming to any type of group that includes all the rooms you will move between. Mute all the rooms except the one you are in. When you move rooms just mute and unmute the required players.
+1. 开始向包含你将要来回移动的所有房间在内的任意类型组进行流媒体播放。将除当前所在房间以外的所有房间静音。更换房间时，只需对所需的播放器执行静音和取消静音操作即可。
 
-2. Use a Sync Group with the dynamic members option turned on, or a Manual Sync group. As you change rooms then join the new room to the existing group. What to do with the other players in the group depends upon the group type and whether the player is the group leader (Sync Group) or holds the queue (Manual Sync). The options are unjoining the player from the group or muting it. For more information read up on [Groups](/faq/groups/)
+2. 使用开启了动态成员选项的同步组（Sync Group），或手动同步组。当你更换房间时，将新房间的播放器加入现有组。对组内其他播放器的处理方式取决于组的类型，以及该播放器是组长（Sync Group）还是持有队列（Manual Sync）。可选的做法是将该播放器从组中移除，或者将其静音。更多信息请阅读[分组](/faq/groups/)
 
-3. Use the [Transfer Queue](/faq/masstransfer/) action.
+3. 使用[转移队列](/faq/masstransfer/)动作。
 
-## Shuffle Spotify/Playlist/YouTube etc
+## 随机播放 Spotify/播放列表/YouTube 等
 
-You don't shuffle the music sources; you [enable shuffle on the queue](/usage/#shuffle) for the player, and whatever gets added to the queue then plays shuffled. Enable shuffle from within MA by selecting the Shuffle Icon on the [Player Bar](/ui/#player-bar).
+你并不随机播放音乐源本身；你需要为播放器的[队列启用随机播放](/usage/#shuffle)，之后添加到队列的任何内容都会随机播放。可以在 MA 中点击[播放器栏](/ui/#player-bar)上的随机播放图标来启用随机播放。
 
-For Home Assistant automations you can also do it with YAML:
+对于 Home Assistant 自动化，你也可以使用 YAML 来实现：
 ``` yaml
 action: media_player.shuffle_set
 target:
@@ -37,23 +37,23 @@ data:
   shuffle: true
 ```
 
-## Add radio stations to MA
+## 向 MA 添加电台
 
-If you use the [TuneIn provider](/music-providers/tunein/) then stations that are favourited in your account will appear. Any radio source that has its own library (or favorites) will work this way.
+如果你使用 [TuneIn 提供商](/music-providers/tunein/)，那么在你账户中收藏的电台将会显示。任何拥有自己媒体库（或收藏夹）的电台源都可以这样使用。
 
-If you use the [RadioBrowser provider](/music-providers/radio-browser/) then BROWSE the provider and select ADD TO LIBRARY for the station desired. All radio sources can work this way.
+如果你使用 [RadioBrowser 提供商](/music-providers/radio-browser/)，请浏览该提供商，并为所需的电台选择“添加到媒体库”。所有电台源都可以这样使用。
 
-Direct entry of stations can be done by navigating to the Radio view and selecting ADD ITEM FROM URL in the menu at the top right.
-This will also work for locally hosted streams such as from Icecast. 
+你可以通过导航到 Radio 视图并在右上角菜单中选择“从 URL 添加项目”来直接添加电台。
+这也适用于本地托管的流，例如来自 Icecast 的流。
 
 > [!NOTE]
-> The newly added station(s) will not appear until the Radio view listing is refreshed manually from the top right menu. 
+> 在从右上角菜单手动刷新 Radio 视图列表之前，新添加的电台不会显示。
 
-## Create playlists or use M3U files
+## 创建播放列表或使用 M3U 文件
 
-You can create playlists from the MA UI. Adding items can also be done from the UI.
+你可以在 MA 的 UI 中创建播放列表。也可以通过 UI 添加项目。
 
-If you want to create playlists manually, acceptable formats are:
+如果你想手动创建播放列表，可接受的格式为：
 ```
 (file in same folder as playlist):
 05 Blue Christmas.flac
@@ -70,15 +70,15 @@ or
 filesystem_smb://track/blah
 ```
 
-Relative paths to the playlist (e.g.` ../Mariah Carey/Merry Christmas/02 All I Want for Christmas Is You.flac` ) also work.
+播放列表的相对路径（例如` ../Mariah Carey/Merry Christmas/02 All I Want for Christmas Is You.flac` ）也可以使用。
 
-M3U, M3U8 and PLS playlists are supported. <a href="https://www.iptvx.info/?p=1002" target="_blank" rel="noopener noreferrer">VLC can be used to easily create playlists</a> that MA can use.
+支持 M3U、M3U8 和 PLS 播放列表。<a href="https://www.iptvx.info/?p=1002" target="_blank" rel="noopener noreferrer">可以使用 VLC 轻松创建播放列表</a>，MA 可以使用这些播放列表。
 
-## Stop the music after a period of time aka Sleep Timer
+## 让音乐在一段时间后停止，又称睡眠定时器
 
-MA has a built-in sleep timer: open the [Now Playing View](/ui/#now-playing-view) and select the sleep timer option from the menu in the top right.
+MA 内置了睡眠定时器：打开[正在播放视图](/ui/#now-playing-view)，然后从右上角的菜单中选择睡眠定时器选项。
 
-For Home Assistant users, an automation can achieve a similar result, for example stopping after the current track finishes:
+对于 Home Assistant 用户，可以通过自动化实现类似效果，例如在当前曲目播放结束后停止：
 
 ``` yaml
 sequence:
@@ -97,82 +97,82 @@ mode: single
 alias: Stop after current track
 ```
 
-Thanks to <a href="https://github.com/Aasikki" target="_blank" rel="noopener noreferrer">AAsikki</a> who showed us <a href="https://github.com/orgs/music-assistant/discussions/830#discussioncomment-3355921" target="_blank" rel="noopener noreferrer">here</a>
+感谢 <a href="https://github.com/Aasikki" target="_blank" rel="noopener noreferrer">AAsikki</a> 在<a href="https://github.com/orgs/music-assistant/discussions/830#discussioncomment-3355921" target="_blank" rel="noopener noreferrer">这里</a>向我们展示了这一方法
 
-## Create a Stereo Pair
+## 创建立体声对
 
-If a [Player Provider](/player-support/) supports stereo pairs natively, and these can be setup in the native app, and MA can detect these unique "players" then this should work. Otherwise, for the player providers that support perfect sync and show the `Output Channel Mode` in the Protocol Settings for the individual player then each player of the stereo pair can be assigned an individual channel and then the two players grouped as a [Sync Group](/faq/groups/#sync-groups).
+如果[播放器提供商](/player-support/)原生支持立体声对，并且可以在其原生应用中进行设置，而且 MA 能够检测到这些独特的“播放器”，那么这应该可以正常工作。否则，对于支持完美同步并在单个播放器的协议设置中显示 `Output Channel Mode` 的播放器提供商，可以为立体声对中的每个播放器分配一个单独的声道，然后将这两个播放器组成一个[同步组](/faq/groups/#sync-groups)。
 
-## Access my music on Nextcloud?
+## 访问我在 Nextcloud 上的音乐？
 
-The <a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> supports [Subsonic](/music-providers/subsonic/) so you can use that source in MA to connect. 
+<a href="https://apps.nextcloud.com/apps/music" target="_blank" rel="noopener noreferrer">Nextcloud Music App</a> 支持 [Subsonic](/music-providers/subsonic/)，因此你可以在 MA 中使用该源进行连接。
 
-## Get the MA icon in the HA sidebar?
+## 在 HA 侧边栏中显示 MA 图标？
 
-If you are running the MA app within the HA host go to HA `SETTINGS >> APPS >> MUSIC ASSISTANT` and select "Show in sidebar".
+如果你是在 HA 主机中运行 MA 应用，请前往 HA 的 `SETTINGS >> APPS >> MUSIC ASSISTANT`，然后选择“在侧边栏中显示”。
 
-If you are using docker then you can use an <a href="https://www.home-assistant.io/dashboards/iframe/" target="_blank" rel="noopener noreferrer">iframe panel</a> or you can use another custom integration called <a href="https://github.com/lovelylain/hass_ingress" target="_blank" rel="noopener noreferrer">hass_ingress</a> which allows you to add additional ingress panels to your Home Assistant frontend. If using direct URLs a [long lived access token](#access-the-ma-views-directly-via-url) will be required.
+如果你使用 docker，则可以使用<a href="https://www.home-assistant.io/dashboards/iframe/" target="_blank" rel="noopener noreferrer">iframe 面板</a>，或者使用另一个名为 <a href="https://github.com/lovelylain/hass_ingress" target="_blank" rel="noopener noreferrer">hass_ingress</a> 的自定义集成，它允许你向 Home Assistant 前端添加额外的 ingress 面板。如果使用直接 URL，则需要[长期访问令牌](#access-the-ma-views-directly-via-url)。
 
-## Access the MA Views directly via URL
+## 直接通过 URL 访问 MA 视图
 
-If authentication becomes a blocker to some devices then create a long lived access token via [**Settings → Profile**](/settings/profile/#long-lived-access-tokens) and use the following format as the URL
-https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true where xxx is the token
+如果身份验证对某些设备造成了阻碍，可以通过 [**设置 → 个人资料**](/settings/profile/#long-lived-access-tokens) 创建一个长期访问令牌（long lived access token），并使用以下格式作为 URL
+https://192.168.1.1:8095/?code=xxx#/home/?player=kitchen%20speaker&showFullscreenPlayer=true，其中 xxx 即为令牌
 
-## Open the UI with a Specific Player Selected
+## 打开 UI 时选中特定播放器
 
-A specific player (or the last known) can be selected when opening the view by adding `player=` to the home URL. You can use a MA player name or `true` to open the last known. Player names are not case sensitive.
+在主页 URL 中添加 `player=`，即可在打开视图时选中特定的播放器（或上次使用的播放器）。你可以使用 MA 播放器名称，或使用 `true` 来打开上次的播放器。播放器名称不区分大小写。
 
-Examples
+示例
 
 - http://192.168.1.1:8095/#/home?player=true
 - http://192.168.1.1:8095/#/home?player=Livingroom
 
-## Open the UI Without Menu or Player Bar
+## 打开不带菜单或播放器栏的 UI
 
-Display the relevant view without the <a href="https://music-assistant.io/ui/#player-bar" target="_blank" rel="noopener noreferrer">Player Bar</a> or <a href="https://music-assistant.io/ui/#main-menu" target="_blank" rel="noopener noreferrer">Main Menu</a>
+显示相关视图，但不显示<a href="https://music-assistant.io/ui/#player-bar" target="_blank" rel="noopener noreferrer">播放器栏</a>或<a href="https://music-assistant.io/ui/#main-menu" target="_blank" rel="noopener noreferrer">主菜单</a>
 
-Examples
+示例
 
 - http://192.168.1.1:8095/#/albums?frameless=true
 - http://192.168.1.1:8095/#/playlists?player=kitchen%20speaker&frameless=true
 
-## Open the UI with the Now Playing View Showing
+## 打开 UI 时显示正在播放视图
 
-Display the Now Playing view 
+显示正在播放视图
 
-Examples
+示例
 
 - http://192.168.1.1:8095/#/home?player=true&showFullscreenPlayer=true
 - http://192.168.1.1:8095/#?player=true&showFullscreenPlayer=true
 - http://192.168.1.1:8095/#/home?player=Livingroom&showFullscreenPlayer=true
 
-## Add a rotary encoder with push button to a piCorePlayer
+## 为 piCorePlayer 添加带按压按钮的旋转编码器
 
-See <a href="https://github.com/orgs/music-assistant/discussions/1123#discussioncomment-7945369" target="_blank" rel="noopener noreferrer">here</a>
+请参见<a href="https://github.com/orgs/music-assistant/discussions/1123#discussioncomment-7945369" target="_blank" rel="noopener noreferrer">这里</a>
 
-## Create Multiple ShairportSync-Instances on the same Host
+## 在同一主机上创建多个 ShairportSync 实例
 
-A tutorial is available <a href="https://github.com/orgs/music-assistant/discussions/3562" target="_blank" rel="noopener noreferrer">here</a>
+可在<a href="https://github.com/orgs/music-assistant/discussions/3562" target="_blank" rel="noopener noreferrer">这里</a>找到相关教程
 
-## Use MA with Mopidy
+## 将 MA 与 Mopidy 配合使用
 
-See here https://github.com/orgs/music-assistant/discussions/439
+请参见 https://github.com/orgs/music-assistant/discussions/439
 
-## Run MA when I have SSL setup on my internal network?
+## 内网已配置 SSL 时如何运行 MA？
 
-Trying to run MA with SSL is not recommended. Having said that, whilst you can not run the stream service behind SSL you can configure the frontend entirely to your requirements. The default is that the frontend is protected by Ingress in HAOS. For those using docker, it is possible to host the webserver on a desired port and then run a (Ingress) reverse proxy. No support will be provided for these setups, we recommend you use HAOS.
+不建议尝试在 SSL 下运行 MA。话虽如此，虽然流媒体服务无法运行在 SSL 之后，但你完全可以根据自己的需求来配置前端。默认情况下，HAOS 中的前端受 Ingress 保护。对于使用 docker 的用户，可以将 Web 服务器托管在所需的端口上，然后运行（Ingress）反向代理。我们不会为这些配置提供支持，建议你使用 HAOS。
 
-## Home Assistant scripts and automations
+## Home Assistant 脚本和自动化
 
-The following answers are for Home Assistant scripts and automations. They assume you have the [Home Assistant integration](/integration/) installed and are comfortable editing YAML. You do not need any of this to use Music Assistant day to day.
+以下内容适用于 Home Assistant 脚本和自动化。它们假定你已经安装了 [Home Assistant 集成](/integration/)，并且能够熟练地编辑 YAML。在日常使用 Music Assistant 时，你并不需要这些内容。
 
-### Get the URI?
+### 如何获取 URI？
 
-A URI is the address Music Assistant uses to identify a specific item (a track, album, playlist and so on). You only need URIs when building automations; you never need them in the app itself.
+URI 是 Music Assistant 用来标识特定项目（曲目、专辑、播放列表等）的地址。只有在构建自动化时才需要用到 URI；在应用本身中你完全不需要它。
 
-For playlists, artists, albums and radio you can simply use the name.
+对于播放列表、艺术家、专辑和电台，直接使用名称即可。
 
-For tracks you can use the name but that may result in ambiguous responses so you can limit by artist name by using `Billy Joel - A Matter of Trust`. If that is still ambiguous, then the action has additional options which you can use to further restrict the search. For example:
+对于曲目，你也可以使用名称，但这可能会导致有歧义的结果，因此可以使用 `Billy Joel - A Matter of Trust` 这样的格式通过艺术家名称加以限定。如果这样仍然有歧义，该动作还提供了其他选项，可用于进一步缩小搜索范围。例如：
 
 ``` yaml
 data:
@@ -182,20 +182,20 @@ data:
   album: The Bridge
 ```
 
-Similarly, if the album name is ambiguous you can specify the artist name first (`Queen - Greatest Hits`)
+同样，如果专辑名称有歧义，你可以先指定艺术家名称（`Queen - Greatest Hits`）
 
-You can also use the `music_assistant.search` or `music_assistant.get_library` actions and the URI will be shown in the results. The URI is also shown in the [Provider Details section](/ui/#provider-details) at the bottom of the item views and can be copied to the clipboard using the chain link icon.
+你也可以使用 `music_assistant.search` 或 `music_assistant.get_library` 动作，URI 会显示在结果中。URI 也显示在项目视图底部的[提供商详情区域](/ui/#provider-details)中，可以使用链条状的链接图标将其复制到剪贴板。
 
 > [!NOTE]
-> URIs which begin with `media-source://` are HA URIs and should not be used when targetting MA player entities. Doing so will result in inconsistent behaviour.
+> 以 `media-source://` 开头的 URI 是 HA 的 URI，不应在定位 MA 播放器实体（entity）时使用。否则会导致行为不一致。
 
-URIs for folders need to be constructed in the form `filesystem_id://folder/relative/path/to/folder` (e.g. `filesystem_smb--5iJ4npRi://folder/ABBA`), The filesystem_id can be obtained by reviewing the output of the `get_library` action. Scan for the key `tracks.provider_mappings.provider_instance` and find one that shows the filesystem_id. Having said that, if there is only one file system source added to MA then `filesystem_smb` can be used.
+文件夹的 URI 需要按照 `filesystem_id://folder/relative/path/to/folder` 的形式构造（例如 `filesystem_smb--5iJ4npRi://folder/ABBA`）。filesystem_id 可以通过查看 `get_library` 动作的输出来获得。查找键 `tracks.provider_mappings.provider_instance`，并找到一个显示了 filesystem_id 的条目。话虽如此，如果 MA 中只添加了一个文件系统源，则可以使用 `filesystem_smb`。
 
-In general every MA item has a URI shaped like `provider://media_type/item_id`. More examples are:
+一般来说，每个 MA 项目都有一个形如 `provider://media_type/item_id` 的 URI。更多示例：
 
 - `ambient_sounds://sound_effect/ocean_waves`
 
-### Add items to the queue via a script or automation
+### 通过脚本或自动化向队列添加项目
 
 ``` yaml
 action: media_player.play_media
@@ -206,17 +206,17 @@ data:
   media_content_type: music
 ```
 
-See here for <a href="https://www.home-assistant.io/integrations/media_player/" target="_blank" rel="noopener noreferrer">enqueue options</a>
+有关<a href="https://www.home-assistant.io/integrations/media_player/" target="_blank" rel="noopener noreferrer">入队选项</a>，请参见这里
 
-See also [music_assistant.play_media action](/faq/massplaymedia/)
+另请参见 [music_assistant.play_media 动作](/faq/massplaymedia/)
 
-### Start a playlist with a script
+### 使用脚本播放播放列表
 
-Use the `media_player.play_media` action shown above or `music_assistant.play_media` action as described [here](/faq/massplaymedia/).
+使用上面展示的 `media_player.play_media` 动作，或按[这里](/faq/massplaymedia/)所述使用 `music_assistant.play_media` 动作。
 
-### Play a Random Item
+### 随机播放一个项目
 
-Use get_library and an script/automation such as this:
+使用 get_library 以及如下所示的脚本/自动化：
 
 ``` yaml
 sequence:
@@ -237,7 +237,7 @@ sequence:
       entity_id: media_player.ma_kitchen_speaker
 ```
 
-If you want a queue of tracks then:
+如果你想要一个由曲目组成的队列，则可以使用：
 
 ``` yaml
 sequence:
@@ -260,21 +260,21 @@ sequence:
             entity_id: media_player.ma_kitchen_speaker
 ```
 
-This could be modified for other item types (e.g. radio stations or playlists). 
+可以对此进行修改，使其适用于其他项目类型（例如电台或播放列表）。
 
-### Clear the queue with a script or automation
+### 使用脚本或自动化清空队列
 
-Use the HA action of `media_player.clear_playlist` or the new `music_assistant.play_media` action and select the appropriate enqueue option if wanting to clear the queue and play something else.
+使用 HA 的 `media_player.clear_playlist` 动作，或者新的 `music_assistant.play_media` 动作；如果想在清空队列后播放其他内容，请选择合适的入队选项。
 
-### Start a radio stream with an automation
+### 通过自动化播放电台流
 
-Use the `music_assistant.play_media` action and set the `media_id` as the station name.
+使用 `music_assistant.play_media` 动作，并将 `media_id` 设置为电台名称。
 
-### Go to next/previous radio station via a script
+### 通过脚本切换到下一个/上一个电台
 
-Create an `input_select` with the various radio stations as options. Now you can use next and previous actions to switch between the stations.
+创建一个 `input_select`，将各个电台作为其选项。现在你就可以使用 next 和 previous 动作在各电台之间切换。
 
-To generate the list of radio stations dynamically use a suitable automation trigger and a script such as this:
+要动态生成电台列表，请使用合适的自动化触发器和如下脚本：
 ``` yaml
 script:
   generate_station_list:  
@@ -297,11 +297,11 @@ script:
 ```
 
 > [!NOTE]
-> Replace the `config_entry_id` value with the one for your own MA integration; the example above will not work as-is. The easiest way to get yours is to build the action once with the UI editor in Home Assistant's Developer Tools > Actions and then switch to YAML view.
+> 请将 `config_entry_id` 的值替换为你自己的 MA 集成所对应的值；上面的示例原样使用是行不通的。获取该值最简单的方法是：在 Home Assistant 的开发者工具 > 动作 中使用 UI 编辑器构建一次该动作，然后切换到 YAML 视图。
 
-### Play an album shuffled
+### 随机播放专辑
 
-[Shuffle is turned off automatically](/usage/#shuffle) when selecting `play` or `replace` and the item is an album (or other ordered item) so `add` needs to be used. For example:
+当选择 `play` 或 `replace` 并且项目为专辑（或其他有顺序的项目）时，[随机播放会自动关闭](/usage/#shuffle)，因此需要改用 `add`。例如：
 
 ```
 actions:

@@ -29,8 +29,8 @@ head:
       property: "og:image:category"
       content: "Announcements"
 
-title: "Music Assistant 2.7 - Taking over the airwaves"
-description: "With a visual overhaul, new features and providers, and a custom-built streaming protocol, it's our biggest update yet!"
+title: "Music Assistant 2.7 - 接管电波"
+description: "视觉全面改版、全新功能与提供方，再加上一个自建的流媒体协议，这是我们迄今为止最大的一次更新！"
 cover:
     image: "https://assets.openhomefoundation.org/opengraph?url=https://www.music-assistant.io/blog/2025/12/17/music-assistant-2-7"
     alt: "Music Assistant is taking over the airwaves"
@@ -43,129 +43,127 @@ tags:
   - announcement
 ---
 
-It's been a busy few months composing behind the scenes, building up to a massive crescendo. Today, the beat finally drops on [Music Assistant's](https://www.music-assistant.io/) biggest update yet. With **version 2.7**, Music Assistant is getting all jazzed up with a visual overhaul, a chart-topping lineup of new features and providers, along with a brand-new streaming protocol we're *spinning* up ourselves.
+过去几个月里，我们在幕后忙于谱曲，只为蓄势推向一段宏大的渐强乐章。今天，[Music Assistant](https://www.music-assistant.io/) 迄今为止最重大的更新终于踩着节拍震撼登场。在 **2.7 版本**中，Music Assistant 焕发出爵士乐般的活力：视觉全面改版、一众登顶排行榜的新功能和提供方（provider），外加一个由我们亲自*转动*起来的全新流媒体协议。
 
-Of course, you can always update and experience all the great new stuff without reading the rest of this, but you might miss a deep cut. In fact, we can't even cover everything in this blog (there really is that much), so go sing your praises for anything we missed in the comments!
+当然，你完全可以不读完下文就直接更新，体验所有精彩的新内容，但那样可能会错过一些“遗珠曲目”。事实上，这篇博客甚至无法涵盖全部内容（新东西真的有那么多），所以如果我们遗漏了什么，欢迎到评论区放声高唱赞歌！
 
 <!--more-->
 
-## "With a Little Help from My Friends"
+## “朋友们的鼎力相助”
 
-**Marvin joins the team**
+**Marvin 加入团队**
 
-Music Assistant has gained its first full-time employee at the Open Home Foundation. No, not me! My day job is leading the [Ecosystems department](https://www.openhomefoundation.org/structure/) at the foundation (which comprises all the software projects the Foundation has that are not Home Assistant itself). [Marvin](https://github.com/MarvinSchenkel) will be joining the foundation in the new year to work full-time on Music Assistant, leading the project's day-to-day operations. Marvin has been contributing to the project for three years now, working on all sorts of parts of the project, and specifically with the Apple Music and YouTube providers.
+Music Assistant 迎来了 Open Home Foundation 的第一位全职员工。不，不是我！我的本职工作是领导基金会的[生态系统部门](https://www.openhomefoundation.org/structure/)（涵盖基金会名下除 Home Assistant 之外的所有软件项目）。[Marvin](https://github.com/MarvinSchenkel) 将于新年加入基金会，全职投入 Music Assistant 的开发，负责项目的日常运营。Marvin 参与项目贡献已有三年，涉足项目的方方面面，尤其专注于 Apple Music 和 YouTube 提供方。
 
-Not to worry, I'm pretty obsessed with my audio setup and will still be tinkering on my little pet project 😁.
+不必担心，我对自己的音频设备一向痴迷，仍会继续捣鼓我心爱的小项目 😁。
 
-## "Everything in Its Right Place"
+## “万物各归其位”
 
-**A visual overhaul**
+**视觉全面改版**
 
 <p class="img">
     <img src="/images/blog/2025/12/17/music-assistant-2-7/overhaul.webp" alt="Screenshot of the Music Assistant app with an overhauled user interface">
-    A well deserved visual refresh
+    一场实至名归的视觉焕新
 </p>
 
-Music Assistant joining the foundation has given us a lot more than a nice *open home*; it's given the project clearer direction and some expert help. One area some people felt Music Assistant fell short was its UI and UX, and in version 2.7, we're starting the process of giving it a major overhaul, making it look as good as your music sounds!
+Music Assistant 加入基金会带给我们的远不止一个美好的*开放之家*；它为项目指明了更清晰的方向，还带来了专家的助力。有些人认为 Music Assistant 的短板在于 UI 和 UX，而在 2.7 版本中，我们开始对其进行大规模改版，让它的颜值配得上你音乐的美妙！这只是一个宏大进程的开端，后续每次更新都会带来更多打磨。你最先注意到的可能是屏幕左侧可折叠的导航栏，它看起来和另一个“助手”颇为神似 😉。现在一切都直观了许多，对新手用户尤其友好。设置页面也借助面包屑（breadcrumbs）导航变得更容易浏览。
 
-This is just the beginning of a big process, so expect every update to bring more polish. The first thing you'll probably notice is the collapsible navbar on the left of the screen, which looks pretty familiar to another Assistant 😉. Now it's much more intuitive, especially for new users. The settings page has also been made much easier to navigate with breadcrumbs.
+本次最大的明星当属全新的内置播放器（Built-in Player），让你可以在正在搜寻下一首曲目的浏览器里直接试听音乐。在把歌曲发送到家中的每个音箱之前，先确认它是否老少皆宜，非常实用。
 
-The biggest star of the show is the new Built-in Player, which lets you listen to music on the browser you're using to hunt for your next track. Great for double-checking if the next song is family-friendly before sending it to every speaker in the home.
+## “刀枪不入”
 
-## "Bulletproof"
-
-**Users and logins**
+**用户与登录**
 
 <p class="img">
     <img src="/images/blog/2025/12/17/music-assistant-2-7/login.webp" alt="Screenshot of the Music Assistant app with it's new login functionality">
-    User profiles for the whole family!
+    全家人都有专属的用户资料！
 </p>
 
-A lot of new features we've implemented wouldn't be possible without some form of login and authentication. It was a much-requested feature, as security even within your home shouldn't be ignored. We know logging in every once in a while can be a minor inconvenience, but we've tried to make it as unobtrusive as possible, even implementing a way to use your Home Assistant login as a "Single Sign-On".
+我们实现的许多新功能都离不开某种形式的登录和身份认证。这是一项呼声极高的功能，因为即使在家中，安全性也不容忽视。我们知道偶尔登录一次可能有点小麻烦，但我们已尽力让它尽量不打扰你，甚至实现了将你的 Home Assistant 登录用作“单点登录”（Single Sign-On）的方式。
 
-You can now have different user profiles with their own music providers. No more having four Tidal accounts all sitting next to each other, cluttering up the Playlists tab. You can even assign who has access to each speaker; say goodbye to the kids playing Demon Hunters on your office speaker during your performance review 😅. In Settings, just head to the User Management section, where you can add and edit your new users.
+现在，你可以创建各自配备独立音乐提供方的不同用户资料。再也不用让四个 Tidal 账号并排挤在一起，把“播放列表”标签页弄得杂乱无章。你甚至可以指定谁有权使用哪台音箱；跟孩子们在你进行绩效评估时用办公室音箱播放 Demon Hunters 的日子说再见吧 😅。在“设置”中，只需前往“用户管理”（User Management）部分，即可添加和编辑新用户。
 
-## "Around the world"
+## “环游世界”
 
-**Remote music streaming**
+**远程音乐串流**
 
 <p class="img">
     <img src="/images/blog/2025/12/17/music-assistant-2-7/flow.webp" alt="Diagram of how Music Assistant handles remote music streaming">
-    No matter where, no matter when
+    无论何地，无论何时
 </p>
 
-One feature made possible with our new login interface is remote music streaming – yes, that's correct, Music Assistant anywhere you can connect to the internet. We've created a [new web app](https://app.music-assistant.io/) that allows for remote connections while you're out and about.
+全新登录界面带来的功能之一就是远程音乐串流——没错，只要能连接互联网，随时随地都能使用 Music Assistant。我们推出了一个[全新的 Web 应用](https://app.music-assistant.io/)，让你在外出时也能远程连接。
 
-It uses Home Assistant Cloud's built-in multimedia streaming capabilities (WebRTC) to help route the audio from your Music Assistant server to wherever you are. A [Home Assistant Cloud subscription](https://www.home-assistant.io/cloud/) is not required to use this feature; a big shoutout to Nabu Casa for providing their infrastructure for free to our users. Home Assistant Cloud subscribers get access to even more powerful routing, which improves streaming in more places. This subscription also supports the full-time development of Music Assistant 🙏.
+它借助 Home Assistant Cloud 内置的多媒体串流能力（WebRTC），将音频从你的 Music Assistant 服务器路由到你所在的任何地方。使用此功能无需 [Home Assistant Cloud 订阅](https://www.home-assistant.io/cloud/)；特别感谢 Nabu Casa 免费向我们的用户开放其基础设施。Home Assistant Cloud 订阅用户可以使用更强大的路由，在更多地方获得更好的串流体验。这项订阅同时也为 Music Assistant 的全职开发提供支持 🙏。
 
-This connection is peer-to-peer and end-to-end encrypted, meaning no one will know if you're listening to ABBA 😊. I wouldn't say it's ready to replace your current music streaming service, but it's a great way to get your FLACs playing at a friend's house. You could even open two instances of the web app and stream it to two devices, and they'll be synchronized… *but how is that even possible?*
+此连接为点对点（P2P）且经过端到端加密，意味着没人会知道你在听 ABBA 😊。我不敢说它已经准备好取代你现有的音乐串流服务，但它是让你在朋友家播放自己 FLAC 音乐的好办法。你甚至可以打开两个 Web 应用实例，分别串流到两台设备，它们还能保持同步……*这究竟是怎么做到的？*
 
-## "Spin me right round"
+## “让我转个不停”
 
-**Introducing Sendspin**
+**隆重推出 Sendspin**
 
-For some time, the Music Assistant team has been looking for the best way to stream audio, album art, and other music visualizations to the devices we have around our homes. There are a couple of projects out there doing cool stuff with streaming audio, but not any that fit our needs. So, when it doesn't exist, it's time to start building.
+一段时间以来，Music Assistant 团队一直在寻找将音频、专辑封面以及其他音乐可视化效果串流到家各处设备的最佳方式。市面上有几个项目在做很酷的音频串流，但没有一个符合我们的需求。所以，既然这样的东西还不存在，那就是时候动手构建了。
 
-Introducing **Sendspin**, a new multimedia streaming and synchronizing protocol. It's fully open source and free to use. Sendspin can stream high-fidelity audio, album art, and visualizer data, automatically adapting to each device's capabilities. Imagine an e-paper display showcasing the album cover, while multiple speakers play in sync, and smart lights pulse to the rhythm.
+隆重介绍 **Sendspin**：一个全新的多媒体串流与同步协议。它完全开源，可免费使用。Sendspin 可以串流高保真音频、专辑封面和可视化数据，并自动适配每台设备的能力。想象一下：电子纸显示屏上展示着专辑封面，多个音箱同步播放，智能灯光随节奏律动。
 
-The best way to use it right now is either via your browser or a [Home Assistant Voice Preview Edition](https://www.home-assistant.io/voice-pe/) running beta firmware. We've built the experimental ability to use Sendspin on Google Cast-capable speakers (we're also looking to do the same with AirPlay-capable speakers), which will allow Sendspin to work with a lot of different hardware.
+目前使用它的最佳方式是通过浏览器，或者运行 Beta 固件的 [Home Assistant Voice Preview Edition](https://www.home-assistant.io/voice-pe/)。我们还构建了在支持 Google Cast 的音箱上使用 Sendspin 的实验性功能（也在计划对支持 AirPlay 的音箱做同样的事情），这将让 Sendspin 能与许多不同的硬件协同工作。
 
-A big thanks to [Maxim](https://github.com/maximmaxim345) and [Kevin](https://github.com/kahrendt) at the Open Home Foundation, who have been *instrumental* in making Sendspin a reality. Even though it can do some impressive stuff today, it's very much a tech preview, and this announcement is our **call to all developers and DIY audio hobbyists** – [we need your help building and testing this](https://www.sendspin-audio.com/). This is the spec, start building with it!
+特别感谢 Open Home Foundation 的 [Maxim](https://github.com/maximmaxim345) 和 [Kevin](https://github.com/kahrendt)，他们为 Sendspin 从构想变为现实*谱写了关键乐章*。尽管它如今已能实现一些令人惊叹的功能，但它仍处于技术预览阶段，本次公告正是我们**向所有开发者和 DIY 音频爱好者发出的召集令**——[我们需要你的帮助来构建和测试它](https://www.sendspin-audio.com/)。规范就在这里，快用它开始构建吧！
 
-All the best things in life are meant to be shared, and your music should be as free and open as the software we love. So spin that record 💿, drop the needle, and send that music across your entire home.
+生命中最美好的事物注定要与人分享，你的音乐也应像我们所热爱的软件一样自由开放。所以，转动那张唱片 💿，放下唱针，让音乐传遍你家的每个角落。
 
-## "Aeroplane"
+## “飞机”
 
-**AirPlay additions**
+**AirPlay 新增支持**
 
-We recently added support for external audio sources, the first being Spotify Connect. This allows you to stream audio from the Spotify app to your Music Assistant server, which could send it across all your speakers, even if they don't support Spotify Connect. We've now added the ability to send AirPlay audio to Music Assistant, which you can then send anywhere in your home.
+我们最近添加了对外部音频源的支持，首个是 Spotify Connect。这让你可以把音频从 Spotify 应用串流到你的 Music Assistant 服务器，再发送到你所有的音箱，即使它们不支持 Spotify Connect 也没问题。现在我们又添加了向 Music Assistant 发送 AirPlay 音频的功能，之后你就可以把它发送到家中的任何地方。
 
-We also now support AirPlay 2 speakers as a player provider, which means perfectly synced audio across all your AirPlay 2-capable speakers, like HomePods. We recommend reading the limitations in the documentation, as not all AirPlay 2 devices are made equal 🤦‍♂️.
+我们还支持将 AirPlay 2 音箱作为播放器提供方，这意味着所有支持 AirPlay 2 的音箱（例如 HomePod）都能实现完美同步的音频。我们建议阅读文档中的相关限制说明，因为并非所有 AirPlay 2 设备都同等可靠 🤦‍♂️。
 
-## "Sing"
+## “歌唱”
 
-**Lyrics support**
+**歌词支持**
 
 <p class="img">
     <img src="/images/blog/2025/12/17/music-assistant-2-7/lyrics.webp" alt="Screenshot of the Music Assistant player with lyrics alongside album art">
-    It's time for karaoke!
+    卡拉OK时间到！
 </p>
 
-Never again be left guessing what Kurt is saying in Smells Like Teen Spirit. As of Music Assistant 2.6, you can now see the lyrics of the song you're playing. If the lyrics provider supports it, there is the ability to have these words time-synced, making it more like karaoke. Lyrics can be found when you open the queue menu and it will be in the "lyrics" tab (this tab will only appear if the track name, artist and album are matched to the lyrics providers). We started with support of LRCLIB, but have since added Tidal lyric syncing, Genius lyrics, and local LRC files.
+再也不必去猜 Kurt 在 Smells Like Teen Spirit 里到底在唱什么了。从 Music Assistant 2.6 起，你可以查看正在播放歌曲的歌词。如果歌词提供方支持，这些歌词还可以与播放时间同步，就像卡拉OK一样。打开播放队列菜单即可找到歌词，它位于“歌词”标签页中（只有当曲目名称、艺术家和专辑与歌词提供方匹配时，才会显示该标签页）。我们最初支持 LRCLIB，之后又添加了 Tidal 歌词同步、Genius 歌词以及本地 LRC 文件。
 
-## "Smooth operator"
+## “圆滑的调音师”
 
-**Smart fading**
+**智能淡入淡出**
 
 <p class="img">
     <img src="/images/blog/2025/12/17/music-assistant-2-7/crossfade.webp" alt="Screenshot of the Music Assistant app showing the smart fades setting">
-    Making your playlists seamless
+    让你的播放列表无缝衔接
 </p>
 
-Music Assistant is now your personal in-house DJ, perfectly blending one song into the next, and unlike a DJ it always takes your requests 😎. This latest update adds *Smart fading,* which takes into account the BPM of each song, to make crossfading between songs sound more natural. To turn it on, go to your player of choice, scroll down to the Audio section, and choose "Enable Smart Fades".
+Music Assistant 现在是你的专属家庭 DJ，能把一首歌与下一首完美衔接，而且与 DJ 不同，它总是接受你的点歌 😎。本次最新更新加入了*智能淡入淡出（Smart Fading）*，它会考虑每首歌曲的 BPM（每分钟节拍数），让歌曲之间的交叉淡入淡出过渡更加自然。要开启此功能，请前往你选择的播放器，向下滚动到“音频”部分，然后选择“启用智能淡入淡出（Enable Smart Fades）”。
 
-## "All the small things"
+## “所有的小事”
 
-**And much more**
+**以及更多**
 
-None of these updates are *small things*, but I'm running out of space, so here is the rest of the hot 100:
+这些更新中没有一件是*小事*，但篇幅有限，以下是热门榜单 Hot 100 的其余部分：
 
-- There are now DSP presets that allow you to quickly save and apply custom configurations.
-- Track and share your listening history, with the addition of scrobbling, with support for LastFM, ListenBrainz, and Subsonic.
-- Several new player providers have been added, including Yamaha MusicCast, and Roku devices running Media Assistant.
-- Added VBAN as a new input provider.
-- New radio and podcast providers include Radio Paradise, Podcast Index, BBC Sounds, gPodder, iTunes Podcasts, Dl.fm, and ARD Audiothek.
-- Can't follow Phish on tour? Luckily, the new Phish.in provider has you covered. There's also Nugs.net if you're looking for more live music.
-- Another cool hodgepodge of audio is the Internet Archive, which can now be added as a provider.
-- One of Japan's biggest streaming platforms Niconico has been added as an audio provider ㊗️.
+- 新增 DSP 预设，可快速保存和应用自定义配置。
+- 记录并分享你的收听历史，新增 scrobbling（收听记录上报）功能，支持 LastFM、ListenBrainz 和 Subsonic。
+- 新增了多个播放器提供方，包括 Yamaha MusicCast 以及运行 Media Assistant 的 Roku 设备。
+- 新增 VBAN 作为输入提供方。
+- 新的电台和播客提供方包括 Radio Paradise、Podcast Index、BBC Sounds、gPodder、iTunes Podcasts、Dl.fm 和 ARD Audiothek。
+- 无法追随 Phish 的巡演？幸运的是，新的 Phish.in 提供方可以帮到你。如果你想要更多现场音乐，还有 Nugs.net。
+- 另一个很酷的音频大杂烩是 Internet Archive，现在可以作为提供方添加了。
+- 日本最大的流媒体平台之一 Niconico 也已作为音频提供方加入 ㊗️。
 
-## "Rebel yell"
+## “叛逆的呐喊”
 
-**Join the audio revolution**
+**加入音频革命**
 
 <p class="img">
     <img src="/images/blog/2025/12/17/music-assistant-2-7/playing.webp" alt="Google Nest Hub playing Music Assistant alongside a Home Assistant Voice Preview Edition">
-    Music Assistant is also cast compatible!
+    Music Assistant 也兼容 Cast 投屏！
 </p>
 
-Your music, your players – it's time to take back control of your music and the devices you want to play it on. If you're new to Music Assistant, check how to [get started here](https://www.music-assistant.io/). While we're excited about these new features, we're not hitting pause anytime soon. We'd love to hear your feedback in the comments or on [Discord](https://discord.com/invite/kaVm8hGpne).
+你的音乐，你的播放器——是时候夺回对你音乐以及你想要播放它的设备的控制权了。如果你刚接触 Music Assistant，请查看[这里的入门指南](https://www.music-assistant.io/)。虽然我们对这些新功能感到兴奋，但我们不会很快按下暂停键。欢迎在评论区或 [Discord](https://discord.com/invite/kaVm8hGpne) 上告诉我们你的反馈。

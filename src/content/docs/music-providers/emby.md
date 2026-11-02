@@ -1,15 +1,15 @@
 ---
 title: "Emby"
-description: Documentation for using the Emby music source
+description: 使用 Emby 音乐源的文档
 ---
 
 # Emby <img src="/assets/icons/emby-icon.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for accessing music hosted on an [Emby Server](https://emby.media/). This component was contributed and is maintained by [hatharry](https://github.com/hatharry).
+Music Assistant 支持访问托管在 [Emby Server](https://emby.media/) 上的音乐。此组件由 [hatharry](https://github.com/hatharry) 贡献并维护。
 
-Emby is a media server you run yourself. It indexes the music, films and other media held on your own storage and streams them to apps on your devices.
+Emby 是一个可以自行部署的媒体服务器。它会为存储在你自己存储空间中的音乐、电影和其他媒体建立索引，并将它们流媒体传输到你设备上的应用。
 
-This source connects Music Assistant to the music libraries on your Emby server, so a collection you have already organised there is available without cataloguing it a second time.
+此音乐源将 Music Assistant 连接到你 Emby 服务器上的音乐库，因此你已经在那里整理好的音乐收藏无需二次编目即可使用。
 
 ## Features
 
@@ -32,12 +32,22 @@ This source connects Music Assistant to the music libraries on your Emby server,
 - Searching the 'Music' libraries on an Emby server is possible
 - Scrobbling is sent back to the Emby server
 
-## Configuration:
-The following information must be supplied to configure this provider:
+### Other
 
-- <b>Server.</b> For example, https://music.domain.tld/ or http://192.168.1.4:8096/ (for a local server)
-- <b>Username.</b> The username for the account to be used by Music Assistant to access the server
-- <b>Password.</b> The password for the account
+- Searching the 'Music' libraries on an Emby server is possible
+- Scrobbling is sent back to the Emby server
 
-## Known Issues / Notes
-- Emby server must be accessible from the Music Assistant instance for library scanning and playback to function correctly.
+### 其他
+
+- 可以搜索 Emby 服务器上的 'Music' 库
+- Scrobbling（收听记录）会发送回 Emby 服务器
+
+## 配置：
+配置此提供程序（provider）需要提供以下信息：
+
+- <b>服务器（Server）。</b>例如，https://music.domain.tld/ 或 http://192.168.1.4:8096/（本地服务器）
+- <b>用户名（Username）。</b>Music Assistant 用于访问服务器的帐户用户名
+- <b>密码（Password）。</b>该帐户的密码
+
+## 已知问题 / 说明
+- Music Assistant 实例必须能够访问 Emby 服务器，媒体库扫描和播放功能才能正常运行。

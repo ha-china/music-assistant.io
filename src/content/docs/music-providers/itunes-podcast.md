@@ -1,14 +1,14 @@
 ---
-title: "iTunes Podcast Search"
+title: "iTunes Podcast 搜索"
 ---
 
-# iTunes Podcast Search <img src="/assets/icons/itunes-podcast-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# iTunes Podcast 搜索 <img src="/assets/icons/itunes-podcast-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for <a href="https://podcasts.apple.com/us/browse" target="_blank" rel="noopener noreferrer">iTunes Podcast Searching</a>. Contributed and maintained by <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a>
+Music Assistant 支持 <a href="https://podcasts.apple.com/us/browse" target="_blank" rel="noopener noreferrer">iTunes Podcast 搜索</a>。由 <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer">Fabian Munkes</a> 贡献并维护
 
-Apple's podcast directory is the largest index of podcasts on the internet, and the one the Podcasts app on an iPhone searches. Anyone publishing a feed can be listed in it, free of charge.
+Apple 的播客目录是互联网上最大的播客索引，也是 iPhone 上的 Podcasts 应用所搜索的目录。任何发布 feed 的人都可以免费被收录其中。
 
-This source lets you search that directory from Music Assistant and add anything you find to your library. The episodes themselves are streamed from the podcast's own feed rather than from Apple.
+此源让你可以在 Music Assistant 中搜索该目录，并将找到的任何内容添加到你的媒体库中。单集本身是从播客自己的 feed 流式播放的，而不是由 Apple 提供。
 
 ## Features
 
@@ -30,15 +30,23 @@ This source lets you search that directory from Music Assistant and add anything
 
 - Search for podcasts via the iTunes API
 
-## Configuration
+### Other
 
-- Configure your country
-- Specify the Maximum number of episodes to be retrieved (use 0 for all)
-- Optionally disable explicit results
+- Search for podcasts via the iTunes API
 
-## Known Issues / Notes
+### 其他
 
-- The search results may contain video podcasts due to the inability to filter them out
-- If a podcast is desired to be part of the MA library, you have to add it, or mark it as a favorite. This source is search only
-- If a podcast does not appear in the search results, but is known to be freely available on Apple Podcast, this may be because content creators are permitted to hide the RSS feed within the Apple Podcast's source. Without the feed URL this source is unable to access the media information (an INFO log message will appear in the MA log if this is the case). One solution is to try and search the web for an RSS feed URL for your specific podcast(s). If it exists, use the <a href="https://www.music-assistant.io/music-providers/podcastfeed/" target="_blank" rel="noopener noreferrer">Podcast RSS Feed</a> to add it to MA manually. The other option is to try and find it on one of the other podcast sources
-- When a sync is done on this provider the sync will update the episode list. If a podcast feed is not accessible during the sync, this podcast will remain in its previous state
+- 通过 iTunes API 搜索播客
+
+## 配置
+
+- 配置你的国家/地区
+- 指定要获取的单集最大数量（使用 0 表示全部）
+- 可选择禁用包含露骨内容的结果
+
+## 已知问题 / 说明
+
+- 由于无法将其过滤掉，搜索结果中可能包含视频播客
+- 如果希望某个播客成为 MA 媒体库的一部分，你必须添加它，或将其标记为收藏。此源仅支持搜索
+- 如果某个播客没有出现在搜索结果中，但已知它在 Apple Podcast 上可免费获取，这可能是因为内容创作者可以在 Apple Podcast 的源中隐藏 RSS feed。没有 feed URL，此源将无法访问媒体信息（如果是这种情况，MA 日志中会出现一条 INFO 级别的日志消息）。一种解决办法是尝试在网络上搜索你特定播客的 RSS feed URL。如果存在，可以使用 <a href="https://www.music-assistant.io/music-providers/podcastfeed/" target="_blank" rel="noopener noreferrer">Podcast RSS Feed</a> 手动将其添加到 MA。另一种选择是尝试在其他播客源中找到它
+- 在此提供程序上完成同步时，同步会更新单集列表。如果在同步期间某个播客 feed 无法访问，该播客将保持其之前的状态

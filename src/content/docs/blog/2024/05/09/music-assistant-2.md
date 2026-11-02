@@ -9,8 +9,8 @@ head:
       property: og:image:alt
       content: "Music Assistant 2.0: Your Music, Your Players"
 
-title: "Music Assistant 2.0: Your Music, Your Players"
-description: "Connecting multiple music libraries to almost any smart speaker."
+title: "Music Assistant 2.0：你的音乐，你的播放器"
+description: "将多个音乐库连接到几乎任何智能音箱。"
 cover:
   image: /public/images/blog/2024/05/09/music-assistant-2/art.jpg
   alt: 'Music Assistant 2.0: Your Music, Your Players'
@@ -23,117 +23,117 @@ tags:
   - announcement
 ---
 
-Today, exactly five years ago, I, Marcel, started working on [Music Assistant](https://music-assistant.io/). What began as a quick script, to sync my playlists so I could switch between streaming providers, grew into a beast on its own.
+整整五年前的今天，我（Marcel）开始开发 [Music Assistant](https://music-assistant.io/)。这一切起初只是一个用于同步播放列表、方便我在不同流媒体服务商之间切换的快速脚本，后来却成长为一个自成一体的大工程。
 
-Music Assistant is what I'd like to call a "music library manager" – it gives you full control of playing YOUR music on your players. Just like Home Assistant centralizes all your devices and services to work together, Music Assistant does the same with your music sources and smart audio-playing devices.
+我想把 Music Assistant 称为一款“音乐库管理器”——它让你能够完全掌控在自己的播放器上播放属于你的音乐。正如 Home Assistant 将你所有的设备和服务集中起来协同工作一样，Music Assistant 对你的音乐源和智能音频播放设备也做着同样的事情。
 
-To just play with Music Assistant without reading what it is (yes, we know you!):
+想不看介绍直接试用 Music Assistant（是的，我们懂你！）：
 
 <a href="https://my.home-assistant.io/redirect/supervisor_addon?addon=d5369777_music_assistant&amp;repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon" class="my badge" target="_blank"><img src="https://my.home-assistant.io/badges/supervisor_addon.svg"></a>
 
 <!--more-->
 
-## Rainbow Connection
-<h3 style="margin-top: -0.25rem; opacity: .67;">What is Music Assistant?</h3>
+## 彩虹连接
+<h3 style="margin-top: -0.25rem; opacity: .67;">Music Assistant 是什么？</h3>
 
-**Your music, your players.** Click and play. It should be as simple as that.
+**你的音乐，你的播放器。** 点击即播。本来就该这么简单。
 
-<p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/how-it-works.jpg'/>From source to Music Assistant to speaker</p>
+<p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/how-it-works.jpg'/>从音乐源到 Music Assistant 再到音箱</p>
 
-#### Connect and play anywhere
-Music Assistant allows you to quickly connect some of the <a href="https://music-assistant.io/music-providers/">most popular streaming providers</a> like Spotify and Tidal, with your local media files. Importing your liked tracks, artists, albums, and playlists, all displayed with the correct artwork.
+#### 连接并随处播放
+Music Assistant 让你可以快速连接 Spotify 和 Tidal 等<a href="https://music-assistant.io/music-providers/">最受欢迎的流媒体服务商</a>，以及你的本地媒体文件。它会导入你喜欢的曲目、艺人、专辑和播放列表，并全部配以正确的封面插图显示。
 
-It supports the most ubiquitous <a href="https://music-assistant.io/player-support/">streaming protocols and devices</a> like Airplay, Cast and DLNA, letting you play media on almost any device - if an old speaker doesn’t support new services, Music Assistant can bring it back to life.
+它支持像 Airplay、Cast 和 DLNA 这类最普及的<a href="https://music-assistant.io/player-support/">流媒体协议和设备</a>，让你几乎可以在任何设备上播放媒体——如果一台旧音箱不支持新的服务，Music Assistant 可以让它重获新生。
 
-[Read more...](#freedom-of-choice)
+[阅读更多...](#freedom-of-choice)
 
-#### Unified music library with advanced features
-Your local and cloud libraries will be seamlessly merged together. If you have the same track on multiple place, it will appear once while helping you find the highest-quality version. You can even have multiple accounts from the same provider, allowing everyone in the house to have their playlists in one place.
+#### 具备高级功能的统一音乐库
+你的本地音乐库和云端音乐库将无缝合并在一起。如果同一首曲目存在于多个地方，它只会显示一次，同时帮你找到音质最高的版本。你甚至可以使用同一服务商的多个账号，让家中每个人的播放列表都汇集在一处。
 
-It can group supported players for synchronized playback. It also supports advanced playback features such as crossfade and volume normalization - regardless of whether the device supports them.
+它可以将支持的播放器分组以实现同步播放。它还支持诸如淡入淡出（crossfade）和音量归一化等高级播放功能——无论设备本身是否支持这些功能。
 
-[Read more...](#come-together)
+[阅读更多...](#come-together)
 
-#### Built for Home Assistant
-Connecting this with the Home Assistant integration - automation and voice control supercharges the whole experience.
+#### 为 Home Assistant 而生
+将它与 Home Assistant 集成（integration）相连接——自动化和语音控制将为整个体验带来强力提升。
 
-[Read more...](#we-are-family)
+[阅读更多...](#we-are-family)
 
-## Start me up
-<h3 style="margin-top: -0.25rem; opacity: .67;">How to install Music Assistant</h3>
+## 启动吧
+<h3 style="margin-top: -0.25rem; opacity: .67;">如何安装 Music Assistant</h3>
 
-After many years of development and testing with the amazing community, we can finally say this is ready for daily use.
+经过多年与出色的社区共同开发和测试，我们终于可以说，它已经为日常使用做好了准备。
 
 <p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/start-me-up.png'/></p>
 
-Even though Music Assistant is an HA Add-on, it can be installed from start to finish via [HACS](https://hacs.xyz/). You simply install the integration, which will automatically install and manage the add-on for you. The integration allows you to control your devices with automations and voice control.
+尽管 Music Assistant 是一个 HA 加载项（add-on），它也完全可以从头到尾通过 [HACS](https://hacs.xyz/) 进行安装。你只需安装集成，它就会自动为你安装并管理相应的加载项。借助该集成，你可以通过自动化和语音控制来操控你的设备。
 
 <a href="https://my.home-assistant.io/redirect/supervisor_addon?addon=d5369777_music_assistant&amp;repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon" class="my badge" target="_blank"><img src="https://my.home-assistant.io/badges/supervisor_addon.svg"></a>
 
-_Music Assistant is distributed as a <a href="https://www.home-assistant.io/addons">Home Assistant add-on</a> – our way to easily extend your Home Assistant installation with third party applications. To install it as a Docker container, follow the <a href="https://music-assistant.io/installation/#tertiary-installation-method-docker-image">MA installation instructions</a>._
+_Music Assistant 以 <a href="https://www.home-assistant.io/addons">Home Assistant 加载项</a>的形式分发——这是我们让你轻松使用第三方应用来扩展 Home Assistant 安装的方式。若要以 Docker 容器的形式安装，请遵循 <a href="https://music-assistant.io/installation/#tertiary-installation-method-docker-image">MA 安装说明</a>。_
 
-## Fight the power
-<h3 style="margin-top: -0.25rem; opacity: .67;">Why Music Assistant?</h3>
+## 反抗权威
+<h3 style="margin-top: -0.25rem; opacity: .67;">为什么选择 Music Assistant？</h3>
 
-I started Music Assistant out of frustration about the mainstream available options;
+我之所以开始开发 Music Assistant，是因为对市面上主流的现有方案感到失望；
 
-*   You buy into an all-in-one ecosystem (such as Sonos), and then it's up to that ecosystem to decide which music sources to support now and in the future.
-    
-*   You choose a music streaming provider, and then somehow that streaming provider decides where/how you play their music.
-    
-*   You want to switch between streaming providers and keep your carefully curated playlists, regardless of which provider you want to play it with.
-    
-*   You still have your CD music collection that you’ve painstakingly ripped into high-quality files on local storage, and you want to play them, maybe even mix them with choices from streaming providers.
-    
-*   Or maybe you fall into the category of users who don’t want any subscriptions and have a carefully curated local media collection you want to play on these shiny new playback devices.
-    
-When we pay for our music or devices, we shouldn’t be limited by arbitrary limitations. We are slowly moving into a world of greater walled gardens and more vendor lock-in, and it’s time we took back control. 
+*   你购入了一个一体化生态系统（例如 Sonos），然后现在乃至将来支持哪些音乐源，就全由那个生态系统说了算。
 
-<p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/fight-the-power.jpg'/><i>Tidal on a Google Home</i></p>
+*   你选择了一家音乐流媒体服务商，然后不知怎么的，他们的音乐在哪里播、怎么播，居然由这家服务商说了算。
 
-I spent a long time and a good bit of my money looking at existing solutions to fill these gaps. They were either expensive, closed, or lacked the home approval factor - or a combination of all of these.
+*   你想在不同的流媒体服务商之间切换，同时保留自己精心整理的播放列表，无论你打算用哪家服务商来播放。
 
-## Freedom of choice
-<h3 style="margin-top: -0.25rem; opacity: .67;">Connecting any sources and play anywhere</h3>
+*   你还珍藏着自己当年费尽心血翻录成高质量文件、存放在本地存储中的 CD 音乐收藏，你想要播放它们，甚至想把它们与流媒体服务商的内容混搭播放。
 
-Music Assistant connects to your favorite streaming providers and local music files, letting you play them on almost any connected playback equipment from the past 20 years. It’s basically a translator of music protocol A towards speaker/player protocol B.
+*   又或者，你属于不想要任何订阅服务的那类用户，拥有一套精心整理的本地媒体收藏，想在那些闪亮崭新的播放设备上播放。
+
+当我们为音乐或设备付了钱，就不应该被这些武断的限制所束缚。我们正在慢慢进入一个围墙花园越来越高、供应商锁定越来越多的世界，是时候夺回控制权了。
+
+<p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/fight-the-power.jpg'/><i>Google Home 上的 Tidal</i></p>
+
+我花了很长时间，也自掏了不少腰包，去研究能够填补这些空白的现有方案。它们要么昂贵，要么封闭，要么过不了家人认可这一关——要么集这些缺点于一身。
+
+## 自由选择
+<h3 style="margin-top: -0.25rem; opacity: .67;">连接任意音乐源，随处播放</h3>
+
+Music Assistant 可以连接你最喜欢的流媒体服务商和本地音乐文件，让你在过去 20 年里的几乎任何联网播放设备上播放它们。它基本上就是一个把音乐协议 A 翻译成音箱/播放器协议 B 的翻译器。
 
 <p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/freedom-of-choice.png'/></p>
 
-For instance, I have a traditional amplifier + speakers setup in my living room that allows for high-quality music playback, where I can sit down and hear every detail. I also have Sonos speakers in a very noisy kitchen and some DIY speakers that can only accept Airplay. I can play my music to all of these speakers without being tied down to any single ecosystem.
+举例来说，我的客厅里有一套传统功放加音箱的组合，能够播放高品质音乐，我可以坐下来聆听每一个细节。我还在一个非常嘈杂的厨房里放了几个 Sonos 音箱，另外还有一些只接受 Airplay 的 DIY 音箱。我可以把我的音乐播放到所有这些音箱上，而不必受制于任何单一生态系统。
 
-Some people might say that the best way to prevent all that frustration is by buying into an ecosystem like Sonos which takes care of this for you entirely. While I am a big fan of Sonos (and I will recommend them to friends and family for ease of use), I am not a big fan of the vendor lock-in that comes with it. If Sonos or a streaming service decide to part ways, I don’t have to be locked out of my music. Also, they don’t make speakers at every price point, meaning you don’t get the advantages of the new higher-fidelity or more affordable hardware out there.
+有些人可能会说，避免所有这些烦恼的最好办法，就是投入像 Sonos 这样的生态系统，让它全权为你打理这一切。虽然我是 Sonos 的忠实粉丝（而且鉴于它的易用性，我也会向朋友和家人推荐它们），但我并不喜欢随之而来的供应商锁定。如果 Sonos 和某家流媒体服务决定分道扬镳，我也不至于被挡在我的音乐之外。另外，他们并不是在每个价位都有音箱产品，这意味着你无法享受到市面上新的更高保真或更实惠硬件的优势。
 
-## Come together
-<h3 style="margin-top: -0.25rem; opacity: .67;">Unifying all your music in one library</h3>
+## 齐聚一堂
+<h3 style="margin-top: -0.25rem; opacity: .67;">将你的所有音乐统一到一个音乐库中</h3>
 
-In the same interface as I can stream my kids’ music to their speakers, I can stream my Hi-Res favorites to my high-fidelity setup. It is an all-in-one interface. Gone are the days of needing five different apps to get playback going in multiple parts of the house or switching who is connected just to access their playlists.
+在同一个界面里，我既可以把孩子们的音乐串流到他们的音箱上，也可以把我钟爱的高解析度（Hi-Res）音乐串流到我的高保真音响系统上。这是一个一体化界面。那种需要五个不同的应用才能让家中多个区域开始播放音乐、或者为了访问某个人的播放列表还得切换连接账号的日子，一去不复返了。
 
 <p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/come-together.png'/></p>
 
-When you search in Music Assistant, it searches all your libraries. Every streaming service, or the local files you add, are available to choose for playback.
+当你在 Music Assistant 中搜索时，它会搜索你所有的音乐库。每一个流媒体服务，以及你添加的本地文件，都可以选择用来播放。
 
-## We are family
-<h3 style="margin-top: -0.25rem; opacity: .67;">Built for Home Assistant</h3>
+## 我们是一家人
+<h3 style="margin-top: -0.25rem; opacity: .67;">为 Home Assistant 而生</h3>
 
-Music Assistant has always been closely linked to Home Assistant (more on that below). I now even work for [Nabu Casa](https://www.nabucasa.com/), partly because of my work on Music Assistant (but now I’m the Matter guy). 
+Music Assistant 一直与 Home Assistant 紧密相连（下文会详细介绍）。现在我甚至为 [Nabu Casa](https://www.nabucasa.com/) 工作，部分原因正是我在 Music Assistant 上的工作（不过现在我成了负责 Matter 的人）。
 
 <p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/we-are-family.png'/></p>
 
-Because of this strong link, Home Assistant seamlessly links with Music Assistant, unlocking several advanced features. MA players are exposed to HA and can be controlled via your dashboards, automations, and scripts. This allows HA users to control their music players and access MA’s powerful music search function. Players can provide TTS (Text-to-Speech) announcements and can be controlled by Home Assistant connected voice assistants.
+得益于这层紧密的联系，Home Assistant 可以与 Music Assistant 无缝衔接，解锁多项高级功能。MA 的播放器会暴露给 HA，可以通过你的仪表盘（dashboard）、自动化和脚本进行控制。这使 HA 用户能够控制他们的音乐播放器，并使用 MA 强大的音乐搜索功能。播放器可以提供 TTS（Text-to-Speech，文字转语音）播报，还可以由连接到 Home Assistant 的语音助手来控制。
 
-## Liner notes
+## 后记
 
-So, I started working on Music Assistant [exactly five years ago](<https://github.com/music-assistant/server/commit/75adea9721fa1f1b7225515087c81edd979fcc8f>), at first for my own personal use. It started as a learning exercise - thanks to it, I learned asyncio Python programming as well as the Vue frontend framework. I had the project on GitHub just to host the code, but it was not really meant to be used by others.
+于是，[整整五年前](<https://github.com/music-assistant/server/commit/75adea9721fa1f1b7225515087c81edd979fcc8f>)，我开始着手开发 Music Assistant，最初只是为了我自己使用。它始于一个学习练习——多亏了它，我学会了 Python 的 asyncio 编程，也学会了 Vue 前端框架。我把项目放在 GitHub 上只是为了托管代码，其实并没打算让别人使用。
 
-At some point, it became clear to me that there was a real demand, and I posted some info on how to install it, which gained a little attention. In June 2022, we released the 1.0 version of Music Assistant, and it was still in rough shape but already suitable for many users. We even organized a Livestream, “[Let’s get Loud](https://www.youtube.com/watch?v=SEH-DxOsywg)” hosted by Home Assistant, to promote [audio support for ESPHome](https://esphome.io/components/media_player/i2s_audio.html) and the super cool things you can build when you combine these three open-source projects.
+后来，我逐渐明白确实存在真正的需求，于是我发布了一些关于如何安装它的信息，获得了一点关注。2022 年 6 月，我们发布了 Music Assistant 1.0 版本，它当时还很粗糙，但已经适合许多用户使用。我们甚至组织了一场由 Home Assistant 主持的直播“[让我们嗨起来](https://www.youtube.com/watch?v=SEH-DxOsywg)”，来宣传 [ESPHome 的音频支持](https://esphome.io/components/media_player/i2s_audio.html)，以及把这三个开源项目组合在一起时你能打造出的超酷玩意儿。
 
-Version 1.0 was not everything we hoped it would be. It had some structural bugs, specifically running as a custom component in Home Assistant. HA was created to give you the best experience for automating your home; it was never optimized for real-time audio streaming. On top of that, at some point, the dependencies of both projects got so conflicted that Music Assistant stopped working completely in the March 2023 release of HA.
+1.0 版本并没有达到我们的全部期望。它存在一些结构性缺陷，尤其是以自定义组件（custom component）的形式在 Home Assistant 中运行时。HA 的诞生是为了给你带来家庭自动化的最佳体验；它从未针对实时音频串流做过优化。更糟糕的是，到了某个时候，两个项目的依赖项冲突严重到 Music Assistant 在 2023 年 3 月的 HA 版本中完全无法工作。
 
-Six months after its initial version 1.0 launch, the project was beginning to look like it was going to die, so I decided to start over and go back to the drawing board. The engine of MA needed to be its own isolated component, responsible for giving you the best possible experience of streaming music (where audio quality and latency are very important), and the HA-side should be responsible for automating your house and music.
+1.0 初始版本发布六个月后，这个项目看上去快要无以为继，于是我决定推倒重来、回到绘图板。MA 的引擎需要成为独立的隔离组件，负责为你提供最佳的流媒体音乐体验（音质和延迟在其中至关重要），而 HA 一侧则应负责家庭和音乐的自动化。
 
-So, the Music Assistant Server was born. It is a standalone application that you can run in docker (or Home Assistant add-on), all connected to HA via a HACS integration. The project was split up into multiple self-contained parts. 
+于是，Music Assistant Server 应运而生。它是一个独立的应用程序，你可以在 Docker 中（或作为 Home Assistant 加载项）运行，全部通过一个 HACS 集成连接到 HA。该项目被拆分成多个自成一体的部分。
 
-Music Assistant Server has its own web interface, a modern interface written in Vue. Thanks to HA's add-on system, this web interface can be securely accessed from HA. The web interface is a Progressive Web App (PWA), so you can also visit it directly and [install it on your device](https://support.google.com/chrome/answer/9658361?hl=en-GB&co=GENIE.Platform=Desktop). We also have an (experimental) [desktop app](https://music-assistant.io/companion-app/).
+Music Assistant Server 拥有自己的网页界面，一个用 Vue 编写的现代界面。多亏了 HA 的加载项系统，这个网页界面可以从 HA 安全地访问。该网页界面是一个渐进式 Web 应用（Progressive Web App，PWA），因此你也可以直接访问它，并[将其安装到你的设备上](https://support.google.com/chrome/answer/9658361?hl=en-GB&co=GENIE.Platform=Desktop)。我们还有一个（实验性的）[桌面应用](https://music-assistant.io/companion-app/)。
 
-Over the past year, we have been iterating on this with an impressive number of beta testers. So, while technically this is a 2.0 release, to me personally this is the first real release, as this is finally something that feels good and has the right foundation. What is also super is that we attracted contributors to the project, folks helping create and maintain music integrations while providing support or translations. Even more exciting there are some really big features and streaming services on the horizon. My sincere thanks to everyone who has helped bring this release home.
+在过去一年里，我们与数量惊人的测试者一起对此不断迭代。所以，虽然从技术上讲这是一个 2.0 版本，但对我个人而言，这才是第一个真正的版本，因为它终于是一件手感良好、根基扎实的东西。同样棒的是，我们为项目吸引了贡献者，这些人帮助创建和维护音乐集成，同时提供支持或翻译。更令人兴奋的是，一些非常重大的功能以及新的流媒体服务已经在地平线上出现。衷心感谢每一位帮助这个版本圆满发布的伙伴。

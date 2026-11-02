@@ -1,66 +1,66 @@
 ---
 title: OpenAI Compatible
-description: Use OpenAI, Groq, OpenRouter, Together or a local AI server such as Ollama or LM Studio for Music Assistant's AI features.
+description: 使用 OpenAI、Groq、OpenRouter、Together 或本地 AI 服务器（例如 Ollama 或 LM Studio）来支持 Music Assistant 的 AI 功能。
 pluginGroup: other-systems
 ---
 
 # OpenAI Compatible
 
-Some Music Assistant features are powered by an AI model: **AI Radio**, the **Trivia** quiz type, the AI answer suggestions in **Music Quiz**, and the AI-written descriptions for **Smart Playlists**.
+Music Assistant 的部分功能由 AI 模型驱动：**AI Radio**、**Trivia** 测验类型、**Music Quiz** 中的 AI 答案建议，以及 **Smart Playlists** 的 AI 生成描述。
 
-Those features used to need Home Assistant, because an AI task entity there was the only thing that could answer them. This plugin lets Music Assistant talk to an AI service directly, so they work without Home Assistant as well.
+这些功能过去需要 Home Assistant，因为那里的 AI 任务实体（entity）是唯一能够回答它们的组件。这个插件让 Music Assistant 可以直接与 AI 服务通信，因此这些功能在没有 Home Assistant 的情况下也能使用。
 
-Each model you pick here becomes an **AI engine**, offered to those features alongside anything the [Home Assistant plugin](/ha-plugin/) provides. Each feature then chooses which engine it wants from its own settings. See [choosing an engine for a feature](/ha-plugin/#choosing-an-engine-for-a-feature).
+你在这里选择的每个模型都会成为一个 **AI 引擎**（AI engine），与 [Home Assistant 插件](/ha-plugin/)提供的引擎一起提供给这些功能。随后，每个功能会在自己的设置中选择它想要的引擎。参见[为功能选择引擎](/ha-plugin/#choosing-an-engine-for-a-feature)。
 
-It works with any service that speaks the OpenAI API, which is nearly all of them:
+它适用于任何兼容 OpenAI API 的服务，而这几乎涵盖了所有服务：
 
-- Hosted services such as **OpenAI**, **Groq**, **OpenRouter** and **Together AI**
-- AI servers you run yourself, such as **Ollama**, **LM Studio**, **llama.cpp** and **vLLM**
+- 托管服务，例如 **OpenAI**、**Groq**、**OpenRouter** 和 **Together AI**
+- 你自己运行的 AI 服务器，例如 **Ollama**、**LM Studio**、**llama.cpp** 和 **vLLM**
 
 :::caution[Beta]
-This plugin is currently marked as **beta**. It works, but it has not been tested against every service yet.
+该插件目前被标记为 **beta**。它可以正常工作，但尚未针对所有服务进行测试。
 :::
 
-## Features
+## 功能特性
 
-- One plugin for every service that speaks the OpenAI API, hosted or self-hosted
-- Each model you select becomes a separate choice in the AI features, so a small, cheap model can handle simple jobs while a stronger one is used where it matters
-- Multiple instances, so a local server and a hosted service can be used side by side
+- 一个插件即可适用于所有兼容 OpenAI API 的服务，无论是托管还是自托管
+- 你选择的每个模型在 AI 功能中都会成为一个独立的选项，因此小而便宜的模型可以处理简单的任务，而更强的模型则用于重要的地方
+- 支持多个实例，因此本地服务器和托管服务可以搭配使用
 
-## Installation
+## 安装
 
-Add the plugin in **Settings → Plugins → Add a plugin** and pick **OpenAI Compatible**.
+在**设置 → 插件 → 添加插件**中添加该插件，并选择 **OpenAI Compatible**。
 
-### Choose a service
+### 选择服务
 
-Pick your service from the list and its address is filled in for you. Choose **Something else** if your service is not listed.
+从列表中选择你的服务，其地址会自动为你填写。如果你的服务不在列表中，请选择 **Something else**（其他）。
 
-### Connection details
+### 连接详情
 
-- **API base URL** — the address of the service, including the version path, for example `https://api.openai.com/v1`. Change this if the service does not run where it normally would, for example when Ollama runs on a different machine than Music Assistant, or when Music Assistant runs in a container and cannot reach `localhost`.
-- **API key** — the key from your service. Leave it empty for a local server that does not ask for one.
+- **API base URL**（API 基础 URL）——服务的地址，包括版本路径，例如 `https://api.openai.com/v1`。如果服务没有运行在通常的位置，则需要修改此项，例如 Ollama 运行在与 Music Assistant 不同的机器上，或者 Music Assistant 运行在容器中而无法访问 `localhost`。
+- **API key**（API 密钥）——来自你的服务的密钥。对于不要求密钥的本地服务器，可将其留空。
 
-Music Assistant checks the address and key before finishing, so a typo is caught here rather than later.
+Music Assistant 会在完成之前检查地址和密钥，因此拼写错误会在这里被发现，而不是以后。
 
-### Choose your models
+### 选择你的模型
 
-The plugin does not offer any models until you pick them. Open the plugin under **Settings → Plugins**, and select the models you want under **Models**.
+在你选择模型之前，该插件不会提供任何模型。在**设置 → 插件**下打开该插件，并在 **Models**（模型）下选择你想要的模型。
 
-The list is read from your service. If your service does not publish a list of its models, the field lets you type the model names yourself.
+该列表从你的服务中读取。如果你的服务不发布其模型列表，则该字段允许你自行输入模型名称。
 
-Each model you select becomes its own AI engine, listed as `OpenAI Compatible | <model>` wherever an AI engine can be picked.
+你选择的每个模型都会成为它自己的 AI 引擎，在所有可以选择 AI 引擎的地方显示为 `OpenAI Compatible | <model>`。
 
-## Choosing a model
+## 选择模型
 
-The AI features ask for different things, so it pays to select more than one model:
+不同的 AI 功能有不同的要求，因此选择多个模型是值得的：
 
-- **Trivia** and **AI answer suggestions** ask for a strict JSON answer. Use a capable model here — small local models often word their answer in a way Music Assistant cannot read, and the question or the suggestions are then dropped.
-- **AI Radio** writes spoken presenter text. Any model that writes well in your language works, and this is where a larger model is most noticeable.
-- **Smart Playlist descriptions** are one or two sentences. The cheapest, fastest model is fine.
+- **Trivia** 和 **AI 答案建议**要求严格的 JSON 格式回答。这里应使用能力较强的模型——小型本地模型的回答措辞往往让 Music Assistant 无法读取，这样问题或建议就会被丢弃。
+- **AI Radio** 撰写口播主持人的文本。任何能用你的语言流畅写作的模型都可以胜任，而在这里使用更大的模型效果最为明显。
+- **Smart Playlist 描述**只有一两句话。使用最便宜、最快的模型即可。
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- **Costs.** Hosted services bill you per request. AI Radio in particular asks for text for every segment it announces, so keep an eye on your usage.
-- **Speed.** A local model running without a graphics card can take a long time to answer. Requests are given up on after two minutes.
-- **Reasoning models.** Models that think out loud before answering are supported, and the thinking is stripped from the answer. They are slower and, for the features that need strict JSON, not always more reliable.
-- **Which models are offered.** The list comes straight from your service and can be long, and it may include models that cannot answer a chat request at all, such as image or speech models. Select only the ones you intend to use.
+- **费用。** 托管服务按请求收费。尤其是 AI Radio，它播报的每个片段都需要请求文本，因此请留意你的使用量。
+- **速度。** 没有显卡的情况下运行的本地模型可能需要很长时间才能回答。请求会在两分钟后被放弃。
+- **推理模型。** 支持在回答之前先进行思考的模型，且思考内容会从答案中去除。它们速度较慢，并且对于需要严格 JSON 的功能来说，并不总是更可靠。
+- **提供哪些模型。** 列表直接来自你的服务，可能很长，其中可能包含根本无法回答聊天请求的模型，例如图像或语音模型。请只选择你打算使用的模型。

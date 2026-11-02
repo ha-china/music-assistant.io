@@ -1,79 +1,79 @@
 ---
-title: Metadata
-description: A Description of the Metadata sources available to Music Assistant
+title: 元数据
+description: Music Assistant 可用的元数据来源说明
 ---
 
-# Metadata <img src="/assets/icons/metadata-general-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# 元数据 <img src="/assets/icons/metadata-general-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Metadata is everything Music Assistant shows around your music: artwork, artist biographies, genres, lyrics and more. If you are here because artwork or artist info is missing, the short version is: your own tags and files always win, free online services fill in the gaps slowly in the background, and adding a MusicBrainz ID to a tag or `.nfo` file fixes most matching problems.
+元数据（metadata）是 Music Assistant 围绕你的音乐展示的一切内容：封面图片（artwork）、艺术家生平、流派、歌词等。如果你是因为缺少封面或艺术家信息而来到这里，简而言之就是：你自己的标签和文件始终优先，免费的在线服务会在后台慢慢填补空缺，而在标签或 `.nfo` 文件中添加 MusicBrainz ID 可以解决大多数匹配问题。
 
-Music Assistant draws on two layers of metadata. **Source metadata** comes from wherever a track actually lives - embedded file tags, `.lrc` and [`.nfo` files](https://kodi.wiki/view/NFO_files), and music providers such as Plex, Jellyfin, Subsonic, Spotify or Tidal. **Online metadata providers** are dedicated third-party services queried only to fill in fields the source did not supply; they are listed in the [provider summary](#provider-summary) below.
+Music Assistant 依赖两层元数据。**源元数据（source metadata）**来自曲目实际所在之处——嵌入式文件标签、`.lrc` 和 [`.nfo` 文件](https://kodi.wiki/view/NFO_files)，以及 Plex、Jellyfin、Subsonic、Spotify 或 Tidal 等音乐提供程序（provider）。**在线元数据提供程序（online metadata providers）**是专门的第三方服务，仅在源未提供某些字段时才会查询它们来填补空缺；它们列在下方的[提供程序摘要](#provider-summary)中。
 
-Source metadata is always preferred; online metadata is complementary.
+源元数据始终优先；在线元数据起补充作用。
 
-This section describes which providers contribute which fields and when lookups occur.
+本节介绍哪些提供程序会提供哪些字段，以及何时进行查询。
 
-- [Media items](./media-items): what is gathered for artists, albums, tracks, playlists, audiobooks and podcasts
-- [Artwork](./artwork): sources and ordering for thumbnails, fanart, disc art and radio stream artwork
-- [Lyrics](./lyrics): what lyrics are available
+- [媒体项目](./media-items)：为艺术家、专辑、曲目、播放列表、有声读物和播客收集哪些内容
+- [封面图片](./artwork)：缩略图、fanart、碟面图和电台流媒体封面的来源及优先顺序
+- [歌词](./lyrics)：有哪些歌词可用
 
-Loudness tags are read from the file when the track is first scanned. If you add or change them later, use **Refresh item** on the track to pick up the new values. See [Loudness Analysis](../audio-analysis/loudness-analysis) for how the values are used and which source wins.
+响度标签是在曲目首次扫描时从文件中读取的。如果之后添加或更改了这些标签，请使用曲目上的**刷新项目**（Refresh item）来获取新值。有关这些值的使用方式以及哪个来源优先，请参阅[响度分析](../audio-analysis/loudness-analysis)。
 
-## How metadata gets fetched
+## 元数据如何获取
 
-Library items are enriched on a **90-day refresh cycle**. Refreshes are triggered by:
+媒体库项目按 **90 天刷新周期**进行充实。刷新由以下操作触发：
 
-- **A daily background scan**, which picks up items with missing or stale metadata and refreshes them in small batches to avoid hammering free APIs
-- **On-demand lookup**, scheduled in the background when an item is opened in the UI and its metadata is older than 90 days
-- **Manual refresh** via the "Update metadata" action, which bypasses the 90-day restriction and forces a fresh lookup immediately
+- **每日后台扫描**：找出缺少元数据或元数据过期的项目，并分小批量刷新，以避免频繁请求免费 API
+- **按需查询**：当某个项目在 UI 中被打开且其元数据已超过 90 天时，在后台安排查询
+- **手动刷新**：通过“更新元数据”（Update metadata）操作进行，可绕过 90 天的限制并立即强制执行全新查询
 
-For each item, source metadata is collected first (sorted so local providers such as the file system, Plex, Jellyfin and Subsonic outrank streaming providers), then the online metadata providers are queried when "Enable metadata retrieval from online metadata providers" is on (default).
+对于每个项目，会先收集源元数据（经过排序，使文件系统、Plex、Jellyfin 和 Subsonic 等本地提供程序排在流媒体提供程序之前），然后在“从在线元数据提供程序启用元数据获取”（Enable metadata retrieval from online metadata providers）开启（默认）时查询在线元数据提供程序。
 
-The language used for descriptions and bios is set under [**Settings → System → Metadata**](/settings/core/#metadata) → "Preferred language". English is always used as fallback.
+描述和生平所用的语言可在 [**设置 → 系统 → 元数据**](/settings/core/#metadata) → “首选语言”（Preferred language）下设置。始终以英语作为后备。
 
-## What Music Assistant reads from local file libraries
+## Music Assistant 从本地文件媒体库中读取哪些内容
 
-For library items backed by a local music collection, the following are read automatically during the library scan:
+对于基于本地音乐收藏的媒体库项目，以下内容会在媒体库扫描期间自动读取：
 
-- **Embedded tags** in audio files - title, artists, album, genres, year, MusicBrainz IDs, ISRC, embedded cover art, embedded lyrics, loudness values (`R128_TRACK_GAIN`, `R128_ALBUM_GAIN`, `REPLAYGAIN_TRACK_GAIN`, `REPLAYGAIN_ALBUM_GAIN`), etc. The `genre` tag is applied to the track only; album and artist genres are sourced separately (see below).
-- **`.lrc` sidecar files** with the same name as the audio file, used as synchronized lyrics. This is the format produced by tools such as LRCGET
-- **`artist.nfo`** in an artist folder ([Kodi NFO format](https://kodi.wiki/view/NFO_files)) - title, sort name, biography, genres, MusicBrainz artist ID
-- **`album.nfo`** in an album folder - title, sort name, review, year, genres, MusicBrainz release group / album / album-artist IDs
-- **Folder images** (`cover.jpg`, `folder.jpg`, `artist.jpg`, [etc.](/music-providers/local-files/#artwork)) - used as thumbnails and other artwork for albums and artists
+- 音频文件中的**嵌入式标签**——标题、艺术家、专辑、流派、年份、MusicBrainz ID、ISRC、嵌入式封面图、嵌入式歌词、响度值（`R128_TRACK_GAIN`、`R128_ALBUM_GAIN`、`REPLAYGAIN_TRACK_GAIN`、`REPLAYGAIN_ALBUM_GAIN`）等。`genre` 标签仅应用于曲目；专辑和艺术家流派单独获取（见下文）。
+- 与音频文件同名的 **`.lrc` 边车文件**，用作同步歌词。这是 LRCGET 等工具生成的格式
+- 艺术家文件夹中的 **`artist.nfo`**（[Kodi NFO 格式](https://kodi.wiki/view/NFO_files)）——标题、排序名称、生平、流派、MusicBrainz 艺术家 ID
+- 专辑文件夹中的 **`album.nfo`**——标题、排序名称、评论、年份、流派、MusicBrainz 发行组 / 专辑 / 专辑艺术家 ID
+- **文件夹图片**（`cover.jpg`、`folder.jpg`、`artist.jpg`、[等](/music-providers/local-files/#artwork)）——用作专辑和艺术家的缩略图及其他封面图片
 
-These are part of the source metadata layer and always take priority over online lookups. They are also the most reliable way to fix problems with online matching: adding a MusicBrainz ID to a tag or `.nfo` file immediately unlocks the rest of the online providers for that item.
+这些内容属于源元数据层，并且始终优先于在线查询。它们也是解决在线匹配问题最可靠的方式：在标签或 `.nfo` 文件中添加 MusicBrainz ID 后，该项目的其余在线提供程序会立即解锁。
 
-### Album and artist genres
+### 专辑和艺术家流派
 
-The file `genre` tag is applied to the track, but not to the album or the artist. By default an album's genre comes from an `album.nfo`, a music provider that supplies one, or an online metadata provider; an artist's genre comes from an `artist.nfo`, a music provider, or an online metadata provider once a MusicBrainz Artist ID has been resolved.
+文件中的 `genre` 标签应用于曲目，但不会应用于专辑或艺术家。默认情况下，专辑的流派来自 `album.nfo`、提供流派的音乐提供程序，或在线元数据提供程序；艺术家的流派来自 `artist.nfo`、音乐提供程序，或在解析出 MusicBrainz 艺术家 ID 后来自在线元数据提供程序。
 
-The local filesystem providers offer an opt-in `Propagate track genres to albums and artists` setting that fills the gap by deriving the album's and artist's genres from their tracks' `genre` tags. Propagation only fills genres that are still empty; it never overwrites a genre that came from an `NFO` file, a music provider, or an online metadata provider.
+本地文件系统提供程序提供了可选启用的 `Propagate track genres to albums and artists` 设置，它通过从曲目的 `genre` 标签推导出专辑和艺术家的流派来填补这一空缺。传播只会填充仍然为空的流派；它绝不会覆盖来自 `NFO` 文件、音乐提供程序或在线元数据提供程序的流派。
 
-Apart from propagation, sources merge their genres into whatever is already there rather than replacing or being suppressed. An `artist.nfo` genre plus genres returned by The Audio DB will both end up on the artist. 
+除传播之外，各来源会将其流派合并到已有内容中，而不是替换已有流派或被抑制。`artist.nfo` 中的流派与 The Audio DB 返回的流派最终都会呈现在艺术家上。
 
-## What Music Assistant writes to local files
+## Music Assistant 会向本地文件写入哪些内容
 
-By design the music collection is treated as **read-only**:
+按照设计，音乐收藏被视为**只读**：
 
-- MusicBrainz IDs are normally not written back to file tags. When an item's tags do not contain a MBID, one is derived in Music Assistant's own database for online lookups or via the AcoustID Lookup provider if that is enabled
-- Bios, descriptions, genres, artwork and lyrics are never written back to files
-- `.nfo` files are never created or modified
+- MusicBrainz ID 通常不会写回文件标签。当项目的标签中不含 MBID 时，会在 Music Assistant 自己的数据库中推导一个用于在线查询；如果启用了 AcoustID Lookup 提供程序，则通过该提供程序推导
+- 生平、描述、流派、封面图片和歌词绝不会写回文件
+- `.nfo` 文件绝不会被创建或修改
 
-When write access is available the exceptions to this are:
-- The [Loudness Analysis](../audio-analysis/loudness-analysis) provider's optional "Write REPLAYGAIN_TRACK_GAIN tags back to files" setting (default **off**); see its page for details
-- The [AcoustID Lookup](../audio-analysis/acoustid) provider's optional "Write AcoustID/MusicBrainz tags back to files" setting (default **off**); see its page for details
+当具备写入权限时，例外情况如下：
+- [响度分析](../audio-analysis/loudness-analysis)提供程序的可选设置“将 REPLAYGAIN_TRACK_GAIN 标签写回文件”（Write REPLAYGAIN_TRACK_GAIN tags back to files，默认**关闭**）；详情请参阅其页面
+- [AcoustID Lookup](../audio-analysis/acoustid) 提供程序的可选设置“将 AcoustID/MusicBrainz 标签写回文件”（Write AcoustID/MusicBrainz tags back to files，默认**关闭**）；详情请参阅其页面
 
-## Provider summary
+## 提供程序摘要
 
-| Provider | Used for | Requires |
+| 提供程序 | 用途 | 所需条件 |
 | --- | --- | --- |
-| **MusicBrainz** | Looking up MBIDs from artist / album / track names. Cannot be disabled; it is used for identification only and never replaces information that already exists. | None |
-| **Fanart.tv** | High-quality artist and album imagery (thumb, logo, banner, fanart, CD art). | Artist or release-group MBID |
-| **The Audio DB** | Bios, descriptions, genres / style / mood, label, links, images. | Artist MBID for artist metadata; release-group / recording MBID preferred for albums and tracks (with artist + name fallback). |
-| **Cover Art Archive** | Album front covers from MusicBrainz's official archive. | Release-group MBID |
-| **iTunes Artwork** | High-resolution album artwork. | Album barcode (UPC / EAN) |
-| **LRCLIB** | Synchronized and plain lyrics (default lyrics provider). | Track name, artist, album, duration |
-| **Genius Lyrics** | Unsynchronized lyrics fallback (optional). | Track name + artist |
-| **Wikipedia** | Multi-lingual artist biographies, in your preferred language where available. | Artist MBID (used to resolve the Wikipedia article via Wikidata) |
+| **MusicBrainz** | 根据艺术家 / 专辑 / 曲目名称查找 MBID。无法禁用；它仅用于识别，绝不会替换已有的信息。 | 无 |
+| **Fanart.tv** | 高质量的艺术家和专辑图片（缩略图、标志、横幅、fanart、CD 碟面图）。 | 艺术家或发行组 MBID |
+| **The Audio DB** | 生平、描述、流派 / 风格 / 情绪、唱片公司、链接、图片。 | 艺术家元数据需要艺术家 MBID；专辑和曲目优先使用发行组 / 录音 MBID（以艺术家 + 名称作为后备）。 |
+| **Cover Art Archive** | 来自 MusicBrainz 官方存档的专辑正面封面。 | 发行组 MBID |
+| **iTunes Artwork** | 高分辨率专辑封面图片。 | 专辑条形码（UPC / EAN） |
+| **LRCLIB** | 同步歌词和纯文本歌词（默认歌词提供程序）。 | 曲目名称、艺术家、专辑、时长 |
+| **Genius Lyrics** | 非同步歌词的后备来源（可选）。 | 曲目名称 + 艺术家 |
+| **Wikipedia** | 多语言艺术家生平，在可用时以你的首选语言提供。 | 艺术家 MBID（用于通过 Wikidata 解析对应的 Wikipedia 条目） |
 
-Individual metadata sources can be turned off in **Settings → Metadata Providers**, or all at once via the [settings](/settings/core/#metadata) "Enable metadata retrieval from online metadata providers".
+各个元数据来源可以在 **设置 → 元数据提供程序** 中单独关闭，也可以通过[设置](/settings/core/#metadata)中的“从在线元数据提供程序启用元数据获取”一次性全部关闭。

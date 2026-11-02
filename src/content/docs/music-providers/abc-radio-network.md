@@ -1,14 +1,14 @@
 ---
-title: "ABC Radio Network"
+title: "ABC 广播网"
 ---
 
 # ABC Radio Network <img src="/assets/icons/abc-radio-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for the <a href="https://www.abc.net.au/listen" target="_blank" rel="noopener noreferrer">ABC Radio Network</a> which allows easy addition of their radio stations to Music Assistant. Contributed and maintained by <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a>
+Music Assistant 支持 <a href="https://www.abc.net.au/listen" target="_blank" rel="noopener noreferrer">ABC Radio Network</a>，可轻松将其广播电台添加到 Music Assistant。由 <a href="https://github.com/ozgav" target="_blank" rel="noopener noreferrer">Gavin</a> 贡献并维护。
 
-The ABC is Australia's public broadcaster, funded by the government and free of advertising. Alongside its news and talk networks it runs a set of music stations, from triple j for new and Australian music through to ABC Classic, ABC Jazz, ABC Country and a channel just for young children - Kids Listen.
+ABC 是澳大利亚的公共广播机构，由政府资助且无广告。除了新闻和谈话网络外，它还运营着一系列音乐电台，从播放新音乐和澳大利亚音乐的 triple j，到 ABC Classic、ABC Jazz、ABC Country，以及专为幼儿设立的频道 - Kids Listen。
 
-This source adds the eight ABC music stations to Music Assistant as radio stations. You would use this provider over another if you want artist and track name information as well as album art.
+此数据源将八个 ABC 音乐电台作为广播电台添加到 Music Assistant。如果您需要艺术家和曲目名称信息以及专辑封面，建议使用此提供商而非其他提供商。
 
 ## Features
 
@@ -30,16 +30,24 @@ This source adds the eight ABC music stations to Music Assistant as radio statio
 
 triple j, Double J, triple j Unearthed, ABC Classic, ABC Classic 2, ABC Jazz, ABC Country and ABC Kids listen.
 
-## Configuration
+### Stations
 
-In the configuration, you only need to click the save button
+triple j, Double J, triple j Unearthed, ABC Classic, ABC Classic 2, ABC Jazz, ABC Country and ABC Kids listen.
 
-## Usage
+### 电台
 
-Use the browse view or search to find stations to add to the library.
+triple j、Double J、triple j Unearthed、ABC Classic、ABC Classic 2、ABC Jazz、ABC Country 和 ABC Kids listen。
 
-## Known Issues / Notes
+## 配置
 
-- Track details are shown while music is playing. During talk programmes, live broadcasts and news there is no track to show, so the station name is displayed instead
-- Now playing information updates periodically so may lead or lag actual
-- The ABC's now playing service occasionally returns nothing for a moment. Playback carries on and the details are picked up at the next update
+在配置中，您只需点击保存按钮
+
+## 使用方法
+
+使用浏览视图或搜索功能查找要添加到媒体库的电台。
+
+## 已知问题 / 注意事项
+
+- 音乐播放时会显示曲目详情。在谈话节目、直播和新闻期间没有曲目可显示，因此会显示电台名称
+- 正在播放信息会定期更新，因此可能会提前或滞后于实际播放情况
+- ABC 的正在播放服务偶尔会短暂返回空数据。播放会继续进行，并在下次更新时获取详情

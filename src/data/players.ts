@@ -25,44 +25,44 @@ import type { TileGroup, TileItem } from "./tile-page";
 export const PLAYER_GROUPS: TileGroup[] = [
   {
     id: "kind",
-    title: "What are you streaming to?",
-    intro: "Pick one to jump to the players of that kind.",
+    title: "您想串流到哪些设备？",
+    intro: "选择一项以跳转到该类播放器。",
     // Five, so the menu holds one line on a desktop.
     columns: 5,
     categories: [
       {
         id: "speakers",
         icon: "/assets/icons/stream/speakers.png",
-        title: "Speakers and hi-fi",
+        title: "音箱与高保真",
         blurb:
-          "Speakers, amplifiers and streamers sold ready to use. Most are found automatically once they are on the same network. If your make is not here, try the AirPlay, Cast and DLNA tiles at the end, which cover almost everything else.",
+          "开箱即用的音箱、功放和串流播放器。只要在同一网络下，大多数设备都能被自动发现。如果您的品牌不在列表中，请尝试底部的 AirPlay、Cast 和 DLNA 磁贴，它们几乎涵盖了所有其他设备。",
       },
       {
         id: "tvs",
         icon: "/assets/icons/stream/tvs.png",
-        title: "TVs",
+        title: "电视",
         blurb:
-          "Televisions, and the boxes and sticks that plug into them. Most smart TVs answer to at least one of AirPlay, Cast or DLNA even when the make is not listed.",
+          "电视机以及插入电视的电视盒子和电视棒。大多数智能电视都支持 AirPlay、Cast 或 DLNA 中的至少一种，即使其品牌未列出。",
       },
       {
         id: "voice",
         icon: "/assets/icons/stream/voice.png",
-        title: "Voice",
-        blurb: "Speakers you can also talk to.",
+        title: "语音",
+        blurb: "您还可以与之对话的音箱。",
       },
       {
         id: "software",
         icon: "/assets/icons/stream/software.png",
-        title: "Software players",
+        title: "软件播放器",
         blurb:
-          "Software you install yourself, on a Raspberry Pi, a spare computer, a tablet or the Music Assistant server.",
+          "您自行安装的软件，可运行在树莓派、闲置电脑、平板电脑或 Music Assistant 服务器上。",
       },
       {
         id: "home-assistant",
         icon: "/assets/icons/stream/home-assistant.png",
         title: "Home Assistant",
         blurb:
-          "Anything Home Assistant can already play to. Worth reaching for when a device has no provider of its own.",
+          "Home Assistant 已能播放到的任何设备。当设备没有专属提供商时，值得一试。",
       },
     ],
   },
@@ -265,21 +265,21 @@ export const PLAYERS: TileItem[] = [
   // current, so the brands above cover the ones people arrive with and these
   // cover the rest.
   {
-    name: "Other",
+    name: "其他",
     iconAlt: "AirPlay",
     slug: "player-support/airplay",
     icon: "/assets/icons/airplay-logo.png",
     categories: ["speakers", "tvs", "software"],
   },
   {
-    name: "Other",
+    name: "其他",
     iconAlt: "Google Cast",
     slug: "player-support/google-cast",
     icon: "/assets/icons/google-cast-logo.svg",
     categories: ["speakers"],
   },
   {
-    name: "Other",
+    name: "其他",
     iconAlt: "DLNA",
     slug: "player-support/dlna",
     icon: "/assets/icons/dlna-icon.svg",
@@ -338,7 +338,7 @@ export const PLAYERS_PAGE = {
   dataFile: "src/data/players.ts",
   // Not "provider": a tile is now a make rather than a provider, and several
   // of them lead to the same provider page.
-  itemNoun: "option",
+  itemNoun: "选项",
   pathPrefix: "player-support/",
   // Pages under player-support/ that intentionally have no tile.
   knownUnlisted: [

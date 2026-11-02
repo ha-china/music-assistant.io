@@ -1,30 +1,30 @@
 ---
-title: "Get Library Action"
+title: "获取媒体库操作"
 ---
 
-# MA get_library Action
+# MA get_library 操作
 
 > [!NOTE]
-> This action is used from Home Assistant scripts and automations and requires the [Home Assistant integration](/integration/installation/). See [Home Assistant scripts and automations](/faq/how-to/#home-assistant-scripts-and-automations) for examples.
+> 此操作（action）在 Home Assistant 脚本和自动化中使用，需要 [Home Assistant 集成](/integration/installation/)。示例请参见 [Home Assistant 脚本和自动化](/faq/how-to/#home-assistant-scripts-and-automations)。
 
 
-This action allows you to retrieve the full details of the items from the library
+此操作可用于获取媒体库中条目的完整详细信息
 
 ![image](/assets/screenshots/service-call/get_library.png)
 
-As can be seen there are a large number of filter options available.
+如上图所示，可用的筛选选项有很多。
 
-The favorite option works in three ways:
+收藏（favorite）选项以三种方式工作：
 
-- If the option is unchecked on the left then favorites and non-favorites will be returned
-- If the option is checked on the left but the switch on the right is off then only non-favorites will be returned
-- If the option is checked on the left but the switch on the right is on then only favorites will be returned 
+- 如果左侧的选项未勾选，则将同时返回收藏和非收藏的条目
+- 如果左侧的选项已勾选，但右侧的开关处于关闭状态，则只返回非收藏的条目
+- 如果左侧的选项已勾选，且右侧的开关处于开启状态，则只返回收藏的条目
 
-The returned JSON is extensive. The <a href="https://www.home-assistant.io/docs/scripts/perform-actions#use-templates-to-handle-response-data" target="_blank" rel="noopener noreferrer">returned data can be used in templates</a>.
+返回的 JSON 内容非常庞大。<a href="https://www.home-assistant.io/docs/scripts/perform-actions#use-templates-to-handle-response-data" target="_blank" rel="noopener noreferrer">返回的数据可以在模板中使用</a>。
 
-## Example
+## 示例
 
-In this example a queue of 10 random tracks is created.
+在此示例中，将创建一个包含 10 首随机曲目的播放队列。
 
 ```
 script:
@@ -51,4 +51,4 @@ script:
 ```
 
 > [!NOTE]
-> Replace the `config_entry_id` value with the one for your own MA integration; the example above will not work as-is. The easiest way to get yours is to build the action once with the UI editor in Home Assistant's Developer Tools > Actions and then switch to YAML view.
+> 请将 `config_entry_id` 的值替换为您自己的 MA 集成所对应的值；上面的示例无法原样使用。获取该值最简单的方法是：在 Home Assistant 的开发者工具 > 操作中使用 UI 编辑器构建一次该操作，然后切换到 YAML 视图。

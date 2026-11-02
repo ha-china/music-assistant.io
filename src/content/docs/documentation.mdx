@@ -1,6 +1,6 @@
 ---
 title: Music Assistant
-description: Music Assistant is a music library manager for local and streaming sources
+description: Music Assistant 是一款面向本地和流媒体来源的音乐库管理器
 ---
 
 import { LinkButton } from '@astrojs/starlight/components';
@@ -9,50 +9,50 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 ![Music Assistant App For Home Assistant](/assets/banner.png)
 
-Music Assistant is a free, open source music library manager. It brings your streaming services and your own files together into one library, and plays them on almost any speaker in the house.
+Music Assistant 是一款免费、开源的音乐库管理器。它将你的流媒体服务和自己的文件整合到一个音乐库中，并能在家里几乎任何扬声器上播放。
 
-It runs on an always-on machine — a Raspberry Pi, a NAS, a spare PC, or as a Home Assistant App — and you control it from any browser, or from Home Assistant with automations and voice.
+它运行在一台全天候运行的设备上——树莓派（Raspberry Pi）、NAS、闲置的电脑，或作为 Home Assistant App 运行——你可以通过任意浏览器来控制它，也可以在 Home Assistant 中通过自动化（automation）和语音来控制它。
 
 ![Music sources flowing into Music Assistant and out to a wide range of players](/assets/MA_banner.png)
 
 <div class="install-buttons">
-  <LinkButton href="https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon" icon="external">Add to Home Assistant</LinkButton>
-  <LinkButton href="/installation/#docker-image" variant="secondary" icon="seti:docker">Install with Docker</LinkButton>
+  <LinkButton href="https://my.home-assistant.io/redirect/supervisor_addon/?addon=d5369777_music_assistant&repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon" icon="external">添加到 Home Assistant</LinkButton>
+  <LinkButton href="/installation/#docker-image" variant="secondary" icon="seti:docker">使用 Docker 安装</LinkButton>
 </div>
 
-## Features
+## 功能特性
 
-- **All your music in one library.** Streaming services, your own files, radio, podcasts and audiobooks, searched together in one place
-- **Plays on almost anything.** Sonos, Chromecast, AirPlay, Squeezelite, DLNA and many more, in sync across the players that support it
-- **One album, not four.** The same release from different sources is linked together, so your library stays clean
-- **Artwork, lyrics and artist information** are filled in for you
-- **Gapless playback, smart crossfade and volume levelling** on every player
-- **Announcements interrupt the music**, pausing or ducking it, then it picks up where it left off
-- **Move playback from room to room** without losing your place in the queue
-- **Runs in any browser** and installs to your phone like an app
-- **Free and open source**. A project of the Open Home Foundation
+- **所有音乐尽在一个音乐库。**流媒体服务、你自己的文件、电台、播客和有声书，在一个地方统一搜索
+- **几乎能在任何设备上播放。**Sonos、Chromecast、AirPlay、Squeezelite、DLNA 等等，并在支持同步的播放器之间保持同步
+- **一张专辑，而不是四张。**来自不同来源的同一发行版本会被关联在一起，让你的音乐库保持整洁
+- **封面、歌词和艺术家信息**会自动为你补全
+- **每个播放器都支持无缝播放、智能淡入淡出和音量均衡**
+- **播报会打断音乐**，暂停或压低音量，之后从停止的地方继续播放
+- **在不同房间之间转移播放**，而不会丢失队列中的播放位置
+- **可在任何浏览器中运行**，并能像应用一样安装到手机上
+- **免费且开源**。Open Home Foundation 旗下项目
 
 
-## Preview
+## 预览
 
 <a href="/assets/screenshots/screen2.png"><img src="/assets/screenshots/screen2.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 
 <details>
-<summary>Click to show more screenshots</summary>
+<summary>点击查看更多截图</summary>
 <div>
 <a href="/assets/screenshots/screen3.png"><img src="/assets/screenshots/screen3.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 <a href="/assets/screenshots/screen1.png"><img src="/assets/screenshots/screen1.png" alt="Preview image" style="width: 800px;"  loading="lazy" /></a>
 </div>
 </details>
 
-## How Music Assistant fits together
+## Music Assistant 如何协同工作
 
-- **The server** is the core. It holds your library, talks to your music sources and streams to your players. It needs to run on an always-on machine — [install it here](/installation/)
-- **[Music sources](/music-providers/)** are where the music comes from: streaming services, your own files, radio, podcasts and audiobooks
-- **[Player providers](/player-support/)** are how it reaches your speakers, from Sonos and Chromecast to something you build yourself
-- **[Metadata providers](/metadata/)** fill in the artwork, biographies and lyrics, and audio analysis works out loudness and fades from the audio itself
-- **[Plugins](/plugins/)** add extras such as [party mode](/plugins/party/), a [music quiz](/plugins/music-quiz/) or [AI Radio](/plugins/ai-radio/)
-- **The [Home Assistant integration](/integration/)** puts your players in Home Assistant, for automations, announcements and voice
+- **服务器**是核心。它管理你的音乐库，与音乐来源通信并向播放器传输音频。它需要运行在一台全天候运行的设备上——[在此安装](/installation/)
+- **[音乐来源](/music-providers/)**是音乐的出处：流媒体服务、你自己的文件、电台、播客和有声书
+- **[播放器提供程序](/player-support/)**决定了它如何连接到你的扬声器，从 Sonos 和 Chromecast 到你自己构建的播放器
+- **[元数据提供程序](/metadata/)**负责补全封面、艺术家简介和歌词，音频分析则从音频本身计算出响度和淡入淡出信息
+- **[插件](/plugins/)**提供额外功能，例如[派对模式](/plugins/party/)、[音乐问答](/plugins/music-quiz/)或 [AI Radio](/plugins/ai-radio/)
+- **[Home Assistant 集成](/integration/)**（integration）会将你的播放器接入 Home Assistant，用于自动化、播报和语音控制
 
 [repository-badge]: https://img.shields.io/badge/Add%20repository%20to%20my-Home%20Assistant-41BDF5?logo=home-assistant&style=for-the-badge
 [repository-url]: https://my.home-assistant.io/redirect/supervisor_add_addon_repository/?repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon

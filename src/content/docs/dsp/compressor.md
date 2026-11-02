@@ -1,56 +1,56 @@
 ---
-title: DSP Compressor
-description: Explanation of the use and effect of the DSP Compressor filter
+title: DSP 压缩器
+description: 介绍 DSP 压缩器滤镜的用途和效果
 ---
 
-# Compressor
+# 压缩器
 
-A compressor reduces the difference between the loudest and the quietest parts of the audio. This is achieved by gently turning down the volume of the loudest moments, which produces a more consistent, controlled sound. A more detailed explanation of compression can be found in this <a href="https://musictech.com/guides/essential-guide/beginners-guide-to-compression/" target="_blank" rel="noopener noreferrer">beginner's guide to compression</a>.
+压缩器可减小音频中最响亮部分与最安静部分之间的差异。它是通过轻轻调低最响亮时刻的音量来实现的，从而产生更加一致、可控的声音。有关压缩的更详细说明，请参阅这篇<a href="https://musictech.com/guides/essential-guide/beginners-guide-to-compression/" target="_blank" rel="noopener noreferrer">压缩入门指南</a>。
 
-This filter is added and configured in the [DSP settings for a player](/settings/individual-player/#dsp-settings). See the [Digital Signal Processing overview](/dsp/) for the full filter path.
+此滤镜在[播放器的 DSP 设置](/settings/individual-player/#dsp-settings)中添加和配置。完整的滤镜路径请参阅[数字信号处理概览](/dsp/)。
 
-## Usage
+## 用法
 
-The compressor has two modes which are selected using the `PRESET` and `CUSTOM` tabs at the top of the filter.
+压缩器有两种模式，可通过滤镜顶部的 `PRESET` 和 `CUSTOM` 标签页进行选择。
 
-### Preset Mode
+### 预设模式
 
-In Preset mode, three preset buttons are shown:
+在预设（Preset）模式下，会显示三个预设按钮：
 
-- **Light** — Gentle leveling
-- **Medium** — Balanced control
-- **Heavy** — Firm and punchy
+- **轻柔** — 温和的音量均衡
+- **中等** — 均衡的控制
+- **重度** — 紧实有力
 
-Selecting a preset applies a matched combination of the settings described below. The presets are a good starting point and will suit most situations.
+选择一个预设将应用下文所述设置的匹配组合。这些预设是很好的起点，适用于大多数情况。
 
 ![Compressor](/assets/screenshots/dsp-compressor-basic.png)
 
-### Custom Mode
+### 自定义模式
 
-In Custom mode, six controls are shown which allow the behaviour of the compressor to be fine-tuned.
+在自定义（Custom）模式下，会显示六个控制项，可用于微调压缩器的行为。
 
-#### Threshold
+#### 阈值（Threshold）
 
-Sets the volume level where compression begins. Sounds quieter than the threshold are left alone, while louder sounds are reduced.
+设置开始压缩的音量电平。低于阈值的声音保持不变，而高于阈值的声音则会被减小。
 
-#### Ratio
+#### 比率（Ratio）
 
-Controls how strongly the compressor reduces sounds that exceed the threshold. Lower ratios sound more natural, while higher ratios create a tighter, more controlled sound.
+控制压缩器减小超过阈值的声音的强度。较低的比率听起来更自然，而较高的比率会产生更紧凑、更可控的声音。
 
-#### Attack
+#### 启动时间（Attack）
 
-Controls how quickly the compressor reacts when the sound becomes louder than the threshold. A faster attack tames sharp peaks, while a slower attack lets more of the initial impact through, making the sound feel punchier.
+控制当声音超过阈值时压缩器的反应速度。较快的启动时间能抑制尖锐的峰值，而较慢的启动时间则会让更多初始冲击通过，使声音听起来更有冲击力。
 
-#### Release
+#### 释放时间（Release）
 
-Controls how quickly the compressor stops reducing the volume after the sound falls below the threshold. A shorter release sounds more responsive, while a longer release produces a smoother, more even result.
+控制当声音降到阈值以下后，压缩器停止减小音量的速度。较短的释放时间听起来反应更灵敏，而较长的释放时间则会产生更平滑、更均匀的效果。
 
-#### Knee
+#### 拐点（Knee）
 
-Controls how gradually the compressor begins working around the threshold. A soft knee eases into compression for a more natural sound, while a hard knee starts compressing more suddenly for a more noticeable effect.
+控制压缩器在阈值附近开始工作的渐进程度。软拐点让压缩逐渐进入，声音更自然，而硬拐点则更突然地开始压缩，效果更加明显。
 
-#### Makeup Gain
+#### 增益补偿（Makeup Gain）
 
-Compression works by turning down the loudest moments, which often makes the whole signal seem quieter. Makeup Gain turns the overall level back up so that the benefit of compression can be heard without losing volume. Compression can be thought of as gently turning down the loudest moments, with Makeup Gain then turning everything back up so that the quiet and loud parts are more balanced.
+压缩的工作原理是调低最响亮的时刻，这往往会使整个信号显得更安静。增益补偿会将整体电平重新调高，以便在不损失音量的情况下体现压缩带来的好处。可以将压缩理解为轻轻调低最响亮的时刻，然后由增益补偿把整体音量调高，从而使安静与响亮的部分更加均衡。
 
 ![Compressor](/assets/screenshots/dsp-compressor-advanced.png)

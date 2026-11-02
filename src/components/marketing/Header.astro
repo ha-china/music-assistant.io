@@ -1,4 +1,5 @@
 ---
+import { withBase } from "../../lib/base";
 import latestRelease from "../../data/latest-release.json";
 import { getPosts } from "../../utils/blog";
 import Button from "./ui/Button.astro";
@@ -17,22 +18,22 @@ const releaseUrl = latestPost ? `/${latestPost.id}/` : githubUrl;
 const path = Astro.url.pathname;
 
 const links = [
-  { href: "/blog/", label: "News", current: path.startsWith("/blog") },
-  { href: "/documentation/", label: "Documentation" },
+  { href: "/blog/", label: "新闻", current: path.startsWith("/blog") },
+  { href: "/documentation/", label: "文档" },
 ];
 ---
 
 <header class="site-header">
   <div class="container inner">
     <div class="brand">
-      <a href="/" class="home" aria-label="Music Assistant home">
+      <a href={withBase("/")} class="home" aria-label="Music Assistant 首页">
         <Logo />
       </a>
       {version && releaseUrl && (
         <a
           class="version"
           href={releaseUrl}
-          title={`Music Assistant ${version} release notes`}
+          title={`Music Assistant ${version} 发行说明`}
           translate="no"
         >
           {version.startsWith("v") ? version : `v${version}`}
@@ -91,7 +92,7 @@ const links = [
     </nav>
 
     <!-- Outside the navigation so it stays in the bar on small screens. -->
-    <Button href="/get-started/" class="nav-install">Get Music Assistant</Button>
+    <Button href={withBase("/get-started/")} class="nav-install">Get Music Assistant</Button>
 
     <button
       class="menu-toggle icon-button"

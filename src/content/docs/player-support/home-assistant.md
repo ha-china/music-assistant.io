@@ -1,55 +1,55 @@
 ---
-title: "Home Assistant Media Players"
-description: Features of, and instructions for, the use of HA media player entities in Music Assistant
+title: "Home Assistant 媒体播放器"
+description: Music Assistant 中 HA 媒体播放器实体的功能与使用说明
 ---
 
-# Home Assistant Media Players<img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# Home Assistant 媒体播放器<img src="/assets/icons/ha-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for playing to media player entities in Home Assistant.
+Music Assistant 支持向 Home Assistant 中的媒体播放器实体（entity）播放音乐。
 
-This is the last of the three Home Assistant pieces; it needs the [Home Assistant Plugin](/ha-plugin/). See [how the pieces fit together](/integration/#how-the-pieces-fit-together) if you are not sure which you need.
+这是 Home Assistant 三个组成部分中的最后一个；它需要 [Home Assistant 插件](/ha-plugin/)。如果你不确定自己需要哪一个，请参阅[各组成部分如何协同工作](/integration/#how-the-pieces-fit-together)。
 
 > [!CAUTION]
-> This player provider relies on the upstream HA integrations which have not necessarily been written or optimised for music playback. Therefore, if there is any way to use a MA provider you need to do so. Problems with HA providers will be addressed as resources allow.
+> 此播放器提供程序（player provider）所依赖的上游 HA 集成（integration）未必是为音乐播放而编写或优化的。因此，只要有可能使用 MA 提供程序，你就应该这样做。HA 提供程序的问题将视资源情况予以处理。
 
-## Features
+## 功能
 
-- All media player entities that are available in HA, for which there is no dedicated MA provider, will be available in MA
-- All media player types that can be grouped in HA can be grouped in MA via the [Player List](/ui/#player-list) or <a href="https://www.home-assistant.io/integrations/media_player/#action-media_playerjoin" target="_blank" rel="noopener noreferrer">HA action</a>
+- HA 中所有可用的、且没有专用 MA 提供程序的媒体播放器实体，都将在 MA 中可用
+- 所有可以在 HA 中分组的媒体播放器类型，都可以通过[播放器列表](/ui/#player-list)或 <a href="https://www.home-assistant.io/integrations/media_player/#action-media_playerjoin" target="_blank" rel="noopener noreferrer">HA 动作</a>在 MA 中进行分组
 
-## Configuration
+## 配置
 
-Before the Player Provider can be added the [Plugin](/ha-plugin/) must be installed. The following image shows what a successful installation looks like
+在添加播放器提供程序之前，必须先安装[插件](/ha-plugin/)。下图展示了成功安装后的样子
 
 ![screenshot](/assets/screenshots/plugin-provider.png)
 
-- In Music Assistant, go to **Settings → Player Providers**, click **Add a player provider** and select `Home Assistant Media Players`
-- In the provider settings, select which players are desired to be utilised. These can be changed at any time.
+- 在 Music Assistant 中，前往**设置 → 播放器提供程序**，点击**添加播放器提供程序**，然后选择 `Home Assistant Media Players`
+- 在提供程序设置中，选择想要使用的播放器。这些选择可以随时更改。
 
 > [!CAUTION]
-> Features are most likely limited with these players. Always prefer a native player provider, if it exists in MA, as that is optimised
+> 这些播放器的功能很可能受限。如果 MA 中存在原生播放器提供程序，请始终优先使用它，因为它是经过优化的
 
-## Settings
+## 设置
 
-Home Assistant Media Players use the standard [Individual Player Settings](/settings/individual-player/), including the [settings shared by most protocols](/settings/individual-player/#settings-shared-by-most-protocols). One of those differs here:
+Home Assistant 媒体播放器使用标准的[单个播放器设置](/settings/individual-player/)，包括[大多数协议共享的设置](/settings/individual-player/#settings-shared-by-most-protocols)。其中有一项在这里有所不同：
 
-- <b>[Output codec to use for streaming audio to the player](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player).</b> Defaults to MP3 here rather than FLAC, as it has the broadest compatibility across Home Assistant player integrations
+- <b>[用于向播放器串流音频的输出编解码器（codec）](/settings/individual-player/#output-codec-to-use-for-streaming-audio-to-the-player)</b> 此处默认为 MP3 而非 FLAC，因为它在各个 Home Assistant 播放器集成中具有最广泛的兼容性
 
-Flow mode streams audio as a continuous flow rather than individual tracks, which avoids gaps between tracks. For HA media players flow mode is always used and there is no setting to turn it off, because the wide variation in HA player capabilities makes it the most reliable playback method.
+流模式（Flow mode）以连续流的方式串流音频，而不是以单曲为单位，从而避免曲目之间出现间隙。对于 HA 媒体播放器，始终使用流模式，并且没有提供将其关闭的设置，因为 HA 播放器能力差异很大，这使其成为最可靠的播放方式。
 
-### ESPHome Media Players
+### ESPHome 媒体播放器
 
-Newer ESPHome based players such as the Voice PE are configured from the capabilities they report, so several of the settings above are set for you and do not appear. The output codec is fixed to what the device asks for, the HTTP profile is fixed to Profile 2, metadata injection is switched off, and the sample rates come from the device rather than the list above. Output channel mode and the low latency WAV setting are still available.
+较新的基于 ESPHome 的播放器（例如 Voice PE）会根据其报告的能力进行配置，因此上面的部分设置会自动为你设置且不会显示。输出编解码器固定为设备所请求的格式，HTTP 配置文件固定为 Profile 2，元数据注入已关闭，采样率来自设备而非上面的列表。输出声道模式和低延迟 WAV 设置仍然可用。
 
-### MA Natively Supported Media Players
+### MA 原生支持的媒体播放器
 
-If the player you imported also has a native Music Assistant provider, a notice appears at the top of its settings. Using the native provider is strongly recommended over the generic Home Assistant one, as it gives better control and playback.
+如果你导入的播放器还拥有原生的 Music Assistant 提供程序，其设置顶部会显示一条提示。强烈建议使用原生提供程序，而不是通用的 Home Assistant 提供程序，因为它能提供更好的控制和播放体验。
 
-## Known Issues / Notes
+## 已知问题 / 注意事项
 
-- This player provider is not enabled by default and must be added via MA settings however before it is available you must setup the Home Assistant Plug-in Provider
-- Only players that support `play_media` can be used, other players will be filtered out
-- MA players will be filtered out
-- Synchronisation between this player type and any others is not possible
-- In order to support a greater number of players, different streaming profiles are available. If the player doesn't work, stops mid stream or has other playback issues then change the player setting `HTTP Profile used for sending audio` and try each option until the player works
-- There are regular reports of issues with the HA integrations `VLC Telnet` and `MPD`. If possible, avoid the use of players supplied by those integrations
+- 此播放器提供程序默认未启用，必须通过 MA 设置添加；但在其可用之前，你必须先设置 Home Assistant 插件提供程序
+- 只有支持 `play_media` 的播放器才能使用，其他播放器将被过滤掉
+- MA 播放器将被过滤掉
+- 此播放器类型与其他任何播放器类型之间无法进行同步
+- 为了支持更多播放器，系统提供了多种不同的串流配置文件。如果播放器无法工作、在串流中途停止或出现其他播放问题，请更改播放器设置 `HTTP Profile used for sending audio`，并逐个尝试每个选项，直到播放器正常工作为止
+- HA 集成 `VLC Telnet` 和 `MPD` 存在问题的报告时有出现。如果可能，请避免使用由这些集成提供的播放器

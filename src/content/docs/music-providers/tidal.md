@@ -4,11 +4,11 @@ title: "Tidal"
 
 # Tidal <img src="/assets/icons/tidal-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for <a href="https://tidal.com" target="_blank" rel="noopener noreferrer">Tidal</a>. Contributed and maintained by <a href="https://github.com/jozefKruszynski" target="_blank" rel="noopener noreferrer">jozefKruszynski</a>
+Music Assistant 支持 <a href="https://tidal.com" target="_blank" rel="noopener noreferrer">Tidal</a>。由 <a href="https://github.com/jozefKruszynski" target="_blank" rel="noopener noreferrer">jozefKruszynski</a> 贡献并维护。
 
-Tidal is a subscription streaming service that streams everything in lossless quality, with hi-res and immersive versions of many albums.
+Tidal 是一项订阅制流媒体服务，所有内容均以无损音质串流，许多专辑还提供高解析度和沉浸式版本。
 
-Sign in and your Tidal favourites and playlists appear in Music Assistant, with the rest of the catalogue there to search.
+登录后，你的 Tidal 收藏和播放列表会出现在 Music Assistant 中，其余曲库内容可供搜索。
 
 ## Features
 
@@ -32,27 +32,43 @@ Sign in and your Tidal favourites and playlists appear in Music Assistant, with 
 - Items in your Tidal library will be marked as "Favourites" in Music Assistant
 - Marking an item as a "Favourite" from the Music Assistant interface will also mark it as favourite in Tidal
 - On playback, the highest quality FLAC HiFi version will be selected
-- Multiple Tidal accounts can be added. 
+- Multiple Tidal accounts can be added.
 
-## Configuration
+### Other
 
-1. Add the Tidal provider. Music Assistant shows your code and an `Open` button, and waits.
+- Searching the Tidal catalogue
+- Items in your Tidal library will be marked as "Favourites" in Music Assistant
+- Marking an item as a "Favourite" from the Music Assistant interface will also mark it as favourite in Tidal
+- On playback, the highest quality FLAC HiFi version will be selected
+- Multiple Tidal accounts can be added.
 
-   [![Preview image](/assets/screenshots/tidal-device-login.png)](/assets/screenshots/tidal-device-login.png)
+### 其他
 
-2. Click `Open` to go to `link.tidal.com` with the code already filled in, and approve the request while signed in to Tidal. To approve from a phone instead, go to `link.tidal.com` there and type the code shown in Music Assistant.
+- 搜索 Tidal 曲库
+- Tidal 资料库中的项目在 Music Assistant 中会被标记为“收藏”（Favourites）
+- 在 Music Assistant 界面中将项目标记为“收藏”，也会同时在 Tidal 中将其标记为收藏
+- 播放时，将选择最高音质的 FLAC HiFi 版本
+- 可添加多个 Tidal 账户
 
-   [![Preview image](/assets/screenshots/tidal-approve.png)](/assets/screenshots/tidal-approve.png)
+## 配置
 
-3. Setup completes on its own as soon as Tidal reports the approval. Codes are short-lived, so if yours expires before you approve it, start the setup again.
+1. 添加 Tidal 提供程序。Music Assistant 会显示你的代码和一个 `Open` 按钮，并处于等待状态。
 
-### Settings
+   [![预览图片](/assets/screenshots/tidal-device-login.png)](/assets/screenshots/tidal-device-login.png)
 
-- <b>Quality setting for Tidal.</b> Options are `Max [default]` or `High`. Max is up to 24-bit, 192 kHz and High is up to 16-bit, 44.1 kHz.
+2. 点击 `Open` 前往 `link.tidal.com`，代码已自动填入，在已登录 Tidal 的状态下批准该请求。如果想改用手机批准，请在手机上打开 `link.tidal.com`，并输入 Music Assistant 中显示的代码。
 
-See also the [Library Import Control](/music-providers/#library-import-control) settings.
+   [![预览图片](/assets/screenshots/tidal-approve.png)](/assets/screenshots/tidal-approve.png)
 
-## Known Issues / Notes
+3. 一旦 Tidal 报告已批准，设置会自动完成。代码的有效期较短，如果代码在你批准之前就已过期，请重新开始设置。
 
-- If nothing opens when you add the provider, the window was most likely blocked by the browser. Use the `Click here if the window did not open` link on the setup screen.
-- The approval link can be opened on any device, not just the one running Music Assistant.
+### 设置
+
+- <b>Tidal 音质设置。</b>选项为 `Max [default]` 或 `High`。Max 最高为 24-bit、192 kHz，High 最高为 16-bit、44.1 kHz。
+
+另请参阅[资料库导入控制](/music-providers/#library-import-control)设置。
+
+## 已知问题 / 注意事项
+
+- 添加提供程序时如果没有打开任何窗口，该窗口很可能已被浏览器拦截。请使用设置界面上的 `Click here if the window did not open` 链接。
+- 批准链接可以在任何设备上打开，而不只是运行 Music Assistant 的那台设备。

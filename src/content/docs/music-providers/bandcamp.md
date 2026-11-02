@@ -2,20 +2,20 @@
 title: "Bandcamp"
 ---
 
-# Bandcamp Music <img src="/assets/icons/bandcamp.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
+# Bandcamp 音乐 <img src="/assets/icons/bandcamp.svg" alt="Preview image" style="width: 70px; float: right;" loading="lazy" />
 
-Music Assistant has support for Bandcamp. Contributed and maintained by [ALERTua](https://github.com/ALERTua) and [teancom](https://github.com/teancom)
+Music Assistant 支持 Bandcamp。由 [ALERTua](https://github.com/ALERTua) 和 [teancom](https://github.com/teancom) 贡献并维护
 
-Bandcamp is a shop and streaming site where artists and labels publish their own music and sell it directly to listeners. Most of the catalogue can be streamed for free before you decide to buy.
+Bandcamp 是一个音乐商店和流媒体网站，艺术家和厂牌（label）可以在上面发布自己的音乐，并直接出售给听众。在决定购买之前，大部分曲库内容都可以免费试听。
 
-This source lets you search and play that catalogue from Music Assistant. Add your account cookie as well and the albums you have bought come across as a library of their own.
+通过此音乐源，您可以在 Music Assistant 中搜索并播放这些曲库内容。同时添加您的账户 Cookie 后，您购买过的专辑还会作为一个独立的媒体库导入。
 
 > [!CAUTION]
-> **DISCLAIMER**
-> Please note that Bandcamp does not offer an official API to retrieve data and streams. This means that everything is built on a best-effort basis.
+> **免责声明**
+> 请注意，Bandcamp 不提供用于获取数据和音频流的官方 API。这意味着所有功能都是在尽力而为（best-effort）的基础上构建的。
 
 > [!NOTE]
-> You can search and play without signing in. To bring across the albums you have bought, you need to add your identity cookie as described below.
+> 您无需登录即可搜索和播放。要导入您购买过的专辑，则需要按照下文所述添加您的身份 Cookie（identity cookie）。
 
 ## Features
 
@@ -38,48 +38,57 @@ This source lets you search and play that catalogue from Music Assistant. Add yo
 - The highest available stream from Bandcamp will be selected for playback
 - Bandcamp Feed and Wishlist are available in the browse view
 
-## Configuration
+### Other
+- Searching the Bandcamp catalogue
+- The highest available stream from Bandcamp will be selected for playback
+- Bandcamp Feed and Wishlist are available in the browse view
 
-- Providing an identity cookie is optional, but allows importing owned albums as library items
-- Enable "Fetch song lyrics" to get lyrics from Bandcamp
-- Tweak Top Tracks Limit to balance search speed and quantity of search results
+### 其他
+- 搜索 Bandcamp 曲库
+- 播放时将选择 Bandcamp 可用的最高音质音频流
+- 浏览视图中可访问 Bandcamp Feed 和愿望清单（Wishlist）
+
+## 配置
+
+- 提供身份 Cookie 是可选的，但可以将您拥有的专辑导入为媒体库项目
+- 启用“获取歌词”（Fetch song lyrics）可从 Bandcamp 获取歌词
+- 调整“热门曲目上限”（Top Tracks Limit）以在搜索速度和搜索结果数量之间取得平衡
 
 > [!NOTE]
-> Cookies may expire after some time. This means that you may have to replace the identity cookie in the provider configuration if library synchronization begins to fail.
+> Cookie 可能会在一段时间后过期。这意味着，如果媒体库同步开始失败，您可能需要更换提供程序配置中的身份 Cookie。
 
-### Obtaining the Identity Cookie
+### 获取身份 Cookie
 
-- Open <a href="https://bandcamp.com/" target="_blank">Bandcamp</a> in your browser.
-- Open the cookies storage via View -> Developer -> Developer Tools -> (Application) -> Storage -> Cookies -> `https://bandcamp.com`. Note that this might be named differently based on your browser. It should open a window similar to this:
-[![Dev tools](/assets/screenshots/bandcamp_storage.png)](/assets/screenshots/bandcamp_storage.png)
+- 在浏览器中打开 <a href="https://bandcamp.com/" target="_blank">Bandcamp</a>。
+- 通过 View -> Developer -> Developer Tools -> (Application) -> Storage -> Cookies -> `https://bandcamp.com` 打开 Cookie 存储。请注意，根据您使用的浏览器不同，其名称可能有所差异。此时应会打开一个类似下图的窗口：
+[![开发者工具](/assets/screenshots/bandcamp_storage.png)](/assets/screenshots/bandcamp_storage.png)
 
-- Find `identity` cookie
-- Double-click its value and copy its contents
+- 找到 `identity` Cookie
+- 双击其值并复制其内容
 
-### Configuring the provider 
-- Navigate to 'Settings'
-- Under Music Sources, click 'Add a music source', select 'Bandcamp', and fill in the identity cookie if needed
-- Change optional values
-- Click 'Save'
+### 配置提供程序
+- 进入“设置”（Settings）
+- 在“音乐源”（Music Sources）下，点击“添加音乐源”（Add a music source），选择"Bandcamp"，并按需填写身份 Cookie
+- 修改可选设置
+- 点击“保存”（Save）
 
-## Known Issues / Notes
+## 已知问题 / 说明
 
-- This provider mimics Bandcamp. Do not expect to see the same search results as you would when using Bandcamp itself
-- **Large labels are slow to load**: a label with hundreds of albums can take several minutes to appear, because
-  Bandcamp limits how fast anything can read from it. Music Assistant has to pause between requests or Bandcamp
-  will block it altogether. The log will show "Bandcamp rate limit reached" while this is going on, which is
-  expected rather than a fault.
+- 此提供程序是对 Bandcamp 的模拟，请不要期望看到与直接使用 Bandcamp 时完全相同的搜索结果
+- **大型厂牌加载缓慢**：拥有数百张专辑的厂牌可能需要几分钟才能加载出来，因为
+  Bandcamp 限制了外部读取其内容的速度。Music Assistant 必须在请求之间暂停，否则
+  Bandcamp 会将其完全屏蔽。在此期间，日志中会显示 "Bandcamp rate limit reached"，这属于
+  预期行为而非故障。
 
-### Artists, Labels, and Search
+### 艺术家、厂牌与搜索
 
-Bandcamp uses the term **artist** for any page on `bandcamp.com` — a performing artist, a band, a label, or a collective.
-A label's page hosts albums by various performers, and those performers may not have their own Bandcamp page.
-This Provider mirrors this directly.
+Bandcamp 使用 **艺术家（artist）** 一词来指代 `bandcamp.com` 上的任何页面——可以是表演艺术家、乐队、厂牌或音乐团体。
+一个厂牌的页面上托管着多位表演者的专辑，而这些表演者可能并没有自己的 Bandcamp 页面。
+此提供程序直接沿用了这一设定。
 
-What this means in practice:
+实际使用中，这意味着：
 
-- **Artist search returns pages, not performers.** A performer without their own Bandcamp page will not appear in artist search results. To find their releases, search by **album** name, or by the **label** that hosts them
-- **A label's page lists every album on it**, regardless of the credited performer
-- **Names can collide.** The same name may exist as both a standalone artist page and as a credited performer on a label-hosted album (e.g. *Apollo Brown* on their own [page](https://apollobrown.bandcamp.com/) vs. on [*Hip Dozer*](https://hipdozer.bandcamp.com/album/night-moves) compilations). These are distinct entries on Bandcamp and will appear separately
-- **Track and album metadata is correct.** The credited performer is what's displayed in the player and scrobbled, even when the parent page is a label
-  
+- **艺术家搜索返回的是页面，而非表演者。**没有自己 Bandcamp 页面的表演者不会出现在艺术家搜索结果中。要查找他们的作品，请按 **专辑** 名称搜索，或搜索托管其作品的 **厂牌**
+- **厂牌页面会列出其上的所有专辑**，无论署名表演者是谁
+- **名称可能会重复。**同一个名称既可能作为一个独立的艺术家页面存在，也可能是厂牌专辑上署名的表演者（例如：*Apollo Brown* 自己的[页面](https://apollobrown.bandcamp.com/)与 [*Hip Dozer*](https://hipdozer.bandcamp.com/album/night-moves) 合辑中的署名）。这些在 Bandcamp 上是彼此独立的条目，会分别显示
+- **曲目和专辑的元数据是正确的。**播放器中显示并提交 scrobble 记录的都是署名表演者，即使其所属页面是厂牌

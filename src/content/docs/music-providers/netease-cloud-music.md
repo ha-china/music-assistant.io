@@ -1,20 +1,20 @@
 ---
-title: "NetEase Cloud Music"
+title: "网易云音乐"
 ---
 
-# NetEase Cloud Music <img src="/assets/icons/netease-cloud-music-icon.png" alt="NetEase Cloud Music icon" style="width: 70px; float: right;" loading="lazy" />
+# 网易云音乐 <img src="/assets/icons/netease-cloud-music-icon.png" alt="NetEase Cloud Music icon" style="width: 70px; float: right;" loading="lazy" />
 
-**Language:** **English** | [中文](/music-providers/netease-cloud-music-zh/)
+**语言：** **English** | [中文](/music-providers/netease-cloud-music-zh/)
 
-Music Assistant has support for <a href="https://music.163.com/" target="_blank" rel="noopener noreferrer">NetEase Cloud Music</a>.  NetEase Cloud Music is a major streaming platform in Mainland China with a large Chinese catalog, recommendations, and lyrics support.
-Contributed and maintained by <a href="https://github.com/xiasi0" target="_blank" rel="noopener noreferrer">xiasi0</a>.
+Music Assistant 支持<a href="https://music.163.com/" target="_blank" rel="noopener noreferrer">网易云音乐（NetEase Cloud Music）</a>。网易云音乐是中国大陆主流的流媒体平台，拥有庞大的华语曲库、推荐功能和歌词支持。
+由 <a href="https://github.com/xiasi0" target="_blank" rel="noopener noreferrer">xiasi0</a> 贡献并维护。
 
-This source signs Music Assistant in to your NetEase account, so the music and playlists you have saved there appear in Music Assistant and the catalogue can be searched. It does need a separate API service running on your own network, as described below.
+此音乐来源会使用你的网易账号登录 Music Assistant，因此你在该账号中收藏的音乐和播放列表会显示在 Music Assistant 中，并且可以搜索其曲库。它需要在你自己的网络上运行一个额外的 API 服务，具体说明见下文。
 
 > [!NOTE]
-> - A NetEase Cloud Music account is required
-> - You also have to run a small piece of software of your own alongside Music Assistant, described under [Configuration](#configuration)
-> - This source plays only what your account is entitled to. It does not get around any of NetEase's restrictions
+> - 需要一个网易云音乐账号
+> - 你还需要在 Music Assistant 之外自行运行一个小软件，详见[配置](#configuration)
+> - 此音乐来源仅播放你的账号有权播放的内容，不会绕过网易的任何限制
 
 ## Features
 
@@ -39,25 +39,39 @@ This source signs Music Assistant in to your NetEase account, so the music and p
 - Dynamic recommendation/radio entries include Daily songs, Daily playlists, Private FM, and Heart Mode
 - Library sync is currently one-way (NetEase Cloud Music -> Music Assistant)
 
-## Configuration
+### Other
 
-### The extra service you need to run
+- Search support for tracks, artists, albums, and playlists
+- Library sync for liked/favorited content and user playlists
+- Dynamic recommendation/radio entries include Daily songs, Daily playlists, Private FM, and Heart Mode
+- Library sync is currently one-way (NetEase Cloud Music -> Music Assistant)
 
-NetEase provides no proper way in for other apps, so this source talks to NetEase through a separate piece of software called NeteaseCloudMusicApi, which you run yourself. Music Assistant expects to find it at `http://127.0.0.1:3000` unless you tell it otherwise.
+### 其他
 
-Home Assistant users can now install the companion App directly from the App store within Home Assistant by searching for `NetEase Cloud Music API`.
+- 支持搜索曲目、艺术家、专辑和播放列表
+- 可同步喜欢/收藏的内容以及用户播放列表
+- 动态推荐/电台条目包括每日歌曲、每日歌单、私人FM 和心动模式
+- 目前媒体库同步是单向的（网易云音乐 -> Music Assistant）
 
-### QR Login Flow (NetEase App)
+## 配置
 
-1. Open **Settings → Music Sources → Add a music source → NetEase Cloud Music**
-2. Set **API base URL** to your local API service
-3. Click **QR Login**. A new QR page will open
-4. Scan with the **NetEase Cloud Music app** and confirm login in the app
-5. Close the QR page
-6. Click **Save**
+### 你需要额外运行的服务
 
-## Compliance / Notes
+网易没有为其他应用提供合适的接入方式，因此此音乐来源通过一个名为 NeteaseCloudMusicApi 的独立软件与网易通信，该软件由你自己运行。除非你另行指定，Music Assistant 默认会在 `http://127.0.0.1:3000` 查找它。
 
-- You can play whatever your NetEase account allows you to play, and nothing more
-- A track your account is not entitled to may play only a preview, or not at all
-- Nothing here gets around subscription restrictions
+Home Assistant 用户现在可以直接在 Home Assistant 内的应用商店中搜索 `NetEase Cloud Music API` 来安装配套应用。
+
+### 扫码登录流程（网易云音乐 App）
+
+1. 打开 **设置 → 音乐来源 → 添加音乐来源 → 网易云音乐**
+2. 将 **API 基础 URL** 设置为你的本地 API 服务
+3. 点击 **扫码登录**，将会打开一个新的二维码页面
+4. 使用**网易云音乐 App** 扫码，并在应用中确认登录
+5. 关闭二维码页面
+6. 点击 **保存**
+
+## 合规性 / 说明
+
+- 你只能播放网易账号允许你播放的内容，除此之外别无其他
+- 账号无权播放的曲目可能只能播放试听片段，或者完全无法播放
+- 本页面所描述的内容不会绕过任何订阅限制
