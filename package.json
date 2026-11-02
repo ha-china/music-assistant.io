@@ -5,12 +5,9 @@
   "scripts": {
     "fetch-allowed-referrers": "node ./scripts/fetch-allowed-referrers.mjs",
     "fetch-latest-release": "node ./scripts/fetch-latest-release.mjs",
-    "predev": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
     "dev": "astro dev --host",
-    "prestart": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
     "start": "astro dev --host",
-    "prebuild": "npm run fetch-allowed-referrers && npm run fetch-latest-release",
-    "build": "astro build && node scripts/collect-subpath.mjs",
+    "build": "node --import ./scripts/fetch-polyfill.mjs scripts/fetch-allowed-referrers.mjs && node --import ./scripts/fetch-polyfill.mjs scripts/fetch-latest-release.mjs && node --import ./scripts/fetch-polyfill.mjs node_modules/astro/bin/astro.mjs build && node scripts/collect-subpath.mjs",
     "preview": "astro preview --host",
     "astro": "astro"
   },
