@@ -139,6 +139,7 @@ export default defineConfig({
       routeMiddleware: "./src/starlightRouteData.ts",
       plugins: [
         starlightBlog({
+          navigation: "none",
           title: "新闻",
           prefix: "blog",
           postCount: 10,
@@ -384,5 +385,20 @@ export default defineConfig({
       },
     }),
     mdx(),
+    {
+      name: "rehype-base-path-injector",
+      hooks: {
+        // Runs after Starlight's own astro:config:setup, which replaces the
+        // markdown plugin arrays with its own — appending here puts the base
+        // path rewriter back at the end of the pipeline, in dev and build.
+        "astro:config:setup": ({ config, updateConfig }) => {
+          updateConfig({
+            markdown: {
+              rehypePlugins: [...(config.markdown?.rehypePlugins ?? []), rehypeBasePath()],
+            },
+          });
+        },
+      },
+    },
   ],
 });
