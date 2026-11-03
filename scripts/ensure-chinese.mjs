@@ -41,7 +41,7 @@ run("scripts/translate-capabilities.mjs");
     ],
     [
       'site: "https://www.music-assistant.io",',
-      'site: SITE_URL,\n  base: BASE_PATH,\n  i18n: {\n    defaultLocale: "root",\n    locales: {\n      root: { label: "简体中文", lang: "zh-cn" },\n    },\n  },',
+      'site: SITE_URL,\n  base: BASE_PATH,\n  i18n: {\n    defaultLocale: "root",\n    locales: {\n      root: { label: "简体中文", lang: "zh-CN" },\n    },\n  },',
     ],
     [
       "remarkPlugins: [remarkAlert],",

@@ -34,7 +34,7 @@ export default defineConfig({
     starlight({
       title: "Music Assistant",
       locales: {
-        root: { label: "简体中文", lang: "zh-cn" },
+        root: { label: "简体中文", lang: "zh-CN" },
       },
       titleDelimiter: "-",
       editLink: isProduction
