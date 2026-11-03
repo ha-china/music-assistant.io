@@ -7,7 +7,7 @@
     "fetch-latest-release": "node ./scripts/fetch-latest-release.mjs",
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "node --import ./scripts/fetch-polyfill.mjs scripts/fetch-allowed-referrers.mjs && node --import ./scripts/fetch-polyfill.mjs scripts/fetch-latest-release.mjs && node --import ./scripts/fetch-polyfill.mjs node_modules/astro/bin/astro.mjs build && node scripts/collect-subpath.mjs",
+    "build": "node --import ./scripts/fetch-polyfill.mjs scripts/fetch-allowed-referrers.mjs && node --import ./scripts/fetch-polyfill.mjs scripts/fetch-latest-release.mjs && node --import ./scripts/fetch-polyfill.mjs node_modules/astro/bin/astro.mjs build && node scripts/prefix-dist.mjs && node scripts/collect-subpath.mjs",
     "preview": "astro preview --host",
     "astro": "astro"
   },
