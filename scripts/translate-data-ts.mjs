@@ -9,7 +9,13 @@ import { readFile, writeFile, unlink } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
-const API_BASE = (process.env.LLM_API_URL || "https://api.siliconflow.cn/v1").replace(/\/$/, "");
+const API_BASE = (() => {
+  let base = process.env.LLM_API_URL || process.env.TRANSLATION_API_BASE || "https://api.siliconflow.cn/v1";
+  base = base.replace(/\/$/, "");
+  if (base.endsWith("/chat/completions")) base = base.slice(0, -"/chat/completions".length);
+  if (!/\/v\d+$/.test(base)) base += "/v1";
+  return base;
+})();
 const API_KEY = process.env.LLM_API_KEY || "";
 const MODEL = process.env.LLM_MODEL || "";
 const TIMEOUT = Number(process.env.TRANSLATION_TIMEOUT_MS || 1200000);
@@ -79,21 +85,32 @@ const FILES = ["src/data/music-sources.ts", "src/data/players.ts"];
 
 for (const file of FILES) {
   const original = await readFile(file, "utf8");
-  const params = {
-    model: MODEL,
-    temperature: 0,
-    stream: true,
-    messages: [
-      { role: "system", content: SYSTEM_PROMPT },
-      { role: "user", content: `Translate this file (${file}).\n\n${original}` },
-    ],
-  };
-  if (process.env.LLM_REASONING && process.env.LLM_REASONING !== "none") {
-    params.reasoning_effort = process.env.LLM_REASONING;
-  } else {
-    params.enable_thinking = false;
+  let translated;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    const params = {
+      model: MODEL,
+      temperature: 0,
+      stream: true,
+      messages: [
+        { role: "system", content: SYSTEM_PROMPT },
+        { role: "user", content: `Translate this file (${file}).\n\n${original}` },
+      ],
+    };
+    if (process.env.LLM_REASONING && process.env.LLM_REASONING !== "none") {
+      params.reasoning_effort = process.env.LLM_REASONING;
+    } else {
+      params.enable_thinking = false;
+    }
+    try {
+      translated = await chatCompletion(params);
+      break;
+    } catch (error) {
+      console.log(`attempt ${attempt}/3 failed for ${file}: ${String(error.message).slice(0, 120)}`);
+      if (attempt === 3) throw error;
+      await new Promise((r) => setTimeout(r, 5000 * attempt));
+    }
   }
-  let translated = await chatCompletion(params);
+  translated = translated.trim();
   if (/^```/.test(translated)) translated = translated.replace(/^```[a-z]*\n?/, "").replace(/\n?```$/, "");
   const structureOk =
     (original.match(/export /g) || []).length === (translated.match(/export /g) || []).length &&
