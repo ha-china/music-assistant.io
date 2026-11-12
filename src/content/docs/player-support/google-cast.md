@@ -37,23 +37,27 @@ Music Assistant 完全支持基于 Google Cast 的设备。这包括 Google 自�
 
 ## Cast 设备上的 Sendspin
 
-Cast 扬声器也可以通过 [Sendspin](/player-support/sendspin/) 驱动，这使它可以与同一群组中的 Sendspin、AirPlay 和 Sonos 播放器同步播放。这是实验性功能且默认关闭，因此除非你想在混合群组中加入 Cast 扬声器，否则无需在此进行任何操作。
+A Cast speaker can also be driven over [Sendspin](/player-support/sendspin/), which lets it play in sync alongside Sendspin, AirPlay and Sonos players in one group. This is experimental and switched off by default, so there is nothing to do here unless you want a Cast speaker in a mixed group. It also does not work on many Cast devices, especially newer ones, because Google's current Cast software no longer gives apps like Sendspin any control over audio timing, which they need to play in sync.
 
 要启用它，请打开该播放器的设置，在 **输出协议（Output Protocols）** 部分找到 Sendspin，并勾选 **在此播放器上启用此协议（实验性）**。
 
-之后可能需要进行一些调整。播放很少能一开始就同步，因此你可能需要手动为该扬声器设置 **静态播放延迟（毫秒）**，直到它与其他扬声器对齐为止。一些较新的 Cast 固件完全无法运行 Sendspin，而且无法提前判断，只有在第一次播放时才会发现。发生这种情况时，Music Assistant 会给出提示，并停止为该扬声器提供 Sendspin。标准 Cast 协议不受影响，可继续正常工作。
+Speakers that also support AirPlay don't need this: they join mixed groups over AirPlay, which works better than Sendspin over Cast. AirPlay must be turned on in Music Assistant for that.
+
+Sendspin is also not offered on speaker groups made in the Google Home app (except stereo pairs), or on models known not to work.
+
+Expect to do some tuning afterwards. Playback is rarely in sync straight away, so you will probably have to set **Static playback delay (ms)** for that speaker by hand until it lines up with the others.
 
 ## 已知问题 / 注意事项
 
-- Cast 扬声器不支持音频交叉淡入淡出（crossfade）。如果你需要交叉淡入淡出和/或完整的无缝播放（gapless）支持，请在播放器的高级设置中启用"[流模式](/faq/tech-info/#track-queueing)"。启用流模式或许能解决播放问题，但可能带来副作用：禁用设备上实际的物理按钮和/或设备自身的元数据显示。
-- 如果你的 Chromecast 扬声器没有被自动检测到，或者时不时不可用，请确保支持 Cast 的扬声器与 Music Assistant 服务器处于同一网络；访客 Wi-Fi 网络和 VPN 是造成这种情况的常见原因。此外，请确保路由器没有阻止扬声器用于被发现的通告消息（mDNS/组播）。关于需要检查哪些内容（用通俗的语言说明），请参见 [发现排查清单](/faq/networking/#checklist-my-players-are-not-being-discovered)。
-- 重新启用一个已禁用的扬声器后，可能需要一段时间才能重新发现该扬声器；重启 Music Assistant 可以加快这一过程。
-- 可以通过 [通用群组（Universal Group）](/faq/groups/#universal-groups) 将 cast 播放器分组，但它们可能无法同步播放。
-- 电视/视频设备（不包括 AV 电视棒）默认处于禁用状态。
-- 仅包含一个立体声组合的 Cast 群组将无法工作。
-- 有电池供电设备出现问题的报告。在单个播放器设置中，最有可能正常工作的配置是：开启队列流模式（通用设置），使用 `Profile 2 - no content length`、输出编解码器为 MP3，并将采样率设置为 16 bit 的 44.1 kHz 和 48 kHz（高级设置）。
-- MA 通过纯 HTTP URL 提供所有音频流。任何要求 HTTPS URL 的设备或软件都无法工作。例如，Android 应用 Castreceiver 就无法工作。
-- Google 已在某些设备上移除了 Sendspin 所需的功能。如果出现消息提示 Sendspin 无法与该设备配合工作，Music Assistant 将停止为该扬声器提供 Sendspin，并且不会再提供。无需进行任何操作，播放会继续通过标准 Cast 协议进行。
+- Cast speakers do not support crossfading of audio. If you want crossfade and/or full gapless support, enable the "[flow mode](/faq/tech-info/#track-queueing)" in the player's advanced settings. Enabling flow mode may solve playback issues however it might come with the side effect of disabling actual physical buttons and/or display of metadata on the device itself
+- If your Chromecast speakers are not auto detected or randomly unavailable then make sure that your Cast enabled speakers are on the same network as your Music Assistant server; guest Wi-Fi networks and VPNs are common causes of this. Additionally, ensure your router is not blocking the announcement messages (mDNS/multicast) that speakers use to be discovered. See the [discovery checklist](/faq/networking/#checklist-my-players-are-not-being-discovered) for what to check in plain language
+- After re-enabling a disabled speaker, it can take a while before the speaker is rediscovered, the process can be sped up by restarting Music Assistant
+- It is possible to group cast players via a [Universal Group](/faq/groups/#universal-groups) although they may not play in sync
+- TV/Video devices (not the AV dongles) are disabled by default
+- Cast Groups containing only a stereo pair will not work
+- Problems have been reported with battery powered devices. The most likely working configuration in the individual player settings is queue flow mode on (generic settings), with `Profile 2 - no content length`, Output Codec MP3, and sample rates set to 44.1 kHz and 48 kHz at 16 bit (advanced settings)
+- MA serves all audio streams over a plain HTTP URL. Any device or software that requires HTTPS URLs will not work. For example, the Android app Castreceiver does not work
+- Google's current Cast software no longer gives apps like Sendspin any control over audio timing, which they need to play in sync. Devices that run it cannot use Sendspin, and a software update can stop Sendspin working on a speaker where it worked before. There is no way to tell in advance, so you find out the first time you play something: Music Assistant then says Sendspin does not work with the device and stops offering it for that speaker. There is nothing to do, playback continues over the standard Cast protocol
 
 ## 排查播放问题
 

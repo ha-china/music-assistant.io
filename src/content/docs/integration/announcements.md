@@ -36,7 +36,7 @@ description: 公告功能的详细信息
 
 原生公告支持通常意味着播放器可以在任何正在播放的音乐上“叠加”公告。它会“压低”（duck）音乐音量（或完全静音），以增强的音量播放公告，然后恢复音乐音量。音乐保持播放，整个公告过程由播放器自身处理。
 
-目前，唯一支持原生公告的播放器类型是 Sonos S2 扬声器和 Sendspin。
+Currently the only player types that support native announcements are Sonos S2 speakers and ESPHome-based Sendspin devices. For Sendspin, the device must also be added to Home Assistant, and Music Assistant must be connected to Home Assistant.
 
 ## MA 播放器支持
 

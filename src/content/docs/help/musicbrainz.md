@@ -26,14 +26,12 @@ Music Assistant 按以下顺序在 MusicBrainz 上查找项目：您文件标签
 
 | 日志中的提示 | 日志级别 | 操作方法 |
 |:--|:--|:--|
-| `Album "..." (barcode ...) is not on MusicBrainz, add it for example with Harmony: ...` | 信息 | [使用 Harmony 添加专辑](#add-a-missing-album-with-harmony)。该链接会打开 Harmony 并自动填入条形码 |
-| `Album "..." is not on MusicBrainz, add it for example with Harmony: ...` | 信息 | 同上，但自动填入的是流媒体链接 |
-| `Composer "..." is not on MusicBrainz through <link>, add <link> to their MusicBrainz page: ...` | 信息 | [将流媒体链接](#add-streaming-links)添加到作曲家的 MusicBrainz 页面。该链接指向作曲家，或者在有多个候选项时指向搜索页面 |
-| `Artist "..." has no link to <service> on MusicBrainz, so it is not added ...; add one at ...` | 信息 | MusicBrainz 命名了一位艺术家（例如录音中的表演者），但该艺术家没有链接到您的服务。[添加链接](#add-streaming-links)，然后在专辑上使用**更新元数据** |
-| `Artist "..." is not on MusicBrainz through <link>, so it cannot be told apart from the other "..." on <service>; add <link> to their MusicBrainz page: ...` | 信息 | 您的服务中有两位同名的不同艺术家，只有当 MusicBrainz 知道这两个页面时，Music Assistant 才能区分他们。[将流媒体链接](#add-streaming-links)添加到正确艺术家的 MusicBrainz 页面。如果已知该艺术家，链接将指向该艺术家，否则指向搜索页面 |
-| `Titles "..." and "..." share <catalogue number> but name different keys, so they are kept as separate works; check which is right and link its recording to the correct work on MusicBrainz: ...` | 信息 | 两个标题之一可能是错误的。检查专辑并[将录音链接到正确的作品](#link-a-recording-to-its-work) |
-| `ISRC ... of "..." is not on MusicBrainz, add it to the track's recording: ...` | 调试 | [使用 MagicISRC 添加 ISRC 代码](#add-isrc-codes-with-magicisrc) |
-| `ISRC ... of "..." is on MusicBrainz recording ..., which credits other artists, so it needs album "..." identified, add its streaming link or barcode to the release of that recording` | 调试 | 该代码被用于多个录音。[将流媒体链接](#add-streaming-links)或条形码添加到该专辑的 MusicBrainz 发行版中 |
+| `Album "..." (barcode ...) is not on MusicBrainz, add it for example with Harmony: ...` | Info | [Add the album with Harmony](#add-a-missing-album-with-harmony). The link opens Harmony with the barcode filled in |
+| `Album "..." is not on MusicBrainz, add it for example with Harmony: ...` | Info | The same, with the streaming link filled in |
+| `Composer "..." is not on MusicBrainz through <link>, add <link> to their MusicBrainz page: ...` | Info | [Add the streaming link](#add-streaming-links) to the composer's MusicBrainz page. The link goes to the composer, or to a search when there is more than one candidate |
+| `Artist "..." has no link to <service> on MusicBrainz, so it is not added ...; add one at ...` | Info | MusicBrainz names an artist, such as a performer on a recording, that has no link to your service. [Add the link](#add-streaming-links), then use **Update metadata** on the album |
+| `ISRC ... of "..." is not on MusicBrainz, add it to the track's recording: ...` | Debug | [Add the ISRC codes with MagicISRC](#add-isrc-codes-with-magicisrc) |
+| `ISRC ... of "..." is on MusicBrainz recording ..., which credits other artists, so it needs album "..." identified, add its streaming link or barcode to the release of that recording` | Debug | The code is used for more than one recording. [Add the streaming link](#add-streaming-links) or barcode to the album's MusicBrainz release |
 
 ## 使用 Harmony 添加缺失的专辑
 

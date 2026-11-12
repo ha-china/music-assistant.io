@@ -8,30 +8,34 @@ pluginGroup: incoming
 
 Sendspin 音源插件将兼容设备的音频作为实时输入（Live Input）引入 Music Assistant。线路输入（line-in）或 AUX 连接、黑胶唱机前级放大器或麦克风随后即可在任何可用的 Music Assistant 播放器、立体声配对或分组上播放。
 
-Sendspin 将传入的音频称为 `source` 角色。内置的 [Sendspin 播放器提供程序](/player-support/sendspin/)处理从 Music Assistant 发送到设备的音频，而配套的 Sendspin 音源插件则处理进入 Music Assistant 的音频。两者使用相同的经过安全配对的客户端连接。
+Sendspin calls incoming audio the `source` role. The built-in [Sendspin player provider](/player-support/sendspin/) handles audio sent from Music Assistant to devices, while the companion Sendspin Source plugin handles audio coming into Music Assistant. Both use the same client connection.
 
 > [!NOTE]
-> Sendspin 实时输入需要已配对的设备。允许未配对访问并不会启用 Sendspin 音源（source）角色。
+> A device only sends its audio to Music Assistant once you allow it, by pairing it or by connecting it unpaired with its audio input.
 
 ## 功能
 
-- 自动发现支持 `source@v1` 的已连接 Sendspin 客户端
-- 将每个已配对的音源添加为实时输入
-- 可在任何 Music Assistant 播放器、立体声配对或分组上播放输入
-- 支持多个不同的音源设备同时推流
-- 在报告信号检测的设备上可自动开始和停止线路输入
+- Discovers connected Sendspin clients that support `source@v1`
+- Adds every source you allowed as a Live Input
+- Plays an input on any Music Assistant player, stereo pair, or group
+- Supports several different source devices streaming at the same time
+- Can start and stop a line-in automatically on devices that report signal detection
 
 ## 设置与发现
 
 Sendspin 音源为内置功能，会自动启动。
 
-将兼容的 Sendspin 音源客户端连接到 Music Assistant 并完成配对请求。配对完成后，它会显示为一个实时输入。
+Connect a compatible Sendspin source client to Music Assistant. Set it up from its player settings with **Start setup**. Pair it, or choose **Connect unpaired with audio input** if the device allows connecting without pairing. Once set up, it appears as one Live Input. See [Setting up a device](/player-support/sendspin/#setting-up-a-device) for the steps.
+
+For a device connected unpaired, you can turn its audio input on or off later with **Turn on audio input** and **Turn off audio input** in its player settings.
 
 ## 播放实时输入
 
 选择您想收听该输入的播放器、立体声配对或分组，然后打开**浏览**。如果只有一个可用的 Sendspin 输入，它会直接显示在浏览中；如果有多个可用，则打开 **Sendspin 音源**并选择一个。按**播放**即可在所选播放目标上开始播放。
 
-每个音源一次只能在一个目标上播放。在另一个目标上选择同一音源会将其移动到该处。不同的音源客户端可以同时在不同的目标上播放。
+A device that is both a player and a source also lists its own line-in among that player's sources.
+
+Each source can play on only one target at a time. Selecting the same source on another target moves it there. Different source clients can play on different targets concurrently.
 
 实时输入以 48 kHz、16 位立体声音频播放。Music Assistant 会针对微小的时序和网络波动进行调整，以保持播放稳定。
 

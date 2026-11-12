@@ -42,7 +42,8 @@ Music Assistant 的桌面应用！
 
 Discord Rich Presence 示例：
 
-!<a href="https://github.com/music-assistant/tauri-companion-app/assets/74015378/8de18bac-b963-4aba-bb61-5730b41759a9" target="_blank" rel="noopener noreferrer">Discord Rich Presence 示例</a>
+![image](/assets/screenshots/companion-app-discord.png)
+
 
 ## 安装
 
