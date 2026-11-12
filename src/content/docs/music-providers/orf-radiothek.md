@@ -34,6 +34,11 @@ ORF 是奥地利的公共广播机构，而 Radiothek 是其音频平台。它�
 - ORF radio stations are available as well as additional private stations which are included in the ORF Radiothek lineup
 - Official ORF podcasts are supported and this includes recently aired radio shows where available
 
+### Other
+
+- ORF radio stations are available as well as additional private stations which are included in the ORF Radiothek lineup
+- Official ORF podcasts are supported and this includes recently aired radio shows where available
+
 ### 其他
 
 - 除了 ORF 广播电台外，还可使用 ORF Radiothek 阵容中包含的其他私人电台

@@ -52,6 +52,22 @@ Yandex Music 是俄罗斯互联网公司 Yandex 旗下的流媒体服务。它�
 - **Audiobooks** are synced, browsable with chapters, and stream natively. Playback position round-trips between Music Assistant and Yandex's own apps, so resume points stay in sync
 - Multiple Yandex Music accounts can be added simultaneously
 
+### Other
+
+- Searching the Yandex Music catalogue is possible
+- Items in a users Yandex Music library will be synced to Music Assistant
+- Adding/removing items to/from the Music Assistant library will sync back to Yandex Music
+- Browse is available to explore the Yandex Music catalogue
+- Lyrics are displayed when available (synced line-by-line when provided by the service, otherwise plain text)
+- Personalized recommendations (My Wave, Made for You, Chart, New Releases and more) appear in the Recommendations section on the Home screen
+- **My Wave** personalised radio. Likes, dislikes, skips and tracks you hear all the way through are sent back to Yandex, so the wave keeps learning from what you do in Music Assistant
+- **Wave Modes** — 11 one-click presets for My Wave (Discover / Favorites / Popular, Calm / Active / Fun / Sad, Russian / Non-Russian / Without Words)
+- **My Presets** — save your own named combinations of diversity, mood and language, re-launch them from Browse without fiddling with settings
+- Similar tracks are available from the track context menu (used by Endless Mix); when a wave track plays, Endless Mix continues the same Yandex-curated session instead of branching into an unrelated similar-tracks stream
+- **Podcasts** are synced from your Yandex library, browsable with episodes, and stream natively
+- **Audiobooks** are synced, browsable with chapters, and stream natively. Playback position round-trips between Music Assistant and Yandex's own apps, so resume points stay in sync
+- Multiple Yandex Music accounts can be added simultaneously
+
 ### 其他
 
 - 可以搜索 Yandex Music 曲库

@@ -47,6 +47,14 @@ Internet Archive 是一个非营利性的数字图书馆。自 1996 年以来，
 - Audiobook streaming with chapter navigation
 - LibriVox audiobook library browsing
 
+### Other
+
+- Search across all Internet Archive audio content
+- Artist browsing with albums and top tracks
+- Full album track listings with individual track playback
+- Audiobook streaming with chapter navigation
+- LibriVox audiobook library browsing
+
 ### 其他
 
 - 可搜索所有 Internet Archive 音频内容

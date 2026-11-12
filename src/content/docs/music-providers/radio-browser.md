@@ -34,6 +34,10 @@ Radio Browser 是一个由社区运营的免费目录，收录了来自世界各
 
 - Browse by country, by tag, or by popularity
 
+### Other
+
+- Browse by country, by tag, or by popularity
+
 ### 其他
 
 - 按国家/地区、标签或人气浏览

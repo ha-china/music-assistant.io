@@ -46,6 +46,14 @@ Apple Music 是 Apple 推出的订阅制流媒体服务，拥有约 1 亿首歌�
 - Similar tracks are supported, shown in the track detail view and available for Endless Mix
 - Similar artists are supported and shown in the artist detail view
 
+### Other
+
+- Searching the Apple Music catalogue
+- Browsing playlists organised in folders
+- Artist radio stations available via Browse and the [Discover view](/ui/#view---discover); live broadcast stations are not supported
+- Similar tracks are supported, shown in the track detail view and available for Endless Mix
+- Similar artists are supported and shown in the artist detail view
+
 ### 其他
 
 - 搜索 Apple Music 曲库

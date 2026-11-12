@@ -133,21 +133,21 @@ MA 的原生解决方案是使用 [Sendspin](https://www.sendspin-audio.com/)。
 
 <img src="/assets/label-easiest-noshadow.png" alt="easiest label" style="width: 64px;"  loading="lazy" />
 
-To bring a turntable, microphone or other line-in into Music Assistant, the native solution is [Sendspin Source](/plugins/sendspin-source/). Once a Sendspin device with an audio input is set up in Music Assistant, its input appears as a Live Input you can play on any player, stereo pair or group. If the device can tell when a signal is present, it can start playing automatically, for example when you lower the needle on a record.
+要将唱盘、麦克风或其他线路输入引入 Music Assistant，原生解决方案是 [Sendspin Source](/plugins/sendspin-source/)。一旦在 Music Assistant 中设置了带有音频输入的 Sendspin 设备，其输入就会显示为实时输入（Live Input），你可以在任何播放器、立体声对或分组上播放。如果设备能够检测到信号存在，它可以自动开始播放，例如当您将唱针放到唱片上时。
 
-The first off-the-shelf device built for this is [Apollo Automation's CAST PRO-1](https://apolloautomation.com/products/cast-pro-1). It needs firmware 26.11.3.2 or newer (3.3 recommended) and Music Assistant 2.10.7 or newer. Before buying, note that:
+第一款为此设计的现成设备是 [Apollo Automation 的 CAST PRO-1](https://apolloautomation.com/products/cast-pro-1)。它需要固件 26.11.3.2 或更新版本（推荐 3.3）以及 Music Assistant 2.10.7 或更新版本。购买前请注意：
 
-- The input expects line level, so a turntable without a built-in phono preamp needs an external one
-- While the line-in is streaming, the CAST PRO-1's own output is optical only, even if set to analog
+- 输入需要线路电平，因此没有内置唱机前置放大器的唱盘需要外接一个
+- 在线路输入串流期间，CAST PRO-1 自身的输出仅为光纤输出，即使设置为模拟输出也是如此
 
-The second off-the-shelf device is the Nabu Casa [Connect AUX-2](https://www.home-assistant.io/connect/aux-2/). It is output only so cannot be used for line-in.
+第二款现成设备是 Nabu Casa [Connect AUX-2](https://www.home-assistant.io/connect/aux-2/)。它仅支持输出，因此不能用于线路输入。
 
 <img src="/assets/label-intermediate-noshadow.png" alt="intermediate label" style="width: 64px;"  loading="lazy" />
-Another way is you could use <a href="http://www.darkice.org/" target="_blank" rel="noopener noreferrer">DarkIce</a> to capture and <a href="https://www.icecast.org/" target="_blank" rel="noopener noreferrer">Icecast</a> to build a solution that will digitize and stream audio from your analog audio equipment like a vinyl record player (turntable/phonograph/gramophone) as a web radio stream (URL) that you could add as a radio station in Music Assistant.
+另一种方法是使用 <a href="http://www.darkice.org/" target="_blank" rel="noopener noreferrer">DarkIce</a> 进行采集，并使用 <a href="https://www.icecast.org/" target="_blank" rel="noopener noreferrer">Icecast</a> 构建一个解决方案，将来自模拟音频设备（如黑胶唱片机（唱盘/留声机/电唱机））的音频数字化并作为网络电台流（URL）进行串流，你可以将其作为电台添加到 Music Assistant 中。
 
 对于这样的项目，你需要一个既能提供音频输入又能进行数字化的音频采集和 ADC（模数转换器）设备。例如，你可以使用来自 <a href="https://www.behringer.com/en/products?category_id=audio-interfaces--usb-audio-interfaces" target="_blank" rel="noopener noreferrer">Behringer</a> 或 <a href="https://www.ikmultimedia.com/products/irigstream/" target="_blank" rel="noopener noreferrer">IK Multimedia</a> 的 USB 音频设备接口适配器，或者带有 ADC 的 <a href="https://www.hifiberry.com/blog/need-some-input/" target="_blank" rel="noopener noreferrer">HiFiBerry 板卡</a>。
 
-你可以<a href="https://maker.pro/raspberry-pi/projects/how-to-build-an-internet-radio-station-with-raspberry-pi-darkice-and-icecast" target="_blank" rel="noopener noreferrer">在此处</a>找到一份通用教程，喜欢分步指南的读者可以查看<a href="https://github.com/quebulm/Raspberry-Pi-Vinyl-Streamer" target="_blank" rel="noopener noreferrer">这里</a>和<a href="https://github.com/gieljnssns/darkice-libaacplus-rpi-guide/blob/master/README.md" target="_blank" rel="noopener noreferrer">这里</a>（其中第一个还提供了适用于 Raspberry Pi 3 / Raspberry Pi Zero 2 W 的预配置 Linux 设备镜像）。 
+你可以<a href="https://maker.pro/raspberry-pi/projects/how-to-build-an-internet-radio-station-with-raspberry-pi-darkice-and-icecast" target="_blank" rel="noopener noreferrer">在此处</a>找到一份通用教程，喜欢分步指南的读者可以查看<a href="https://github.com/quebulm/Raspberry-Pi-Vinyl-Streamer" target="_blank" rel="noopener noreferrer">这里</a>和<a href="https://github.com/gieljnssns/darkice-libaacplus-rpi-guide/blob/master/README.md" target="_blank" rel="noopener noreferrer">这里</a>（其中第一个还提供了适用于 Raspberry Pi 3 / Raspberry Pi Zero 2 W 的预配置 Linux 设备镜像）。
 
 
 
@@ -183,22 +183,22 @@ Music Assistant 中可用的播放器提供程序的功能摘要[可在此处查
 
 | 设备或软件	          | 价格# | 支持的协议              |+功放^| 优点和缺点 |
 |------------------------------------------------|--------|----------------------------------|------|---------------|
-| [Home Assistant Connect AUX-2](https://www.home-assistant.io/connect/aux-2/) | $ | Sendspin native (ESPHome) | Y | Pros: PoE, RS-232 serial control of a receiver's power and volume.<br />Cons: No Bluetooth audio, requires Home Assistant. |
-| [Apollo CAST PRO-1](https://apolloautomation.com/products/cast-pro-1) | $ | Sendspin native (ESPHome) | Y | Pros: Doubles as a line-in source, optical or analog output.<br />Cons: Analog output is unavailable while the line-in streams, no PoE. |
-|<a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">PiCorePlayer*</a> (DIY) |$	     |Squeezelite, AirPlay          	  |  Y	   |Pros: Cheap, Runs on RPi 1, Streams over Bluetooth<br />Cons: Requires some technical knowledge to install the free software|
-|<a href="https://www.wiimhome.com/wiimpro/overview" target="_blank" rel="noopener noreferrer">WiiM Pro</a>|$$      |Squeezelite, AirPlay, Google Cast Audio, DLNA| Y |Pros: Minimal setup, versatile<br />Cons: Cheaper options available, Cast requires app to have sync’ed group|
-|<a href="https://www.wiimhome.com/wiimmini/overview" target="_blank" rel="noopener noreferrer">WiiM Mini</a>|$	   |AirPlay, DLNA	                    | Y      | As per Wiim Pro |
-|<a href="https://www.fiio.com/sr11" target="_blank" rel="noopener noreferrer">FiiO SR 11</a>              |$$	     |AirPlay	                          | Y	     | As per Wiim Pro |
-|<a href="https://sonocotta.com/louder-esp32/" target="_blank" rel="noopener noreferrer">Louder ESP32</a> (DIY) | $ |Squeezelite, AirPlay, Snapcast	  | N	     |Pros: Cheap<br />Cons: Requires some technical knowledge to install the software|
-|<a href="https://www.home-assistant.io/voice-pe/" target="_blank" rel="noopener noreferrer">Home Assistant (HA) Voice PE</a>|$ |Home Assistant Integration |Y	 |Pros: All local voice control and playback device, Strong Support<br />Cons: Requires HA as well|
-|Amplifiers/Receivers + Cast	                       |$$$	     |Google Cast      	                | N	     |Pros: Minimal setup, Higher amplification, High Quality Audio<br />Cons: Expensive, Cast requires app to have sync’ed group|
-|Amplifiers/Receivers + AirPlay	                     |$$$	     |  AirPlay	                        | N	     | Pros: Minimal setup, Higher amplification, High Quality Audio<br />Cons: Expensive |
-|<a href="https://www.sonos.com/en-us/shop" target="_blank" rel="noopener noreferrer">Sonos</a><br /><a href="https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/" target="_blank" rel="noopener noreferrer">Ikea Symfonisk</a>|$$ → $$$	|Sonos (Many devices also AirPlay)| Y/N~ |Pros: Minimal setup, High Quality Audio<br />Cons: Potentially Limited to Sonos ecosystem depending upon device|
-|<a href="https://www.bluesound.com/usa/all-products" target="_blank" rel="noopener noreferrer">Bluesound Products</a>| $$$ |Bluesound, AirPlay	      |Y/N~    |Pros: Minimal setup, Exceptional Sound Quality<br />Cons: Expensive |
-| [Guition Silver Puck v2](https://aliexpress.com/item/1005007338590852.html) (DIY) | $ | Sendspin native (ESPhome) | Y | Pros: Small device to add Sendspin to any existing unit with Audio In. <br />Cons: Requires some technical knowledge to install the software. <br /> <br />DIY: Requires USB-C power and a 3.5mm stereo cable. |
-| [Guition Knob v2](https://aliexpress.com/item/1005008823969298.html) (DIY) | $ | Sendspin native (ESPhome) | Y (small speaker built-in) | Pros: As above, additionally has full metal encoder ring and its own battery and small speaker. <br />Cons: Requires some technical knowledge to install the software. <br />DIY: Requires USB-C power and a 3.5mm stereo cable. |
-| [RaspiAudio Luxe 2](https://raspiaudio.com/product/esp-muse-luxe/) (DIY) | $ | Sendspin native (ESPhome)  | N | Pros: Battery backed, can also be used as Voice assistant. <br />Cons: Sensitive to noisy WiFi, requires some technical knowledge to install the software.  |
-| [FutureProof Homes Satellite 1](https://futureproofhomes.net/products/satellite1-smart-speaker) | $$ | Sendspin native (ESPhome) | N | Pro: Bookshelf ready version available; alternately kit parts. |
+| [Home Assistant Connect AUX-2](https://www.home-assistant.io/connect/aux-2/) | $ | Sendspin native (ESPHome) | Y | 优点：PoE，可通过 RS-232 串行控制接收器的电源和音量。<br />缺点：不支持蓝牙音频，需要 Home Assistant。 |
+| [Apollo CAST PRO-1](https://apolloautomation.com/products/cast-pro-1) | $ | Sendspin native (ESPHome) | Y | 优点：兼作线路输入源，光纤或模拟输出。<br />缺点：线路输入串流时模拟输出不可用，不支持 PoE。 |
+|<a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">PiCorePlayer*</a> (DIY) |$	     |Squeezelite, AirPlay          	  |  Y	   |优点：便宜，可在 RPi 1 上运行，可通过蓝牙串流<br />缺点：安装免费软件需要一定的技术知识|
+|<a href="https://www.wiimhome.com/wiimpro/overview" target="_blank" rel="noopener noreferrer">WiiM Pro</a>|$$      |Squeezelite, AirPlay, Google Cast Audio, DLNA| Y |优点：设置极少，功能多样<br />缺点：有更便宜的选择，Cast 需要应用具有同步组|
+|<a href="https://www.wiimhome.com/wiimmini/overview" target="_blank" rel="noopener noreferrer">WiiM Mini</a>|$	   |AirPlay, DLNA	                    | Y      | 同 WiiM Pro |
+|<a href="https://www.fiio.com/sr11" target="_blank" rel="noopener noreferrer">FiiO SR 11</a>              |$$	     |AirPlay	                          | Y	     | 同 WiiM Pro |
+|<a href="https://sonocotta.com/louder-esp32/" target="_blank" rel="noopener noreferrer">Louder ESP32</a> (DIY) | $ |Squeezelite, AirPlay, Snapcast	  | N	     |优点：便宜<br />缺点：安装软件需要一定的技术知识|
+|<a href="https://www.home-assistant.io/voice-pe/" target="_blank" rel="noopener noreferrer">Home Assistant (HA) Voice PE</a>|$ |Home Assistant Integration |Y	 |优点：全本地语音控制和播放设备，支持强大<br />缺点：还需要 HA|
+|功放/接收器 + Cast	                       |$$$	     |Google Cast      	                | N	     |优点：设置极少，放大功率更高，音质高<br />缺点：昂贵，Cast 需要应用具有同步组|
+|功放/接收器 + AirPlay	                     |$$$	     |  AirPlay	                        | N	     | 优点：设置极少，放大功率更高，音质高<br />缺点：昂贵 |
+|<a href="https://www.sonos.com/en-us/shop" target="_blank" rel="noopener noreferrer">Sonos</a><br /><a href="https://www.ikea.com/us/en/cat/wi-fi-speakers-46194/" target="_blank" rel="noopener noreferrer">Ikea Symfonisk</a>|$$ → $$$	|Sonos (Many devices also AirPlay)| Y/N~ |优点：设置极少，音质高<br />缺点：可能仅限于 Sonos 生态系统，具体取决于设备|
+|<a href="https://www.bluesound.com/usa/all-products" target="_blank" rel="noopener noreferrer">Bluesound Products</a>| $$$ |Bluesound, AirPlay	      |Y/N~    |优点：设置极少，音质卓越<br />缺点：昂贵 |
+| [Guition Silver Puck v2](https://aliexpress.com/item/1005007338590852.html) (DIY) | $ | Sendspin native (ESPhome) | Y | 优点：小型设备，可为任何带有音频输入的现有设备添加 Sendspin。<br />缺点：安装软件需要一定的技术知识。<br /> <br />DIY：需要 USB-C 电源和 3.5mm 立体声线缆。 |
+| [Guition Knob v2](https://aliexpress.com/item/1005008823969298.html) (DIY) | $ | Sendspin native (ESPhome) | Y (内置小型扬声器) | 优点：同上，此外还有全金属编码器旋钮、自带电池和小型扬声器。<br />缺点：安装软件需要一定的技术知识。<br />DIY：需要 USB-C 电源和 3.5mm 立体声线缆。 |
+| [RaspiAudio Luxe 2](https://raspiaudio.com/product/esp-muse-luxe/) (DIY) | $ | Sendspin native (ESPhome)  | N | 优点：电池供电，也可用作语音助手。<br />缺点：对嘈杂的 Wi-Fi 敏感，安装软件需要一定的技术知识。  |
+| [FutureProof Homes Satellite 1](https://futureproofhomes.net/products/satellite1-smart-speaker) | $$ | Sendspin native (ESPhome) | N | 优点：提供书架式版本；也可选择套件零件。 |
 
 \# 价格：$ &lt;100 美元；$$ 101-250 美元；$$$ &gt;250 美元
 

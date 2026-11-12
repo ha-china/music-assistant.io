@@ -42,6 +42,14 @@ BBC Sounds 是 BBC 的免费音频服务。它提供 BBC 电台的直播节目�
 
 *Requires a logged in BBC account
 
+### Other
+
+- Stream live BBC radio shows, podcast series and on-demand audio
+- Access your personalised BBC Sounds content*
+- Keeps your My Sounds listen history up to date with your Music Assistant activity*
+
+*Requires a logged in BBC account
+
 ### 其他
 
 - 播放 BBC 电台直播节目、播客系列和点播音频

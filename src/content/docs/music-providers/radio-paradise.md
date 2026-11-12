@@ -39,6 +39,10 @@ Radio Paradise 是一家来自加利福尼亚、由听众支持的互联网电�
 
 - When available, details of upcoming tracks will be shown
 
+### Other
+
+- When available, details of upcoming tracks will be shown
+
 ### 其他
 
 - 在可用时，将显示即将播放曲目的详细信息

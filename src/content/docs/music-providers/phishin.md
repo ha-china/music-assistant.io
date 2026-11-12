@@ -40,6 +40,13 @@ Phish.in 为乐迷提供了一个全面的平台，用于发现、流媒体播�
 - Access 50,000+ individual track performances
 - Search for concerts, tracks and playlists by partial title
 
+### Other
+
+- Stream all Phish concerts from 1983-present with available audio
+- Browse 1,800+ shows organized as albums in Music Assistant
+- Access 50,000+ individual track performances
+- Search for concerts, tracks and playlists by partial title
+
 ### 其他
 
 - 流媒体播放 1983 年至今所有有音频可用的 Phish 演唱会

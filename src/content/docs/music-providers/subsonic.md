@@ -36,6 +36,11 @@ Subsonic 最初是一个安装在自己硬件上、指向自己音乐文件的�
 - Searching the Subsonic catalogue
 - All music tracks will be imported into MA
 
+### Other
+
+- Searching the Subsonic catalogue
+- All music tracks will be imported into MA
+
 ### 其他
 
 - 搜索 Subsonic 音乐目录

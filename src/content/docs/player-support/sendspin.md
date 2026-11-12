@@ -31,47 +31,47 @@ Sendspin 提供程序（provider）是**内置且始终启用的**。开始使�
 
 当客户端（client）连接时，各个 Sendspin 播放器会自动出现
 
-## Setting Up a Device
+## 设置设备
 
-A device that allows guest access, which means connecting without pairing, is ready to play to as soon as it is found. A device that only accepts pairing, a device with an audio input, and a device that another server is using show <b>Setup required</b> until you set them up here. Select the player, or press <b>Start setup</b> in its settings:
+允许访客访问（即无需配对即可连接）的设备在被发现后即可立即播放。仅接受配对的设备、带有音频输入的设备以及正在被其他服务器使用的设备会显示<b>需要设置</b>，直到你在此处完成设置。选择播放器，或在其设置中按<b>开始设置</b>：
 
-- <b>Connect unpaired.</b> Only offered when the device allows guest access. Quick, but the connection is not verified. A device with an audio input offers <b>Connect unpaired with audio input</b> instead, and <b>Connect unpaired without audio input</b> if it can also play
-- <b>Pair device.</b> Sets up a permanent, verified connection using the pairing code the device gives you. A device without a pairing code gives you a pairing token instead
+- <b>不配对连接。</b>仅在设备允许访客访问时提供。速度快，但连接未经验证。带有音频输入的设备会提供<b>不配对连接（带音频输入）</b>，如果它也能播放，还会提供<b>不配对连接（不带音频输入）</b>
+- <b>配对设备。</b>使用设备提供的配对码建立永久、经过验证的连接。没有配对码的设备会向你提供一个配对令牌
 
-To pair a device you connected unpaired, use <b>Reconfigure player</b>. Bridged players and the built-in web player have nothing to set up.
+要配对通过不配对方式连接的设备，请使用<b>重新配置播放器</b>。桥接播放器和内置网页播放器无需设置。
 
-## Settings
+## 设置
 
 在设置此提供程序时，除了 [播放器提供程序设置](/settings/player-provider/) 之外，还可以使用以下设置：
 
-- <b>Manual IP addresses for discovery.</b> Sendspin players are normally found on their own. If yours is not, add its IP address or network name here, for example 192.168.1.50 or speaker.local. Music Assistant will then connect to it directly, and keep trying if the device is switched off when MA starts
+- <b>用于发现的手动 IP 地址。</b> Sendspin 播放器通常会自动被发现。如果你的播放器未被发现，请在此处添加其 IP 地址或网络名称，例如 192.168.1.50 或 speaker.local。Music Assistant 将直接连接它，并且如果设备在 MA 启动时处于关闭状态，会持续重试
 
 Sendspin 不通过 HTTP 进行流式传输，因此在[大多数协议共享的设置](/settings/individual-player/#settings-shared-by-most-protocols)中，这些播放器仅显示**输出声道模式（Output Channel Mode）**。除了标准的[单个播放器设置](/settings/individual-player/)之外，Sendspin 播放器还具有以下设置：
 
-- <b>Security status.</b> The Sendspin settings of each device start with its security state: paired, connected through guest access, connected without encryption (see [Older Devices](#older-devices)), or pairing lost. A device that lost its pairing cannot play until you pair it again with <b>Reconfigure player</b> or remove the old pairing with <b>Unpair</b>
-- <b>Unpair.</b> Removes the pairing with this device. Both sides forget the stored credential
-- <b>Turn on audio input / Turn off audio input.</b> Shown for a device with an audio input that is connected through guest access. Starts or stops sending its audio to Music Assistant through the [Sendspin Source plugin](/plugins/sendspin-source/)
-- <b>Automatically play line-in on.</b> Only shown for devices with a line-in that can report when a signal is present. Chooses where that line-in plays automatically, either This device, another player, or Off
-- <b>Static playback delay (ms).</b> Only shown for devices that support it. Shifts this player's audio to keep it in sync with the others, from 0 up to 5000 ms. Increase it if audio on this player is heard too late, for example to make up for delay added by an amplifier, active speakers or the device's own operating system
-- <b>Preferred audio format.</b> The audio format used for playback on this player. Automatic (player's preferred codec) is the default, and the other options are read from the device itself. On Automatic the player keeps the codec it prefers, and <b>Sample rate selection</b> decides the sample rate. Choosing a specific format here sets both
-- <b>Sample rate selection.</b> Decides the sample rate of the audio sent to this player, and can only be changed while the preferred audio format is Automatic. <b>Smart</b> is the default. It starts at the first track's rate and only restarts the stream when a later track needs a higher rate. The other options are Bit-perfect, 48 kHz, 96 kHz and Highest supported by player, and work the same as in [Flow Mode sample rate](/settings/individual-player/#flow-mode-sample-rate). Only rates the player supports in its preferred codec are used, so a rate it cannot play is replaced by the closest one it can
+- <b>安全状态。</b> 每台设备的 Sendspin 设置以其安全状态开头：已配对、通过访客访问连接、未加密连接（参见 [旧设备](#older-devices)）或配对丢失。丢失配对的设备无法播放，直到你使用<b>重新配置播放器</b>重新配对，或使用<b>取消配对</b>移除旧配对
+- <b>取消配对。</b> 移除与此设备的配对。双方都会忘记存储的凭据
+- <b>打开音频输入 / 关闭音频输入。</b> 对于通过访客访问连接且带有音频输入的设备显示。通过 [Sendspin Source 插件](/plugins/sendspin-source/) 开始或停止将其音频发送到 Music Assistant
+- <b>自动播放线路输入。</b> 仅对带有可报告信号存在性的线路输入的设备显示。选择该线路输入自动播放的位置：此设备、另一台播放器或关闭
+- <b>静态播放延迟（毫秒）。</b> 仅对支持此功能的设备显示。将此播放器的音频偏移以与其他播放器保持同步，范围从 0 到 5000 毫秒。如果此播放器上的音频听起来太晚，请增加此值，例如补偿放大器、有源音箱或设备自身操作系统增加的延迟
+- <b>首选音频格式。</b> 用于此播放器播放的音频格式。自动（播放器首选编解码器）是默认选项，其他选项从设备本身读取。在自动模式下，播放器保留其偏好的编解码器，<b>采样率选择</b>决定采样率。在此处选择特定格式会同时设置两者
+- <b>采样率选择。</b> 决定发送到此播放器的音频采样率，并且只能在首选音频格式为自动时更改。<b>智能</b>是默认选项。它从第一首曲目的采样率开始，仅当后续曲目需要更高采样率时才重新启动流。其他选项为位完美、48 kHz、96 kHz 和播放器支持的最高采样率，其工作方式与 [Flow Mode 采样率](/settings/individual-player/#flow-mode-sample-rate) 相同。仅使用播放器在其首选编解码器中支持的采样率，因此无法播放的采样率会被替换为最接近的可播放采样率
 
-Preferred audio format, Sample rate selection, and Unpair on a paired device only show while <b>Show advanced settings</b> is on.
+首选音频格式、采样率选择以及已配对设备上的取消配对仅在<b>显示高级设置</b>开启时显示。
 
-## Older Devices
+## 旧设备
 
-Sendspin is still evolving, and some players and clients still use an older development version of it. Future versions of Music Assistant will stop supporting these, so update them when an update is available:
+Sendspin 仍在发展中，一些播放器和客户端仍在使用其较旧的开发版本。未来版本的 Music Assistant 将停止支持这些版本，因此请在更新可用时进行更新：
 
-- <b>Devices without encryption.</b> Play straight away without any setup, but cannot be paired and cannot use an audio input. Their security status shows that they are connected without encryption
-- <b>Devices with an older pairing version.</b> Pair and play like current devices. Once paired, their settings include <b>Manage device settings</b>, which opens the device's own pairing settings, where you can turn pairing with a static or a dynamic pairing code on or off. These switches only show while <b>Show advanced settings</b> is on. While this section is open the device refuses connections from other servers, so close it again with <b>Close device management</b> when you are finished
+- <b>未加密的设备。</b> 无需任何设置即可直接播放，但无法配对，也无法使用音频输入。其安全状态显示它们未加密连接
+- <b>使用旧配对版本的设备。</b> 像当前设备一样配对和播放。配对后，其设置包括<b>管理设备设置</b>，该选项会打开设备自身的配对设置，你可以在其中打开或关闭使用静态或动态配对码的配对。这些开关仅在<b>显示高级设置</b>开启时显示。在此部分打开期间，设备会拒绝来自其他服务器的连接，因此完成后请使用<b>关闭设备管理</b>再次关闭它
 
 ## 已知问题 / 注意事项
 
-- Many Sendspin devices ask for 16 bit audio, so higher resolution material may be converted on the way out
-- Artwork clears briefly when you pause, seek, or move on to the next track
-- A Sendspin device plays for one server at a time. Playing to a device moves it to this server, even while another server is playing on it. A device that another server is using can still be set up here, but pairing only works while the other server is not playing on it
-- Players must be on the same network as Music Assistant to connect directly. Listening from elsewhere works through the web player, and Home Assistant Cloud gives the most reliable connection through a firewall
-- If using Sendspin on a Chromecast device, be aware that, due to the lack of reported metadata, the Home Assistant media player entity may show 'idle' with no track details even while audio is playing correctly; check the Music Assistant UI for the true playback state
+- 许多 Sendspin 设备要求 16 位音频，因此更高分辨率的素材可能会在输出时被转换
+- 暂停、跳转或切换到下一首曲目时，封面会短暂清除
+- Sendspin 设备一次只为一台服务器播放。播放到某台设备会将其移动到当前服务器，即使另一台服务器正在其上播放。被其他服务器使用的设备仍可在此处设置，但配对仅在另一台服务器未在其上播放时有效
+- 播放器必须与 Music Assistant 位于同一网络上才能直接连接。从其他位置收听可通过网页播放器实现，而 Home Assistant Cloud 可提供穿过防火墙的最可靠连接
+- 如果在 Chromecast 设备上使用 Sendspin，请注意，由于缺少报告的元数据，Home Assistant 媒体播放器实体（entity）可能显示“空闲”且没有曲目详细信息，即使音频正在正常播放；请查看 Music Assistant 界面以了解真实播放状态
 
 ## 支持的客户端
 
@@ -88,17 +88,17 @@ Sendspin is still evolving, and some players and clients still use an older deve
 
 ## 网页播放器
 
-The player built into the Music Assistant web interface is itself a Sendspin player. It plays wherever the web interface works, at home or through [Remote Access](/settings/remote-access/).
+Music Assistant 网页界面内置的播放器本身就是一个 Sendspin 播放器。无论网页界面在何处运行，在家中或通过[远程访问](/settings/remote-access/)，它都能播放。
 
-Like any other Sendspin player, the web player has a **Static playback delay (ms)** setting in its [Output Protocols settings](/settings/individual-player/#output-protocols). It starts at 0 and may need adjusting if the web player is heard out of step with your other speakers.
+与任何其他 Sendspin 播放器一样，网页播放器在其[输出协议设置](/settings/individual-player/#output-protocols)中具有**静态播放延迟（毫秒）**设置。它从 0 开始，如果网页播放器与其他音箱的播放不同步，则可能需要调整。
 
-The audio format the web player uses depends on the browser:
+网页播放器使用的音频格式取决于浏览器：
 
-- **Chrome, Edge and other Chromium based browsers, including on Android**: Opus when the web interface is opened over HTTPS, which includes Remote Access. Lossless FLAC when it is opened over plain HTTP, for example at `http://192.168.1.100:8095`
-- **Firefox, except on iPhone and iPad**: lossless FLAC
-- **Safari, and every browser on iPhone and iPad**: Opus
+- **Chrome、Edge 和其他基于 Chromium 的浏览器，包括 Android 上的**：当网页界面通过 HTTPS 打开时（包括远程访问），使用 Opus。通过纯 HTTP 打开时（例如 `http://192.168.1.100:8095`），使用无损 FLAC
+- **Firefox，iPhone 和 iPad 上的除外**：无损 FLAC
+- **Safari，以及 iPhone 和 iPad 上的所有浏览器**：Opus
 
-A Chromium based browser can play lossless FLAC over HTTPS too: pick one of the FLAC formats in the web player's advanced **Preferred audio format** setting.
+基于 Chromium 的浏览器也可以通过 HTTPS 播放无损 FLAC：在网页播放器的高级**首选音频格式**设置中选择一种 FLAC 格式即可。
 
 ## 连接其他 Sendspin 播放器
 

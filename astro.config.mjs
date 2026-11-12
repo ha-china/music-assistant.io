@@ -5,7 +5,11 @@ import starlightBlog from "starlight-blog";
 import mdx from "@astrojs/mdx";
 import { remarkAlert } from "remark-github-blockquote-alert";
 import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
+import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
 import { authors } from "./src/authors.mjs";
+
+const SITE_URL = process.env.SITE_URL || "https://www.hasscn.top";
+const BASE_PATH = process.env.SITE_BASE_PATH || "/music-assistant";
 
 const isProduction =
   process.env.CONTEXT === "production" || !process.env.CONTEXT;
@@ -28,6 +32,7 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkAlert],
+    rehypePlugins: [rehypeBasePath()],
     rehypePlugins: [rehypeBasePath()],
   },
   integrations: [

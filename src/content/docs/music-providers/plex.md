@@ -36,6 +36,11 @@ Plex 是一款由你自己运行的媒体服务器，配有适用于手机、电
 - Search the Plex server
 - Track progress for audiobooks/podcasts across Plex clients
 
+### Other
+
+- Search the Plex server
+- Track progress for audiobooks/podcasts across Plex clients
+
 ### 其他
 
 - 搜索 Plex 服务器

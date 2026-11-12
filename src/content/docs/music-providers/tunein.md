@@ -40,6 +40,13 @@ TuneIn 是一个网络电台目录，收录了来自世界各地数以万计的�
 - The full TuneIn catalog can be browsed by category (Music, Sports, News, etc.) via the Browse view
 - Trending stations are shown as Recommendations on the Home screen
 
+### Other
+
+- The stations which are in the TuneIn library of the configured account will be imported into the MA library and be visible in the Radio view
+- TuneIn may automatically add local or regional stations to your account presets — these will also be imported. To manage which stations appear, review your presets at [tunein.com](https://tunein.com) under your profile
+- The full TuneIn catalog can be browsed by category (Music, Sports, News, etc.) via the Browse view
+- Trending stations are shown as Recommendations on the Home screen
+
 ### 其他
 
 - 所配置账户的 TuneIn 资料库中的电台将被导入 MA 资料库，并显示在电台（Radio）视图中

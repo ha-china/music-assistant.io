@@ -46,6 +46,17 @@ Music Assistant 支持 Rainy Mood。该组件由 <a href="https://github.com/jlp
 - The sound is streamed from rainymood.com, it is not generated or stored locally
 - Can be used as the audio overlay source for a queue, mixing the sound of rain underneath the music
 
+### Included sounds
+
+| Sound | Description |
+|:------|:------------|
+| Rain | Looping rain ambience from rainymood.com |
+
+### Other
+
+- The sound is streamed from rainymood.com, it is not generated or stored locally
+- Can be used as the audio overlay source for a queue, mixing the sound of rain underneath the music
+
 ### 包含的音效
 
 | 音效 | 描述 |

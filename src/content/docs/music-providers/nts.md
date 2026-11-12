@@ -41,6 +41,11 @@ NTS 是一家从伦敦播出的免费在线电台。其节目由 DJ、艺术家�
 - **NTS 1 and NTS 2**: the two live channels with now-playing show metadata (show name, description, artwork, location) that updates every 60 seconds during playback
 - **16 Infinite Mixtapes**: themed 24/7 music streams curated from the NTS archive (Poolside, Slow Focus, Low Key, 4 To The Floor, Expansions, etc.)
 
+### What's included
+
+- **NTS 1 and NTS 2**: the two live channels with now-playing show metadata (show name, description, artwork, location) that updates every 60 seconds during playback
+- **16 Infinite Mixtapes**: themed 24/7 music streams curated from the NTS archive (Poolside, Slow Focus, Low Key, 4 To The Floor, Expansions, etc.)
+
 ### 包含内容
 
 - **NTS 1 和 NTS 2**：两个直播频道，带有正在播放的节目元数据（节目名称、描述、封面图、位置），在播放期间每 60 秒更新一次

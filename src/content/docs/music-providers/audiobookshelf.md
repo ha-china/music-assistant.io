@@ -142,6 +142,64 @@ Audiobookshelf 是一款免费的自托管（self-hosted）服务器，用于管
 - Supports recommendations on the [Discover view](/ui/#view---discover)
 - Playlists can only be created and edited if Audiobookshelf has just one audiobook library and one podcast library. With more than one, Music Assistant has no way of knowing which library a new playlist belongs in
 
+### Other
+
+- Populates Audiobooks from all libraries accessible by the supplied user
+- Populates Podcasts from all libraries accessible by the supplied user
+- Populates Playlists from all libraries accessible by the supplied user
+- Has support for dedicated author and narrator tabs in the audiobooks view
+- Syncs audiobooks series enabling "collapse collections" in the audiobooks view. Note that the provider *does not sync* native audiobookshelf collections, only book series. These are then mapped to Music Assistant's collections.
+- Browse Feature has the following structure:
+
+```
+        Library_Name_A (Audiobooks)
+            Authors
+                Author_1
+                    Series_1
+                    Audiobook_1
+                    Audiobook_2
+                Author_2
+                    Audiobook_3
+            Narrators
+                Narrator_1
+                    Audiobook_1
+                    Audiobook_2
+            Series
+                Series_1
+                    Audiobook_1
+                    Audiobook_2
+                Series_2
+                    Audiobook_3
+                    Audiobook_4
+            Collections
+                Collection_1
+                    Audiobook_1
+                    Audiobook_2
+                Collection_2
+                    Audiobook_3
+                    Audiobook_4
+            Playlists
+                Playlist_1
+                Playlist_2
+            Audiobooks
+                Audiobook_1
+                Audiobook_2
+        Library_Name_B (Podcasts)
+            Playlists
+                Playlist_1
+                Playlist_2
+            Podcasts
+                Podcast_1
+                Podcast_2
+```
+
+- The Audiobook search function supports searching for Authors and Narrators
+- Progress is synced both ways and obtained just ahead of playing
+- Changes you make in Audiobookshelf show up in Music Assistant straight away, including anything you add or delete. If Music Assistant was switched off at the time, run a sync to pick those changes up
+- Single and multi-file audiobooks are supported
+- Supports recommendations on the [Discover view](/ui/#view---discover)
+- Playlists can only be created and edited if Audiobookshelf has just one audiobook library and one podcast library. With more than one, Music Assistant has no way of knowing which library a new playlist belongs in
+
 ### 其他
 
 - 从所提供用户可访问的所有媒体库中填充有声读物

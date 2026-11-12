@@ -37,6 +37,11 @@ Emby 是一个可以自行部署的媒体服务器。它会为存储在你自己
 - Searching the 'Music' libraries on an Emby server is possible
 - Scrobbling is sent back to the Emby server
 
+### Other
+
+- Searching the 'Music' libraries on an Emby server is possible
+- Scrobbling is sent back to the Emby server
+
 ### 其他
 
 - 可以搜索 Emby 服务器上的 'Music' 库

@@ -39,6 +39,10 @@ Podcast Index 是一个免费且开放的播客源（feed）目录，以非营�
 
 - Search and Browse supported
 
+### Other
+
+- Search and Browse supported
+
 ### 其他
 
 - 支持搜索和浏览

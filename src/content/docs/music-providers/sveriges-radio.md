@@ -34,6 +34,11 @@ Sveriges Radio 由公共资金资助，而非依靠广告。它运营四个全�
 - All live national and local Sveriges Radio channels are available to browse and search
 - Channel artwork is provided where available
 
+### Other
+
+- All live national and local Sveriges Radio channels are available to browse and search
+- Channel artwork is provided where available
+
 ### 其他
 
 - 所有 Sveriges Radio 全国及地方直播频道均可浏览和搜索

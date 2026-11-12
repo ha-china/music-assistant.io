@@ -49,6 +49,15 @@ Spotify 音频可以通过两种不同的引擎播放。你在添加该提供商
 - Marking an item as a favourite in Music Assistant will also add it to the MA Library and "Your Library" in Spotify
 - Multiple Spotify accounts can be added. All playlists from all accounts will be shown. If a playlist is selected for playback the source Spotify account will be used
 
+### Other
+
+- Searching the Spotify catalogue is possible
+- "New Releases" and "Genres and Moods" folders are available in the Browse view
+- Items in your Spotify library (including the Liked Songs playlist) will be added to the Library in Music Assistant
+- Adding an item from Spotify to the Music Assistant Library will also add it to "Your Library" in Spotify
+- Marking an item as a favourite in Music Assistant will also add it to the MA Library and "Your Library" in Spotify
+- Multiple Spotify accounts can be added. All playlists from all accounts will be shown. If a playlist is selected for playback the source Spotify account will be used
+
 ## 功能
 
 |           |                     |

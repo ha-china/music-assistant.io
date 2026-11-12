@@ -47,6 +47,13 @@ MusicMe 是由 ApachNetwork 运营的法国音乐流媒体服务，拥有来自�
 - Personalized recommendations (featured content, new releases, top artists, radios) appear in the Recommendations section on the Home screen
 - Top tracks per artist are derived from their most recent albums
 
+### Other
+
+- Searching the MusicMe catalogue is possible, with a fallback to the MusicMe web search for niche queries
+- Browse is available to explore new releases (by genre), top artists, and thematic radios
+- Personalized recommendations (featured content, new releases, top artists, radios) appear in the Recommendations section on the Home screen
+- Top tracks per artist are derived from their most recent albums
+
 ### 其他
 
 - 可以搜索 MusicMe 曲库，对于冷门查询会回退到 MusicMe 网页搜索

@@ -42,6 +42,14 @@ Tidal 是一项订阅制流媒体服务，所有内容均以无损音质串流�
 - On playback, the highest quality FLAC HiFi version will be selected
 - Multiple Tidal accounts can be added.
 
+### Other
+
+- Searching the Tidal catalogue
+- Items in your Tidal library will be marked as "Favourites" in Music Assistant
+- Marking an item as a "Favourite" from the Music Assistant interface will also mark it as favourite in Tidal
+- On playback, the highest quality FLAC HiFi version will be selected
+- Multiple Tidal accounts can be added.
+
 ### 其他
 
 - 搜索 Tidal 曲库

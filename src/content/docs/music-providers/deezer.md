@@ -59,6 +59,21 @@ Deezer 是一项源自法国的订阅制流媒体音乐服务，拥有约 1 亿�
 - Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
 - Logging of played tracks in Deezer
 
+### Other
+
+- Searching the Deezer catalogue
+- Items in your Deezer Favourites will be imported into the MA Library and automatically marked as a "Favorite" in MA
+- If you add an item from Deezer to the MA library then nothing will happen in Deezer unless you also mark it as a favourite (at which time the item will be added to the Deezer favourites)
+- Artist, Album, Track, Playlist, Podcast and Audiobook metadata is fully supported
+- Playlist creation is possible as well as adding and removing tracks from existing playlists
+- Synchronized (LRC) and plain text lyrics
+- Podcast and audiobook progress (bookmark/resume) is synced both ways
+- Personal (user-uploaded) songs are available via the "My Uploads" playlist
+- Recommendations: Made For You, Explore (charts, new releases, editorial playlists), Recently Played, Music Together and dynamic Flow/mood/genre mixes
+- Paste a Deezer share link into the search box and it will take you straight to that album, track or playlist
+- Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
+- Logging of played tracks in Deezer
+
 ### 其他
 
 - 搜索 Deezer 曲库

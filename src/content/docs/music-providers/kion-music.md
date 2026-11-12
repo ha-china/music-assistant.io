@@ -58,6 +58,17 @@ KION Music 是由 MTS（Mobile TeleSystems）运营的音乐流媒体服务，MT
 - Similar tracks are available from the track context menu (used by Endless Mix)
 - Multiple KION Music accounts can be added simultaneously
 
+### Other
+
+- Searching the KION Music catalogue
+- Items in your KION Music library will be synced to Music Assistant
+- Adding/removing items to/from the Music Assistant library will sync back to KION Music
+- Browse is available to explore the KION Music catalogue
+- Lyrics are displayed when available (synced line-by-line when provided by the service, otherwise plain text)
+- Personalized recommendations (My Mix, Made for You, Chart, New Releases and more) appear in the Recommendations section on the Home screen
+- Similar tracks are available from the track context menu (used by Endless Mix)
+- Multiple KION Music accounts can be added simultaneously
+
 ### 其他
 
 - 搜索 KION Music 曲库

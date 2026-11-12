@@ -52,6 +52,29 @@ In addition to `Username` and `Password` there is also:
 
 Refer also to the [Library Import Control](/music-providers/#library-import-control) settings.
 
+### Other
+
+- Searching the YouSee Musik catalogue is possible
+- Two-way syncing of items added to library between MA and YouSee Musik is possible
+- Playlist creation is possible as well as adding and removing tracks from existing playlists
+- Played tracks are logged in YouSee Musik, which is especially useful for generating appropriate recommendations
+- Any track that YouSee Musik has lyrics for is automatically fetched in MA. If timestamps are available for a track, proper "karaoke style" lyrics are used, otherwise it falls back to raw text-only lyrics
+
+### Configuring the source
+
+- Navigate to 'Settings'
+- Under Music Sources, click 'Add a music source', select 'YouSee Musik', and fill in a `Username` and `Password`
+- Adjust the settings described below as necessary
+- Click 'Save'
+
+### Settings
+
+In addition to `Username` and `Password` there is also:
+
+- <b>Stream Quality.</b> Default is `High` (MP4 320kbps). The other option is `Normal` (MP4 192kbps). This only needs to be changed if operating with a slow internet connection
+
+Refer also to the [Library Import Control](/music-providers/#library-import-control) settings.
+
 ### 其他
 
 - 可以搜索 YouSee Musik 曲库

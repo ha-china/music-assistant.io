@@ -37,6 +37,10 @@ SiriusXM 是美国和加拿大的一项订阅制广播服务，因车载系统�
 
 - Supports streaming live radio from SiriusXM
 
+### Other
+
+- Supports streaming live radio from SiriusXM
+
 ### 其他
 
 - 支持流式播放 SiriusXM 的直播电台

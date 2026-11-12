@@ -34,6 +34,15 @@ Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文�
 - On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
 - It is possible to add multiple filesystem sources
 
+### Other
+
+- Searching for tracks is possible
+- Local music is automatically included in the MA Library
+- Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
+- If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
+- On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
+- It is possible to add multiple filesystem sources
+
 ### 其他
 
 - 可以搜索曲目

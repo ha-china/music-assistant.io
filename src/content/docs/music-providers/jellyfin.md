@@ -38,6 +38,10 @@ Jellyfin 是一款免费的开源媒体服务器，可在您自己的硬件上�
 
 - Search from 'Music' libraries on the Jellyfin server
 
+### Other
+
+- Search from 'Music' libraries on the Jellyfin server
+
 ### 其他
 
 - 可从 Jellyfin 服务器上的“音乐”库中进行搜索

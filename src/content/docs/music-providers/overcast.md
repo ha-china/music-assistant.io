@@ -41,6 +41,12 @@ Overcast 没有公开的 API，因此该提供器以与网站相同的方式登�
 - Updates playlog on regular provider syncs
 - Episodes you are part way through appear under Continue Listening
 
+### Other
+- Acquires progress from Overcast, but does not report progress back
+- Populates libraries with podcasts
+- Updates playlog on regular provider syncs
+- Episodes you are part way through appear under Continue Listening
+
 ### 其他
 - 从 Overcast 获取进度，但不会将进度回传
 - 使用播客填充媒体库

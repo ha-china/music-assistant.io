@@ -43,6 +43,13 @@ Storytel 是一项有声读物和播客订阅服务，也是同类服务中规�
 - Listening progress is automatically synced back to Storytel for continued listening in-app.
 - Library management is supported for adding and removing audiobooks and podcasts.
 
+### Other
+
+- Search is available for both audiobooks and podcasts.
+- Chapter navigation.
+- Listening progress is automatically synced back to Storytel for continued listening in-app.
+- Library management is supported for adding and removing audiobooks and podcasts.
+
 ### 其他
 
 - 有声读物和播客均支持搜索。

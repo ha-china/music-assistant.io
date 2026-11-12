@@ -54,6 +54,21 @@ Music Assistant 支持环境音（Ambient Sounds）。此组件由 <a href="http
 - All sounds are calibrated to the same loudness (-14 LUFS), so switching between them does not change the perceived volume
 - Can be used as the audio overlay source for a queue, mixing ambient sound underneath the music
 
+### Included sounds
+
+| Sound | Description |
+|:------|:------------|
+| White noise | Bright, steady hiss with equal energy across all frequencies |
+| Pink noise | Softer noise with reduced high frequencies, similar to steady rainfall |
+| Brown noise | Deep, low rumble similar to a distant waterfall or heavy surf |
+| Ocean waves | Deep rolling noise with a slow, wave-like swell |
+
+### Other
+
+- Every sound is a 30 second loop that is built to repeat seamlessly, so it can play indefinitely without audible seams
+- All sounds are calibrated to the same loudness (-14 LUFS), so switching between them does not change the perceived volume
+- Can be used as the audio overlay source for a queue, mixing ambient sound underneath the music
+
 ### 包含的声音
 
 | 声音 | 描述 |

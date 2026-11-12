@@ -48,6 +48,17 @@ Music Assistant 支持 DI.fm 电台网络（DI.fm Radio Network），其中包�
 - Favourites are read-only in Music Assistant. To change which stations appear, add or remove favourites on the website of any network in the DI.fm family
 - A change made on the website takes a few minutes to reach Music Assistant
 
+### Other
+
+- All six networks are available with the one subscription and the provider allows selection of which network(s) are desired to be subscribed to
+- Hundreds of curated radio streams from the six networks are available to browse and search
+- Channel artwork, genre information, and detailed channel descriptions are available
+### Managing Favorites
+
+- Your library is filled with whatever you have marked as a favourite on the network websites
+- Favourites are read-only in Music Assistant. To change which stations appear, add or remove favourites on the website of any network in the DI.fm family
+- A change made on the website takes a few minutes to reach Music Assistant
+
 ### 其他
 
 - 一次订阅即可使用全部六个网络，且该提供者允许选择想要订阅的网络

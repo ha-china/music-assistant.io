@@ -39,6 +39,11 @@ Music Assistant 本身并不托管这份共享记录。你需要自行运行一�
 - Populates libraries with podcasts
 - Updates playlog on regular provider syncs
 
+### Other
+- Progress reporting and acquiring
+- Populates libraries with podcasts
+- Updates playlog on regular provider syncs
+
 ### 其他
 - 进度的上报与获取
 - 用播客填充媒体库

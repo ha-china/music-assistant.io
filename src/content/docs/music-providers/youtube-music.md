@@ -38,6 +38,10 @@ YouTube Music 是 Google 的流媒体服务，构建于 YouTube 之上。除了�
 - Searching the YouTube Music catalogue
 - The highest available stream from Youtube Music will be selected for playback (similar to configuring 'high' in the web-app)
 
+### Other
+- Searching the YouTube Music catalogue
+- The highest available stream from Youtube Music will be selected for playback (similar to configuring 'high' in the web-app)
+
 ### 其他
 - 搜索 YouTube Music 曲库
 - 播放时会选择 YouTube Music 可用的最高音质流（类似于在网页应用中将音质配置为 'high'）

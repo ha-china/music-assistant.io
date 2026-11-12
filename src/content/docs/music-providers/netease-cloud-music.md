@@ -46,6 +46,13 @@ Music Assistant 支持<a href="https://music.163.com/" target="_blank" rel="noop
 - Dynamic recommendation/radio entries include Daily songs, Daily playlists, Private FM, and Heart Mode
 - Library sync is currently one-way (NetEase Cloud Music -> Music Assistant)
 
+### Other
+
+- Search support for tracks, artists, albums, and playlists
+- Library sync for liked/favorited content and user playlists
+- Dynamic recommendation/radio entries include Daily songs, Daily playlists, Private FM, and Heart Mode
+- Library sync is currently one-way (NetEase Cloud Music -> Music Assistant)
+
 ### 其他
 
 - 支持搜索曲目、艺术家、专辑和播放列表

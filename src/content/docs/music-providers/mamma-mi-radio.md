@@ -45,6 +45,13 @@ This source reads the station's live programme state, so Music Assistant can sho
 - Music segments show title, artist, album, and artwork; host segments show the hosts by name
 - The now-playing card alternates between the current segment and an "Up next" preview
 
+### Live metadata
+
+This source reads the station's live programme state, so Music Assistant can show what is actually on air:
+
+- Music segments show title, artist, album, and artwork; host segments show the hosts by name
+- The now-playing card alternates between the current segment and an "Up next" preview
+
 ### 实时元数据
 
 此音源会读取电台的实时节目状态，因此 Music Assistant 可以显示当前实际正在播出的内容：

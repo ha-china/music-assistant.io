@@ -34,6 +34,10 @@ Music Assistant 支持从 RSS 订阅源（feed）流式播放播客。由 <a hre
 
 - Reads a standard podcast RSS feed from a web address you provide
 
+### Other
+
+- Reads a standard podcast RSS feed from a web address you provide
+
 ### 其他
 
 - 从您提供的网址读取标准的播客 RSS 订阅源

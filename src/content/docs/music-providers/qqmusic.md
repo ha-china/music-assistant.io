@@ -48,6 +48,13 @@ QQ Music 是中国大陆使用最广泛的流媒体音乐平台之一，提供�
 - Library sync is currently one-way (QQ Music → Music Assistant)
 - If a track is not available at the quality you asked for, the next best is played instead
 
+### Other
+
+- Search support for tracks, artists, albums, and playlists
+- Library sync for liked tracks, followed artists, liked albums, and playlists
+- Library sync is currently one-way (QQ Music → Music Assistant)
+- If a track is not available at the quality you asked for, the next best is played instead
+
 ### 其他
 
 - 支持搜索曲目、歌手、专辑和播放列表

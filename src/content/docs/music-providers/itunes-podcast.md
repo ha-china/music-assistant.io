@@ -34,6 +34,10 @@ Apple 的播客目录是互联网上最大的播客索引，也是 iPhone 上的
 
 - Search for podcasts via the iTunes API
 
+### Other
+
+- Search for podcasts via the iTunes API
+
 ### 其他
 
 - 通过 iTunes API 搜索播客

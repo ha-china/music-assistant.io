@@ -39,6 +39,14 @@ Toniebox 是一款专为儿童设计的音频播放器。它是一个没有屏�
 - Tonies are searchable and browsable alongside the rest of the Music Assistant content
 - It is possible to add multiple TeddyCloud sources
 
+### Other
+
+- Each Tonie is imported into the Music Assistant library as an audiobook, with the series as the author and the episode as the title
+- Chapters are taken from the Tonie's track marks and story names, so it is possible to skip between stories and seek within them
+- Audio is streamed on demand directly from TeddyCloud in its original Opus quality, with no re-encoding
+- Tonies are searchable and browsable alongside the rest of the Music Assistant content
+- It is possible to add multiple TeddyCloud sources
+
 ### 其他
 
 - 每个 Tonie 都会作为有声读物导入 Music Assistant 媒体库，系列名作为作者，剧集名作为标题

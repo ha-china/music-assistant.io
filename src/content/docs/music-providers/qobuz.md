@@ -40,6 +40,13 @@ Qobuz 是一家来自法国的订阅制流媒体服务，面向注重音质的�
 - Marking an item as "in library" from the Music Assistant interface will also mark it as a favorite in Qobuz
 - On playback, the highest quality is preferered automatically
 
+### Other
+
+- Searching the Qobuz catalogue
+- Items in your Qobuz Favourites will be marked as "in library" in Music Assistant
+- Marking an item as "in library" from the Music Assistant interface will also mark it as a favorite in Qobuz
+- On playback, the highest quality is preferered automatically
+
 ### 其他
 
 - 搜索 Qobuz 曲库

@@ -47,6 +47,17 @@ Zvuk 是一家俄罗斯音乐流媒体服务，拥有庞大的俄语曲库以及
 - Personalized playlists ("Плейлисты для вас") appear in the Recommendations section on the Home screen
 - Similar tracks are available from the track context menu (used by Endless Mix)
 
+### Other
+
+- Searching the Zvuk Music catalogue is possible
+- Items in a users Zvuk Music library will be synced to Music Assistant
+- Adding/removing items to/from the Music Assistant library will sync back to Zvuk Music
+- Playlist creation and editing is supported
+- Browse is available to explore the Zvuk Music catalogue
+- Lyrics are displayed when available (synced line-by-line when provided by the service, otherwise plain text)
+- Personalized playlists ("Плейлисты для вас") appear in the Recommendations section on the Home screen
+- Similar tracks are available from the track context menu (used by Endless Mix)
+
 ### 其他
 
 - 可以搜索 Zvuk Music 曲库

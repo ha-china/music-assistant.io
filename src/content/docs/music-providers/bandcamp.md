@@ -43,6 +43,11 @@ Bandcamp 是一个音乐商店和流媒体网站，艺术家和厂牌（label）
 - The highest available stream from Bandcamp will be selected for playback
 - Bandcamp Feed and Wishlist are available in the browse view
 
+### Other
+- Searching the Bandcamp catalogue
+- The highest available stream from Bandcamp will be selected for playback
+- Bandcamp Feed and Wishlist are available in the browse view
+
 ### 其他
 - 搜索 Bandcamp 曲库
 - 播放时将选择 Bandcamp 可用的最高音质音频流

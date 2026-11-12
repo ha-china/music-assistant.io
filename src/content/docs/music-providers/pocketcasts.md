@@ -42,6 +42,14 @@ Music Assistant 则成为这些设备中的另一员，从同一账户读取数�
 - Playback progress is synced bidirectionally with Pocket Casts, and playback resumes from the saved position
 - Seeking within episodes is supported
 
+### Other
+
+- Subscribed podcasts and their episodes are available to browse and search
+- Five special folders are exposed: Up Next, New Releases, In Progress, Starred, and History
+- Podcasts can be subscribed to and unsubscribed from within Music Assistant, with changes synced back to Pocket Casts
+- Playback progress is synced bidirectionally with Pocket Casts, and playback resumes from the saved position
+- Seeking within episodes is supported
+
 ### 其他
 
 - 已订阅的播客及其单集可供浏览和搜索

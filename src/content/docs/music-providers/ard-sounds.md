@@ -38,6 +38,12 @@ ARD Sounds（前身为 ARD Audiothek）是 ARD 的音频平台，ARD 是德国�
 - Populates libraries with subscribed podcasts
 - Updates playlog on regular provider syncs
 
+### Other
+
+- Progress reporting and acquiring
+- Populates libraries with subscribed podcasts
+- Updates playlog on regular provider syncs
+
 ### 其他
 
 - 播放进度的上报与获取

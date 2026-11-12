@@ -44,6 +44,15 @@ Nico Nico 上的许多内容都由其社区用户上传，因此这里有大量�
     - Playlists: your own Mylist (read/write)
     - Artists: your following artists
 
+### Other
+
+- Allows searching, playback, and library integration
+- Keyword search for Tracks, Playlists (Mylist), and Albums (Series)
+- Recommendations based on history and follow activity
+- Library support
+    - Playlists: your own Mylist (read/write)
+    - Artists: your following artists
+
 ### 其他
 
 - 支持搜索、播放和媒体库集成
