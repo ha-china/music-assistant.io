@@ -8,10 +8,10 @@ Music Assistant 支持 AirPlay 设备。这包括 HomePod 和 Apple TV 等 Apple
 
 ## 功能
 
-- AirPlay devices are auto detected in Music Assistant, plug and play
-- AirPlay devices will play in sync, even when there is a combination of AirPlay 1 (RAOP) and AirPlay 2 devices in the sync group
-- Audio is lossless: up to 48 kHz/24-bit on AirPlay 2 devices and 44.1 kHz/16-bit on AirPlay 1 (RAOP) devices. See <b>24-bit audio (hi-res)</b> under [Protocol Settings](#protocol-settings)
-- The player settings allow configuration of [stereo pairs](/faq/how-to/#create-a-stereo-pair) of speakers
+- AirPlay 设备在 Music Assistant 中自动被发现，即插即用
+- AirPlay 设备将同步播放，即使同步组中同时包含 AirPlay 1 (RAOP) 和 AirPlay 2 设备也是如此
+- 音频无损：AirPlay 2 设备最高支持 48 kHz/24-bit，AirPlay 1 (RAOP) 设备最高支持 44.1 kHz/16-bit。请参阅[协议设置](#protocol-settings)中的 <b>24-bit 音频（高分辨率）</b>
+- 播放器设置允许配置[立体声对](/faq/how-to/#create-a-stereo-pair)音箱
 
 ## 配置
 
@@ -34,15 +34,15 @@ Apple TV 在主配对步骤之外还提供两个额外的配对步骤。两者�
 
 Music Assistant 会自动选择向每台设备进行流传输的方式，因此在正常情况下无需更改此处的设置。
 
-- <b>24-bit audio (hi-res).</b> Plays hi-res music at up to 48 kHz/24-bit. It starts out on for devices that report 24-bit support, except HomePods, where 24-bit can cause crackling over Wi-Fi. You can switch it on for other AirPlay 2 devices too, and off again if you hear crackling or static. Devices streaming with AirPlay 1 (RAOP) or AirPlay 2 - compatibility mode always play 44.1 kHz/16-bit and do not show this setting. Grouped speakers each follow their own setting, and a group that includes a 16-bit speaker plays at 44.1 kHz.
-- <b>Audio synchronization delay correction.</b> Shifts when audio is heard on this device compared to the other players it is synced with, up to ±500 ms. Negative values make it play earlier, positive values later. Use a negative value for a device connected to a TV, AV receiver or amplifier that adds its own delay — if it lags the group by about 100 ms, set it to -100.
+- <b>24-bit 音频（高分辨率）。</b>以最高 48 kHz/24-bit 播放高分辨率音乐。对于报告支持 24-bit 的设备，此选项默认开启，但 HomePod 除外，因为在 Wi-Fi 上 24-bit 可能导致爆音。你也可以为其他 AirPlay 2 设备开启此选项，如果听到爆音或杂音则可再次关闭。使用 AirPlay 1 (RAOP) 或 AirPlay 2 - 兼容模式流传输的设备始终以 44.1 kHz/16-bit 播放，且不显示此设置。分组音箱各自遵循自己的设置，包含 16-bit 音箱的组将以 44.1 kHz 播放。
+- <b>音频同步延迟校正。</b>相对于与其同步的其他播放器，调整此设备上听到音频的时间偏移，范围最高 ±500 ms。负值使其更早播放，正值则更晚。对于连接到电视、AV 接收机或放大器（这些设备会引入自身延迟）的设备，请使用负值——如果它比组内其他设备滞后约 100 ms，请将其设置为 -100。
 
 ### 高级协议设置
 
-- <b>Streaming mode.</b> Pins this device to one way of streaming. Leave on Automatic (recommended) unless the device misbehaves — only the modes the device actually supports are offered: AirPlay 2 - PTP timing, AirPlay 2 - NTP timing, AirPlay 2 - compatibility mode and AirPlay 1 (RAOP). Music Assistant never changes it by itself: when the automatic choice keeps failing, a warning in the log points to this setting. Set it back to Automatic to try the original mode again.
-- <b>Audio buffer depth.</b> How much audio the speaker keeps queued ahead of playback. Increase this if the speaker stays silent or drops out while Music Assistant shows it playing — at the cost of slower skipping and pausing. Automatic picks a value suited to the device.
-- <b>Ignore volume reports sent by the device itself.</b> Some devices report their own volume level unreliably, which can cause unexpected volume changes. Enable this to ignore those reports.
-- <b>Enable encryption.</b> Only shown for devices streaming with AirPlay 1 (RAOP). Some third party players require this to be turned off.
+- <b>流传输模式。</b>将此设备固定为一种流传输方式。除非设备行为异常，否则请保持自动（推荐）——仅提供设备实际支持的模式：AirPlay 2 - PTP 计时、AirPlay 2 - NTP 计时、AirPlay 2 - 兼容模式和 AirPlay 1 (RAOP)。Music Assistant 绝不会自行更改此设置：当自动选择持续失败时，日志中的警告会指向此设置。将其设置回自动以再次尝试原始模式。
+- <b>音频缓冲区深度。</b>音箱在播放前保持排队的音频量。如果音箱在 Music Assistant 显示正在播放时保持静音或中断，请增加此值——代价是跳过和暂停响应变慢。自动模式会根据设备选择合适的值。
+- <b>忽略设备自身发送的音量报告。</b>某些设备报告自身音量水平不可靠，可能导致意外的音量变化。启用此选项可忽略这些报告。
+- <b>启用加密。</b>仅对使用 AirPlay 1 (RAOP) 流传输的设备显示。某些第三方播放器要求关闭此选项。
 
 ### AirPlay 提供程序设置
 
@@ -54,20 +54,20 @@ Music Assistant 会自动选择向每台设备进行流传输的方式，因此�
 
 一切看起来都在正常工作（音量会变化、歌曲信息会显示、设备也有响应），但就是没有声音发出。请按以下顺序依次尝试：
 
-- Enable encryption in the advanced player settings. Some devices (such as Kodi or some 3rd party AirPlay receivers) require it
-- HomePod owners: check Apple HomeKit. In the HomeKit (iOS) preferences for `AirPlay (Speaker & TV)`, make sure `Only people in this home` is NOT selected; when it is, Music Assistant cannot play audio on the HomePod. Select the option `Everyone on the same network` instead. More generally, Apple HomeKit has been reported to interfere with playback; if problems are encountered, try removing the devices from HomeKit
-- If the device requires a password, press Setup in the player settings and enter it
-- Samsung devices seem to have implemented AirPlay 1 in a way that isn't fully backwards compatible and produce exactly this symptom. Users of similar applications such as Roon and anything based on slimproto have the same problem
+- 在高级播放器设置中启用加密。某些设备（如 Kodi 或某些第三方 AirPlay 接收器）需要此设置
+- HomePod 用户：请检查 Apple HomeKit。在 HomeKit (iOS) 中 `AirPlay (Speaker & TV)` 的偏好设置里，确保未选择 `Only people in this home`；当选择此项时，Music Assistant 无法在 HomePod 上播放音频。请改为选择 `Everyone on the same network` 选项。更一般地，据报道 Apple HomeKit 会干扰播放；如果遇到问题，请尝试将设备从 HomeKit 中移除
+- 如果设备需要密码，请在播放器设置中按下 Setup 并输入密码
+- 三星设备似乎以不完全向后兼容的方式实现了 AirPlay 1，并恰好产生此症状。使用类似应用程序（如 Roon 以及任何基于 slimproto 的应用程序）的用户也遇到同样的问题
 
 ### 其他播放问题
 
-- Apple TVs will be discovered but require pairing. Press Setup in the player settings; it shows a code on the screen of the Apple TV
-- If your player is going unavailable while still powered on then it may not be sending its keep alive message. A timeout can be configured for each player. Some users have reported they have needed to set it as long as one hour
-- If the AirPlay device incorrectly responds to change volume commands or randomly changes volume, try changing the `Volume Control` option in the `Player controls` section and set it to `None`
+- Apple TV 会被发现，但需要配对。请在播放器设置中按下 Setup；它会在 Apple TV 屏幕上显示一个代码
+- 如果播放器在仍通电的情况下变为不可用，则可能未发送其保活消息。可以为每个播放器配置超时时间。一些用户报告说他们需要将其设置为长达一小时
+- 如果 AirPlay 设备对音量更改命令响应不正确或随机更改音量，请尝试更改 `Player controls` 部分中的 `Volume Control` 选项，并将其设置为 `None`
 
 ### 技术说明
 
-- Music Assistant implements <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> and <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay2</a>. Devices that support AirPlay 2 stream with it, older devices with RAOP. To pin a device to one of them, use [Streaming mode](#advanced-protocol-settings).
-- Shairport Sync plays with AirPlay 2. When it runs on the same host as Music Assistant (for example as a Home Assistant add-on), set its [Streaming mode](#advanced-protocol-settings) to `AirPlay 2 - compatibility mode`, because both need the same network ports for AirPlay 2 timing.
-- Playback to Macbooks is not possible due to removal of RAOP support
-- The AirPlay 2 protocol needs more setup exchanges than AirPlay 1 (RAOP), so the first connection takes a little longer, which adds to the time before playback starts.
+- Music Assistant 实现了 <a href="https://en.wikipedia.org/wiki/Remote_Audio_Output_Protocol" target="_blank" rel="noopener noreferrer">RAOP</a> 和 <a href="https://en.wikipedia.org/wiki/AirPlay" target="_blank" rel="noopener noreferrer">AirPlay2</a>。支持 AirPlay 2 的设备使用 AirPlay 2 流传输，较旧的设备使用 RAOP。要将设备固定为其中一种，请使用[流传输模式](#advanced-protocol-settings)。
+- Shairport Sync 使用 AirPlay 2 播放。当它与 Music Assistant 运行在同一主机上时（例如作为 Home Assistant 加载项），请将其[流传输模式](#advanced-protocol-settings)设置为 `AirPlay 2 - 兼容模式`，因为两者都需要相同的网络端口用于 AirPlay 2 计时。
+- 由于移除了 RAOP 支持，无法向 Macbook 播放。
+- AirPlay 2 协议比 AirPlay 1 (RAOP) 需要更多的设置交换，因此首次连接需要稍长的时间，这会增加播放开始前的等待时间。

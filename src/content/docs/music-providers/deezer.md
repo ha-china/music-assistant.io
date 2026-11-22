@@ -44,35 +44,20 @@ Deezer 是一项源自法国的订阅制流媒体音乐服务，拥有约 1 亿�
 - Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
 - Logging of played tracks in Deezer
 
-### Other
+### 其他
 
-- Searching the Deezer catalogue
-- Items in your Deezer Favourites will be imported into the MA Library and automatically marked as a "Favorite" in MA
-- If you add an item from Deezer to the MA library then nothing will happen in Deezer unless you also mark it as a favourite (at which time the item will be added to the Deezer favourites)
-- Artist, Album, Track, Playlist, Podcast and Audiobook metadata is fully supported
-- Playlist creation is possible as well as adding and removing tracks from existing playlists
-- Synchronized (LRC) and plain text lyrics
-- Podcast and audiobook progress (bookmark/resume) is synced both ways
-- Personal (user-uploaded) songs are available via the "My Uploads" playlist
-- Recommendations: Made For You, Explore (charts, new releases, editorial playlists), Recently Played, Music Together and dynamic Flow/mood/genre mixes
-- Paste a Deezer share link into the search box and it will take you straight to that album, track or playlist
-- Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
-- Logging of played tracks in Deezer
-
-### Other
-
-- Searching the Deezer catalogue
-- Items in your Deezer Favourites will be imported into the MA Library and automatically marked as a "Favorite" in MA
-- If you add an item from Deezer to the MA library then nothing will happen in Deezer unless you also mark it as a favourite (at which time the item will be added to the Deezer favourites)
-- Artist, Album, Track, Playlist, Podcast and Audiobook metadata is fully supported
-- Playlist creation is possible as well as adding and removing tracks from existing playlists
-- Synchronized (LRC) and plain text lyrics
-- Podcast and audiobook progress (bookmark/resume) is synced both ways
-- Personal (user-uploaded) songs are available via the "My Uploads" playlist
-- Recommendations: Made For You, Explore (charts, new releases, editorial playlists), Recently Played, Music Together and dynamic Flow/mood/genre mixes
-- Paste a Deezer share link into the search box and it will take you straight to that album, track or playlist
-- Podcasts, radio and audiobooks depend on availability in your country (audiobooks are currently limited to Germany, the Netherlands and Austria)
-- Logging of played tracks in Deezer
+- 搜索 Deezer 曲库
+- 你在 Deezer 收藏（Favourites）中的条目会被导入 MA 资料库，并自动在 MA 中标记为"收藏（Favorite）"
+- 如果你将来自 Deezer 的条目添加到 MA 资料库，Deezer 中不会发生任何变化，除非你同时将其标记为收藏（此时该条目会被添加到 Deezer 收藏中）
+- 完整支持艺术家、专辑、曲目、播放列表、播客和有声读物的元数据
+- 支持创建播放列表，以及向现有播放列表添加或移除曲目
+- 同步（LRC）歌词和纯文本歌词
+- 播客和有声读物的进度（书签/继续播放）双向同步
+- 个人（用户上传）的歌曲可通过"My Uploads"播放列表获取
+- 推荐：Made For You、Explore（排行榜、新发行、编辑精选播放列表）、Recently Played、Music Together 以及动态的 Flow/心情/流派混音
+- 将 Deezer 分享链接粘贴到搜索框中，即可直接跳转到相应的专辑、曲目或播放列表
+- 播客、电台和有声读物的可用性取决于你所在的国家/地区（有声读物目前仅限德国、荷兰和奥地利）
+- 在 Deezer 中记录已播放的曲目
 
 ### 其他
 
@@ -80,6 +65,37 @@ Deezer 是一项源自法国的订阅制流媒体音乐服务，拥有约 1 亿�
 - 你在 Deezer 收藏（Favourites）中的条目会被导入 MA 资料库，并自动在 MA 中标记为"收藏（Favorite）"
 - 如果你将来自 Deezer 的条目添加到 MA 资料库，Deezer 中不会发生任何变化，除非你同时将其标记为收藏（此时该条目会被添加到 Deezer 收藏中）
 - 完整支持艺术家、专辑、曲目、播放列表、播客和有声读物的元数据
+- 支持创建播放列表，以及向现有播放列表添加或移除曲目
+- 同步（LRC）歌词和纯文本歌词
+- 播客和有声读物的进度（书签/继续播放）双向同步
+- 个人（用户上传）的歌曲可通过"My Uploads"播放列表获取
+- 推荐：Made For You、Explore（排行榜、新发行、编辑精选播放列表）、Recently Played、Music Together 以及动态的 Flow/心情/流派混音
+- 将 Deezer 分享链接粘贴到搜索框中，即可直接跳转到相应的专辑、曲目或播放列表
+- 播客、电台和有声读物的可用性取决于你所在的国家/地区（有声读物目前仅限德国、荷兰和奥地利）
+- 在 Deezer 中记录已播放的曲目
+
+### 其他
+
+- 搜索 Deezer 曲库
+- 你在 Deezer 收藏（Favourites）中的条目会被导入 MA 资料库，并自动在 MA 中标记为"收藏（Favorite）"
+- 如果你将来自 Deezer 的条目添加到 MA 资料库，Deezer 中不会发生任何变化，除非你同时将其标记为收藏（此时该条目会被添加到 Deezer 收藏中）
+- 完整支持艺术家、专辑、曲目、播放列表、播客和有声读物的元数据
+- 支持创建播放列表，以及向现有播放列表添加或移除曲目
+- 同步（LRC）歌词和纯文本歌词
+- 播客和有声读物的进度（书签/继续播放）双向同步
+- 个人（用户上传）的歌曲可通过"My Uploads"播放列表获取
+- 推荐：Made For You、Explore（排行榜、新发行、编辑精选播放列表）、Recently Played、Music Together 以及动态的 Flow/心情/流派混音
+- 将 Deezer 分享链接粘贴到搜索框中，即可直接跳转到相应的专辑、曲目或播放列表
+- 播客、电台和有声读物的可用性取决于你所在的国家/地区（有声读物目前仅限德国、荷兰和奥地利）
+- 在 Deezer 中记录已播放的曲目
+
+### 其他
+
+- 搜索 Deezer 曲库
+- 你在 Deezer 收藏（Favourites）中的条目会被导入 MA 资料库，并自动在 MA 中标记为"收藏（Favorite）"
+- 如果你将来自 Deezer 的条目添加到 MA 资料库，Deezer 中不会发生任何变化，除非你同时将其标记为收藏（此时该条目会被添加到 Deezer 收藏中）
+- 完整支持艺术家、专辑、曲目、播放列表、播客和有声读物的元数据
+- 支持创建播放列表，以及向现有播放列表添加或移除曲目
 - 同步（LRC）歌词和纯文本歌词
 - 播客和有声读物的进度（书签/继续播放）双向同步
 - 个人（用户上传）的歌曲可通过"My Uploads"播放列表获取

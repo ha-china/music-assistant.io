@@ -2,7 +2,7 @@
 title: "YouTube Music"
 ---
 
-# YouTube Music <img src="/assets/icons/ytm-icon.svg" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
+# YouTube Music <img src="/assets/icons/ytm-icon.svg" alt="预览图片" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant 支持 YouTube Music，由 <a href="https://github.com/MarvinSchenkel" target="_blank" rel="noopener noreferrer">MarvinSchenkel</a> 贡献并维护。
 
@@ -38,9 +38,13 @@ YouTube Music 是 Google 的流媒体服务，构建于 YouTube 之上。除了�
 - Searching the YouTube Music catalogue
 - The highest available stream from Youtube Music will be selected for playback (similar to configuring 'high' in the web-app)
 
-### Other
-- Searching the YouTube Music catalogue
-- The highest available stream from Youtube Music will be selected for playback (similar to configuring 'high' in the web-app)
+### 其他
+- 搜索 YouTube Music 曲库
+- 播放时会选择 YouTube Music 可用的最高音质流（类似于在网页应用中将音质配置为 'high'）
+
+### 其他
+- 搜索 YouTube Music 曲库
+- 播放时会选择 YouTube Music 可用的最高音质流（类似于在网页应用中将音质配置为 'high'）
 
 ### 其他
 - 搜索 YouTube Music 曲库
@@ -65,7 +69,7 @@ Cookie 身份验证是让 YT Music 正常工作的**唯一**方式；Google 不�
 3. 安装名为 'YT Music PO Token Generator' 的应用，并确保它已启动。
 
 > [!NOTE]
-> If you host Music Assistant yourself, download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a>. Install and run its latest release, then add its URL when configuring the YT Music source in Step 3.
+> 如果您自行托管 Music Assistant，请从<a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">此处</a>下载 PO Token 服务器的 Docker 文件。安装并运行其最新版本，然后在第 3 步配置 YT Music 音源时添加其 URL。
 
 ### 第 2 步：获取您的登录 Cookie
 
@@ -73,18 +77,18 @@ Cookie 身份验证是让 YT Music 正常工作的**唯一**方式；Google 不�
 
 1. 在无痕窗口中用浏览器打开 <a href="http://music.youtube.com/" target="_blank">YT Music</a>，并登录您的账户。
 2. 通过 View -> Developer -> Developer Tools 打开开发者工具。请注意，该菜单的名称可能因浏览器而异。它应该会打开一个类似下图的窗口：
-[![Dev tools](/assets/screenshots/ytmusic-developer-tools.png)](/assets/screenshots/ytmusic-developer-tools.png)
+[![开发者工具](/assets/screenshots/ytmusic-developer-tools.png)](/assets/screenshots/ytmusic-developer-tools.png)
 3. 前往 'Network'（网络）标签页。
 4. 在筛选栏中输入 "/browse"。如果没有显示任何结果，请刷新页面。
 5. 现在前往 YT Music 中一个需要身份验证的页面，例如您媒体库中的某个播放列表。
 6. 一个请求将出现在表格中：
 
-[![Auth request](/assets/screenshots/ytmusic-auth-request.png)](/assets/screenshots/ytmusic-auth-request.png)
+[![身份验证请求](/assets/screenshots/ytmusic-auth-request.png)](/assets/screenshots/ytmusic-auth-request.png)
 
 7. 点击该请求，并确保您位于 'Headers'（标头）标签页。
 8. 找到名为 'Request Headers'（请求标头）的部分。
 9. 找到名为 'Cookie' 的条目并复制其**值**。复制完全准确的值**非常**重要。请仔细检查，确保没有在值的开头/结尾包含任何多余的空格或字符。
-[![Cookie value](/assets/screenshots/ytmusic-cookie-value.png)](/assets/screenshots/ytmusic-cookie-value.png)
+[![Cookie 值](/assets/screenshots/ytmusic-cookie-value.png)](/assets/screenshots/ytmusic-cookie-value.png)
 10. 请立即关闭无痕窗口。不要先注销登录，因为那样会终止该 Cookie 所属的会话。保持窗口开启会不断轮换 Cookie，导致 MA 中的副本失效。
 
 > [!NOTE]

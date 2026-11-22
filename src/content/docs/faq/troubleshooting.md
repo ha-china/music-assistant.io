@@ -29,9 +29,9 @@ description: 常见问题与解决方法
 
 **播放。** 如果播放器已被发现并启动，但出现卡顿、中断、曲目之间有间隙或显示屏上不显示任何内容，请参阅下方的[播放器能播放，但播放不正常](#the-player-plays-but-not-properly)。
 
-**Volume drifting during a track.** If the volume rises and falls within a track the first time you play it, that is expected. See [the volume rises and falls during a track](#the-volume-rises-and-falls-during-a-track) below.
+**曲目播放过程中音量漂移。** 如果首次播放某首曲目时音量在其内部升高和降低，这是预期行为。请参阅下方的[曲目播放过程中音量升高和降低](#the-volume-rises-and-falls-during-a-track)。
 
-**Authentication.** If it is a music source issue and the source requires authentication then clear the authentication and re-login.
+**身份验证。** 如果是音乐源问题且该源需要身份验证，请清除身份验证并重新登录。
 
 **浏览器。** 如果是前端问题，或者与登录需要重定向到其他网站的提供程序或源有关，请尝试使用其他浏览器。如果您在移动设备上尝试，请在笔记本电脑或 PC 上试试。已知 Firefox 和 Safari 存在一些缺陷。
 
@@ -101,31 +101,31 @@ description: 常见问题与解决方法
 
 如果这些方法都不起作用，请查看[您的播放器提供程序页面](/player-support/)。每个页面都有一个“已知问题”部分，其中一些还包含针对该设备特有问题的故障排除步骤。
 
-## The volume rises and falls during a track
+## 曲目播放过程中音量升高和降低
 
-This is [volume normalization](/faq/tech-info/#volume-normalization) working without a loudness measurement. It is expected the first time a track is played and it is not a bug, so please do not open an issue for it.
+这是[音量标准化](/faq/tech-info/#volume-normalization)在没有响度测量时的工作方式。首次播放曲目时出现这种情况是预期行为，并非错误，因此请不要为此提交问题。
 
-Until Music Assistant has measured a track it adjusts the loudness on the fly, which can be heard as the volume drifting. Most often a quiet intro is lifted and then pulled back when the track gets loud. The track is measured during that first play by the [Loudness Analysis](/audio-analysis/loudness-analysis/) provider, and once the measurement exists a single fixed adjustment is used for the whole track and the variation goes away. Local files are also measured in a nightly background scan, so this mostly affects tracks from streaming services that you have not played before.
+在 Music Assistant 测量曲目之前，它会实时调整响度，这听起来就像音量在漂移。最常见的情况是，安静的前奏被提升，然后在曲目变响时又被拉回。该曲目会在首次播放期间由[响度分析](/audio-analysis/loudness-analysis/)提供程序进行测量，一旦测量完成，就会对整个曲目使用一个固定的调整值，这种变化就会消失。本地文件也会在夜间后台扫描中进行测量，因此这主要影响您之前未播放过的流媒体服务曲目。
 
-A few things follow from how the measurement is made:
+从测量的方式可以得出以下几点：
 
-- A track that is skipped shortly after it starts may not have been measured yet. It is measured on a later play instead
-- A track that is resumed part way through is not measured on that play
-- Seeking within a track on its first play can produce a single step in volume, as the track changes over from the on the fly adjustment to the measured one
+- 一首曲目在开始后不久就被跳过，可能尚未被测量。它会在稍后的播放中被测量
+- 一首曲目在播放中途被恢复，则不会在该次播放中被测量
+- 在首次播放时在曲目内跳转，可能会产生一次音量阶跃，因为曲目会从实时调整切换到已测量的调整
 
-The [Audio Pipeline](/audiopipeline/) view shows the normalization in use for the current track and where the loudness value came from.
+[音频管线](/audiopipeline/)视图会显示当前曲目所使用的标准化方式以及响度值的来源。
 
-If it keeps happening on tracks you have already played through:
+如果这种情况在您已完整播放过的曲目上持续发生：
 
-**The method is set to Dynamic.** This always adjusts on the fly and ignores measurements. Change it to `Fallback Dynamic` under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback).
+**方法设置为动态（Dynamic）。** 这总是实时调整并忽略测量值。请在 [**设置 → 系统 → 流 → 队列播放**](/settings/core/#queue-playback)下将其更改为 `Fallback Dynamic`。
 
-**It is a radio station.** Live radio is rarely measured, so it stays on whichever fallback the radio setting uses.
+**这是电台。** 直播电台很少被测量，因此它会保持电台设置所使用的任何回退方式。
 
-**You would rather never hear it.** Set the method to `Fallback Fixed Gain`. Tracks without a measurement then play with the same fixed adjustment from start to finish, and measured tracks are handled as before. `Measurement Only` also removes the drift, but unmeasured tracks play at their original loudness, so the volume can jump from one track to the next.
+**您宁愿永远听不到它。** 将方法设置为 `Fallback Fixed Gain`。没有测量的曲目会从头到尾使用相同的固定调整值播放，而已测量的曲目则照常处理。`Measurement Only` 也会消除漂移，但未测量的曲目会以其原始响度播放，因此音量可能会在曲目之间跳变。
 
-Only report this if the Audio Pipeline view shows a measured loudness value in use for the track and the volume still varies during it.
+仅当音频管线视图显示该曲目正在使用已测量的响度值，且音量在其播放过程中仍然变化时，才报告此问题。
 
-## All my media is missing 
+## 我的所有媒体都丢失了
 
 确保收藏过滤器处于关闭（OFF）状态。每个视图的顶部都有一个 ❤️。确保它是空心的。
 

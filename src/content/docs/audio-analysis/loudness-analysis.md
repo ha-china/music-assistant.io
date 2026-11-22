@@ -20,9 +20,9 @@ title: 响度分析
 
 专辑级别的值仅来自这些标签或音乐提供程序。此提供程序测量的是单曲，因此除非音乐提供程序提供了专辑值，否则只有携带 `R128_ALBUM_GAIN` 或 `REPLAYGAIN_ALBUM_GAIN` 标签的曲目才能获得专辑增益。专辑标签会与曲目标签一起读取，因此带有专辑值但没有曲目值的文件将被视为完全没有响度值。关于这些值如何选择和应用，请参见[技术信息](/faq/tech-info/#volume-normalization)页面。
 
-Tracks shorter than 10 seconds, or whose measurement comes back near silence, are skipped to avoid unreliable values. A track longer than 10 minutes is still measured, using its first 10 minutes.
+时长不足 10 秒的曲目，或测量结果接近静音的曲目，会被跳过，以避免产生不可靠的值。时长超过 10 分钟的曲目仍会被测量，使用其前 10 分钟进行测量。
 
-A track measured during playback gets its value once the whole track has been read, so one that is skipped shortly after it starts, or resumed part way through, is measured on a later play instead. Until then the fallback chosen in the normalization settings applies, and with the default that can be heard as [the volume rising and falling during the track](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track).
+在播放期间测量的曲目，其值会在整首曲目被读取后获得，因此一首在开始后不久被跳过、或中途恢复播放的曲目，会在下次播放时被测量。在此之前，将应用在归一化设置中选择的备用方案，而在默认设置下，这可能会被听成[曲目播放过程中音量忽高忽低](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track)。
 
 ## 数据的使用方式
 

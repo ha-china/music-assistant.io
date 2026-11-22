@@ -6,7 +6,11 @@ import mdx from "@astrojs/mdx";
 import { remarkAlert } from "remark-github-blockquote-alert";
 import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
 import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
+import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
 import { authors } from "./src/authors.mjs";
+
+const SITE_URL = process.env.SITE_URL || "https://www.hasscn.top";
+const BASE_PATH = process.env.SITE_BASE_PATH || "/music-assistant";
 
 const SITE_URL = process.env.SITE_URL || "https://www.hasscn.top";
 const BASE_PATH = process.env.SITE_BASE_PATH || "/music-assistant";
@@ -32,6 +36,7 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkAlert],
+    rehypePlugins: [rehypeBasePath()],
     rehypePlugins: [rehypeBasePath()],
     rehypePlugins: [rehypeBasePath()],
   },
