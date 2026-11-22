@@ -65,7 +65,7 @@ Cookie 身份验证是让 YT Music 正常工作的**唯一**方式；Google 不�
 3. 安装名为 'YT Music PO Token Generator' 的应用，并确保它已启动。
 
 > [!NOTE]
-> 如果您自行托管 Music Assistant，请<a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">在此处</a>下载 PO Token 服务器的 Docker 文件。您必须运行 MA 目前支持的版本，即 1.2.1。安装并运行正确的版本，然后在第 3 步配置 YT Music 音源时添加其 URL。
+> If you host Music Assistant yourself, download the Docker file for the PO Token server <a href="https://github.com/Brainicism/bgutil-ytdlp-pot-provider" target="_blank" rel="noopener noreferrer">here</a>. Install and run its latest release, then add its URL when configuring the YT Music source in Step 3.
 
 ### 第 2 步：获取您的登录 Cookie
 

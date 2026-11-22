@@ -75,12 +75,12 @@ title: "系统设置"
 
 最佳效果来自对音频的响度测量。带有 ReplayGain 或 R128 响度值标签的曲目会直接提供该值，Music Assistant 会优先使用这些值，而不是自己进行任何测量。其余内容它都会自行测量：您的本地媒体库会在每夜后台扫描中自动测量，而任何播放的内容（包括流媒体服务）则在播放过程中进行测量，因此从第二次播放起就已覆盖。这些选项的主要区别在于尚无测量值时的处理方式：
 
-- 回退动态（Fallback Dynamic，默认）— 有测量值时使用测量值，否则即时调整响度。总能使音量趋于一致；即时调整的路径精确度略低
-- 回退固定增益（Fallback Fixed Gain）— 有测量值时使用测量值，否则应用下方的固定调整
-- 仅测量（Measurement Only）— 仅在存在测量值时进行调整。尚未分析的内容按其原始响度播放
-- 动态（Dynamic）— 始终即时调整，忽略测量值
-- 固定增益（Fixed Gain）— 从不分析；对所有内容应用相同的固定调整
-- 禁用（Disabled）— 不改变响度
+- Fallback Dynamic (default) — use the measurement when there is one, otherwise adjust loudness on the fly. Always evens things out; the on-the-fly path is slightly less precise and can be heard as [the volume drifting during a track](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track) the first time it is played
+- Fallback Fixed Gain — use the measurement when there is one, otherwise apply the fixed adjustment below
+- Measurement Only — only adjust when a measurement exists. Anything not yet analysed plays at its original loudness
+- Dynamic — always adjust on the fly, ignoring measurements
+- Fixed Gain — never analyse; apply the same fixed adjustment to everything
+- Disabled — leave loudness untouched
 
 一旦存在测量值，无论选择了两个回退选项中的哪一个，都会使用它。另外有两点值得了解：直播电台很少被测量，因此电台设置实际上运行于您选择的回退方式；此外，播放器本身也必须开启音量标准化。这些设置控制的是如何进行调整，而不是是否进行调整。关于如何选择数值，以及何时使用专辑增益而非曲目增益，请参阅[技术信息](/faq/tech-info/#volume-normalization)页面。
 

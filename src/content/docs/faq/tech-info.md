@@ -15,7 +15,7 @@ description: 有关 MA 部分功能的深入信息
 
 综上所述，默认值为 -14，在 99% 的情况下这应该是一个不错的折中方案。
 
-一般而言，不建议关闭音量标准化，因为响度水平千差万别，尤其是当音乐来自不同音源时。MA 使用基于 EBU-R128 标准的集成响度（integrated loudness）电平，只对整首曲目的增益（gain）进行上下调整，因此只要使用的值足够低以保留动态余量（headroom），就不会压缩动态范围。为音量标准化的目标电平设置合理的值是用户自己的责任，建议取介于 -23 到 -12 LUFS 之间的值。默认值设置为 -14 LUFS。音频内部以 32 位浮点格式处理，因此增益调整有动态余量可供发挥。如果希望在输出端设置硬性上限，可以在 DSP 设置中添加[安全限制器（Safety Limiter）](/dsp/#safety-limiter)滤镜。
+In general, it is not recommended to turn off the volume normalization because there are so many different loudness levels, especially if music is played from different sources. MA uses an integrated loudness level based on the EBU-R128 standard and only adjusts gain of the entire track up or down so there is no compression of dynamic range as long as you use a value low enough to keep headroom. It's the user's responsibility to use sane values for the target level of the volume normalization, a value somewhere between -23 and -12 LUFS is recommended. The default value is set to -14 LUFS. Audio is processed internally as 32 bit floating point, so the gain adjustment has headroom to work in. When normalization raises a track's level, a limiter with a -2 dB ceiling follows that gain, so the peaks that would otherwise clip are turned down while the track still plays at the target loudness. When DSP is enabled for the player (and for every speaker in its group), the limiter is left out and the DSP settings are in charge; a [Safety Limiter](/dsp/#safety-limiter) filter can be added there to keep a hard ceiling on the output.
 
 如果音频只来自单一音源（例如 Deezer），并且该音源已对其音频文件进行了标准化，那么在 MA 中禁用标准化是安全的。如果音频来自不同音源，或者音源未对音频进行标准化，则强烈建议保持标准化开启以获得最佳体验。有些音源（其中包括 Spotify）会按自己设定的响度目标交付音频，并将这一点告知 MA。这些流会保持原样不做处理，并且[音频流水线（Audio Pipeline）](/audiopipeline/)视图会将标准化显示为来自音源。
 
@@ -30,7 +30,7 @@ MA 需要先获得某首曲目以 LUFS 为单位的集成响度值，才能计�
 
 标签和提供方提供的值优先于 MA 自身的测量结果，已经带有此类值的曲目完全不会被分析。标签会在曲目扫描入库时读取。如果之后添加或修改了标签，请对曲目使用**刷新条目**（Refresh item）来获取新值。
 
-只要从上述任一来源获得了值，就会被使用——无论在 [**设置 → 系统 → 流 → 队列播放**](/settings/core/#queue-playback) 下选择了哪种方法——除非该方法为动态（Dynamic）、固定增益（Fixed Gain）或禁用（Disabled）。除此之外，这些方法的区别仅在于尚无可用值时的行为。当没有值存在且所选方法允许时，MA 会回退到动态标准化器，其准确性较低，但至少能防止音量水平出现突然的下降或飙升。
+Once a value exists from any of these sources it is used, whichever method is selected under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback), unless that method is Dynamic, Fixed Gain or Disabled. The methods otherwise differ only in what happens while no value is available yet. Where no value exists and the method allows it, MA falls back to a dynamic normalizer, which is less accurate but will at least prevent a sudden drop or spike in the volume level. Because it adjusts the gain continuously, the volume can be heard to drift within a track until that track has been measured, which is covered under [the volume rises and falls during a track](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track).
 
 ### 曲目增益与专辑增益
 

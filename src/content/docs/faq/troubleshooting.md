@@ -29,7 +29,9 @@ description: 常见问题与解决方法
 
 **播放。** 如果播放器已被发现并启动，但出现卡顿、中断、曲目之间有间隙或显示屏上不显示任何内容，请参阅下方的[播放器能播放，但播放不正常](#the-player-plays-but-not-properly)。
 
-**身份验证。** 如果是音乐源的问题且该源需要身份验证，请清除身份验证并重新登录。
+**Volume drifting during a track.** If the volume rises and falls within a track the first time you play it, that is expected. See [the volume rises and falls during a track](#the-volume-rises-and-falls-during-a-track) below.
+
+**Authentication.** If it is a music source issue and the source requires authentication then clear the authentication and re-login.
 
 **浏览器。** 如果是前端问题，或者与登录需要重定向到其他网站的提供程序或源有关，请尝试使用其他浏览器。如果您在移动设备上尝试，请在笔记本电脑或 PC 上试试。已知 Firefox 和 Safari 存在一些缺陷。
 
@@ -99,7 +101,31 @@ description: 常见问题与解决方法
 
 如果这些方法都不起作用，请查看[您的播放器提供程序页面](/player-support/)。每个页面都有一个“已知问题”部分，其中一些还包含针对该设备特有问题的故障排除步骤。
 
-## 我的所有媒体都丢失了 
+## The volume rises and falls during a track
+
+This is [volume normalization](/faq/tech-info/#volume-normalization) working without a loudness measurement. It is expected the first time a track is played and it is not a bug, so please do not open an issue for it.
+
+Until Music Assistant has measured a track it adjusts the loudness on the fly, which can be heard as the volume drifting. Most often a quiet intro is lifted and then pulled back when the track gets loud. The track is measured during that first play by the [Loudness Analysis](/audio-analysis/loudness-analysis/) provider, and once the measurement exists a single fixed adjustment is used for the whole track and the variation goes away. Local files are also measured in a nightly background scan, so this mostly affects tracks from streaming services that you have not played before.
+
+A few things follow from how the measurement is made:
+
+- A track that is skipped shortly after it starts may not have been measured yet. It is measured on a later play instead
+- A track that is resumed part way through is not measured on that play
+- Seeking within a track on its first play can produce a single step in volume, as the track changes over from the on the fly adjustment to the measured one
+
+The [Audio Pipeline](/audiopipeline/) view shows the normalization in use for the current track and where the loudness value came from.
+
+If it keeps happening on tracks you have already played through:
+
+**The method is set to Dynamic.** This always adjusts on the fly and ignores measurements. Change it to `Fallback Dynamic` under [**Settings → System → Streams → Queue Playback**](/settings/core/#queue-playback).
+
+**It is a radio station.** Live radio is rarely measured, so it stays on whichever fallback the radio setting uses.
+
+**You would rather never hear it.** Set the method to `Fallback Fixed Gain`. Tracks without a measurement then play with the same fixed adjustment from start to finish, and measured tracks are handled as before. `Measurement Only` also removes the drift, but unmeasured tracks play at their original loudness, so the volume can jump from one track to the next.
+
+Only report this if the Audio Pipeline view shows a measured loudness value in use for the track and the volume still varies during it.
+
+## All my media is missing 
 
 确保收藏过滤器处于关闭（OFF）状态。每个视图的顶部都有一个 ❤️。确保它是空心的。
 

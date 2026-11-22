@@ -8,11 +8,11 @@ description: Music Assistant 的常见用法
 
 ## 如何使用音量标准化？它的工作原理是什么？
 
-当一首曲目被 MA 播放过一次后，系统会保留相关数据，以便对所有正在播放的曲目进行音量标准化。MA 中的这项设置就是音量标准化的目标电平。MA 不会压缩动态范围（因为那样会损害音质），而只是根据 EBU R128 标准测得的整首曲目整体响度来调整其增益。负值的绝对值越大，曲目通常听起来越轻，但也会留下很大的动态余量。不过，就每首单独的曲目而言，增益可能会升高或降低，以确保所有已播放曲目的整体响度都处于所选电平。建议使用 -23 到 -12 LUFS 之间的值，默认值为 -14 LUFS。**不要**将其设置得过高（接近零），因为削波会导致你的音乐听起来失真。
+After a track has been played by MA once then data is retained for volumes to be normalised across all tracks being played. The setting in MA is the target level for the volume normalisation. MA does not compress the dynamic range (because that is bad for quality) but just adjusts the gain of the entire track based on its overall loudness as measured by the EBU R128 standard. When a track is raised, a limiter catches the peaks that would otherwise clip. A greater negative value will typically make the track sound less loud but leaves a lot of headroom. However, for each individual track the gain could rise or fall to ensure that the overall loudness of all tracks played is at the selected level. It is recommended to use a value between -23 and -12 LUFS, and the default is -14 LUFS. **Do not** set it too high (close to zero) because that can make your music sound distorted due to clipping.
 
 方法、目标电平和固定增益值可在 [**设置 → 系统 → 流媒体 → 队列播放**](/settings/core/#queue-playback) 中设置。标准化的开关位于 [**设置 → 系统 → 播放器队列**](/settings/core/#player-queues) 下，并且可以为[单个队列](/usage/#the-queue)单独覆盖。
 
-更多详情见[这里](/faq/tech-info/#volume-normalization)
+More details [here](/faq/tech-info/#volume-normalization). If the volume rises and falls within a track the first time you play it, see [Troubleshooting](/faq/troubleshooting/#the-volume-rises-and-falls-during-a-track).
 
 ## 更换房间时让音乐继续播放
 
