@@ -59,6 +59,10 @@ jobs:
           # permission is not grantable), so keep our workflows exactly as
           # they were before the merge and fold that into the merge commit.
           if ! git diff --quiet "$PRE" HEAD -- .github/workflows; then
+            # checkout alone cannot drop files upstream ADDED (they are not
+            # in $PRE); remove those first, then restore our set exactly.
+            git diff --name-only --diff-filter=ACMR -z "$PRE" HEAD -- .github/workflows |
+              while IFS= read -r -d '' f; do git rm -q -f -- "$f" || true; done
             git checkout "$PRE" -- .github/workflows
             git commit --amend --no-edit
           fi
