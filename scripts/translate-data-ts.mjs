@@ -85,6 +85,14 @@ const FILES = ["src/data/music-sources.ts", "src/data/players.ts"];
 
 for (const file of FILES) {
   const original = await readFile(file, "utf8");
+  // Upstream only resets these to English when it actually touches them;
+  // when it doesn't, the committed file is already Chinese. Re-translating
+  // Chinese → Chinese wastes minutes of LLM time (and burns rate limit)
+  // for no benefit, so skip anything that already carries Chinese text.
+  if (/[\u4e00-\u9fff]/.test(original)) {
+    console.log(`already Chinese, skipping ${file}`);
+    continue;
+  }
   let translated;
   for (let attempt = 1; attempt <= 3; attempt++) {
     const params = {
