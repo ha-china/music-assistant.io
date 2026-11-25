@@ -1,5 +1,4 @@
 ---
-import { withBase } from "../../lib/base";
 import AppWindow from "../marketing/ui/AppWindow.astro";
 ---
 
@@ -19,8 +18,8 @@ import AppWindow from "../marketing/ui/AppWindow.astro";
 
     <div class="product">
       <AppWindow
-        src={withBase("/assets/landing/discover-dark.webp")}
-        srcLight={withBase("/assets/landing/discover-light.webp")}
+        src={"/assets/landing/discover-dark.webp"}
+        srcLight={"/assets/landing/discover-light.webp"}
         alt="Music Assistant 的“发现”界面：不同房间的音箱正在播放，显示精选与最近播放"
         width={2400}
         height={1500}

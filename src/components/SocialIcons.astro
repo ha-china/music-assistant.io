@@ -1,9 +1,8 @@
 ---
-import { withBase } from "../lib/base";
 import Default from "@astrojs/starlight/components/SocialIcons.astro";
 ---
 
-<a href={withBase("/blog/")} class="blog-link">News</a>
+<a href={"/blog/"} class="blog-link">News</a>
 <Default {...Astro.props}><slot /></Default>
 
 <style>

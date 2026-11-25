@@ -1,5 +1,4 @@
 ---
-import { withBase } from "../../lib/base";
 import AppWindow from "../marketing/ui/AppWindow.astro";
 import Icon from "../marketing/ui/Icon.astro";
 import Section from "../marketing/ui/Section.astro";
@@ -45,15 +44,15 @@ const points = [
     </div>
     <div class="shots" data-reveal style="--reveal-delay: 120ms">
       <AppWindow
-        src={withBase("/assets/landing/albums-dark.webp")}
-        srcLight={withBase("/assets/landing/albums-light.webp")}
+        src={"/assets/landing/albums-dark.webp"}
+        srcLight={"/assets/landing/albums-light.webp"}
         alt="Music Assistant 的专辑资料库：专辑封面网格"
         width={1800}
         height={1125}
       />
       <AppWindow
-        src={withBase("/assets/landing/now-playing-mobile-dark.webp")}
-        srcLight={withBase("/assets/landing/now-playing-mobile-light.webp")}
+        src={"/assets/landing/now-playing-mobile-dark.webp"}
+        srcLight={"/assets/landing/now-playing-mobile-light.webp"}
         alt="手机上的“正在播放”界面：专辑封面、进度条与播放控制"
         width={640}
         height={1385}

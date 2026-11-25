@@ -1,6 +1,4 @@
 ---
-import { withBase } from "../lib/base";
-import { withBase } from "../lib/base";
 import Step from "../components/get-started/Step.astro";
 import Steps from "../components/get-started/Steps.astro";
 import Button from "../components/marketing/ui/Button.astro";
@@ -65,7 +63,7 @@ const nextSteps = [
         <div class="method-head">
           <span class="method-icon brand">
             <img
-              src={withBase("/assets/landing/brands/hass_players.svg")}
+              src={"/assets/landing/brands/hass_players.svg"}
               alt=""
               width="32"
               height="32"
@@ -103,7 +101,7 @@ const nextSteps = [
           <Button href={openInHomeAssistant} trailingIcon="arrow-up-right" external>
             Open in Home Assistant
           </Button>
-          <a class="text-link" href={withBase("/integration/installation/")}>
+          <a class="text-link" href={"/integration/installation/"}>
             Add the integration <Icon name="arrow-right" size={16} />
           </a>
         </div>
@@ -146,7 +144,7 @@ const nextSteps = [
           </Step>
         </Steps>
         <div class="method-actions">
-          <a class="text-link" href={withBase("/installation/#docker-image")}>
+          <a class="text-link" href={"/installation/#docker-image"}>
             Full Docker guide <Icon name="arrow-right" size={16} />
           </a>
         </div>
@@ -175,7 +173,7 @@ const nextSteps = [
     </section>
 
     <p class="help">
-      遇到问题？<a href={withBase("/installation/")}>阅读安装指南</a>，或在{" "}
+      遇到问题？<a href={"/installation/"}>阅读安装指南</a>，或在{" "}
       <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer">Discord 上提问</a>。
     </p>
   </div>

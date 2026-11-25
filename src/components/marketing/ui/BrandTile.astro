@@ -1,6 +1,5 @@
 ---
 import type { Brand } from "../../../data/marketing";
-import { withBase } from "../../../lib/base";
 
 interface Props {
   brand: Brand;
@@ -11,11 +10,11 @@ const { brand } = Astro.props;
 <li>
   <a
     class:list={["brand-tile", { "is-dark": brand.dark }]}
-    href={withBase(brand.href)}
+    href={brand.href}
     title={brand.name}
   >
     <img
-      src={withBase(`/assets/landing/brands/${brand.icon}.svg`)}
+      src={`/assets/landing/brands/${brand.icon}.svg`}
       alt={brand.name}
       width="28"
       height="28"

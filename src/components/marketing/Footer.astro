@@ -1,5 +1,4 @@
 ---
-import { withBase } from "../../lib/base";
 import Logo from "./ui/Logo.astro";
 
 const columns = [
@@ -38,7 +37,7 @@ const isExternal = (href: string) => href.startsWith("http");
   <div class="container">
     <div class="top">
       <div class="about">
-        <a href={withBase("/")} class="home" aria-label="Music Assistant 首页">
+        <a href={"/"} class="home" aria-label="Music Assistant 首页">
           <Logo />
         </a>
         <p>

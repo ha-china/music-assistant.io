@@ -1,5 +1,4 @@
 ---
-import { withBase } from "../../lib/base";
 import { team } from "../../data/marketing";
 import Button from "../marketing/ui/Button.astro";
 import Cover from "../marketing/ui/Cover.astro";
@@ -28,7 +27,7 @@ import Section from "../marketing/ui/Section.astro";
         >
           View on GitHub
         </Button>
-        <Button href={withBase("/help/")} variant="secondary">
+        <Button href={"/help/"} variant="secondary">
           Help or donate
         </Button>
       </div>
@@ -48,7 +47,7 @@ import Section from "../marketing/ui/Section.astro";
               <div class="portrait">
                 {person.image ? (
                   <img
-                    src={withBase(`/assets/team/${person.image}.png`)}
+                    src={`/assets/team/${person.image}.png`}
                     alt=""
                     width="200"
                     height="200"

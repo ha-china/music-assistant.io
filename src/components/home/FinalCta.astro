@@ -1,5 +1,4 @@
 ---
-import { withBase } from "../../lib/base";
 import Button from "../marketing/ui/Button.astro";
 import Section from "../marketing/ui/Section.astro";
 ---
@@ -12,10 +11,10 @@ import Section from "../marketing/ui/Section.astro";
       your music and speakers.
     </p>
     <div class="actions">
-      <Button href={withBase("/get-started/")} size="lg" trailingIcon="arrow-right">
+      <Button href={"/get-started/"} size="lg" trailingIcon="arrow-right">
         Get Music Assistant
       </Button>
-      <Button href={withBase("/documentation/")} variant="secondary" size="lg">
+      <Button href={"/documentation/"} variant="secondary" size="lg">
         Read the documentation
       </Button>
     </div>
