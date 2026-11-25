@@ -5,27 +5,15 @@ import starlightBlog from "starlight-blog";
 import mdx from "@astrojs/mdx";
 import { remarkAlert } from "remark-github-blockquote-alert";
 import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
-import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
-import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
-import { rehypeBasePath } from "./scripts/rehype-base-path.mjs";
 import { authors } from "./src/authors.mjs";
-
-const SITE_URL = process.env.SITE_URL || "https://www.hasscn.top";
-const BASE_PATH = process.env.SITE_BASE_PATH || "/music-assistant";
-
-const SITE_URL = process.env.SITE_URL || "https://www.hasscn.top";
-const BASE_PATH = process.env.SITE_BASE_PATH || "/music-assistant";
-
-const SITE_URL = process.env.SITE_URL || "https://www.hasscn.top";
-const BASE_PATH = process.env.SITE_BASE_PATH || "/music-assistant";
-
-const isProduction =
-  process.env.CONTEXT === "production" || !process.env.CONTEXT;
 
 // Chinese mirror deployment: served from hasscn.top/music-assistant. Both
 // overridable so the upstream root deploy keeps working from this branch.
 const SITE_URL = process.env.SITE_URL || "https://www.hasscn.top";
 const BASE_PATH = process.env.SITE_BASE_PATH || "/music-assistant";
+
+const isProduction =
+  process.env.CONTEXT === "production" || !process.env.CONTEXT;
 
 // https://astro.build/config
 export default defineConfig({
@@ -40,9 +28,6 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkAlert],
-    rehypePlugins: [rehypeBasePath()],
-    rehypePlugins: [rehypeBasePath()],
-    rehypePlugins: [rehypeBasePath()],
     rehypePlugins: [rehypeBasePath()],
   },
   integrations: [

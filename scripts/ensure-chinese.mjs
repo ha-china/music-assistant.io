@@ -29,7 +29,9 @@ run("scripts/translate-capabilities.mjs");
 // 2. astro.config.mjs structural values the upstream side resets.
 {
   const path = join0(root, "astro.config.mjs");
-  let text = readFileSync(path, "utf8");
+  // Normalize CRLF so the \n-based patterns below match regardless of how
+  // the file was checked out (git on Windows writes CRLF to the worktree).
+  let text = readFileSync(path, "utf8").replace(/\r\n/g, "\n");
   const pairs = [
     [
       'import { remarkAlert } from "remark-github-blockquote-alert";',
@@ -41,7 +43,9 @@ run("scripts/translate-capabilities.mjs");
     ],
     [
       'site: "https://www.music-assistant.io",',
-      'site: SITE_URL,\n  base: BASE_PATH,\n  i18n: {\n    defaultLocale: "root",\n    locales: {\n      root: { label: "简体中文", lang: "zh-CN" },\n    },\n  },',
+      // site/base only — language is handled by starlight's locales below
+      // (an astro-level i18n object is invalid here and breaks the build).
+      'site: SITE_URL,\n  base: BASE_PATH,',
     ],
     [
       "remarkPlugins: [remarkAlert],",
@@ -58,6 +62,11 @@ run("scripts/translate-capabilities.mjs");
     ],
   ];
   for (const [en, zh] of pairs) {
+    // Idempotency: check for the RESULT first. Some anchors ("const
+    // isProduction =", the remarkPlugins line) are valid in the Chinese
+    // config too, so anchor-presence alone would re-apply — and accumulate
+    // duplicates — on every run.
+    if (text.includes(zh)) continue;
     if (!text.includes(en)) continue;
     text = text.split(en).join(zh);
   }
@@ -90,8 +99,8 @@ run("scripts/translate-capabilities.mjs");
       );
     }
   }
-  if (!text.includes('defaultLocale: "root"')) {
-    console.warn("WARN: astro.config.mjs still lacks the zh-cn i18n block");
+  if (!text.includes('lang: "zh-CN"')) {
+    console.warn("WARN: astro.config.mjs still lacks the zh-cn starlight locale");
   }
   writeFileSync(path, text);
   console.log("astro.config.mjs chrome re-applied");
