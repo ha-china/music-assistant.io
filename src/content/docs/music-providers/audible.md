@@ -4,11 +4,14 @@ title: "Audible"
 
 # Audible <img src="/assets/icons/audible-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant 支持从 Audible 进行流媒体播放。由 <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a> 贡献并维护
+Music Assistant has support for streaming from Audible. This component was contributed by <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a>.
 
 Audible 是 Amazon 的有声读物服务。每月额度或直接购买即可获得一本书目，你拥有的所有内容都会保存在账户资料库中。
 
 连接你的账户后，该资料库就会出现在 Music Assistant 中。你在书中听到的地方会从 Audible 官方应用同步过来，因此你可以从同一位置继续收听。
+
+> [!CAUTION]
+> Please be advised that this source currently has no dedicated maintainer. Issues may take longer to resolve as this will be maintained on a best effort basis.
 
 > [!NOTE]
 > 此提供商需要付费订阅

@@ -44,9 +44,9 @@ Squeezelite 播放器没有采样率设置，因为每个播放器都会报告�
 
 ## 已知问题 / 注意事项
 
-- MA 中此提供程序的重点是支持软件 Squeezelite 客户端的使用（例如 <a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">piCorePlayer</a>）。据反馈，老旧的原始 Squeezebox 硬件可以使用，但也有分组方面存在问题的反馈。MA 核心团队无法投入资源让这些设备的运行效果比现在更好。不过，欢迎向 <a href="https://github.com/home-assistant-libs/aioslimproto" target="_blank" rel="noopener noreferrer">aioslimproto 库</a> 和/或 MA 中的 squeezelite 提供程序提交用于增强支持的 PR
-- 在启用 MA Squeezelite 提供程序的情况下，将 LMS 与 MA 运行在同一台服务器上可能会产生不良影响。Slimproto 所用端口的默认设置为 3483。可以在该提供程序的设置中更改此端口，但非默认端口无法与较旧的硬件 Squeezebox 播放器配合使用。 
-- 确保你没有在 Home Assistant 中运行 "slimproto"（Squeezebox 播放器）集成
-- 通常情况下，除非使用的是在曲目切换方面有问题的旧款 Squeezebox 硬件播放器，否则不要使用队列流模式。启用队列流模式可能会解决播放问题，但其副作用可能是禁用设备上的实际物理按钮和/或元数据显示
-- Squeezelite 设备没有原生的静音功能。如有需要，可以使用 "伪静音"（fake mute）控制选项，该选项位于每个单独播放器的 `Player Controls` 部分中
-- Squeezelite 同步组会向所有成员发送 flow 音频流。主格式由领导播放器的流模式采样率设置决定（受限于领导播放器所支持的采样率）；随后每个成员接收该采样率，如果其自身支持的最大采样率更低，则接收其自身的最大采样率
+- The focus of this provider in MA is to support the use of software Squeezelite clients (e.g. <a href="https://www.picoreplayer.org/" target="_blank" rel="noopener noreferrer">piCorePlayer</a>). Old original Squeezebox hardware is reported to work although there are reported issues with grouping. The MA core team cannot afford to expend resources on making these devices work any better than they do now. PRs to enhance support, however, are welcomed to the <a href="https://github.com/home-assistant-libs/aioslimproto" target="_blank" rel="noopener noreferrer">aioslimproto library</a> and/or the squeezelite provider in MA
+- Running LMS on the same server as MA with the MA Squeezelite provider enabled can have undesired effects. The default setting for the port used by Slimproto is 3483. This can be changed in the settings for this provider, but non-default ports will not work with older hardware squeezebox players. 
+- Make sure that you do not have the "slimproto" (Squeezebox players) integration running in Home Assistant
+- Ordinarily do not use queue flow mode unless using older Squeezebox hardware player that has issues transitioning. Enabling queue flow mode may solve playback issues, however, it might come with the side effect of disabling actual physical buttons on the device itself. On a device with a display, the metadata (title, artist and artwork) and the position tracking (elapsed and remaining time and the progress bar) are only correct for the first track: once the stream moves on to the next track the device keeps showing the first track's details and the position shown is wrong
+- Squeezelite devices have no native mute functionality. If desired the "fake mute" control option can be used and this is found in the `Player Controls` section for each individual player
+- Squeezelite sync groups send a flow stream to all members. The master format is chosen from the leader player's Flow Mode sample rate setting (bounded by the leader's supported rates); each member then receives that rate, or its own maximum supported rate if lower

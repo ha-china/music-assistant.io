@@ -171,7 +171,11 @@ Spotify 音频可以通过两种不同的引擎播放。你在添加该提供商
 > 请从登录了与你第一步中所连接**相同账户**的 Spotify 应用进行配对，这样你的音乐库和音频才会来自同一个地方。Music Assistant 会对此进行检查，如果账户不匹配，会要求你重新配对。
 
 > [!NOTE]
-> 看不到 `Music Assistant Pairing`？请确保运行 Spotify 应用的设备与 Music Assistant 服务器处于同一网络。
+> Not seeing `Music Assistant Pairing`, or stuck on "Connecting"? Make sure the device running the Spotify app is on the same network as the Music Assistant server.
+>
+> If it is, the likely cause is Docker networking. Both the Home Assistant app and the Docker container share their host's networks, and these usually include internal Docker networks your phone or computer cannot reach. Soloist cannot be limited to one network, so it announces `Music Assistant Pairing` on all of them, and the Spotify app may try one of the unreachable addresses. The device then never appears, or it hangs on "Connecting" until the setup times out.
+>
+> Which address gets used varies, so it is worth another go. Run the setup again and pair from a different device: a phone instead of a computer, or the other way round. Keep trying until one connects. You only need to pair once.
 
 ### 可选：添加个人 Client ID
 
@@ -195,12 +199,12 @@ Music Assistant 与所有其他用户共享来自 Spotify 的同一个配额，�
 
 ## 已知问题 / 注意事项
 
-- 需要 Premium 订阅，包括 Duo 和 Family 套餐。免费账户无法使用
-- 2024 年 12 月左右及之后创建的账户通常无法通过 librespot 播放，一些较旧的账户也会受到影响。如果播放失败且日志中出现 `Key Error` 消息，那就是该问题的症状 —— 请改用 Spotify Soloist
-- Spotify Soloist 无法在带有 Docker 桥接（bridge）网络的主机上使用  
-- 每个 Spotify Soloist 账户一次只能播放一个内容。在第二个播放器上启动 Spotify 时会要求你停止第一个播放器；将第二个 Spotify 账户作为单独的音乐源添加，则它会拥有自己的会话
-- 在 Spotify Soloist 播放期间，Music Assistant 会在你的 Spotify 应用中显示为一个名为 `Music Assistant Playback` 的设备。在该设备上暂停或跳过曲目会干扰播放，因此请使用 Music Assistant 自带的控制功能
-- 使用 Spotify Soloist 时，启动队列或进度跳转比使用 librespot 稍慢
-- 首次保存该音乐源时，Music Assistant 会检查你的账户是否包含有声读物。如果包含，下次打开设置时会出现有声读物相关选项
-- Spotify 不会向 Music Assistant 提供任何推荐内容，因此"发现"（Discover）视图中不会出现任何来自 Spotify 的内容
-- Spotify 不会告知 Music Assistant 任何内容的流派信息
+- Premium is required, including Duo and Family. Free accounts will not work
+- Accounts created around December 2024 and later generally cannot play through librespot, and some older accounts are affected too. If playback fails and you see `Key Error` messages in the log, that is the symptom — choose Spotify Soloist instead
+- On Docker and Home Assistant installs, Soloist pairing can fail because `Music Assistant Pairing` is also announced on internal Docker networks. See the note under [Setting up Spotify Soloist](#setting-up-spotify-soloist)
+- Each Spotify Soloist account plays one thing at a time. Starting Spotify on a second player asks you to stop the first one; a second Spotify account added as its own source has a session of its own
+- While Spotify Soloist is playing, Music Assistant shows up in your Spotify app as a device called `Music Assistant Playback`. Pausing or skipping there interferes with playback, so use Music Assistant's own controls
+- With Spotify Soloist, starting a queue or seeking takes a little longer than with librespot
+- When you first save the source, Music Assistant checks whether your account has audiobooks. If it does, audiobook options appear the next time you open the settings
+- Spotify does not give Music Assistant any recommendations, so the Discover view will have nothing from Spotify in it
+- Spotify does not tell Music Assistant what genre anything is

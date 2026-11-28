@@ -433,7 +433,9 @@ CUE Sheet 需要：
 
 - `FILE` - 如果 CUE Sheet 与音频文件共享相同的主文件名（例如 `album.cue` 与 `album.flac` 并存），则可以省略。
 
-其他所有内容（专辑标题、艺术家、年份、流派、封面图片、MBID）均继承自音频文件自身的标签。
+Only CUE Sheets that describe a single audio file are supported. A CUE Sheet with more than one `FILE` line (for example one left behind by a rip to one file per track) is ignored, and its audio files are imported as regular tracks using their own tags.
+
+Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
 
 如果音频文件也没有专辑/艺术家标签，则最低要求增加为：
 

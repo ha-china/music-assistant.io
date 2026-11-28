@@ -79,7 +79,7 @@ tags:
 ### "Master of Puppets"
 <h4 style="margin-top: -0.25em; opacity: .67;">Home Assistant 改进</h4>
 
-Home Assistant 从设计之初就旨在与 Music Assistant 无缝协作，而且这种协作只会越来越好。在 [Home Assistant 2024.12 版本](https://www.home-assistant.io/blog/2024/12/04/release-202412/#new-integrations)中，我们为社区送上了一份圣诞礼物——Music Assistant 从 HACS 迁移为原生集成（[如果你尚未迁移，请尽快迁移](https://www.music-assistant.io/integration/migrate/)）。
+Home Assistant was always designed to work seamlessly with Music Assistant, and it's only getting better. In the [Home Assistant 2024.12 release](https://www.home-assistant.io/blog/2024/12/04/release-202412/#new-integrations), we gave the community a Christmas present--Music Assistant moved from HACS [now built into Home Assistant as the [Marketplace](https://www.home-assistant.io/blog/2026/11/04/release-202611/)] to being a native integration ([please migrate if you haven't yet](https://www.music-assistant.io/integration/migrate/)).
 
 现在许多人会先把所有播放器添加到 Music Assistant，然后再将 Music Assistant 与 Home Assistant 集成，从而无需单独添加每台设备。最新版本增加了把任意播放器控制（包括音量以及开/关机）外包给 Home Assistant 实体（entity）的功能。两者搭配使用还有其他好处，例如 Music Assistant 可以在播报（announcement）之后[恢复音频播放](https://www.music-assistant.io/integration/announcements/)，或者使用 Assist 查找并播放歌曲（[无论是否使用 LLM](https://github.com/music-assistant/voice-support)）。
 
