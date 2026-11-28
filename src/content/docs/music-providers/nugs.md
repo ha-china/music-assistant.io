@@ -4,11 +4,13 @@ title: "Nugs.net"
 
 # Nugs.net <img src="/assets/icons/nugsnet-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming your music from <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a>. Contributed and maintained by <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a>
-
+Music Assistant has support for streaming your music from <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a>. This component was contributed by <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a>.
 Nugs.net is a subscription service for live concert recordings, run with the artists themselves. Its catalogue leans towards acts with a long history of taped shows, and many concerts appear soon after they are played.
 
 This source signs Music Assistant in to your account, so the shows you have access to appear in your library.
+
+> [!CAUTION]
+> Please be advised that this source currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis. Consider sharing your music directly with MA instead
 
 > [!NOTE]
 > A paid subscription is required to use this source
