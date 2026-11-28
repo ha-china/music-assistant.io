@@ -11,7 +11,7 @@ Nugs.net is a subscription service for live concert recordings, run with the art
 This source signs Music Assistant in to your account, so the shows you have access to appear in your library.
 
 > [!CAUTION]
-> Please be advised that this source currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis.
+> Please be advised that this source currently has no dedicated maintainer. Issues may take longer to resolve as this will be maintained on a best effort basis.
 
 > [!NOTE]
 > A paid subscription is required to use this source

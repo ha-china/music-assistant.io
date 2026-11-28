@@ -11,7 +11,7 @@ Audible is Amazon's audiobook service. A monthly credit or a direct purchase buy
 Connecting your account puts that library inside Music Assistant. Where you got to in a book comes across from Audible's own apps, so you carry on from the same place.
 
 > [!CAUTION]
-> Please be advised that this source currently has no dedicated developer. Issues may take longer to resolve as this will be maintained on a best effort basis.
+> Please be advised that this source currently has no dedicated maintainer. Issues may take longer to resolve as this will be maintained on a best effort basis.
 
 > [!NOTE]
 > A paid subscription is required for this provider
