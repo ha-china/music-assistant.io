@@ -5,6 +5,7 @@ title: "Audible"
 # Audible <img src="/assets/icons/audible-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
 Music Assistant has support for streaming from Audible. This component was contributed by <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a>.
+
 Audible is Amazon's audiobook service. A monthly credit or a direct purchase buys you a title, and everything you own stays in your account library.
 
 Connecting your account puts that library inside Music Assistant. Where you got to in a book comes across from Audible's own apps, so you carry on from the same place.
