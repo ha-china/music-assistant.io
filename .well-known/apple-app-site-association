@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "5J5R9QK64D.io.music-assistant.client",
+          "GUYFAK8DC6.io.music-assistant.mobile-client"
+        ],
+        "components": [{ "/": "/app/*" }]
+      }
+    ]
+  }
+}

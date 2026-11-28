@@ -1,0 +1,856 @@
+<!DOCTYPE html><html lang="zh-CN" dir="ltr" data-theme="dark" data-has-toc data-has-sidebar class="astro-ui3qboqa"> <head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>本地文件 - Music Assistant</title><link rel="canonical" href="https://www.hasscn.top/music-assistant/music-providers/local-files/"/><link rel="sitemap" href="/music-assistant/sitemap-index.xml"/><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Music Assistant","applicationCategory":"MultimediaApplication","operatingSystem":"Linux","description":"Music library manager for your offline and online music sources","url":"https://www.hasscn.top/music-assistant/","author":{"@type":"Organization","name":"Open Home Foundation","url":"https://www.openhomefoundation.org/"}}</script><link rel="icon" href="/music-assistant/favicon.svg"/><script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js?id=3MhQABjxy4RZQ6Ig&amp;ck=3MhQABjxy4RZQ6Ig"></script><script>document.addEventListener('keydown', function(e) {
+						if (e.key === '/' && !['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) {
+							e.preventDefault();
+							document.querySelector('button[data-open-modal]')?.click();
+						}
+					});</script><link href="https://www.hasscn.top/music-assistant/blog/rss.xml" rel="alternate" title="新闻" type="application/rss+xml"/><link rel="shortcut icon" href="/music-assistant/favicon.svg" type="image/svg+xml"/><meta name="generator" content="Astro v6.3.3"/><meta name="generator" content="Starlight v0.38.5"/><meta property="og:title" content="本地文件"/><meta property="og:type" content="article"/><meta property="og:url" content="https://www.hasscn.top/music-assistant/music-providers/local-files/"/><meta property="og:locale" content="zh-CN"/><meta property="og:description" content="文件系统音乐源的功能、配置、问题及更多内容"/><meta property="og:site_name" content="Music Assistant"/><meta name="description" content="文件系统音乐源的功能、配置、问题及更多内容"/><meta name="robots" content="index, follow"/><meta property="og:image" content="https://www.hasscn.top/music-assistant/assets/website-social.png"/><meta name="twitter:image" content="https://www.hasscn.top/music-assistant/assets/website-social.png"/><meta name="twitter:card" content="summary_large_image"/><!-- prettier-ignore --><script async src="https://plausible.openhomefoundation.org/js/pa-Dnap0nCCcvD7asrOUpyy_.js"></script> <script>(function(){const allowedReferrers = ["01net.com","1140369499-atari-embeds.googleusercontent.com","1ms.run","360.cn","3dmart.com.hk","3dpm.ru","4pda.to","a2t.ro","abfalltermine.de","acciyo.com","adaptive-lighting.nijho.lt","adonno.com","agsi.gie.eu","aio-libs.org","air-q.com","airgradient.com","akamatis.com","akkudoktor.net","alarmy-olomouc.eu","alkly.de","all3dp.com","alvinchen.club","alza.cz","amazon.com","ameridroid.com","amplipi.discourse.group","androidauthority.com","androidpolice.com","api.daily.dev","api.home-connect.com","api.mcs3.miele.com","api.smartthings.com","apolloautomation.com","app.aevocam.com","app.parqet.com","appleid.apple.com","apps.garmin.com","apps.yunohost.org","arstechnica.com","askubuntu.com","asustor.com","atomic14.com","audiosciencereview.com","auth.tesla.com","authelia.com","automatedhome.co.uk","auweb3.isolarcloud.com","avenom.ru","awesome-ha.com","badrpc.net","bafista.ru","baidu.com","baidu.io","banglejs.com","basehim.com","bazmac.me","bbs.hassbian.com","bbs.io-tech.fi","bega.com","berrybase.de","better-thermostat.org","billboard.com.br","bindicator.net","bing.com","bitbucket.org","blog.decryption.net.au","blog.disane.dev","blog.eischmann.cz","blog.fidelramos.net","blog.frankel.ch","blog.fxpblogs.win","blog.iot7m.ru","blog.kastanis.gr","blog.matterxiaomi.com","blog.meyerrj.com","blog.michivonah.ch","blog.oppedahl.com","blog.slabnet.com","blog.tindie.com","blog.tomayac.com","blog.uaid.net.ua","blog.vyoralek.cz","blogspot.com","botland.com.pl","botland.de","braiins.com","brandlogos.org","bricozone.be","broddin.be","bsky.app","bthome.io","buildroot.org","byteoversea.com","card.camera","cb.wjz.im","cdninstagram.com","cgx13.de","chat.novaapp.ai","chat.qwen.ai","chatgpt.com","check.anomify.ai","chip.de","chuck-builds.com","chytrevypinace.cz","ci.computer","claude.ai","clausio.fr","cloud.bemfa.com","cloud.vento.build","cloudfree.shop","clubic.com","cn.d5render.com","cnblogs.com","cnet.com","cnx-software.com","cnx-software.ru","coccoc.com","codeberg.org","codechimp.org","coinforum.de","community-smarthome.com","community.asti.ga","community.evnex.com","community.hubitat.com","community.openhab.org","community.shelly.cloud","community.victronenergy.com","computerbase.de","connexion.hiloenergie.com","coolify.io","copilot.com","copilot.microsoft.com","couto.io","creator-spring.com","credexalarmsystems.eu","crowdsupply.com","dakboard.freshdesk.com","danielmartingonzalez.com","darsycertificationconsumer-wu2.azurewebsites.net","dashieapp.com","dastereo.ru","dc9vq.de","de.aliexpress.com","de.jackery.com","de.wikipedia.org","dealabs.com","deepwiki.com","degroenenerds.nl","derekseaman.com","desdeelreloj.com","dev.to","developer.chrome.com","developer.home-connect.com","developer.tuya.com","developerinsider.co","devotics.fr","devzen.ru","dfrobot.com","dietpi.com","digikey.com","digital-io.de","dinamotech.it","discord.com","discovergit.app","disq.us","diy-smart-home.ei23.de","diyenjoying.com","diyfun.de","diyless.com","diysolarforum.com","doc.embedfire.com","doc.mocreo.com","docker.com","docs.evcc.io","docs.everythingsmart.io","docs.fregata.app","docs.futureproofhomes.net","docs.gl-inet.com","docs.kilowahti.fi","docs.ncnynl.com","docs.openpublictransport.net","docs.paperd.ink","docs.powercalc.nl","docs.sunfounder.com","docs.tandoor.dev","docs.yaha-cloud.ru","docs.zephyrproject.org","documentation.grandstream.com","domadoo.fr","domasist.sk","domocraft.fr","domoticafacile.it","done.land","donetick.com","dopper.de","dou.ua","doubao.com","drive2.ru","duck.ai","duckduckgo.com","duurzamerhand.nl","ecosia.org","edubox.org","efulfillservice.sugarondemand.com","element.io","en.m.nu","en.wikipedia.org","energyforecast.de","engadget.com","esp32.co.uk","espboards.dev","esphome.io","espresense.com","espressif.com","espruino.com","everythingsmarthome.co.uk","ewelinkstore.com","facebook.be","facebook.com","facebook.de","facebook.dk","facebook.es","facebook.fr","facebook.is","facebook.it","facebook.jp","facebook.mx","facebook.nl","facebook.no","facebook.se","facebook.us","faire-ca-soi-meme.fr","fancontroller.arthofer.dev","fb.com","fb.me","fbcdn.com","fbcdn.net","fitbit.com","flasher.site","fleet-auth.prd.vn.cloud.tesla.com","flipboard.com","flow.bosch-ebike.com","flows.blueforcer.de","foro.domoticaencasa.es","forum.arduino.cc","forum.armbian.com","forum.arturhome.pl","forum.ecoflow.com","forum.ewelink.cc","forum.hardware.fr","forum.heimnetz.de","forum.iobroker.net","forum.it.mk","forum.jdtech.pl","forum.keenetic.ru","forum.magicmirror.builders","forum.mikrotik.com","forum.mypower.cz","forum.proxmox.com","forum.sailfishos.org","forum.sessy.nl","forum.wiimhome.com","forum.yunohost.org","forums.dansdeals.com","forums.lyrion.org","forums.pocketcasts.com","forums.raspberrypi.com","forums.truenas.com","fosstodon.org","foxesscommunity.com","fr.aliexpress.com","frandroid.com","frenck.dev","front-page.com","fuzznotes.com","fwd.nl","gadgets.seeed.cc","gea.com","geekxw.top","genbeta.com","getaipilot.com","gethomepage.dev","gigazine.net","git.hubp.de","gitee.com","github.blog","github.com","github.io","gitlab.com","gitlab.io","go.aftvnews.com","golem.de","google.at","google.be","google.bg","google.ca","google.ch","google.co.jp","google.co.kr","google.co.nz","google.co.uk","google.co.za","google.com","google.com.au","google.com.br","google.com.hk","google.com.mx","google.com.my","google.com.pk","google.com.sa","google.com.sg","google.com.tr","google.com.tw","google.com.ua","google.com.vn","google.cz","google.de","google.es","google.fi","google.fr","google.hu","google.io","google.it","google.nl","google.pl","google.pt","google.ro","google.se","gotailwind.com","grokipedia.com","gstatic.com","haade.fr","habr-com.cdn.ampproject.org","habr.com","hacf.fr","hachyderm.io","hackaday.com","hacks.mozilla.org","hackster.io","hacs.dev","hacs.xyz","hadevices.com","hads.smarti.dev","haeo.io","handbook.buildwithmatter.com","hanselman.com","hardware.info","hashop.nl","hass-agent.io","hass-cloud.auth.us-east-1.amazoncognito.com","hass.dev","hasscn.top","hatenablog-parts.com","haus-bus.de","hcker.news","hckrnews.com","healthassistantlink.com","heise.de","helgejohnsen.no","helios-ha.org","help.olarm.com","hiringcafe.com","hjemmeautomasjon.no","home-assistant-guide.com","home-assistant.cloud","home-assistant.dev","home-assistant.io","home-assistant.jp","home-master.eu","homeassistant-cz.cz","homeassistant.cloud","homeassistant.io","homeassistantbrasil.com.br","homeautocentral.com","homebrainz.de","homekitnews.com","homething.io","homey.app","hotmart.com","howtogeek.com","hwupgrade.it","hydrificwater.com","hydroqc.ca","hyotynen.iki.fi","iam.viessmann-climatesolutions.com","ias-lab.de","ibytedtos.com","ictfreak.nl","id.daikin.eu","id.whoop.com","ifa-berlin.com","ig.me","igen.fr","ikriz.nl","improv-wifi.com","indomus.it","industrialshields.com","inet.se","influxdata.com","infosec.exchange","inoreader.com","insiderllm.com","instagr.am","instagram.com","install.wled.me","intellicaai.space","internet.org","interop.ondilo.com","iona-ha.tinohox.de","iot.vivo.com.cn","ipstatp.com","it.makeinlab.fr","ithelp.ithome.com.tw","itmedia.co.jp","itrend24.de","itsfoss.com","jamesachambers.com","jimwillis.org","jiuyv.info","joekarlsson.com","jonashietala.se","jpk.io","jpt.sh","jupiterbroadcasting.com","kagi.com","kb.shelly.cloud","kincony.com","kitchenowl.org","kiwi-warmer.co.nz","kjell.com","knightsoft-net.de","knuspermagier.de","knx-user-forum.de","kofler.info","konnected.io","konnected.readme.io","korben.info","kotyara12.ru","l.meta.ai","lampopumput.info","languagetool.org","lappari.com","legeek.info","leios.consulting","lemmy.lundgrensjostrom.com","lemmy.ml","lemmy.world","libhunt.com","life.taikun.blog","liliputing.com","link.csdn.net","link.gitcode.com","linkedin.com","linkshop.gr","linuxiac.com","linuxmint.com","listenbrainz.org","llmvision.gitbook.io","lnkd.in","lobste.rs","loxwiki.atlassian.net","lunoo.com","luxxle.com","lwn.net","m.me","m.sogou.com","m5stack.com","macrumors.com","mactechnews.de","magicareas.io","mail.gnome.org","mail.qq.com","maison-et-domotique.com","makerworld.com","makeuseof.com","manelrodero.com","manuals.plus","masto.pt","mastodon.me.uk","mastodon.social","mastodon.top","matrix.to","matteoschizzerotto.dev","matteralpha.com","mattgerega.com","mauser.pt","mediarath.de","medievalapple.net","medium.com","meetco.daily.co","meinesmartewelt.de","memory.gmbot.name.vn","mergeo.dev","metabrainz.org","metager.de","michaelsleen.com","mikesolin.com","mistyreverie.org","mobiflip.de","mobile-ma.app","moi.ouraring.com","mojeek.com","mostlychris.com","mqtt.cn","mrdarrengriffin.com","ms0701.tistory.com","msn.com","mu.zpete.de","mushkatyush.com","music-assistant.com","music-assistant.io","musical.ly","mwunderling.com","mypal.wang","mysku.club","nabucasa.com","nachbelichtet.com","nathan.gs","nathanorick.com","nativesprings.com","naver.com","navid.nl","navimow-h5-fra.willand.com","ncot.uk","neilturner.me.uk","netlify.app","nettop.gr","newepisody.com","newinlinux.com","news.hada.io","news.ycombinator.com","newsblur.com","ngocjohn.is-a.dev","norbert.tech","note.com","notebookcheck.net","notenoughtech.com","notify.events","npmjs.com","nspanel.domodreams.it","ntp.msn.cn","nuki.io","numerama.com","oauth.hijuconn.com","oceanhero.today","ogo.live","ohf.to","okosotthon.bolt.hu","olausson.de","olegtarasov.me","omgubuntu.co.uk","openai.com","opendisplay.org","openelab.io","openhasp.com","openhasp.haswitchplate.com","openhomefoundation.org","openthread.io","opera.com","oshwhub.com","osnews.com","ottelo.jimdofree.com","ozsmartthings.com.au","pages.dev","paulusschoutsen.nl","pdx.su","perfectmediaserver.com","perplexity.ai","phanpy.social","phoronix.com","pi-shop.ch","pidiylab.com","pikabu.ru","pinboard.in","pine64.org","pinimg.com","pinterest.at","pinterest.ca","pinterest.co.uk","pinterest.com","pinterest.com.au","pinterest.com.mx","pinterest.de","pinterest.dk","pinterest.es","pinterest.fr","pinterest.ie","pinterest.it","pinterest.jp","pinterest.ph","pinterest.se","pixelstech.net","pluginsolarexplained.co.uk","portal.alarmtrade.ru","powerbaas.nl","powerforum.co.za","printables.com","privacywall.org","prodindego.b2clogin.com","programarfacil.com","protopage.com","psenyukov.ru","psmart.pl","publish.obsidian.md","pushover.net","pypi.org","qiita.com","quark.cn","qwant.com","racemat.de","radio-browser.info","raspberrypi.dk","rbaron.net","read.readwise.io","readthedocs.io","reddit.com","reedah.com","remote-logger.rhizomatics.org.uk","repo.webosbrew.org","rivianforums.com","robbshop.nl","robert.stadsbygd.net","roboter-forum.com","robpickering.com","root.cz","rudd-o.com","runtimeterror.dev","ruuvi.com","safe.menlosecurity.com","search.avastbrowser.com","search.brave.com","search.kafu.ovh","search.nixos.org","search.nortonsafesearch.com","search.yahoo.com","seeedstudio.com","seegel-systeme.de","selectra.info","selfh.st","selorahomes.com","sendspin-audio.com","sequr.be","sergiocarracedo.es","servercan.net","serverfault.com","servethehome.com","seznam.cz","sheekgeek.org","sheets.works","shellagent.io","shop.everythingsmart.io","shop.haus-automatisierung.com","shop.pimoroni.com","signalk.org","signalkraft.com","simon42.com","simplehomelab.com","simplepush.io","sl-alex.net","slack.com","slashdot.org","slimhuisje.nl","smart-home-insights.net","smartdomo.de","smarterhome.sk","smarterkram.de","smarterpapa.de","smartevchargers.co.nz","smartguys.com.au","smarthome-assistant.info","smarthome.com.au","smarthomeassistent.de","smarthomegids.com","smarthomepursuits.com","smarthomescene.com","smarthomesecrets.ca","smarthomesolver.com","smarthomeyourself.de","smartmania.cz","smartnetandhubs.com","smlight.tech","snbforums.com","so.com","social.slat.org","solar-assistant.io","sonocotta.com","sonoff.tech","sourceforge.net","spacen.io","speaktothegeek.co.uk","spfile.heimanhome.com","splitbrain.org","srwiez.com","sso.bluettipower.com","stackexchange.com","stackoverflow.com","stadt-bremerhaven.de","startpage.com","static.xtremeownage.com","steamcommunity.com","steeman.be","student-techlife.com","style.oversubstance.net","substack.com","sunenergyxt.com","superuser.com","support.bbdl.co.uk","support.lightwaverf.com","support.powerfox.energy","support.weheat.nl","svrforum.com","sweclockers.com","swiss-domotique.ch","swisscows.com","symbaloo.com","sysadmin.in.th","t.co","t.me","t3n.de","taiwansensor.com.tw","teams.public.onecdn.static.microsoft","techboys.de","techcrunch.com","techenclair.fr","techfeed.io","technikblock.de","techurls.com","tecnoyfoto.com","telegram.me","telegram.org","terncy.com.tw","teslafacts.nl","teslemetry.com","thecandidstartup.org","themalibucrew.com","theorangeone.net","thepihut.com","theregister.com","thestockpot.net","theverge.com","threads.net","tightloop.io","tiktok.com","tiktokcdn.com","tiktokv.com","tomshardware.com","tomshw.it","tomtut.de","tool.screek.io","toot.community","topgit.dev","toppodcast.com","totaldebug.uk","trello.com","trick.vanstaveren.us","trmnl.com","troyhernandez.com","tutorials-raspberrypi.de","tweakers.net","tweetdeck.com","twingate.com","twitter.com","typingmind.com","uix.lf.technology","ultravehiclecard.com","unfoldedcircle.com","uniuit.com","university.revotion.app","url-opener.com","us.shelly.com","uscardforum.com","ut.buglloc.com","varac.net","vercel.app","verdrahtet.info","verkkokauppa.nurkantakaa.fi","versatile-thermostat.org","web.archive.org","web.max.ru","webhallen.com","webshed.org","westhaver.com","wiert.me","wifishop.ro","wiki.fabianhorst.com","wiki.freshtomato.org","wiki.futo.org","wimme.net","wired.com","wordpress.com","wulu.zone","www-hacs-xyz.translate.goog","www-home--assistant-io.translate.goog","x.com","xataka.com","xda-developers.com","xfinderr.org","xn--80abzsjfcff6fi.xn--p1ai","ya.ru","yahoo.co.jp","yandex.by","yandex.com","yandex.kz","yandex.ru","yandex.uz","yandex.xyz","yetanothersmarthome.com","youtu.be","youtube-nocookie.com","youtube.com","yuanbao.tencent.com","yuque.com","zdnet.com","zenodo.org","zerlo.net","zigbee.blakadder.com","zigbee2mqtt.io","zimaspace.com","zuidwijk.com"];
+
+  /* eslint-disable */
+  ((window.plausible =
+    window.plausible ||
+    function () {
+      (plausible.q = plausible.q || []).push(arguments);
+    }),
+    (plausible.init =
+      plausible.init ||
+      function (i) {
+        plausible.o = i || {};
+      }));
+  plausible.init({
+    transformRequest: function (payload) {
+      var ref = payload.r;
+      if (!ref) return payload;
+      var host = "";
+      try {
+        host = new URL(ref).hostname.replace(/\.$/, "");
+      } catch (e) {
+        // Unparseable referrer: falls through and gets replaced.
+      }
+      for (var i = 0; i < allowedReferrers.length; i++) {
+        var d = allowedReferrers[i];
+        if (
+          host === d ||
+          (host.length > d.length && host.slice(-(d.length + 1)) === "." + d)
+        ) {
+          return payload;
+        }
+      }
+      // One aggregate bucket so we can see how much we filter without learning
+      // anything about individual visitors. .invalid is reserved by RFC 2606 and
+      // can never collide with a real domain.
+      payload.r = "https://unlisted.invalid/";
+      return payload;
+    },
+  });
+})();</script><script type="module">document.querySelector("a.site-title")?.addEventListener("contextmenu",e=>{e.preventDefault(),window.open("https://drive.google.com/drive/folders/12mVVrwGh0x9i8MMmo2PpZ8GWAhdTA-eZ","_blank")});</script><script>
+	document.documentElement.dataset.theme = 'light';
+</script><link rel="stylesheet" href="/music-assistant/_astro/print.DNXP8c50.css" media="print"><link rel="stylesheet" href="/music-assistant/_astro/middleware.BzTIJTvV.css">
+<link rel="stylesheet" href="/music-assistant/_astro/Code.HbBYK9QY.css"><script type="module" src="/music-assistant/_astro/page.B_tncCx8.js"></script></head> <body class="astro-ui3qboqa"> <a href="#_top" class="astro-2l4qrigf">跳转到内容</a> <div class="page sl-flex astro-w56464pf"> <header class="header astro-w56464pf"><div class="header astro-l4buqjmx"> <div class="title-wrapper sl-flex astro-l4buqjmx"> <a href="/music-assistant/" class="site-title sl-flex astro-oas4auvx">  <img class="light:sl-hidden print:hidden astro-oas4auvx" alt src="/music-assistant/_astro/ma-logo--light.P9b-X8bR.svg" width="1762" height="240"> <img class="dark:sl-hidden print:block astro-oas4auvx" alt src="/music-assistant/_astro/ma-logo--dark.CzWxtUaB.svg" width="1762" height="240"> <span class="sr-only astro-oas4auvx" translate="no"> Music Assistant </span> </a> <a href="/music-assistant/blog/2026/08/26/music-assistant-2-10/" class="version-badge astro-idrpryed" title="Music Assistant 2.10.14" translate="no"> 2.10.14 </a> </div> <div class="sl-flex print:hidden astro-l4buqjmx"> <site-search class="astro-l4buqjmx astro-rzgen6v6" data-translations="{&quot;placeholder&quot;:&quot;搜索&quot;}"> <button data-open-modal disabled aria-label="搜索" aria-keyshortcuts="Control+K" class="astro-rzgen6v6"> <svg aria-hidden="true" class="astro-rzgen6v6 astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M21.71 20.29 18 16.61A9 9 0 1 0 16.61 18l3.68 3.68a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.39ZM11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14Z"/></svg> <span class="sl-hidden md:sl-block astro-rzgen6v6" aria-hidden="true">搜索</span> <kbd class="sl-hidden md:sl-flex astro-rzgen6v6" style="display: none;"> <kbd class="astro-rzgen6v6">Ctrl</kbd><kbd class="astro-rzgen6v6">K</kbd> </kbd> </button> <dialog style="padding:0" aria-label="搜索" class="astro-rzgen6v6"> <div class="dialog-frame sl-flex astro-rzgen6v6">  <button data-close-modal class="sl-flex md:sl-hidden astro-rzgen6v6"> 取消 </button> <div class="search-container astro-rzgen6v6"> <div id="starlight__search" class="astro-rzgen6v6"></div> </div> </div> </dialog> </site-search>  <script>
+	(() => {
+		const openBtn = document.querySelector('button[data-open-modal]');
+		const shortcut = openBtn?.querySelector('kbd');
+		if (!openBtn || !(shortcut instanceof HTMLElement)) return;
+		const platformKey = shortcut.querySelector('kbd');
+		if (platformKey && /(Mac|iPhone|iPod|iPad)/i.test(navigator.platform)) {
+			platformKey.textContent = '⌘';
+			openBtn.setAttribute('aria-keyshortcuts', 'Meta+K');
+		}
+		shortcut.style.display = '';
+	})();
+</script> <script type="module" src="/music-assistant/_astro/Search.astro_astro_type_script_index_0_lang.CcmHXSDy.js"></script>  </div> <div class="sl-hidden md:sl-flex print:hidden right-group astro-l4buqjmx"> <div class="sl-flex social-icons astro-l4buqjmx"> <a href="/music-assistant/blog/" class="blog-link astro-dv46nlzh">News</a> <a href="https://github.com/music-assistant" rel="me" class="sl-flex astro-eglb2tuv"><span class="sr-only astro-eglb2tuv">GitHub</span><svg aria-hidden="true" class="astro-eglb2tuv astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/kaVm8hGpne" rel="me" class="sl-flex astro-eglb2tuv"><span class="sr-only astro-eglb2tuv">Discord</span><svg aria-hidden="true" class="astro-eglb2tuv astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.hasscn.top/music-assistant/blog/rss.xml" rel="me" class="sl-flex astro-eglb2tuv"><span class="sr-only astro-eglb2tuv">RSS</span><svg aria-hidden="true" class="astro-eglb2tuv astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M2.88 16.88a3 3 0 0 0 0 4.24 3 3 0 0 0 4.24 0 3 3 0 0 0-4.24-4.24Zm2.83 2.83a1 1 0 0 1-1.42-1.42 1 1 0 0 1 1.42 0 1 1 0 0 1 0 1.42ZM5 12a1 1 0 0 0 0 2 5 5 0 0 1 5 5 1 1 0 0 0 2 0 7 7 0 0 0-7-7Zm0-4a1 1 0 0 0 0 2 9 9 0 0 1 9 9 1 1 0 0 0 2 0 11.08 11.08 0 0 0-3.22-7.78A11.08 11.08 0 0 0 5 8Zm10.61.39A15.11 15.11 0 0 0 5 4a1 1 0 0 0 0 2 13 13 0 0 1 13 13 1 1 0 0 0 2 0 15.11 15.11 0 0 0-4.39-10.61Z"/></svg></a> </div>  <script type="module">class s extends HTMLElement{constructor(){super();const e=this.querySelector("select");e&&(e.addEventListener("change",t=>{t.currentTarget instanceof HTMLSelectElement&&(window.location.pathname=t.currentTarget.value)}),window.addEventListener("pageshow",t=>{if(!t.persisted)return;const n=e.querySelector("option[selected]")?.index;n!==e.selectedIndex&&(e.selectedIndex=n??0)}))}}customElements.define("starlight-lang-select",s);</script> </div> </div></header> <nav class="sidebar print:hidden astro-w56464pf" aria-label="主要"> <starlight-menu-button class="print:hidden astro-n4decq3w"> <button aria-expanded="false" aria-label="菜单" aria-controls="starlight__sidebar" class="sl-flex md:sl-hidden astro-n4decq3w"> <svg aria-hidden="true" class="open-menu astro-n4decq3w astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M3 8h18a1 1 0 1 0 0-2H3a1 1 0 0 0 0 2Zm18 8H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Zm0-5H3a1 1 0 0 0 0 2h18a1 1 0 0 0 0-2Z"/></svg> <svg aria-hidden="true" class="close-menu astro-n4decq3w astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="m13.41 12 6.3-6.29a1.004 1.004 0 1 0-1.42-1.42L12 10.59l-6.29-6.3a1.004 1.004 0 0 0-1.42 1.42l6.3 6.29-6.3 6.29a1 1 0 0 0 0 1.42.998.998 0 0 0 1.42 0l6.29-6.3 6.29 6.3a.999.999 0 0 0 1.42 0 1 1 0 0 0 0-1.42L13.41 12Z"/></svg> </button> </starlight-menu-button> <script type="module">class s extends HTMLElement{constructor(){super(),this.btn=this.querySelector("button"),this.btn.addEventListener("click",()=>this.toggleExpanded());const t=this.closest("nav");t&&t.addEventListener("keyup",e=>this.closeOnEscape(e))}setExpanded(t){this.setAttribute("aria-expanded",String(t)),document.body.toggleAttribute("data-mobile-menu-expanded",t)}toggleExpanded(){this.setExpanded(this.getAttribute("aria-expanded")!=="true")}closeOnEscape(t){t.code==="Escape"&&(this.setExpanded(!1),this.btn.focus())}}customElements.define("starlight-menu-button",s);</script>  <div id="starlight__sidebar" class="sidebar-pane astro-w56464pf"> <div class="sidebar-content sl-flex astro-w56464pf"> <sl-sidebar-state-persist data-hash="16b4j59" class="astro-uewla6zu"> <script aria-hidden="true">
+		(() => {
+			try {
+				if (!matchMedia('(min-width: 50em)').matches) return;
+				/** @type {HTMLElement | null} */
+				const target = document.querySelector('sl-sidebar-state-persist');
+				const state = JSON.parse(sessionStorage.getItem('sl-sidebar-state') || '0');
+				if (!target || !state || target.dataset.hash !== state.hash) return;
+				window._starlightScrollRestore = state.scroll;
+				customElements.define(
+					'sl-sidebar-restore',
+					class SidebarRestore extends HTMLElement {
+						connectedCallback() {
+							try {
+								const idx = parseInt(this.dataset.index || '');
+								const details = this.closest('details');
+								if (details && typeof state.open[idx] === 'boolean') details.open = state.open[idx];
+							} catch {}
+						}
+					}
+				);
+			} catch {}
+		})();
+	</script>  <ul class="top-level astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/" class="large astro-mte4ival"> <span class="astro-mte4ival">首页</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/documentation/" class="large astro-mte4ival"> <span class="astro-mte4ival">文档</span>  </a> </li><li class="astro-mte4ival"> <details open class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">我想要…</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="0"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/installation/" class="astro-mte4ival"> <span class="astro-mte4ival">安装 Music Assistant</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/integration/installation/" class="astro-mte4ival"> <span class="astro-mte4ival">安装 HA 集成</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/listen-to/" class="astro-mte4ival"> <span class="astro-mte4ival">听什么…</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/stream-to/" class="astro-mte4ival"> <span class="astro-mte4ival">推流到哪…</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">首次运行与设置</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="1"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/first-run/" class="astro-mte4ival"> <span class="astro-mte4ival">首次运行（认证）</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/music-provider-settings/" class="astro-mte4ival"> <span class="astro-mte4ival">音乐源</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/player-provider/" class="astro-mte4ival"> <span class="astro-mte4ival">播放器提供方</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/metadata-provider-settings/" class="astro-mte4ival"> <span class="astro-mte4ival">元数据提供方</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/individual-player/" class="astro-mte4ival"> <span class="astro-mte4ival">播放器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/profile/" class="astro-mte4ival"> <span class="astro-mte4ival">配置档案</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/user-interface/" class="astro-mte4ival"> <span class="astro-mte4ival">用户界面</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/user-management/" class="astro-mte4ival"> <span class="astro-mte4ival">用户管理</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/remote-access/" class="astro-mte4ival"> <span class="astro-mte4ival">远程访问</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/core/" class="astro-mte4ival"> <span class="astro-mte4ival">系统设置</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/settings/about/" class="astro-mte4ival"> <span class="astro-mte4ival">关于</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">Home Assistant 集成</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="2"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/integration/" class="astro-mte4ival"> <span class="astro-mte4ival">概览</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/integration/installation/" class="astro-mte4ival"> <span class="astro-mte4ival">安装</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/integration/announcements/" class="astro-mte4ival"> <span class="astro-mte4ival">播报</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/massplaymedia/" class="astro-mte4ival"> <span class="astro-mte4ival">播放媒体动作</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/massannounce/" class="astro-mte4ival"> <span class="astro-mte4ival">播放公告动作</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/masssearch/" class="astro-mte4ival"> <span class="astro-mte4ival">搜索动作</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/get_library/" class="astro-mte4ival"> <span class="astro-mte4ival">获取资料库动作</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/get_queue/" class="astro-mte4ival"> <span class="astro-mte4ival">获取队列动作</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/masstransfer/" class="astro-mte4ival"> <span class="astro-mte4ival">转移队列动作</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/integration/voice/" class="astro-mte4ival"> <span class="astro-mte4ival">语音控制</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details open class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">音乐源</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="3"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/music-providers/" class="astro-mte4ival"> <span class="astro-mte4ival">Overview</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/abc-radio-network/" class="astro-mte4ival"> <span class="astro-mte4ival">ABC 广播网</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/ambient-sounds/" class="astro-mte4ival"> <span class="astro-mte4ival">环境音</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/apple-music/" class="astro-mte4ival"> <span class="astro-mte4ival">Apple Music</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/ard-sounds/" class="astro-mte4ival"> <span class="astro-mte4ival">ARD Sounds</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/audible/" class="astro-mte4ival"> <span class="astro-mte4ival">Audible</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/audiobookshelf/" class="astro-mte4ival"> <span class="astro-mte4ival">Audiobookshelf</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/bandcamp/" class="astro-mte4ival"> <span class="astro-mte4ival">Bandcamp</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/bbc-sounds/" class="astro-mte4ival"> <span class="astro-mte4ival">BBC Sounds</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/builtin/" class="astro-mte4ival"> <span class="astro-mte4ival">内置</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/deezer/" class="astro-mte4ival"> <span class="astro-mte4ival">Deezer</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/digitally-imported/" class="astro-mte4ival"> <span class="astro-mte4ival">DI.fm 网络</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/emby/" class="astro-mte4ival"> <span class="astro-mte4ival">Emby</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/gpodder/" class="astro-mte4ival"> <span class="astro-mte4ival">gPodder</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/ibroadcast/" class="astro-mte4ival"> <span class="astro-mte4ival">iBroadcast</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/internet-archive/" class="astro-mte4ival"> <span class="astro-mte4ival">Internet Archive</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/itunes-podcast/" class="astro-mte4ival"> <span class="astro-mte4ival">iTunes Podcast 搜索</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/jellyfin/" class="astro-mte4ival"> <span class="astro-mte4ival">Jellyfin</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/kion-music/" class="astro-mte4ival"> <span class="astro-mte4ival">KION Music</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/local-files/" aria-current="page" class="astro-mte4ival"> <span class="astro-mte4ival">本地文件</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/mamma-mi-radio/" class="astro-mte4ival"> <span class="astro-mte4ival">Mamma Mi Radio</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/musicme/" class="astro-mte4ival"> <span class="astro-mte4ival">MusicMe</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/netease-cloud-music/" class="astro-mte4ival"> <span class="astro-mte4ival">网易云音乐</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/niconico/" class="astro-mte4ival"> <span class="astro-mte4ival">Nico Nico 视频</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/nts/" class="astro-mte4ival"> <span class="astro-mte4ival">NTS Radio</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/nugs/" class="astro-mte4ival"> <span class="astro-mte4ival">Nugs.net</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/orf-radiothek/" class="astro-mte4ival"> <span class="astro-mte4ival">ORF Radiothek</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/overcast/" class="astro-mte4ival"> <span class="astro-mte4ival">Overcast</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/pandora/" class="astro-mte4ival"> <span class="astro-mte4ival">Pandora</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/phishin/" class="astro-mte4ival"> <span class="astro-mte4ival">Phish.in</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/plex/" class="astro-mte4ival"> <span class="astro-mte4ival">Plex</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/pocketcasts/" class="astro-mte4ival"> <span class="astro-mte4ival">Pocketcasts</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/podcast-index/" class="astro-mte4ival"> <span class="astro-mte4ival">Podcast Index</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/podcastfeed/" class="astro-mte4ival"> <span class="astro-mte4ival">播客 RSS 订阅源</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/qobuz/" class="astro-mte4ival"> <span class="astro-mte4ival">Qobuz</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/qqmusic/" class="astro-mte4ival"> <span class="astro-mte4ival">QQ Music</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/radio-browser/" class="astro-mte4ival"> <span class="astro-mte4ival">Radio Browser</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/radio-paradise/" class="astro-mte4ival"> <span class="astro-mte4ival">Radio Paradise</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/rainy-mood/" class="astro-mte4ival"> <span class="astro-mte4ival">Rainy Mood</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/siriusxm/" class="astro-mte4ival"> <span class="astro-mte4ival">SiriusXM</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/somafm-radio/" class="astro-mte4ival"> <span class="astro-mte4ival">SomaFM Radio</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/soundcloud/" class="astro-mte4ival"> <span class="astro-mte4ival">SoundCloud</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/spotify/" class="astro-mte4ival"> <span class="astro-mte4ival">Spotify</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/storytel/" class="astro-mte4ival"> <span class="astro-mte4ival">Storytel</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/subsonic/" class="astro-mte4ival"> <span class="astro-mte4ival">Subsonic</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/sveriges-radio/" class="astro-mte4ival"> <span class="astro-mte4ival">Sveriges Radio</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/teddycloud/" class="astro-mte4ival"> <span class="astro-mte4ival">TeddyCloud</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/tidal/" class="astro-mte4ival"> <span class="astro-mte4ival">Tidal</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/tunein/" class="astro-mte4ival"> <span class="astro-mte4ival">TuneIn</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/yandex-music/" class="astro-mte4ival"> <span class="astro-mte4ival">Yandex Music</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/yousee-musik/" class="astro-mte4ival"> <span class="astro-mte4ival">YouSee Musik</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/youtube-music/" class="astro-mte4ival"> <span class="astro-mte4ival">YouTube Music</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/music-providers/zvuk/" class="astro-mte4ival"> <span class="astro-mte4ival">Zvuk Music</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">播放器提供方</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="4"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/player-support/" class="astro-mte4ival"> <span class="astro-mte4ival">Overview</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/airplay/" class="astro-mte4ival"> <span class="astro-mte4ival">AirPlay</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/alexa/" class="astro-mte4ival"> <span class="astro-mte4ival">Alexa</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/amplipi/" class="astro-mte4ival"> <span class="astro-mte4ival">AmpliPi</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/bluesound/" class="astro-mte4ival"> <span class="astro-mte4ival">Bluesound</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/bose-soundtouch/" class="astro-mte4ival"> <span class="astro-mte4ival">Bose SoundTouch</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/dlna/" class="astro-mte4ival"> <span class="astro-mte4ival">DLNA</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/fully-kiosk/" class="astro-mte4ival"> <span class="astro-mte4ival">Fully Kiosk</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/google-cast/" class="astro-mte4ival"> <span class="astro-mte4ival">Google Cast</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/heos/" class="astro-mte4ival"> <span class="astro-mte4ival">HEOS</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/home-assistant/" class="astro-mte4ival"> <span class="astro-mte4ival">Home Assistant 媒体播放器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/local-audio/" class="astro-mte4ival"> <span class="astro-mte4ival">Local Audio Out（已退役）</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/msx-bridge/" class="astro-mte4ival"> <span class="astro-mte4ival">MSX 桥接</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/music-player-daemon/" class="astro-mte4ival"> <span class="astro-mte4ival">Music Player Daemon (MPD)</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/musiccast/" class="astro-mte4ival"> <span class="astro-mte4ival">MusicCast</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/roku/" class="astro-mte4ival"> <span class="astro-mte4ival">Roku Media Assistant</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/samsung-wam/" class="astro-mte4ival"> <span class="astro-mte4ival">Samsung WAM</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/sendspin/" class="astro-mte4ival"> <span class="astro-mte4ival">Sendspin</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/snapcast/" class="astro-mte4ival"> <span class="astro-mte4ival">Snapcast</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/sonos/" class="astro-mte4ival"> <span class="astro-mte4ival">Sonos</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/squeezelite/" class="astro-mte4ival"> <span class="astro-mte4ival">Squeezelite</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/wiim/" class="astro-mte4ival"> <span class="astro-mte4ival">WiiM</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/player-support/yandex-station/" class="astro-mte4ival"> <span class="astro-mte4ival">Yandex Station</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">使用 Music Assistant</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="5"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/usage/" class="astro-mte4ival"> <span class="astro-mte4ival">概览</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/ui/" class="astro-mte4ival"> <span class="astro-mte4ival">界面</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/groups/" class="astro-mte4ival"> <span class="astro-mte4ival">分组</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/genres/" class="astro-mte4ival"> <span class="astro-mte4ival">流派</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">音频微调</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="6"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/audiopipeline/" class="astro-mte4ival"> <span class="astro-mte4ival">音频管线</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/dsp/" class="astro-mte4ival"> <span class="astro-mte4ival">数字信号处理</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/dsp/compressor/" class="astro-mte4ival"> <span class="astro-mte4ival">DSP 压缩器滤波器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/dsp/convolution/" class="astro-mte4ival"> <span class="astro-mte4ival">DSP 卷积滤波器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/dsp/parametriceq/" class="astro-mte4ival"> <span class="astro-mte4ival">DSP 参数均衡器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/dsp/tonecontrols/" class="astro-mte4ival"> <span class="astro-mte4ival">DSP 音调控制滤波器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/dsp/transpose/" class="astro-mte4ival"> <span class="astro-mte4ival">DSP 变调滤波器</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">增强 Music Assistant</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="7"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">插件</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="8"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/plugins/" class="astro-mte4ival"> <span class="astro-mte4ival">概览</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/ai-radio/" class="astro-mte4ival"> <span class="astro-mte4ival">AI 电台</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/airplay-receiver/" class="astro-mte4ival"> <span class="astro-mte4ival">AirPlay 接收器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/ariacast-receiver/" class="astro-mte4ival"> <span class="astro-mte4ival">Ariacast 接收器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/fastmcp-server/" class="astro-mte4ival"> <span class="astro-mte4ival">FastMCP 服务器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/ha-plugin/" class="astro-mte4ival"> <span class="astro-mte4ival">Home Assistant</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/hue-entertainment/" class="astro-mte4ival"> <span class="astro-mte4ival">Hue Entertainment</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/lastfm_scrobble/" class="astro-mte4ival"> <span class="astro-mte4ival">LastFM 听歌记录</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/library-recommendations/" class="astro-mte4ival"> <span class="astro-mte4ival">资料库推荐</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/listenbrainz_scrobble/" class="astro-mte4ival"> <span class="astro-mte4ival">ListenBrainz 听歌记录</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/milkdrop-visualizer/" class="astro-mte4ival"> <span class="astro-mte4ival">MilkDrop 可视化</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/music-quiz/" class="astro-mte4ival"> <span class="astro-mte4ival">音乐问答</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/openai_compatible/" class="astro-mte4ival"> <span class="astro-mte4ival">OpenAI 兼容接口</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/openai_tts/" class="astro-mte4ival"> <span class="astro-mte4ival">OpenAI 文字转语音</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/party/" class="astro-mte4ival"> <span class="astro-mte4ival">派对模式</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/plex-connect/" class="astro-mte4ival"> <span class="astro-mte4ival">Plex Connect</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/sendspin-source/" class="astro-mte4ival"> <span class="astro-mte4ival">Sendspin 音源</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/smart_playlist/" class="astro-mte4ival"> <span class="astro-mte4ival">智能播放列表</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/sonic-similarity/" class="astro-mte4ival"> <span class="astro-mte4ival">听感相似度</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/spotify-connect/" class="astro-mte4ival"> <span class="astro-mte4ival">Spotify Connect</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/subsonic_scrobble/" class="astro-mte4ival"> <span class="astro-mte4ival">Subsonic 听歌记录</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/vban-receiver/" class="astro-mte4ival"> <span class="astro-mte4ival">VBAN 接收器</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/yandex-ynison/" class="astro-mte4ival"> <span class="astro-mte4ival">Yandex Music Connect (Ynison)</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/plugins/yandex-smarthome/" class="astro-mte4ival"> <span class="astro-mte4ival">Yandex Smart Home</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">元数据提供方</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="9"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/metadata/" class="astro-mte4ival"> <span class="astro-mte4ival">概览</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/metadata/artwork/" class="astro-mte4ival"> <span class="astro-mte4ival">封面艺术</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/metadata/lyrics/" class="astro-mte4ival"> <span class="astro-mte4ival">歌词</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/metadata/media-items/" class="astro-mte4ival"> <span class="astro-mte4ival">媒体条目</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/metadata-providers/lastfm-recommendations/" class="astro-mte4ival"> <span class="astro-mte4ival">LastFM 推荐</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/metadata-providers/musicbrainz/" class="astro-mte4ival"> <span class="astro-mte4ival">MusicBrainz</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/metadata-providers/playlist-metadata/" class="astro-mte4ival"> <span class="astro-mte4ival">播放列表元数据</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">音频分析提供方</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="10"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/audio-analysis/acoustid/" class="astro-mte4ival"> <span class="astro-mte4ival">AcoustID 查询</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/audio-analysis/loudness-analysis/" class="astro-mte4ival"> <span class="astro-mte4ival">响度分析</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/audio-analysis/smart-fades/" class="astro-mte4ival"> <span class="astro-mte4ival">智能淡入淡出</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/audio-analysis/sonic-analysis/" class="astro-mte4ival"> <span class="astro-mte4ival">听感分析</span>  </a> </li> </ul> </details> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">应用</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="11"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/companion-app/" class="astro-mte4ival"> <span class="astro-mte4ival">桌面伴侣应用</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/mobile/" class="astro-mte4ival"> <span class="astro-mte4ival">移动设备</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">帮助</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="12"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/faq/how-to/" class="astro-mte4ival"> <span class="astro-mte4ival">我想知道…</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/troubleshooting/" class="astro-mte4ival"> <span class="astro-mte4ival">故障排查</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/support/" class="astro-mte4ival"> <span class="astro-mte4ival">支持</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/tech-info/" class="astro-mte4ival"> <span class="astro-mte4ival">技术信息</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/faq/networking/" class="astro-mte4ival"> <span class="astro-mte4ival">网络基础</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/api/" class="astro-mte4ival"> <span class="astro-mte4ival">API</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/release/" class="astro-mte4ival"> <span class="astro-mte4ival">发布周期</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <details class="astro-mte4ival"> <summary class="astro-mte4ival"> <span class="group-label astro-mte4ival"> <span class="large astro-mte4ival">社区</span>  </span> <svg aria-hidden="true" class="caret astro-mte4ival astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.25rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg> </summary> <sl-sidebar-restore data-index="13"></sl-sidebar-restore> <ul class="astro-mte4ival"> <li class="astro-mte4ival"> <a href="/music-assistant/help/" class="astro-mte4ival"> <span class="astro-mte4ival">参与帮助 / 捐赠</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/help/lokalise/" class="astro-mte4ival"> <span class="astro-mte4ival">翻译</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/help/musicbrainz/" class="astro-mte4ival"> <span class="astro-mte4ival">完善 MusicBrainz 数据</span>  </a> </li><li class="astro-mte4ival"> <a href="/music-assistant/community-extensions/" class="astro-mte4ival"> <span class="astro-mte4ival">社区扩展</span>  </a> </li> </ul> </details> </li><li class="astro-mte4ival"> <a href="/music-assistant/blog/" class="large astro-mte4ival"> <span class="astro-mte4ival">新闻</span>  </a> </li> </ul>  <script aria-hidden="true">
+		(() => {
+			const scroller = document.getElementById('starlight__sidebar');
+			if (!window._starlightScrollRestore || !scroller) return;
+			scroller.scrollTop = window._starlightScrollRestore;
+			delete window._starlightScrollRestore;
+		})();
+	</script> </sl-sidebar-state-persist> <div class="md:sl-hidden"> <div class="mobile-preferences sl-flex astro-ycgbtqr6"> <div class="social-icons astro-ycgbtqr6"> <a href="/music-assistant/blog/" class="blog-link astro-dv46nlzh">News</a> <a href="https://github.com/music-assistant" rel="me" class="sl-flex astro-eglb2tuv"><span class="sr-only astro-eglb2tuv">GitHub</span><svg aria-hidden="true" class="astro-eglb2tuv astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57L9 21.07c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.08 1.83 2.81 1.3 3.5 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18a4.65 4.65 0 0 1 1.23 3.22c0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22l-.01 3.29c0 .31.2.69.82.57A12 12 0 0 0 12 .3Z"/></svg></a><a href="https://discord.gg/kaVm8hGpne" rel="me" class="sl-flex astro-eglb2tuv"><span class="sr-only astro-eglb2tuv">Discord</span><svg aria-hidden="true" class="astro-eglb2tuv astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M20.32 4.37a19.8 19.8 0 0 0-4.93-1.51 13.78 13.78 0 0 0-.64 1.28 18.27 18.27 0 0 0-5.5 0 12.64 12.64 0 0 0-.64-1.28h-.05A19.74 19.74 0 0 0 3.64 4.4 20.26 20.26 0 0 0 .11 18.09l.02.02a19.9 19.9 0 0 0 6.04 3.03l.04-.02a14.24 14.24 0 0 0 1.23-2.03.08.08 0 0 0-.05-.07 13.1 13.1 0 0 1-1.9-.92.08.08 0 0 1 .02-.1 10.2 10.2 0 0 0 .41-.31h.04a14.2 14.2 0 0 0 12.1 0l.04.01a9.63 9.63 0 0 0 .4.32.08.08 0 0 1-.03.1 12.29 12.29 0 0 1-1.9.91.08.08 0 0 0-.02.1 15.97 15.97 0 0 0 1.27 2.01h.04a19.84 19.84 0 0 0 6.03-3.05v-.03a20.12 20.12 0 0 0-3.57-13.69ZM8.02 15.33c-1.18 0-2.16-1.08-2.16-2.42 0-1.33.96-2.42 2.16-2.42 1.21 0 2.18 1.1 2.16 2.42 0 1.34-.96 2.42-2.16 2.42Zm7.97 0c-1.18 0-2.15-1.08-2.15-2.42 0-1.33.95-2.42 2.15-2.42 1.22 0 2.18 1.1 2.16 2.42 0 1.34-.94 2.42-2.16 2.42Z"/></svg></a><a href="https://www.hasscn.top/music-assistant/blog/rss.xml" rel="me" class="sl-flex astro-eglb2tuv"><span class="sr-only astro-eglb2tuv">RSS</span><svg aria-hidden="true" class="astro-eglb2tuv astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1em;"><path d="M2.88 16.88a3 3 0 0 0 0 4.24 3 3 0 0 0 4.24 0 3 3 0 0 0-4.24-4.24Zm2.83 2.83a1 1 0 0 1-1.42-1.42 1 1 0 0 1 1.42 0 1 1 0 0 1 0 1.42ZM5 12a1 1 0 0 0 0 2 5 5 0 0 1 5 5 1 1 0 0 0 2 0 7 7 0 0 0-7-7Zm0-4a1 1 0 0 0 0 2 9 9 0 0 1 9 9 1 1 0 0 0 2 0 11.08 11.08 0 0 0-3.22-7.78A11.08 11.08 0 0 0 5 8Zm10.61.39A15.11 15.11 0 0 0 5 4a1 1 0 0 0 0 2 13 13 0 0 1 13 13 1 1 0 0 0 2 0 15.11 15.11 0 0 0-4.39-10.61Z"/></svg></a> </div>   </div> </div> </div> </div> </nav> <div class="main-frame astro-w56464pf">  <script type="module">const a=document.getElementById("starlight__sidebar"),n=a?.querySelector("sl-sidebar-state-persist"),o="sl-sidebar-state",i=()=>{let t=[];const e=n?.dataset.hash||"";try{const s=sessionStorage.getItem(o),r=JSON.parse(s||"{}");Array.isArray(r.open)&&r.hash===e&&(t=r.open)}catch{}return{hash:e,open:t,scroll:a?.scrollTop||0}},c=t=>{try{sessionStorage.setItem(o,JSON.stringify(t))}catch{}},d=()=>c(i()),l=(t,e)=>{const s=i();s.open[e]=t,c(s)};n?.addEventListener("click",t=>{if(!(t.target instanceof Element))return;const e=t.target.closest("summary")?.closest("details");if(!e)return;const s=e.querySelector("sl-sidebar-restore"),r=parseInt(s?.dataset.index||"");isNaN(r)||l(!e.open,r)});addEventListener("visibilitychange",()=>{document.visibilityState==="hidden"&&d()});addEventListener("pageHide",d);</script> <div class="lg:sl-flex astro-lhfnn4yv"> <aside class="right-sidebar-container print:hidden astro-lhfnn4yv"> <div class="right-sidebar astro-lhfnn4yv"> <div class="lg:sl-hidden astro-dvqtphzm"><mobile-starlight-toc data-min-h="2" data-max-h="3" class="astro-ot5mno5m"><nav aria-labelledby="starlight__on-this-page--mobile" class="astro-ot5mno5m"><details id="starlight__mobile-toc" class="astro-ot5mno5m"><summary id="starlight__on-this-page--mobile" class="sl-flex astro-ot5mno5m"><span class="toggle sl-flex astro-ot5mno5m">本页内容<svg aria-hidden="true" class="caret astro-ot5mno5m astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1rem;"><path d="m14.83 11.29-4.24-4.24a1 1 0 1 0-1.42 1.41L12.71 12l-3.54 3.54a1 1 0 0 0 0 1.41 1 1 0 0 0 .71.29 1 1 0 0 0 .71-.29l4.24-4.24a1.002 1.002 0 0 0 0-1.42Z"/></svg></span><span class="display-current astro-ot5mno5m"></span></summary><div class="dropdown astro-ot5mno5m"><ul class="isMobile astro-w3ubi3w2" style="--depth: 0;"> <li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#_top" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">概述</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#features" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">Features</span> </a> <ul class="isMobile astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#other" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">Other</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-1" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-2" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-3" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-4" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-5" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-6" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li> </ul> </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#配置" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">配置</span> </a> <ul class="isMobile astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#设置" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">设置</span> </a>  </li> </ul> </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#已知问题--注意事项" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">已知问题 / 注意事项</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#整理你的文件" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">整理你的文件</span> </a> <ul class="isMobile astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#音乐" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">音乐</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#有声读物" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">有声读物</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#播客" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">播客</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#封面图片" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">封面图片</span> </a>  </li> </ul> </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#标记文件" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">标记文件</span> </a> <ul class="isMobile astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#多艺术家曲目" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">多艺术家曲目</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#ma-使用的标签" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">MA 使用的标签</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#手动调整标签" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">手动调整标签</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#无标签文件" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">无标签文件</span> </a>  </li> </ul> </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#cue-sheet-支持" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">CUE Sheet 支持</span> </a> <ul class="isMobile astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#最低可用的-cue-sheet" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">最低可用的 CUE Sheet</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#完整字段参考" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">完整字段参考</span> </a>  </li> </ul> </li> </ul></div></details></nav></mobile-starlight-toc><script type="module" src="/music-assistant/_astro/MobileTableOfContents.astro_astro_type_script_index_0_lang.hwBsy0Mo.js"></script></div><div class="right-sidebar-panel sl-hidden lg:sl-block astro-dvqtphzm"><div class="sl-container astro-dvqtphzm"><starlight-toc data-min-h="2" data-max-h="3"><nav aria-labelledby="starlight__on-this-page"><h2 id="starlight__on-this-page">本页内容</h2><ul class="astro-w3ubi3w2" style="--depth: 0;"> <li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#_top" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">概述</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#features" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">Features</span> </a> <ul class="astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#other" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">Other</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-1" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-2" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-3" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-4" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-5" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#其他-6" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">其他</span> </a>  </li> </ul> </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#配置" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">配置</span> </a> <ul class="astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#设置" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">设置</span> </a>  </li> </ul> </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#已知问题--注意事项" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">已知问题 / 注意事项</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#整理你的文件" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">整理你的文件</span> </a> <ul class="astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#音乐" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">音乐</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#有声读物" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">有声读物</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#播客" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">播客</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#封面图片" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">封面图片</span> </a>  </li> </ul> </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#标记文件" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">标记文件</span> </a> <ul class="astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#多艺术家曲目" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">多艺术家曲目</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#ma-使用的标签" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">MA 使用的标签</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#手动调整标签" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">手动调整标签</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#无标签文件" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">无标签文件</span> </a>  </li> </ul> </li><li class="astro-w3ubi3w2" style="--depth: 0;"> <a href="#cue-sheet-支持" class="astro-w3ubi3w2" style="--depth: 0;"> <span class="astro-w3ubi3w2" style="--depth: 0;">CUE Sheet 支持</span> </a> <ul class="astro-w3ubi3w2" style="--depth: 1;"> <li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#最低可用的-cue-sheet" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">最低可用的 CUE Sheet</span> </a>  </li><li class="astro-w3ubi3w2" style="--depth: 1;"> <a href="#完整字段参考" class="astro-w3ubi3w2" style="--depth: 1;"> <span class="astro-w3ubi3w2" style="--depth: 1;">完整字段参考</span> </a>  </li> </ul> </li> </ul></nav></starlight-toc><script type="module" src="/music-assistant/_astro/TableOfContents.astro_astro_type_script_index_0_lang.FuRcXuRY.js"></script></div></div> </div> </aside> <div class="main-pane astro-lhfnn4yv">  <main data-pagefind-body class="astro-ui3qboqa" lang="zh-CN" dir="ltr">    <div class="content-panel astro-z2gjmv2a"> <div class="sl-container astro-z2gjmv2a"> <div id="_top" class="overview-anchor"></div> </div> </div> <div class="content-panel astro-z2gjmv2a"> <div class="sl-container astro-z2gjmv2a"> <div class="sl-markdown-content"> <div class="sl-heading-wrapper level-h1"><h1 id="文件系统源-">文件系统源 <img src="/music-assistant/assets/icons/localfiles-icon.png" alt="Preview image" style="width: 70px; float: right;" loading="lazy"></h1><a class="sl-anchor-link" href="#文件系统源-"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “文件系统源 ”</span></a></div>
+<p>Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文件，并将其编目到资料库（library）中，从而使 Music Assistant 支持的所有播放器提供方（player provider）都能播放这些文件。网络支持仅限于 SMB/CIFS、NFS 和 WebDAV，以及云存储服务 Google Drive 和 Microsoft OneDrive。</p>
+<p>当 MA 中还有流媒体源可用时，只有当相同条目出现在该流媒体源的“资料库”（Library）中时才会建立链接。不过，额外的曲目和专辑仍会出现在各种视图中，或可通过全局搜索找到，之后可单独添加到 MA 资料库中。</p>
+<div class="sl-heading-wrapper level-h2"><h2 id="features">Features</h2><a class="sl-anchor-link" href="#features"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Features”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left"></th><th align="center"></th></tr></thead><tbody><tr><td align="left">Subscription FREE</td><td align="center">Yes</td></tr><tr><td align="left">Self-Hosted Local Media</td><td align="center">Yes</td></tr><tr><td align="left">Media Types Supported</td><td align="center">Artists, Albums, Tracks, Playlists, Audiobooks, Podcasts</td></tr><tr><td align="left"><a href="/music-assistant/ui/#view---discover">Recommendations</a> Supported</td><td align="center">No</td></tr><tr><td align="left">Lyrics Supported</td><td align="center">Yes</td></tr><tr><td align="left"><a href="/music-assistant/ui/#track-menu">Endless Mix</a></td><td align="center">No</td></tr><tr><td align="left">Artist Top Tracks Support</td><td align="center">No</td></tr><tr><td align="left">Similar Artists Support</td><td align="center">No</td></tr><tr><td align="left">Similar Tracks Support</td><td align="center">Yes with Sonic Similarity Plugin</td></tr><tr><td align="left">Maximum Stream Quality</td><td align="center">FLAC, Unlimited</td></tr><tr><td align="left">Login Method</td><td align="center">None or Password</td></tr></tbody></table>
+<div class="sl-heading-wrapper level-h3"><h3 id="other">Other</h3><a class="sl-anchor-link" href="#other"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “Other”</span></a></div>
+<ul>
+<li>Searching for tracks is possible</li>
+<li>Local music is automatically included in the MA Library</li>
+<li>Files are not favourited by default. All items can be seen if the “favourite” filter (the heart) is deselected. Items can then be favourited as desired</li>
+<li>If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)</li>
+<li>On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically</li>
+<li>It is possible to add multiple filesystem sources</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="其他">其他</h3><a class="sl-anchor-link" href="#其他"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “其他”</span></a></div>
+<ul>
+<li>可以搜索曲目</li>
+<li>本地音乐会自动包含在 MA 资料库中</li>
+<li>文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目</li>
+<li>如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全</li>
+<li>播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本</li>
+<li>可以添加多个文件系统源</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="其他-1">其他</h3><a class="sl-anchor-link" href="#其他-1"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “其他”</span></a></div>
+<ul>
+<li>可以搜索曲目</li>
+<li>本地音乐会自动包含在 MA 资料库中</li>
+<li>文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目</li>
+<li>如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全</li>
+<li>播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本</li>
+<li>可以添加多个文件系统源</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="其他-2">其他</h3><a class="sl-anchor-link" href="#其他-2"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “其他”</span></a></div>
+<ul>
+<li>可以搜索曲目</li>
+<li>本地音乐会自动包含在 MA 资料库中</li>
+<li>文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目</li>
+<li>如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全</li>
+<li>播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本</li>
+<li>可以添加多个文件系统源</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="其他-3">其他</h3><a class="sl-anchor-link" href="#其他-3"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “其他”</span></a></div>
+<ul>
+<li>可以搜索曲目</li>
+<li>本地音乐会自动包含在 MA 资料库中</li>
+<li>文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目</li>
+<li>如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全</li>
+<li>播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本</li>
+<li>可以添加多个文件系统源</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="其他-4">其他</h3><a class="sl-anchor-link" href="#其他-4"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “其他”</span></a></div>
+<ul>
+<li>可以搜索曲目</li>
+<li>本地音乐会自动包含在 MA 资料库中</li>
+<li>文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目</li>
+<li>如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全</li>
+<li>播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本</li>
+<li>可以添加多个文件系统源</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="其他-5">其他</h3><a class="sl-anchor-link" href="#其他-5"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “其他”</span></a></div>
+<ul>
+<li>可以搜索曲目</li>
+<li>本地音乐会自动包含在 MA 资料库中</li>
+<li>文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目</li>
+<li>如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全</li>
+<li>播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本</li>
+<li>可以添加多个文件系统源</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="其他-6">其他</h3><a class="sl-anchor-link" href="#其他-6"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “其他”</span></a></div>
+<ul>
+<li>可以搜索曲目</li>
+<li>本地音乐会自动包含在 MA 资料库中</li>
+<li>文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目</li>
+<li>如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全</li>
+<li>播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本</li>
+<li>可以添加多个文件系统源</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="配置">配置</h2><a class="sl-anchor-link" href="#配置"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “配置”</span></a></div>
+<p>音乐、有声读物和播客必须分别添加单独的源。</p>
+<p><strong>音频文件位于运行 Music Assistant 服务器的设备的磁盘/文件夹上</strong></p>
+<p>如果文件存储在运行 Music Assistant 的设备上，例如 Home Assistant OS 中的 <code dir="auto">/media</code> 文件夹，则应选择“文件系统（本地磁盘）”（Filesystem (local disk)）源，然后提供文件的路径。</p>
+<div class="markdown-alert markdown-alert-note" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>NOTE</p>
+<p>在 Home Assistant OS 上只能访问 /media 文件夹，且无法将 Home Assistant 中的文件夹挂载到该路径。Docker 用户可以挂载自己的文件夹路径。</p>
+</div>
+<div class="markdown-alert markdown-alert-caution" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>CAUTION</p>
+<p>Music Assistant 假定你的 NFS 或 SMB 服务器位于本地网络中。它自身不提供任何加密或访问控制，因此不应通过互联网访问这些共享。</p>
+</div>
+<p><strong>音频文件位于通过 SMB/CIFS 提供服务的远程共享上</strong></p>
+<p>Music Assistant 支持 SMB（也称为 samba 或 CIFS）共享和 DFS。选择音乐源“文件系统（远程共享）”（Filesystem (remote share)），并配置服务器的（fqdn）主机名（或 IP 地址）、共享名称以及可选的子文件夹。高级选项包括：</p>
+<ul>
+<li><b>SMB 版本。</b>要使用的 SMB 协议版本。为获得更好的性能和安全性，建议使用 SMB 3.0 或更高版本。使用 Auto 可让系统自动协商。可选值为 <code dir="auto">Auto</code>、<code dir="auto">SMB 1.0</code>、<code dir="auto">SMB 2.0</code>、<code dir="auto">SMB 2.1</code>、<code dir="auto">SMB 3.0 [default]</code> 和 <code dir="auto">SMB 3.1.1</code></li>
+<li><b>缓存模式。</b>缓存模式会影响性能和一致性。“Loose”（宽松）可为读取密集型工作负载提供更好的性能，推荐用于音乐资料库。可选值为 <code dir="auto">Strict</code>、<code dir="auto">Loose (Recommended) [default]</code> 和 <code dir="auto">None</code></li>
+</ul>
+<p><strong>音频文件位于通过 NFS 提供服务的远程共享上</strong></p>
+<p>Music Assistant 支持 NFS 共享。选择音乐源“文件系统（NFS 共享）”（Filesystem (NFS share)），并配置服务器的 IP 地址（不带前导 <code dir="auto">http://</code>）、共享的绝对导出路径（例如 <code dir="auto">/volume1/music</code>）以及可选的子文件夹。</p>
+<p><strong>音频文件位于通过 WebDAV 提供服务的远程共享上</strong></p>
+<p>Music Assistant 支持 WebDAV 共享。选择音乐源 “WebDAV”，并配置 WebDAV 共享的完整网址，包括内容文件夹的完整路径（例如 <code dir="auto">https://example.com/webdav/music</code>）。如果需要身份验证，请提供用户名和密码。SSL 证书验证是可选的，默认处于禁用状态。</p>
+<p><strong>音频文件位于通过 Google Drive 提供服务的远程共享上</strong></p>
+<p>Music Assistant 支持 Google Drive。按照 Home Assistant 文档<a href="https://www.home-assistant.io/integrations/google_drive/">获取客户端 ID 和机密</a>，但使用 <code dir="auto">https://music-assistant.io/callback</code> 作为 <code dir="auto">Authorized redirect URI</code>（授权重定向 URI）。然后添加音乐源 <code dir="auto">Google Drive</code>，将客户端 ID 和机密填入必填字段，再按 <code dir="auto">AUTHORIZE WITH GOOGLE</code>。最后，添加 <code dir="auto">Drive Folder ID to Scan</code>（要扫描的云端硬盘文件夹 ID），即用浏览器访问云端硬盘文件夹时 URL 末尾的字符串。例如：<code dir="auto">https://drive.google.com/drive/u/0/folders/</code><b>abcfJhfIilxCtMj6rItMmAdA3rDz1ab1c</b></p>
+<div class="markdown-alert markdown-alert-caution" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>CAUTION</p>
+<p>确保将 OAuth 同意屏幕设置为 <code dir="auto">In production</code>（生产状态，而非 <code dir="auto">Testing</code> 测试状态），否则 Google 会在 7 天后撤销访问权限，你将需要每周重新授权。</p>
+</div>
+<p><strong>音频文件位于通过 One Drive 提供服务的远程共享上</strong></p>
+<p>Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户）。设置说明如下。</p>
+<details>
+<summary><b>为 Music Assistant 设置 OneDrive</b></summary>
+<div>
+<br>
+你需要从 Microsoft 获得两样东西：<b>客户端 ID</b>（Client ID）和<b>客户端机密</b>（Client Secret）。设置大约需要 15 分钟。
+<div class="sl-heading-wrapper level-h4"><h4 id="1-获取-azure-目录仅首次需要">1. 获取 Azure 目录（仅首次需要）</h4><a class="sl-anchor-link" href="#1-获取-azure-目录仅首次需要"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “1. 获取 Azure 目录（仅首次需要）”</span></a></div>
+<p>没有目录，Microsoft 就不允许你注册应用。</p>
+<ul>
+<li>访问 <a href="https://azure.microsoft.com">https://azure.microsoft.com</a> 并<strong>注册免费的 Azure 账户</strong></li>
+<li>免费层就足够了。可能会要求你提供银行卡进行身份验证，但不会向你收费</li>
+</ul>
+<div class="sl-heading-wrapper level-h4"><h4 id="2-注册应用程序">2. 注册应用程序</h4><a class="sl-anchor-link" href="#2-注册应用程序"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “2. 注册应用程序”</span></a></div>
+<ol>
+<li>进入 <strong>Microsoft Entra 管理门户</strong> > <strong>应用注册</strong> > <strong>新注册</strong>。</li>
+<li>**名称：**任意名称，例如 <code dir="auto">Music Assistant</code>。</li>
+<li>**受支持的账户类型：**选择 <strong>“任何组织目录中的账户和个人 Microsoft 账户”</strong>。</li>
+<li>**重定向 URI：**将类型设置为 <strong>Web</strong>，URL 设置为 <code dir="auto">https://music-assistant.io/callback</code></li>
+<li>点击<strong>注册</strong>。</li>
+</ol>
+<div class="sl-heading-wrapper level-h4"><h4 id="3-修正清单重要---两项设置">3. 修正清单（重要 - 两项设置）</h4><a class="sl-anchor-link" href="#3-修正清单重要---两项设置"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “3. 修正清单（重要 - 两项设置）”</span></a></div>
+<p>必须更改两个值，个人 Microsoft 账户才能正常工作。</p>
+<ol>
+<li>在你的应用中，打开<strong>清单</strong>（Manifest，左侧菜单）。</li>
+<li>设置以下两个属性：
+<div class="expressive-code"><link rel="stylesheet" href="/music-assistant/_astro/ec.v4551.css"><script type="module" src="/music-assistant/_astro/ec.0vx5m.js"></script><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="json"><code><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">signInAudience</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">AzureADandPersonalMicrosoftAccount</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">,</span></div></div><div class="ec-line"><div class="code"><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#ECC48D;--1:#984E4D">requestedAccessTokenVersion</span><span style="--0:#D9F5DD;--1:#111111">"</span><span style="--0:#D6DEEB;--1:#403F53">: </span><span style="--0:#F78C6C;--1:#AA0982">2</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="&#x22;signInAudience&#x22;: &#x22;AzureADandPersonalMicrosoftAccount&#x22;,&#x22;requestedAccessTokenVersion&#x22;: 2"><div></div></button></div></figure></div>
+</li>
+<li>**保存。**等待约 2 分钟让更改生效。</li>
+</ol>
+<blockquote>
+<p>如果跳过此步骤，你会遇到：<em>“unauthorized_client: The client does not exist or is not enabled for consumers.”</em></p>
+</blockquote>
+<div class="sl-heading-wrapper level-h4"><h4 id="4-复制客户端-id">4. 复制客户端 ID</h4><a class="sl-anchor-link" href="#4-复制客户端-id"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “4. 复制客户端 ID”</span></a></div>
+<ul>
+<li>在应用的<strong>概述</strong>（Overview）页面，复制<strong>应用程序（客户端）ID</strong>。</li>
+<li>这就是你的<strong>客户端 ID</strong>。</li>
+</ul>
+<div class="sl-heading-wrapper level-h4"><h4 id="5-创建客户端机密">5. 创建客户端机密</h4><a class="sl-anchor-link" href="#5-创建客户端机密"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “5. 创建客户端机密”</span></a></div>
+<ol>
+<li>左侧菜单 > <strong>证书和机密</strong>（Certificates &#x26; secrets） > <strong>新建客户端机密</strong>。</li>
+<li>添加描述，选择一个过期时间（最长约 2 年）。</li>
+<li><strong>立即复制“值”（Value）列</strong> - 而不是机密 ID。离开该页面后“值”将被隐藏。这就是你的<strong>客户端机密</strong>。</li>
+</ol>
+<blockquote>
+<p>机密会<strong>过期</strong>。过期时，请创建新的机密并在 Music Assistant 中重新授权。</p>
+</blockquote>
+<div class="sl-heading-wrapper level-h4"><h4 id="6-可选选择文件夹">6. （可选）选择文件夹</h4><a class="sl-anchor-link" href="#6-可选选择文件夹"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “6. （可选）选择文件夹”</span></a></div>
+<p>将文件夹保留为 <code dir="auto">root</code> 可扫描整个云端硬盘，或者输入文件夹<strong>路径</strong>来限制扫描范围，例如 <code dir="auto">Music</code> 或 <code dir="auto">Documents/Music</code></p>
+<p>请使用文件夹在 OneDrive 中的显示名称。</p>
+<div class="sl-heading-wrapper level-h4"><h4 id="7-在-music-assistant-中设置提供方">7. 在 Music Assistant 中设置提供方</h4><a class="sl-anchor-link" href="#7-在-music-assistant-中设置提供方"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “7. 在 Music Assistant 中设置提供方”</span></a></div>
+<ol>
+<li>添加 OneDrive 提供方。</li>
+<li>粘贴<strong>客户端 ID</strong> 和<strong>客户端机密</strong>，设置<strong>要扫描的文件夹</strong>（或 <code dir="auto">root</code>）。</li>
+<li>点击<strong>通过 Microsoft 授权</strong>（Authorize with Microsoft），登录并批准访问。</li>
+<li>保存。</li>
+</ol>
+<div class="sl-heading-wrapper level-h4"><h4 id="常见错误">常见错误</h4><a class="sl-anchor-link" href="#常见错误"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “常见错误”</span></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>错误</th><th>解决方法</th></tr></thead><tbody><tr><td>“unable to create app outside a directory”</td><td>注册 Azure（步骤 1）</td></tr><tr><td>“unauthorized_client … not enabled for consumers”</td><td>清单设置（步骤 3），等待 2 分钟</td></tr><tr><td>“Property api.requestedAccessTokenVersion is invalid”</td><td>将 <code dir="auto">requestedAccessTokenVersion</code> 设置为 <code dir="auto">2</code>（步骤 3）</td></tr><tr><td>“Folder not found”</td><td>检查文件夹路径拼写（步骤 6），或使用 <code dir="auto">root</code></td></tr><tr><td>授权显示回调但 MA 不保存</td><td>再次尝试点击 <code dir="auto">Authorize with Microsoft</code></td></tr></tbody></table>
+</div>
+</details>
+<div class="sl-heading-wrapper level-h3"><h3 id="设置">设置</h3><a class="sl-anchor-link" href="#设置"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “设置”</span></a></div>
+<p>除了上述用于配置此源的设置之外，还有其他可用设置（注意，某些选项会根据所选内容类型而变灰不可用）：</p>
+<ul>
+<li><b>媒体文件夹中的内容类型。</b>此设置定义源的内容类型，是正确识别音乐、有声读物和播客所必需的</li>
+<li><b>曲目缺少专辑艺术家 ID3 标签时的操作。</b>首先应<a href="#tagging-files">正确标记文件</a>。MA 需要定义专辑艺术家，才能将条目正确添加到数据库。此设置定义了应如何处理这种情况，而不是直接跳过缺少该信息的曲目。默认将使用 <code dir="auto">Various Artists</code>，其他可用选项为 <code dir="auto">Track Artist</code> 和 <code dir="auto">Folder name (if possible)</code>。</li>
+<li><b>忽略专辑文件夹中包含专辑曲目的播放列表。</b>有些用户为每张专辑创建一个播放列表。对于大型收藏，这会导致播放列表视图无法使用。为避免这种情况，此设置（默认启用）将忽略位于源根文件夹下超过一层深度的播放列表</li>
+<li><b>将此源中的资料库艺术家/专辑同步到 Music Assistant。</b>是否同步本地源中的所有艺术家/专辑。</li>
+<li><b>将曲目/文件导入 Music Assistant 资料库。</b>定义是否需要导入曲目/文件。如果不导入资料库，仍可使用浏览（Browse）功能手动浏览曲目。请注意，将曲目添加到 Music Assistant 资料库时，曲目艺术家和专辑也会始终一并被导入</li>
+<li><b>将播放列表（m3u 文件）导入 Music Assistant 资料库。</b>定义是否需要导入播放列表（m3u 文件）。如果不导入资料库，仍可使用浏览（Browse）功能手动浏览。</li>
+<li><b>将播客/有声读物导入 Music Assistant 资料库。</b>定义是否需要导入播客/有声读物。如果不导入资料库，仍可使用浏览（Browse）功能手动浏览条目。</li>
+<li><b>将曲目流派传播到专辑和艺术家。</b>当专辑/艺术家自身没有流派元数据时，从其曲目派生专辑和艺术家的流派</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="已知问题--注意事项">已知问题 / 注意事项</h2><a class="sl-anchor-link" href="#已知问题--注意事项"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “已知问题 / 注意事项”</span></a></div>
+<ul>
+<li>需要对共享的写入权限才能编辑或创建存储在本地的播放列表。如果只授予读取权限，播放列表仍可保存到 MA 内置提供方</li>
+<li>使用远程共享连接时，请注意不建议使用 SMB1（已非常老旧）。如果连接一直失败，请查看 NAS 设置，看是否可以禁用 SMB1</li>
+<li>WebDAV、Google Drive 和 OneDrive 是通过互联网而非你自己的网络访问的，因此资料库同步比本地、SMB 或 NFS 更慢，对于大型资料库尤其如此。云源的首次同步会通过互联网读取每个文件的标签</li>
+<li>不支持写入 WebDAV、Google Drive 和 OneDrive 源。播放列表可以读取，但无法创建或编辑。请使用 MA 内置提供方进行播放列表管理</li>
+</ul>
+<div class="markdown-alert markdown-alert-note" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>NOTE</p>
+<p><strong>云源（Google Drive / OneDrive）</strong></p>
+<ul>
+<li>播放开始或拖动进度时预计会有 1-2 秒的延迟，因为音频需要按需从云服务获取</li>
+<li>文件夹列表会缓存最多五分钟以保持浏览流畅，因此在云服务上所做的更改可能需要长达五分钟才会显示在 BROWSE（浏览）视图中。资料库同步始终读取最新列表，因此同步绝不会遗漏新内容</li>
+</ul>
+</div>
+<ul>
+<li>关于文件夹和文件名，请注意以下几点：
+<ul>
+<li>以下划线开头的文件夹将被忽略</li>
+<li>Music Assistant 要求所有文件和文件夹名称均为有效的 UTF-8。名称中包含非 UTF-8 字符的文件将在资料库同步期间被跳过，并会记录一条警告以指明受影响的文件。这最常影响最初在 Windows 上使用 Windows-1252 等旧编码进行标记或命名的文件，其中弯引号或带重音的字母等字符可能已被写入为非 UTF-8 字节</li>
+<li>SMB/CIFS 网络共享不支持文件夹或文件名中的表情符号及其他特殊字符。包含这些字符的条目将在资料库同步期间被跳过</li>
+</ul>
+</li>
+</ul>
+<div class="sl-heading-wrapper level-h2"><h2 id="整理你的文件">整理你的文件</h2><a class="sl-anchor-link" href="#整理你的文件"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “整理你的文件”</span></a></div>
+<p>文件夹的命名和排列方式决定了 Music Assistant 能对你的收藏了解多少。下面的章节涵盖每种内容类型以及封面图片。</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="音乐">音乐</h3><a class="sl-anchor-link" href="#音乐"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “音乐”</span></a></div>
+<ul>
+<li>本地曲目和专辑将与任何源（本地或流媒体）上相同的曲目或专辑建立链接。请注意，“相同”不只是名称相同。系统会检查标签以确认是否确实是同一曲目。在没有标签信息的情况下，MA 会尝试根据它所掌握的其他信息（如艺术家名称、专辑和曲目长度）来识别相同的曲目。不过，糟糕的标签信息可能导致糟糕的匹配</li>
+<li>如果你的文件没有标签，MA 将退而根据文件名读取 <code dir="auto">Artist - Title.ext</code>。确切规则及其限制请参见<a href="#files-without-tags">无标签文件</a>。为文件添加标签始终是更好的解决办法</li>
+<li>支持包含歌词的文本文件。这些文件必须与曲目文件名相同，并位于同一文件夹中，但文件扩展名为 <code dir="auto">.lrc</code>。播放开始时会加载歌词</li>
+<li>为尽量减少问题，音乐文件夹应遵循 /artist/album 结构，文件夹名称应与标记的艺术家和专辑名称一致，并去掉其中所有非<a href="https://en.wikipedia.org/wiki/Alphanumericals">字母数字字符</a>（例如 AC/DC 应放在名为 ACDC 的文件夹中）</li>
+<li>放在随意结构中的文件也会被导入，但无法从文件夹名称获取其他数据，并且可能会出现其他问题</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="有声读物">有声读物</h3><a class="sl-anchor-link" href="#有声读物"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “有声读物”</span></a></div>
+<ul>
+<li>支持的文件格式包括：<code dir="auto">.aa</code>、<code dir="auto">.aax</code>、<code dir="auto">.m4b</code>、<code dir="auto">.m4a</code>、<code dir="auto">.mp3</code>、<code dir="auto">.mp4</code>、<code dir="auto">.flac</code>、<code dir="auto">.ogg</code>、<code dir="auto">.opus</code></li>
+<li>有声读物放在自己的文件夹中始终受支持，这也是首选方式。对于没有标签的文件，这是强制要求，并且文件名必须按字母顺序排列以符合章节顺序</li>
+<li>带有内嵌章节的单个文件（例如 <code dir="auto">.m4b</code>）放在任何文件夹中都可以使用</li>
+<li>如果每个文件都有专辑标签（用作书名以对章节进行分组）和曲目编号标签，多本书可以共用一个文件夹。多碟书籍还需要碟片编号标签。如果存在标题标签，则会将其用作章节名称</li>
+<li>作者从 writer、专辑艺术家或艺术家标签中读取（按此顺序）。可选，但建议提供</li>
+<li>封面图片将从内嵌图像或文件夹中的图像文件（<code dir="auto">.jpg</code>、<code dir="auto">.jpeg</code>、<code dir="auto">.png</code>、<code dir="auto">.gif</code>）获取</li>
+<li>文件夹中的 <code dir="auto">.txt</code> 文件将用作书籍描述</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="播客">播客</h3><a class="sl-anchor-link" href="#播客"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “播客”</span></a></div>
+<ul>
+<li>支持的文件格式包括：<code dir="auto">.aa</code>、<code dir="auto">.aax</code>、<code dir="auto">.m4b</code>、<code dir="auto">.m4a</code>、<code dir="auto">.mp3</code>、<code dir="auto">.mp4</code>、<code dir="auto">.flac</code>、<code dir="auto">.ogg</code>、<code dir="auto">.opus</code></li>
+<li>播客必须放在自己的文件夹中。文件夹中的每个文件都是该播客的一集</li>
+<li>播客名称从各集的 <code dir="auto">album</code> 标签获取；如果不存在，则使用文件夹名称</li>
+<li>单集名称从 <code dir="auto">title</code> 标签获取。单集顺序由曲目编号标签决定</li>
+<li>支持单个单集文件中的内嵌章节</li>
+<li>文件夹中的 <code dir="auto">metadata.json</code> 文件可提供额外的播客级元数据：标题（title）、排序标题（sorttitle）、描述（description）、发布者（publisher）、流派（genres）和图片 URL。</li>
+<li>封面图片将从内嵌图像或文件夹中的图像文件（<code dir="auto">.jpg</code>、<code dir="auto">.jpeg</code>、<code dir="auto">.png</code>、<code dir="auto">.gif</code>）获取</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="封面图片">封面图片</h3><a class="sl-anchor-link" href="#封面图片"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “封面图片”</span></a></div>
+<p>支持音频文件中内嵌的封面图片并将其提取出来。也支持以单独图像的形式与文件存放在一起的封面图片，这是更好的选择。</p>
+<ul>
+<li>本地封面图片请使用以下命名规则
+<ul>
+<li>艺术家缩略图：cover.jpg、folder.jpg 或 artist.jpg（或 jpeg/png）</li>
+<li>专辑缩略图：cover.jpg、folder.jpg 或 album.jpg（或 jpeg/png）</li>
+<li>粉丝艺术图（用作横幅背景）：fanart.jpg（或 jpeg/png）</li>
+<li>标志（用于艺术家视图）：logo.png</li>
+<li>播放列表缩略图：将图像文件命名为与播放列表文件相同（例如 rock.m3u 和 rock.jpg）</li>
+</ul>
+</li>
+<li>艺术家缩略图、粉丝艺术图和标志应放在以艺术家名称命名的文件夹中。专辑缩略图应放在以专辑名称命名的文件夹中或其下方的碟片文件夹中。有关封面图片文件类型的更多信息，请参见 <a href="https://kodi.wiki/view/Artwork_types">https://kodi.wiki/view/Artwork_types</a></li>
+<li>需要下载的封面图片会在后台非常缓慢地完成下载。可以通过在视图顶部横幅的 ⋮ 菜单中选择“更新元数据”（Update Metadata）来强制下载</li>
+</ul>
+<div class="markdown-alert markdown-alert-tip" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>TIP</p>
+<p><strong>本地封面图片是最佳选择</strong></p>
+<p>在同一张专辑的每首曲目上都使用内嵌图像，对磁盘空间和性能而言都不是最优的。请改用专辑文件夹中的单个 folder.jpg</p>
+</div>
+<div class="sl-heading-wrapper level-h2"><h2 id="标记文件">标记文件</h2><a class="sl-anchor-link" href="#标记文件"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “标记文件”</span></a></div>
+<ul>
+<li>
+<p>所有音频文件都包含正确且（理想情况下）丰富的标签信息非常重要。标记越全面，使用 MA 时得到的结果就越好。请注意以下几点：</p>
+<ul>
+<li>通用标签支持：Music Assistant 可从所有常见文件格式读取标签</li>
+<li>你的标签优先：内嵌标签被视为艺术家、专辑和曲目名称的权威来源。外部元数据提供方（如 MusicBrainz 或 Fanart.tv）仅用于补充缺失的信息，例如高分辨率封面图片或艺术家简介</li>
+<li>跨平台链接：MA 使用标识符标签（如 MusicBrainz ID（MBID）和 ISRC 代码）将本地文件与 Spotify 或 Tidal 等流媒体服务上的匹配曲目无缝链接</li>
+<li>推荐的标记工具：为了在 Music Assistant 中获得最佳效果，强烈建议使用 <a href="https://picard.musicbrainz.org" target="_blank" rel="noopener noreferrer">MusicBrainz Picard</a>，以确保文件包含资料库链接所需的特定 ID。其他程序（如 <a href="https://www.mp3tag.de/en/" target="_blank" rel="noopener noreferrer">Mp3Tag</a>）通常也基于 Musicbrainz 目录，只要包含 <a href="#tags-used-by-ma">MA 使用的标签</a>表中所示的标签，也可以正常使用。如果 Picard 找不到专辑，请参见<a href="/music-assistant/help/musicbrainz/">改进 MusicBrainz 数据</a></li>
+</ul>
+</li>
+<li>
+<p>包含多个值的字段可按以下方式处理：</p>
+<ul>
+<li>对于 ID3v2.3 和 MP4 标签，多个条目应以分号分隔（这是唯一支持的标签拆分方式）。在 Picard 中，这是 OPTIONS >> TAGS >> ID3 中的一个选项。</li>
+<li>对于 Vorbis（FLAC、OGG），按照 <a href="https://xiph.org/vorbis/doc/v-comment.html">Vorbis 规范</a>使用多个字段</li>
+<li>对于 ID3v2.4 和 APEv2 标签，多个艺术家和专辑艺术家可以用空字符（null character）分隔</li>
+</ul>
+</li>
+<li>
+<p>MA 要求设置专辑艺术家（Album Artist）标签。如果未设置该标签，那么在扫描提供方时这些曲目会如何处理，取决于本地提供方的 <code dir="auto">Action when a track is missing the Albumartist ID3 tag</code> 设置</p>
+</li>
+<li>
+<p>支持包含增强元数据的 <code dir="auto">.nfo</code> 文件</p>
+</li>
+<li>
+<p>对于多碟专辑，建议（但非必需）在专辑名称文件夹下添加名为“Disc 1”、“Disc 2”等的文件夹。专辑的封面图片可以添加到顶层的专辑文件夹或碟片文件夹中</p>
+</li>
+<li>
+<p>如果碟片标签中未填写任何内容，则碟片编号不会显示在界面上</p>
+</li>
+</ul>
+<p><img src="/music-assistant/assets/screenshots/no-disc-tag.png" alt="image"></p>
+<ul>
+<li>为尽量减少 MA 出现问题，应遵循 <a href="https://kodi.wiki/view/Music_tagging" target="_blank" rel="noopener noreferrer">Kodi 指南</a>。该页面上的几乎所有技巧和建议都适用于 MA，如果严格遵守，用户体验会好得多</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="多艺术家曲目">多艺术家曲目</h3><a class="sl-anchor-link" href="#多艺术家曲目"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “多艺术家曲目”</span></a></div>
+<p>对于包含多个艺术家的曲目，简单的总结是：使用 MusicBrainz Picard 标记文件，让它写入 ARTISTS 标签和 MusicBrainz ID，MA 便会正确链接艺术家。如果你的艺术家被错误拆分（或完全没有拆分），下面的细节将准确说明 MA 如何针对每种文件格式读取多艺术家标签。</p>
+<details>
+<summary>MA 如何解析多艺术家标签（按文件格式）</summary>
+<p>对于包含多个艺术家的曲目，MA 支持多种方式。最可靠的方法是在艺术家标签之外，为 ARTIST ID 和 RELEASE ARTIST ID 提供以分号分隔的 MusicBrainz ID 列表。当 MBID 数量与解析出的艺术家数量一致时，将按原样使用标签中的名称。如果数量不一致（例如某艺术家的真实名称中包含分隔符字符），MA 将改为查询 MusicBrainz，根据 ID 解析出规范名称。</p>
+<p>无论是否存在 MBID，艺术家名称本身都需要在标签中使用以下方式之一进行编码：</p>
+<ol>
+<li>ID3v2.3 和 MP4：使用 ARTISTS 标签 - 一个专用的多值字段，列出以分号分隔的每个艺术家。（使用此方法时，无法表示名称中带分号的艺术家）</li>
+<li>FLAC/OGG/Opus：使用多个 ARTIST 字段。Vorbis comment 规范允许多个 ARTIST 字段（每个艺术家一个）。MA 会读取所有这些字段。（注意，标记工具可能会添加多个 ARTISTS（复数）字段。这不符合 Vorbis 规范，但 MA 会处理这种情况）</li>
+<li>ID3v2.4 和 APEv2：在 ARTIST 标签中使用以空字符分隔的名称列表</li>
+<li>ARTIST 标签解析 - 如果以上方式均不存在，MA 将尝试解析 ARTIST 字符串。分号被视为主要分隔符。合作类分隔符（例如 feat.、vs.、presents 等）始终会被拆分。其他分隔符（&#x26;、逗号、+、“with”）仅在 MusicBrainz Artist ID 表明预期有多个艺术家时才会使用</li>
+</ol>
+<div class="markdown-alert markdown-alert-note" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>NOTE</p>
+<p></p>
+<ul>
+<li>
+<p>如果艺术家标签被不合需要地拆分，请使用 ARTISTS 标签、多个 ARTIST 字段或 Musicbrainz 标识符来精确控制艺术家添加到数据库的方式</p>
+</li>
+<li>
+<p>专辑艺术家标签的解析方式与 ARTIST 相同 - 相同的多值规则、相同的分隔符（包括合作类和 MBID 引导的分隔符），以及解析数量与 MBID 数量不匹配时相同的 MusicBrainz 回退机制</p>
+</li>
+</ul>
+</div>
+<div class="markdown-alert markdown-alert-note" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>NOTE</p>
+<p>由于分号是多值标签的标准分隔符，名称中带分号的艺术家需要特殊处理。必须使用以下选项之一：</p>
+<ul>
+<li>所有格式：单个 MusicBrainz Artist ID</li>
+<li>Vorbis（FLAC、OGG）：多个（多于 1 个）ARTIST 字段（每个艺术家一个）</li>
+<li>ID3v2.4（MP3）：TPE1 中多个（多于 1 个）以空字符分隔的值</li>
+<li>APEv2（WavPack、Musepack 等）：Artist 字段中多个（多于 1 个）以空字符分隔的值</li>
+</ul>
+</div>
+</details>
+<div class="sl-heading-wrapper level-h3"><h3 id="ma-使用的标签">MA 使用的标签</h3><a class="sl-anchor-link" href="#ma-使用的标签"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “MA 使用的标签”</span></a></div>
+<div class="tag-table">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th align="left">标签</th><th align="left">重要性</th><th align="left">为什么重要</th></tr></thead><tbody><tr><td align="left">标题<br>艺术家<br>专辑<br>专辑艺术家<br>曲目编号</td><td align="left">必需</td><td align="left">Music Assistant 基本功能所必需</td></tr><tr><td align="left">艺术家（复数）</td><td align="left">强烈建议<br>（针对 ID3 标签）</td><td align="left">ID3 标签需要它来区分同一条目上的多个艺术家名称</td></tr><tr><td align="left">专辑艺术家排序顺序<br>艺术家排序顺序</td><td align="left">强烈建议</td><td align="left">UI 中的某些排序选项需要</td></tr><tr><td align="left">ISRC</td><td align="left">强烈建议</td><td align="left">将相同的流媒体提供方条目与流媒体和本地条目进行链接时需要</td></tr><tr><td align="left">条形码<br>目录号</td><td align="left">建议</td><td align="left">可用于将相同的流媒体提供方条目与流媒体和本地条目进行链接</td></tr><tr><td align="left">流派</td><td align="left">强烈建议</td><td align="left">UI 中的流派视图需要</td></tr><tr><td align="left">MusicBrainz 艺术家 ID<br>MusicBrainz 录音 ID<br>MusicBrainz 发行艺术家 ID<br>MusicBrainz 发行组 ID<br>MusicBrainz 发行 ID<br>MusicBrainz 曲目 ID</td><td align="left">强烈建议</td><td align="left">在本地提供方之间链接相同曲目所必需。避免同名的曲目、艺术家或专辑被错误地链接在一起</td></tr><tr><td align="left">发行类型</td><td align="left">强烈建议</td><td align="left">用作筛选器并显示在 UI 中</td></tr><tr><td align="left">碟片编号<br>总碟数</td><td align="left">强烈建议</td><td align="left">在 UI 中使用</td></tr><tr><td align="left">日期</td><td align="left">建议</td><td align="left">用作专辑日期并在曲目日期缺失时作为回退，在 UI 中使用</td></tr><tr><td align="left">原始发行日期<br>原始发行年份</td><td align="left">建议</td><td align="left">用作曲目日期并在专辑日期缺失时作为回退，在 UI 中使用</td></tr><tr><td align="left">唱片公司<br>发行国家/地区<br>发行状态</td><td align="left">可选</td><td align="left">可在未来的 UI 更新中用作排序或搜索选项</td></tr></tbody></table>
+</div>
+<style>
+  /* Keep each tag name and each importance level on one line. That sets a
+     minimum width, so the table scrolls inside its own box on a narrow
+     screen rather than being cut off or dragging the page sideways. */
+  .tag-table { overflow-x: auto; }
+  .tag-table table { min-width: 34rem; }
+  .tag-table td:nth-child(1),
+  .tag-table td:nth-child(2) { white-space: nowrap; }
+</style>
+<p>左栏对应 <a href="https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html" target="_blank" rel="noopener noreferrer">MusicBrainz Picard 标签映射</a>表中显示的 TAG NAME（标签名称）。请根据被标记文件的格式参考相应的标签名称</p>
+<p>响度标签也会被读取。如果文件标记了 ReplayGain 或 R128 响度值，Music Assistant 会将其用于<a href="/music-assistant/faq/tech-info/#volume-normalization">音量归一化</a>，而不是自行测量曲目。曲目值和专辑值都会被读取，而专辑值是将整张专辑作为整体进行归一化的唯一方法。曲目扫描之后添加或更改的标签，可通过曲目上的<strong>刷新条目</strong>（Refresh item）来获取。</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="手动调整标签">手动调整标签</h3><a class="sl-anchor-link" href="#手动调整标签"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “手动调整标签”</span></a></div>
+<div class="markdown-alert markdown-alert-warning" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>WARNING</p>
+<p>手动编辑标签适用于有意希望获得与 MusicBrainz 默认行为不同的用户。如果出错，对标签进行手动更改可能会对 MA 资料库产生不良影响。此外，源之间的匹配可能不会发生，或者可能错误地发生</p>
+</div>
+<p>通常最好保持 Picard 标签不变。不过，有些人并不认同 Musicbrainz 的观点，即 <a href="https://musicbrainz.org/doc/Style/Recording#Recordings_with_different_mastering" target="_blank" rel="noopener noreferrer">重制版与原始录音相同。</a>此技术也可用于不在 Musicbrainz 数据库中的个人抓取的专辑或曲目。要将这些区分开来，可以按如下方式编辑标签：</p>
+<ul>
+<li>移除 MusicBrainz Release ID 和 Recording ID（确切标签名称随音乐文件格式而变化，请参见 <a href="https://picard-docs.musicbrainz.org/en/latest/appendices/tag_mapping.html#id39">Picard 标签映射文档</a>）</li>
+<li>保留 MusicBrainz Artist ID</li>
+<li>移除 ISRC（因为它也用作曲目的强标识符）</li>
+<li>移除条形码（因为它也用作专辑的强标识符）</li>
+<li>由于没有版本专用标签，请将版本放在标题的括号中，可用于专辑、曲目或两者（使用专辑标签时，请确保在该发行版的所有曲目上完全一致）。例如，Great Song (Vinyl Rip Version)。无论括号中还有其他什么文字，请确保其中也包含 <code dir="auto">Version</code> 一词</li>
+<li>如果正在使用 AcoustID Lookup 提供方，请将其禁用，因为它会重新添加刚刚移除的 Recording ID</li>
+</ul>
+<div class="sl-heading-wrapper level-h3"><h3 id="无标签文件">无标签文件</h3><a class="sl-anchor-link" href="#无标签文件"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “无标签文件”</span></a></div>
+<p>始终首选标签。当文件完全没有 <code dir="auto">title</code>、<code dir="auto">artist</code> 或 <code dir="auto">track</code> 标签时，MA 会退而读取文件名，但这只是最后手段，而且特意保持简单。如果你的文件没有标签，请将其命名为 <code dir="auto">Artist - Title.ext</code>，除此之外不要有其他内容。</p>
+<div class="markdown-alert markdown-alert-warning" dir="auto">
+<p class="markdown-alert-title" dir="auto"><svg class="octicon" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>WARNING</p>
+<p>文件名只读取到<strong>第一个</strong>句点为止。<code dir="auto">Dr. Dre - Still D.R.E..mp3</code> 会被读取为标题 <code dir="auto">Dr</code>，且没有艺术家。无标签的文件名必须恰好包含一个句点，即文件扩展名之前的那一个</p>
+</div>
+<details>
+<summary>MA 如何读取无标签的文件名</summary>
+<ul>
+<li>分隔符必须是两侧都带空格的连字符。<code dir="auto">Artist-Title.mp3</code> 不会被拆分，整个名称将成为标题，且没有艺术家</li>
+<li>第一个 <code dir="auto">-</code> 之前的内容是艺术家，下一段是标题。更多段落会被丢弃，因此 <code dir="auto">Nirvana - Come As You Are - Live.mp3</code> 会以 <code dir="auto">Come As You Are</code> 导入，而 <code dir="auto">Live</code> 标记会丢失</li>
+<li>不要在文件名中加入曲目编号。开头的数字会被读取为艺术家，因此 <code dir="auto">01 - Come As You Are.mp3</code> 会得到艺术家 <code dir="auto">01</code>，而 <code dir="auto">01 - Nirvana - Come As You Are.mp3</code> 会得到艺术家 <code dir="auto">01</code> 和标题 <code dir="auto">Nirvana</code></li>
+<li><strong>专辑</strong>名称没有文件名或文件夹回退机制，因此无标签的文件永远不会被归入专辑。<code dir="auto">Action when a track is missing the Albumartist ID3 tag</code> 设置仅涵盖专辑<em>艺术家</em>，而且只有在专辑标签存在时才起作用</li>
+</ul>
+</details>
+<hr>
+<div class="sl-heading-wrapper level-h2"><h2 id="cue-sheet-支持">CUE Sheet 支持</h2><a class="sl-anchor-link" href="#cue-sheet-支持"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “CUE Sheet 支持”</span></a></div>
+<p>当文件系统提供方遇到 <code dir="auto">.cue</code> 文件时，CUE Sheet 中描述的每首曲目都会成为资料库中独立的曲目。被引用的音频文件本身不会作为单独的曲目导入。</p>
+<p>每首曲目的信息由两个来源构建：CUE Sheet 和被引用音频文件中的标签。当两者都描述同一专辑级字段时，以 CUE Sheet 为准。</p>
+<p>由主流抓取工具（EAC、CUETools、foobar2000、XLD）生成的标准 CUE Sheet 可以直接使用，下面的章节展示了 MA 所需的最低要求。为了获得最佳体验，请提供<a href="#full-field-reference">完整字段参考</a>中的附加字段。它们为 MA 提供的丰富元数据，与<a href="#tags-used-by-ma">强烈建议的标签</a>为普通音频文件提供的相同。</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="最低可用的-cue-sheet">最低可用的 CUE Sheet</h3><a class="sl-anchor-link" href="#最低可用的-cue-sheet"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “最低可用的 CUE Sheet”</span></a></div>
+<p>假设音频文件本身具有正确的 <code dir="auto">album</code>/<code dir="auto">albumartist</code> 标签：</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">FILE "album.flac" WAVE</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">TRACK 01 AUDIO</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">TITLE "First Song"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">INDEX 01 00:00:00</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">TRACK 02 AUDIO</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">TITLE "Second Song"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">INDEX 01 03:45:00</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="FILE &#x22;album.flac&#x22; WAVE  TRACK 01 AUDIO    TITLE &#x22;First Song&#x22;    INDEX 01 00:00:00  TRACK 02 AUDIO    TITLE &#x22;Second Song&#x22;    INDEX 01 03:45:00"><div></div></button></div></figure></div>
+<p>每首曲目需要：</p>
+<ul>
+<li><code dir="auto">TRACK NN AUDIO</code></li>
+<li><code dir="auto">TITLE "..."</code> - 没有标题的曲目将被跳过并记录警告</li>
+<li><code dir="auto">INDEX 01 MM:SS:FF</code></li>
+</ul>
+<p>CUE Sheet 需要：</p>
+<ul>
+<li><code dir="auto">FILE</code> - 如果 CUE Sheet 与音频文件共享相同的主文件名（例如 <code dir="auto">album.cue</code> 与 <code dir="auto">album.flac</code> 并存），则可以省略。</li>
+</ul>
+<p>仅支持描述单个音频文件的 CUE Sheet。包含多行 <code dir="auto">FILE</code> 的 CUE Sheet（例如按曲目抓取为单文件时留下的）将被忽略，其音频文件将使用自身的标签作为常规曲目导入。</p>
+<p>其他所有内容（专辑标题、艺术家、年份、流派、封面图片、MBID）均从音频文件自身的标签继承。</p>
+<p>如果音频文件也没有专辑/艺术家标签，则最低要求增加为：</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">PERFORMER "The Band"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">TITLE "Album Name"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">FILE "album.flac" WAVE</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">TRACK 01 AUDIO</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">TITLE "First Song"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">INDEX 01 00:00:00</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">TRACK 02 AUDIO</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">TITLE "Second Song"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">INDEX 01 03:45:00</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="PERFORMER &#x22;The Band&#x22;TITLE &#x22;Album Name&#x22;FILE &#x22;album.flac&#x22; WAVE  TRACK 01 AUDIO    TITLE &#x22;First Song&#x22;    INDEX 01 00:00:00  TRACK 02 AUDIO    TITLE &#x22;Second Song&#x22;    INDEX 01 03:45:00"><div></div></button></div></figure></div>
+<p>如果既没有 CUE <code dir="auto">TITLE</code> 也没有音频文件专辑标签，曲目仍会导入，但不会附加到任何专辑 - 会记录一条警告。</p>
+<div class="sl-heading-wrapper level-h3"><h3 id="完整字段参考">完整字段参考</h3><a class="sl-anchor-link" href="#完整字段参考"><span aria-hidden="true" class="sl-anchor-icon"><svg width="16" height="16" viewBox="0 0 24 24"><path fill="currentcolor" d="m12.11 15.39-3.88 3.88a2.52 2.52 0 0 1-3.5 0 2.47 2.47 0 0 1 0-3.5l3.88-3.88a1 1 0 0 0-1.42-1.42l-3.88 3.89a4.48 4.48 0 0 0 6.33 6.33l3.89-3.88a1 1 0 1 0-1.42-1.42Zm8.58-12.08a4.49 4.49 0 0 0-6.33 0l-3.89 3.88a1 1 0 0 0 1.42 1.42l3.88-3.88a2.52 2.52 0 0 1 3.5 0 2.47 2.47 0 0 1 0 3.5l-3.88 3.88a1 1 0 1 0 1.42 1.42l3.88-3.89a4.49 4.49 0 0 0 0-6.33ZM8.83 15.17a1 1 0 0 0 1.1.22 1 1 0 0 0 .32-.22l4.92-4.92a1 1 0 0 0-1.42-1.42l-4.92 4.92a1 1 0 0 0 0 1.42Z"></path></svg></span><span class="sr-only" data-pagefind-ignore="">Section titled “完整字段参考”</span></a></div>
+<details>
+<summary>Music Assistant 解析的每个指令，以及元数据的组合方式</summary>
+<p>最初的 Cue Sheet 规范只有 <a href="https://web.archive.org/web/20160201021136/http://digitalx.org/cue-sheet/syntax/">13 个指令</a>。这些不足以让 Music Assistant 达到最佳工作效果，因此通过各种 REM 字段添加了额外支持，以便提供与<a href="#tags-used-by-ma">上文所列标签</a>等效的内容。如下所述，此元数据可以通过文件中的标签与 Cue Sheet 中字段的任意组合来提供。由于主流的 CUE Sheet 制作工具不会输出这些 REM 字段（它们遵循最初的 13 指令规范），希望为 Music Assistant 提供完整元数据的用户需要手动将它们添加到 CUE Sheet 中 - 或者，对于专辑级元数据，直接标记音频文件本身。命名遵循 <a href="https://picard-docs.musicbrainz.org/en/latest/_static/MusicBrainz_Picard_Tag_Map.html">Picard 的变量约定</a>，因此已经使用 Picard 标记资料库的用户会对此类字段感到熟悉。</p>
+<p><strong>多值策略</strong></p>
+<p>多值字段遵循 Vorbis 约定：重复整行，而不是用分隔符连接。这样可以保持 <code dir="auto">AC/DC</code> 或 <code dir="auto">Wait, Wait... Don't Tell Me!</code> 这类名称完好无损。下表中标注了支持多值的指令。</p>
+<p>当艺术家与伴随字段（排序名称、MB 艺术家 ID）都为多值时，Music Assistant 会按索引对齐它们 - 第 N 个 <code dir="auto">REM ARTISTSORT</code> 对应第 N 个 <code dir="auto">PERFORMER</code>。</p>
+<p><strong>从 CUE Sheet 读取的字段（专辑级）</strong></p>
+<p>写在文件顶部、任何 <code dir="auto">TRACK</code> 之前。<strong>Standard</strong>（标准）列表示该指令是否通常由主流抓取/制作工具（EAC、CUETools、foobar2000、XLD）输出，而不一定是最初 13 指令 CDRWIN 规范的一部分。标记为 <strong>No</strong> 的字段是 Music Assistant 的扩展 - 其他播放器可能会忽略它们。</p>
+<p>标准指令 FLAGS、PREGAP、POSTGAP、SONGWRITER 和 CDTEXTFILE 会被接受但会被忽略。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>指令</th><th align="center">标准</th><th align="center">多值？</th><th>提供内容</th></tr></thead><tbody><tr><td><code dir="auto">FILE "..." WAVE|MP3|...</code></td><td align="center">是</td><td align="center">否</td><td>被引用音频文件的路径</td></tr><tr><td><code dir="auto">TITLE "..."</code></td><td align="center">是</td><td align="center">否</td><td>专辑标题（覆盖音频文件中的专辑）</td></tr><tr><td><code dir="auto">PERFORMER "..."</code></td><td align="center">是</td><td align="center">是</td><td>专辑艺术家（覆盖音频文件中的专辑艺术家）</td></tr><tr><td><code dir="auto">CATALOG &#x3C;upc></code></td><td align="center">是</td><td align="center">否</td><td>碟片 UPC/EAN - 专辑条形码</td></tr><tr><td><code dir="auto">REM DATE YYYY</code></td><td align="center">是</td><td align="center">否</td><td>专辑年份</td></tr><tr><td><code dir="auto">REM GENRE "..."</code> / <code dir="auto">GENRE "..."</code></td><td align="center">是</td><td align="center">是</td><td>专辑流派</td></tr><tr><td><code dir="auto">REM ALBUMSORT "..."</code></td><td align="center">否</td><td align="center">否</td><td>专辑排序名称</td></tr><tr><td><code dir="auto">REM ALBUMARTISTSORT "..."</code></td><td align="center">否</td><td align="center">是</td><td>专辑艺术家排序名称（与 <code dir="auto">PERFORMER</code> 对齐）</td></tr><tr><td><code dir="auto">REM MUSICBRAINZ_ALBUMARTISTID ...</code></td><td align="center">否</td><td align="center">是</td><td>专辑艺术家 MBID（与 <code dir="auto">PERFORMER</code> 对齐）</td></tr><tr><td><code dir="auto">REM MUSICBRAINZ_ALBUMID &#x3C;uuid></code></td><td align="center">否</td><td align="center">否</td><td>专辑 MBID，也称为 RELEASE ID</td></tr><tr><td><code dir="auto">REM MUSICBRAINZ_RELEASEGROUPID &#x3C;uuid></code></td><td align="center">否</td><td align="center">否</td><td>发行组 MBID</td></tr><tr><td><code dir="auto">REM RELEASETYPE ...</code></td><td align="center">否</td><td align="center">是</td><td>专辑类型（例如 <code dir="auto">album</code>、<code dir="auto">compilation</code>、<code dir="auto">live</code>）</td></tr></tbody></table>
+<p><strong>从 CUE Sheet 读取的字段（曲目级）</strong></p>
+<p>写在每个 <code dir="auto">TRACK NN AUDIO</code> 块内：</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>指令</th><th align="center">标准</th><th align="center">多值？</th><th>提供内容</th></tr></thead><tbody><tr><td><code dir="auto">TRACK NN AUDIO</code></td><td align="center">是</td><td align="center">否</td><td>曲目编号</td></tr><tr><td><code dir="auto">INDEX 01 MM:SS:FF</code></td><td align="center">是</td><td align="center">否</td><td>曲目起始位置（<code dir="auto">INDEX 00</code> 前间隙会被忽略）</td></tr><tr><td><code dir="auto">TITLE "..."</code></td><td align="center">是</td><td align="center">否</td><td>曲目名称</td></tr><tr><td><code dir="auto">PERFORMER "..."</code></td><td align="center">是</td><td align="center">是</td><td>曲目艺术家（回退到 CUE Sheet 级的 <code dir="auto">PERFORMER</code>）</td></tr><tr><td><code dir="auto">ISRC ...</code></td><td align="center">是</td><td align="center">是</td><td>曲目 ISRC</td></tr><tr><td><code dir="auto">REM GENRE "..."</code> / <code dir="auto">GENRE "..."</code></td><td align="center">是</td><td align="center">是</td><td>单曲流派（对此曲目覆盖专辑流派）</td></tr><tr><td><code dir="auto">REM TITLESORT "..."</code></td><td align="center">否</td><td align="center">否</td><td>曲目排序名称</td></tr><tr><td><code dir="auto">REM ARTISTSORT "..."</code></td><td align="center">否</td><td align="center">是</td><td>曲目艺术家排序名称（按索引与 <code dir="auto">PERFORMER</code> 对齐）</td></tr><tr><td><code dir="auto">REM MUSICBRAINZ_ARTISTID ...</code></td><td align="center">否</td><td align="center">是</td><td>曲目艺术家 MBID（按索引与 <code dir="auto">PERFORMER</code> 对齐）</td></tr><tr><td><code dir="auto">REM MUSICBRAINZ_RECORDINGID &#x3C;uuid></code></td><td align="center">否</td><td align="center">否</td><td>曲目原始录音的唯一标识符</td></tr><tr><td><code dir="auto">REM MUSICBRAINZ_TRACKID &#x3C;uuid></code></td><td align="center">否</td><td align="center">否</td><td>此发行版中曲目的唯一标识符</td></tr><tr><td><code dir="auto">REM COPYRIGHT "..."</code></td><td align="center">否</td><td align="center">否</td><td>曲目版权元数据</td></tr><tr><td><code dir="auto">REM GROUPING "..."</code></td><td align="center">否</td><td align="center">否</td><td>曲目分组元数据</td></tr><tr><td><code dir="auto">REM COMMENT "..."</code></td><td align="center">否</td><td align="center">否</td><td>曲目描述元数据</td></tr><tr><td><code dir="auto">REM ITUNESADVISORY 0|1</code></td><td align="center">否</td><td align="center">否</td><td>Explicit（限制级）标志</td></tr></tbody></table>
+<p>曲目时长由下一首曲目的 <code dir="auto">INDEX 01</code> 减去本曲目的 <code dir="auto">INDEX 01</code> 计算得出。对于最后一首曲目，则根据音频文件的总时长计算。</p>
+<p><strong>从音频文件读取的字段</strong></p>
+<p>被引用音频文件上的标签提供了适用于整张专辑的所有内容，以及用于播放的技术格式：</p>
+<ul>
+<li><strong>格式</strong>（每条 CUE 曲目共享） - 采样率、位深度、声道数、比特率、容器/编解码器、内嵌封面图片、碟片编号。</li>
+<li><strong>专辑元数据</strong>（除非被 CUE Sheet 覆盖，否则使用） - album、albumsort、albumartist/albumartists、albumartistsort、musicbrainzalbumartistid、album_type、date/year、genre、barcode、musicbrainzalbumid、musicbrainzreleasegroupid。</li>
+<li><strong>响度归一化</strong> - 对音频文件运行 ReplayGain 扫描器（例如 <code dir="auto">metaflac --add-replay-gain album.flac</code> 或 <code dir="auto">rsgain easy album.flac</code>）。Music Assistant 会自动从音频文件标签中读取 <code dir="auto">REPLAYGAIN_ALBUM_GAIN</code>；对于单文件 CUE 抓取，文件增益<em>就是</em>专辑增益。</li>
+</ul>
+<p>曲目专属的音频标签（标题、艺术家、歌词、单曲响度等）不会逐条应用于各个 CUE 曲目 - 单文件抓取只包含其中每种信息的一个副本，因此曲目之间有差异的任何信息都由 Music Assistant 依靠 CUE Sheet 获取。</p>
+<p>曲目艺术家（PERFORMER）会回退到 CUE Sheet 级的 PERFORMER，而不是音频标签。如果未找到任何 PERFORMER 指令，则会应用 [unknown]。</p>
+<p><strong>参考 CUE Sheet</strong></p>
+<p>Music Assistant 当前解析的每一个指令：</p>
+<div class="expressive-code"><figure class="frame not-content"><figcaption class="header"></figcaption><pre data-language="plaintext"><code><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">PERFORMER "Pink Floyd"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">TITLE "The Dark Side of the Moon"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">CATALOG 5099902987620</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">FILE "pink_floyd_dsotm.flac" WAVE</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">REM GENRE "Progressive Rock"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">GENRE "Art Rock"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">REM DATE 1973</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">REM RELEASETYPE album</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">REM ALBUMSORT "Dark Side of the Moon, The"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">REM MUSICBRAINZ_ALBUMID a1b2c3d4-e5f6-7890-abcd-ef1234567890</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">REM MUSICBRAINZ_RELEASEGROUPID rg000000-0000-0000-0000-000000000000</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">REM ALBUMARTISTSORT "Pink Floyd"</span></div></div><div class="ec-line"><div class="code"><span style="--0:#d6deeb;--1:#403f53">REM MUSICBRAINZ_ALBUMARTISTID aa000000-0000-0000-0000-000000000000</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">TRACK 01 AUDIO</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">TITLE "Speak to Me"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM TITLESORT "Speak to Me"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">PERFORMER "Pink Floyd"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM ARTISTSORT "Pink Floyd"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM MUSICBRAINZ_ARTISTID aa000000-0000-0000-0000-000000000000</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">ISRC GBCEN0500001</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM MUSICBRAINZ_TRACKID 11111111-1111-1111-1111-111111111111</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM COPYRIGHT "(P) 1973 Pink Floyd Music Ltd"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM GROUPING "Part I"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM COMMENT "Opening collage"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM ITUNESADVISORY 0</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">INDEX 01 00:00:00</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">TRACK 02 AUDIO</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">TITLE "Breathe (In the Air)"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">PERFORMER "Pink Floyd"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">PERFORMER "Clare Torry"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM ARTISTSORT "Pink Floyd"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM ARTISTSORT "Torry, Clare"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM MUSICBRAINZ_ARTISTID aa000000-0000-0000-0000-000000000000</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM MUSICBRAINZ_ARTISTID ab000000-0000-0000-0000-000000000000</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM MUSICBRAINZ_RECORDINGID ef000000-0110-0000-0000-000222000000</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">REM GENRE "Ambient Rock"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">ISRC GBCEN0500002</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">INDEX 01 01:05:50</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">  </span></span><span style="--0:#d6deeb;--1:#403f53">TRACK 03 AUDIO</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">TITLE "On the Run"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">PERFORMER "Pink Floyd"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">ISRC GBCEN0500003</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">GENRE "Ambient Rock"</span></div></div><div class="ec-line"><div class="code"><span class="indent"><span style="--0:#d6deeb;--1:#403f53">    </span></span><span style="--0:#d6deeb;--1:#403f53">INDEX 01 03:52:15</span></div></div></code></pre><div class="copy"><div aria-live="polite"></div><button title="Copy to clipboard" data-copied="Copied!" data-code="PERFORMER &#x22;Pink Floyd&#x22;TITLE &#x22;The Dark Side of the Moon&#x22;CATALOG 5099902987620FILE &#x22;pink_floyd_dsotm.flac&#x22; WAVEREM GENRE &#x22;Progressive Rock&#x22;GENRE &#x22;Art Rock&#x22;REM DATE 1973REM RELEASETYPE albumREM ALBUMSORT &#x22;Dark Side of the Moon, The&#x22;REM MUSICBRAINZ_ALBUMID a1b2c3d4-e5f6-7890-abcd-ef1234567890REM MUSICBRAINZ_RELEASEGROUPID rg000000-0000-0000-0000-000000000000REM ALBUMARTISTSORT &#x22;Pink Floyd&#x22;REM MUSICBRAINZ_ALBUMARTISTID aa000000-0000-0000-0000-000000000000  TRACK 01 AUDIO    TITLE &#x22;Speak to Me&#x22;    REM TITLESORT &#x22;Speak to Me&#x22;    PERFORMER &#x22;Pink Floyd&#x22;    REM ARTISTSORT &#x22;Pink Floyd&#x22;    REM MUSICBRAINZ_ARTISTID aa000000-0000-0000-0000-000000000000    ISRC GBCEN0500001    REM MUSICBRAINZ_TRACKID 11111111-1111-1111-1111-111111111111    REM COPYRIGHT &#x22;(P) 1973 Pink Floyd Music Ltd&#x22;    REM GROUPING &#x22;Part I&#x22;    REM COMMENT &#x22;Opening collage&#x22;    REM ITUNESADVISORY 0    INDEX 01 00:00:00  TRACK 02 AUDIO    TITLE &#x22;Breathe (In the Air)&#x22;    PERFORMER &#x22;Pink Floyd&#x22;    PERFORMER &#x22;Clare Torry&#x22;    REM ARTISTSORT &#x22;Pink Floyd&#x22;    REM ARTISTSORT &#x22;Torry, Clare&#x22;    REM MUSICBRAINZ_ARTISTID aa000000-0000-0000-0000-000000000000    REM MUSICBRAINZ_ARTISTID ab000000-0000-0000-0000-000000000000    REM MUSICBRAINZ_RECORDINGID ef000000-0110-0000-0000-000222000000    REM GENRE &#x22;Ambient Rock&#x22;    ISRC GBCEN0500002    INDEX 01 01:05:50  TRACK 03 AUDIO    TITLE &#x22;On the Run&#x22;    PERFORMER &#x22;Pink Floyd&#x22;    ISRC GBCEN0500003    GENRE &#x22;Ambient Rock&#x22;    INDEX 01 03:52:15"><div></div></button></div></figure></div>
+</details>
+<hr> </div> <footer class="sl-flex astro-sz7xmlte"> <div class="meta sl-flex astro-sz7xmlte"> <a href="https://github.com/music-assistant/music-assistant.io/edit/main/src/content/docs/music-providers/local-files.md" class="sl-flex print:hidden astro-gecrufwx"><svg aria-hidden="true" class="astro-gecrufwx astro-gcz5xafq" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="--sl-icon-size: 1.2em;"><path d="M22 7.24a1 1 0 0 0-.29-.71l-4.24-4.24a1 1 0 0 0-1.1-.22 1 1 0 0 0-.32.22l-2.83 2.83L2.29 16.05a1 1 0 0 0-.29.71V21a1 1 0 0 0 1 1h4.24a1 1 0 0 0 .76-.29l10.87-10.93L21.71 8c.1-.1.17-.2.22-.33a1 1 0 0 0 0-.24v-.14l.07-.05ZM6.83 20H4v-2.83l9.93-9.93 2.83 2.83L6.83 20ZM18.17 8.66l-2.83-2.83 1.42-1.41 2.82 2.82-1.41 1.42Z"/></svg>编辑此页</a>  </div> <div class="pagination-links print:hidden astro-ggxenoxj" dir="ltr">   </div> <div class="site-info astro-sz7xmlte"> <p class="astro-sz7xmlte">© 2026 Open Home Foundation</p> <div class="site-info--icons astro-sz7xmlte"> <a href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer" class="social-icon astro-sz7xmlte" title="Open Home Foundation"> <span class="sr-only astro-sz7xmlte">Open Home Foundation</span> <svg width="240" height="356" viewBox="0 0 240 356" fill="none" xmlns="http://www.w3.org/2000/svg" class="ohf-logo astro-sz7xmlte"> <path class="ohf-roof astro-sz7xmlte" d="M130.992 4.56406C124.939 -1.52135 115.034 -1.52135 109.008 4.56406L11.0056 103.09C4.95251 109.175 0 121.188 0 129.776V219.134C0 227.722 6.9964 234.783 15.565 234.783H224.435C232.977 234.783 240 227.749 240 219.134V129.776C240 121.188 235.048 109.175 228.994 103.09L130.992 4.56406Z" fill="#18BCF2"></path> <path class="ohf-base astro-sz7xmlte" d="M228 274.782C234.627 274.782 240 280.155 240 286.782V343.782C240 350.41 234.627 355.782 228 355.782H213C206.373 355.782 201 350.41 201 343.782V313.782H39V343.782C39 350.41 33.6274 355.782 27 355.782H12C5.37258 355.782 0 350.41 0 343.782V286.782C0 280.155 5.37258 274.782 12 274.782H228Z" fill="#09202E"></path> </svg> </a> <a href="https://lokalise.com/" target="_blank" rel="noopener noreferrer" class="social-icon astro-sz7xmlte" title="Lokalise 翻译平台"> <span class="sr-only astro-sz7xmlte">Lokalise 翻译平台</span> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 529.2 600" style="enable-background:new 0 0 529.2 600;" xml:space="preserve" class="astro-sz7xmlte"><style type="text/css">
+            .st0 {
+              fill: #ff6336;
+            }
+            .st1 {
+              fill: #ffc501;
+            }
+            .st2 {
+              fill: #a4a14a;
+            }
+          </style><g class="astro-sz7xmlte"><polygon class="st0 astro-sz7xmlte" points="396.9,467.7 529.2,467.7 529.2,374.2 358.1,374.2 264.6,467.7 171,374.2 0,374.2 0,467.7 132.3,467.7 264.6,600"></polygon><rect y="187.1" class="st1 astro-sz7xmlte" width="529.2" height="93.5"></rect><rect y="0" class="st2 astro-sz7xmlte" width="529.2" height="93.5"></rect></g></svg> </a> </div> </div> </footer> <p class="analytics-notice astro-sz7xmlte">
+本站使用 <a href="https://www.openhomefoundation.org/blog/making-our-web-analytics-open-source-with-plausible/" rel="noopener" class="astro-sz7xmlte">隐私优先的统计分析</a> to help us improve the site. You can view all data in our <a href="https://plausible.openhomefoundation.org/music-assistant.io" rel="noopener" class="astro-sz7xmlte">公开面板查看全部数据</a>.
+</p> </div> </div>  </main> </div> </div> </div> </div> </body></html>

@@ -1,0 +1,628 @@
+<!DOCTYPE html><html lang="zh-CN"> <head><meta charset="utf-8"><script>
+      document.documentElement.classList.add("js");
+      try {
+        const theme = localStorage.getItem("ma-theme");
+        if (theme === "light" || theme === "dark")
+          document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#0b0c0d" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#f2f4f9" media="(prefers-color-scheme: light)"><meta name="description" content="把流媒体服务和本地文件汇成一个资料库，用你已有的音箱播放。"><meta name="robots" content="index, follow"><title>Music Assistant — 你的音乐，由你做主。</title><link rel="canonical" href="https://www.hasscn.top/music-assistant/"><link rel="icon" href="/music-assistant/favicon.svg"><link rel="alternate" type="application/rss+xml" title="Music Assistant 新闻" href="/music-assistant/blog/rss.xml"><meta property="og:title" content="Music Assistant — 你的音乐，由你做主。"><meta property="og:description" content="把流媒体服务和本地文件汇成一个资料库，用你已有的音箱播放。"><meta property="og:url" content="https://www.hasscn.top/music-assistant/"><meta property="og:type" content="website"><meta property="og:image" content="https://www.hasscn.top/assets/website-social.png"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://www.hasscn.top/assets/website-social.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="Music Assistant — Your music. Your way. A preview of the Discover screen."><meta name="twitter:image:alt" content="Music Assistant — Your music. Your way. A preview of the Discover screen."><script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Music Assistant","applicationCategory":"MultimediaApplication","operatingSystem":"Linux","description":"Music library manager for your offline and online music sources","url":"https://www.music-assistant.io","author":{"@type":"Organization","name":"Open Home Foundation","url":"https://www.openhomefoundation.org/"}}</script><!-- prettier-ignore --><script async src="https://plausible.openhomefoundation.org/js/pa-Dnap0nCCcvD7asrOUpyy_.js"></script> <script>(function(){const allowedReferrers = ["01net.com","1140369499-atari-embeds.googleusercontent.com","1ms.run","360.cn","3dmart.com.hk","3dpm.ru","4pda.to","a2t.ro","abfalltermine.de","acciyo.com","adaptive-lighting.nijho.lt","adonno.com","agsi.gie.eu","aio-libs.org","air-q.com","airgradient.com","akamatis.com","akkudoktor.net","alarmy-olomouc.eu","alkly.de","all3dp.com","alvinchen.club","alza.cz","amazon.com","ameridroid.com","amplipi.discourse.group","androidauthority.com","androidpolice.com","api.daily.dev","api.home-connect.com","api.mcs3.miele.com","api.smartthings.com","apolloautomation.com","app.aevocam.com","app.parqet.com","appleid.apple.com","apps.garmin.com","apps.yunohost.org","arstechnica.com","askubuntu.com","asustor.com","atomic14.com","audiosciencereview.com","auth.tesla.com","authelia.com","automatedhome.co.uk","auweb3.isolarcloud.com","avenom.ru","awesome-ha.com","badrpc.net","bafista.ru","baidu.com","baidu.io","banglejs.com","basehim.com","bazmac.me","bbs.hassbian.com","bbs.io-tech.fi","bega.com","berrybase.de","better-thermostat.org","billboard.com.br","bindicator.net","bing.com","bitbucket.org","blog.decryption.net.au","blog.disane.dev","blog.eischmann.cz","blog.fidelramos.net","blog.frankel.ch","blog.fxpblogs.win","blog.iot7m.ru","blog.kastanis.gr","blog.matterxiaomi.com","blog.meyerrj.com","blog.michivonah.ch","blog.oppedahl.com","blog.slabnet.com","blog.tindie.com","blog.tomayac.com","blog.uaid.net.ua","blog.vyoralek.cz","blogspot.com","botland.com.pl","botland.de","braiins.com","brandlogos.org","bricozone.be","broddin.be","bsky.app","bthome.io","buildroot.org","byteoversea.com","card.camera","cb.wjz.im","cdninstagram.com","cgx13.de","chat.novaapp.ai","chat.qwen.ai","chatgpt.com","check.anomify.ai","chip.de","chuck-builds.com","chytrevypinace.cz","ci.computer","claude.ai","clausio.fr","cloud.bemfa.com","cloud.vento.build","cloudfree.shop","clubic.com","cn.d5render.com","cnblogs.com","cnet.com","cnx-software.com","cnx-software.ru","coccoc.com","codeberg.org","codechimp.org","coinforum.de","community-smarthome.com","community.asti.ga","community.evnex.com","community.hubitat.com","community.openhab.org","community.shelly.cloud","community.victronenergy.com","computerbase.de","connexion.hiloenergie.com","coolify.io","copilot.com","copilot.microsoft.com","couto.io","creator-spring.com","credexalarmsystems.eu","crowdsupply.com","dakboard.freshdesk.com","danielmartingonzalez.com","darsycertificationconsumer-wu2.azurewebsites.net","dashieapp.com","dastereo.ru","dc9vq.de","de.aliexpress.com","de.jackery.com","de.wikipedia.org","dealabs.com","deepwiki.com","degroenenerds.nl","derekseaman.com","desdeelreloj.com","dev.to","developer.chrome.com","developer.home-connect.com","developer.tuya.com","developerinsider.co","devotics.fr","devzen.ru","dfrobot.com","dietpi.com","digikey.com","digital-io.de","dinamotech.it","discord.com","discovergit.app","disq.us","diy-smart-home.ei23.de","diyenjoying.com","diyfun.de","diyless.com","diysolarforum.com","doc.embedfire.com","doc.mocreo.com","docker.com","docs.evcc.io","docs.everythingsmart.io","docs.fregata.app","docs.futureproofhomes.net","docs.gl-inet.com","docs.kilowahti.fi","docs.ncnynl.com","docs.openpublictransport.net","docs.paperd.ink","docs.powercalc.nl","docs.sunfounder.com","docs.tandoor.dev","docs.yaha-cloud.ru","docs.zephyrproject.org","documentation.grandstream.com","domadoo.fr","domasist.sk","domocraft.fr","domoticafacile.it","done.land","donetick.com","dopper.de","dou.ua","doubao.com","drive2.ru","duck.ai","duckduckgo.com","duurzamerhand.nl","ecosia.org","edubox.org","efulfillservice.sugarondemand.com","element.io","en.m.nu","en.wikipedia.org","energyforecast.de","engadget.com","esp32.co.uk","espboards.dev","esphome.io","espresense.com","espressif.com","espruino.com","everythingsmarthome.co.uk","ewelinkstore.com","facebook.be","facebook.com","facebook.de","facebook.dk","facebook.es","facebook.fr","facebook.is","facebook.it","facebook.jp","facebook.mx","facebook.nl","facebook.no","facebook.se","facebook.us","faire-ca-soi-meme.fr","fancontroller.arthofer.dev","fb.com","fb.me","fbcdn.com","fbcdn.net","fitbit.com","flasher.site","fleet-auth.prd.vn.cloud.tesla.com","flipboard.com","flow.bosch-ebike.com","flows.blueforcer.de","foro.domoticaencasa.es","forum.arduino.cc","forum.armbian.com","forum.arturhome.pl","forum.ecoflow.com","forum.ewelink.cc","forum.hardware.fr","forum.heimnetz.de","forum.iobroker.net","forum.it.mk","forum.jdtech.pl","forum.keenetic.ru","forum.magicmirror.builders","forum.mikrotik.com","forum.mypower.cz","forum.proxmox.com","forum.sailfishos.org","forum.sessy.nl","forum.wiimhome.com","forum.yunohost.org","forums.dansdeals.com","forums.lyrion.org","forums.pocketcasts.com","forums.raspberrypi.com","forums.truenas.com","fosstodon.org","foxesscommunity.com","fr.aliexpress.com","frandroid.com","frenck.dev","front-page.com","fuzznotes.com","fwd.nl","gadgets.seeed.cc","gea.com","geekxw.top","genbeta.com","getaipilot.com","gethomepage.dev","gigazine.net","git.hubp.de","gitee.com","github.blog","github.com","github.io","gitlab.com","gitlab.io","go.aftvnews.com","golem.de","google.at","google.be","google.bg","google.ca","google.ch","google.co.jp","google.co.kr","google.co.nz","google.co.uk","google.co.za","google.com","google.com.au","google.com.br","google.com.hk","google.com.mx","google.com.my","google.com.pk","google.com.sa","google.com.sg","google.com.tr","google.com.tw","google.com.ua","google.com.vn","google.cz","google.de","google.es","google.fi","google.fr","google.hu","google.io","google.it","google.nl","google.pl","google.pt","google.ro","google.se","gotailwind.com","grokipedia.com","gstatic.com","haade.fr","habr-com.cdn.ampproject.org","habr.com","hacf.fr","hachyderm.io","hackaday.com","hacks.mozilla.org","hackster.io","hacs.dev","hacs.xyz","hadevices.com","hads.smarti.dev","haeo.io","handbook.buildwithmatter.com","hanselman.com","hardware.info","hashop.nl","hass-agent.io","hass-cloud.auth.us-east-1.amazoncognito.com","hass.dev","hasscn.top","hatenablog-parts.com","haus-bus.de","hcker.news","hckrnews.com","healthassistantlink.com","heise.de","helgejohnsen.no","helios-ha.org","help.olarm.com","hiringcafe.com","hjemmeautomasjon.no","home-assistant-guide.com","home-assistant.cloud","home-assistant.dev","home-assistant.io","home-assistant.jp","home-master.eu","homeassistant-cz.cz","homeassistant.cloud","homeassistant.io","homeassistantbrasil.com.br","homeautocentral.com","homebrainz.de","homekitnews.com","homething.io","homey.app","hotmart.com","howtogeek.com","hwupgrade.it","hydrificwater.com","hydroqc.ca","hyotynen.iki.fi","iam.viessmann-climatesolutions.com","ias-lab.de","ibytedtos.com","ictfreak.nl","id.daikin.eu","id.whoop.com","ifa-berlin.com","ig.me","igen.fr","ikriz.nl","improv-wifi.com","indomus.it","industrialshields.com","inet.se","influxdata.com","infosec.exchange","inoreader.com","insiderllm.com","instagr.am","instagram.com","install.wled.me","intellicaai.space","internet.org","interop.ondilo.com","iona-ha.tinohox.de","iot.vivo.com.cn","ipstatp.com","it.makeinlab.fr","ithelp.ithome.com.tw","itmedia.co.jp","itrend24.de","itsfoss.com","jamesachambers.com","jimwillis.org","jiuyv.info","joekarlsson.com","jonashietala.se","jpk.io","jpt.sh","jupiterbroadcasting.com","kagi.com","kb.shelly.cloud","kincony.com","kitchenowl.org","kiwi-warmer.co.nz","kjell.com","knightsoft-net.de","knuspermagier.de","knx-user-forum.de","kofler.info","konnected.io","konnected.readme.io","korben.info","kotyara12.ru","l.meta.ai","lampopumput.info","languagetool.org","lappari.com","legeek.info","leios.consulting","lemmy.lundgrensjostrom.com","lemmy.ml","lemmy.world","libhunt.com","life.taikun.blog","liliputing.com","link.csdn.net","link.gitcode.com","linkedin.com","linkshop.gr","linuxiac.com","linuxmint.com","listenbrainz.org","llmvision.gitbook.io","lnkd.in","lobste.rs","loxwiki.atlassian.net","lunoo.com","luxxle.com","lwn.net","m.me","m.sogou.com","m5stack.com","macrumors.com","mactechnews.de","magicareas.io","mail.gnome.org","mail.qq.com","maison-et-domotique.com","makerworld.com","makeuseof.com","manelrodero.com","manuals.plus","masto.pt","mastodon.me.uk","mastodon.social","mastodon.top","matrix.to","matteoschizzerotto.dev","matteralpha.com","mattgerega.com","mauser.pt","mediarath.de","medievalapple.net","medium.com","meetco.daily.co","meinesmartewelt.de","memory.gmbot.name.vn","mergeo.dev","metabrainz.org","metager.de","michaelsleen.com","mikesolin.com","mistyreverie.org","mobiflip.de","mobile-ma.app","moi.ouraring.com","mojeek.com","mostlychris.com","mqtt.cn","mrdarrengriffin.com","ms0701.tistory.com","msn.com","mu.zpete.de","mushkatyush.com","music-assistant.com","music-assistant.io","musical.ly","mwunderling.com","mypal.wang","mysku.club","nabucasa.com","nachbelichtet.com","nathan.gs","nathanorick.com","nativesprings.com","naver.com","navid.nl","navimow-h5-fra.willand.com","ncot.uk","neilturner.me.uk","netlify.app","nettop.gr","newepisody.com","newinlinux.com","news.hada.io","news.ycombinator.com","newsblur.com","ngocjohn.is-a.dev","norbert.tech","note.com","notebookcheck.net","notenoughtech.com","notify.events","npmjs.com","nspanel.domodreams.it","ntp.msn.cn","nuki.io","numerama.com","oauth.hijuconn.com","oceanhero.today","ogo.live","ohf.to","okosotthon.bolt.hu","olausson.de","olegtarasov.me","omgubuntu.co.uk","openai.com","opendisplay.org","openelab.io","openhasp.com","openhasp.haswitchplate.com","openhomefoundation.org","openthread.io","opera.com","oshwhub.com","osnews.com","ottelo.jimdofree.com","ozsmartthings.com.au","pages.dev","paulusschoutsen.nl","pdx.su","perfectmediaserver.com","perplexity.ai","phanpy.social","phoronix.com","pi-shop.ch","pidiylab.com","pikabu.ru","pinboard.in","pine64.org","pinimg.com","pinterest.at","pinterest.ca","pinterest.co.uk","pinterest.com","pinterest.com.au","pinterest.com.mx","pinterest.de","pinterest.dk","pinterest.es","pinterest.fr","pinterest.ie","pinterest.it","pinterest.jp","pinterest.ph","pinterest.se","pixelstech.net","pluginsolarexplained.co.uk","portal.alarmtrade.ru","powerbaas.nl","powerforum.co.za","printables.com","privacywall.org","prodindego.b2clogin.com","programarfacil.com","protopage.com","psenyukov.ru","psmart.pl","publish.obsidian.md","pushover.net","pypi.org","qiita.com","quark.cn","qwant.com","racemat.de","radio-browser.info","raspberrypi.dk","rbaron.net","read.readwise.io","readthedocs.io","reddit.com","reedah.com","remote-logger.rhizomatics.org.uk","repo.webosbrew.org","rivianforums.com","robbshop.nl","robert.stadsbygd.net","roboter-forum.com","robpickering.com","root.cz","rudd-o.com","runtimeterror.dev","ruuvi.com","safe.menlosecurity.com","search.avastbrowser.com","search.brave.com","search.kafu.ovh","search.nixos.org","search.nortonsafesearch.com","search.yahoo.com","seeedstudio.com","seegel-systeme.de","selectra.info","selfh.st","selorahomes.com","sendspin-audio.com","sequr.be","sergiocarracedo.es","servercan.net","serverfault.com","servethehome.com","seznam.cz","sheekgeek.org","sheets.works","shellagent.io","shop.everythingsmart.io","shop.haus-automatisierung.com","shop.pimoroni.com","signalk.org","signalkraft.com","simon42.com","simplehomelab.com","simplepush.io","sl-alex.net","slack.com","slashdot.org","slimhuisje.nl","smart-home-insights.net","smartdomo.de","smarterhome.sk","smarterkram.de","smarterpapa.de","smartevchargers.co.nz","smartguys.com.au","smarthome-assistant.info","smarthome.com.au","smarthomeassistent.de","smarthomegids.com","smarthomepursuits.com","smarthomescene.com","smarthomesecrets.ca","smarthomesolver.com","smarthomeyourself.de","smartmania.cz","smartnetandhubs.com","smlight.tech","snbforums.com","so.com","social.slat.org","solar-assistant.io","sonocotta.com","sonoff.tech","sourceforge.net","spacen.io","speaktothegeek.co.uk","spfile.heimanhome.com","splitbrain.org","srwiez.com","sso.bluettipower.com","stackexchange.com","stackoverflow.com","stadt-bremerhaven.de","startpage.com","static.xtremeownage.com","steamcommunity.com","steeman.be","student-techlife.com","style.oversubstance.net","substack.com","sunenergyxt.com","superuser.com","support.bbdl.co.uk","support.lightwaverf.com","support.powerfox.energy","support.weheat.nl","svrforum.com","sweclockers.com","swiss-domotique.ch","swisscows.com","symbaloo.com","sysadmin.in.th","t.co","t.me","t3n.de","taiwansensor.com.tw","teams.public.onecdn.static.microsoft","techboys.de","techcrunch.com","techenclair.fr","techfeed.io","technikblock.de","techurls.com","tecnoyfoto.com","telegram.me","telegram.org","terncy.com.tw","teslafacts.nl","teslemetry.com","thecandidstartup.org","themalibucrew.com","theorangeone.net","thepihut.com","theregister.com","thestockpot.net","theverge.com","threads.net","tightloop.io","tiktok.com","tiktokcdn.com","tiktokv.com","tomshardware.com","tomshw.it","tomtut.de","tool.screek.io","toot.community","topgit.dev","toppodcast.com","totaldebug.uk","trello.com","trick.vanstaveren.us","trmnl.com","troyhernandez.com","tutorials-raspberrypi.de","tweakers.net","tweetdeck.com","twingate.com","twitter.com","typingmind.com","uix.lf.technology","ultravehiclecard.com","unfoldedcircle.com","uniuit.com","university.revotion.app","url-opener.com","us.shelly.com","uscardforum.com","ut.buglloc.com","varac.net","vercel.app","verdrahtet.info","verkkokauppa.nurkantakaa.fi","versatile-thermostat.org","web.archive.org","web.max.ru","webhallen.com","webshed.org","westhaver.com","wiert.me","wifishop.ro","wiki.fabianhorst.com","wiki.freshtomato.org","wiki.futo.org","wimme.net","wired.com","wordpress.com","wulu.zone","www-hacs-xyz.translate.goog","www-home--assistant-io.translate.goog","x.com","xataka.com","xda-developers.com","xfinderr.org","xn--80abzsjfcff6fi.xn--p1ai","ya.ru","yahoo.co.jp","yandex.by","yandex.com","yandex.kz","yandex.ru","yandex.uz","yandex.xyz","yetanothersmarthome.com","youtu.be","youtube-nocookie.com","youtube.com","yuanbao.tencent.com","yuque.com","zdnet.com","zenodo.org","zerlo.net","zigbee.blakadder.com","zigbee2mqtt.io","zimaspace.com","zuidwijk.com"];
+
+  /* eslint-disable */
+  ((window.plausible =
+    window.plausible ||
+    function () {
+      (plausible.q = plausible.q || []).push(arguments);
+    }),
+    (plausible.init =
+      plausible.init ||
+      function (i) {
+        plausible.o = i || {};
+      }));
+  plausible.init({
+    transformRequest: function (payload) {
+      var ref = payload.r;
+      if (!ref) return payload;
+      var host = "";
+      try {
+        host = new URL(ref).hostname.replace(/\.$/, "");
+      } catch (e) {
+        // Unparseable referrer: falls through and gets replaced.
+      }
+      for (var i = 0; i < allowedReferrers.length; i++) {
+        var d = allowedReferrers[i];
+        if (
+          host === d ||
+          (host.length > d.length && host.slice(-(d.length + 1)) === "." + d)
+        ) {
+          return payload;
+        }
+      }
+      // One aggregate bucket so we can see how much we filter without learning
+      // anything about individual visitors. .invalid is reserved by RFC 2606 and
+      // can never collide with a real domain.
+      payload.r = "https://unlisted.invalid/";
+      return payload;
+    },
+  });
+})();</script><link rel="stylesheet" href="/music-assistant/_astro/index.CmcoOQPA.css">
+<link rel="stylesheet" href="/music-assistant/_astro/MarketingLayout.C6AfUZhm.css"><script type="module" src="/music-assistant/_astro/page.B_tncCx8.js"></script></head> <body> <a class="skip-link" href="#main">
+Skip to content
+</a> <header class="site-header astro-qeonxd65"> <div class="container inner astro-qeonxd65"> <div class="brand astro-qeonxd65"> <a href="/music-assistant/" class="home astro-qeonxd65" aria-label="Music Assistant 首页"> <svg class="logo astro-qeonxd65" role="img" aria-label="Music Assistant" viewBox="0 0 1762 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M109.394 4.3814C115.242 -1.46047 124.788 -1.46047 130.606 4.3814L229.394 103.269C235.242 109.111 240 120.643 240 128.907V219.017L239.995 219.373C239.789 227.459 233.114 234.001 225 234.001H15C6.75759 234.001 2.40473e-05 227.22 0 218.987V128.877C0.000120331 120.613 4.78834 109.081 10.6064 103.239L109.394 4.3814Z" fill="#F2F4F9"/>
+<path d="M109.394 4.3814C115.242 -1.46047 124.788 -1.46047 130.606 4.3814L229.394 103.269C235.242 109.111 240 120.643 240 128.907V219.017L239.995 219.373C239.789 227.459 233.114 234.001 225 234.001H15C6.75759 234.001 2.40473e-05 227.22 0 218.987V128.877C0.000120331 120.613 4.78834 109.081 10.6064 103.239L109.394 4.3814ZM36 120.001C31.5817 120.001 28 123.582 28 128.001V206.001H44V128.001C44 123.582 40.4183 120.001 36 120.001ZM68 120.001C63.5817 120.001 60 123.582 60 128.001V206.001H76V128.001C76 123.582 72.4183 120.001 68 120.001ZM100 120.001C95.5817 120.001 92 123.582 92 128.001V206.001H108V128.001C108 123.582 104.418 120.001 100 120.001ZM158.393 120.427C154.2 119.032 149.671 121.3 148.275 125.492L121.479 206.001H138.342L163.456 130.544C164.851 126.352 162.584 121.823 158.393 120.427ZM188.708 125.492C187.313 121.3 182.783 119.032 178.591 120.427C174.399 121.823 172.131 126.352 173.526 130.544L198.642 206.001H215.504L188.708 125.492Z" fill="#18BCF2"/>
+<g clip-path="url(#clip0_2275_437)">
+<path d="M478.989 48.7412V192.245H452.699V108.394L419.619 192.235H394.19L361.491 109.058V192.235H335.866V48.7412H361.491L406.9 161.08L452.699 48.7412H478.989Z" fill="currentColor"/>
+<path d="M575.638 192.235C574.808 189.559 574.202 186.305 573.821 182.485C568.018 190.711 558.717 194.815 545.9 194.815C535.192 194.815 525.726 191.727 517.51 185.543C509.674 179.232 505.747 168.818 505.747 154.281V95.0974H531.372V149.113C531.372 157.847 533.414 163.865 537.488 167.186C541.503 170.44 546.124 172.061 551.351 172.061C556.959 172.061 561.99 170.313 566.455 166.805C570.978 163.24 573.244 157.28 573.244 148.927V95.1072H598.958V174.269C598.958 180.766 599.593 186.764 600.873 192.245H575.638V192.235Z" fill="currentColor"/>
+<path d="M655.855 174.455C660.193 174.455 663.603 173.615 666.084 171.925C668.565 170.235 669.816 167.802 669.816 164.607C669.816 159.889 666.66 156.763 660.349 155.239L647.444 151.702C637.625 149.152 630.474 145.489 625.98 140.711C621.486 135.934 619.239 130.072 619.239 123.116C619.239 113.943 622.551 106.479 629.185 100.744C635.808 95.0097 644.767 92.1375 656.051 92.1375C665.996 92.1375 674.31 94.4137 681.002 98.9761C687.694 103.538 691.768 109.83 693.243 117.86L670.392 123.116C670.011 119.932 668.575 117.411 666.094 115.565C663.612 113.718 660.515 112.79 656.823 112.79C652.934 112.79 649.876 113.669 647.649 115.418C645.422 117.167 644.308 119.609 644.308 122.735C644.308 125.09 645.168 127.034 646.887 128.568C648.606 130.102 651.41 131.401 655.298 132.485L668.018 135.836C677.006 138.191 683.825 141.825 688.476 146.739C693.126 151.643 695.451 157.603 695.451 164.617C695.451 173.791 691.944 181.128 684.939 186.608C677.925 192.089 668.37 194.834 656.256 194.834C644.142 194.834 635.525 192.363 628.677 187.429C621.828 182.495 617.793 175.754 616.582 167.206L640.009 163.289C640.332 166.727 641.885 169.453 644.699 171.466C647.502 173.468 651.234 174.475 655.885 174.475L655.855 174.455Z" fill="currentColor"/>
+<path d="M711.209 62.0278C711.209 57.7585 712.704 54.1438 715.703 51.1739C718.702 48.2137 722.366 46.7288 726.694 46.7288C731.021 46.7288 734.695 48.2137 737.684 51.1739C740.683 54.134 742.178 57.7585 742.178 62.0278C742.178 66.297 740.683 70.1071 737.684 73.0673C734.685 76.0274 731.021 77.5124 726.694 77.5124C722.366 77.5124 718.692 76.0274 715.703 73.0673C712.704 70.1071 711.209 66.424 711.209 62.0278ZM739.599 95.1072V192.245H713.974V95.1072H739.599Z" fill="currentColor"/>
+<path d="M807.39 92.1375C818.547 92.1375 828.179 94.912 836.308 100.451C844.436 105.991 849.868 113.357 852.613 122.54L830.719 131.333C829.127 126.487 826.245 122.599 822.064 119.668C817.892 116.737 813.125 115.272 807.771 115.272C800.053 115.272 793.986 117.841 789.561 122.97C785.125 128.099 782.917 134.996 782.917 143.671C782.917 152.347 785.164 159.176 789.658 164.178C794.152 169.18 800.19 171.681 807.771 171.681C813.252 171.681 818.097 170.284 822.298 167.47C826.509 164.666 829.44 160.905 831.091 156.186L852.603 164.217C849.477 173.586 843.811 181.03 835.585 186.54C827.359 192.05 817.902 194.805 807.195 194.805C792.345 194.805 780.309 190.086 771.106 180.659C761.893 171.221 757.292 158.892 757.292 143.662C757.292 128.431 761.913 115.955 771.155 106.42C780.397 96.8952 792.472 92.1277 807.39 92.1277V92.1375Z" fill="currentColor"/>
+<path d="M1004.62 159.732H952.701L941.32 192.235H913.496L965.226 48.7412H992.277L1043.9 192.245H1015.51L1004.61 159.742L1004.62 159.732ZM996.781 137.458L978.707 84.9762L960.546 137.458H996.781Z" fill="currentColor"/>
+<path d="M1091.62 174.455C1095.96 174.455 1099.37 173.615 1101.85 171.925C1104.33 170.235 1105.58 167.802 1105.58 164.607C1105.58 159.889 1102.43 156.763 1096.12 155.239L1083.21 151.702C1073.39 149.152 1066.24 145.489 1061.75 140.711C1057.25 135.934 1055.01 130.072 1055.01 123.116C1055.01 113.943 1058.32 106.479 1064.95 100.744C1071.58 95.0097 1080.53 92.1375 1091.82 92.1375C1101.76 92.1375 1110.08 94.4137 1116.77 98.9761C1123.46 103.538 1127.54 109.83 1129.01 117.86L1106.16 123.116C1105.78 119.932 1104.34 117.411 1101.86 115.565C1099.38 113.718 1096.28 112.79 1092.59 112.79C1088.7 112.79 1085.64 113.669 1083.42 115.418C1081.19 117.167 1080.08 119.609 1080.08 122.735C1080.08 125.09 1080.94 127.034 1082.65 128.568C1084.37 130.102 1087.18 131.401 1091.07 132.485L1103.79 135.836C1112.77 138.191 1119.59 141.825 1124.24 146.739C1128.89 151.643 1131.22 157.603 1131.22 164.617C1131.22 173.791 1127.71 181.128 1120.71 186.608C1113.69 192.089 1104.14 194.834 1092.02 194.834C1079.91 194.834 1071.29 192.363 1064.44 187.429C1057.6 182.495 1053.56 175.754 1052.35 167.206L1075.78 163.289C1076.1 166.727 1077.65 169.453 1080.47 171.466C1083.27 173.468 1087 174.475 1091.65 174.475L1091.62 174.455Z" fill="currentColor"/>
+<path d="M1182.44 174.455C1186.78 174.455 1190.19 173.615 1192.67 171.925C1195.15 170.235 1196.4 167.802 1196.4 164.607C1196.4 159.889 1193.25 156.763 1186.93 155.239L1174.03 151.702C1164.21 149.152 1157.06 145.489 1152.56 140.711C1148.07 135.934 1145.82 130.072 1145.82 123.116C1145.82 113.943 1149.14 106.479 1155.77 100.744C1162.39 95.0097 1171.35 92.1375 1182.64 92.1375C1192.58 92.1375 1200.89 94.4137 1207.59 98.9761C1214.28 103.538 1218.35 109.83 1219.83 117.86L1196.98 123.116C1196.6 119.932 1195.16 117.411 1192.68 115.565C1190.2 113.718 1187.1 112.79 1183.41 112.79C1179.52 112.79 1176.46 113.669 1174.23 115.418C1172.01 117.167 1170.89 119.609 1170.89 122.735C1170.89 125.09 1171.75 127.034 1173.47 128.568C1175.19 130.102 1177.99 131.401 1181.88 132.485L1194.6 135.836C1203.59 138.191 1210.41 141.825 1215.06 146.739C1219.71 151.643 1222.04 157.603 1222.04 164.617C1222.04 173.791 1218.53 181.128 1211.52 186.608C1204.51 192.089 1194.95 194.834 1182.84 194.834C1170.73 194.834 1162.11 192.363 1155.26 187.429C1148.41 182.495 1144.38 175.754 1143.17 167.206L1166.59 163.289C1166.92 166.727 1168.47 169.453 1171.28 171.466C1174.09 173.468 1177.82 174.475 1182.47 174.475L1182.44 174.455Z" fill="currentColor"/>
+<path d="M1237.79 62.0278C1237.79 57.7585 1239.29 54.1438 1242.29 51.1739C1245.29 48.2137 1248.95 46.7288 1253.28 46.7288C1257.61 46.7288 1261.28 48.2137 1264.27 51.1739C1267.27 54.134 1268.76 57.7585 1268.76 62.0278C1268.76 66.297 1267.27 70.1071 1264.27 73.0673C1261.27 76.0274 1257.61 77.5124 1253.28 77.5124C1248.95 77.5124 1245.28 76.0274 1242.29 73.0673C1239.29 70.1071 1237.79 66.424 1237.79 62.0278ZM1266.19 95.1072V192.245H1240.57V95.1072H1266.19Z" fill="currentColor"/>
+<path d="M1323.94 174.455C1328.28 174.455 1331.69 173.615 1334.17 171.925C1336.65 170.235 1337.9 167.802 1337.9 164.607C1337.9 159.889 1334.75 156.763 1328.44 155.239L1315.53 151.702C1305.71 149.152 1298.56 145.489 1294.07 140.711C1289.57 135.934 1287.33 130.072 1287.33 123.116C1287.33 113.943 1290.64 106.479 1297.27 100.744C1303.89 95.0097 1312.85 92.1375 1324.14 92.1375C1334.08 92.1375 1342.4 94.4137 1349.09 98.9761C1355.78 103.538 1359.85 109.83 1361.33 117.86L1338.48 123.116C1338.1 119.932 1336.66 117.411 1334.18 115.565C1331.7 113.718 1328.6 112.79 1324.91 112.79C1321.02 112.79 1317.96 113.669 1315.73 115.418C1313.51 117.167 1312.39 119.609 1312.39 122.735C1312.39 125.09 1313.25 127.034 1314.97 128.568C1316.69 130.102 1319.5 131.401 1323.38 132.485L1336.1 135.836C1345.09 138.191 1351.91 141.825 1356.56 146.739C1361.21 151.643 1363.54 157.603 1363.54 164.617C1363.54 173.791 1360.03 181.128 1353.03 186.608C1346.01 192.089 1336.46 194.834 1324.34 194.834C1312.23 194.834 1303.61 192.363 1296.76 187.429C1289.91 182.495 1285.88 175.754 1284.67 167.206L1308.1 163.289C1308.42 166.727 1309.97 169.453 1312.78 171.466C1315.59 173.468 1319.32 174.475 1323.97 174.475L1323.94 174.455Z" fill="currentColor"/>
+<path d="M1436.56 192.236C1430.32 193.828 1424.42 194.629 1418.88 194.629C1408.5 194.629 1400.45 191.845 1394.74 186.266C1389.04 180.688 1386.18 172.228 1386.18 160.885V117.098H1371.36V95.1073H1386.18V64.988H1411.42V95.1073H1433.79V117.098H1411.42V156.196C1411.22 166.649 1415.33 171.876 1423.75 171.876C1426.75 171.876 1430.03 171.3 1433.59 170.156L1436.55 192.245L1436.56 192.236Z" fill="currentColor"/>
+<path d="M1514.86 192.236C1514.28 189.178 1513.8 185.866 1513.42 182.29C1510.68 186.051 1506.81 189.08 1501.8 191.376C1496.8 193.672 1491.08 194.815 1484.64 194.815C1474.06 194.815 1465.53 191.982 1459.06 186.305C1452.6 180.629 1449.36 172.951 1449.36 163.269C1449.36 153.587 1452.5 146.143 1458.78 140.75C1465.05 135.367 1473.68 132.671 1484.64 132.671H1512.84V129.418C1512.84 123.81 1511.15 119.639 1507.77 116.893C1504.39 114.158 1499.67 112.78 1493.63 112.78C1482.92 112.78 1475.24 117.343 1470.59 126.448L1451.95 115.838C1460.3 100.031 1474.73 92.1277 1495.26 92.1277C1507.63 92.1277 1517.79 95.3516 1525.76 101.78C1533.72 108.218 1537.71 118.671 1537.71 133.14V170.332C1537.71 180.913 1538.31 188.211 1539.52 192.226H1514.86V192.236ZM1513.04 150.168H1490.76C1485.86 150.168 1482.05 151.301 1479.34 153.558C1476.64 155.825 1475.28 158.931 1475.28 162.878C1475.28 166.825 1476.7 170.02 1479.53 172.247C1482.36 174.484 1486.37 175.598 1491.53 175.598C1497.84 175.598 1503 173.683 1507.01 169.863C1511.03 166.044 1513.04 160.113 1513.04 152.083V150.168Z" fill="currentColor"/>
+<path d="M1651.67 132.485V192.236H1626.14V138.025C1626.14 129.164 1624.14 123.204 1620.11 120.147C1616.03 117.02 1611.51 115.467 1606.53 115.467C1600.73 115.467 1595.6 117.216 1591.15 120.723C1586.55 124.357 1584.26 130.317 1584.26 138.601V192.236H1558.83V95.1074H1582.92L1583.68 104.76C1586.42 100.94 1590.35 97.8721 1595.49 95.5861C1600.62 93.2902 1606.15 92.1472 1612.08 92.1472C1624.64 92.1472 1634.38 95.674 1641.29 102.708C1648.21 109.752 1651.67 119.678 1651.67 132.485Z" fill="currentColor"/>
+<path d="M1729.21 192.236C1722.97 193.828 1717.06 194.629 1711.53 194.629C1701.14 194.629 1693.09 191.845 1687.39 186.266C1681.68 180.688 1678.83 172.228 1678.83 160.885V117.098H1664.01V95.1073H1678.83V64.988H1704.06V95.1073H1726.43V117.098H1704.06V156.196C1703.87 166.649 1707.98 171.876 1716.39 171.876C1719.39 171.876 1722.67 171.3 1726.24 170.156L1729.2 192.245L1729.21 192.236Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_2275_437">
+<rect width="1393.13" height="150.45" fill="white" transform="translate(336 44.7749)"/>
+</clipPath>
+</defs>
+</svg>
+ </a> <a class="version astro-qeonxd65" href="/music-assistant/blog/2026/08/26/music-assistant-2-10/" title="Music Assistant 2.10.14 发行说明" translate="no"> v2.10.14 </a> </div> <nav id="site-nav" class="nav astro-qeonxd65" aria-label="Main"> <ul class="astro-qeonxd65"> <li class="astro-qeonxd65"> <a href="/music-assistant/blog/" class="astro-qeonxd65"> 新闻 </a> </li><li class="astro-qeonxd65"> <a href="/music-assistant/documentation/" class="astro-qeonxd65"> 文档 </a> </li> </ul> <div class="nav-actions astro-qeonxd65"> <button class="icon-button theme-toggle astro-qeonxd65" type="button" data-theme-toggle aria-label="Switch between light and dark theme"> <span class="to-light astro-qeonxd65"> <svg width="20" height="20" class="icon astro-qeonxd65" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <circle cx="12" cy="12" r="4" />
+  <path d="M12 2v2" />
+  <path d="M12 20v2" />
+  <path d="m4.93 4.93 1.41 1.41" />
+  <path d="m17.66 17.66 1.41 1.41" />
+  <path d="M2 12h2" />
+  <path d="M20 12h2" />
+  <path d="m6.34 17.66-1.41 1.41" />
+  <path d="m19.07 4.93-1.41 1.41" />
+</svg> </span> <span class="to-dark astro-qeonxd65"> <svg width="20" height="20" class="icon astro-qeonxd65" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401" />
+</svg> </span> </button> <a class="icon-button astro-qeonxd65" href="https://github.com/music-assistant" target="_blank" rel="noopener noreferrer" aria-label="Music Assistant on GitHub"> <svg width="20" height="20" viewBox="0 0 16 16" aria-hidden="true" focusable="false" class="astro-qeonxd65"> <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" class="astro-qeonxd65"></path> </svg> </a> </div> </nav> <!-- Outside the navigation so it stays in the bar on small screens. --> <a href="/music-assistant/get-started/" class="btn btn-primary btn-md nav-install astro-qeonxd65 astro-xxxn4ky6">  <span class="astro-xxxn4ky6"> Get Music Assistant </span>  </a> <button class="menu-toggle icon-button astro-qeonxd65" type="button" aria-expanded="false" aria-controls="site-nav"> <span class="open astro-qeonxd65"> <svg width="20" height="20" class="icon astro-qeonxd65" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M4 5h16" />
+  <path d="M4 12h16" />
+  <path d="M4 19h16" />
+</svg> </span> <span class="close astro-qeonxd65"> <svg width="20" height="20" class="icon astro-qeonxd65" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</svg> </span> <span class="sr-only astro-qeonxd65" data-menu-label>
+Open menu
+</span> </button> </div> </header> <main id="main" data-pagefind-body>  <section class="hero tone-base astro-ewxirvlt" aria-labelledby="hero-title" data-hero> <canvas class="smoke astro-ewxirvlt" aria-hidden="true" data-smoke></canvas> <div class="container astro-ewxirvlt"> <div class="copy astro-ewxirvlt"> <h1 id="hero-title" class="astro-ewxirvlt"> <span class="astro-ewxirvlt">你的音乐。</span> <span class="way astro-ewxirvlt">由你做主。</span> </h1> <p class="lead astro-ewxirvlt">
+把你喜爱的音乐——无论是本地收藏还是流媒体服务——汇成一个资料库，
+        用你已有的音箱欣赏。
+</p> </div> <div class="product astro-ewxirvlt"> <figure class="app-window is-desktop astro-ewxirvlt astro-vcj3flgy"> <img class="only-dark astro-vcj3flgy" src="/music-assistant/assets/landing/discover-dark.webp" alt="Music Assistant 的“发现”界面：不同房间的音箱正在播放，显示精选与最近播放" width="2400" height="1500" loading="eager" fetchpriority="high" decoding="async"> <img class="only-light astro-vcj3flgy" src="/music-assistant/assets/landing/discover-light.webp" alt="Music Assistant 的“发现”界面：不同房间的音箱正在播放，显示精选与最近播放" width="2400" height="1500" loading="eager" decoding="async"> </figure> </div> </div> </section> <script type="module" src="/music-assistant/_astro/Hero.astro_astro_type_script_index_0_lang.D7OctwcJ.js"></script> <div class="shelf tone-base astro-uorexfsb" data-shelf> <p class="sr-only astro-uorexfsb">
+Music of every kind, from Indie, Jazz, Electronic, Classical, Hip-hop, Podcasts, Folk, Ambient, Rock, Radio, Soul, Audiobooks.
+</p> <div class="track astro-uorexfsb" aria-hidden="true"> <ul class="astro-uorexfsb"> <li data-palette="indie" data-colors="#ff6b6b,#f7b267,#5f0f40" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ff6b6b; --c2: #f7b267; --c3: #5f0f40"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Indie</strong> <span class="astro-gadxyeuy">Spotify</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="jazz" data-colors="#f4d35e,#ee964b,#0d3b66" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #f4d35e; --c2: #ee964b; --c3: #0d3b66"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Jazz</strong> <span class="astro-gadxyeuy">Local files</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="electronic" data-colors="#00f5d4,#7b2ff7,#0b0c3d" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #00f5d4; --c2: #7b2ff7; --c3: #0b0c3d"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Electronic</strong> <span class="astro-gadxyeuy">SoundCloud</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="classical" data-colors="#e9d8a6,#94d2bd,#005f73" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #e9d8a6; --c2: #94d2bd; --c3: #005f73"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Classical</strong> <span class="astro-gadxyeuy">Qobuz</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="hiphop" data-colors="#ff006e,#fb5607,#3a0ca3" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ff006e; --c2: #fb5607; --c3: #3a0ca3"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Hip-hop</strong> <span class="astro-gadxyeuy">Apple Music</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="podcasts" data-colors="#ffcad4,#f4845f,#582f0e" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ffcad4; --c2: #f4845f; --c3: #582f0e"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Podcasts</strong> <span class="astro-gadxyeuy">Pocket Casts</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="folk" data-colors="#f2e8cf,#a7c957,#386641" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #f2e8cf; --c2: #a7c957; --c3: #386641"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Folk</strong> <span class="astro-gadxyeuy">Bandcamp</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="ambient" data-colors="#a2d2ff,#cdb4db,#1d3557" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #a2d2ff; --c2: #cdb4db; --c3: #1d3557"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Ambient</strong> <span class="astro-gadxyeuy">Plex</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="rock" data-colors="#ffba08,#d00000,#03071e" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ffba08; --c2: #d00000; --c3: #03071e"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Rock</strong> <span class="astro-gadxyeuy">TIDAL</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="radio" data-colors="#90e0ef,#48cae4,#03045e" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #90e0ef; --c2: #48cae4; --c3: #03045e"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Radio</strong> <span class="astro-gadxyeuy">TuneIn</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="soul" data-colors="#ff9e00,#9d4edd,#240046" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ff9e00; --c2: #9d4edd; --c3: #240046"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Soul</strong> <span class="astro-gadxyeuy">YouTube Music</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="audiobooks" data-colors="#caf0f8,#b8c0ff,#3c096c" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #caf0f8; --c2: #b8c0ff; --c3: #3c096c"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Audiobooks</strong> <span class="astro-gadxyeuy">Audiobookshelf</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li> </ul><ul class="astro-uorexfsb"> <li data-palette="indie" data-colors="#ff6b6b,#f7b267,#5f0f40" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ff6b6b; --c2: #f7b267; --c3: #5f0f40"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Indie</strong> <span class="astro-gadxyeuy">Spotify</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="jazz" data-colors="#f4d35e,#ee964b,#0d3b66" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #f4d35e; --c2: #ee964b; --c3: #0d3b66"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Jazz</strong> <span class="astro-gadxyeuy">Local files</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="electronic" data-colors="#00f5d4,#7b2ff7,#0b0c3d" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #00f5d4; --c2: #7b2ff7; --c3: #0b0c3d"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Electronic</strong> <span class="astro-gadxyeuy">SoundCloud</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="classical" data-colors="#e9d8a6,#94d2bd,#005f73" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #e9d8a6; --c2: #94d2bd; --c3: #005f73"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Classical</strong> <span class="astro-gadxyeuy">Qobuz</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="hiphop" data-colors="#ff006e,#fb5607,#3a0ca3" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ff006e; --c2: #fb5607; --c3: #3a0ca3"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Hip-hop</strong> <span class="astro-gadxyeuy">Apple Music</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="podcasts" data-colors="#ffcad4,#f4845f,#582f0e" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ffcad4; --c2: #f4845f; --c3: #582f0e"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Podcasts</strong> <span class="astro-gadxyeuy">Pocket Casts</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="folk" data-colors="#f2e8cf,#a7c957,#386641" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #f2e8cf; --c2: #a7c957; --c3: #386641"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Folk</strong> <span class="astro-gadxyeuy">Bandcamp</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="ambient" data-colors="#a2d2ff,#cdb4db,#1d3557" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #a2d2ff; --c2: #cdb4db; --c3: #1d3557"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Ambient</strong> <span class="astro-gadxyeuy">Plex</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="rock" data-colors="#ffba08,#d00000,#03071e" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ffba08; --c2: #d00000; --c3: #03071e"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Rock</strong> <span class="astro-gadxyeuy">TIDAL</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="radio" data-colors="#90e0ef,#48cae4,#03045e" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #90e0ef; --c2: #48cae4; --c3: #03045e"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Radio</strong> <span class="astro-gadxyeuy">TuneIn</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="soul" data-colors="#ff9e00,#9d4edd,#240046" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #ff9e00; --c2: #9d4edd; --c3: #240046"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Soul</strong> <span class="astro-gadxyeuy">YouTube Music</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li><li data-palette="audiobooks" data-colors="#caf0f8,#b8c0ff,#3c096c" class="astro-uorexfsb"> <div class="cover astro-uorexfsb astro-gadxyeuy" style="--c1: #caf0f8; --c2: #b8c0ff; --c3: #3c096c"> <span class="caption astro-gadxyeuy"> <strong class="astro-gadxyeuy">Audiobooks</strong> <span class="astro-gadxyeuy">Audiobookshelf</span> </span> </div> <span class="play astro-uorexfsb"></span> <span class="playing astro-uorexfsb"> <span class="bars astro-uorexfsb"> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> <i class="astro-uorexfsb"></i> </span>
+Now playing
+</span> </li> </ul> </div> </div> <script type="module" src="/music-assistant/_astro/Shelf.astro_astro_type_script_index_0_lang.CUF1hXph.js"></script> <section id="how-it-works" class="section tone-base astro-zbb37bwy" aria-labelledby="how-title">  <div class="container astro-zbb37bwy"> <header class="section-heading astro-xw74lwiw" data-reveal> <div class="text astro-xw74lwiw"> <h2 id="how-title" class="astro-xw74lwiw">一套系统，打通你的音乐与音箱。</h2> <p class="lead astro-xw74lwiw">Keep your library and playlists independent of any one music service. Mix speaker brands, switch services and change your setup without starting over.</p> </div>  </header> <ol class="flow astro-zbb37bwy"> <li class="panel astro-zbb37bwy" data-reveal> <p class="step astro-zbb37bwy">你的音乐</p> <p class="astro-zbb37bwy">
+Streaming services, local files, radio, podcasts and audiobooks, in
+          one place.
+</p> <ul class="brands astro-zbb37bwy" aria-label="部分支持的音乐源"> <li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/local-files/" title="Local files"> <img src="/music-assistant/assets/landing/brands/filesystem_local.svg" alt="Local files" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/spotify/" title="Spotify"> <img src="/music-assistant/assets/landing/brands/spotify.svg" alt="Spotify" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/apple-music/" title="Apple Music"> <img src="/music-assistant/assets/landing/brands/apple_music.svg" alt="Apple Music" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/youtube-music/" title="YouTube Music"> <img src="/music-assistant/assets/landing/brands/ytmusic.svg" alt="YouTube Music" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile is-dark astro-6fxqnfq3" href="/music-assistant/music-providers/tidal/" title="TIDAL"> <img src="/music-assistant/assets/landing/brands/tidal.svg" alt="TIDAL" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile is-dark astro-6fxqnfq3" href="/music-assistant/music-providers/qobuz/" title="Qobuz"> <img src="/music-assistant/assets/landing/brands/qobuz.svg" alt="Qobuz" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/deezer/" title="Deezer"> <img src="/music-assistant/assets/landing/brands/deezer.svg" alt="Deezer" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/plex/" title="Plex"> <img src="/music-assistant/assets/landing/brands/plex.svg" alt="Plex" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/tunein/" title="TuneIn"> <img src="/music-assistant/assets/landing/brands/tunein.svg" alt="TuneIn" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/audible/" title="Audible"> <img src="/music-assistant/assets/landing/brands/audible.svg" alt="Audible" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/audiobookshelf/" title="Audiobookshelf"> <img src="/music-assistant/assets/landing/brands/audiobookshelf.svg" alt="Audiobookshelf" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/music-providers/pocketcasts/" title="Pocket Casts"> <img src="/music-assistant/assets/landing/brands/pocketcasts.svg" alt="Pocket Casts" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li> </ul> <a class="text-link astro-zbb37bwy" href="/music-assistant/music-providers/">
+All music sources <svg width="16" height="16" class="icon astro-zbb37bwy" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </li> <li class="panel core astro-zbb37bwy" data-reveal style="--reveal-delay: 100ms"> <div class="core-logo astro-zbb37bwy"> <svg class="logo astro-zbb37bwy" role="img" aria-label="Music Assistant" viewBox="0 0 1762 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M109.394 4.3814C115.242 -1.46047 124.788 -1.46047 130.606 4.3814L229.394 103.269C235.242 109.111 240 120.643 240 128.907V219.017L239.995 219.373C239.789 227.459 233.114 234.001 225 234.001H15C6.75759 234.001 2.40473e-05 227.22 0 218.987V128.877C0.000120331 120.613 4.78834 109.081 10.6064 103.239L109.394 4.3814Z" fill="#F2F4F9"/>
+<path d="M109.394 4.3814C115.242 -1.46047 124.788 -1.46047 130.606 4.3814L229.394 103.269C235.242 109.111 240 120.643 240 128.907V219.017L239.995 219.373C239.789 227.459 233.114 234.001 225 234.001H15C6.75759 234.001 2.40473e-05 227.22 0 218.987V128.877C0.000120331 120.613 4.78834 109.081 10.6064 103.239L109.394 4.3814ZM36 120.001C31.5817 120.001 28 123.582 28 128.001V206.001H44V128.001C44 123.582 40.4183 120.001 36 120.001ZM68 120.001C63.5817 120.001 60 123.582 60 128.001V206.001H76V128.001C76 123.582 72.4183 120.001 68 120.001ZM100 120.001C95.5817 120.001 92 123.582 92 128.001V206.001H108V128.001C108 123.582 104.418 120.001 100 120.001ZM158.393 120.427C154.2 119.032 149.671 121.3 148.275 125.492L121.479 206.001H138.342L163.456 130.544C164.851 126.352 162.584 121.823 158.393 120.427ZM188.708 125.492C187.313 121.3 182.783 119.032 178.591 120.427C174.399 121.823 172.131 126.352 173.526 130.544L198.642 206.001H215.504L188.708 125.492Z" fill="#18BCF2"/>
+<g clip-path="url(#clip0_2275_437)">
+<path d="M478.989 48.7412V192.245H452.699V108.394L419.619 192.235H394.19L361.491 109.058V192.235H335.866V48.7412H361.491L406.9 161.08L452.699 48.7412H478.989Z" fill="currentColor"/>
+<path d="M575.638 192.235C574.808 189.559 574.202 186.305 573.821 182.485C568.018 190.711 558.717 194.815 545.9 194.815C535.192 194.815 525.726 191.727 517.51 185.543C509.674 179.232 505.747 168.818 505.747 154.281V95.0974H531.372V149.113C531.372 157.847 533.414 163.865 537.488 167.186C541.503 170.44 546.124 172.061 551.351 172.061C556.959 172.061 561.99 170.313 566.455 166.805C570.978 163.24 573.244 157.28 573.244 148.927V95.1072H598.958V174.269C598.958 180.766 599.593 186.764 600.873 192.245H575.638V192.235Z" fill="currentColor"/>
+<path d="M655.855 174.455C660.193 174.455 663.603 173.615 666.084 171.925C668.565 170.235 669.816 167.802 669.816 164.607C669.816 159.889 666.66 156.763 660.349 155.239L647.444 151.702C637.625 149.152 630.474 145.489 625.98 140.711C621.486 135.934 619.239 130.072 619.239 123.116C619.239 113.943 622.551 106.479 629.185 100.744C635.808 95.0097 644.767 92.1375 656.051 92.1375C665.996 92.1375 674.31 94.4137 681.002 98.9761C687.694 103.538 691.768 109.83 693.243 117.86L670.392 123.116C670.011 119.932 668.575 117.411 666.094 115.565C663.612 113.718 660.515 112.79 656.823 112.79C652.934 112.79 649.876 113.669 647.649 115.418C645.422 117.167 644.308 119.609 644.308 122.735C644.308 125.09 645.168 127.034 646.887 128.568C648.606 130.102 651.41 131.401 655.298 132.485L668.018 135.836C677.006 138.191 683.825 141.825 688.476 146.739C693.126 151.643 695.451 157.603 695.451 164.617C695.451 173.791 691.944 181.128 684.939 186.608C677.925 192.089 668.37 194.834 656.256 194.834C644.142 194.834 635.525 192.363 628.677 187.429C621.828 182.495 617.793 175.754 616.582 167.206L640.009 163.289C640.332 166.727 641.885 169.453 644.699 171.466C647.502 173.468 651.234 174.475 655.885 174.475L655.855 174.455Z" fill="currentColor"/>
+<path d="M711.209 62.0278C711.209 57.7585 712.704 54.1438 715.703 51.1739C718.702 48.2137 722.366 46.7288 726.694 46.7288C731.021 46.7288 734.695 48.2137 737.684 51.1739C740.683 54.134 742.178 57.7585 742.178 62.0278C742.178 66.297 740.683 70.1071 737.684 73.0673C734.685 76.0274 731.021 77.5124 726.694 77.5124C722.366 77.5124 718.692 76.0274 715.703 73.0673C712.704 70.1071 711.209 66.424 711.209 62.0278ZM739.599 95.1072V192.245H713.974V95.1072H739.599Z" fill="currentColor"/>
+<path d="M807.39 92.1375C818.547 92.1375 828.179 94.912 836.308 100.451C844.436 105.991 849.868 113.357 852.613 122.54L830.719 131.333C829.127 126.487 826.245 122.599 822.064 119.668C817.892 116.737 813.125 115.272 807.771 115.272C800.053 115.272 793.986 117.841 789.561 122.97C785.125 128.099 782.917 134.996 782.917 143.671C782.917 152.347 785.164 159.176 789.658 164.178C794.152 169.18 800.19 171.681 807.771 171.681C813.252 171.681 818.097 170.284 822.298 167.47C826.509 164.666 829.44 160.905 831.091 156.186L852.603 164.217C849.477 173.586 843.811 181.03 835.585 186.54C827.359 192.05 817.902 194.805 807.195 194.805C792.345 194.805 780.309 190.086 771.106 180.659C761.893 171.221 757.292 158.892 757.292 143.662C757.292 128.431 761.913 115.955 771.155 106.42C780.397 96.8952 792.472 92.1277 807.39 92.1277V92.1375Z" fill="currentColor"/>
+<path d="M1004.62 159.732H952.701L941.32 192.235H913.496L965.226 48.7412H992.277L1043.9 192.245H1015.51L1004.61 159.742L1004.62 159.732ZM996.781 137.458L978.707 84.9762L960.546 137.458H996.781Z" fill="currentColor"/>
+<path d="M1091.62 174.455C1095.96 174.455 1099.37 173.615 1101.85 171.925C1104.33 170.235 1105.58 167.802 1105.58 164.607C1105.58 159.889 1102.43 156.763 1096.12 155.239L1083.21 151.702C1073.39 149.152 1066.24 145.489 1061.75 140.711C1057.25 135.934 1055.01 130.072 1055.01 123.116C1055.01 113.943 1058.32 106.479 1064.95 100.744C1071.58 95.0097 1080.53 92.1375 1091.82 92.1375C1101.76 92.1375 1110.08 94.4137 1116.77 98.9761C1123.46 103.538 1127.54 109.83 1129.01 117.86L1106.16 123.116C1105.78 119.932 1104.34 117.411 1101.86 115.565C1099.38 113.718 1096.28 112.79 1092.59 112.79C1088.7 112.79 1085.64 113.669 1083.42 115.418C1081.19 117.167 1080.08 119.609 1080.08 122.735C1080.08 125.09 1080.94 127.034 1082.65 128.568C1084.37 130.102 1087.18 131.401 1091.07 132.485L1103.79 135.836C1112.77 138.191 1119.59 141.825 1124.24 146.739C1128.89 151.643 1131.22 157.603 1131.22 164.617C1131.22 173.791 1127.71 181.128 1120.71 186.608C1113.69 192.089 1104.14 194.834 1092.02 194.834C1079.91 194.834 1071.29 192.363 1064.44 187.429C1057.6 182.495 1053.56 175.754 1052.35 167.206L1075.78 163.289C1076.1 166.727 1077.65 169.453 1080.47 171.466C1083.27 173.468 1087 174.475 1091.65 174.475L1091.62 174.455Z" fill="currentColor"/>
+<path d="M1182.44 174.455C1186.78 174.455 1190.19 173.615 1192.67 171.925C1195.15 170.235 1196.4 167.802 1196.4 164.607C1196.4 159.889 1193.25 156.763 1186.93 155.239L1174.03 151.702C1164.21 149.152 1157.06 145.489 1152.56 140.711C1148.07 135.934 1145.82 130.072 1145.82 123.116C1145.82 113.943 1149.14 106.479 1155.77 100.744C1162.39 95.0097 1171.35 92.1375 1182.64 92.1375C1192.58 92.1375 1200.89 94.4137 1207.59 98.9761C1214.28 103.538 1218.35 109.83 1219.83 117.86L1196.98 123.116C1196.6 119.932 1195.16 117.411 1192.68 115.565C1190.2 113.718 1187.1 112.79 1183.41 112.79C1179.52 112.79 1176.46 113.669 1174.23 115.418C1172.01 117.167 1170.89 119.609 1170.89 122.735C1170.89 125.09 1171.75 127.034 1173.47 128.568C1175.19 130.102 1177.99 131.401 1181.88 132.485L1194.6 135.836C1203.59 138.191 1210.41 141.825 1215.06 146.739C1219.71 151.643 1222.04 157.603 1222.04 164.617C1222.04 173.791 1218.53 181.128 1211.52 186.608C1204.51 192.089 1194.95 194.834 1182.84 194.834C1170.73 194.834 1162.11 192.363 1155.26 187.429C1148.41 182.495 1144.38 175.754 1143.17 167.206L1166.59 163.289C1166.92 166.727 1168.47 169.453 1171.28 171.466C1174.09 173.468 1177.82 174.475 1182.47 174.475L1182.44 174.455Z" fill="currentColor"/>
+<path d="M1237.79 62.0278C1237.79 57.7585 1239.29 54.1438 1242.29 51.1739C1245.29 48.2137 1248.95 46.7288 1253.28 46.7288C1257.61 46.7288 1261.28 48.2137 1264.27 51.1739C1267.27 54.134 1268.76 57.7585 1268.76 62.0278C1268.76 66.297 1267.27 70.1071 1264.27 73.0673C1261.27 76.0274 1257.61 77.5124 1253.28 77.5124C1248.95 77.5124 1245.28 76.0274 1242.29 73.0673C1239.29 70.1071 1237.79 66.424 1237.79 62.0278ZM1266.19 95.1072V192.245H1240.57V95.1072H1266.19Z" fill="currentColor"/>
+<path d="M1323.94 174.455C1328.28 174.455 1331.69 173.615 1334.17 171.925C1336.65 170.235 1337.9 167.802 1337.9 164.607C1337.9 159.889 1334.75 156.763 1328.44 155.239L1315.53 151.702C1305.71 149.152 1298.56 145.489 1294.07 140.711C1289.57 135.934 1287.33 130.072 1287.33 123.116C1287.33 113.943 1290.64 106.479 1297.27 100.744C1303.89 95.0097 1312.85 92.1375 1324.14 92.1375C1334.08 92.1375 1342.4 94.4137 1349.09 98.9761C1355.78 103.538 1359.85 109.83 1361.33 117.86L1338.48 123.116C1338.1 119.932 1336.66 117.411 1334.18 115.565C1331.7 113.718 1328.6 112.79 1324.91 112.79C1321.02 112.79 1317.96 113.669 1315.73 115.418C1313.51 117.167 1312.39 119.609 1312.39 122.735C1312.39 125.09 1313.25 127.034 1314.97 128.568C1316.69 130.102 1319.5 131.401 1323.38 132.485L1336.1 135.836C1345.09 138.191 1351.91 141.825 1356.56 146.739C1361.21 151.643 1363.54 157.603 1363.54 164.617C1363.54 173.791 1360.03 181.128 1353.03 186.608C1346.01 192.089 1336.46 194.834 1324.34 194.834C1312.23 194.834 1303.61 192.363 1296.76 187.429C1289.91 182.495 1285.88 175.754 1284.67 167.206L1308.1 163.289C1308.42 166.727 1309.97 169.453 1312.78 171.466C1315.59 173.468 1319.32 174.475 1323.97 174.475L1323.94 174.455Z" fill="currentColor"/>
+<path d="M1436.56 192.236C1430.32 193.828 1424.42 194.629 1418.88 194.629C1408.5 194.629 1400.45 191.845 1394.74 186.266C1389.04 180.688 1386.18 172.228 1386.18 160.885V117.098H1371.36V95.1073H1386.18V64.988H1411.42V95.1073H1433.79V117.098H1411.42V156.196C1411.22 166.649 1415.33 171.876 1423.75 171.876C1426.75 171.876 1430.03 171.3 1433.59 170.156L1436.55 192.245L1436.56 192.236Z" fill="currentColor"/>
+<path d="M1514.86 192.236C1514.28 189.178 1513.8 185.866 1513.42 182.29C1510.68 186.051 1506.81 189.08 1501.8 191.376C1496.8 193.672 1491.08 194.815 1484.64 194.815C1474.06 194.815 1465.53 191.982 1459.06 186.305C1452.6 180.629 1449.36 172.951 1449.36 163.269C1449.36 153.587 1452.5 146.143 1458.78 140.75C1465.05 135.367 1473.68 132.671 1484.64 132.671H1512.84V129.418C1512.84 123.81 1511.15 119.639 1507.77 116.893C1504.39 114.158 1499.67 112.78 1493.63 112.78C1482.92 112.78 1475.24 117.343 1470.59 126.448L1451.95 115.838C1460.3 100.031 1474.73 92.1277 1495.26 92.1277C1507.63 92.1277 1517.79 95.3516 1525.76 101.78C1533.72 108.218 1537.71 118.671 1537.71 133.14V170.332C1537.71 180.913 1538.31 188.211 1539.52 192.226H1514.86V192.236ZM1513.04 150.168H1490.76C1485.86 150.168 1482.05 151.301 1479.34 153.558C1476.64 155.825 1475.28 158.931 1475.28 162.878C1475.28 166.825 1476.7 170.02 1479.53 172.247C1482.36 174.484 1486.37 175.598 1491.53 175.598C1497.84 175.598 1503 173.683 1507.01 169.863C1511.03 166.044 1513.04 160.113 1513.04 152.083V150.168Z" fill="currentColor"/>
+<path d="M1651.67 132.485V192.236H1626.14V138.025C1626.14 129.164 1624.14 123.204 1620.11 120.147C1616.03 117.02 1611.51 115.467 1606.53 115.467C1600.73 115.467 1595.6 117.216 1591.15 120.723C1586.55 124.357 1584.26 130.317 1584.26 138.601V192.236H1558.83V95.1074H1582.92L1583.68 104.76C1586.42 100.94 1590.35 97.8721 1595.49 95.5861C1600.62 93.2902 1606.15 92.1472 1612.08 92.1472C1624.64 92.1472 1634.38 95.674 1641.29 102.708C1648.21 109.752 1651.67 119.678 1651.67 132.485Z" fill="currentColor"/>
+<path d="M1729.21 192.236C1722.97 193.828 1717.06 194.629 1711.53 194.629C1701.14 194.629 1693.09 191.845 1687.39 186.266C1681.68 180.688 1678.83 172.228 1678.83 160.885V117.098H1664.01V95.1073H1678.83V64.988H1704.06V95.1073H1726.43V117.098H1704.06V156.196C1703.87 166.649 1707.98 171.876 1716.39 171.876C1719.39 171.876 1722.67 171.3 1726.24 170.156L1729.2 192.245L1729.21 192.236Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_2275_437">
+<rect width="1393.13" height="150.45" fill="white" transform="translate(336 44.7749)"/>
+</clipPath>
+</defs>
+</svg>
+ </div> <p class="astro-zbb37bwy">
+Runs on a device in your home. Browse your music, build a queue and
+          control every speaker from one app.
+</p> </li> <li class="panel astro-zbb37bwy" data-reveal style="--reveal-delay: 200ms"> <p class="step astro-zbb37bwy">你的音箱</p> <p class="astro-zbb37bwy">
+Speakers from different brands and ecosystems, in one room or in sync
+          throughout your home.
+</p> <ul class="brands astro-zbb37bwy" aria-label="部分支持的音箱"> <li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/sonos/" title="Sonos"> <img src="/music-assistant/assets/landing/brands/sonos.svg" alt="Sonos" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/airplay/" title="AirPlay"> <img src="/music-assistant/assets/landing/brands/airplay.svg" alt="AirPlay" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/google-cast/" title="Google Cast"> <img src="/music-assistant/assets/landing/brands/chromecast.svg" alt="Google Cast" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/sendspin/" title="Sendspin"> <img src="/music-assistant/assets/landing/brands/sendspin.svg" alt="Sendspin" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/home-assistant/" title="Home Assistant"> <img src="/music-assistant/assets/landing/brands/hass_players.svg" alt="Home Assistant" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/wiim/" title="WiiM"> <img src="/music-assistant/assets/landing/brands/wiim.svg" alt="WiiM" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/heos/" title="HEOS"> <img src="/music-assistant/assets/landing/brands/heos.svg" alt="HEOS" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/musiccast/" title="Yamaha MusicCast"> <img src="/music-assistant/assets/landing/brands/musiccast.svg" alt="Yamaha MusicCast" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile is-dark astro-6fxqnfq3" href="/music-assistant/player-support/bluesound/" title="Bluesound"> <img src="/music-assistant/assets/landing/brands/bluesound.svg" alt="Bluesound" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/squeezelite/" title="Squeezelite"> <img src="/music-assistant/assets/landing/brands/squeezelite.svg" alt="Squeezelite" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/dlna/" title="DLNA"> <img src="/music-assistant/assets/landing/brands/dlna.svg" alt="DLNA" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li><li class="astro-6fxqnfq3"> <a class="brand-tile astro-6fxqnfq3" href="/music-assistant/player-support/alexa/" title="Alexa"> <img src="/music-assistant/assets/landing/brands/alexa.svg" alt="Alexa" width="28" height="28" loading="lazy" decoding="async" class="astro-6fxqnfq3"> </a> </li> </ul> <a class="text-link astro-zbb37bwy" href="/music-assistant/player-support/">
+All players <svg width="16" height="16" class="icon astro-zbb37bwy" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </li> </ol> </div>  </section> <section id="features" class="section tone-alt astro-ludp2yfi" aria-labelledby="features-title">  <div class="container layout astro-ludp2yfi"> <header class="section-heading astro-xw74lwiw" data-reveal> <div class="text astro-xw74lwiw"> <h2 id="features-title" class="astro-xw74lwiw">属于你家的音乐系统。</h2> <p class="lead astro-xw74lwiw">你的资料库与播放队列跑在家中的设备上。Music Assistant 绝不收集或分享你的播放记录。在线音乐服务仍自行处理各自的音频流。</p> </div>  </header> <!-- Native <details> sharing a name behave as an accordion. --> <div class="list astro-ludp2yfi" data-reveal> <details name="features" open class="astro-ludp2yfi"> <summary class="astro-ludp2yfi"> <span class="thumb astro-ludp2yfi"> <div class="cover astro-ludp2yfi astro-gadxyeuy" style="--c1: #ffba08; --c2: #d00000; --c3: #03071e" aria-hidden="true">  </div> <svg width="22" height="22" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect width="8" height="18" x="3" y="3" rx="1" />
+  <path d="M7 3v18" />
+  <path d="M20.4 18.9c.2.5-.1 1.1-.6 1.3l-1.9.7c-.5.2-1.1-.1-1.3-.6L11.1 5.1c-.2-.5.1-1.1.6-1.3l1.9-.7c.5-.2 1.1.1 1.3.6Z" />
+</svg> </span> <span class="song astro-ludp2yfi"> <h3 class="astro-ludp2yfi">所有音源汇成一个资料库</h3> <span class="astro-ludp2yfi">流媒体服务与本地收藏一起搜。</span> </span> <span class="toggle astro-ludp2yfi" aria-hidden="true"></span> </summary> <div class="detail astro-ludp2yfi"> <p class="astro-ludp2yfi"> 在一个界面浏览所有已连接音源的音乐。相同专辑会互相关联，播放列表可以混排多个服务的曲目和本地文件。各服务仍需自己的账号与订阅。 </p> <a class="text-link astro-ludp2yfi" href="/music-assistant/music-providers/"> 了解音乐源 <svg width="16" height="16" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </div> </details><details name="features" class="astro-ludp2yfi"> <summary class="astro-ludp2yfi"> <span class="thumb astro-ludp2yfi"> <div class="cover astro-ludp2yfi astro-gadxyeuy" style="--c1: #00f5d4; --c2: #7b2ff7; --c3: #0b0c3d" aria-hidden="true">  </div> <svg width="22" height="22" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z" />
+  <path d="m9 12 2 2 4-4" />
+</svg> </span> <span class="song astro-ludp2yfi"> <h3 class="astro-ludp2yfi">免费、开源、注重隐私</h3> <span class="astro-ludp2yfi">你的音乐系统始终由你掌控。</span> </span> <span class="toggle astro-ludp2yfi" aria-hidden="true"></span> </summary> <div class="detail astro-ludp2yfi"> <p class="astro-ludp2yfi"> Music Assistant is free and open source, backed by the <a href="https://www.openhomefoundation.org/" class="astro-ludp2yfi">Open Home Foundation</a>。它运行在你家中，绝不收集或分享你的播放记录。连接的音乐服务仍按各自隐私条款处理自己的音频流。 </p>  </div> </details><details name="features" class="astro-ludp2yfi"> <summary class="astro-ludp2yfi"> <span class="thumb astro-ludp2yfi"> <div class="cover astro-ludp2yfi astro-gadxyeuy" style="--c1: #f2e8cf; --c2: #a7c957; --c3: #386641" aria-hidden="true">  </div> <svg width="22" height="22" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M16 5H3" />
+  <path d="M11 12H3" />
+  <path d="M11 19H3" />
+  <path d="M21 16V5" />
+  <circle cx="18" cy="16" r="3" />
+</svg> </span> <span class="song astro-ludp2yfi"> <h3 class="astro-ludp2yfi">音乐不间断</h3> <span class="astro-ludp2yfi">放下手机，或把队列带到另一个房间。</span> </span> <span class="toggle astro-ludp2yfi" aria-hidden="true"></span> </summary> <div class="detail astro-ludp2yfi"> <p class="astro-ludp2yfi"> 播放队列保存在 Music Assistant 服务器上，关掉应用或浏览器音乐照放。把队列原封不动转到另一只音箱，用手机或浏览器控制播放。 </p> <a class="text-link astro-ludp2yfi" href="/music-assistant/faq/masstransfer/"> 在房间之间移动音乐 <svg width="16" height="16" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </div> </details><details name="features" class="astro-ludp2yfi"> <summary class="astro-ludp2yfi"> <span class="thumb astro-ludp2yfi"> <div class="cover astro-ludp2yfi astro-gadxyeuy" style="--c1: #a2d2ff; --c2: #cdb4db; --c3: #1d3557" aria-hidden="true">  </div> <svg width="22" height="22" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <rect width="16" height="20" x="4" y="2" rx="2" />
+  <path d="M12 6h.01" />
+  <circle cx="12" cy="14" r="4" />
+  <path d="M12 14h.01" />
+</svg> </span> <span class="song astro-ludp2yfi"> <h3 class="astro-ludp2yfi">多音箱同步播放</h3> <span class="astro-ludp2yfi">AirPlay 与 Sendspin 也能同组。</span> </span> <span class="toggle astro-ludp2yfi" aria-hidden="true"></span> </summary> <div class="detail astro-ludp2yfi"> <p class="astro-ludp2yfi"> 把兼容的音箱组成分组，全屋播放同一首音乐。Music Assistant 还能把 AirPlay 音箱拉进 Sendspin 分组。同步效果取决于音箱与分组类型，并非所有组合都能同步。 </p> <a class="text-link astro-ludp2yfi" href="/music-assistant/faq/groups/"> 了解分组 <svg width="16" height="16" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </div> </details><details name="features" class="astro-ludp2yfi"> <summary class="astro-ludp2yfi"> <span class="thumb astro-ludp2yfi"> <div class="cover astro-ludp2yfi astro-gadxyeuy" style="--c1: #e9d8a6; --c2: #94d2bd; --c3: #005f73" aria-hidden="true">  </div> <svg width="22" height="22" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M2 13a2 2 0 0 0 2-2V7a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0V4a2 2 0 0 1 4 0v13a2 2 0 0 0 4 0v-4a2 2 0 0 1 2-2" />
+</svg> </span> <span class="song astro-ludp2yfi"> <h3 class="astro-ludp2yfi">每只音箱的最佳音质</h3> <span class="astro-ludp2yfi">专辑无缝衔接、平滑过渡、音量一致。</span> </span> <span class="toggle astro-ludp2yfi" aria-hidden="true"></span> </summary> <div class="detail astro-ludp2yfi"> <p class="astro-ludp2yfi"> Music Assistant 按每只音箱的能力匹配音频。专辑无缝播放、智能淡入淡出衔接曲目、均衡歌曲间音量，并针对你的音箱与房间调音。 </p> <a class="text-link astro-ludp2yfi" href="/music-assistant/audiopipeline/"> 音频管线如何工作 <svg width="16" height="16" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </div> </details><details name="features" class="astro-ludp2yfi"> <summary class="astro-ludp2yfi"> <span class="thumb astro-ludp2yfi"> <div class="cover astro-ludp2yfi astro-gadxyeuy" style="--c1: #f4d35e; --c2: #ee964b; --c3: #0d3b66" aria-hidden="true">  </div> <svg width="22" height="22" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+  <path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+</svg> </span> <span class="song astro-ludp2yfi"> <h3 class="astro-ludp2yfi">让音乐成为智能家居的一部分</h3> <span class="astro-ludp2yfi">语音控制、自动化与播报，配合 Home Assistant。</span> </span> <span class="toggle astro-ludp2yfi" aria-hidden="true"></span> </summary> <div class="detail astro-ludp2yfi"> <p class="astro-ludp2yfi"> 让 Home Assistant Assist 在指定房间放歌、用自动化启动音乐，或通过音箱播出门铃公告。播报时 Music Assistant 可暂停或压低音量，播完恢复。集成同时支持 Docker 与 Home Assistant 安装方式。 </p> <a class="text-link astro-ludp2yfi" href="/music-assistant/integration/"> 连接 Home Assistant <svg width="16" height="16" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </div> </details><details name="features" class="astro-ludp2yfi"> <summary class="astro-ludp2yfi"> <span class="thumb astro-ludp2yfi"> <div class="cover astro-ludp2yfi astro-gadxyeuy" style="--c1: #ff6b6b; --c2: #f7b267; --c3: #5f0f40" aria-hidden="true">  </div> <svg width="22" height="22" class="icon astro-ludp2yfi" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="m16 3 4 4-4 4" />
+  <path d="M20 7H4" />
+  <path d="m8 21-4-4 4-4" />
+  <path d="M4 17h16" />
+</svg> </span> <span class="song astro-ludp2yfi"> <h3 class="astro-ludp2yfi">迁移你的播放列表</h3> <span class="astro-ludp2yfi">把收藏带到另一个服务。</span> </span> <span class="toggle astro-ludp2yfi" aria-hidden="true"></span> </summary> <div class="detail astro-ludp2yfi"> <p class="astro-ludp2yfi"> 在支持的服务之间复制播放列表，编辑后还能保持同步。换服务不必重建所有歌单，可用曲目取决于目标服务的曲库。 </p>  </div> </details> </div> </div>  </section> <section id="experience" class="section tone-base astro-otab22s4" aria-labelledby="discover-title">  <div class="container layout astro-otab22s4"> <div class="copy astro-otab22s4" data-reveal> <h2 id="discover-title" class="astro-otab22s4">沉浸在音乐里。</h2> <p class="lead astro-otab22s4">
+One place to find what to play next, whichever service it comes from.
+</p> <ul class="astro-otab22s4"> <li class="astro-otab22s4"> <h3 class="astro-otab22s4">Discover</h3> <p class="astro-otab22s4">Browse new releases and rediscover favorites without jumping between apps.</p> <a class="text-link astro-otab22s4" href="/music-assistant/usage/#the-library">
+Learn more<span class="sr-only astro-otab22s4"> about discover</span> <svg width="16" height="16" class="icon astro-otab22s4" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </li><li class="astro-otab22s4"> <h3 class="astro-otab22s4">Smart playlists</h3> <p class="astro-otab22s4">Build playlists that follow your own rules.</p> <a class="text-link astro-otab22s4" href="/music-assistant/plugins/smart_playlist/">
+Learn more<span class="sr-only astro-otab22s4"> about smart playlists</span> <svg width="16" height="16" class="icon astro-otab22s4" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </li><li class="astro-otab22s4"> <h3 class="astro-otab22s4">Similar songs</h3> <p class="astro-otab22s4">Find songs that sound like a favorite.</p> <a class="text-link astro-otab22s4" href="/music-assistant/plugins/sonic-similarity/">
+Learn more<span class="sr-only astro-otab22s4"> about similar songs</span> <svg width="16" height="16" class="icon astro-otab22s4" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </li> </ul> </div> <div class="shots astro-otab22s4" data-reveal style="--reveal-delay: 120ms"> <figure class="app-window is-desktop astro-otab22s4 astro-vcj3flgy"> <img class="only-dark astro-vcj3flgy" src="/music-assistant/assets/landing/albums-dark.webp" alt="Music Assistant 的专辑资料库：专辑封面网格" width="1800" height="1125" loading="lazy" decoding="async"> <img class="only-light astro-vcj3flgy" src="/music-assistant/assets/landing/albums-light.webp" alt="Music Assistant 的专辑资料库：专辑封面网格" width="1800" height="1125" loading="lazy" decoding="async"> </figure> <figure class="app-window is-phone phone astro-otab22s4 astro-vcj3flgy"> <img class="only-dark astro-vcj3flgy" src="/music-assistant/assets/landing/now-playing-mobile-dark.webp" alt="手机上的“正在播放”界面：专辑封面、进度条与播放控制" width="640" height="1385" loading="lazy" decoding="async"> <img class="only-light astro-vcj3flgy" src="/music-assistant/assets/landing/now-playing-mobile-light.webp" alt="手机上的“正在播放”界面：专辑封面、进度条与播放控制" width="640" height="1385" loading="lazy" decoding="async"> </figure> </div> </div>  </section> <section id="plugins" class="section tone-alt astro-supcxjnj" aria-labelledby="plugins-title">  <div class="container astro-supcxjnj"> <header class="section-heading astro-xw74lwiw" data-reveal> <div class="text astro-xw74lwiw"> <h2 id="plugins-title" class="astro-xw74lwiw">不止于按下播放。</h2> <p class="lead astro-xw74lwiw">Add plugins for parties, games and new ways to listen.</p> </div> <div class="action astro-xw74lwiw"> <a class="text-link astro-supcxjnj" href="/music-assistant/plugins/">
+All plugins <svg width="16" height="16" class="icon astro-supcxjnj" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> </div> </header> <!-- Set out like the bill on a gig poster: the names in big type. --> <ul class="bill astro-supcxjnj"> <li data-reveal style="--reveal-delay: 0ms" class="astro-supcxjnj"> <a href="/music-assistant/plugins/party/" class="act astro-supcxjnj"> <div class="headliner astro-supcxjnj"> <div class="cover art astro-supcxjnj astro-gadxyeuy" style="--c1: #ff006e; --c2: #fb5607; --c3: #3a0ca3" aria-hidden="true">  </div> <h3 class="name astro-supcxjnj">派对模式</h3> </div> <span class="detail astro-supcxjnj"> <strong class="astro-supcxjnj">人人都有点歌权。</strong> <span class="astro-supcxjnj">客人扫码即可用手机浏览你的音乐并点歌。放什么由你决定。无需安装应用或注册账号。</span> <span class="more astro-supcxjnj"> 了解派对模式 <svg width="16" height="16" class="icon astro-supcxjnj" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </span> </span> </a> </li><li data-reveal style="--reveal-delay: 70ms" class="astro-supcxjnj"> <a href="/music-assistant/plugins/music-quiz/" class="act astro-supcxjnj"> <div class="headliner astro-supcxjnj"> <div class="cover art astro-supcxjnj astro-gadxyeuy" style="--c1: #00f5d4; --c2: #7b2ff7; --c3: #0b0c3d" aria-hidden="true">  </div> <h3 class="name astro-supcxjnj">音乐问答</h3> </div> <span class="detail astro-supcxjnj"> <strong class="astro-supcxjnj">向好友发起挑战。</strong> <span class="astro-supcxjnj">把你的音乐收藏变成游戏之夜。猜歌名、按发行时间排序曲目，或来点音乐冷知识。好友用手机即可加入。</span> <span class="more astro-supcxjnj"> 了解音乐问答 <svg width="16" height="16" class="icon astro-supcxjnj" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </span> </span> </a> </li><li data-reveal style="--reveal-delay: 140ms" class="astro-supcxjnj"> <a href="/music-assistant/metadata/lyrics/" class="act astro-supcxjnj"> <div class="headliner astro-supcxjnj"> <div class="cover art astro-supcxjnj astro-gadxyeuy" style="--c1: #ff9e00; --c2: #9d4edd; --c3: #240046" aria-hidden="true">  </div> <h3 class="name astro-supcxjnj">歌词</h3> </div> <span class="detail astro-supcxjnj"> <strong class="astro-supcxjnj">跟着唱。</strong> <span class="astro-supcxjnj">在“正在播放”中查看歌词。有逐句时间轴时，歌词会随音乐滚动。</span> <span class="more astro-supcxjnj"> 了解歌词 <svg width="16" height="16" class="icon astro-supcxjnj" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </span> </span> </a> </li><li data-reveal style="--reveal-delay: 210ms" class="astro-supcxjnj"> <a href="/music-assistant/plugins/ai-radio/" class="act astro-supcxjnj"> <div class="headliner astro-supcxjnj"> <div class="cover art astro-supcxjnj astro-gadxyeuy" style="--c1: #90e0ef; --c2: #48cae4; --c3: #03045e" aria-hidden="true">  </div> <h3 class="name astro-supcxjnj">AI 电台</h3> </div> <span class="detail astro-supcxjnj"> <strong class="astro-supcxjnj">属于你自己的电台。</strong> <span class="astro-supcxjnj">给你的播放列表配一位主持人：介绍歌曲，在曲目之间插播天气或新闻。直接使用你 Home Assistant 里已有的 AI 与文字转语音服务。</span> <span class="more astro-supcxjnj"> 了解 AI 电台 <svg width="16" height="16" class="icon astro-supcxjnj" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </span> </span> </a> </li> </ul> </div>  </section> <section id="community" class="section tone-inverse astro-4ruvmn52" aria-labelledby="community-title">  <div class="container layout astro-4ruvmn52"> <div class="intro astro-4ruvmn52" data-reveal> <h2 id="community-title" class="astro-4ruvmn52">公开透明地构建。</h2> <p class="astro-4ruvmn52">
+Music Assistant is built by a large community of maintainers and
+        contributors, including the core team pictured here.
+</p> <p class="astro-4ruvmn52">
+There’s room for you too. Help someone get their music playing, improve
+        the docs, test a new feature or contribute code. As a free and open source
+        project of the Open Home Foundation, anyone can help shape what comes
+        next.
+</p> <div class="actions astro-4ruvmn52"> <a href="https://github.com/music-assistant" class="btn btn-primary btn-md astro-4ruvmn52 astro-xxxn4ky6" target="_blank" rel="noopener noreferrer">  <span class="astro-xxxn4ky6"> 
+View on GitHub
+ </span> <svg width="18" height="18" class="icon astro-xxxn4ky6" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M7 7h10v10" />
+  <path d="M7 17 17 7" />
+</svg> </a> <a href="/music-assistant/help/" class="btn btn-secondary btn-md astro-4ruvmn52 astro-xxxn4ky6">  <span class="astro-xxxn4ky6"> 
+Help or donate
+ </span>  </a> </div> </div> <div class="band astro-4ruvmn52"> <p class="astro-4ruvmn52">由以下团队出品</p> <!-- Black-and-white band photos; colour comes back on hover. --> <ul class="astro-4ruvmn52"> <li class="astro-4ruvmn52"> <a href="https://github.com/marcelveldt" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/marcel.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Marcel</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/marvinschenkel" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/marvin.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Marvin</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/maximmaxim345" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/maxim.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Maxim</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/stvncode" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/steven.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Steven</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/chrisuthe" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/chris.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Chris</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/pierosavi" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/piero.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Piero</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/OzGav" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/gavin.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Gavin</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/jozefKruszynski" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/jozef.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Jozef</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/fmunkes" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/fabian.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Fabian</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/teancom" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/david.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">David</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li><li class="astro-4ruvmn52"> <a href="https://github.com/formatbce" target="_blank" rel="noopener noreferrer" class="astro-4ruvmn52"> <div class="portrait astro-4ruvmn52"> <img src="/music-assistant/assets/team/andrii.png" alt="" width="200" height="200" loading="lazy" decoding="async" class="astro-4ruvmn52"> </div> <span class="astro-4ruvmn52">Andrii</span> <span class="sr-only astro-4ruvmn52"> on GitHub</span> </a> </li> </ul> </div> </div>  </section> <section id="get-started" class="section tone-base final astro-uksgcafc" aria-labelledby="final-title">  <div class="container astro-uksgcafc" data-reveal> <h2 id="final-title" class="astro-uksgcafc">把音乐带回家。</h2> <p class="astro-uksgcafc">
+Install Music Assistant on Home Assistant or with Docker, then connect
+      your music and speakers.
+</p> <div class="actions astro-uksgcafc"> <a href="/music-assistant/get-started/" class="btn btn-primary btn-lg astro-uksgcafc astro-xxxn4ky6">  <span class="astro-xxxn4ky6"> 
+Get Music Assistant
+ </span> <svg width="20" height="20" class="icon astro-xxxn4ky6" aria-hidden="true" focusable="false"
+ 
+  xmlns="http://www.w3.org/2000/svg"
+ 
+ 
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M5 12h14" />
+  <path d="m12 5 7 7-7 7" />
+</svg> </a> <a href="/music-assistant/documentation/" class="btn btn-secondary btn-lg astro-uksgcafc astro-xxxn4ky6">  <span class="astro-xxxn4ky6"> 
+Read the documentation
+ </span>  </a> </div> </div>  </section>  </main> <footer class="site-footer tone-alt astro-yyiefoc7"> <div class="container astro-yyiefoc7"> <div class="top astro-yyiefoc7"> <div class="about astro-yyiefoc7"> <a href="/music-assistant/" class="home astro-yyiefoc7" aria-label="Music Assistant 首页"> <svg class="logo astro-yyiefoc7" role="img" aria-label="Music Assistant" viewBox="0 0 1762 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M109.394 4.3814C115.242 -1.46047 124.788 -1.46047 130.606 4.3814L229.394 103.269C235.242 109.111 240 120.643 240 128.907V219.017L239.995 219.373C239.789 227.459 233.114 234.001 225 234.001H15C6.75759 234.001 2.40473e-05 227.22 0 218.987V128.877C0.000120331 120.613 4.78834 109.081 10.6064 103.239L109.394 4.3814Z" fill="#F2F4F9"/>
+<path d="M109.394 4.3814C115.242 -1.46047 124.788 -1.46047 130.606 4.3814L229.394 103.269C235.242 109.111 240 120.643 240 128.907V219.017L239.995 219.373C239.789 227.459 233.114 234.001 225 234.001H15C6.75759 234.001 2.40473e-05 227.22 0 218.987V128.877C0.000120331 120.613 4.78834 109.081 10.6064 103.239L109.394 4.3814ZM36 120.001C31.5817 120.001 28 123.582 28 128.001V206.001H44V128.001C44 123.582 40.4183 120.001 36 120.001ZM68 120.001C63.5817 120.001 60 123.582 60 128.001V206.001H76V128.001C76 123.582 72.4183 120.001 68 120.001ZM100 120.001C95.5817 120.001 92 123.582 92 128.001V206.001H108V128.001C108 123.582 104.418 120.001 100 120.001ZM158.393 120.427C154.2 119.032 149.671 121.3 148.275 125.492L121.479 206.001H138.342L163.456 130.544C164.851 126.352 162.584 121.823 158.393 120.427ZM188.708 125.492C187.313 121.3 182.783 119.032 178.591 120.427C174.399 121.823 172.131 126.352 173.526 130.544L198.642 206.001H215.504L188.708 125.492Z" fill="#18BCF2"/>
+<g clip-path="url(#clip0_2275_437)">
+<path d="M478.989 48.7412V192.245H452.699V108.394L419.619 192.235H394.19L361.491 109.058V192.235H335.866V48.7412H361.491L406.9 161.08L452.699 48.7412H478.989Z" fill="currentColor"/>
+<path d="M575.638 192.235C574.808 189.559 574.202 186.305 573.821 182.485C568.018 190.711 558.717 194.815 545.9 194.815C535.192 194.815 525.726 191.727 517.51 185.543C509.674 179.232 505.747 168.818 505.747 154.281V95.0974H531.372V149.113C531.372 157.847 533.414 163.865 537.488 167.186C541.503 170.44 546.124 172.061 551.351 172.061C556.959 172.061 561.99 170.313 566.455 166.805C570.978 163.24 573.244 157.28 573.244 148.927V95.1072H598.958V174.269C598.958 180.766 599.593 186.764 600.873 192.245H575.638V192.235Z" fill="currentColor"/>
+<path d="M655.855 174.455C660.193 174.455 663.603 173.615 666.084 171.925C668.565 170.235 669.816 167.802 669.816 164.607C669.816 159.889 666.66 156.763 660.349 155.239L647.444 151.702C637.625 149.152 630.474 145.489 625.98 140.711C621.486 135.934 619.239 130.072 619.239 123.116C619.239 113.943 622.551 106.479 629.185 100.744C635.808 95.0097 644.767 92.1375 656.051 92.1375C665.996 92.1375 674.31 94.4137 681.002 98.9761C687.694 103.538 691.768 109.83 693.243 117.86L670.392 123.116C670.011 119.932 668.575 117.411 666.094 115.565C663.612 113.718 660.515 112.79 656.823 112.79C652.934 112.79 649.876 113.669 647.649 115.418C645.422 117.167 644.308 119.609 644.308 122.735C644.308 125.09 645.168 127.034 646.887 128.568C648.606 130.102 651.41 131.401 655.298 132.485L668.018 135.836C677.006 138.191 683.825 141.825 688.476 146.739C693.126 151.643 695.451 157.603 695.451 164.617C695.451 173.791 691.944 181.128 684.939 186.608C677.925 192.089 668.37 194.834 656.256 194.834C644.142 194.834 635.525 192.363 628.677 187.429C621.828 182.495 617.793 175.754 616.582 167.206L640.009 163.289C640.332 166.727 641.885 169.453 644.699 171.466C647.502 173.468 651.234 174.475 655.885 174.475L655.855 174.455Z" fill="currentColor"/>
+<path d="M711.209 62.0278C711.209 57.7585 712.704 54.1438 715.703 51.1739C718.702 48.2137 722.366 46.7288 726.694 46.7288C731.021 46.7288 734.695 48.2137 737.684 51.1739C740.683 54.134 742.178 57.7585 742.178 62.0278C742.178 66.297 740.683 70.1071 737.684 73.0673C734.685 76.0274 731.021 77.5124 726.694 77.5124C722.366 77.5124 718.692 76.0274 715.703 73.0673C712.704 70.1071 711.209 66.424 711.209 62.0278ZM739.599 95.1072V192.245H713.974V95.1072H739.599Z" fill="currentColor"/>
+<path d="M807.39 92.1375C818.547 92.1375 828.179 94.912 836.308 100.451C844.436 105.991 849.868 113.357 852.613 122.54L830.719 131.333C829.127 126.487 826.245 122.599 822.064 119.668C817.892 116.737 813.125 115.272 807.771 115.272C800.053 115.272 793.986 117.841 789.561 122.97C785.125 128.099 782.917 134.996 782.917 143.671C782.917 152.347 785.164 159.176 789.658 164.178C794.152 169.18 800.19 171.681 807.771 171.681C813.252 171.681 818.097 170.284 822.298 167.47C826.509 164.666 829.44 160.905 831.091 156.186L852.603 164.217C849.477 173.586 843.811 181.03 835.585 186.54C827.359 192.05 817.902 194.805 807.195 194.805C792.345 194.805 780.309 190.086 771.106 180.659C761.893 171.221 757.292 158.892 757.292 143.662C757.292 128.431 761.913 115.955 771.155 106.42C780.397 96.8952 792.472 92.1277 807.39 92.1277V92.1375Z" fill="currentColor"/>
+<path d="M1004.62 159.732H952.701L941.32 192.235H913.496L965.226 48.7412H992.277L1043.9 192.245H1015.51L1004.61 159.742L1004.62 159.732ZM996.781 137.458L978.707 84.9762L960.546 137.458H996.781Z" fill="currentColor"/>
+<path d="M1091.62 174.455C1095.96 174.455 1099.37 173.615 1101.85 171.925C1104.33 170.235 1105.58 167.802 1105.58 164.607C1105.58 159.889 1102.43 156.763 1096.12 155.239L1083.21 151.702C1073.39 149.152 1066.24 145.489 1061.75 140.711C1057.25 135.934 1055.01 130.072 1055.01 123.116C1055.01 113.943 1058.32 106.479 1064.95 100.744C1071.58 95.0097 1080.53 92.1375 1091.82 92.1375C1101.76 92.1375 1110.08 94.4137 1116.77 98.9761C1123.46 103.538 1127.54 109.83 1129.01 117.86L1106.16 123.116C1105.78 119.932 1104.34 117.411 1101.86 115.565C1099.38 113.718 1096.28 112.79 1092.59 112.79C1088.7 112.79 1085.64 113.669 1083.42 115.418C1081.19 117.167 1080.08 119.609 1080.08 122.735C1080.08 125.09 1080.94 127.034 1082.65 128.568C1084.37 130.102 1087.18 131.401 1091.07 132.485L1103.79 135.836C1112.77 138.191 1119.59 141.825 1124.24 146.739C1128.89 151.643 1131.22 157.603 1131.22 164.617C1131.22 173.791 1127.71 181.128 1120.71 186.608C1113.69 192.089 1104.14 194.834 1092.02 194.834C1079.91 194.834 1071.29 192.363 1064.44 187.429C1057.6 182.495 1053.56 175.754 1052.35 167.206L1075.78 163.289C1076.1 166.727 1077.65 169.453 1080.47 171.466C1083.27 173.468 1087 174.475 1091.65 174.475L1091.62 174.455Z" fill="currentColor"/>
+<path d="M1182.44 174.455C1186.78 174.455 1190.19 173.615 1192.67 171.925C1195.15 170.235 1196.4 167.802 1196.4 164.607C1196.4 159.889 1193.25 156.763 1186.93 155.239L1174.03 151.702C1164.21 149.152 1157.06 145.489 1152.56 140.711C1148.07 135.934 1145.82 130.072 1145.82 123.116C1145.82 113.943 1149.14 106.479 1155.77 100.744C1162.39 95.0097 1171.35 92.1375 1182.64 92.1375C1192.58 92.1375 1200.89 94.4137 1207.59 98.9761C1214.28 103.538 1218.35 109.83 1219.83 117.86L1196.98 123.116C1196.6 119.932 1195.16 117.411 1192.68 115.565C1190.2 113.718 1187.1 112.79 1183.41 112.79C1179.52 112.79 1176.46 113.669 1174.23 115.418C1172.01 117.167 1170.89 119.609 1170.89 122.735C1170.89 125.09 1171.75 127.034 1173.47 128.568C1175.19 130.102 1177.99 131.401 1181.88 132.485L1194.6 135.836C1203.59 138.191 1210.41 141.825 1215.06 146.739C1219.71 151.643 1222.04 157.603 1222.04 164.617C1222.04 173.791 1218.53 181.128 1211.52 186.608C1204.51 192.089 1194.95 194.834 1182.84 194.834C1170.73 194.834 1162.11 192.363 1155.26 187.429C1148.41 182.495 1144.38 175.754 1143.17 167.206L1166.59 163.289C1166.92 166.727 1168.47 169.453 1171.28 171.466C1174.09 173.468 1177.82 174.475 1182.47 174.475L1182.44 174.455Z" fill="currentColor"/>
+<path d="M1237.79 62.0278C1237.79 57.7585 1239.29 54.1438 1242.29 51.1739C1245.29 48.2137 1248.95 46.7288 1253.28 46.7288C1257.61 46.7288 1261.28 48.2137 1264.27 51.1739C1267.27 54.134 1268.76 57.7585 1268.76 62.0278C1268.76 66.297 1267.27 70.1071 1264.27 73.0673C1261.27 76.0274 1257.61 77.5124 1253.28 77.5124C1248.95 77.5124 1245.28 76.0274 1242.29 73.0673C1239.29 70.1071 1237.79 66.424 1237.79 62.0278ZM1266.19 95.1072V192.245H1240.57V95.1072H1266.19Z" fill="currentColor"/>
+<path d="M1323.94 174.455C1328.28 174.455 1331.69 173.615 1334.17 171.925C1336.65 170.235 1337.9 167.802 1337.9 164.607C1337.9 159.889 1334.75 156.763 1328.44 155.239L1315.53 151.702C1305.71 149.152 1298.56 145.489 1294.07 140.711C1289.57 135.934 1287.33 130.072 1287.33 123.116C1287.33 113.943 1290.64 106.479 1297.27 100.744C1303.89 95.0097 1312.85 92.1375 1324.14 92.1375C1334.08 92.1375 1342.4 94.4137 1349.09 98.9761C1355.78 103.538 1359.85 109.83 1361.33 117.86L1338.48 123.116C1338.1 119.932 1336.66 117.411 1334.18 115.565C1331.7 113.718 1328.6 112.79 1324.91 112.79C1321.02 112.79 1317.96 113.669 1315.73 115.418C1313.51 117.167 1312.39 119.609 1312.39 122.735C1312.39 125.09 1313.25 127.034 1314.97 128.568C1316.69 130.102 1319.5 131.401 1323.38 132.485L1336.1 135.836C1345.09 138.191 1351.91 141.825 1356.56 146.739C1361.21 151.643 1363.54 157.603 1363.54 164.617C1363.54 173.791 1360.03 181.128 1353.03 186.608C1346.01 192.089 1336.46 194.834 1324.34 194.834C1312.23 194.834 1303.61 192.363 1296.76 187.429C1289.91 182.495 1285.88 175.754 1284.67 167.206L1308.1 163.289C1308.42 166.727 1309.97 169.453 1312.78 171.466C1315.59 173.468 1319.32 174.475 1323.97 174.475L1323.94 174.455Z" fill="currentColor"/>
+<path d="M1436.56 192.236C1430.32 193.828 1424.42 194.629 1418.88 194.629C1408.5 194.629 1400.45 191.845 1394.74 186.266C1389.04 180.688 1386.18 172.228 1386.18 160.885V117.098H1371.36V95.1073H1386.18V64.988H1411.42V95.1073H1433.79V117.098H1411.42V156.196C1411.22 166.649 1415.33 171.876 1423.75 171.876C1426.75 171.876 1430.03 171.3 1433.59 170.156L1436.55 192.245L1436.56 192.236Z" fill="currentColor"/>
+<path d="M1514.86 192.236C1514.28 189.178 1513.8 185.866 1513.42 182.29C1510.68 186.051 1506.81 189.08 1501.8 191.376C1496.8 193.672 1491.08 194.815 1484.64 194.815C1474.06 194.815 1465.53 191.982 1459.06 186.305C1452.6 180.629 1449.36 172.951 1449.36 163.269C1449.36 153.587 1452.5 146.143 1458.78 140.75C1465.05 135.367 1473.68 132.671 1484.64 132.671H1512.84V129.418C1512.84 123.81 1511.15 119.639 1507.77 116.893C1504.39 114.158 1499.67 112.78 1493.63 112.78C1482.92 112.78 1475.24 117.343 1470.59 126.448L1451.95 115.838C1460.3 100.031 1474.73 92.1277 1495.26 92.1277C1507.63 92.1277 1517.79 95.3516 1525.76 101.78C1533.72 108.218 1537.71 118.671 1537.71 133.14V170.332C1537.71 180.913 1538.31 188.211 1539.52 192.226H1514.86V192.236ZM1513.04 150.168H1490.76C1485.86 150.168 1482.05 151.301 1479.34 153.558C1476.64 155.825 1475.28 158.931 1475.28 162.878C1475.28 166.825 1476.7 170.02 1479.53 172.247C1482.36 174.484 1486.37 175.598 1491.53 175.598C1497.84 175.598 1503 173.683 1507.01 169.863C1511.03 166.044 1513.04 160.113 1513.04 152.083V150.168Z" fill="currentColor"/>
+<path d="M1651.67 132.485V192.236H1626.14V138.025C1626.14 129.164 1624.14 123.204 1620.11 120.147C1616.03 117.02 1611.51 115.467 1606.53 115.467C1600.73 115.467 1595.6 117.216 1591.15 120.723C1586.55 124.357 1584.26 130.317 1584.26 138.601V192.236H1558.83V95.1074H1582.92L1583.68 104.76C1586.42 100.94 1590.35 97.8721 1595.49 95.5861C1600.62 93.2902 1606.15 92.1472 1612.08 92.1472C1624.64 92.1472 1634.38 95.674 1641.29 102.708C1648.21 109.752 1651.67 119.678 1651.67 132.485Z" fill="currentColor"/>
+<path d="M1729.21 192.236C1722.97 193.828 1717.06 194.629 1711.53 194.629C1701.14 194.629 1693.09 191.845 1687.39 186.266C1681.68 180.688 1678.83 172.228 1678.83 160.885V117.098H1664.01V95.1073H1678.83V64.988H1704.06V95.1073H1726.43V117.098H1704.06V156.196C1703.87 166.649 1707.98 171.876 1716.39 171.876C1719.39 171.876 1722.67 171.3 1726.24 170.156L1729.2 192.245L1729.21 192.236Z" fill="currentColor"/>
+</g>
+<defs>
+<clipPath id="clip0_2275_437">
+<rect width="1393.13" height="150.45" fill="white" transform="translate(336 44.7749)"/>
+</clipPath>
+</defs>
+</svg>
+ </a> <p class="astro-yyiefoc7">
+你的音乐，由你做主。免费开源，Open Home Foundation 旗下项目。
+</p> <a class="ohf astro-yyiefoc7" href="https://www.openhomefoundation.org/" target="_blank" rel="noopener noreferrer"> <img src="https://www.openhomefoundation.org/badges/ohf-project.png" alt="A project from the Open Home Foundation" width="300" height="80" loading="lazy" class="astro-yyiefoc7"> </a> </div> <nav aria-label="产品" class="astro-yyiefoc7"> <h2 class="astro-yyiefoc7">产品</h2> <ul class="astro-yyiefoc7"> <li class="astro-yyiefoc7"> <a href="/music-assistant/get-started/" class="astro-yyiefoc7"> 快速开始 </a> </li><li class="astro-yyiefoc7"> <a href="/music-assistant/music-providers/" class="astro-yyiefoc7"> 音乐源 </a> </li><li class="astro-yyiefoc7"> <a href="/music-assistant/player-support/" class="astro-yyiefoc7"> 播放器 </a> </li><li class="astro-yyiefoc7"> <a href="/music-assistant/plugins/" class="astro-yyiefoc7"> 插件 </a> </li> </ul> </nav><nav aria-label="学习" class="astro-yyiefoc7"> <h2 class="astro-yyiefoc7">学习</h2> <ul class="astro-yyiefoc7"> <li class="astro-yyiefoc7"> <a href="/music-assistant/documentation/" class="astro-yyiefoc7"> 文档 </a> </li><li class="astro-yyiefoc7"> <a href="/music-assistant/blog/" class="astro-yyiefoc7"> 新闻 </a> </li><li class="astro-yyiefoc7"> <a href="/music-assistant/faq/troubleshooting/" class="astro-yyiefoc7"> 故障排查 </a> </li><li class="astro-yyiefoc7"> <a href="/music-assistant/support/" class="astro-yyiefoc7"> 支持 </a> </li> </ul> </nav><nav aria-label="社区" class="astro-yyiefoc7"> <h2 class="astro-yyiefoc7">社区</h2> <ul class="astro-yyiefoc7"> <li class="astro-yyiefoc7"> <a href="https://github.com/music-assistant" target="_blank" rel="noopener noreferrer" class="astro-yyiefoc7"> GitHub </a> </li><li class="astro-yyiefoc7"> <a href="https://discord.gg/kaVm8hGpne" target="_blank" rel="noopener noreferrer" class="astro-yyiefoc7"> Discord </a> </li><li class="astro-yyiefoc7"> <a href="/music-assistant/help/" class="astro-yyiefoc7"> 帮助 / 捐赠 </a> </li><li class="astro-yyiefoc7"> <a href="/music-assistant/help/lokalise/" class="astro-yyiefoc7"> 参与翻译 </a> </li> </ul> </nav> </div> <div class="bottom astro-yyiefoc7"> <p class="astro-yyiefoc7">© 2026 Open Home Foundation</p> <p class="analytics astro-yyiefoc7"> <a href="https://www.openhomefoundation.org/blog/making-our-web-analytics-open-source-with-plausible/" rel="noopener" class="astro-yyiefoc7">
+Privacy-first analytics
+</a> <span aria-hidden="true" class="astro-yyiefoc7">·</span> <a href="https://plausible.openhomefoundation.org/music-assistant.io" rel="noopener" class="astro-yyiefoc7">
+Public dashboard
+</a> </p> </div> </div> </footer> <script type="module">const r=document.querySelector(".menu-toggle"),a=document.getElementById("site-nav");function o(e){if(!r||!a)return;r.setAttribute("aria-expanded",String(e));const t=r.querySelector("[data-menu-label]");t&&(t.textContent=e?"Close menu":"Open menu"),a.classList.toggle("is-open",e)}r?.addEventListener("click",()=>o(r.getAttribute("aria-expanded")!=="true"));a?.querySelectorAll("a").forEach(e=>e.addEventListener("click",()=>o(!1)));document.addEventListener("keydown",e=>{e.key==="Escape"&&r?.ariaExpanded==="true"&&(o(!1),r.focus())});document.querySelector("[data-theme-toggle]")?.addEventListener("click",()=>{const e=document.documentElement,n=(e.dataset.theme??(matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"))==="light"?"dark":"light";e.dataset.theme=n;try{localStorage.setItem("ma-theme",n)}catch{}});const l=()=>document.documentElement.classList.toggle("is-scrolled",scrollY>8);l();addEventListener("scroll",l,{passive:!0});const s=document.querySelectorAll("[data-reveal]");if("IntersectionObserver"in window){const e=new IntersectionObserver(t=>{for(const n of t)n.isIntersecting&&(n.target.classList.add("is-visible"),e.unobserve(n.target))},{rootMargin:"0px 0px 10% 0px"});s.forEach(t=>e.observe(t))}else s.forEach(e=>e.classList.add("is-visible"));document.querySelectorAll("[data-copy-target]").forEach(e=>{const t=e.querySelector("[data-copy-label]");e.addEventListener("click",async()=>{const n=document.getElementById(e.dataset.copyTarget??"");if(!(!n||!t)){try{await navigator.clipboard.writeText(n.textContent?.trim()??""),t.textContent="Copied"}catch{const c=document.createRange();c.selectNodeContents(n),getSelection()?.removeAllRanges(),getSelection()?.addRange(c),t.textContent="Press Ctrl+C"}setTimeout(()=>t.textContent="Copy",1800)}})});</script> </body> </html>
