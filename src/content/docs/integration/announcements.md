@@ -20,7 +20,7 @@ description: 公告功能的详细信息
 
 播放公告时可以调整音量。
 
-If a player type has native support for announcements (such as Sonos, AirPlay, Snapcast and Sendspin) then that will be used in preference to the MA functionality providing an even smoother experience.
+如果播放器类型原生支持公告（如 Sonos、AirPlay、Snapcast 和 Sendspin），则将优先使用该功能而非 MA 功能，以提供更流畅的体验。
 
 该功能适用于 Music Assistant 支持的所有播放器。
 
@@ -36,10 +36,10 @@ If a player type has native support for announcements (such as Sonos, AirPlay, S
 
 原生公告支持通常意味着播放器可以在任何正在播放的音乐上“叠加”公告。它会“压低”（duck）音乐音量（或完全静音），以增强的音量播放公告，然后恢复音乐音量。音乐保持播放，整个公告过程由播放器自身处理。
 
-Player types that support native announcements include Sonos S2 speakers, AirPlay speakers and ESPHome-based Sendspin devices.
+支持原生公告的播放器类型包括 Sonos S2 音箱、AirPlay 音箱以及基于 ESPHome 的 Sendspin 设备。
 
-- AirPlay speakers mix the announcement over the music while Music Assistant plays to them over AirPlay. With **Sendspin (over AirPlay)** as the preferred output protocol, MA handles the announcement as described below.
-- ESPHome-based Sendspin devices must also be added to Home Assistant, and Music Assistant must be connected to Home Assistant.
+- AirPlay 音箱将公告与音乐混合播放，而 Music Assistant 通过 AirPlay 向其播放音乐。当 **Sendspin（通过 AirPlay）** 作为首选输出协议时，MA 将按下文所述处理公告。
+- 基于 ESPHome 的 Sendspin 设备也必须添加到 Home Assistant，并且 Music Assistant 必须连接到 Home Assistant。
 
 ## MA 播放器支持
 
@@ -58,16 +58,16 @@ ESPHome 在状态更新方面可能不够可靠，因此该播放器类型可能
 
 如果将公告发送到手动同步的一组播放器，公告将播放给所有子播放器（同步播放）。
 
-If an announcement is sent to a Sync Group (temporary or permanent) of which ALL child players support native announcements, the native functionality will be used to playback the announcement and MA will ensure the announcement is started at (more or less) the same time so all players should play the announcement in sync.
+如果将公告发送到同步群组（临时或永久），且该群组的所有子播放器均支持原生公告，则将使用原生功能播放公告，MA 将确保公告（大致）同时开始，以便所有播放器同步播放公告。
 
 如果将公告发送到当前与另一个播放器同步（且不支持原生公告）的播放器，它将暂时取消同步，播放公告，然后重新添加到群组中。
 
 在所有情况下，播放都应在公告播放后恢复。
 
 > [!NOTE]
-> If the announcement is sent to one player of a group, the playback needs to resume afterwards and for Squeezelite that will be noticeable
+> 如果将公告发送到群组中的某个播放器，则播放需要在公告后恢复，对于 Squeezelite 来说这一点会比较明显。
 
 > [!NOTE]
 > 如果将公告发送到群组中的某个播放器，且该播放器是永久同步群组的同步领导者，则此操作将被视为向整个同步群组发送请求。所有播放器都将播放公告，整个群组随后将恢复播放。
 
-未在上述提及的任何情况均不受支持
+未在上述提及的任何情况均不受支持。

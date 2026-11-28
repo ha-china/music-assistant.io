@@ -4,14 +4,14 @@ title: "Nugs.net"
 
 # Nugs.net <img src="/assets/icons/nugsnet-logo.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming your music from <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a>. This component was contributed by <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a>.
+Music Assistant 支持从 <a href="https://www.nugs.net" target="_blank" rel="noopener noreferrer">Nugsnet</a> 流式传输您的音乐。此组件由 <a href="https://github.com/brian10048" target="_blank" rel="noopener noreferrer">Brian</a> 贡献。
 
 Nugs.net 是一项现场演唱会录音订阅服务，与艺人本人合作运营。其曲库偏向于拥有长期录音演出历史的艺人，许多演唱会会在演出结束后不久上架。
 
 此音源会将 Music Assistant 登录到您的账户，因此您有权访问的演出将出现在您的资料库中。
 
 > [!CAUTION]
-> Please be advised that this source currently has no dedicated maintainer. Issues may take longer to resolve as this will be maintained on a best effort basis.
+> 请注意，此音源目前没有专门维护者。问题可能需要更长时间才能解决，因为这将基于尽力而为的原则进行维护。
 
 > [!NOTE]
 > 使用此音源需要付费订阅
@@ -34,17 +34,19 @@ Nugs.net 是一项现场演唱会录音订阅服务，与艺人本人合作运�
 
 ### Other
 
-### Other
+### 其他
 
-### Other
+### 其他
 
-### Other
+### 其他
 
-### Other
+### 其他
 
-### Other
+### 其他
 
-### Other
+### 其他
+
+### 其他
 
 ### 其他
 

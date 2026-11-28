@@ -14,7 +14,7 @@ description: "将多个音乐库连接到几乎任何智能音箱。"
 cover:
   image: /public/images/blog/2024/05/09/music-assistant-2/art.jpg
   alt: 'Music Assistant 2.0: Your Music, Your Players'
-excerpt: "Today, exactly five years ago, I, Marcel, started working on Music Assistant. What began as a quick script, to sync my playlists so I could switch between streaming providers, grew into a beast on its own.\n\nMusic Assistant is what I'd like to call a \"music library manager\" – it gives you full control of playing YOUR music on your players. Just like Home Assistant centralizes all your devices and services to work together, Music Assistant does the same with your music sources and smart audio-playing devices."
+excerpt: "今天，整整五年前，我（Marcel）开始开发 Music Assistant。起初只是一个用于同步播放列表、以便我在不同流媒体服务商之间切换的快速脚本，后来却成长为一个自成一体的大工程。\n\nMusic Assistant 是我所称的“音乐库管理器”——它让你能够完全掌控在自己的播放器上播放属于你的音乐。正如 Home Assistant 将你所有的设备和服务集中起来协同工作一样，Music Assistant 对你的音乐源和智能音频播放设备也做着同样的事情。"
 date: 2024-05-09T00:00:00.000Z
 authors:
   - marcel
@@ -66,7 +66,7 @@ Music Assistant 让你可以快速连接 Spotify 和 Tidal 等<a href="https://m
 
 <p class="img"><img src='/images/blog/2024/05/09/music-assistant-2/start-me-up.png'/></p>
 
-Even though Music Assistant is an HA Add-on, it can be installed from start to finish via HACS [now built into Home Assistant as the [Marketplace](https://www.home-assistant.io/blog/2026/11/04/release-202611/)]. You simply install the integration, which will automatically install and manage the add-on for you. The integration allows you to control your devices with automations and voice control.
+尽管 Music Assistant 是一个 HA 加载项，但你可以通过 HACS（现已内置于 Home Assistant 的[市场](https://www.home-assistant.io/blog/2026/11/04/release-202611/)）从头到尾完成安装。你只需安装集成（integration），它会自动为你安装并管理该加载项。该集成允许你通过自动化和语音控制来操控你的设备。
 
 <a href="https://my.home-assistant.io/redirect/supervisor_addon?addon=d5369777_music_assistant&amp;repository_url=https%3A%2F%2Fgithub.com%2Fmusic-assistant%2Fhome-assistant-addon" class="my badge" target="_blank"><img src="https://my.home-assistant.io/badges/supervisor_addon.svg"></a>
 
@@ -132,7 +132,7 @@ Music Assistant 一直与 Home Assistant 紧密相连（下文会详细介绍）
 
 1.0 初始版本发布六个月后，这个项目看上去快要无以为继，于是我决定推倒重来、回到绘图板。MA 的引擎需要成为独立的隔离组件，负责为你提供最佳的流媒体音乐体验（音质和延迟在其中至关重要），而 HA 一侧则应负责家庭和音乐的自动化。
 
-So, the Music Assistant Server was born. It is a standalone application that you can run in docker (or Home Assistant add-on), all connected to HA via a HACS [now the Marketplace] integration. The project was split up into multiple self-contained parts. 
+于是，Music Assistant Server 诞生了。它是一个独立的应用程序，你可以在 Docker（或 Home Assistant 加载项）中运行，并通过 HACS（现为市场）集成与 HA 连接。该项目被拆分成了多个自包含的部分。
 
 Music Assistant Server 拥有自己的网页界面，一个用 Vue 编写的现代界面。多亏了 HA 的加载项系统，这个网页界面可以从 HA 安全地访问。该网页界面是一个渐进式 Web 应用（Progressive Web App，PWA），因此你也可以直接访问它，并[将其安装到你的设备上](https://support.google.com/chrome/answer/9658361?hl=en-GB&co=GENIE.Platform=Desktop)。我们还有一个（实验性的）[桌面应用](https://music-assistant.io/companion-app/)。
 

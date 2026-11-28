@@ -7,7 +7,7 @@ description: 文件系统音乐源的功能、配置、问题及更多内容
 
 Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文件，并将其编目到资料库（library）中，从而使 Music Assistant 支持的所有播放器提供方（player provider）都能播放这些文件。网络支持仅限于 SMB/CIFS、NFS 和 WebDAV，以及云存储服务 Google Drive 和 Microsoft OneDrive。
 
-当 MA 中还有流媒体源可用时，只有当相同条目出现在该流媒体源的"资料库"（Library）中时才会建立链接。不过，额外的曲目和专辑仍会出现在各种视图中，或可通过全局搜索找到，之后可单独添加到 MA 资料库中。
+当 MA 中还有流媒体源可用时，只有当相同条目出现在该流媒体源的“资料库”（Library）中时才会建立链接。不过，额外的曲目和专辑仍会出现在各种视图中，或可通过全局搜索找到，之后可单独添加到 MA 资料库中。
 
 ## Features
 
@@ -34,56 +34,65 @@ Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文�
 - On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
 - It is possible to add multiple filesystem sources
 
-### Other
+### 其他
 
-- Searching for tracks is possible
-- Local music is automatically included in the MA Library
-- Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
-- If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
-- On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
-- It is possible to add multiple filesystem sources
-
-### Other
-
-- Searching for tracks is possible
-- Local music is automatically included in the MA Library
-- Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
-- If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
-- On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
-- It is possible to add multiple filesystem sources
-
-### Other
-
-- Searching for tracks is possible
-- Local music is automatically included in the MA Library
-- Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
-- If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
-- On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
-- It is possible to add multiple filesystem sources
-
-### Other
-
-- Searching for tracks is possible
-- Local music is automatically included in the MA Library
-- Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
-- If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
-- On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
-- It is possible to add multiple filesystem sources
-
-### Other
-
-- Searching for tracks is possible
-- Local music is automatically included in the MA Library
-- Files are not favourited by default. All items can be seen if the "favourite" filter (the heart) is deselected. Items can then be favourited as desired
-- If streaming sources are also connected, then the media will be automatically linked and completed with info from those streaming source(s)
-- On playback, when tracks are linked across sources (or within the same source) the highest quality version is used automatically
-- It is possible to add multiple filesystem sources
+- 可以搜索曲目
+- 本地音乐会自动包含在 MA 资料库中
+- 文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
+- 如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全
+- 播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本
+- 可以添加多个文件系统源
 
 ### 其他
 
 - 可以搜索曲目
 - 本地音乐会自动包含在 MA 资料库中
-- 文件默认不会被收藏。取消选择"收藏"筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
+- 文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
+- 如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全
+- 播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本
+- 可以添加多个文件系统源
+
+### 其他
+
+- 可以搜索曲目
+- 本地音乐会自动包含在 MA 资料库中
+- 文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
+- 如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全
+- 播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本
+- 可以添加多个文件系统源
+
+### 其他
+
+- 可以搜索曲目
+- 本地音乐会自动包含在 MA 资料库中
+- 文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
+- 如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全
+- 播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本
+- 可以添加多个文件系统源
+
+### 其他
+
+- 可以搜索曲目
+- 本地音乐会自动包含在 MA 资料库中
+- 文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
+- 如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全
+- 播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本
+- 可以添加多个文件系统源
+
+### 其他
+
+- 可以搜索曲目
+- 本地音乐会自动包含在 MA 资料库中
+- 文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
+- 如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全
+- 播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本
+- 可以添加多个文件系统源
+
+### 其他
+
+- 可以搜索曲目
+- 本地音乐会自动包含在 MA 资料库中
+- 文件默认不会被收藏。取消选择“收藏”筛选器（心形图标）即可看到所有条目，然后可按需收藏条目
 - 如果还连接了流媒体源，媒体将自动与来自这些流媒体源的信息进行链接和补全
 - 播放时，当曲目跨源（或在同一源内）链接时，会自动使用质量最高的版本
 - 可以添加多个文件系统源
@@ -94,7 +103,7 @@ Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文�
 
 **音频文件位于运行 Music Assistant 服务器的设备的磁盘/文件夹上**
 
-如果文件存储在运行 Music Assistant 的设备上，例如 Home Assistant OS 中的 `/media` 文件夹，则应选择"文件系统（本地磁盘）"（Filesystem (local disk)）源，然后提供文件的路径。
+如果文件存储在运行 Music Assistant 的设备上，例如 Home Assistant OS 中的 `/media` 文件夹，则应选择“文件系统（本地磁盘）”（Filesystem (local disk)）源，然后提供文件的路径。
 
 > [!NOTE]
 > 在 Home Assistant OS 上只能访问 /media 文件夹，且无法将 Home Assistant 中的文件夹挂载到该路径。Docker 用户可以挂载自己的文件夹路径。
@@ -104,18 +113,18 @@ Music Assistant 完全支持读取磁盘或远程服务器上的本地音乐文�
 
 **音频文件位于通过 SMB/CIFS 提供服务的远程共享上**
 
-Music Assistant 支持 SMB（也称为 samba 或 CIFS）共享和 DFS。选择音乐源"文件系统（远程共享）"（Filesystem (remote share)），并配置服务器的（fqdn）主机名（或 IP 地址）、共享名称以及可选的子文件夹。高级选项包括：
+Music Assistant 支持 SMB（也称为 samba 或 CIFS）共享和 DFS。选择音乐源“文件系统（远程共享）”（Filesystem (remote share)），并配置服务器的（fqdn）主机名（或 IP 地址）、共享名称以及可选的子文件夹。高级选项包括：
 
 - <b>SMB 版本。</b>要使用的 SMB 协议版本。为获得更好的性能和安全性，建议使用 SMB 3.0 或更高版本。使用 Auto 可让系统自动协商。可选值为 `Auto`、`SMB 1.0`、`SMB 2.0`、`SMB 2.1`、`SMB 3.0 [default]` 和 `SMB 3.1.1`
-- <b>缓存模式。</b>缓存模式会影响性能和一致性。"Loose"（宽松）可为读取密集型工作负载提供更好的性能，推荐用于音乐资料库。可选值为 `Strict`、`Loose (Recommended) [default]` 和 `None`
+- <b>缓存模式。</b>缓存模式会影响性能和一致性。“Loose”（宽松）可为读取密集型工作负载提供更好的性能，推荐用于音乐资料库。可选值为 `Strict`、`Loose (Recommended) [default]` 和 `None`
 
 **音频文件位于通过 NFS 提供服务的远程共享上**
 
-Music Assistant 支持 NFS 共享。选择音乐源"文件系统（NFS 共享）"（Filesystem (NFS share)），并配置服务器的 IP 地址（不带前导 `http://`）、共享的绝对导出路径（例如 `/volume1/music`）以及可选的子文件夹。
+Music Assistant 支持 NFS 共享。选择音乐源“文件系统（NFS 共享）”（Filesystem (NFS share)），并配置服务器的 IP 地址（不带前导 `http://`）、共享的绝对导出路径（例如 `/volume1/music`）以及可选的子文件夹。
 
 **音频文件位于通过 WebDAV 提供服务的远程共享上**
 
-Music Assistant 支持 WebDAV 共享。选择音乐源 "WebDAV"，并配置 WebDAV 共享的完整网址，包括内容文件夹的完整路径（例如 `https://example.com/webdav/music`）。如果需要身份验证，请提供用户名和密码。SSL 证书验证是可选的，默认处于禁用状态。
+Music Assistant 支持 WebDAV 共享。选择音乐源 “WebDAV”，并配置 WebDAV 共享的完整网址，包括内容文件夹的完整路径（例如 `https://example.com/webdav/music`）。如果需要身份验证，请提供用户名和密码。SSL 证书验证是可选的，默认处于禁用状态。
 
 **音频文件位于通过 Google Drive 提供服务的远程共享上**
 
@@ -145,7 +154,7 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
 
 1. 进入 **Microsoft Entra 管理门户** > **应用注册** > **新注册**。
 2. **名称：**任意名称，例如 `Music Assistant`。
-3. **受支持的账户类型：**选择 **"任何组织目录中的账户和个人 Microsoft 账户"**。
+3. **受支持的账户类型：**选择 **“任何组织目录中的账户和个人 Microsoft 账户”**。
 4. **重定向 URI：**将类型设置为 **Web**，URL 设置为 `https://music-assistant.io/callback`
 5. 点击**注册**。
 
@@ -161,7 +170,7 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
    ```
 3. **保存。**等待约 2 分钟让更改生效。
 
-> 如果跳过此步骤，你会遇到：*"unauthorized_client: The client does not exist or is not enabled for consumers."*
+> 如果跳过此步骤，你会遇到：*“unauthorized_client: The client does not exist or is not enabled for consumers.”*
 
 #### 4. 复制客户端 ID
 
@@ -172,7 +181,7 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
 
 1. 左侧菜单 > **证书和机密**（Certificates & secrets） > **新建客户端机密**。
 2. 添加描述，选择一个过期时间（最长约 2 年）。
-3. **立即复制"值"（Value）列** - 而不是机密 ID。离开该页面后"值"将被隐藏。这就是你的**客户端机密**。
+3. **立即复制“值”（Value）列** - 而不是机密 ID。离开该页面后“值”将被隐藏。这就是你的**客户端机密**。
 
 > 机密会**过期**。过期时，请创建新的机密并在 Music Assistant 中重新授权。
 
@@ -193,10 +202,10 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
 
 | 错误 | 解决方法 |
 |---|---|
-| "unable to create app outside a directory" | 注册 Azure（步骤 1） |
-| "unauthorized_client ... not enabled for consumers" | 清单设置（步骤 3），等待 2 分钟 |
-| "Property api.requestedAccessTokenVersion is invalid" | 将 `requestedAccessTokenVersion` 设置为 `2`（步骤 3） |
-| "Folder not found" | 检查文件夹路径拼写（步骤 6），或使用 `root` |
+| “unable to create app outside a directory” | 注册 Azure（步骤 1） |
+| “unauthorized_client ... not enabled for consumers” | 清单设置（步骤 3），等待 2 分钟 |
+| “Property api.requestedAccessTokenVersion is invalid” | 将 `requestedAccessTokenVersion` 设置为 `2`（步骤 3） |
+| “Folder not found” | 检查文件夹路径拼写（步骤 6），或使用 `root` |
 | 授权显示回调但 MA 不保存 | 再次尝试点击 `Authorize with Microsoft` |
 </div>
 </details>
@@ -238,7 +247,7 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
 
 ### 音乐
 
-- 本地曲目和专辑将与任何源（本地或流媒体）上相同的曲目或专辑建立链接。请注意，"相同"不只是名称相同。系统会检查标签以确认是否确实是同一曲目。在没有标签信息的情况下，MA 会尝试根据它所掌握的其他信息（如艺术家名称、专辑和曲目长度）来识别相同的曲目。不过，糟糕的标签信息可能导致糟糕的匹配
+- 本地曲目和专辑将与任何源（本地或流媒体）上相同的曲目或专辑建立链接。请注意，“相同”不只是名称相同。系统会检查标签以确认是否确实是同一曲目。在没有标签信息的情况下，MA 会尝试根据它所掌握的其他信息（如艺术家名称、专辑和曲目长度）来识别相同的曲目。不过，糟糕的标签信息可能导致糟糕的匹配
 - 如果你的文件没有标签，MA 将退而根据文件名读取 `Artist - Title.ext`。确切规则及其限制请参见[无标签文件](#files-without-tags)。为文件添加标签始终是更好的解决办法
 - 支持包含歌词的文本文件。这些文件必须与曲目文件名相同，并位于同一文件夹中，但文件扩展名为 `.lrc`。播放开始时会加载歌词
 - 为尽量减少问题，音乐文件夹应遵循 /artist/album 结构，文件夹名称应与标记的艺术家和专辑名称一致，并去掉其中所有非[字母数字字符](https://en.wikipedia.org/wiki/Alphanumericals)（例如 AC/DC 应放在名为 ACDC 的文件夹中）
@@ -275,7 +284,7 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
     - 标志（用于艺术家视图）：logo.png
     - 播放列表缩略图：将图像文件命名为与播放列表文件相同（例如 rock.m3u 和 rock.jpg）
 - 艺术家缩略图、粉丝艺术图和标志应放在以艺术家名称命名的文件夹中。专辑缩略图应放在以专辑名称命名的文件夹中或其下方的碟片文件夹中。有关封面图片文件类型的更多信息，请参见 https://kodi.wiki/view/Artwork_types
-- 需要下载的封面图片会在后台非常缓慢地完成下载。可以通过在视图顶部横幅的 ⋮ 菜单中选择"更新元数据"（Update Metadata）来强制下载
+- 需要下载的封面图片会在后台非常缓慢地完成下载。可以通过在视图顶部横幅的 ⋮ 菜单中选择“更新元数据”（Update Metadata）来强制下载
 
 > [!TIP]
 > **本地封面图片是最佳选择**
@@ -296,7 +305,7 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
     - 对于 ID3v2.4 和 APEv2 标签，多个艺术家和专辑艺术家可以用空字符（null character）分隔
 - MA 要求设置专辑艺术家（Album Artist）标签。如果未设置该标签，那么在扫描提供方时这些曲目会如何处理，取决于本地提供方的 `Action when a track is missing the Albumartist ID3 tag` 设置
 - 支持包含增强元数据的 `.nfo` 文件
-- 对于多碟专辑，建议（但非必需）在专辑名称文件夹下添加名为"Disc 1"、"Disc 2"等的文件夹。专辑的封面图片可以添加到顶层的专辑文件夹或碟片文件夹中
+- 对于多碟专辑，建议（但非必需）在专辑名称文件夹下添加名为“Disc 1”、“Disc 2”等的文件夹。专辑的封面图片可以添加到顶层的专辑文件夹或碟片文件夹中
 - 如果碟片标签中未填写任何内容，则碟片编号不会显示在界面上
 
 ![image](/assets/screenshots/no-disc-tag.png)
@@ -317,7 +326,7 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
 1. ID3v2.3 和 MP4：使用 ARTISTS 标签 - 一个专用的多值字段，列出以分号分隔的每个艺术家。（使用此方法时，无法表示名称中带分号的艺术家）
 2. FLAC/OGG/Opus：使用多个 ARTIST 字段。Vorbis comment 规范允许多个 ARTIST 字段（每个艺术家一个）。MA 会读取所有这些字段。（注意，标记工具可能会添加多个 ARTISTS（复数）字段。这不符合 Vorbis 规范，但 MA 会处理这种情况）
 3. ID3v2.4 和 APEv2：在 ARTIST 标签中使用以空字符分隔的名称列表
-4. ARTIST 标签解析 - 如果以上方式均不存在，MA 将尝试解析 ARTIST 字符串。分号被视为主要分隔符。合作类分隔符（例如 feat.、vs.、presents 等）始终会被拆分。其他分隔符（&、逗号、+、"with"）仅在 MusicBrainz Artist ID 表明预期有多个艺术家时才会使用
+4. ARTIST 标签解析 - 如果以上方式均不存在，MA 将尝试解析 ARTIST 字符串。分号被视为主要分隔符。合作类分隔符（例如 feat.、vs.、presents 等）始终会被拆分。其他分隔符（&、逗号、+、“with”）仅在 MusicBrainz Artist ID 表明预期有多个艺术家时才会使用
 
 > [!NOTE]
 > - 如果艺术家标签被不合需要地拆分，请使用 ARTISTS 标签、多个 ARTIST 字段或 Musicbrainz 标识符来精确控制艺术家添加到数据库的方式
@@ -339,18 +348,18 @@ Music Assistant 支持 Microsoft One Drive 个人账户（不支持商业账户�
 
 | 标签 | 重要性 | 为什么重要 |
 |:--|:--|:--|
-| Title<br />Artist<br />Album<br />Album Artist<br />Track number | 必需 | Music Assistant 基本功能所必需 |
-| Artists | 强烈建议<br />（针对 ID3 标签） | ID3 标签需要它来区分同一条目上的多个艺术家名称 |
-| Album Artist Sort Order<br />Artist Sort Order | 强烈建议 | UI 中的某些排序选项需要 |
+| 标题<br />艺术家<br />专辑<br />专辑艺术家<br />曲目编号 | 必需 | Music Assistant 基本功能所必需 |
+| 艺术家（复数） | 强烈建议<br />（针对 ID3 标签） | ID3 标签需要它来区分同一条目上的多个艺术家名称 |
+| 专辑艺术家排序顺序<br />艺术家排序顺序 | 强烈建议 | UI 中的某些排序选项需要 |
 | ISRC | 强烈建议 | 将相同的流媒体提供方条目与流媒体和本地条目进行链接时需要 |
-| Barcode<br />Catalogue Number | 建议 | 可用于将相同的流媒体提供方条目与流媒体和本地条目进行链接 |
-| Genre | 强烈建议 | UI 中的流派视图需要 |
-| MusicBrainz Artist ID<br />MusicBrainz Recording ID<br />MusicBrainz Release Artist ID<br />MusicBrainz Release Group ID<br />MusicBrainz Release ID<br />MusicBrainz Track ID | 强烈建议 | 在本地提供方之间链接相同曲目所必需。避免同名的曲目、艺术家或专辑被错误地链接在一起 |
-| Release Type | 强烈建议 | 用作筛选器并显示在 UI 中 |
-| Disc Number<br />Total Discs | 强烈建议 | 在 UI 中使用 |
-| Date | 建议 | 用作专辑日期并在曲目日期缺失时作为回退，在 UI 中使用 |
-| Original Release Date<br />Original Release Year | 建议 | 用作曲目日期并在专辑日期缺失时作为回退，在 UI 中使用 |
-| Record label<br />Release country<br />Release status | 可选 | 可在未来的 UI 更新中用作排序或搜索选项 |
+| 条形码<br />目录号 | 建议 | 可用于将相同的流媒体提供方条目与流媒体和本地条目进行链接 |
+| 流派 | 强烈建议 | UI 中的流派视图需要 |
+| MusicBrainz 艺术家 ID<br />MusicBrainz 录音 ID<br />MusicBrainz 发行艺术家 ID<br />MusicBrainz 发行组 ID<br />MusicBrainz 发行 ID<br />MusicBrainz 曲目 ID | 强烈建议 | 在本地提供方之间链接相同曲目所必需。避免同名的曲目、艺术家或专辑被错误地链接在一起 |
+| 发行类型 | 强烈建议 | 用作筛选器并显示在 UI 中 |
+| 碟片编号<br />总碟数 | 强烈建议 | 在 UI 中使用 |
+| 日期 | 建议 | 用作专辑日期并在曲目日期缺失时作为回退，在 UI 中使用 |
+| 原始发行日期<br />原始发行年份 | 建议 | 用作曲目日期并在专辑日期缺失时作为回退，在 UI 中使用 |
+| 唱片公司<br />发行国家/地区<br />发行状态 | 可选 | 可在未来的 UI 更新中用作排序或搜索选项 |
 
 </div>
 
@@ -433,9 +442,9 @@ CUE Sheet 需要：
 
 - `FILE` - 如果 CUE Sheet 与音频文件共享相同的主文件名（例如 `album.cue` 与 `album.flac` 并存），则可以省略。
 
-Only CUE Sheets that describe a single audio file are supported. A CUE Sheet with more than one `FILE` line (for example one left behind by a rip to one file per track) is ignored, and its audio files are imported as regular tracks using their own tags.
+仅支持描述单个音频文件的 CUE Sheet。包含多行 `FILE` 的 CUE Sheet（例如按曲目抓取为单文件时留下的）将被忽略，其音频文件将使用自身的标签作为常规曲目导入。
 
-Everything else (album title, artist, year, genre, cover art, MBIDs) is inherited from the audio file's own tags.
+其他所有内容（专辑标题、艺术家、年份、流派、封面图片、MBID）均从音频文件自身的标签继承。
 
 如果音频文件也没有专辑/艺术家标签，则最低要求增加为：
 

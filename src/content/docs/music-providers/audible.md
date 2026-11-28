@@ -4,14 +4,14 @@ title: "Audible"
 
 # Audible <img src="/assets/icons/audible-icon.png" alt="Preview image" style="width: 70px; float: right;"  loading="lazy" />
 
-Music Assistant has support for streaming from Audible. This component was contributed by <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a>.
+Music Assistant 支持从 Audible 进行流媒体播放。此组件由 <a href="https://github.com/ztripez" target="_blank" rel="noopener noreferrer">ztripez</a> 贡献。
 
 Audible 是 Amazon 的有声读物服务。每月额度或直接购买即可获得一本书目，你拥有的所有内容都会保存在账户资料库中。
 
 连接你的账户后，该资料库就会出现在 Music Assistant 中。你在书中听到的地方会从 Audible 官方应用同步过来，因此你可以从同一位置继续收听。
 
 > [!CAUTION]
-> Please be advised that this source currently has no dedicated maintainer. Issues may take longer to resolve as this will be maintained on a best effort basis.
+> 请注意，此来源目前没有专门维护者。问题可能需要更长时间才能解决，因为这将按尽力而为的原则进行维护。
 
 > [!NOTE]
 > 此提供商需要付费订阅
@@ -48,101 +48,117 @@ No configuration is needed — this works automatically once the Audible provide
 - Chapter navigation
 - Multiple Audible accounts can be added.
 
-### Whispersync Progress Sync
+### Whispersync 进度同步
 
-Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+Music Assistant 会自动将你的收听进度与 Audible 的 Whispersync 服务同步。这意味着：
 
-- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
-- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+- 随处继续播放：如果你一直在手机、Echo 或其他任何 Audible 设备上收听，当你按下播放时，MA 会从你上次中断的地方准确继续。
+- 保持手机同步：当你在 MA 中停止或暂停时，你的进度会汇报给 Audible，以便你在其他任何设备上继续收听。
 
-No configuration is needed — this works automatically once the Audible provider is set up.
+无需任何配置——Audible 提供商设置完成后，此功能便会自动生效。
 
-### Other
+### 其他
 
-- The Audible library can be listed
-- Metadata for audiobooks will be populated
-- Chapter navigation
-- Multiple Audible accounts can be added.
+- 可以列出 Audible 资料库
+- 有声读物的元数据将被填充
+- 章节导航
+- 可以添加多个 Audible 账户。
 
-### Whispersync Progress Sync
+### Whispersync 进度同步
 
-Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+Music Assistant 会自动将你的收听进度与 Audible 的 Whispersync 服务同步。这意味着：
 
-- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
-- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+- 随处继续播放：如果你一直在手机、Echo 或其他任何 Audible 设备上收听，当你按下播放时，MA 会从你上次中断的地方准确继续。
+- 保持手机同步：当你在 MA 中停止或暂停时，你的进度会汇报给 Audible，以便你在其他任何设备上继续收听。
 
-No configuration is needed — this works automatically once the Audible provider is set up.
+无需任何配置——Audible 提供商设置完成后，此功能便会自动生效。
 
-### Other
+### 其他
 
-- The Audible library can be listed
-- Metadata for audiobooks will be populated
-- Chapter navigation
-- Multiple Audible accounts can be added.
+- 可以列出 Audible 资料库
+- 有声读物的元数据将被填充
+- 章节导航
+- 可以添加多个 Audible 账户。
 
-### Whispersync Progress Sync
+### Whispersync 进度同步
 
-Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+Music Assistant 会自动将你的收听进度与 Audible 的 Whispersync 服务同步。这意味着：
 
-- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
-- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+- 随处继续播放：如果你一直在手机、Echo 或其他任何 Audible 设备上收听，当你按下播放时，MA 会从你上次中断的地方准确继续。
+- 保持手机同步：当你在 MA 中停止或暂停时，你的进度会汇报给 Audible，以便你在其他任何设备上继续收听。
 
-No configuration is needed — this works automatically once the Audible provider is set up.
+无需任何配置——Audible 提供商设置完成后，此功能便会自动生效。
 
-### Other
+### 其他
 
-- The Audible library can be listed
-- Metadata for audiobooks will be populated
-- Chapter navigation
-- Multiple Audible accounts can be added.
+- 可以列出 Audible 资料库
+- 有声读物的元数据将被填充
+- 章节导航
+- 可以添加多个 Audible 账户。
 
-### Whispersync Progress Sync
+### Whispersync 进度同步
 
-Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+Music Assistant 会自动将你的收听进度与 Audible 的 Whispersync 服务同步。这意味着：
 
-- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
-- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+- 随处继续播放：如果你一直在手机、Echo 或其他任何 Audible 设备上收听，当你按下播放时，MA 会从你上次中断的地方准确继续。
+- 保持手机同步：当你在 MA 中停止或暂停时，你的进度会汇报给 Audible，以便你在其他任何设备上继续收听。
 
-No configuration is needed — this works automatically once the Audible provider is set up.
+无需任何配置——Audible 提供商设置完成后，此功能便会自动生效。
 
-### Other
+### 其他
 
-- The Audible library can be listed
-- Metadata for audiobooks will be populated
-- Chapter navigation
-- Multiple Audible accounts can be added.
+- 可以列出 Audible 资料库
+- 有声读物的元数据将被填充
+- 章节导航
+- 可以添加多个 Audible 账户。
 
-### Whispersync Progress Sync
+### Whispersync 进度同步
 
-Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+Music Assistant 会自动将你的收听进度与 Audible 的 Whispersync 服务同步。这意味着：
 
-- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
-- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+- 随处继续播放：如果你一直在手机、Echo 或其他任何 Audible 设备上收听，当你按下播放时，MA 会从你上次中断的地方准确继续。
+- 保持手机同步：当你在 MA 中停止或暂停时，你的进度会汇报给 Audible，以便你在其他任何设备上继续收听。
 
-No configuration is needed — this works automatically once the Audible provider is set up.
+无需任何配置——Audible 提供商设置完成后，此功能便会自动生效。
 
-### Other
+### 其他
 
-- The Audible library can be listed
-- Metadata for audiobooks will be populated
-- Chapter navigation
-- Multiple Audible accounts can be added.
+- 可以列出 Audible 资料库
+- 有声读物的元数据将被填充
+- 章节导航
+- 可以添加多个 Audible 账户。
 
-### Whispersync Progress Sync
+### Whispersync 进度同步
 
-Music Assistant syncs your listening position with Audible's Whispersync service automatically. This means:
+Music Assistant 会自动将你的收听进度与 Audible 的 Whispersync 服务同步。这意味着：
 
-- Resume anywhere: If you've been listening on your phone, Echo, or any other Audible device, MA will pick up from exactly where you left off when you press play.
-- Keep your phone in sync: When you stop or pause in MA, your position is reported back to Audible so you can continue on any other device.
+- 随处继续播放：如果你一直在手机、Echo 或其他任何 Audible 设备上收听，当你按下播放时，MA 会从你上次中断的地方准确继续。
+- 保持手机同步：当你在 MA 中停止或暂停时，你的进度会汇报给 Audible，以便你在其他任何设备上继续收听。
 
-No configuration is needed — this works automatically once the Audible provider is set up.
+无需任何配置——Audible 提供商设置完成后，此功能便会自动生效。
 
-### Other
+### 其他
 
-- The Audible library can be listed
-- Metadata for audiobooks will be populated
-- Chapter navigation
-- Multiple Audible accounts can be added.
+- 可以列出 Audible 资料库
+- 有声读物的元数据将被填充
+- 章节导航
+- 可以添加多个 Audible 账户。
+
+### Whispersync 进度同步
+
+Music Assistant 会自动将你的收听进度与 Audible 的 Whispersync 服务同步。这意味着：
+
+- 随处继续播放：如果你一直在手机、Echo 或其他任何 Audible 设备上收听，当你按下播放时，MA 会从你上次中断的地方准确继续。
+- 保持手机同步：当你在 MA 中停止或暂停时，你的进度会汇报给 Audible，以便你在其他任何设备上继续收听。
+
+无需任何配置——Audible 提供商设置完成后，此功能便会自动生效。
+
+### 其他
+
+- 可以列出 Audible 资料库
+- 有声读物的元数据将被填充
+- 章节导航
+- 可以添加多个 Audible 账户。
 
 ### Whispersync 进度同步
 

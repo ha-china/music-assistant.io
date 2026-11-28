@@ -14,7 +14,7 @@ description: "Spotify Connect、Assist 串流播放、播客、有声读物、Ap
 cover: 
   image: /public/images/blog/2025/03/05/music-assistants-next-big-hit/art.jpg
   alt:   "Music Assistant's next big hit"
-excerpt: "Over the past several months, Music Assistant has been hitting all the right notes with new features, greater stability, and a crescendo of contributors who keep pushing the project forward. If you're unfamiliar with Music Assistant, it allows you to merge your libraries from leading audio streaming providers and local files, letting you play them on the most popular smart speakers. Since our last update, Music Assistant has had a couple of big releases, but our most recent might just be our platinum record 💿, with a lot of new functionality coming in version 2.4."
+excerpt: "在过去几个月里，Music Assistant 一直踩准每一个音符：新功能层出不穷，稳定性大幅提升，贡献者队伍也如渐强音般不断壮大，持续推动项目向前发展。如果你还不熟悉 Music Assistant，它可以让你把来自各大主流音频流媒体服务商的媒体库与本地文件合并在一起，并在最流行的智能音箱上播放。自上次更新以来，Music Assistant 已经发布了几个重要版本，而最新的这个版本或许就是我们的白金唱片 💿——版本 2.4 带来了大量新功能。"
 date: 2025-03-05T00:00:00.000Z
 authors:
   - marcel
@@ -79,7 +79,7 @@ tags:
 ### "Master of Puppets"
 <h4 style="margin-top: -0.25em; opacity: .67;">Home Assistant 改进</h4>
 
-Home Assistant was always designed to work seamlessly with Music Assistant, and it's only getting better. In the [Home Assistant 2024.12 release](https://www.home-assistant.io/blog/2024/12/04/release-202412/#new-integrations), we gave the community a Christmas present--Music Assistant moved from HACS [now built into Home Assistant as the [Marketplace](https://www.home-assistant.io/blog/2026/11/04/release-202611/)] to being a native integration ([please migrate if you haven't yet](https://www.music-assistant.io/integration/migrate/)).
+Home Assistant 一直都被设计为与 Music Assistant 无缝协作，而且这种体验只会越来越好。在 [Home Assistant 2024.12 版本](https://www.home-assistant.io/blog/2024/12/04/release-202412/#new-integrations)中，我们给社区送上了一份圣诞礼物——Music Assistant 从 HACS 移出，[现在作为原生集成内置在 Home Assistant 中（即 [Marketplace](https://www.home-assistant.io/blog/2026/11/04/release-202611/)）]（[如果你还没有迁移，请尽快迁移](https://www.music-assistant.io/integration/migrate/)）。
 
 现在许多人会先把所有播放器添加到 Music Assistant，然后再将 Music Assistant 与 Home Assistant 集成，从而无需单独添加每台设备。最新版本增加了把任意播放器控制（包括音量以及开/关机）外包给 Home Assistant 实体（entity）的功能。两者搭配使用还有其他好处，例如 Music Assistant 可以在播报（announcement）之后[恢复音频播放](https://www.music-assistant.io/integration/announcements/)，或者使用 Assist 查找并播放歌曲（[无论是否使用 LLM](https://github.com/music-assistant/voice-support)）。
 
